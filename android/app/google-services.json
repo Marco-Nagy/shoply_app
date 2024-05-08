@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "961115936061",
+    "project_id": "shoply-6e93b",
+    "storage_bucket": "shoply-6e93b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961115936061:android:9565cf7e9f368acbf62154",
+        "android_client_info": {
+          "package_name": "com.marcosoft.shoply"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxE5FrvTLHYl0aWXNnYRhyrtzvU4wIExA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
