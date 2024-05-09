@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoply/core/app/env_variables.dart';
 
 class ShoplyApp extends StatelessWidget {
   const ShoplyApp({super.key});
@@ -8,6 +9,7 @@ class ShoplyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: EnvVariables.instance.debugMode,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
