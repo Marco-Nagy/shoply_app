@@ -43,4 +43,6 @@ app.*.map.json
 /android/app/release
 
 #Api key for firebase
-app/lib/firebase_options.dart
+.env.dev
+.env.prod
+

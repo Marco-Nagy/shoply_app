@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -40,49 +41,49 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCfbZcnDOZ_ZPTIaVXWYAmlyZZQ05_fBE8',
-    appId: '1:961115936061:web:cae5af827f097aa7f62154',
-    messagingSenderId: '961115936061',
-    projectId: 'shoply-6e93b',
-    authDomain: 'shoply-6e93b.firebaseapp.com',
-    storageBucket: 'shoply-6e93b.appspot.com',
-    measurementId: 'G-SDCV3PEF5R',
+  static  FirebaseOptions web = FirebaseOptions(
+    apiKey: dotenv.get('WEB_WINDOWS_API_KEY'),
+    appId: dotenv.get('WEB_APP_ID'),
+    messagingSenderId: dotenv.get('MESSAGING_SENDER_ID'),
+    projectId: dotenv.get('PROJECT_ID'),
+    authDomain: dotenv.get('AUTH_DOMAIN'),
+    storageBucket: dotenv.get('STORAGE_BUCKET'),
+    measurementId: dotenv.get('MEASUREMENT_ID'),
   );
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDxE5FrvTLHYl0aWXNnYRhyrtzvU4wIExA',
-    appId: '1:961115936061:android:9565cf7e9f368acbf62154',
-    messagingSenderId: '961115936061',
-    projectId: 'shoply-6e93b',
-    storageBucket: 'shoply-6e93b.appspot.com',
+  static  FirebaseOptions android = FirebaseOptions(
+    apiKey: dotenv.get('ANDROID_API_KEY'),
+    appId: dotenv.get('ANDROID_API_KEY'),
+    messagingSenderId: dotenv.get('MESSAGING_SENDER_ID'),
+    projectId: dotenv.get('PROJECT_ID'),
+    storageBucket: dotenv.get('STORAGE_BUCKET'),
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyALQ-ulNIxnvztHgzc6iMdahzlfGyggIDo',
-    appId: '1:961115936061:ios:825907a0ab7343a2f62154',
-    messagingSenderId: '961115936061',
-    projectId: 'shoply-6e93b',
-    storageBucket: 'shoply-6e93b.appspot.com',
-    iosBundleId: 'com.marcosoft.shoply',
+  static  FirebaseOptions ios = FirebaseOptions(
+    apiKey: dotenv.get('IOS_MACOS_API_KEY'),
+    appId: dotenv.get('IOS_MACOS_APP_ID'),
+    messagingSenderId: dotenv.get('MESSAGING_SENDER_ID'),
+    projectId: dotenv.get('PROJECT_ID'),
+    storageBucket: dotenv.get('STORAGE_BUCKET'),
+    iosBundleId: dotenv.get('IOS_MACOS_BUNDLE_ID'),
   );
 
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyALQ-ulNIxnvztHgzc6iMdahzlfGyggIDo',
-    appId: '1:961115936061:ios:825907a0ab7343a2f62154',
-    messagingSenderId: '961115936061',
-    projectId: 'shoply-6e93b',
-    storageBucket: 'shoply-6e93b.appspot.com',
-    iosBundleId: 'com.marcosoft.shoply',
+  static  FirebaseOptions macos = FirebaseOptions(
+    apiKey: dotenv.get('IOS_MACOS_API_KEY'),
+    appId: dotenv.get('IOS_MACOS_APP_ID'),
+    messagingSenderId: dotenv.get('MESSAGING_SENDER_ID'),
+    projectId: dotenv.get('PROJECT_ID'),
+    storageBucket: dotenv.get('STORAGE_BUCKET'),
+    iosBundleId: dotenv.get('IOS_MACOS_BUNDLE_ID'),
   );
 
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyCfbZcnDOZ_ZPTIaVXWYAmlyZZQ05_fBE8',
-    appId: '1:961115936061:web:3024f7e6b70f3174f62154',
-    messagingSenderId: '961115936061',
-    projectId: 'shoply-6e93b',
-    authDomain: 'shoply-6e93b.firebaseapp.com',
-    storageBucket: 'shoply-6e93b.appspot.com',
-    measurementId: 'G-3CMDY7TCK1',
+  static  FirebaseOptions windows = FirebaseOptions(
+    apiKey: dotenv.get('WEB_WINDOWS_API_KEY'),
+    appId: dotenv.get('WINDOWS_APP_ID'),
+    messagingSenderId: dotenv.get('MESSAGING_SENDER_ID'),
+    projectId: dotenv.get('PROJECT_ID'),
+    authDomain: dotenv.get('AUTH_DOMAIN'),
+    storageBucket: dotenv.get('STORAGE_BUCKET'),
+    measurementId: dotenv.get('WINDOWS_MEASUREMENT_ID'),
   );
 }
