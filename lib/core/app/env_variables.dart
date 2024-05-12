@@ -18,6 +18,7 @@ class EnvVariables {
         await dotenv.load(fileName: '.env.prod');
     }
     _envType = dotenv.get('ENV_TYPE');
+    await dotenv.load(fileName:'.env.firebase');
   }
 
   String get envType => _envType;
