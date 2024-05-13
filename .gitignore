@@ -41,9 +41,10 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-
-#Api key for firebase
-.env.dev
+/android/app/google-services.json
+#.env variables
 .env.prod
-.env.firebaseOptions
+.env.dev
+.env.firebase
+firebase.json
 
