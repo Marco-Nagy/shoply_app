@@ -14,9 +14,11 @@ class EnvVariables {
       case EnvTypeEnum.dev:
         await dotenv.load(fileName: '.env.dev');
 
+
       case EnvTypeEnum.prod:
         await dotenv.load(fileName: '.env.prod');
     }
+    await dotenv.load(fileName: '.env.firebaseOptions');
     _envType = dotenv.get('ENV_TYPE');
     await dotenv.load(fileName:'.env.firebase');
   }
