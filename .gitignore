@@ -47,4 +47,7 @@ app.*.map.json
 .env.dev
 .env.firebase
 firebase.json
+.firebaserc
+remoteconfig.template.json
+
 

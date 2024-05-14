@@ -8,6 +8,5 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EnvVariables.instance.init(envType: EnvTypeEnum.dev);
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  
   runApp(const ShoplyApp());
 }
