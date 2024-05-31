@@ -42,14 +42,21 @@ dependencies:
   flutter_dotenv: ^5.1.0
   flutter_screenutil: ^5.9.0
   flutter_launcher_icons: ^0.13.1
-  flutter_lints: ^3.0.2
+  flutter_lints: ^4.0.0
   cupertino_icons: ^1.0.8
+  flutter_native_splash: ^2.4.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: ^0.13.1
   very_good_analysis: ^5.1.0
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/core/android_ios_splash_12.png"
+  adaptive_icon_background: "assets/images/core/launcher_background.png"
+  adaptive_icon_foreground: "assets/images/core/launcher_foreground.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
