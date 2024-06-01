@@ -41,13 +41,3 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-/android/app/google-services.json
-#.env variables
-.env.prod
-.env.dev
-.env.firebase
-firebase.json
-.firebaserc
-remoteconfig.template.json
-
-
