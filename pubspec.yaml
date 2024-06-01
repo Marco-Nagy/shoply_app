@@ -40,11 +40,14 @@ dependencies:
   very_good_analysis: ^5.1.0
   connectivity_plus: ^6.0.3
   flutter_dotenv: ^5.1.0
-  flutter_screenutil: ^5.9.0
+  flutter_screenutil: ^5.9.3
   flutter_launcher_icons: ^0.13.1
   flutter_lints: ^4.0.0
   cupertino_icons: ^1.0.8
   flutter_native_splash: ^2.4.0
+  flutter_svg: ^2.0.10+1
+  google_fonts: ^6.2.1
+
 
 dev_dependencies:
   flutter_test:
