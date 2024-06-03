@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shoply/core/styles/theme/app_color_theme.dart';
 
 
 
@@ -15,3 +14,4 @@ class DeviceUtil {
     return _getDeviceType.toString().contains('tablet') ;
   }
 }
+
