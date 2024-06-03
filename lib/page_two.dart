@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shoply/core/helpers/extension/navigations.dart';
-import 'package:shoply/core/helpers/extentions.dart';
-import 'package:shoply/core/styles/my_fonts.dart';
+import 'package:shoply/core/helpers/extension/extentions.dart';
+import 'package:shoply/core/styles/fonts/my_fonts.dart';
 
 class PageTwo extends StatelessWidget {
   const PageTwo({super.key});

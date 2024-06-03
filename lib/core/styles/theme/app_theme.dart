@@ -6,6 +6,8 @@ import 'package:shoply/core/styles/theme/app_icon_theme.dart';
 
 ThemeData lightTheme = ThemeData(
   scaffoldBackgroundColor: LightColors.mainColor,
+  appBarTheme: AppBarTheme(color: LightColors.mainColor),
+
   extensions: <ThemeExtension<dynamic>>[
     AppColorTheme.light,
     AppIconTheme.light,
@@ -15,6 +17,7 @@ ThemeData lightTheme = ThemeData(
 
 ThemeData darkTheme = ThemeData(
   scaffoldBackgroundColor: DarkColors.mainColor,
+  appBarTheme: AppBarTheme(color: DarkColors.mainColor),
   extensions: <ThemeExtension<dynamic>>[AppColorTheme.dark, AppIconTheme.dark],
   useMaterial3: true,
 );
