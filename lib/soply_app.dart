@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:shoply/core/app/connectivity_controller.dart';
 import 'package:shoply/core/app/env_variables.dart';
+import 'package:shoply/core/helpers/extension/my_context.dart';
+import 'package:shoply/core/localization/app_localizations_setup.dart';
+import 'package:shoply/core/localization/lang_keys.dart';
 import 'package:shoply/core/routes/app_routes.dart';
-import 'package:shoply/core/styles/my_fonts.dart';
 import 'package:shoply/core/styles/theme/app_theme.dart';
 import 'package:shoply/core/utils/screens/no_network_screen.dart';
 
@@ -23,7 +24,11 @@ class ShoplyApp extends StatelessWidget {
             child: MaterialApp(
               title: 'Shoply App',
               debugShowCheckedModeBanner: EnvVariables.instance.debugMode,
-              theme: darkTheme,
+              theme: lightTheme,
+              supportedLocales: AppLocalizationsSetup.supportedLocales,
+              locale: const Locale("ar"),
+              localeResolutionCallback: AppLocalizationsSetup.localeResolutionCallback,
+              localizationsDelegates: AppLocalizationsSetup.localizationsDelegates,
               builder: (context, child) => Scaffold(
                 body: Builder(
                   builder: (context) {
@@ -38,7 +43,6 @@ class ShoplyApp extends StatelessWidget {
           );
         } else {
           return MaterialApp(
-            title: 'No Network',
             debugShowCheckedModeBanner: EnvVariables.instance.debugMode,
             home: const NoNetworkScreen(),
           );
