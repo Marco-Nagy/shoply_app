@@ -10,7 +10,7 @@ class AppRoutes {
   static Route<void> onGenerateRoute(RouteSettings settings){
     switch (settings.name) {
       case AppRoutes.one:
-        return BaseRoute(page: const PageOne());
+        return BaseRoute(page:  const PageOne());
       case AppRoutes.two:
         return  BaseRoute(page: const PageTwo());
       default:
