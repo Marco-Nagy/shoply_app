@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/helpers/extension/navigations.dart';
+import 'package:shoply/core/localization/lang_keys.dart';
 import 'package:shoply/core/routes/app_routes.dart';
 import 'package:shoply/core/styles/icons/dark_icons.dart';
-import 'package:shoply/core/styles/my_fonts.dart';
+import 'package:shoply/core/styles/fonts/my_fonts.dart';
 
 class PageOne extends StatefulWidget {
   const PageOne({Key? key}) : super(key: key);
@@ -34,8 +35,8 @@ class _PageOneState extends State<PageOne> with SingleTickerProviderStateMixin {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'ماركو ناجى',
-          style: MyFonts.arabicBold700_18,
+          context.translate(LangKeys.appName),
+          style: MyFonts.arabicBold700_18.copyWith(color: context.colors.textColor),
         ),
       ),
       body: InkWell(
@@ -56,11 +57,16 @@ class _PageOneState extends State<PageOne> with SingleTickerProviderStateMixin {
                  animateIcon(_notificationController);
                   });
                 },
-                child: LottieBuilder.asset(
+                child: Container(
+                  color: context.colors.mainColor,
                   height: 50,
                   width: 50,
-                  controller: _notificationController,
-                  context.icons.notification,
+                  child: Lottie.asset(
+                    height: 49,
+                    width: 49,
+                    controller: _notificationController,
+                    context.icons.notification,
+                  ),
                 ),
               ),
             ],
