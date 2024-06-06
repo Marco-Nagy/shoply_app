@@ -22,7 +22,10 @@ class AppIconTheme extends ThemeExtension<AppIconTheme> {
     }
   }
 
-  static  AppIconTheme dark = AppIconTheme(notification: DarkIcons.notifications);
-  static  AppIconTheme light= AppIconTheme(notification: LightIcons.notifications);
-
+  static AppIconTheme dark = AppIconTheme(
+    notification: DarkIcons.notifications,
+  );
+  static AppIconTheme light = AppIconTheme(
+    notification: LightIcons.notifications,
+  );
 }
