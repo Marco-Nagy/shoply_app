@@ -55,6 +55,8 @@ dependencies:
   #UI
   flutter_svg: ^2.0.10+1
   lottie: ^3.1.2
+  animate_do: ^3.3.4
+  animations: ^2.0.11
 
 
 dev_dependencies:
@@ -85,8 +87,11 @@ flutter:
     - .env.dev
     - .env.prod
     - .env.firebase
+    - assets/images/admin/
     - assets/images/core/
+    - assets/images/customer/
     - assets/images/json/
+    - assets/images/svg/
     - translations/ar.json
     - translations/en.json
 

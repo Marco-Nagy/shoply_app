@@ -1,10 +1,9 @@
 
-import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'app_localizations.dart';
+import 'package:shoply/core/localization/app_localizations.dart';
 
 class AppLocalizationsSetup {
   static const Iterable<Locale> supportedLocales = [

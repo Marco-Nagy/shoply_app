@@ -8,6 +8,7 @@ extension MyContext on BuildContext {
 
   AppIconTheme get icons => Theme.of(this).extension<AppIconTheme>()??AppIconTheme.light;
 
+
   String  translate(String text) {
    if (AppLocalizations.of(this) != null) {
      return AppLocalizations.of(this )!.translate(text)
