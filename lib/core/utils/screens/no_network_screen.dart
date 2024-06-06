@@ -3,7 +3,6 @@ import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/localization/lang_keys.dart';
 import 'package:shoply/core/styles/app_images.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
-import 'package:shoply/core/styles/theme/app_color_theme.dart';
 
 class NoNetworkScreen extends StatelessWidget {
   const NoNetworkScreen({super.key});
@@ -17,7 +16,7 @@ class NoNetworkScreen extends StatelessWidget {
             context.translate(
               LangKeys.noNetwork,
             ),
-              style: MyFonts.arabicSemiBold600_18.copyWith(color: Colors.black),
+              style: MyFonts.styleSemiBold600_18.copyWith(color: Colors.black),
           ),
         ),
         body: Container(
