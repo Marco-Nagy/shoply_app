@@ -102,6 +102,11 @@ class MyFonts {
     fontWeight: FontWeight.w700,
     fontSize: 18.sp,
   );
+  static TextStyle styleBold700_24 =TextStyle(
+    fontFamily: FontFamilyHelper.cairoAr,
+    fontWeight: FontWeight.w700,
+    fontSize: 24.sp,
+  );
 
   // English Text Styles
 
