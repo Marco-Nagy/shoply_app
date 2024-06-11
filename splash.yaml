@@ -20,6 +20,7 @@ flutter_native_splash:
     image: assets/images/core/launcher_foreground.png
 #    background_image: assets/images/core/launcher_background.png
     color: "#8FD9FF"
+    color_dark: "#2b3361"
     android_gravity: center
 
   # Splash screen background color.
