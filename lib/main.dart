@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shoply/soply_app.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const ShoplyApp());
 }
