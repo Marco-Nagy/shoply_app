@@ -26,7 +26,8 @@ class ShoplyApp extends StatelessWidget {
               // theme: lightTheme,
               theme: darkTheme,
               supportedLocales: AppLocalizationsSetup.supportedLocales,
-              locale: const Locale('ar'),
+              // locale: const Locale('ar'),
+              locale: const Locale('en'),
               localeResolutionCallback:
               AppLocalizationsSetup.localeResolutionCallback,
               localizationsDelegates:
