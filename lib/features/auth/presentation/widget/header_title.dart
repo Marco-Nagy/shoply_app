@@ -5,8 +5,8 @@ import 'package:shoply/core/utils/animations/animate_do.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
 
-class LoginHeaderTitle extends StatelessWidget {
-  const LoginHeaderTitle(
+class HeaderTitle extends StatelessWidget {
+  const HeaderTitle(
       {required this.text, required this.description, super.key});
 
   final String text;
