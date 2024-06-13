@@ -49,7 +49,7 @@ class _PageOneState extends State<PageOne> with SingleTickerProviderStateMixin {
           children: [
             InkWell(
               onTap: () {
-                context.pushNamed(AppRoutes.two);
+                context.pushNamed(AppRoutes.signUp);
               },
               child: Text(
                 'Marco Nagy',

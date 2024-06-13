@@ -15,7 +15,7 @@ class AppAnimatedIcon extends StatefulWidget {
 
   final AnimationController animationController;
   final String iconAsset;
-  final Function onTap;
+  final VoidCallback onTap;
   final Color? iconColor;
   final Color? backGroundColor;
   final double? size;
@@ -30,6 +30,7 @@ class _AppAnimatedIconState extends State<AppAnimatedIcon> {
     return InkWell(
       onTap: ()async {
         widget.onTap();
+
         _animateIcon(widget.animationController);
       },
       child: Container(
@@ -56,8 +57,12 @@ dynamic _animateIcon(AnimationController animation) {
   if (animation.status == AnimationStatus.dismissed) {
     animation
       ..reset()
-      ..animateTo(0.9);
+      ..animateTo(
+        0.9,
+        duration: Duration(milliseconds: 400),
+      );
   } else {
+    animation.reverseDuration = Duration(milliseconds: 300);
     animation.reverse();
   }
 }
