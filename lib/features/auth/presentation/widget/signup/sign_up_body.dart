@@ -21,13 +21,13 @@ class SignUpBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
       child: SingleChildScrollView(
         child: Column(
           children: [
             //? dark light mode and language
             const SwitchButtons(),
-            verticalSpacing(50),
+            verticalSpacing(20),
             //? SignUp welcome info
             HeaderTitle(
               text: context.translate(LangKeys.signUp),
@@ -35,10 +35,10 @@ class SignUpBody extends StatelessWidget {
             ),
             verticalSpacing(10),
             const UserAvatarImage(),
-            verticalSpacing(30),
+            verticalSpacing(20),
             //? SignUp form
             const SignUpFormField(),
-            verticalSpacing(30),
+            verticalSpacing(20),
             //? SignUp button
             CustomFadeInRight(
               duration: 400,
@@ -56,7 +56,7 @@ class SignUpBody extends StatelessWidget {
                 onTap: () {},
               ),
             ),
-            verticalSpacing(30),
+            verticalSpacing(20),
             //? go to sign up screen
             CustomFadeInDown(
               duration: 400,
