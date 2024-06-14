@@ -25,9 +25,10 @@ class ShoplyApp extends StatelessWidget {
               debugShowCheckedModeBanner: EnvVariables.instance.debugMode,
               // theme: lightTheme,
               theme: darkTheme,
-              supportedLocales: AppLocalizationsSetup.supportedLocales,
               // locale: const Locale('ar'),
               locale: const Locale('en'),
+              supportedLocales: AppLocalizationsSetup.supportedLocales,
+
               localeResolutionCallback:
               AppLocalizationsSetup.localeResolutionCallback,
               localizationsDelegates:
