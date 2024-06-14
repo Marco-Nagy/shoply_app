@@ -6,8 +6,8 @@ import 'package:shoply/core/utils/animations/animate_do.dart';
 import 'package:shoply/core/utils/widgets/custom_linear_button.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
 
-class LoginSwitchButtons extends StatelessWidget {
-  const LoginSwitchButtons({super.key});
+class SwitchButtons extends StatelessWidget {
+  const SwitchButtons({super.key});
 
   @override
   Widget build(BuildContext context) {

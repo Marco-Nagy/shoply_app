@@ -6,29 +6,44 @@ import 'package:shoply/core/utils/app_regex.dart';
 import 'package:shoply/core/utils/screens/app_text_form_field.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
 
-class LoginFormField extends StatefulWidget {
-  const LoginFormField({super.key});
+class SignUpFormField extends StatefulWidget {
+  const SignUpFormField({super.key});
 
   @override
-  State<LoginFormField> createState() => _LoginFormFieldState();
+  State<SignUpFormField> createState() => _SignUpFormFieldState();
 }
 
-class _LoginFormFieldState extends State<LoginFormField> {
+class _SignUpFormFieldState extends State<SignUpFormField> {
+  TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
-
   TextEditingController passwordController = TextEditingController();
-
   bool isShowPassword = false;
-
   @override
   Widget build(BuildContext context) {
-    return Column(
+
+
+    return  Column(
       children: [
         CustomFadeInRight(
           duration: 400,
           child: AppTextFormField(
-              controller: emailController,
-              hintText: 'email',
+              controller: nameController,
+              hintText: context.translate(LangKeys.fullName),
+              validator: (value) {
+                if (value == null ||
+                    value.isEmpty ||
+                    !AppRegex.isEmailValid(emailController.text)) {
+                  return context.translate(LangKeys.fullName);
+                }
+                return null;
+              }),
+        ),
+        verticalSpacing(25),
+        CustomFadeInLeft(
+          duration: 400,
+          child: AppTextFormField(
+              controller: nameController,
+              hintText: context.translate(LangKeys.email),
               validator: (value) {
                 if (value == null ||
                     value.isEmpty ||
@@ -39,11 +54,11 @@ class _LoginFormFieldState extends State<LoginFormField> {
               }),
         ),
         verticalSpacing(25),
-        CustomFadeInLeft(
+        CustomFadeInRight(
           duration: 400,
           child: AppTextFormField(
             controller: passwordController,
-            hintText: 'password',
+            hintText: context.translate(LangKeys.password),
             keyboardType: TextInputType.visiblePassword,
             obscureText: isShowPassword,
             validator: (value) {
@@ -58,8 +73,9 @@ class _LoginFormFieldState extends State<LoginFormField> {
             },
             suffixIcon: IconButton(
                 onPressed: () {
-                  isShowPassword = !isShowPassword;
-                },
+                  setState(() {
+                    isShowPassword =!isShowPassword;
+                  });                },
                 icon: Icon(
                   isShowPassword
                       ? Icons.visibility_rounded
