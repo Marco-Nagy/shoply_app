@@ -76,7 +76,9 @@ dev_dependencies:
     sdk: flutter
   flutter_launcher_icons: ^0.13.1
   very_good_analysis: ^5.1.0
+    # dart run build_runner build --delete-conflicting-outputs
   build_runner: ^2.4.11
+  freezed: ^2.5.2
 
 
 flutter_launcher_icons:

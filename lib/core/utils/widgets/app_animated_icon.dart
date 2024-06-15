@@ -59,10 +59,10 @@ dynamic _animateIcon(AnimationController animation) {
       ..reset()
       ..animateTo(
         0.9,
-        duration: Duration(milliseconds: 400),
+        duration: const Duration(milliseconds: 400),
       );
   } else {
-    animation.reverseDuration = Duration(milliseconds: 300);
-    animation.reverse();
+    animation..reverseDuration = const Duration(milliseconds: 300)
+    ..reverse();
   }
 }
