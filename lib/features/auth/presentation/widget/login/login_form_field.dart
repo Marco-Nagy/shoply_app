@@ -67,7 +67,7 @@ class _LoginFormFieldState extends State<LoginFormField> {
                       ? Icons.visibility_rounded
                       : Icons.visibility_off_rounded,
                   color: context.colors.textColor,
-                )),
+                ),),
           ),
         ),
         verticalSpacing(10),

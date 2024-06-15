@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/utils/animations/animate_do.dart';
-import 'package:shoply/features/auth/presentation/widget/login/login_body.dart';
 import 'package:shoply/features/auth/presentation/widget/custom_auth_painter.dart';
+import 'package:shoply/features/auth/presentation/widget/login/login_body.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
