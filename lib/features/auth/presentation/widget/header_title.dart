@@ -7,7 +7,7 @@ import 'package:shoply/core/utils/widgets/text_app.dart';
 
 class HeaderTitle extends StatelessWidget {
   const HeaderTitle(
-      {required this.text, required this.description, super.key});
+      {required this.text, required this.description, super.key,});
 
   final String text;
   final String description;
