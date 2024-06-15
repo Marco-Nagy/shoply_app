@@ -10,7 +10,6 @@ import 'package:shoply/core/utils/widgets/custom_linear_button.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
 import 'package:shoply/features/auth/presentation/widget/header_title.dart';
-import 'package:shoply/features/auth/presentation/widget/login/login_form_field.dart';
 import 'package:shoply/features/auth/presentation/widget/signup/sign_up_form_field.dart';
 import 'package:shoply/features/auth/presentation/widget/signup/user_avatar_image.dart';
 import 'package:shoply/features/auth/presentation/widget/switch_buttons.dart';

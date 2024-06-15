@@ -1,6 +1,8 @@
 
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:shoply/core/helpers/shared_preference/shared_pref_keys.dart';
+import 'package:shoply/core/helpers/shared_preference/shared_preference_helper.dart';
 
 class CustomFadeInDown extends StatelessWidget {
   const CustomFadeInDown({
@@ -57,10 +59,7 @@ class CustomFadeInLeft extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /// Todo: this should SharedPreferences
-    return
-      // SharedPref().getString(PrefKeys.language) == 'ar'
-    false
+    return SharedPrefHelper().getString(key: SharedPrefKeys.language) == 'ar'
         ? FadeInLeft(
             delay: const Duration(milliseconds: 300),
             duration: Duration(milliseconds: duration),
@@ -87,10 +86,9 @@ class CustomFadeInRight extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /// Todo: this should SharedPreferences
     return
-      // SharedPref().getString(PrefKeys.language) == 'ar'
-      false  ? FadeInRight(
+     SharedPrefHelper().getString(key: SharedPrefKeys.language) == 'ar'
+        ? FadeInRight(
             delay: const Duration(milliseconds: 300),
             duration: Duration(milliseconds: duration),
             child: child,

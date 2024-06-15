@@ -36,7 +36,7 @@ class _SignUpFormFieldState extends State<SignUpFormField> {
                   return context.translate(LangKeys.fullName);
                 }
                 return null;
-              }),
+              },),
         ),
         verticalSpacing(25),
         CustomFadeInLeft(
@@ -51,7 +51,7 @@ class _SignUpFormFieldState extends State<SignUpFormField> {
                   return context.translate(LangKeys.validEmail);
                 }
                 return null;
-              }),
+              },),
         ),
         verticalSpacing(25),
         CustomFadeInRight(
@@ -81,7 +81,7 @@ class _SignUpFormFieldState extends State<SignUpFormField> {
                       ? Icons.visibility_rounded
                       : Icons.visibility_off_rounded,
                   color: context.colors.textColor,
-                )),
+                ),),
           ),
         ),
         verticalSpacing(10),
