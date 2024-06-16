@@ -1,12 +1,9 @@
 import 'dart:ui';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shoply/core/helpers/shared_preference/shared_pref_keys.dart';
-import 'package:shoply/core/helpers/shared_preference/shared_preference_helper.dart';
-
+import 'package:shoply/core/Services/shared_preference/shared_pref_keys.dart';
+import 'package:shoply/core/Services/shared_preference/shared_preference_helper.dart';
 part 'app_state.dart';
-
 part 'app_cubit.freezed.dart';
 
 class AppCubit extends Cubit<AppState> {
