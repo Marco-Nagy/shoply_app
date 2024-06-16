@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shoply/core/Services/shared_preference/shared_pref_keys.dart';
+import 'package:shoply/core/Services/shared_preference/shared_preference_helper.dart';
 import 'package:shoply/core/app/app_cubit/app_cubit.dart';
 import 'package:shoply/core/app/connectivity_controller.dart';
 import 'package:shoply/core/app/env_variables.dart';
-import 'package:shoply/core/helpers/shared_preference/shared_pref_keys.dart';
-import 'package:shoply/core/helpers/shared_preference/shared_preference_helper.dart';
+import 'package:shoply/core/app/service_locator/injection_container.dart';
 import 'package:shoply/core/localization/app_localizations_setup.dart';
 import 'package:shoply/core/routes/app_routes.dart';
 import 'package:shoply/core/styles/theme/app_theme.dart';
 import 'package:shoply/core/utils/screens/no_network_screen.dart';
 
-import 'core/helpers/service_locator/injection_container.dart';
-
 class ShoplyApp extends StatelessWidget {
   const ShoplyApp({super.key});
 
-  // This widget is the root of your application.
+  //!  This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
