@@ -1,8 +1,9 @@
 import 'dart:async';
 import 'package:get_it/get_it.dart';
-import 'package:shoply/core/Services/network/api_service.dart';
-import 'package:shoply/core/Services/network/dio_factory.dart';
+import 'package:shoply/core/app/Apis/api_service.dart';
+import 'package:shoply/core/app/Apis/dio_factory.dart';
 import 'package:shoply/core/app/app_cubit/app_cubit.dart';
+
 
 final sl = GetIt.instance;
 
