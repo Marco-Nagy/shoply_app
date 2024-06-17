@@ -1,8 +1,8 @@
 
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:shoply/core/helpers/shared_preference/shared_pref_keys.dart';
-import 'package:shoply/core/helpers/shared_preference/shared_preference_helper.dart';
+import 'package:shoply/core/Services/shared_preference/shared_pref_keys.dart';
+import 'package:shoply/core/Services/shared_preference/shared_preference_helper.dart';
 
 class CustomFadeInDown extends StatelessWidget {
   const CustomFadeInDown({

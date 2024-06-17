@@ -1,5 +1,5 @@
-import 'package:shoply/core/helpers/shared_preference/shared_pref_keys.dart';
-import 'package:shoply/core/helpers/shared_preference/shared_preference_helper.dart';
+import 'package:shoply/core/Services/shared_preference/shared_pref_keys.dart';
+import 'package:shoply/core/Services/shared_preference/shared_preference_helper.dart';
 
 class FontFamilyHelper {
   FontFamilyHelper._();
