@@ -61,7 +61,7 @@ class SharedPrefHelper {
   }
 
   ///Below method is to set the int value in the SharedPreferences.
-  Future<dynamic> setInt(String key, int intValue) async {
+  Future<dynamic> setInt({required String key, required int intValue}) async {
     await sharedPreferences.setInt(key, intValue);
   }
 
