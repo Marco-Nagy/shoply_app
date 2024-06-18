@@ -49,10 +49,11 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<UserRoleResponse> userRole() async {
+  Future<UserRoleResponse> userRole(String token) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<UserRoleResponse>(Options(

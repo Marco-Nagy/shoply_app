@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
+import 'package:retrofit/retrofit.dart';
 import 'package:shoply/core/app/apis/api_const.dart';
 import 'package:shoply/features/auth/data/models/login/login_response.dart';
 import 'package:shoply/features/auth/data/models/role/user_role_response.dart';
@@ -12,5 +13,5 @@ abstract class ApiService {
   @POST(ApiConst.graphql)
   Future<LoginResponse> login(@Body() Map<String, dynamic> mutation);
   @GET(ApiConst.profile)
-  Future<UserRoleResponse> userRole();
+  Future<UserRoleResponse> userRole(@Header('Authorization')  String token);
 }
