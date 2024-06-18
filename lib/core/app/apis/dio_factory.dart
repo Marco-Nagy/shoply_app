@@ -10,15 +10,12 @@ class DioFactory {
 
   static Dio getInstance() {
     const timeOut = Duration(seconds: 30);
-    final accessToken =
-        SharedPrefHelper().getString(key: SharedPrefKeys.accessToken);
+
     if (dio == null) {
       dio = Dio();
       dio!
         ..options.connectTimeout = timeOut
-        ..options.receiveTimeout = timeOut
-        ..options.headers['Authorization'] =
-            'Bearer ${accessToken ?? 'Null Token'}';
+        ..options.receiveTimeout = timeOut;
       addDioInterceptors();
       return dio!;
     }
@@ -26,11 +23,27 @@ class DioFactory {
   }
 
   static void addDioInterceptors() {
-    dio!.interceptors.add(
+    dio?.interceptors.add(
       PrettyDioLogger(
         responseHeader: true,
         requestHeader: true,
         requestBody: true,
+      ),
+    );
+    dio?.interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options, handler) {
+          options.headers['Authorization'] =
+              'Bearer ${SharedPrefHelper().getString(key: SharedPrefKeys.accessToken)}';
+          return handler.next(options);
+        },
+        onError: (error, handler) {
+          if (error.response!= null) {
+            if (error.response!.statusCode == 401) {
+              SharedPrefHelper().clearPreferences();
+            }
+          }
+        },
       ),
     );
   }

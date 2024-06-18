@@ -11,6 +11,10 @@ class AuthQueries {
     return {
       'query':
       r''' 
+
+
+
+
       mutation login($email: String!,$password: String!){
         login(	email: $email, password: $password) {
           access_token
@@ -21,7 +25,7 @@ class AuthQueries {
       'variables': {
         'email': body.email,
         'password': body.password,
-      }
+      },
     };
   }
 

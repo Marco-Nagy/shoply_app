@@ -17,7 +17,7 @@ class AppRoutes {
         return BaseRoute(page: BlocProvider(
           create: (context) => sl<AuthBloc>(),
           child: const LoginScreen(),
-        ));
+        ),);
       case AppRoutes.signUp:
         return BaseRoute(page: const SignUpScreen());
       default:
