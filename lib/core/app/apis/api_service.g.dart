@@ -49,21 +49,20 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<UserRoleResponse> userRole(Map<String, dynamic> query) async {
+  Future<UserRoleResponse> userRole() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(query);
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<UserRoleResponse>(Options(
-      method: 'POST',
+      method: 'GET',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              '/graphql',
+              '/api/v1/auth/profile',
               queryParameters: queryParameters,
               data: _data,
             )
