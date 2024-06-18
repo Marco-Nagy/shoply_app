@@ -284,7 +284,7 @@ mixin _$AuthState<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(T data) success,
-    required TResult Function(ErrorHandler error) failure,
+    required TResult Function(String error) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -292,7 +292,7 @@ mixin _$AuthState<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(T data)? success,
-    TResult? Function(ErrorHandler error)? failure,
+    TResult? Function(String error)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -300,7 +300,7 @@ mixin _$AuthState<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(T data)? success,
-    TResult Function(ErrorHandler error)? failure,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -390,7 +390,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(T data) success,
-    required TResult Function(ErrorHandler error) failure,
+    required TResult Function(String error) failure,
   }) {
     return initial();
   }
@@ -401,7 +401,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(T data)? success,
-    TResult? Function(ErrorHandler error)? failure,
+    TResult? Function(String error)? failure,
   }) {
     return initial?.call();
   }
@@ -412,7 +412,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(T data)? success,
-    TResult Function(ErrorHandler error)? failure,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -504,7 +504,7 @@ class _$LoadingStateImpl<T> implements LoadingState<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(T data) success,
-    required TResult Function(ErrorHandler error) failure,
+    required TResult Function(String error) failure,
   }) {
     return loading();
   }
@@ -515,7 +515,7 @@ class _$LoadingStateImpl<T> implements LoadingState<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(T data)? success,
-    TResult? Function(ErrorHandler error)? failure,
+    TResult? Function(String error)? failure,
   }) {
     return loading?.call();
   }
@@ -526,7 +526,7 @@ class _$LoadingStateImpl<T> implements LoadingState<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(T data)? success,
-    TResult Function(ErrorHandler error)? failure,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -646,7 +646,7 @@ class _$SuccessStateImpl<T> implements SuccessState<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(T data) success,
-    required TResult Function(ErrorHandler error) failure,
+    required TResult Function(String error) failure,
   }) {
     return success(data);
   }
@@ -657,7 +657,7 @@ class _$SuccessStateImpl<T> implements SuccessState<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(T data)? success,
-    TResult? Function(ErrorHandler error)? failure,
+    TResult? Function(String error)? failure,
   }) {
     return success?.call(data);
   }
@@ -668,7 +668,7 @@ class _$SuccessStateImpl<T> implements SuccessState<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(T data)? success,
-    TResult Function(ErrorHandler error)? failure,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -730,7 +730,7 @@ abstract class _$$FailureStateImplCopyWith<T, $Res> {
           $Res Function(_$FailureStateImpl<T>) then) =
       __$$FailureStateImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({ErrorHandler error});
+  $Res call({String error});
 }
 
 /// @nodoc
@@ -744,13 +744,13 @@ class __$$FailureStateImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = freezed,
+    Object? error = null,
   }) {
     return _then(_$FailureStateImpl<T>(
-      error: freezed == error
+      error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
-              as ErrorHandler,
+              as String,
     ));
   }
 }
@@ -761,7 +761,7 @@ class _$FailureStateImpl<T> implements FailureState<T> {
   const _$FailureStateImpl({required this.error});
 
   @override
-  final ErrorHandler error;
+  final String error;
 
   @override
   String toString() {
@@ -773,12 +773,11 @@ class _$FailureStateImpl<T> implements FailureState<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FailureStateImpl<T> &&
-            const DeepCollectionEquality().equals(other.error, error));
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(runtimeType, error);
 
   @JsonKey(ignore: true)
   @override
@@ -793,7 +792,7 @@ class _$FailureStateImpl<T> implements FailureState<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(T data) success,
-    required TResult Function(ErrorHandler error) failure,
+    required TResult Function(String error) failure,
   }) {
     return failure(error);
   }
@@ -804,7 +803,7 @@ class _$FailureStateImpl<T> implements FailureState<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(T data)? success,
-    TResult? Function(ErrorHandler error)? failure,
+    TResult? Function(String error)? failure,
   }) {
     return failure?.call(error);
   }
@@ -815,7 +814,7 @@ class _$FailureStateImpl<T> implements FailureState<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(T data)? success,
-    TResult Function(ErrorHandler error)? failure,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -863,10 +862,10 @@ class _$FailureStateImpl<T> implements FailureState<T> {
 }
 
 abstract class FailureState<T> implements AuthState<T> {
-  const factory FailureState({required final ErrorHandler error}) =
+  const factory FailureState({required final String error}) =
       _$FailureStateImpl<T>;
 
-  ErrorHandler get error;
+  String get error;
   @JsonKey(ignore: true)
   _$$FailureStateImplCopyWith<T, _$FailureStateImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
