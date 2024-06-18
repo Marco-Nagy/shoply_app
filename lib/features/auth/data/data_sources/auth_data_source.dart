@@ -15,9 +15,8 @@ class AuthDataSource {
     return response;
   }
 
-  Future<UserRoleResponse> userRole(String id) async {
-    final response =
-        await _apiService.userRole(AuthQueries().userRoleQuery(id: id));
+  Future<UserRoleResponse> userRole() async {
+    final response = await _apiService.userRole();
     return response;
   }
 }
