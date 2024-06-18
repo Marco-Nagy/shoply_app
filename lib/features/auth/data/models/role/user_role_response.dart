@@ -4,27 +4,19 @@ part 'user_role_response.g.dart';
 
 @JsonSerializable()
 class UserRoleResponse {
-  UserRoleResponse(this.data);
+
+  UserRoleResponse(this.id, this.email, this.password, this.name, this.role,
+      this.avatar, this.creationAt, this.updatedAt,);
 
   factory UserRoleResponse.fromJson(Map<String, dynamic> json) =>
       _$UserRoleResponseFromJson(json);
-  UserRoleData? data;
-}
-
-@JsonSerializable()
-class UserRoleData {
-  UserRoleData(this.user);
-
-  factory UserRoleData.fromJson(Map<String, dynamic> json) =>
-      _$UserRoleDataFromJson(json);
-  UserRole? user;
-}
-
-@JsonSerializable()
-class UserRole {
-  UserRole(this.role);
-
-  factory UserRole.fromJson(Map<String, dynamic> json) =>
-      _$UserRoleFromJson(json);
+  int? id;
+  String? email;
+  String? password;
+  String? name;
   String? role;
+  String? avatar;
+  String? creationAt;
+  String? updatedAt;
+
 }
