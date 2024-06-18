@@ -27,7 +27,7 @@ class ShoplyApp extends StatelessWidget {
             sl<AppCubit>()
               ..changeTheme(
                   sharedMode: SharedPrefHelper()
-                      .getBoolean(key: SharedPrefKeys.themeMode)),
+                      .getBoolean(key: SharedPrefKeys.themeMode),),
             child: ScreenUtilInit(
               designSize: const Size(390, 844),
               minTextAdapt: true,
