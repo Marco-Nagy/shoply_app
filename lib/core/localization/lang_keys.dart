@@ -34,8 +34,10 @@ class LangKeys {
   static const String langCode = 'lang_code';
   static const String notifications = 'notifications';
   static const String subscribedToNotifications = 'subscribed_to_notifications';
-  static const String unsubscribedToNotifications =
-      'unsubscribed_to_notifications';
+  static const String unsubscribedToNotifications = 'unsubscribed_to_notifications';
   static const String viewAll = 'view_all';
   static const String noNetwork = 'no_network';
+  static const String camera = 'camera';
+  static const String gallery = 'gallery';
+  static const String remove = 'remove';
 }

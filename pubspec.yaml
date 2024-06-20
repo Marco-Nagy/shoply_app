@@ -62,6 +62,7 @@ dependencies:
   animations: ^2.0.11
   oktoast: ^3.4.0
   awesome_snackbar_content: ^0.1.3
+  font_awesome_flutter: ^10.7.0
 
 #  Image Picker
   image_picker: ^1.1.2
