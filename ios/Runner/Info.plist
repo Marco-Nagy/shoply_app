@@ -26,6 +26,10 @@
 		<true/>
 		<key>UILaunchStoryboardName</key>
 		<string>LaunchScreen</string>
+		<key>NSCameraUsageDescription</key>
+        <string>Access to the camera is required for taking photos.</string>
+        <key>NSPhotoLibraryUsageDescription</key>
+        <string>Access to the photo library is required for selecting photos.</string>
 		<key>UIMainStoryboardFile</key>
 		<string>Main</string>
 		<key>UISupportedInterfaceOrientations</key>
