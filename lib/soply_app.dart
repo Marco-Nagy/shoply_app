@@ -56,6 +56,7 @@ class ShoplyApp extends StatelessWidget {
                             },
                           ),
                         ),
+                    navigatorKey: sl<GlobalKey<NavigatorState>>(),
                     initialRoute: '/',
                     onGenerateRoute: AppRoutes.onGenerateRoute,
                   );
