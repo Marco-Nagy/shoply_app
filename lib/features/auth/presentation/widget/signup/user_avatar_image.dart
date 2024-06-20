@@ -15,6 +15,8 @@ import 'package:shoply/core/utils/animations/animate_do.dart';
 import 'package:shoply/core/utils/image_picker.dart';
 import 'package:shoply/core/utils/widgets/app_animated_icon.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
+import 'package:shoply/features/files/presentation/widgets/hero_photo_view_route_wrapper.dart';
+import 'package:shoply/features/files/presentation/widgets/image_menu.dart';
 
 class UserAvatarImage extends StatefulWidget {
   const UserAvatarImage({super.key});
@@ -61,24 +63,52 @@ class _UserAvatarImageState extends State<UserAvatarImage>
                             height: 90.0,
                             width: 90.0,
                           )
-                        : CircleAvatar(
-                            radius: 50,
-                            backgroundImage:  NetworkImage(
-                                  context.read<FileCubit>().getImageUrl)as ImageProvider,
+                        : InkWell(
+                            onTap: () {
+                              if (context
+                                  .read<FileCubit>()
+                                  .getImageUrl
+                                  .isNotEmpty) {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => BlocProvider(
+                                      create: (_) => sl<FileCubit>(),
+                                      child: HeroPhotoViewRouteWrapper(
+                                        imageProvider: NetworkImage(
+                                          context.watch<FileCubit>().getImageUrl,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                            },
+                            child: Hero(
+                              tag: 'someTag',
+                              child: CircleAvatar(
+                                radius: 50,
+                                backgroundImage: NetworkImage(
+                                        context.read<FileCubit>().getImageUrl)
+                                    as ImageProvider,
+                              ),
                             ),
                           ),
+                  ),
                   Positioned(
                     bottom: 0,
-                    right: -10,
-                    child: AppAnimatedIcon(
-                      size: 45,
-                      backGroundColor: Colors.transparent,
-                      iconColor: context.colors.bluePinkLight,
-                      animationController: animationController,
-                      iconAsset: DarkIcons.cam,
-                      onTap: () {
-                        context.read<FileCubit>().uploadFile();
-                      },
+                    right: -9,
+                    child: ImageMenu(
+                      child: AppAnimatedIcon(
+                        size: 45,
+                        backGroundColor: Colors.transparent,
+                        iconColor: context.colors.bluePinkLight,
+                        animationController: animationController,
+                        iconAsset: DarkIcons.cam,
+                        onTap: () {
+                          setState(() {});
+                        },
+                      ),
                     ),
                   ),
                 ],

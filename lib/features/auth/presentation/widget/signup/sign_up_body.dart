@@ -37,7 +37,7 @@ class SignUpBody extends StatelessWidget {
             verticalSpacing(20),
             //? SignUp form
             const SignUpFormField(),
-            verticalSpacing(20),
+            verticalSpacing(15),
             //? SignUp button
             CustomFadeInRight(
               duration: 400,
@@ -55,7 +55,7 @@ class SignUpBody extends StatelessWidget {
                 onTap: () {},
               ),
             ),
-            verticalSpacing(20),
+            verticalSpacing(15),
             //? go to sign up screen
             CustomFadeInDown(
               duration: 400,
