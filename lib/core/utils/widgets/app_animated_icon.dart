@@ -31,7 +31,7 @@ class _AppAnimatedIconState extends State<AppAnimatedIcon> {
       onTap: ()async {
         widget.onTap();
 
-        _animateIcon(widget.animationController);
+        // _animateIcon(widget.animationController);
       },
       child: Container(
         color: widget.backGroundColor ?? context.colors.mainColor,
@@ -51,18 +51,20 @@ class _AppAnimatedIconState extends State<AppAnimatedIcon> {
       ),
     );
   }
-}
 
-dynamic _animateIcon(AnimationController animation) {
-  if (animation.status == AnimationStatus.dismissed) {
-    animation
-      ..reset()
-      ..animateTo(
-        0.9,
-        duration: const Duration(milliseconds: 400),
-      );
-  } else {
-    animation..reverseDuration = const Duration(milliseconds: 300)
-    ..reverse();
+  dynamic _animateIcon(AnimationController animation) {
+    if (animation.status == AnimationStatus.dismissed) {
+      animation
+        ..reset()
+        ..animateTo(
+          0.9,
+          duration: const Duration(milliseconds: 400),
+        );
+    } else {
+      animation
+        ..reverseDuration = const Duration(milliseconds: 300)
+        ..reverse();
+    }
   }
 }
+
