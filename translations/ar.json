@@ -36,5 +36,8 @@
     "subscribed_to_notifications": "تم الاشتراك في إشعارات",
     "unsubscribed_to_notifications": "تم إلغاء الاشتراك في إشعارات",
     "view_all": "شاهد الكل",
-    "no_network": "لا يوجد اتصال"
+    "no_network": "لا يوجد اتصال",
+    "camera": "كاميرا",
+    "gallery": "معرض الصور",
+    "remove": "ازالة"
 }

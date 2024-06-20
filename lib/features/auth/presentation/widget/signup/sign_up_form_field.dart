@@ -38,7 +38,7 @@ class _SignUpFormFieldState extends State<SignUpFormField> {
                 return null;
               },),
         ),
-        verticalSpacing(25),
+        verticalSpacing(15),
         CustomFadeInLeft(
           duration: 400,
           child: AppTextFormField(
@@ -53,7 +53,7 @@ class _SignUpFormFieldState extends State<SignUpFormField> {
                 return null;
               },),
         ),
-        verticalSpacing(25),
+        verticalSpacing(15),
         CustomFadeInRight(
           duration: 400,
           child: AppTextFormField(
@@ -84,7 +84,7 @@ class _SignUpFormFieldState extends State<SignUpFormField> {
                 ),),
           ),
         ),
-        verticalSpacing(10),
+        verticalSpacing(15),
       ],
     );
   }
