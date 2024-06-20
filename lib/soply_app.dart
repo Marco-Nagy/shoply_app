@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,6 +8,7 @@ import 'package:shoply/core/app/app_cubit/app_cubit.dart';
 import 'package:shoply/core/app/connectivity_controller.dart';
 import 'package:shoply/core/app/env_variables.dart';
 import 'package:shoply/core/app/service_locator/injection_container.dart';
+import 'package:shoply/core/helpers/extension/mediaQueryValues.dart';
 import 'package:shoply/core/localization/app_localizations_setup.dart';
 import 'package:shoply/core/routes/app_routes.dart';
 import 'package:shoply/core/styles/theme/app_theme.dart';
@@ -29,7 +31,7 @@ class ShoplyApp extends StatelessWidget {
                   sharedMode: SharedPrefHelper()
                       .getBoolean(key: SharedPrefKeys.themeMode),),
             child: ScreenUtilInit(
-              designSize: const Size(390, 844),
+              designSize:kIsWeb?Size(context.width, context.height) :Size(390, 844),
               minTextAdapt: true,
               child: BlocBuilder<AppCubit, AppState>(
                 buildWhen: (previous, current) {

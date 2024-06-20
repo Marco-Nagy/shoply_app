@@ -36,5 +36,8 @@
     "subscribed_to_notifications": "Notifications have been subscribed",
     "unsubscribed_to_notifications": "Notifications have been unsubscribed",
     "view_all": "View all",
-    "no_network":"No Network"
+    "no_network":"No Network",
+    "camera": "Camera",
+    "gallery": "Gallery",
+    "remove": "Remove"
 }
