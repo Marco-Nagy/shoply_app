@@ -10,6 +10,7 @@ import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shoply/core/app/service_locator/injection_container.dart';
+import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/utils/image_picker.dart';
 import 'package:shoply/features/files/data/repositories/upload_file_repository.dart';
 
@@ -24,7 +25,7 @@ class FileCubit extends Cubit<FileState> {
   File? imageFile;
   final picker = ImagePicker();
   String getImageUrl = '';
-
+BuildContext myContext =sl<GlobalKey<NavigatorState>>().currentState!.context;
   Future<void> uploadFile() async {
     await getMobImage();
 
@@ -83,8 +84,8 @@ class FileCubit extends Cubit<FileState> {
       uiSettings: [
         AndroidUiSettings(
           toolbarTitle: 'Cropper',
-          toolbarColor: Colors.deepOrange,
-          toolbarWidgetColor: Colors.white,
+          toolbarColor: myContext.colors.mainColor,
+          toolbarWidgetColor: myContext.colors.textColor,
           initAspectRatio: CropAspectRatioPreset.square,
           lockAspectRatio: false,
           aspectRatioPresets: [
