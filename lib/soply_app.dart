@@ -59,7 +59,7 @@ class ShoplyApp extends StatelessWidget {
                           ),
                         ),
                     navigatorKey: sl<GlobalKey<NavigatorState>>(),
-                    initialRoute: '/',
+                    initialRoute: _getInitialRoute(),
                     onGenerateRoute: AppRoutes.onGenerateRoute,
                   );
                 },
@@ -74,5 +74,16 @@ class ShoplyApp extends StatelessWidget {
         }
       },
     );
+  }
+  String _getInitialRoute () {
+    return  SharedPrefHelper()
+        .getString(key: SharedPrefKeys.accessToken) !=
+        null
+        ? SharedPrefHelper()
+        .getString(key: SharedPrefKeys.userRole) ==
+        'admin'
+        ? AppRoutes.homeAdmin
+        : AppRoutes.homeAdmin
+        : AppRoutes.login;
   }
 }
