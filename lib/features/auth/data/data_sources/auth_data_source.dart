@@ -5,6 +5,8 @@ import 'package:shoply/core/app/Apis/graphQl/auth_queries.dart';
 import 'package:shoply/features/auth/data/models/login/login_request.dart';
 import 'package:shoply/features/auth/data/models/login/login_response.dart';
 import 'package:shoply/features/auth/data/models/role/user_role_response.dart';
+import 'package:shoply/features/auth/data/models/sign_up/signup_request.dart';
+import 'package:shoply/features/auth/data/models/sign_up/signup_response.dart';
 
 class AuthDataSource {
   AuthDataSource(this._apiService);
@@ -22,6 +24,12 @@ class AuthDataSource {
         SharedPrefHelper().getString(key: SharedPrefKeys.accessToken)??'';
     final response = await _apiService.userRole(
       'Bearer ${accessToken ?? 'Null Token'}',
+    );
+    return response;
+  }
+  Future<SignupResponse> signUp(SignupRequest body) async {
+    final response = await _apiService.signUp(
+      AuthQueries().signUpQuery(body: body),
     );
     return response;
   }
