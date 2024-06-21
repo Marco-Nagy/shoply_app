@@ -3,6 +3,8 @@ import 'package:shoply/features/auth/data/data_sources/auth_data_source.dart';
 import 'package:shoply/features/auth/data/models/login/login_request.dart';
 import 'package:shoply/features/auth/data/models/login/login_response.dart';
 import 'package:shoply/features/auth/data/models/role/user_role_response.dart';
+import 'package:shoply/features/auth/data/models/sign_up/signup_request.dart';
+import 'package:shoply/features/auth/data/models/sign_up/signup_response.dart';
 
 class AuthRepository {
   AuthRepository(this._authDataSource);
@@ -21,6 +23,14 @@ class AuthRepository {
   Future<ApiResult<UserRoleResponse>> userRole() async {
     try {
       final response = await _authDataSource.userRole();
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(error.toString());
+    }
+  }
+  Future<ApiResult<SignupResponse>> signUp(SignupRequest body) async {
+    try {
+      final response = await _authDataSource.signUp(body);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(error.toString());

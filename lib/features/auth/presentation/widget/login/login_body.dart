@@ -52,16 +52,24 @@ class LoginBody extends StatelessWidget {
                           .getString(key: SharedPrefKeys.userRole);
 
                       if (userRole == 'admin') {
-                        aweSnackBar(
+                        await Navigator.of(context).pushReplacementNamed(
+                          AppRoutes.homeAdmin,
+                          arguments: data,
+                        );
+                      await  aweSnackBar(
                           title: 'Success',
-                          msg: userRole.toString(),
+                          msg: context.translate(LangKeys.loggedSuccessfully),
                           context: context,
                           type: MessageTypeConst.success,
                         );
                       } else {
-                        aweSnackBar(
+                        await Navigator.of(context).pushReplacementNamed(
+                          AppRoutes.homeCustomer,
+                          arguments: data,
+                        );
+                      await  aweSnackBar(
                           title: 'Success',
-                          msg: userRole.toString(),
+                          msg:context.translate(LangKeys.loggedSuccessfully),
                           context: context,
                           type: MessageTypeConst.help,
                         );
@@ -70,7 +78,7 @@ class LoginBody extends StatelessWidget {
                     failure: (error) {
                       aweSnackBar(
                         title: 'Error',
-                        msg: error,
+                        msg: context.translate(LangKeys.loggedError),
                         context: context,
                         type: MessageTypeConst.failure,
                       );
@@ -102,14 +110,10 @@ class LoginBody extends StatelessWidget {
                           ),
                         ),
                         onTap: () async {
-                          if (context
-                              .read<AuthBloc>()
-                              .formKye
-                              .currentState!
+                          final _bloc = context.read<AuthBloc>();
+                          if (_bloc.formKye.currentState!
                               .validate()) {
-                            context
-                                .read<AuthBloc>()
-                                .add(const AuthEvent.login());
+                            _bloc.add(const AuthEvent.login());
                           }
                         },
                       );
