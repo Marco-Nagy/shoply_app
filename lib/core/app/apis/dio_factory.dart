@@ -28,6 +28,7 @@ class DioFactory {
         responseHeader: true,
         requestHeader: true,
         requestBody: true,
+        responseBody: true,
       ),
     );
     dio?.interceptors.add(
