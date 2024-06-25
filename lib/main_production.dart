@@ -13,16 +13,6 @@ import 'package:flutter/material.dart';
 import 'app_config.dart';
 import 'core/styles/theme/app_theme.dart';
 
-// Future<void> main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await EnvVariables.instance.init(envType: EnvTypeEnum.dev);
-//   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-//   await SharedPrefHelper().instantiatePreferences();
-//   await setupInjector();
-//   Bloc.observer = MyBlocObserver();
-//
-//   runApp(const ShoplyApp());
-// }
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
