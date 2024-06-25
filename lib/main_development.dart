@@ -38,7 +38,8 @@ Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.green,
     systemNavigationBarColor: Colors.green,
-  ));
+  ),
+  );
   var appConfig = AppConfig(
     appEnvironment: EnvTypeEnum.dev,
     appName: 'Shoply  Development',
