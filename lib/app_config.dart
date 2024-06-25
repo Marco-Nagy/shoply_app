@@ -24,6 +24,8 @@ class AppConfig extends InheritedWidget {
     return context.dependOnInheritedWidgetOfExactType();
   }
 
+  
+
   @override
   bool updateShouldNotify(InheritedWidget oldWidget) => false;
 }
