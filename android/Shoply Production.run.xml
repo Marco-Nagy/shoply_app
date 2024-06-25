@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Shoply Production" type="FlutterRunConfigurationType" factoryName="Flutter" editBeforeRun="true">
+    <option name="additionalArgs" value="--flavor production" />
+    <option name="filePath" value="$PROJECT_DIR$/lib/main_production.dart" />
+    <method v="2">
+      <option name="Gradle.BeforeRunTask" enabled="true" tasks="" externalProjectPath="" vmOptions="" scriptParameters="" />
+    </method>
+  </configuration>
+</component>
