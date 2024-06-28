@@ -5,19 +5,24 @@ default_platform(:android)
 platform :android do
   desc "Lane for Android Firebase App Distribution"
   lane :firebase_distribution do
-      sh "flutter clean"
-      sh "flutter build apk --release --flavor production -t lib/main_production.dart --no-tree-shake-icons"
+    # Clean and build the APK
+    sh "flutter clean"
+    sh "flutter build apk --release --flavor production -t lib/main_production.dart --no-tree-shake-icons"
+
+    # Define the APK path
+    apk_path = "../build/app/outputs/flutter-apk/app-production-release.apk"
+
+    # Distribute the APK to Firebase App Distribution
     firebase_app_distribution(
-      app: "1:961115936061:android:9565cf7e9f368acbf62154",
-      firebase_cli_token: "1//037MHpzF-pOGkCgYIARAAGAMSNwF-L9Irj3_1kJ33I3nqP24v_kFvYmrr9aB4BAgtH09pxDLhmaeHpBKzXFBBmtFbY0ojIcXHfug",
+      app: ENV['ANDROID_APP_ID'],
+      firebase_cli_token: ENV['FIREBASE_CLI_TOKEN'],
       android_artifact_type: "APK",
-      android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
-      testers:"marconbishay@gmail.com",
-      release_notes:"First Fastlane Firebase Distribution",
+      android_artifact_path: apk_path,
+      testers: "marconbishay@gmail.com",
+      release_notes: "First Fastlane Firebase Distribution",
     )
-
   end
-
+end
 #   desc "Submit a new Beta Build to Crashlytics Beta"
 #   lane :beta do
 #     gradle(task: "clean assembleRelease")
@@ -32,4 +37,3 @@ platform :android do
 #     gradle(task: "clean assembleRelease")
 #     upload_to_play_store
 #   end
-end
