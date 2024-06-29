@@ -27,7 +27,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.2.3"
+          ruby-version: "3.3.3"
           bundler-cache: true
           working-directory: android
 
@@ -37,4 +37,5 @@ jobs:
           FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}
         run: |
           bundle exec fastlane android firebase_distribution
-        working-directory: android
+        with:
+          working-directory: android
