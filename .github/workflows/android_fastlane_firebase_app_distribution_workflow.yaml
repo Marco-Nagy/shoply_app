@@ -10,30 +10,42 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Set up JDK 11
-      uses: actions/setup-java@v2
-      with:
-        distribution: 'adopt'
-        java-version: '11'
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '11'
 
-    - name: Install Flutter
-      uses: subosito/flutter-action@v2
-      with:
-        flutter-version: '3.22.1'  # Set your desired Flutter version
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.22.1'  # Set your desired Flutter version
 
-    - name: Install Fastlane
-      run: gem install fastlane
+      - name: Install Bundler
+        run: gem install bundler
 
-    - name: Install dependencies
-      run: flutter pub get
+      - name: Configure Bundler
+        working-directory: android
+        run: bundle config set --local path 'vendor/bundle'
 
-    - name: Run Fastlane lane for Firebase App Distribution
-      env:
-        FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}
-      run: |
-        cd android
-        fastlane firebase_distribution
-      
+      - name: Install Fastlane
+        working-directory: android
+        run: bundle install
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v2
+        with:
+          api-level: 34
+          build-tools: 35.0.1
+
+      - name: Build and distribute with Fastlane
+        working-directory: android
+        env:
+          FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}
+        run: bundle exec fastlane firebase_distribution
