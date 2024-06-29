@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup JDK 11
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v1
         with:
           java-version: '11'
           distribution: 'temurin'
@@ -19,6 +19,7 @@ jobs:
       - name: Install Flutter
         uses: subosito/flutter-action@v2
         with:
+          flutter-version: '3.22.1'
           channel: 'stable'
 
       - name: Setup Ruby
@@ -27,10 +28,15 @@ jobs:
           ruby-version: '3.2.0'
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           working-directory: android
+      - name: Install Fastlane
+        run: |
+          gem install bundler
+          bundle install
+          bundle exec fastlane install_plugins    
 
       - name: Build and Distribute App
         env:
-          FIREBASE_CLI_TOKEN: ${{secrets.FIREBASE_CLI_TOKEN}}
+          FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}
 
         run:
           bundle exec fastlane firebase_distribution
