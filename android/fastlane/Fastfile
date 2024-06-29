@@ -9,15 +9,12 @@ platform :android do
     sh "flutter clean"
     sh "flutter build apk --release --flavor production -t lib/main_production.dart --no-tree-shake-icons"
 
-    # Define the APK path
-    apk_path = "../build/app/outputs/flutter-apk/app-production-release.apk"
-
     # Distribute the APK to Firebase App Distribution
     firebase_app_distribution(
-      app: '1:961115936061:android:9565cf7e9f368acbf62154',
+      app: ENV['Android_App'],
       firebase_cli_token: ENV['FIREBASE_CLI_TOKEN'],
       android_artifact_type: "APK",
-      android_artifact_path: apk_path,
+      android_artifact_path: '../build/app/outputs/flutter-apk/app-production-release.apk',
       testers: "marconbishay@gmail.com",
       release_notes: "First Fastlane Firebase Distribution",
     )
