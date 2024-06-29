@@ -24,6 +24,11 @@ jobs:
         with:
           flutter-version: '3.22.1'  # Set your desired Flutter version
 
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3.3'  # Specify the Ruby version you need
+
       - name: Install Bundler
         run: gem install bundler
 
@@ -42,7 +47,10 @@ jobs:
         uses: android-actions/setup-android@v2
         with:
           api-level: 34
-          build-tools: 35.0.1
+          build-tools: 34.0.0
+
+      - name: Install Android platform-tools
+        run: sdkmanager "platform-tools" "platforms;android-34"
 
       - name: Build and distribute with Fastlane
         working-directory: android
