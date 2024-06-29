@@ -32,6 +32,7 @@ jobs:
       - name: Build and Distribute App
         env:
           FIREBASE_APP_ID: ${{ secrets.ANDROID_APP_ID }}
+          
         run:
           bundle exec fastlane android firebase_distribution
         working-directory: android
