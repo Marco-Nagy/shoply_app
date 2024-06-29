@@ -22,19 +22,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: stable
-
-      - name: Install Android SDK
-        run: |
-          sudo apt update
-          sudo apt install android-sdk
-
-      - name: Install ninja
-        run: |
-          sudo apt install ninja-build
-
-      - name: Install GTK 3.0 development libraries
-        run: |
-          sudo apt install libgtk-3-dev
+          flutter-version: '3.22.1'
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -43,9 +31,6 @@ jobs:
           bundler-cache: true
           working-directory: android
 
-      - name: Run flutter doctor
-        run: |
-          flutter doctor
 
       - name: Build and Distribute App
         env:
