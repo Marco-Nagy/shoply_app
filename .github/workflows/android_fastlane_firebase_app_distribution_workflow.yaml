@@ -28,7 +28,7 @@ jobs:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           working-directory: android
       - run: flutter pub get
-      - run: flutter build apk
+      - run: flutter build apk --release --flavor production -t lib/main_production.dart --no-tree-shake-icons
       - uses: actions/upload-artifact@v1
         with:
           name: release-apk
