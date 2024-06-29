@@ -28,7 +28,7 @@ jobs:
       #     bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       #     working-directory: android
       - run: flutter clean
-      - run: flutter --verbose build apk --release --flavor production -t lib/main_production.dart
+      - run: flutter build apk --release --flavor production -t lib/main_production.dart
       - uses: actions/upload-artifact@v1
         with:
           name: release-apk
