@@ -7,7 +7,7 @@ platform :android do
   lane :firebase_distribution do
     # Clean and build the APK
     sh "flutter clean"
-    sh "flutter build apk --release --flavor production -t lib/main_production.dart --no-tree-shake-icons"
+    sh "flutter build apk --release --flavor production -t lib/main_production.dart --no-tree-shake-icons --verbose"
 
     # Distribute the APK to Firebase App Distribution
     firebase_app_distribution(
