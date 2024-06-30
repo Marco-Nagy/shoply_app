@@ -12,9 +12,6 @@ import 'package:flutter/material.dart';
 
 import 'app_config.dart';
 
-
-
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EnvVariables.instance.init(envType: EnvTypeEnum.dev);
@@ -22,12 +19,13 @@ Future<void> main() async {
   await SharedPrefHelper().instantiatePreferences();
   await setupInjector();
   Bloc.observer = MyBlocObserver();
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Colors.green,
-    systemNavigationBarColor: Colors.green,
-  ),
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.green,
+      systemNavigationBarColor: Colors.green,
+    ),
   );
-  var appConfig = AppConfig(
+  final appConfig = AppConfig(
     appEnvironment: EnvTypeEnum.dev,
     appName: 'Shoply  Development',
     description: 'This is a Development version of Shoply',
