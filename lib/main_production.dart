@@ -13,7 +13,6 @@ import 'package:flutter/material.dart';
 import 'app_config.dart';
 import 'core/styles/theme/app_theme.dart';
 
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EnvVariables.instance.init(envType: EnvTypeEnum.prod);
@@ -21,10 +20,12 @@ Future<void> main() async {
   await SharedPrefHelper().instantiatePreferences();
   await setupInjector();
   Bloc.observer = MyBlocObserver();
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Colors.yellow,
-    systemNavigationBarColor: Colors.yellow,
-  ),);
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.yellow,
+      systemNavigationBarColor: Colors.yellow,
+    ),
+  );
 
   final appConfig = AppConfig(
     appEnvironment: EnvTypeEnum.prod,
@@ -35,4 +36,4 @@ Future<void> main() async {
   );
 
   runApp(appConfig);
-
+}
