@@ -14,21 +14,6 @@ import 'app_config.dart';
 import 'core/styles/theme/app_theme.dart';
 
 
-
-
-// Future<void> main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await EnvVariables.instance.init(envType: EnvTypeEnum.dev);
-//   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-//   await SharedPrefHelper().instantiatePreferences();
-//   await setupInjector();
-//   Bloc.observer = MyBlocObserver();
-//
-//   runApp(const ShoplyApp());
-// }
-
-
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EnvVariables.instance.init(envType: EnvTypeEnum.prod);
@@ -40,14 +25,14 @@ Future<void> main() async {
     statusBarColor: Colors.yellow,
     systemNavigationBarColor: Colors.yellow,
   ),);
+
   final appConfig = AppConfig(
     appEnvironment: EnvTypeEnum.prod,
     appName: 'Shoply',
     description: 'This is a Production version of Shoply',
     baseUrl: '',
-
     child: const ShoplyApp(),
   );
 
   runApp(appConfig);
-}
+

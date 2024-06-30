@@ -32,6 +32,7 @@ class ShoplyApp extends StatelessWidget {
                       .getBoolean(key: SharedPrefKeys.themeMode),),
             child: ScreenUtilInit(
               designSize:kIsWeb?Size(context.width, context.height) :const Size(390, 844),
+
               minTextAdapt: true,
               child: BlocBuilder<AppCubit, AppState>(
                 buildWhen: (previous, current) {

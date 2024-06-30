@@ -15,18 +15,6 @@ import 'app_config.dart';
 
 
 
-// Future<void> main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await EnvVariables.instance.init(envType: EnvTypeEnum.dev);
-//   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-//   await SharedPrefHelper().instantiatePreferences();
-//   await setupInjector();
-//   Bloc.observer = MyBlocObserver();
-//
-//   runApp(const ShoplyApp());
-// }
-
-
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,7 +26,6 @@ Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.green,
     systemNavigationBarColor: Colors.green,
-  ));
   var appConfig = AppConfig(
     appEnvironment: EnvTypeEnum.dev,
     appName: 'Shoply  Development',
