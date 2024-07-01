@@ -9,7 +9,6 @@ import 'package:shoply/core/app/service_locator/injection_container.dart';
 import 'package:shoply/firebase_options.dart';
 import 'package:shoply/soply_app.dart';
 import 'package:flutter/material.dart';
-
 import 'app_config.dart';
 
 Future<void> main() async {
@@ -19,13 +18,12 @@ Future<void> main() async {
   await SharedPrefHelper().instantiatePreferences();
   await setupInjector();
   Bloc.observer = MyBlocObserver();
-  SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      statusBarColor: Colors.green,
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.green,
       systemNavigationBarColor: Colors.green,
     ),
   );
-  final appConfig = AppConfig(
+  var appConfig = AppConfig(
     appEnvironment: EnvTypeEnum.dev,
     appName: 'Shoply  Development',
     description: 'This is a Development version of Shoply',
