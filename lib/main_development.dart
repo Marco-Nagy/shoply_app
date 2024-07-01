@@ -9,12 +9,7 @@ import 'package:shoply/core/app/service_locator/injection_container.dart';
 import 'package:shoply/firebase_options.dart';
 import 'package:shoply/soply_app.dart';
 import 'package:flutter/material.dart';
-
 import 'app_config.dart';
-
-
-
-
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
