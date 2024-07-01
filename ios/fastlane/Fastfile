@@ -1,0 +1,22 @@
+
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Lane for iOS Firebase App Distribution"
+  lane :firebase_distribution do
+    # Clean and build the IPA
+    sh "flutter clean"
+    sh "flutter build ios --release --flavor production -t lib/main_production.dart"
+    # Distribute the IPA to Firebase App Distribution
+    firebase_app_distribution(
+      app: '1:961115936061:ios:825907a0ab7343a2f62154',
+      firebase_cli_token: ENV['IOS_FIREBASE_CLI_TOKEN'],
+      ios_artifact_type: "IPA",
+      ios_artifact_path: '../build/ios/archive/Runner.ipa', # Adjust path as needed
+      testers: "marconbishay@gmail.com",
+      groups: "pre-tester",
+      release_notes: "First Fastlane Firebase Distribution for iOS",
+    )
+  end
+end
