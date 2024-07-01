@@ -35,4 +35,4 @@ Future<void> main() async {
   );
 
   runApp(appConfig);
-
+}
