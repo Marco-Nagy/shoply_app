@@ -53,9 +53,22 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
+    flavorDimensions "default"
+
+    productFlavors {
+        development {
+            dimension "default"
+            resValue "string", "app_name", "Shoply Developement"
+            applicationIdSuffix ".dev"
+        }
+        production {
+            dimension "default"
+            resValue "string", "app_name", "Shoply"
+        }
+    }
 
 
-    
+
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
