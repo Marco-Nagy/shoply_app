@@ -30,8 +30,10 @@ class _AppAnimatedIconState extends State<AppAnimatedIcon> {
     return InkWell(
       onTap: ()async {
         widget.onTap();
+setState(() {
+  _animateIcon(widget.animationController);
+});
 
-        // _animateIcon(widget.animationController);
       },
       child: Container(
         color: widget.backGroundColor ?? context.colors.mainColor,
