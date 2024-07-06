@@ -1,4 +1,9 @@
+import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:shoply/core/app/Apis/api_result.dart';
+import 'package:shoply/core/app/apis/errors/error_handler.dart';
+import 'package:shoply/core/helpers/extension/my_context.dart';
+import 'package:shoply/core/localization/lang_keys.dart';
 import 'package:shoply/features/auth/data/data_sources/auth_data_source.dart';
 import 'package:shoply/features/auth/data/models/login/login_request.dart';
 import 'package:shoply/features/auth/data/models/login/login_response.dart';
@@ -14,26 +19,29 @@ class AuthRepository {
   Future<ApiResult<LoginResponse>> login(LoginRequest body) async {
     try {
       final response = await _authDataSource.login(body);
-      return ApiResult.success(response);
+      if (response.data != null) {
+        return ApiResult.success(response);
+      }
+      debugPrint('errorResponse ${response.errorResponse.toString()}');
+      return ApiResult.failure(
+          ServerFailure(response.errorResponse!.first.message));
+    } on DioException catch (dioError) {
+      return ApiResult.failure(ServerFailure.fromDioException(dioError));
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ServerFailure(error.toString()));
     }
   }
 
-  Future<ApiResult<UserRoleResponse>> userRole() async {
-    try {
-      final response = await _authDataSource.userRole();
-      return ApiResult.success(response);
-    } catch (error) {
-      return ApiResult.failure(error.toString());
-    }
+  Future<UserRoleResponse> userRole() async {
+    final response = await _authDataSource.userRole();
+    return response;
   }
   Future<ApiResult<SignupResponse>> signUp(SignupRequest body) async {
     try {
       final response = await _authDataSource.signUp(body);
       return ApiResult.success(response);
     } catch (error) {
-      return ApiResult.failure(error.toString());
+      return ApiResult.failure(ServerFailure(error.toString()));
     }
   }
 }

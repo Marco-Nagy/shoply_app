@@ -48,41 +48,43 @@ class AuthBloc extends Bloc<AuthEvent, AuthState<dynamic>> {
         );
 
         /// call userProfile method to get User Role
-        await getUserRole();
-        emit(AuthState.success(success));
+      final userRole=  await _authRepository.userRole();
+
+        emit(AuthState.success(userRole: userRole.role!));
       },
       failure: (error) {
-        emit(AuthState.failure(error: error));
+        debugPrint('error.errorMsg ${error.errorMsg}');
+        emit(AuthState.failure(error: error.errorMsg));
       },
     );
   }
 
-  Future<void> getUserRole() async {
-    emit(const AuthState.loading());
-
-    /// call userRole method
-    final result = await _authRepository.userRole();
-    result.when(
-      success: (UserRoleResponse success) {
-        /// save user id if get profile successful
-        SharedPrefHelper().setInt(
-          key: SharedPrefKeys.userId,
-          intValue: success.id ?? 0,
-        );
-        SharedPrefHelper().setString(
-          key: SharedPrefKeys.userRole,
-          stringValue: success.role!,
-        );
-        if (kDebugMode) {
-          print('SharedPrefKeys.userRole  ${success.role} ');
-        }
-        emit(AuthState.success(success));
-      },
-      failure: (error) {
-        emit(AuthState.failure(error: error));
-      },
-    );
-  }
+  // Future<void> getUserRole() async {
+  //   emit(const AuthState.loading());
+  //
+  //   /// call userRole method
+  //   final result = await _authRepository.userRole();
+  //   result.when(
+  //     success: (UserRoleResponse success) {
+  //       /// save user id if get profile successful
+  //       SharedPrefHelper().setInt(
+  //         key: SharedPrefKeys.userId,
+  //         intValue: success.id ?? 0,
+  //       );
+  //       SharedPrefHelper().setString(
+  //         key: SharedPrefKeys.userRole,
+  //         stringValue: success.role!,
+  //       );
+  //       if (kDebugMode) {
+  //         print('SharedPrefKeys.userRole  ${success.role} ');
+  //       }
+  //       emit(AuthState.success(success));
+  //     },
+  //     failure: (error) {
+  //       emit(AuthState.failure(error: error));
+  //     },
+  //   );
+  // }
 
   Future<FutureOr<void>> _signUp(
       SignUpEvent event, Emitter<AuthState> emit,) async {
@@ -102,7 +104,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState<dynamic>> {
         add(const AuthEvent.login());
       },
       failure: (error) {
-        emit(AuthState.failure(error: error));
+        emit(AuthState.failure(error: error.errorMsg));
       },
     );
   }

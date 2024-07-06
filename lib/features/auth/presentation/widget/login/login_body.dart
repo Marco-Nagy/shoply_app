@@ -45,37 +45,29 @@ class LoginBody extends StatelessWidget {
             CustomFadeInRight(
               duration: 400,
               child: BlocConsumer<AuthBloc, AuthState<dynamic>>(
-                listener: (context, state) async {
-                  await state.whenOrNull(
-                    success: (data) async {
-                      final userRole = SharedPrefHelper()
-                          .getString(key: SharedPrefKeys.userRole);
-
+                listener: (context, state)  {
+                   state.whenOrNull(
+                    success: (userRole) async {
+                        aweSnackBar(
+                        title: 'Success',
+                        msg: context.translate(LangKeys.loggedSuccessfully),
+                        context: context,
+                        type: MessageTypeConst.success,
+                      );
                       if (userRole == 'admin') {
-                        await Navigator.of(context).pushReplacementNamed(
+                       context.pushReplacementNamed(
                           AppRoutes.homeAdmin,
-                          arguments: data,
                         );
-                      await  aweSnackBar(
-                          title: 'Success',
-                          msg: context.translate(LangKeys.loggedSuccessfully),
-                          context: context,
-                          type: MessageTypeConst.success,
-                        );
+
                       } else {
-                        await Navigator.of(context).pushReplacementNamed(
+                        context.pushReplacementNamed(
                           AppRoutes.homeCustomer,
-                          arguments: data,
                         );
-                      await  aweSnackBar(
-                          title: 'Success',
-                          msg:context.translate(LangKeys.loggedSuccessfully),
-                          context: context,
-                          type: MessageTypeConst.help,
-                        );
+
                       }
                     },
                     failure: (error) {
+                      debugPrint('error.errorMsg $error');
                       aweSnackBar(
                         title: 'Error',
                         msg: context.translate(LangKeys.loggedError),
