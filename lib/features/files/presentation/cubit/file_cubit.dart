@@ -59,7 +59,7 @@ class FileCubit extends Cubit<FileState<dynamic>> {
         debugPrint('error ==>> $error');
         emit(
             FileState.failure(
-              error: error,
+              error: error.errorMsg,
             ),
           );
         },

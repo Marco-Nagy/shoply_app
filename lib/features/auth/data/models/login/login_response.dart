@@ -1,15 +1,18 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:shoply/core/app/apis/errors/error_model.dart';
 
 part 'login_response.g.dart';
 
 @JsonSerializable()
 class LoginResponse {
 
-  LoginResponse(this.data);
+  LoginResponse(this.data,this.errorResponse);
 
   factory LoginResponse.fromJson(Map<String, dynamic> json) =>
       _$LoginResponseFromJson(json);
   LoginResponseData? data;
+  @JsonKey(name: 'errors')
+  List<ErrorModel>? errorResponse;
 
 }
 
@@ -18,9 +21,9 @@ class LoginResponseData {
 
   LoginResponseData(this.login);
 
-  factory LoginResponseData.fromJson(Map<String, dynamic> json) =>
-      _$LoginResponseDataFromJson(json);
+  factory LoginResponseData.fromJson(Map<String, dynamic> json) => _$LoginResponseDataFromJson(json);
   LoginResponseDataLogin? login;
+
 }
 
 @JsonSerializable()
