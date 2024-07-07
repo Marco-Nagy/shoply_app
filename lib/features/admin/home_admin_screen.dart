@@ -4,8 +4,8 @@ import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/localization/lang_keys.dart';
 import 'package:shoply/core/styles/app_images.dart';
 import 'package:shoply/core/utils/admin_drawer_list.dart';
-import 'package:shoply/features/admin/presentation/widgets/admin_app_bar.dart';
-import 'dashboard_screen.dart';
+import 'package:shoply/core/utils/admin_app_bar.dart';
+import 'dashboard/presentation/screens/dashboard_screen.dart';
 
 class HomeAdminScreen extends StatefulWidget {
   const HomeAdminScreen({super.key});

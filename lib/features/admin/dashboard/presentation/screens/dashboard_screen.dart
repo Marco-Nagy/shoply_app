@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
-import 'package:shoply/features/admin/presentation/widgets/admin_app_bar.dart';
+import 'package:shoply/core/utils/admin_app_bar.dart';
+import '../widgets/dashboard_body.dart';
 
-class AddCategoriesScreen extends StatelessWidget {
-  const AddCategoriesScreen({super.key});
+class DashboardScreen extends StatelessWidget {
+  const DashboardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AdminAppBar(
-        title: 'Add Categories',
+        title: 'Dashboard',
         isMain: true,
         backgroundColor: context.colors.bluePinkDark,
       ),
-      body: const Center(
-        child: Text('Add Categories'),
-      ),
+      body: const DashboardBody(),
     );
   }
 }

@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  internet_connection_checker: any
   flutter:
     sdk: flutter
 
@@ -64,6 +65,7 @@ dependencies:
   awesome_snackbar_content: ^0.1.3
   font_awesome_flutter: ^10.7.0
   flutter_zoom_drawer: ^3.2.0
+  shimmer: ^3.0.0
 
 #  Image Picker
   image_picker: ^1.1.2
@@ -160,4 +162,3 @@ flutter:
           weight: 500
         - asset: assets/fonts/english/poppins/Poppins-Regular.ttf
           weight: 400
-

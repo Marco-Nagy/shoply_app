@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/utils/widgets/custom_dialogs.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
-import 'package:shoply/features/admin/presentation/screens/add_categories_screen.dart';
-import 'package:shoply/features/admin/presentation/screens/add_notification_screen.dart';
-import 'package:shoply/features/admin/presentation/screens/add_products_screen.dart';
-import 'package:shoply/features/admin/presentation/screens/dashboard_screen.dart';
-import 'package:shoply/features/admin/presentation/screens/users_screen.dart';
+import 'package:shoply/features/admin/categories/presentation/screens/add_categories_screen.dart';
+import 'package:shoply/features/admin/notifications/presentation/screens/add_notification_screen.dart';
+import 'package:shoply/features/admin/products/presentation/screens/add_products_screen.dart';
+import 'package:shoply/features/admin/dashboard/presentation/screens/dashboard_screen.dart';
 
+import '../../features/admin/users/presentation/screens/users_screen.dart';
 import 'app_logout.dart';
 
 List<DrawerItemModel> adminDrawerList(BuildContext context) {
