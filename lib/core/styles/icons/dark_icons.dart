@@ -3,4 +3,6 @@ class AppIcons {
   static const cam ='assets/images/json/cam.json';
   static const trash ='lib/core/styles/icons/dark_icons.dart';
   static const menu ='assets/images/json/hamburger_menu.json';
+
+
 }

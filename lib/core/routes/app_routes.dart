@@ -7,7 +7,7 @@ import 'package:shoply/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:shoply/features/auth/presentation/screens/login_screen.dart';
 import 'package:shoply/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
-import 'package:shoply/features/admin/presentation/screens/home_admin_screen.dart';
+import 'package:shoply/features/admin/home_admin_screen.dart';
 import 'package:shoply/features/home_customer_screen.dart';
 
 class AppRoutes {
