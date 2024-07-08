@@ -22,7 +22,6 @@ class AuthRepository {
       if (response.data != null) {
         return ApiResult.success(response);
       }
-      debugPrint('errorResponse ${response.errorResponse.toString()}');
       return ApiResult.failure(
           ServerFailure(response.errorResponse!.first.message));
     } on DioException catch (dioError) {
