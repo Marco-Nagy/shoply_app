@@ -21,6 +21,7 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
 
   FutureOr<void> _getTotalProducts(
       GetProductsEvent event, Emitter<DashboardState> emit) async {
+    emit(const DashboardState.loading());
     final result = await _dashboardRepo.getTotalProducts();
     result.when(
       success: (data) {
@@ -37,6 +38,8 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
 
   Future<FutureOr<void>> _getTotalCategories(
       GetCategoriesEvent event, Emitter<DashboardState> emit) async {
+    emit(const DashboardState.loading());
+
     final result = await _dashboardRepo.getTotalCategories();
     result.when(
       success: (data) {
@@ -53,6 +56,8 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
 
   FutureOr<void> _getTotalUsers(
       GetUsersEvent event, Emitter<DashboardState> emit) async {
+    emit(const DashboardState.loading());
+
     final result = await _dashboardRepo.getTotalUsers();
     result.when(
       success: (data) {
