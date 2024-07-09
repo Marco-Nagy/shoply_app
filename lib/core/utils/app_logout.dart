@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:shoply/core/Services/shared_preference/shared_pref_keys.dart';
 import 'package:shoply/core/Services/shared_preference/shared_preference_helper.dart';
-import 'package:shoply/core/app/service_locator/injection_container.dart';
+import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/core/helpers/extension/navigations.dart';
 import 'package:shoply/core/routes/app_routes.dart';
 

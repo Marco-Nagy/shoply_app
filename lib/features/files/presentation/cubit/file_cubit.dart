@@ -9,7 +9,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:shoply/core/app/service_locator/injection_container.dart';
+import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/utils/image_picker.dart';
 import 'package:shoply/features/files/data/repositories/upload_file_repository.dart';

@@ -7,17 +7,10 @@ import 'package:shoply/core/utils/loading/loading_shimmer.dart';
 import 'package:shoply/core/utils/widgets/custom_linear_container_admin.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
 
-class DashboardContainer extends StatelessWidget {
-  const DashboardContainer({
+class DashboardContainerLoading extends StatelessWidget {
+  const DashboardContainerLoading({
     super.key,
-    required this.title,
-    required this.value,
-    required this.image,
   });
-
-  final String title;
-  final String value;
-  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -33,24 +26,20 @@ class DashboardContainer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TextApp(
-                  text: title,
-                  style: MyFonts.styleBold700_24
-                      .copyWith(color: context.colors.textColor),
+                LoadingShimmer(
+                  height: 30.h,
+                  width: 160.h,
                 ),
-                TextApp(
-                  text: value,
-                  style: MyFonts.styleBold700_24
-                      .copyWith(color: context.colors.textColor),
+                LoadingShimmer(
+                  height: 30.h,
+                  width: 100.h,
                 ),
               ],
             ),
-              Image.asset(
-                image,
-                height: 90.h,
-                width: 90.w,
-              ),
-
+            LoadingShimmer(
+              height: 90.h,
+              width: 90.h,
+            ),
           ],
         ),
       ),

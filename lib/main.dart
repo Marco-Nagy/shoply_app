@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:shoply/core/Services/shared_preference/shared_preference_helper.dart';
 import 'package:shoply/core/app/abb_bloc_observer.dart';
 import 'package:shoply/core/app/env_variables.dart';
-import 'package:shoply/core/app/service_locator/injection_container.dart';
+import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/firebase_options.dart';
 import 'package:shoply/soply_app.dart';
 
