@@ -7,7 +7,7 @@ import 'package:shoply/core/Services/shared_preference/shared_preference_helper.
 import 'package:shoply/core/app/app_cubit/app_cubit.dart';
 import 'package:shoply/core/app/connectivity_controller.dart';
 import 'package:shoply/core/app/env_variables.dart';
-import 'package:shoply/core/app/service_locator/injection_container.dart';
+import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/core/helpers/extension/mediaQueryValues.dart';
 import 'package:shoply/core/localization/app_localizations_setup.dart';
 import 'package:shoply/core/routes/app_routes.dart';

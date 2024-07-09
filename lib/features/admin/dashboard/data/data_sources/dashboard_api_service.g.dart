@@ -22,15 +22,15 @@ class _DashboardApiService implements DashboardApiService {
 
   @override
   Future<TotalProductsResponse> getTotalProducts(
-      Map<String, dynamic> mutation) async {
+      Map<String, dynamic> query) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(mutation);
+    _data.addAll(query);
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<TotalProductsResponse>(Options(
-      method: 'GET',
+      method: 'POST',
       headers: _headers,
       extra: _extra,
     )
@@ -51,15 +51,15 @@ class _DashboardApiService implements DashboardApiService {
 
   @override
   Future<TotalCategoriesResponse> getTotalCategories(
-      Map<String, dynamic> mutation) async {
+      Map<String, dynamic> query) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(mutation);
+    _data.addAll(query);
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<TotalCategoriesResponse>(Options(
-      method: 'GET',
+      method: 'POST',
       headers: _headers,
       extra: _extra,
     )
@@ -79,16 +79,15 @@ class _DashboardApiService implements DashboardApiService {
   }
 
   @override
-  Future<TotalUsersResponse> getTotalUsers(
-      Map<String, dynamic> mutation) async {
+  Future<TotalUsersResponse> getTotalUsers(Map<String, dynamic> query) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(mutation);
+    _data.addAll(query);
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<TotalUsersResponse>(Options(
-      method: 'GET',
+      method: 'POST',
       headers: _headers,
       extra: _extra,
     )

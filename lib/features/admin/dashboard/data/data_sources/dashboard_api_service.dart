@@ -9,11 +9,11 @@ part 'dashboard_api_service.g.dart';
 @RestApi(baseUrl: ApiConst.baseUrl)
 abstract class DashboardApiService {
   factory DashboardApiService (Dio dio,{String baseUrl}) = _DashboardApiService;
-  @GET(ApiConst.graphql)
-  Future<TotalProductsResponse> getTotalProducts(@Body() Map<String, dynamic> mutation);
-  @GET(ApiConst.graphql)
-  Future<TotalCategoriesResponse> getTotalCategories(@Body() Map<String, dynamic> mutation);
-  @GET(ApiConst.graphql)
-  Future<TotalUsersResponse> getTotalUsers(@Body() Map<String, dynamic> mutation);
+  @POST(ApiConst.graphql)
+  Future<TotalProductsResponse> getTotalProducts(@Body() Map<String, dynamic> query);
+  @POST(ApiConst.graphql)
+  Future<TotalCategoriesResponse> getTotalCategories(@Body() Map<String, dynamic> query);
+  @POST(ApiConst.graphql)
+  Future<TotalUsersResponse> getTotalUsers(@Body() Map<String, dynamic> query);
 
 }
