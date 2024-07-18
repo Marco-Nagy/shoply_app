@@ -32,7 +32,7 @@ class FileCubit extends Cubit<FileState<dynamic>> {
 
   final imageHelper = ImageHelper();
 
-  Future<void> uploadFile({bool isOpenCam = false}) async {
+  Future<void> uploadFile({bool isOpenCam = false,bool isCircle= true}) async {
     final file = await imageHelper.imagePicker(
       source: isOpenCam ? ImageSource.camera : ImageSource.gallery,
     );
@@ -40,7 +40,7 @@ class FileCubit extends Cubit<FileState<dynamic>> {
     if (file == null) return;
     final croppedFile = await imageHelper.imageCropper(
       file: file,
-      cropStyle: CropStyle.circle,
+      cropStyle:isCircle? CropStyle.circle: CropStyle.rectangle,
     );
     if (croppedFile != null) {
       imageFile = XFile(croppedFile.path);

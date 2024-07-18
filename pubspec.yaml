@@ -66,8 +66,12 @@ dependencies:
   font_awesome_flutter: ^10.7.0
   flutter_zoom_drawer: ^3.2.0
   shimmer: ^3.0.0
+  flutter_swipe_action_cell: ^3.1.3
+  vibration: ^1.9.0
+  cached_network_image: ^3.3.1
 
-#  Image Picker
+
+  #  Image Picker
   image_picker: ^1.1.2
   image_cropper: ^7.0.5
   permission_handler: ^11.3.1

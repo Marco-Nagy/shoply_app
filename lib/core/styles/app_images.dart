@@ -7,4 +7,5 @@ class AppImages{
   static const categories ='assets/images/admin/categories_drawer.png';
   static const products ='assets/images/admin/products_drawer.png';
   static const users ='assets/images/admin/users_drawer.png';
+  static const gallery ='assets/images/admin/gallery_ico.png';
 }

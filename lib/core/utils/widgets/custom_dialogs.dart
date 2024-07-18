@@ -5,7 +5,7 @@ import 'package:shoply/core/helpers/extension/navigations.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
 
-import 'custom_button.dart';
+import 'buttons/custom_button.dart';
 
 class CustomDialog {
   const CustomDialog._();

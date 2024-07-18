@@ -56,6 +56,7 @@ class CustomButton extends StatelessWidget {
 
           ),
           text: text,
+          maxLines: 1,
           textAlign: textAlign,
         ),
       ),

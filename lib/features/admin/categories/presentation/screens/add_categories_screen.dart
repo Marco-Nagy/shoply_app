@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/utils/admin_app_bar.dart';
+import 'package:shoply/features/admin/categories/presentation/widget/add_categories_body.dart';
 
 class AddCategoriesScreen extends StatelessWidget {
   const AddCategoriesScreen({super.key});
@@ -13,9 +14,7 @@ class AddCategoriesScreen extends StatelessWidget {
         isMain: true,
         backgroundColor: context.colors.bluePinkDark,
       ),
-      body: const Center(
-        child: Text('Add Categories'),
-      ),
+      body: const AddCategoriesBody(),
     );
   }
 }
