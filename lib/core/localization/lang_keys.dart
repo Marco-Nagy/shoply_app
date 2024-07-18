@@ -40,4 +40,5 @@ class LangKeys {
   static const String camera = 'camera';
   static const String gallery = 'gallery';
   static const String remove = 'remove';
+  static const String categoryName = 'category_name';
 }

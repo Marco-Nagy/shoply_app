@@ -63,7 +63,7 @@ class _UserAvatarImageState extends State<UserAvatarImage>
                   Padding(
                     padding:  const EdgeInsets.all(8),
                     child: cubit.getImageUrl.isEmpty
-                        ?  CircleAvatar(
+                        ?  const CircleAvatar(
                     radius: 50,
                     backgroundImage: AssetImage(
                       AppImages.userAvatar,
