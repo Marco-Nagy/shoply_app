@@ -81,6 +81,7 @@ class _UserAvatarImageState extends State<UserAvatarImage>
                                     builder: (_) => BlocProvider(
                                       create: (_) => sl<FileCubit>(),
                                       child: HeroPhotoViewRouteWrapper(
+                                        tag:cubit.getImageUrl ,
                                         imageProvider: NetworkImage(
                                           cubit
                                               .getImageUrl,
@@ -92,7 +93,7 @@ class _UserAvatarImageState extends State<UserAvatarImage>
                               }
                             },
                             child: Hero(
-                              tag: 'someTag',
+                              tag: cubit.getImageUrl,
                               child: CircleAvatar(
                                 radius: 50,
                                 backgroundImage: NetworkImage(

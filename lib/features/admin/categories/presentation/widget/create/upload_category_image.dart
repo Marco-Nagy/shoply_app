@@ -6,16 +6,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/styles/app_images.dart';
-import 'package:shoply/core/styles/icons/dark_icons.dart';
 import 'package:shoply/core/utils/animations/animate_do.dart';
-import 'package:shoply/core/utils/widgets/app_animated_icon.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
 import 'package:shoply/features/files/presentation/widgets/hero_photo_view_route_wrapper.dart';
-import 'package:shoply/features/files/presentation/widgets/image_menu.dart';
 
 class UploadCategoryImage extends StatefulWidget {
-  const UploadCategoryImage({super.key});
-
+  const UploadCategoryImage( {super.key, this.uploadCategoryImage});
+final String? uploadCategoryImage;
   @override
   _UploadCategoryImageState createState() => _UploadCategoryImageState();
 }
@@ -26,6 +23,13 @@ class _UploadCategoryImageState extends State<UploadCategoryImage>
 
   @override
   void initState() {
+    final cubit = context.read<FileCubit>();
+
+    setState(() {
+      if (widget.uploadCategoryImage!=null) {
+        cubit.getImageUrl= widget.uploadCategoryImage!;
+      }
+    });
     animationController = AnimationController(vsync: this);
     super.initState();
   }
@@ -103,6 +107,7 @@ class _UploadCategoryImageState extends State<UploadCategoryImage>
                                     builder: (_) => BlocProvider(
                                       create: (_) => sl<FileCubit>(),
                                       child: HeroPhotoViewRouteWrapper(
+                                        tag: cubit.getImageUrl,
                                         imageProvider: NetworkImage(
                                           cubit.getImageUrl,
                                         ),
@@ -113,7 +118,7 @@ class _UploadCategoryImageState extends State<UploadCategoryImage>
                               }
                             },
                             child: Hero(
-                                tag: 'someTag',
+                                tag: cubit.getImageUrl,
                                 child: Container(
                                   height: 180.h,
                                   width: double.infinity,

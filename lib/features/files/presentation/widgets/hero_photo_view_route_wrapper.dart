@@ -8,12 +8,14 @@ class HeroPhotoViewRouteWrapper extends StatelessWidget {
     this.backgroundDecoration,
     this.minScale,
     this.maxScale,
+    required this.tag,
   });
 
   final ImageProvider imageProvider;
   final BoxDecoration? backgroundDecoration;
   final dynamic minScale;
   final dynamic maxScale;
+  final String tag;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class HeroPhotoViewRouteWrapper extends StatelessWidget {
             backgroundDecoration: backgroundDecoration,
             minScale: minScale,
             maxScale: maxScale,
-            heroAttributes: const PhotoViewHeroAttributes(tag: 'someTag'),
+            heroAttributes: PhotoViewHeroAttributes(tag: tag),
           ),
         );
       },
