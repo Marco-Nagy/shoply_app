@@ -4,6 +4,10 @@ import 'package:get_it/get_it.dart';
 import 'package:shoply/core/app/Apis/api_service.dart';
 import 'package:shoply/core/app/Apis/dio_factory.dart';
 import 'package:shoply/core/app/app_cubit/app_cubit.dart';
+import 'package:shoply/features/admin/categories/data/data_source/admin_categories_api_service.dart';
+import 'package:shoply/features/admin/categories/data/data_source/admin_categries_data_source.dart';
+import 'package:shoply/features/admin/categories/data/repository/admin_categories_repository.dart';
+import 'package:shoply/features/admin/categories/presentation/bloc/admin_categories_bloc.dart';
 import 'package:shoply/features/admin/dashboard/data/data_sources/dashboard_api_service.dart';
 import 'package:shoply/features/auth/data/data_sources/auth_data_source.dart';
 import 'package:shoply/features/auth/data/repositories/auth_repository.dart';
@@ -11,17 +15,17 @@ import 'package:shoply/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:shoply/features/files/data/data_sources/upload_file_data_source.dart';
 import 'package:shoply/features/files/data/repositories/upload_file_repository.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
-
-import '../../../features/admin/dashboard/data/data_sources/dashboard_data_source.dart';
-import '../../../features/admin/dashboard/data/repositories/dashboard_repository.dart';
-import '../../../features/admin/dashboard/presentation/cubit/dashboard_bloc.dart';
+import 'package:shoply/features/admin/dashboard/data/data_sources/dashboard_data_source.dart';
+import 'package:shoply/features/admin/dashboard/data/repositories/dashboard_repository.dart';
+import 'package:shoply/features/admin/dashboard/presentation/cubit/dashboard_bloc.dart';
 
 final sl = GetIt.instance;
 
 Future<void> setupInjector() async {
   await _initCore();
   await _initAuth();
-    await _initDashboard();
+  await _initDashboard();
+  await _initAdminCategories();
 }
 
 Future<void> _initCore() async {
@@ -53,4 +57,16 @@ Future<void> _initDashboard() async {
     ..registerLazySingleton<DashboardRepository>(() => DashboardRepository(sl()))
     ..registerLazySingleton<DashboardDataSource>(() => DashboardDataSource(sl()))
     ..registerLazySingleton<DashboardApiService>(() => DashboardApiService(dio));
+}
+
+Future<void> _initAdminCategories() async {
+  final dio = DioFactory.getInstance();
+  sl
+    ..registerFactory(() => AdminCategoriesBloc(sl()))
+    ..registerLazySingleton<AdminCategoriesRepository>(
+        () => AdminCategoriesRepository(sl()))
+    ..registerLazySingleton<AdminCategoriesDataSource>(
+        () => AdminCategoriesDataSource(sl()))
+    ..registerLazySingleton<AdminCategoriesApiService>(
+        () => AdminCategoriesApiService(dio));
 }
