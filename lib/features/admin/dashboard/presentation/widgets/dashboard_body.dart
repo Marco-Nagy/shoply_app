@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shoply/core/localization/lang_keys.dart';
 import 'package:shoply/core/styles/app_images.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
@@ -23,8 +22,6 @@ class DashboardBody extends StatelessWidget {
               context.read<DashboardBloc>().add( const DashboardEvent.getProductsEvent());
                context.read<DashboardBloc>().add(const DashboardEvent.getCategoriesEvent());
                context.read<DashboardBloc>().add(const DashboardEvent.getUsersEvent());
-
-
             },
             child: ListView(
               children: [

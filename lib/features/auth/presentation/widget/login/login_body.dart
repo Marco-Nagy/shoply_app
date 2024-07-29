@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shoply/core/Services/shared_preference/shared_pref_keys.dart';
-import 'package:shoply/core/Services/shared_preference/shared_preference_helper.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/helpers/extension/navigations.dart';
 import 'package:shoply/core/localization/lang_keys.dart';
@@ -102,10 +100,10 @@ class LoginBody extends StatelessWidget {
                           ),
                         ),
                         onTap: () async {
-                          final _bloc = context.read<AuthBloc>();
-                          if (_bloc.formKye.currentState!
+                          final bloc = context.read<AuthBloc>();
+                          if (bloc.formKye.currentState!
                               .validate()) {
-                            _bloc.add(const AuthEvent.login());
+                            bloc.add(const AuthEvent.login());
                           }
                         },
                       );

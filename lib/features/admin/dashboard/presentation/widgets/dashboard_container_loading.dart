@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoply/core/helpers/extension/mediaQueryValues.dart';
-import 'package:shoply/core/helpers/extension/my_context.dart';
-import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/utils/loading/loading_shimmer.dart';
 import 'package:shoply/core/utils/widgets/custom_linear_container_admin.dart';
-import 'package:shoply/core/utils/widgets/text_app.dart';
 
 class DashboardContainerLoading extends StatelessWidget {
   const DashboardContainerLoading({

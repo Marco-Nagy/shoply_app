@@ -1,9 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:shoply/core/app/Apis/api_result.dart';
 import 'package:shoply/core/app/apis/errors/error_handler.dart';
-import 'package:shoply/core/helpers/extension/my_context.dart';
-import 'package:shoply/core/localization/lang_keys.dart';
 import 'package:shoply/features/auth/data/data_sources/auth_data_source.dart';
 import 'package:shoply/features/auth/data/models/login/login_request.dart';
 import 'package:shoply/features/auth/data/models/login/login_response.dart';

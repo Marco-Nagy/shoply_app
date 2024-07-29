@@ -8,7 +8,6 @@ import 'package:shoply/core/app/env_variables.dart';
 import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/firebase_options.dart';
 import 'package:shoply/soply_app.dart';
-import 'package:flutter/material.dart';
 import 'app_config.dart';
 
 Future<void> main() async {
@@ -23,12 +22,12 @@ Future<void> main() async {
       systemNavigationBarColor: Colors.green,
     ),
   );
-  var appConfig = AppConfig(
+  var appConfig = const AppConfig(
     appEnvironment: EnvTypeEnum.dev,
     appName: 'Shoply  Development',
     description: 'This is a Development version of Shoply',
     baseUrl: '',
-    child: const ShoplyApp(),
+    child: ShoplyApp(),
   );
   runApp(appConfig);
 }

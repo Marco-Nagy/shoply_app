@@ -3,20 +3,19 @@ import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:permission_handler/permission_handler.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:shoply/core/app/di/injection_container.dart';
-import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/utils/image_picker.dart';
 import 'package:shoply/features/files/data/repositories/upload_file_repository.dart';
-
-part 'file_state.dart';
+import 'package:path/path.dart';
 
 part 'file_cubit.freezed.dart';
+
+part 'file_state.dart';
 
 class FileCubit extends Cubit<FileState<dynamic>> {
   FileCubit(this._fileRepository) : super(const FileState.initial());
@@ -26,13 +25,19 @@ class FileCubit extends Cubit<FileState<dynamic>> {
   File? cachedFile;
   final picker = ImagePicker();
   String getImageUrl = '';
-
+  List<String> imagesList = [];
+  List<XFile?> imagesFileList = [];
   BuildContext myContext =
       sl<GlobalKey<NavigatorState>>().currentState!.context;
+  final GlobalKey<AnimatedListState> globalKey = GlobalKey<AnimatedListState>();
+  final ScrollController scrollController = ScrollController();
 
   final imageHelper = ImageHelper();
 
-  Future<void> uploadFile({bool isOpenCam = false,bool isCircle= true}) async {
+  Future<void> uploadCroppedImage({
+    bool isOpenCam = false,
+    bool isCircle = true,
+  }) async {
     final file = await imageHelper.imagePicker(
       source: isOpenCam ? ImageSource.camera : ImageSource.gallery,
     );
@@ -67,8 +72,86 @@ class FileCubit extends Cubit<FileState<dynamic>> {
 
   }
 
+  Future<void> uploadLocalImageList() async {
+    final file = await imageHelper.imagePicker(
+      source: ImageSource.gallery,
+    );
+
+    if (file == null) return;
+    imageFile = XFile(file.path);
+    // cachedFile = File(file.path);
+    var bytes = await imageFile!.readAsBytes();
+    base64Image = base64UrlEncode(bytes);
+    emit(const FileState.loading());
+
+    addImageToList();
+    emit(FileState.success(base64Image));
+    imagesFileList.add(imageFile);
+    emit(FileState.success(imageFile));
+
+  }
+
+  Future<void> uploadNetworkImageList() async {
+    int listSize = imagesFileList.length;
+    int counter = 0;
+    emit(const FileState.loadingUploadImageList());
+    for (var i = 0; i < imagesFileList.length; i++) {
+      counter++;
+
+      final result = await _fileRepository.uploadFile(imagesFileList[i]!);
+      result.when(
+        success: (data) {
+          getImageUrl = data.location ?? '';
+          emit(FileState.success(getImageUrl));
+        },
+        failure: (error) {
+          debugPrint('error ==>> $error');
+          emit(
+            FileState.failure(
+              error: error.errorMsg,
+            ),
+          );
+        },
+      );
+      debugPrint('Images index $i');
+
+    }
+    if (counter == listSize) {
+      emit(const FileState.successUploadImageList(
+          'All Images Uploaded Successfully'));
+    }
+
+  }
+
+
   void removeImage() {
     getImageUrl = '';
     emit(FileState.remove(getImageUrl));
+  }
+
+  void addImageToList() {
+    var index = imagesList.length;
+    imagesList.add(base64Image);
+    if (globalKey.currentState != null) {
+      globalKey.currentState!.insertItem(index);
+      Future.delayed(Durations.medium4).then(
+        (value) {
+          scrollController.animateTo(scrollController.position.maxScrollExtent,
+              duration: Durations.medium4, curve: Curves.easeIn);
+        },
+      );
+    }
+  }
+
+  void removeImageFromList(
+      {required int index, Widget? widget, required String removedItem}) {
+    if (imagesList.isNotEmpty) {
+      removedItem = imagesList.removeAt(index);
+      globalKey.currentState!.removeItem(
+        index,
+        (context, animation) => widget!,
+      );
+      emit(FileState.remove(removedItem));
+    }
   }
 }

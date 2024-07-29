@@ -19,7 +19,6 @@ import 'package:shoply/features/admin/categories/data/model/get_all_categories/g
 import 'package:shoply/features/admin/categories/data/model/update/update_category_request.dart';
 import 'package:shoply/features/admin/categories/presentation/bloc/admin_categories_bloc.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
-
 import 'upload_category_image.dart';
 
 class CreateCategoryBottomSheetWidget extends StatefulWidget {

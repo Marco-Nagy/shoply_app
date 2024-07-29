@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swipe_action_cell/core/cell.dart';
 import 'package:flutter_swipe_action_cell/core/controller.dart';
-import 'package:shoply/core/styles/icons/dark_icons.dart';
 import 'app_animated_icon.dart';
 
 class CustomSwipeToAction extends StatefulWidget {

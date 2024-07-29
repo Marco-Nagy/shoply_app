@@ -3,12 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
+import 'package:shoply/core/routes/base_routes.dart';
 import 'package:shoply/core/styles/app_images.dart';
-import 'package:shoply/core/styles/icons/dark_icons.dart';
 import 'package:shoply/core/utils/animations/animate_do.dart';
-import 'package:shoply/core/utils/widgets/app_animated_icon.dart';
+import 'package:shoply/core/utils/widgets/images/custom_image.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
-import 'package:shoply/features/files/presentation/widgets/hero_photo_view_route_wrapper.dart';
+import 'package:shoply/core/utils/widgets/images/hero_photo_view.dart';
 import 'package:shoply/features/files/presentation/widgets/image_menu.dart';
 
 class UserAvatarImage extends StatefulWidget {
@@ -47,7 +47,7 @@ class _UserAvatarImageState extends State<UserAvatarImage>
             loading: () {
               return  CircleAvatar(
                 radius: 50,
-                backgroundImage: AssetImage(
+                backgroundImage: const AssetImage(
                   AppImages.userAvatar,
 
                 )as ImageProvider,
@@ -77,29 +77,20 @@ class _UserAvatarImageState extends State<UserAvatarImage>
                                   .isNotEmpty) {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(
-                                    builder: (_) => BlocProvider(
+                                  BaseRoute(page:  BlocProvider(
                                       create: (_) => sl<FileCubit>(),
-                                      child: HeroPhotoViewRouteWrapper(
-                                        tag:cubit.getImageUrl ,
-                                        imageProvider: NetworkImage(
-                                          cubit
-                                              .getImageUrl,
-                                        ),
+                                      child: HeroPhotoView(
+                                        image:cubit.getImageUrl ,
+
                                       ),
                                     ),
                                   ),
                                 );
                               }
                             },
-                            child: Hero(
-                              tag: cubit.getImageUrl,
-                              child: CircleAvatar(
-                                radius: 50,
-                                backgroundImage: NetworkImage(
-                                  cubit.getImageUrl,
-                                ) as ImageProvider,
-                              ),
+                            child: CircleAvatar(
+                              radius: 50,
+                              child: CustomImage(imageUrl: cubit.getImageUrl, ),
                             ),
                           ),
                   ),

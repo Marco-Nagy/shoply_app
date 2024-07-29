@@ -1,16 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shoply/core/Services/shared_preference/shared_pref_keys.dart';
 import 'package:shoply/core/Services/shared_preference/shared_preference_helper.dart';
 import 'package:shoply/features/auth/data/models/login/login_request.dart';
 import 'package:shoply/features/auth/data/models/login/login_response.dart';
-import 'package:shoply/features/auth/data/models/role/user_role_response.dart';
 import 'package:shoply/features/auth/data/models/sign_up/signup_request.dart';
-import 'package:shoply/features/auth/data/models/sign_up/signup_response.dart';
 import 'package:shoply/features/auth/data/repositories/auth_repository.dart';
 
 part 'auth_bloc.freezed.dart';

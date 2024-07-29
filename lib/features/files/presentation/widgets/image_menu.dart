@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -39,7 +38,7 @@ class _ImageMenuState extends State<ImageMenu> {
                 items: [
                   PopupMenuItem(
                     onTap: () async {
-                      await context.read<FileCubit>().uploadFile(isOpenCam: true);
+                      await context.read<FileCubit>().uploadCroppedImage(isOpenCam: true);
                     },
                     enabled: true,
                     height: 38,
@@ -60,7 +59,7 @@ class _ImageMenuState extends State<ImageMenu> {
                   ),
                   PopupMenuItem(
                     onTap: () async {
-                      await context.read<FileCubit>().uploadFile( );
+                      await context.read<FileCubit>().uploadCroppedImage( );
                     },
                     height: 38,
 
