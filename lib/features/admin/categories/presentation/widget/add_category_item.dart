@@ -5,12 +5,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/core/helpers/extension/mediaQueryValues.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
+import 'package:shoply/core/routes/base_routes.dart';
 import 'package:shoply/core/styles/app_images.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
+import 'package:shoply/core/utils/widgets/images/custom_image.dart';
 import 'package:shoply/core/utils/widgets/custom_linear_container_admin.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
-import 'package:shoply/features/files/presentation/widgets/hero_photo_view_route_wrapper.dart';
+import 'package:shoply/core/utils/widgets/images/hero_photo_view.dart';
 
 class AddCategoryItem extends StatelessWidget {
   const AddCategoryItem({
@@ -42,55 +44,40 @@ class AddCategoryItem extends StatelessWidget {
             Flexible(
               child: InkWell(
                 onTap: () {
-                  showAdaptiveDialog(
-                    context: context,
-                    builder: (context) {
-                      return BlocProvider(
-                        create: (_) => sl<FileCubit>(),
-                        child: AlertDialog(
-                          content: SizedBox(
-                            width: context.width ,
-                            height: context.height*.5,
-                           child:    HeroPhotoViewRouteWrapper(
-                             backgroundDecoration: const BoxDecoration(color: Colors.transparent),
-                                tag:image ,
-                                imageProvider: NetworkImage(
-                                  image,
-                                ),
-                              ),
 
-                          ),
-                        ),
-                      );
-                    },
+                  // Navigator.push(
+                  //   context,
+                  //   BaseRoute(page: BlocProvider(
+                  //     create: (_) => sl<FileCubit>(),
+                  //     child: HeroPhotoView(
+                  //       image: image,
+                  //
+                  //     ),
+                  //   )),
+                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) =>  BlocProvider(
+                      create: (_) => sl<FileCubit>(),
+                      child: HeroPhotoView(
+                        image: image,
+
+                      ),
+                    )),
                   );
                 },
-                child: Hero(
-                  tag: image,
-                  child: Container(
-                    height: 100.h,
-                    width: 120.w,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.w),
-                    ),
-                    child: Card(
-                      clipBehavior: Clip.antiAliasWithSaveLayer,
-                      elevation: 5.w,
-                      child: CachedNetworkImage(
-                        fit: BoxFit.fill,
-                        fadeInCurve: Curves.fastLinearToSlowEaseIn,
-                        fadeInDuration: const Duration(milliseconds: 200),
-                        height: 100.h,
-                        width: 120.w,
-                        imageUrl: image,
-                        // fit: BoxFit.fill,
-                        errorWidget: (context, url, error) => Image.asset(
-                          AppImages.appImage,
-                          height: 100,
-                          width: 100,
-                        ),
-                      ),
-                    ),
+                child: Container(
+                  height: 100.h,
+                  width: 120.w,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15.w),
+                  ),
+                  child: Card(
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    elevation: 5.w,
+                    child: CustomImage(imageUrl: image,)
+
+
                   ),
                 ),
               ),

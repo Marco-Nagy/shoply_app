@@ -24,7 +24,7 @@ class AppTextFormField extends StatelessWidget {
   });
 
   final String? Function(String?)? validator;
-  final String? Function(String?)? onChanged;
+  final Function? onChanged;
   final TextEditingController controller;
   final bool filled;
   final Color? fillColour;
@@ -52,7 +52,7 @@ class AppTextFormField extends StatelessWidget {
       validator: (value) {
         return validator!(value);
       },
-      onChanged: onChanged,
+      onChanged: onChanged == null ? (value) {} : (value) => onChanged!(value),
       keyboardType: keyboardType,
       obscureText: obscureText,
       maxLines: maxLines,

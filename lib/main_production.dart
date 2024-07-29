@@ -8,10 +8,8 @@ import 'package:shoply/core/app/env_variables.dart';
 import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/firebase_options.dart';
 import 'package:shoply/soply_app.dart';
-import 'package:flutter/material.dart';
 
 import 'app_config.dart';
-import 'core/styles/theme/app_theme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,12 +25,12 @@ Future<void> main() async {
     ),
   );
 
-  final appConfig = AppConfig(
+  final appConfig = const AppConfig(
     appEnvironment: EnvTypeEnum.prod,
     appName: 'Shoply',
     description: 'This is a Production version of Shoply',
     baseUrl: '',
-    child: const ShoplyApp(),
+    child: ShoplyApp(),
   );
 
   runApp(appConfig);

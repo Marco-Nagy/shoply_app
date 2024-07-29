@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
 
@@ -11,11 +10,14 @@ class AdminAppBar extends StatelessWidget implements PreferredSizeWidget  {
     required this.isMain,
     required this.backgroundColor,
     required this.title,
+    this.actionButtons,
+
   });
 
   final bool isMain;
   final Color backgroundColor;
   final String title;
+  final List<Widget>? actionButtons ;
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +32,7 @@ class AdminAppBar extends StatelessWidget implements PreferredSizeWidget  {
       ),
       centerTitle: true,
       elevation: 0,
+      actions: actionButtons,
       leading:  IconButton(
         icon:  const Icon(Icons.menu_rounded, color: Colors.white,),
         onPressed: () {
