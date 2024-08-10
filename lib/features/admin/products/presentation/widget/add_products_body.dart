@@ -1,6 +1,12 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shoply/core/utils/loading/empty_screen.dart';
+import 'package:shoply/features/admin/products/presentation/bloc/admin_product_bloc.dart';
 import 'package:shoply/features/admin/products/presentation/widget/product_admin_item.dart';
+import 'package:shoply/features/admin/products/presentation/widget/product_loading.dart';
+import 'package:shoply/features/admin/products/presentation/widget/products_list_admin.dart';
 
 import 'create_product.dart';
 
@@ -41,52 +47,31 @@ class _AddProductsBodyState extends State<AddProductsBody>
       child: Column(
         children: [
           //Add products button
-           const CreateProduct(),
+          const CreateProduct(),
           //Get ALl Product
           Expanded(
-            child: RefreshIndicator(
-              onRefresh: () async {},
-              child: CustomScrollView(
-                slivers: [
-                  SliverToBoxAdapter(
-                    child: SizedBox(height: 20.h),
-                  ),
-                  SliverToBoxAdapter(
-                    child: GridView.builder(
-                      shrinkWrap: true,
-                      padding: EdgeInsets.zero,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: 10,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2, //Number of cloums
-                        crossAxisSpacing: 8, // Spacing between colums
-                        mainAxisSpacing: 15, //Spacing between rows
-                        childAspectRatio: 165 / 250,
-                      ),
-                      itemBuilder: (context, index) {
-                        return const ProductAdminItem(
-                          imageUrl: "https://i.imgur.com/QkIa5tT.jpeg",
-                          productId: '',
-                          categoryName: 'TShirts',
-                          price: '100',
-                          title: 'Sweet Shirts',
-                          imageList: [],
-                          description: 'description',
-                          categoryId: '',
-                        );
-                      },
-                    ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: SizedBox(height: 20.h),
-                  ),
-                ],
-              ),
+            child: BlocBuilder<AdminProductBloc, AdminProductState>(
+              builder: (context, state) {
+                return state.maybeWhen(
+                  getAdminProductListEmpty: () => const EmptyScreen(),
+                  getAdminProductListFailure: (errorMessage) {
+                    return AwesomeSnackbarContent(
+                        title: 'Error',
+                        message: errorMessage,
+                        contentType: ContentType.failure);
+                  },
+                  adminProductLoading: () => const ProductLoading(),
+                  getAdminProductListSuccess: (productList) {
+                    return ProductsListAdmin(productList: productList! );
+                  },
+                  orElse: () => const SizedBox.shrink(),
+                );
+              },
             ),
           ),
         ],
       ),
     );
   }
+
 }

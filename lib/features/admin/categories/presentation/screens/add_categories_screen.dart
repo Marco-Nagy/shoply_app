@@ -11,10 +11,10 @@ class AddCategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => sl<AdminCategoriesBloc>()..add(const AdminCategoriesEvent.fetchAdminCategories()),)
-      ],
+    return BlocProvider(
+      create: (context) =>
+      sl<AdminCategoriesBloc>()
+        ..add(const AdminCategoriesEvent.fetchAdminCategories()),
       child: Scaffold(
         appBar: AdminAppBar(
           title: 'Add Categories',

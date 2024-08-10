@@ -17,14 +17,21 @@ import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
 import 'package:shoply/features/admin/categories/data/model/get_all_categories/get_all_categories.dart';
 import 'package:shoply/features/admin/categories/presentation/bloc/admin_categories_bloc.dart';
+import 'package:shoply/features/admin/products/data/model/create_product/create_product_request.dart';
+import 'package:shoply/features/admin/products/data/model/update_product/update_product_request.dart';
+import 'package:shoply/features/admin/products/presentation/bloc/admin_product_bloc.dart';
 import 'package:shoply/features/admin/products/presentation/widget/productImage/upload_product_images_list.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
+
+import '../../data/model/get_products_list/get_all_products.dart';
 
 class CreateProductBottomSheetWidget extends StatefulWidget {
   const CreateProductBottomSheetWidget({
     super.key,
+    this.product,
   });
 
+  final Product? product;
   @override
   State<CreateProductBottomSheetWidget> createState() =>
       _CreateProductBottomSheetWidgetState();
@@ -44,16 +51,24 @@ class _CreateProductBottomSheetWidgetState
   @override
   void initState() {
     super.initState();
-    // _updateFormToEdit();
+    _updateFormToEdit();
   }
 
-  // void _updateFormToEdit() {
-  // if (widget.categories.id!.isNotEmpty) {
-  //     categoryNameController.text = widget.categories.name!;
-  //     categoryTitleStatus= "Update";
-  //      categoryStatus= "Edit";
-  // }
-  // }
+  void _updateFormToEdit() {
+    if (widget.product != null) {
+      setState(() {
+        categoryId = widget.product!.category!.id!;
+        categoryNameController.text = widget.product!.category!.name!;
+        productNameController.text = widget.product!.title!;
+        priceController.text = widget.product!.price!.toString();
+        descriptionController.text = widget.product!.description!;
+        productTitleStatus = "Update";
+        productStatus = "Edit";
+      });
+    }
+    debugPrint('categoryNameController : ${categoryNameController.text}');
+  }
+
   @override
   Widget build(BuildContext context) {
     final categoryCubits = context.read<AdminCategoriesBloc>();
@@ -77,7 +92,9 @@ class _CreateProductBottomSheetWidgetState
               style: MyFonts.styleMedium500_16
                   .copyWith(color: context.colors.textColor),
             ),
-            const UploadProductImagesList(),
+            UploadProductImagesList(
+              uploadProductImagesLIst:widget.product!=null? widget.product!.images:[],
+            ),
             verticalSpacing(8),
             TextApp(
               text: '$productStatus Product Name',
@@ -112,7 +129,7 @@ class _CreateProductBottomSheetWidgetState
                 hintText: 'Price',
                 validator: (value) {
                   if (value == null || value.isEmpty || value.length < 2) {
-                    return 'Please Selected Your Product Name';
+                    return 'Please Selected Your Product Price';
                   }
                   return null;
                 },
@@ -133,7 +150,7 @@ class _CreateProductBottomSheetWidgetState
                 hintText: 'Description',
                 validator: (value) {
                   if (value == null || value.isEmpty || value.length < 2) {
-                    return 'Please Selected Your Product Name';
+                    return 'Please Selected Your Product Description';
                   }
                   return null;
                 },
@@ -146,12 +163,16 @@ class _CreateProductBottomSheetWidgetState
                   .copyWith(color: context.colors.textColor),
             ),
             verticalSpacing(5),
-            BlocBuilder<AdminCategoriesBloc, AdminCategoriesState>(
+            BlocConsumer<AdminCategoriesBloc, AdminCategoriesState>(
               buildWhen: (previous, current) =>
                   current is GetAdminCategoriesListSuccess,
               builder: (context, state) {
                 return state.maybeWhen(
                   getAdminCategoriesListSuccess: (categoriesList) {
+                    if(widget.product!= null){
+                      categoryId = widget.product!.category!.id!;
+                      categoryNameController.text = widget.product!.category!.name!;
+                    }
                     return SizedBox(
                       width: double.infinity,
                       child: CustomDropdownMenu<Categories?>(
@@ -168,6 +189,7 @@ class _CreateProductBottomSheetWidgetState
                           );
                         },
                         filled: false,
+
                       ),
                     );
                   },
@@ -179,29 +201,86 @@ class _CreateProductBottomSheetWidgetState
                     controller: TextEditingController(),
                   ),
                 );
-              },
+              }, listener: (BuildContext context, AdminCategoriesState state) {
+                state.whenOrNull(getAdminCategoriesListSuccess: (categoriesList) {
+                  _updateFormToEdit();
+                },);
+            },
             ),
             verticalSpacing(14),
             CustomFadeInUp(
               duration: 400,
-              child: CustomButton(
-                onPressed: () {
-                  _uploadProductImagesList(context);
+              child: BlocConsumer<AdminProductBloc, AdminProductState>(
+  listener: (context, state) {
+    state.maybeWhen(
+      createNewProductSuccess: (body) {
+        context.read<AdminProductBloc>().add(const AdminProductEvent.getAdminProductList());
 
-                  // if (widget.categories.id!.isNotEmpty){
-                  //   _updateCategory(context);
-                  // }else {
-                  //   _createNewCategory(context);
-                  // }
-                },
-                text: '$productTitleStatus Product',
-                width: double.infinity,
-                height: 60.h,
-                backgroundColor: Colors.white,
-                textColor: context.colors.bluePinkDark,
-                threeRadius: 50,
-                lastRadius: 50,
-              ),
+          context.pop();
+          aweSnackBar(
+              title: 'Successfully Added',
+              msg:
+              '${productNameController.text.trim()} Created Successfully',
+              context: context,
+              type: MessageTypeConst.success);
+
+      },
+      updateProductSuccess: (body) {
+        context.read<AdminProductBloc>().add(const AdminProductEvent.getAdminProductList());
+
+        context.pop();
+        aweSnackBar(
+            title: 'Successfully Updated',
+            msg:
+            '${productNameController.text.trim()} Updated Successfully',
+            context: context,
+            type: MessageTypeConst.success);},
+      createNewProductFailure: (errorMessage) {
+        aweSnackBar(
+            title:
+            'Failed to add new Product',
+            msg: errorMessage.toString(),
+            context: context,
+            type: MessageTypeConst.failure);
+      },
+      updateProductFailure: (errorMessage) {
+        aweSnackBar(
+            title: 'Failed to update Product',
+            msg: errorMessage.toString(),
+            context: context,
+            type: MessageTypeConst.failure);
+      },
+      orElse: () {},
+    );
+  },
+  builder: (context, state) {
+    return state.maybeWhen(
+      adminProductLoading: () {
+        return CustomFadeInUp(
+          duration: 400,
+          child: Center(
+            child: CircularProgressIndicator(
+              color: context.colors.bluePinkLight,
+            ),
+          ),
+        );
+      },
+      orElse: () {
+      return CustomButton(
+        onPressed: () {
+          _validCreateProductButton(context);
+        },
+        text: '$productTitleStatus Product',
+        width: double.infinity,
+        height: 60.h,
+        backgroundColor: Colors.white,
+        textColor: context.colors.bluePinkDark,
+        threeRadius: 50,
+        lastRadius: 50,
+      );
+    },);
+  },
+),
             ),
           ],
         ),
@@ -209,35 +288,70 @@ class _CreateProductBottomSheetWidgetState
     );
   }
 
-  Future<void> _uploadProductImagesList(BuildContext context) async {
-    final imagesList = context.read<FileCubit>().imagesList;
-    if (imagesList.isEmpty) {
+  Future<void> _validCreateProductButton(BuildContext context) async {
+    if (widget.product!=null) {
+      _updateProduct(context);
+    } else {
+      _createNewProduct(context);
+    }
+  }
+
+  Future<void> _updateProduct(BuildContext context) async {
+    final productImagesList = context.read<FileCubit>().imagesList;
+    if (productImagesList.isEmpty) {
       aweSnackBar(
-          title: 'Please Add at least one image',
+          title: 'Empty Image',
           msg: context.translate(LangKeys.validPickImage),
           context: context,
           type: MessageTypeConst.help);
     }
-    if (imagesList.isNotEmpty) {
-      context.read<FileCubit>().uploadNetworkImageList().whenComplete(
-            () => context.pop(),
-          );
+    if(categoryNameController.text.isEmpty||categoryId.isEmpty){
+      aweSnackBar(
+          title: 'Empty Image',
+          msg: 'Please select a category',
+          context: context,
+          type: MessageTypeConst.help);
+    }
+    if (formKye.currentState!.validate() && productImagesList.isNotEmpty &&categoryNameController.text.isNotEmpty&& categoryId.isNotEmpty) {
+      context.read<AdminProductBloc>().add(AdminProductEvent.updateAdminProduct(
+              body: UpdateProductRequest(
+            id: widget.product!.id!,
+            title: productNameController.text.trim(),
+            price: int.parse(priceController.text.trim()),
+            description: descriptionController.text.trim(),
+            categoryId: double.parse(categoryId),
+            images: productImagesList,
+          )));
     }
   }
 
-  Future<void> _updateCategory(BuildContext context) async {
-    // final categoryImage = context.read<FileCubit>().getImageUrl;
-    // if (categoryImage.isEmpty) {
-    //   aweSnackBar(
-    //     title: 'Empty Image',
-    //       msg: context.translate(LangKeys.validPickImage),
-    //       context: context,
-    //       type: MessageTypeConst.help);
-    // }
-    // if (formKye.currentState!.validate() && categoryImage.isNotEmpty) {
-    //   context.read<AdminCategoriesBloc>().add(UpdateCategoryEvent(
-    //       body: UpdateCategoryRequest(widget.categories.id,
-    //           categoryNameController.text.trim(), categoryImage)));
-    // }
+  Future<void> _createNewProduct(BuildContext context) async {
+    final productImagesList = context.read<FileCubit>().imagesList;
+    if (productImagesList.isEmpty) {
+      aweSnackBar(
+          title: 'Empty Image',
+          msg: context.translate(LangKeys.validPickImage),
+          context: context,
+          type: MessageTypeConst.help);
+    }
+    if(categoryNameController.text.isEmpty){
+      debugPrint('categoryNameController.text.isEmpty ${categoryId.isEmpty}');
+      aweSnackBar(
+          title: 'Empty Image',
+          msg: 'Please select a category',
+          context: context,
+          type: MessageTypeConst.help);
+    }
+    if (formKye.currentState!.validate() && productImagesList.isNotEmpty &&categoryNameController.text.isNotEmpty) {
+      context.read<AdminProductBloc>().add(AdminProductEvent.createAdminProduct(
+              body: CreateProductRequest(
+            title: productNameController.text.trim(),
+            price: double.parse(priceController.text.trim()).toDouble(),
+            description: descriptionController.text.trim(),
+            categoryId: categoryId,
+            images: productImagesList,
+          )));
+
+    }
   }
 }

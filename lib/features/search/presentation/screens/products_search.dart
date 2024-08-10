@@ -20,6 +20,7 @@ class ProductsSearch extends StatefulWidget {
 }
 
 class _ProductsSearchState extends State<ProductsSearch> {
+  var productNameController = TextEditingController();
   var categoryNameController = TextEditingController();
   var maxPriceController = TextEditingController();
   var minPriceController = TextEditingController();
@@ -84,7 +85,7 @@ class _ProductsSearchState extends State<ProductsSearch> {
                         CustomFadeInDown(
                           duration: 400,
                           child: AppTextFormField(
-                            controller: categoryNameController,
+                            controller: productNameController,
                             hintText: 'Product Name',
                             validator: (value) {
                               if (value == null ||
@@ -141,15 +142,15 @@ class _ProductsSearchState extends State<ProductsSearch> {
                           ),
                         ),
                         verticalSpacing(10),
-                        BlocBuilder<AdminCategoriesBloc, AdminCategoriesState>(
-                          buildWhen: (previous, current) =>
-                              current is GetAdminCategoriesListSuccess,
-                          builder: (context, state) {
-                            return state.maybeWhen(
-                              getAdminCategoriesListSuccess: (categoriesList) {
-                                return CustomFadeInUp(
-                                  duration: 400,
-                                  child: SizedBox(
+                        CustomFadeInUp(
+                          duration: 400,
+                          child: BlocBuilder<AdminCategoriesBloc, AdminCategoriesState>(
+                            buildWhen: (previous, current) =>
+                                current is GetAdminCategoriesListSuccess,
+                            builder: (context, state) {
+                              return state.maybeWhen(
+                                getAdminCategoriesListSuccess: (categoriesList) {
+                                  return SizedBox(
                                     width: double.infinity,
                                     child: CustomDropdownMenu<Categories?>(
                                       hintText: 'Select a Category',
@@ -169,18 +170,18 @@ class _ProductsSearchState extends State<ProductsSearch> {
                                       },
                                       filled: false,
                                     ),
-                                  ),
-                                );
-                              },
-                              orElse: () => CustomDropdownMenu<String>(
-                                itemList: const [''],
-                                itemBuilder: (item) => TextApp(text: item),
-                                filled: false,
-                                hintText: '',
-                                controller: TextEditingController(),
-                              ),
-                            );
-                          },
+                                  );
+                                },
+                                orElse: () => CustomDropdownMenu<String>(
+                                  itemList: const [''],
+                                  itemBuilder: (item) => TextApp(text: item),
+                                  filled: false,
+                                  hintText: '',
+                                  controller: TextEditingController(),
+                                ),
+                              );
+                            },
+                          ),
                         ),
                         verticalSpacing(14),
                       ],
@@ -252,7 +253,7 @@ class _ProductsSearchState extends State<ProductsSearch> {
                         child: Container(
                           height: 65,
                           width: 100,
-                          margin: EdgeInsets.only(bottom: 1),
+                          margin: const EdgeInsets.only(bottom: 1),
                           decoration: BoxDecoration(
                             color: context.colors.textColor,
                             borderRadius: const BorderRadius.only(

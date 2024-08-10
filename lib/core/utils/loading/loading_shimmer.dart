@@ -17,6 +17,7 @@ class LoadingShimmer extends StatelessWidget {
     return Shimmer.fromColors(
       baseColor: Colors.grey.shade600,
       highlightColor: Colors.grey.shade400,
+      direction: ShimmerDirection.btt,
       child: Container(
         height: height,
         width: width,

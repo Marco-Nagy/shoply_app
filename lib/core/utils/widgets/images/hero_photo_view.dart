@@ -14,23 +14,17 @@ class HeroPhotoView extends StatelessWidget {
     this.minScale,
     this.maxScale,
     required this.image,
-    this.isLocalImg,
   });
 
   final BoxDecoration? backgroundDecoration;
   final dynamic minScale;
   final dynamic maxScale;
   final String image;
-  final bool? isLocalImg;
 
   @override
   Widget build(BuildContext context) {
     ImageProvider imageProvider;
-    isLocalImg == true
-        ? imageProvider = MemoryImage(base64Decode(image))
-        : imageProvider = NetworkImage(
-            image,
-          );
+
     return BlocBuilder<FileCubit, FileState>(
       builder: (context, state) {
         return Scaffold(
@@ -47,7 +41,9 @@ class HeroPhotoView extends StatelessWidget {
                   child: Hero(
                     tag: 'tag$image',
                     child: PhotoView(
-                      imageProvider: imageProvider,
+                      imageProvider: NetworkImage(
+                        image,
+                      ),
                       backgroundDecoration: BoxDecoration(
                         color: context.colors.mainColor,
                         borderRadius: BorderRadius.circular(16),

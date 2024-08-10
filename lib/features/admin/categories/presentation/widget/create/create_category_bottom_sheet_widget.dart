@@ -22,8 +22,8 @@ import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
 import 'upload_category_image.dart';
 
 class CreateCategoryBottomSheetWidget extends StatefulWidget {
-  const CreateCategoryBottomSheetWidget( {super.key,  required this.categories});
-final Categories categories;
+  const CreateCategoryBottomSheetWidget( {super.key,   this.categories});
+final Categories? categories;
 
   @override
   State<CreateCategoryBottomSheetWidget> createState() =>
@@ -42,8 +42,8 @@ final categoryNameController = TextEditingController();
     _updateFormToEdit();
   }
   void _updateFormToEdit() {
-  if (widget.categories.id!.isNotEmpty) {
-      categoryNameController.text = widget.categories.name!;
+  if (widget.categories !=null) {
+      categoryNameController.text = widget.categories!.name!;
       categoryTitleStatus= "Update";
        categoryStatus= "Edit";
   }
@@ -70,7 +70,7 @@ final categoryNameController = TextEditingController();
               style: MyFonts.styleMedium500_16
                   .copyWith(color: context.colors.textColor),
             ),
-             UploadCategoryImage(uploadCategoryImage:widget.categories.image!),
+             UploadCategoryImage(uploadCategoryImage:widget.categories!=null?widget.categories!.image!:''),
             verticalSpacing(8),
 
             TextApp(
@@ -147,10 +147,16 @@ final categoryNameController = TextEditingController();
                     duration: 400,
                     child: CustomButton(
                       onPressed: () {
-                        if (widget.categories.id!.isNotEmpty){
-                          _updateCategory(context);
+                        if (widget.categories != null){
+                          _updateCategory(context).whenComplete(() {
+                            context.read<AdminCategoriesBloc>().add(const AdminCategoriesEvent.fetchAdminCategories());
+                          },);
                         }else {
-                          _createNewCategory(context);
+                          _createNewCategory(context).whenComplete(() {
+
+                            context.read<AdminCategoriesBloc>().add(const AdminCategoriesEvent.fetchAdminCategories());
+
+                          },);
                         }
                       },
                       text: '$categoryTitleStatus Category',
@@ -196,9 +202,7 @@ final categoryNameController = TextEditingController();
           type: MessageTypeConst.help);
     }
     if (formKye.currentState!.validate() && categoryImage.isNotEmpty) {
-      context.read<AdminCategoriesBloc>().add(UpdateCategoryEvent(
-          body: UpdateCategoryRequest(widget.categories.id,
-              categoryNameController.text.trim(), categoryImage)));
+      context.read<AdminCategoriesBloc>().add(UpdateCategoryEvent(body: UpdateCategoryRequest(widget.categories!.id, categoryNameController.text.trim(), categoryImage)));
     }
   }
 }

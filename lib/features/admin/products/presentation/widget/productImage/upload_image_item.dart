@@ -15,7 +15,8 @@ class UploadImageItem extends StatelessWidget {
       {super.key,
       required this.index,
       required this.animation,
-      required this.image});
+    required this.image,
+  });
 
   final int index;
   final Animation<double> animation;
@@ -36,7 +37,6 @@ class UploadImageItem extends StatelessWidget {
                     create: (_) => sl<FileCubit>(),
                     child: HeroPhotoView(
                       image: image,
-                      isLocalImg: true,
                     ),
                   ),
                 ),
@@ -49,24 +49,16 @@ class UploadImageItem extends StatelessWidget {
                 height: 100,
                 width: 100,
                 decoration: BoxDecoration(
-                  // border: Border.all(
-                  //   color: context.colors.bluePinkLight,
-                  //   width: 1,
-                  //   style: BorderStyle.none,
-                  // ),
                   boxShadow: [BoxShadow(color: context.colors.bluePinkLight,blurStyle: BlurStyle.inner)],
                   borderRadius: BorderRadius.circular(10.w),
-                  // image: DecorationImage(
-                  //     fit: BoxFit.scaleDown,
-                  //     image: NetworkImage(cubit.getImageUrl,
-                  //         scale: 1.5) as ImageProvider),
+
                 ),
                 child: Card(
                   clipBehavior: Clip.antiAliasWithSaveLayer,
                   elevation: 10.w,
                   child: CustomImage(
                     imageUrl: image,
-                    isLocal: true,
+
                   ),
                 )),
           ),

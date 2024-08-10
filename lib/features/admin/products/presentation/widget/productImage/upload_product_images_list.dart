@@ -1,33 +1,22 @@
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:photo_view/photo_view.dart';
-import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
-import 'package:shoply/core/routes/base_routes.dart';
-import 'package:shoply/core/styles/app_images.dart';
+import 'package:shoply/core/helpers/extension/string_exetension.dart';
 import 'package:shoply/core/styles/icons/app_animated_icons.dart';
 import 'package:shoply/core/utils/animations/animate_do.dart';
 import 'package:shoply/core/utils/message_type_const.dart';
 import 'package:shoply/core/utils/widgets/app_animated_icon.dart';
-import 'package:shoply/core/utils/widgets/images/custom_image.dart';
 import 'package:shoply/core/utils/widgets/snack_bar.dart';
-import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/features/admin/products/presentation/widget/productImage/upload_image_item.dart';
 import 'package:shoply/features/admin/products/presentation/widget/productImage/uploading_images_loading.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
-import 'package:shoply/core/utils/widgets/images/hero_photo_view.dart';
 
 class UploadProductImagesList extends StatefulWidget {
   const UploadProductImagesList({
-    super.key,
+    super.key, this.uploadProductImagesLIst,
   });
 
-// final String? uploadCategoryImage;
+final List<String>? uploadProductImagesLIst;
   @override
   _UploadProductImagesListState createState() =>
       _UploadProductImagesListState();
@@ -41,11 +30,13 @@ class _UploadProductImagesListState extends State<UploadProductImagesList>
   void initState() {
     final cubit = context.read<FileCubit>();
 
-    // setState(() {
-    //   if (widget.uploadCategoryImage!=null) {
-    //     cubit.getImageUrl= widget.uploadCategoryImage!;
-    //   }
-    // });
+    setState(() {
+      if (widget.uploadProductImagesLIst!=null) {
+        cubit.imagesList= widget.uploadProductImagesLIst!.map((e) => e.toString().imageProductFormat(),).toList();
+        debugPrint('cubit.imagesList ${cubit.imagesList}');
+        debugPrint('widget.uploadProductImagesLIst ${widget.uploadProductImagesLIst}');
+      }
+    });
     animationController = AnimationController(vsync: this);
     super.initState();
   }
@@ -79,7 +70,7 @@ class _UploadProductImagesListState extends State<UploadProductImagesList>
                   onTap: () {
                     Future.delayed(const Duration(milliseconds: 400)).then(
                       (value) async {
-                        await context.read<FileCubit>().uploadLocalImageList();
+                        await context.read<FileCubit>().uploadNetworkImageList();
                       },
                     );
                   },
@@ -140,7 +131,7 @@ class _UploadProductImagesListState extends State<UploadProductImagesList>
                                   (value) async {
                                     await context
                                         .read<FileCubit>()
-                                        .uploadLocalImageList();
+                                        .uploadNetworkImageList();
                                   },
                                 );
                               },
@@ -167,7 +158,8 @@ class _UploadProductImagesListState extends State<UploadProductImagesList>
                                 child: UploadImageItem(
                                   index: index,
                                   animation: animation,
-                                  image: cubit.imagesList[index],
+                                  image: cubit.imagesList[index].imageProductFormat(),
+
                                 ));
                           },
                         ),

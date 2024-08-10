@@ -10,6 +10,7 @@ import 'package:shoply/core/utils/widgets/text_app.dart';
 import 'package:shoply/features/admin/categories/data/model/get_all_categories/get_all_categories.dart';
 import 'package:shoply/features/admin/categories/presentation/bloc/admin_categories_bloc.dart';
 import 'package:shoply/features/admin/categories/presentation/widget/create/create_category_bottom_sheet_widget.dart';
+import 'package:shoply/features/admin/products/presentation/bloc/admin_product_bloc.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
 
 import 'create_product_bottom_sheet_widget.dart';
@@ -33,6 +34,7 @@ class CreateProduct extends StatelessWidget {
                 context: context,
                 child: MultiBlocProvider(providers: [
                   BlocProvider(create: (context) => sl<FileCubit>()),
+                  BlocProvider(create: (context) => sl<AdminProductBloc>()),
                   BlocProvider(create: (context) => sl<AdminCategoriesBloc>()..add(const AdminCategoriesEvent.fetchAdminCategories())),
                 ], child:   const CreateProductBottomSheetWidget()));
           },
