@@ -10,11 +10,11 @@ class CustomImage extends StatelessWidget {
   const CustomImage({
     super.key,
     required this.imageUrl,
-    this.isLocal,
+
   });
 
   final String imageUrl;
-  final bool? isLocal;
+
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +37,7 @@ class CustomImage extends StatelessWidget {
           //       parent: animation,
           //       curve: Curves.fastEaseInToSlowEaseOut,
           //       reverseCurve: Curves.fastLinearToSlowEaseIn)),
-          child: isLocal == true
-              ? localImage()
-              : FadeInImage.assetNetwork(
+          child:  FadeInImage.assetNetwork(
                   fit: BoxFit.fill,
                   placeholderFit: BoxFit.scaleDown,
                   placeholder: AppImages.appImage,
@@ -54,9 +52,7 @@ class CustomImage extends StatelessWidget {
                   image: imageUrl,
                 ),
         ),
-        child: isLocal == true
-            ? localImage()
-            : CachedNetworkImage(
+        child:  CachedNetworkImage(
                 fit: BoxFit.fill,
                 fadeInCurve: Curves.fastLinearToSlowEaseIn,
                 fadeInDuration: const Duration(milliseconds: 200),

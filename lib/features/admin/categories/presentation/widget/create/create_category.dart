@@ -32,7 +32,7 @@ class CreateCategory extends StatelessWidget {
                 child: MultiBlocProvider(providers: [
                   BlocProvider(create: (context) => sl<FileCubit>()),
                   BlocProvider(create: (context) => sl<AdminCategoriesBloc>()),
-                ], child:   CreateCategoryBottomSheetWidget(categories: Categories('', '', ''),)));
+                ], child:   const CreateCategoryBottomSheetWidget()));
           },
           text: 'Add',
           width: 90.w,

@@ -30,7 +30,7 @@ class AdminProductRepository {
       return ApiResult.failure(ServerFailure(error.toString()));
     }
   }
-  Future<ApiResult<ProductDetailsResponse>> getProductById(String productId) async {
+  Future<ApiResult<ProductDetailsResponse>> getProductDetailsById(String productId) async {
     try {
       final response = await _dataSource.getProductDetails(productId: productId);
       if (response.data != null) {

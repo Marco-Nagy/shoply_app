@@ -47,7 +47,8 @@ class ProductsQueries {
 
   Map<String, dynamic> createProductMapMutation(CreateProductRequest body) {
     return {
-      'query': r'''mutation createProduct($title: String!
+      'query': r'''mutation createProduct(
+          $title: String!
           $price: Float!
           $description: String!
           $categoryId: Float!
@@ -68,7 +69,7 @@ class ProductsQueries {
         'title': body.title,
         'price': body.price,
         'description': body.description,
-        'categoryId': body.categoryId,
+        'categoryId': double.parse(body.categoryId.toString()),
         'imagesList': body.images,
       }
     };
@@ -108,8 +109,8 @@ class ProductsQueries {
 
   Map<String, dynamic> deleteProductMapMutation(String productId) {
     return {
-      'query': r'''mutation DeleteProduct($productId: ID!) {
-        deleteProduct(id: $productId) 
+      'query': r'''mutation DeleteProduct($id: ID!) {
+        deleteProduct(id: $id) 
     
       }''',
       'variables': {

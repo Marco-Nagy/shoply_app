@@ -8,17 +8,17 @@ class UpdateProductRequest {
   final String? title;
   final int? price;
   final String? description;
-  final int? categoryId;
+  final double? categoryId;
   final List<String>? images;
 
-  UpdateProductRequest(
+  UpdateProductRequest({
     this.id,
     this.title,
     this.price,
     this.description,
     this.categoryId,
     this.images,
-  );
+  });
 
   Map<String, dynamic> toJson() => _$UpdateProductRequestToJson(this);
 }

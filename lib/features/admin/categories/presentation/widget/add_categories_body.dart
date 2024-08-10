@@ -72,20 +72,18 @@ bool myAnimation = false;
                         AdminCategoriesState>(
                       builder: (context, state) {
                         return state.maybeWhen(
-                          getAdminCategoriesListEmpty: () =>
-                              const EmptyScreen(),
+                          getAdminCategoriesListEmpty: () => const EmptyScreen(),
                           getAdminCategoriesListFailure: (errorMessage) {
                             return AwesomeSnackbarContent(
                                 title: 'Error',
                                 message: errorMessage,
                                 contentType: ContentType.failure);
                           },
-                          adminCategoriesLoading: () =>
-                              const AddCategoryLoading(),
+                          adminCategoriesLoading: () => const AddCategoryLoading(),
                           getAdminCategoriesListSuccess: (categoriesList) {
                             return ListView.builder(
                               shrinkWrap: true,
-                              // physics: const BouncingScrollPhysics(),
+                              physics: const BouncingScrollPhysics(),
                               itemCount: categoriesList.length,
                               itemBuilder: (context, index) {
                                 return
@@ -195,124 +193,7 @@ bool myAnimation = false;
                         );
                       },
                     )
-
-                    // CustomScrollView(
-                    //   slivers: [
-                    //     SliverToBoxAdapter(
-                    //       child: verticalSpacing(12),
-                    //     ),
-                    //     SliverToBoxAdapter(
-                    //       child:
-                    //           BlocBuilder<AdminCategoriesBloc, AdminCategoriesState>(
-                    //         builder: (context, state) {
-                    //           return state.maybeWhen(
-                    //             getAdminCategoriesListEmpty: () =>
-                    //                 const EmptyScreen(),
-                    //             getAdminCategoriesListFailure: (errorMessage) {
-                    //               return AwesomeSnackbarContent(
-                    //                   title: 'Error',
-                    //                   message: errorMessage,
-                    //                   contentType: ContentType.failure);
-                    //             },
-                    //             adminCategoriesLoading: () =>
-                    //                 const AddCategoryLoading(),
-                    //             getAdminCategoriesListSuccess: (categoriesList) {
-                    //               return ListView.builder(
-                    //                 shrinkWrap: true,
-                    //                 physics: const BouncingScrollPhysics(),
-                    //                 itemCount: categoriesList.length,
-                    //                 itemBuilder: (context, index) {
-                    //                   return ValueListenableBuilder(valueListenable: myAnimation, builder: (context, value, child) {
-                    //                     return AnimatedContainer(
-                    //                       duration: Duration(milliseconds: 400 +(index*250)),
-                    //                       curve: Curves.easeIn,
-                    //                       transform: Matrix4.translationValues(myAnimation.value?0:width, 0, 0),
-                    //                       child: CustomSwipeToAction(
-                    //                         index: index,
-                    //                         rightButtonBackgroundColor: Colors.redAccent,
-                    //                         animatedRightButtonAsset: AppAnimatedIcons.trash,
-                    //                         animatedLiftButtonAsset: AppAnimatedIcons.edit,
-                    //                         leftButtonBackgroundColor: Colors.blue,
-                    //                         onPressRightButton: () async {
-                    //                           Vibration.vibrate(
-                    //                               duration: 700,
-                    //                               pattern: [50, 100, 50, 500]);
-                    //                           Future.delayed(
-                    //                               const Duration(milliseconds: 700));
-                    //                           CustomDialog.twoButtonDialog(
-                    //                               context: context,
-                    //                               textBody:
-                    //                               'Are you sure you want to delete ${categoriesList[index]!.name} ??',
-                    //                               textButton1: 'Delete',
-                    //                               textButton2: 'Cancel',
-                    //                               onPressed: () async {
-                    //                                 _deleteCategory(context,
-                    //                                     categoryId:
-                    //                                     categoriesList[index]!
-                    //                                         .id!)
-                    //                                     .whenComplete(
-                    //                                       () {
-                    //                                     context
-                    //                                         .read<AdminCategoriesBloc>()
-                    //                                         .add(const AdminCategoriesEvent
-                    //                                         .fetchAdminCategories());
-                    //                                     context.pop();
-                    //                                   },
-                    //                                 );
-                    //                               },
-                    //                               isLoading: true);
-                    //                         },
-                    //                         onPressLeftButton: () async {
-                    //                           Vibration.vibrate(
-                    //                               duration: 500,
-                    //                               pattern: [50, 200, 50, 100]);
-                    //                           Future.delayed(
-                    //                               const Duration(milliseconds: 500));
-                    //                           CustomBottomSheet
-                    //                               .showModalBottomSheetWidget(
-                    //                             context: context,
-                    //                             child: MultiBlocProvider(
-                    //                               providers: [
-                    //                                 BlocProvider(
-                    //                                     create: (context) =>
-                    //                                         sl<FileCubit>()),
-                    //                                 BlocProvider(
-                    //                                     create: (context) =>
-                    //                                         sl<AdminCategoriesBloc>()),
-                    //                               ],
-                    //                               child: CreateCategoryBottomSheetWidget(
-                    //                                   categories: categoriesList[index]!),
-                    //                             ),
-                    //                             whenComplete: () {
-                    //                               context.read<AdminCategoriesBloc>().add(
-                    //                                   const AdminCategoriesEvent
-                    //                                       .fetchAdminCategories());
-                    //                             },
-                    //                           );
-                    //                         },
-                    //                         child: Padding(
-                    //                           padding: const EdgeInsets.all(8.0),
-                    //                           child: AddCategoryItem(
-                    //                             name: categoriesList[index]!.name ?? '',
-                    //                             image: categoriesList[index]!.image ?? '',
-                    //                             categoryId:
-                    //                             categoriesList[index]!.id ?? '',
-                    //                           ),
-                    //                         ),
-                    //                       ),
-                    //                     );
-                    //                   },);
-                    //                 },
-                    //               );
-                    //             },
-                    //             orElse: () => const SizedBox.shrink(),
-                    //           );
-                    //         },
-                    //       ),
-                    //     )
-                    //   ],
-                    // ),
-                    )),
+                 )),
           ],
         ),
       ),

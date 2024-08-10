@@ -9,11 +9,12 @@ part of 'create_product_request.dart';
 CreateProductRequest _$CreateProductRequestFromJson(
         Map<String, dynamic> json) =>
     CreateProductRequest(
-      json['title'] as String?,
-      json['price'] as String?,
-      json['description'] as String?,
-      json['categoryId'] as String?,
-      (json['images'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      title: json['title'] as String?,
+      price: (json['price'] as num?)?.toDouble(),
+      description: json['description'] as String?,
+      categoryId: json['categoryId'] as String?,
+      images:
+          (json['images'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
 
 Map<String, dynamic> _$CreateProductRequestToJson(

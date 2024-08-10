@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/core/helpers/extension/mediaQueryValues.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/helpers/extension/navigations.dart';
 import 'package:shoply/core/styles/icons/app_animated_icons.dart';
 import 'package:shoply/core/utils/admin_app_bar.dart';
 import 'package:shoply/core/utils/widgets/app_animated_icon.dart';
+import 'package:shoply/features/admin/products/presentation/bloc/admin_product_bloc.dart';
 import 'package:shoply/features/admin/products/presentation/widget/add_products_body.dart';
 import 'package:shoply/features/search/presentation/screens/products_search.dart';
 
@@ -75,8 +78,13 @@ class _AddProductsScreenState extends State<AddProductsScreen>
           ),
         ],
       ),
-      body: const AddProductsBody(),
-
+      body: BlocProvider(
+        create: (context) => sl<AdminProductBloc>()
+          ..add(
+            const AdminProductEvent.getAdminProductList(),
+          ),
+        child: const AddProductsBody(),
+      ),
     );
   }
 

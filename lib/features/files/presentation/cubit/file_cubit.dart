@@ -2,22 +2,19 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/core/utils/image_picker.dart';
+import 'package:shoply/features/files/data/models/Images.dart';
 import 'package:shoply/features/files/data/repositories/upload_file_repository.dart';
-import 'package:path/path.dart';
 
 part 'file_cubit.freezed.dart';
-
 part 'file_state.dart';
 
-class FileCubit extends Cubit<FileState<dynamic>> {
+class FileCubit extends Cubit<FileState<dynamic>>   {
   FileCubit(this._fileRepository) : super(const FileState.initial());
   final FileRepository _fileRepository;
   static String base64Image = '';
@@ -79,7 +76,6 @@ class FileCubit extends Cubit<FileState<dynamic>> {
 
     if (file == null) return;
     imageFile = XFile(file.path);
-    // cachedFile = File(file.path);
     var bytes = await imageFile!.readAsBytes();
     base64Image = base64UrlEncode(bytes);
     emit(const FileState.loading());
@@ -92,34 +88,31 @@ class FileCubit extends Cubit<FileState<dynamic>> {
   }
 
   Future<void> uploadNetworkImageList() async {
-    int listSize = imagesFileList.length;
-    int counter = 0;
+
+    final file = await imageHelper.imagePicker(
+      source: ImageSource.gallery,
+    );
+
+    if (file == null) return;
+    imageFile = XFile(file.path);
     emit(const FileState.loadingUploadImageList());
-    for (var i = 0; i < imagesFileList.length; i++) {
-      counter++;
 
-      final result = await _fileRepository.uploadFile(imagesFileList[i]!);
-      result.when(
-        success: (data) {
-          getImageUrl = data.location ?? '';
-          emit(FileState.success(getImageUrl));
-        },
-        failure: (error) {
-          debugPrint('error ==>> $error');
-          emit(
-            FileState.failure(
-              error: error.errorMsg,
-            ),
-          );
-        },
-      );
-      debugPrint('Images index $i');
-
-    }
-    if (counter == listSize) {
-      emit(const FileState.successUploadImageList(
-          'All Images Uploaded Successfully'));
-    }
+    final result = await _fileRepository.uploadFile(imageFile!);
+    result.when(
+      success: (data) {
+        getImageUrl = data.location ?? '';
+        addImageToList();
+        emit(FileState.success(getImageUrl));
+      },
+      failure: (error) {
+        debugPrint('error ==>> $error');
+        emit(
+          FileState.failure(
+            error: error.errorMsg,
+          ),
+        );
+      },
+    );
 
   }
 
@@ -131,7 +124,7 @@ class FileCubit extends Cubit<FileState<dynamic>> {
 
   void addImageToList() {
     var index = imagesList.length;
-    imagesList.add(base64Image);
+    imagesList.add(getImageUrl);
     if (globalKey.currentState != null) {
       globalKey.currentState!.insertItem(index);
       Future.delayed(Durations.medium4).then(
@@ -146,7 +139,7 @@ class FileCubit extends Cubit<FileState<dynamic>> {
   void removeImageFromList(
       {required int index, Widget? widget, required String removedItem}) {
     if (imagesList.isNotEmpty) {
-      removedItem = imagesList.removeAt(index);
+      removedItem = imagesList.removeAt(index) ;
       globalKey.currentState!.removeItem(
         index,
         (context, animation) => widget!,

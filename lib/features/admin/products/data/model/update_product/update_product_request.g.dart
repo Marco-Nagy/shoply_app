@@ -9,12 +9,13 @@ part of 'update_product_request.dart';
 UpdateProductRequest _$UpdateProductRequestFromJson(
         Map<String, dynamic> json) =>
     UpdateProductRequest(
-      json['id'] as String?,
-      json['title'] as String?,
-      (json['price'] as num?)?.toInt(),
-      json['description'] as String?,
-      (json['categoryId'] as num?)?.toInt(),
-      (json['images'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      id: json['id'] as String?,
+      title: json['title'] as String?,
+      price: (json['price'] as num?)?.toInt(),
+      description: json['description'] as String?,
+      categoryId: (json['categoryId'] as num?)?.toDouble(),
+      images:
+          (json['images'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
 
 Map<String, dynamic> _$UpdateProductRequestToJson(
