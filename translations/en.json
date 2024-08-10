@@ -39,5 +39,6 @@
     "no_network":"No Network",
     "camera": "Camera",
     "gallery": "Gallery",
-    "remove": "Remove"
+    "remove": "Remove",
+    "category_name" : "Category Name"
 }

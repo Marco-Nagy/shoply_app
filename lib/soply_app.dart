@@ -7,7 +7,7 @@ import 'package:shoply/core/Services/shared_preference/shared_preference_helper.
 import 'package:shoply/core/app/app_cubit/app_cubit.dart';
 import 'package:shoply/core/app/connectivity_controller.dart';
 import 'package:shoply/core/app/env_variables.dart';
-import 'package:shoply/core/app/service_locator/injection_container.dart';
+import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/core/helpers/extension/mediaQueryValues.dart';
 import 'package:shoply/core/localization/app_localizations_setup.dart';
 import 'package:shoply/core/routes/app_routes.dart';
@@ -31,7 +31,7 @@ class ShoplyApp extends StatelessWidget {
                   sharedMode: SharedPrefHelper()
                       .getBoolean(key: SharedPrefKeys.themeMode),),
             child: ScreenUtilInit(
-              designSize:kIsWeb?Size(context.width, context.height) :Size(390, 844),
+              designSize:kIsWeb?Size(context.width, context.height) :const Size(390, 844),
               minTextAdapt: true,
               child: BlocBuilder<AppCubit, AppState>(
                 buildWhen: (previous, current) {

@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 
+import 'error_model.dart';
+
 abstract class ErrorHandler {
 
   ErrorHandler(this.errorMsg);
@@ -22,7 +24,7 @@ class ServerFailure extends ErrorHandler {
         return ServerFailure('Bad Certificate with ApiServer');
       case DioExceptionType.badResponse:
         return ServerFailure.fromResponse(dioException.response!.statusCode,
-            dioException.response!.statusMessage ?? '',);
+            dioException.response!.data,);
       case DioExceptionType.cancel:
         return ServerFailure('Request to ApiServer was Canceled');
       case DioExceptionType.unknown:
@@ -35,12 +37,12 @@ class ServerFailure extends ErrorHandler {
     }
   }
 
-  factory ServerFailure.fromResponse(int? statusCode, String response) {
+  factory ServerFailure.fromResponse(int? statusCode, ErrorModel response) {
     switch (statusCode) {
       case 401:
       case 402:
       case 403:
-        return ServerFailure(response);
+        return ServerFailure(response.message);
       case 404:
         return ServerFailure('Yor Request not found , Please Try later!');
       case 500:

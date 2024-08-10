@@ -51,23 +51,4 @@ firebase.json
 remoteconfig.template.json
 
 
-/android/app/google-services.json
-#.env variables
-.env.prod
-.env.dev
-.env.firebase
-firebase.json
-.firebaserc
-remoteconfig.template.json
-
-
-/android/app/google-services.json
-#.env variables
-.env.prod
-.env.dev
-.env.firebase
-firebase.json
-.firebaserc
-remoteconfig.template.json
-
 

@@ -15,7 +15,7 @@ aweSnackBar(
       message: msg,
 
       /// change contentType to ContentType.success, ContentType.warning or ContentType.help for variants
-      contentType: getMsgType(type),
+      contentType: getMsgType(type,msg),
     ),
   );
 
@@ -35,7 +35,7 @@ bannerSnackBar(String msg, String title, BuildContext context, String type) {
       message: msg,
 
       /// change contentType to ContentType.success, ContentType.warning or ContentType.help for variants
-      contentType: getMsgType(type),
+      contentType: getMsgType(type,msg),
       // to configure for material banner
       inMaterialBanner: true,
     ),
@@ -47,16 +47,16 @@ bannerSnackBar(String msg, String title, BuildContext context, String type) {
     ..showMaterialBanner(materialBanner);
 }
 
-ContentType getMsgType(String type) {
+ContentType getMsgType(String type, String msg) {
   switch (type) {
     case MessageTypeConst.failure:
-      return ContentType.failure;
+      return ContentType(msg,Colors.redAccent);
     case MessageTypeConst.help:
       return ContentType.help;
     case MessageTypeConst.warning:
       return ContentType.warning;
     case MessageTypeConst.success:
-      return ContentType.success;
+      return ContentType(msg,Colors.lightGreen);
   }
   return ContentType(type);
 }

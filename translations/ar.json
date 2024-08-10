@@ -39,5 +39,6 @@
     "no_network": "لا يوجد اتصال",
     "camera": "كاميرا",
     "gallery": "معرض الصور",
-    "remove": "ازالة"
+    "remove": "ازالة",
+    "category_name" : "اسم الفئة"
 }
