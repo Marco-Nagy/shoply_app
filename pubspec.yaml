@@ -33,8 +33,15 @@ dependencies:
     sdk: flutter
 
   #firebase
-  firebase_auth: ^5.1.0
-  firebase_core: ^3.1.0
+  firebase_auth: ^5.1.4
+  firebase_core: ^3.3.0
+
+  # Notifications
+  firebase_messaging: ^15.0.4
+  flutter_local_notifications: ^17.2.2
+  googleapis_auth: ^1.6.0
+#  awesome_notifications: ^0.9.3+1
+
 
 
 
