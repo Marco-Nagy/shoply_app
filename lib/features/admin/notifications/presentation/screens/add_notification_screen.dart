@@ -38,7 +38,8 @@ class _AddNotificationScreenState extends State<AddNotificationScreen> {
         child: InkWell(
             onTap: () {
               FirebaseCloudMessaging().sendTopicNotification(
-                  token:EnvVariables.instance.testDeviceToken,
+                  // token:EnvVariables.instance.testDeviceToken,
+                topic: FirebaseCloudMessaging.subscribeKey,
                   title: 'Test Notification 1',
                   body: 'Test Notification  Body I Hope to Send Test Notification 1',
 

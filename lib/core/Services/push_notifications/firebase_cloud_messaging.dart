@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import 'package:shoply/core/app/env_variables.dart';
 
 import 'firebase_server_token.dart';
@@ -12,18 +13,63 @@ class FirebaseCloudMessaging {
 
   static final FirebaseCloudMessaging _instance = FirebaseCloudMessaging._();
   FirebaseMessaging messaging = FirebaseMessaging.instance;
+  static const String subscribeKey = "shoply";
+  bool isPermissionNotification = false;
+  ValueNotifier<bool> isNotificationSubscribed = ValueNotifier(false);
 
-  requestPermissions() async {
+  Future<void> initialize() async {
+    //? Request permission for iOS
+    await _requestPermissions();
+    //? For handling background messages
+    FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+
+    //? Get the token
+    await getDeviceToken();
+
+    //? Handle foreground messages
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      print('Message received: ${message.notification?.title}');
+    });
+  }
+
+  Future<void> switchUserSubscribe() async {
+    if (isPermissionNotification == false) {
+      _requestPermissions();
+    } else if (isNotificationSubscribed.value == false) {
+      _subscribeToTopic(subscribeKey);
+    } else {
+      _unsubscribeFromTopic(subscribeKey);
+    }
+  }
+
+//* Notification Permissions
+  _requestPermissions() async {
     NotificationSettings settings = await messaging.requestPermission(
-      alert: true,
-      announcement: false,
-      badge: true,
-      carPlay: false,
-      criticalAlert: false,
-      provisional: false,
-      sound: true,
+      badge: false,
     );
-    return settings;
+    if (settings.authorizationStatus == AuthorizationStatus.authorized) {
+      _subscribeToTopic(subscribeKey);
+      isPermissionNotification = true;
+      debugPrint('User accept Notification 🔔🔔 permission');
+    } else {
+      isPermissionNotification = false;
+      isNotificationSubscribed.value = false;
+      debugPrint('User permissions denied 🔕🔕 or has not accept permission');
+    }
+  }
+
+  //* Subscribe Notification
+  Future<void> _subscribeToTopic(String topic) async {
+      await messaging.subscribeToTopic(topic);
+      isNotificationSubscribed.value = true;
+      debugPrint('🔔🔔 Subscribed to $topic🔔🔔');
+  }
+
+  //* Unsubscribe Notification
+  Future<void> _unsubscribeFromTopic(String topic) async {
+      await messaging.unsubscribeFromTopic(topic);
+      isNotificationSubscribed.value = false;
+      debugPrint('🔕🔕 Unsubscribed from $topic 🔕🔕 ');
   }
 
   //* Send Notification with Api
@@ -78,21 +124,7 @@ class FirebaseCloudMessaging {
     return deviceToken;
   }
 
-  Future<void> initialize() async {
-    // For handling background messages
-    FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
-    // Request permission for iOS
-    await messaging.requestPermission(sound: true,alert: true,badge: true,);
-
-    // Get the token
-    getDeviceToken();
-
-    // Handle foreground messages
-    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      print('Message received: ${message.notification?.title}');
-    });
-  }
 
   static Future<void> _firebaseMessagingBackgroundHandler(
       RemoteMessage message) async {
