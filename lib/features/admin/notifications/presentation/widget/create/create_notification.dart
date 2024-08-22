@@ -7,12 +7,12 @@ import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/utils/widgets/buttons/custom_button.dart';
 import 'package:shoply/core/utils/widgets/custom_bottom_sheet.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
-import 'package:shoply/features/admin/categories/presentation/bloc/admin_categories_bloc.dart';
-import 'package:shoply/features/admin/categories/presentation/widget/create/create_category_bottom_sheet_widget.dart';
-import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
+import 'package:shoply/features/admin/products/presentation/bloc/admin_product_bloc.dart';
 
-class CreateCategory extends StatelessWidget {
-  const CreateCategory({super.key});
+import 'create_notification_bottom_sheet_widget.dart';
+
+class CreateNotification extends StatelessWidget {
+  const CreateNotification({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class CreateCategory extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         TextApp(
-          text: 'Get All Categories',
+          text: 'Get All Notifications',
           style: MyFonts.styleMedium500_18
               .copyWith(color: context.colors.textColor),
         ),
@@ -29,9 +29,10 @@ class CreateCategory extends StatelessWidget {
             CustomBottomSheet.showModalBottomSheetWidget(
                 context: context,
                 child: MultiBlocProvider(providers: [
-                  BlocProvider(create: (context) => sl<FileCubit>()),
-                  BlocProvider(create: (context) => sl<AdminCategoriesBloc>()),
-                ], child:   const CreateCategoryBottomSheetWidget()));
+                  BlocProvider(
+                      create: (context) => sl<AdminProductBloc>()
+                        ..add( const AdminProductEvent.getAdminProductList())),
+                ], child: const CreateNotificationBottomSheetWidget()));
           },
           text: 'Add',
           width: 90.w,

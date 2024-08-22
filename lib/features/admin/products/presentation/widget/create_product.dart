@@ -7,9 +7,7 @@ import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/utils/widgets/buttons/custom_button.dart';
 import 'package:shoply/core/utils/widgets/custom_bottom_sheet.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
-import 'package:shoply/features/admin/categories/data/model/get_all_categories/get_all_categories.dart';
 import 'package:shoply/features/admin/categories/presentation/bloc/admin_categories_bloc.dart';
-import 'package:shoply/features/admin/categories/presentation/widget/create/create_category_bottom_sheet_widget.dart';
 import 'package:shoply/features/admin/products/presentation/bloc/admin_product_bloc.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
 

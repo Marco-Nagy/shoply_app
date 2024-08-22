@@ -31,7 +31,7 @@ class GetProductsList {
 @JsonSerializable()
 class Product {
   final String? id;
-  final String? title;
+  late final String? title;
   final int? price;
   final String? description;
   @JsonKey(name: 'images')
