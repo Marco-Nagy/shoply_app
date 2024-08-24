@@ -18,12 +18,6 @@ TotalCategoriesResponse _$TotalCategoriesResponseFromJson(
           .toList(),
     );
 
-Map<String, dynamic> _$TotalCategoriesResponseToJson(
-        TotalCategoriesResponse instance) =>
-    <String, dynamic>{
-      'data': instance.data,
-      'errors': instance.errors,
-    };
 
 TotalCategoriesResponseData _$TotalCategoriesResponseDataFromJson(
         Map<String, dynamic> json) =>
@@ -36,11 +30,6 @@ TotalCategoriesResponseData _$TotalCategoriesResponseDataFromJson(
           .toList(),
     );
 
-Map<String, dynamic> _$TotalCategoriesResponseDataToJson(
-        TotalCategoriesResponseData instance) =>
-    <String, dynamic>{
-      'categories': instance.categories,
-    };
 
 TotalCategoriesResponseDataCategories
     _$TotalCategoriesResponseDataCategoriesFromJson(
@@ -49,8 +38,3 @@ TotalCategoriesResponseDataCategories
           json['name'] as String?,
         );
 
-Map<String, dynamic> _$TotalCategoriesResponseDataCategoriesToJson(
-        TotalCategoriesResponseDataCategories instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-    };

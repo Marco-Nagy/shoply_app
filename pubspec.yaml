@@ -102,6 +102,9 @@ dependencies:
   retrofit: ^4.1.0
   json_annotation: ^4.9.0
   dropdown_search: ^5.0.6
+# Data Source database Hive
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
 
 
 
@@ -112,6 +115,7 @@ dev_dependencies:
   flutter_launcher_icons: ^0.13.1
   flutter_lints: ^4.0.0
   very_good_analysis: ^6.0.0
+  hive_generator: ^2.0.1
 
 #  freezed
 # dart run build_runner build --delete-conflicting-outputs
