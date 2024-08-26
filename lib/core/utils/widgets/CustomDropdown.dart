@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shoply/core/helpers/extension/mediaQueryValues.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/utils/screens/app_text_form_field.dart';
@@ -74,6 +75,7 @@ class _CustomDropdownMenuState<T> extends State<CustomDropdownMenu<T>> {
       ),
       borderRadius: BorderRadius.circular(15),
       dropdownColor: context.colors.navBarbg,
+      menuMaxHeight: context.height*.4,
       items: _filteredItems.map((item) {
         return DropdownMenuItem<T>(
           value: item,

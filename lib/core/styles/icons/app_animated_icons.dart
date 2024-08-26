@@ -6,6 +6,9 @@ class AppAnimatedIcons {
   static const menu ='assets/images/json/hamburger_menu.json';
   static const edit ='assets/images/json/icons8-edit.json';
   static const search ='assets/images/json/search_dark.json';
+  static const send ='assets/images/json/send.json';
+  static const sendIco ='assets/images/json/send_ico.json';
+
 
 
 }

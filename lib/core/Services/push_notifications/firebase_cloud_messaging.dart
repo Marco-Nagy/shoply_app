@@ -76,6 +76,7 @@ class FirebaseCloudMessaging {
   Future<void> sendTopicNotification(
       {String? topic,
       String? token,
+        String? productId,
       required String title,
       required String body}) async {
     FirebaseServerToken firebaseServerToken = FirebaseServerToken();
@@ -101,6 +102,7 @@ class FirebaseCloudMessaging {
               "title": title,
               "body": body,
             },
+            'data': {'productId': productId},
           },
         },
       );
