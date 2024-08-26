@@ -7,6 +7,7 @@ import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/utils/widgets/buttons/custom_button.dart';
 import 'package:shoply/core/utils/widgets/custom_bottom_sheet.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
+import 'package:shoply/features/admin/notifications/presentation/bloc/add_notification/admin_notifications_bloc.dart';
 import 'package:shoply/features/admin/products/presentation/bloc/admin_product_bloc.dart';
 
 import 'create_notification_bottom_sheet_widget.dart';
@@ -32,7 +33,12 @@ class CreateNotification extends StatelessWidget {
                   BlocProvider(
                       create: (context) => sl<AdminProductBloc>()
                         ..add( const AdminProductEvent.getAdminProductList())),
-                ], child: const CreateNotificationBottomSheetWidget()));
+                  BlocProvider(
+                      create: (context) =>
+                          sl<AdminNotificationsBloc>()),
+                ],
+                    child: const CreateNotificationBottomSheetWidget()));
+
           },
           text: 'Add',
           width: 90.w,

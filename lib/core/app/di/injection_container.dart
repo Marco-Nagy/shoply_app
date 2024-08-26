@@ -9,6 +9,10 @@ import 'package:shoply/features/admin/categories/data/data_source/admin_categrie
 import 'package:shoply/features/admin/categories/data/repository/admin_categories_repository.dart';
 import 'package:shoply/features/admin/categories/presentation/bloc/admin_categories_bloc.dart';
 import 'package:shoply/features/admin/dashboard/data/data_sources/dashboard_api_service.dart';
+import 'package:shoply/features/admin/notifications/data/data_sources/add_notification_data_source.dart';
+import 'package:shoply/features/admin/notifications/presentation/bloc/add_notification/admin_notifications_bloc.dart';
+import 'package:shoply/features/admin/notifications/presentation/bloc/send_notification/send_notification_bloc.dart';
+import 'package:shoply/features/admin/notifications/repository/add_notification_repo.dart';
 import 'package:shoply/features/admin/products/data/data_sources/admin_products_api_service.dart';
 import 'package:shoply/features/admin/products/data/data_sources/admin_products_data_source.dart';
 import 'package:shoply/features/admin/products/data/repository/admin_product_repository.dart';
@@ -31,6 +35,7 @@ Future<void> setupInjector() async {
   await _initDashboard();
   await _initAdminCategories();
   await _initAdminProducts();
+  await _initAdminNotifications();
 }
 
 Future<void> _initCore() async {
@@ -48,7 +53,7 @@ Future<void> _initCore() async {
 }
 
 Future<void> _initAuth() async {
-  final dio = DioFactory.getInstance();
+  DioFactory.getInstance();
   sl
     ..registerFactory(() => AuthBloc(sl()))
     ..registerLazySingleton<AuthRepository>(() => AuthRepository(sl()))
@@ -83,4 +88,12 @@ Future<void> _initAdminProducts() async {
         () => AdminProductsDataSource(sl()))
     ..registerLazySingleton<AdminProductsApiService>(
         () => AdminProductsApiService(dio));
+}
+
+Future<void> _initAdminNotifications() async {
+  sl
+    ..registerFactory(AdminNotificationsBloc.new)
+    ..registerFactory(() => SendNotificationBloc(sl()))
+    ..registerLazySingleton(() => AddNotificationRepo(sl()))
+    ..registerLazySingleton( AddNotificationDataSource.new);
 }

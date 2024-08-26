@@ -1,20 +1,22 @@
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_swipe_action_cell/core/controller.dart';
 import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/core/helpers/extension/mediaQueryValues.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
+import 'package:shoply/core/helpers/extension/navigations.dart';
 import 'package:shoply/core/styles/icons/app_animated_icons.dart';
+import 'package:shoply/core/utils/loading/empty_screen.dart';
 import 'package:shoply/core/utils/widgets/custom_bottom_sheet.dart';
 import 'package:shoply/core/utils/widgets/custom_dialogs.dart';
 import 'package:shoply/core/utils/widgets/custom_swipe_to_action.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
-import 'package:shoply/features/admin/categories/presentation/widget/add_category_item.dart';
-import 'package:shoply/features/admin/categories/presentation/widget/create/create_category.dart';
-import 'package:shoply/features/admin/categories/presentation/widget/create/create_category_bottom_sheet_widget.dart';
+import 'package:shoply/features/admin/notifications/data/model/add_notification_model.dart';
+import 'package:shoply/features/admin/notifications/presentation/bloc/add_notification/admin_notifications_bloc.dart';
+import 'package:shoply/features/admin/notifications/presentation/widget/notification_loading.dart';
 import 'package:shoply/features/admin/products/presentation/bloc/admin_product_bloc.dart';
 import 'package:vibration/vibration.dart';
-
 import 'create/create_notification.dart';
 import 'create/create_notification_bottom_sheet_widget.dart';
 import 'notification_item.dart';
@@ -61,34 +63,32 @@ class _AddNotificationBodyState extends State<AddNotificationBody>
             Expanded(
                 child: RefreshIndicator(
                     onRefresh: () async {
-                      // context
-                      //     .read<AdminCategoriesBloc>()
-                      //     .add(const AdminCategoriesEvent.fetchAdminCategories());
-                    },
-                    color: context.colors.bluePinkLight,
-                    child:
-                        // BlocBuilder<AdminCategoriesBloc,
-                        //     AdminCategoriesState>(
-                        //   builder: (context, state) {
-                        // return state.maybeWhen(
-                        //   getAdminCategoriesListEmpty: () => const EmptyScreen(),
-                        //   getAdminCategoriesListFailure: (errorMessage) {
-                        //     return AwesomeSnackbarContent(
-                        //         title: 'Error',
-                        //         message: errorMessage,
-                        //         contentType: ContentType.failure);
-                        //   },
-                        //   adminCategoriesLoading: () => const AddCategoryLoading(),
-                        //   getAdminCategoriesListSuccess: (categoriesList) {
-                        //     return
-                        ListView.builder(
-                      shrinkWrap: true,
-                      physics: const BouncingScrollPhysics(),
-                      itemCount: 10,
-                      itemBuilder: (context, index) {
-                        return CustomSwipeToAction(
-                          index: index,
-                          rightButtonBackgroundColor: Colors.redAccent,
+                  context.read<AdminNotificationsBloc>().add(
+                      const AdminNotificationsEvent.fetchAdminNotifications());
+                },
+                color: context.colors.bluePinkLight,
+                child: BlocBuilder<AdminNotificationsBloc,
+                    AdminNotificationsState>(
+                  builder: (context, state) {
+                    return state.maybeWhen(
+                      getAdminNotificationsListEmpty: () => const EmptyScreen(),
+                      getAdminNotificationsListFailure: (errorMessage) {
+                        return AwesomeSnackbarContent(
+                            title: 'Error',
+                            message: errorMessage,
+                            contentType: ContentType.failure);
+                      },
+                      adminNotificationsLoading: () =>
+                          const NotificationLoading(),
+                      getAdminNotificationsListSuccess: (notificationsList) {
+                        return ListView.builder(
+                          shrinkWrap: true,
+                          physics: const BouncingScrollPhysics(),
+                          itemCount: notificationsList.length,
+                          itemBuilder: (context, index) {
+                            return CustomSwipeToAction(
+                              index: index,
+                              rightButtonBackgroundColor: Colors.redAccent,
                           animatedRightButtonAsset: AppAnimatedIcons.trash,
                           animatedLiftButtonAsset: AppAnimatedIcons.edit,
                           leftButtonBackgroundColor: Colors.blue,
@@ -103,21 +103,24 @@ class _AddNotificationBodyState extends State<AddNotificationBody>
                                 textButton1: 'Delete',
                                 textButton2: 'Cancel',
                                 onPressed: () async {
-                                  // _deleteCategory(context,
-                                  //     categoryId:
-                                  //     categoriesList[
-                                  //     index]!
-                                  //         .id!)
-                                  //     .whenComplete(
-                                  //       () {
-                                  //     context
-                                  //         .read<
-                                  //         AdminCategoriesBloc>()
-                                  //         .add(const AdminCategoriesEvent
-                                  //         .fetchAdminCategories());
-                                  //     context.pop();
-                                  //   },
-                                  // );
+                                  setState(() {
+
+                                  });
+                                      notificationsList[index]!.delete();
+
+                                      _deleteCategory(context,
+                                          notification:
+                                          notificationsList[
+                                      index]!)
+                                      .whenComplete(
+                                        () {
+                                      context
+                                          .read<AdminNotificationsBloc>()
+                                          .add(const AdminNotificationsEvent.fetchAdminNotifications()
+                                   );
+                                      context.pop();
+                                    },
+                                  );
                                 },
                                 isLoading: true);
                           },
@@ -129,49 +132,52 @@ class _AddNotificationBodyState extends State<AddNotificationBody>
                               context: context,
                               child: MultiBlocProvider(
                                 providers: [
-                                  // BlocProvider(
-                                  //     create: (context) =>
-                                  //         sl<FileCubit>()),
                                   BlocProvider(
                                       create: (context) => sl<
                                           AdminProductBloc>()..add(const AdminProductEvent.getAdminProductList())),
-                                ],
-                                child:
-                                    const CreateNotificationBottomSheetWidget(),
-                              ),
-                              whenComplete: () {
-                                // context
-                                //     .read<AdminCategoriesBloc>()
-                                //     .add(const AdminCategoriesEvent
-                                //     .fetchAdminCategories());
+                                      BlocProvider(
+                                          create: (context) =>
+                                              sl<AdminNotificationsBloc>()),
+                                      BlocProvider(
+                                          create: (context) => sl<
+                                              AdminNotificationsBloc>()
+                                            ..add(const AdminNotificationsEvent
+                                                .fetchAdminNotifications())),
+                                    ],
+                                    child: CreateNotificationBottomSheetWidget(
+                                      notification: notificationsList[index]!,
+                                    ),
+                                  ),
+                                  whenComplete: () {
+                                    context.read<AdminNotificationsBloc>().add(
+                                        const AdminNotificationsEvent
+                                            .fetchAdminNotifications());
+                                  },
+                                );
                               },
-                            );
-                          },
-                          child: AnimatedContainer(
+                              child: AnimatedContainer(
                             duration:
                                 Duration(milliseconds: 400 + (index * 250)),
                             curve: Curves.easeIn,
                             transform: Matrix4.translationValues(
                                 myAnimation ? 0 : width, 0, 0),
-                            child: const Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: NotificationItem(
-                                title: 'Notification Title',
-                                body: ' Notification Body',
-                                createAt: '23/8/2024',
-                                productId: '',
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: NotificationItem(
+                                    notification: notificationsList[index]!, index: index,
+                                  ),
+                                ),
                               ),
-                            ),
-                          ),
+                            );
+                      },
                         );
                       },
-                      // );
-                      // },
-
-                      // orElse: () => const SizedBox.shrink(),
-                      // );
-                      // },
-                    ))),
+                      orElse: () => const SizedBox.shrink(),
+                    );
+                  },
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -179,9 +185,9 @@ class _AddNotificationBodyState extends State<AddNotificationBody>
   }
 
   Future<void> _deleteCategory(BuildContext context,
-      {required String categoryId}) async {
-    // context
-    //     .read<AdminCategoriesBloc>()
-    //     .add(DeleteCategoryEvent(categoryId: categoryId));
+      {required AddNotificationModel notification}) async {
+    context
+        .read<AdminNotificationsBloc>()
+        .add(DeleteNotificationEvent(notification: notification));
   }
 }

@@ -18,6 +18,12 @@ TotalProductsResponse _$TotalProductsResponseFromJson(
           .toList(),
     );
 
+Map<String, dynamic> _$TotalProductsResponseToJson(
+        TotalProductsResponse instance) =>
+    <String, dynamic>{
+      'data': instance.data,
+      'errors': instance.error,
+    };
 
 TotalProductsResponseData _$TotalProductsResponseDataFromJson(
         Map<String, dynamic> json) =>
@@ -30,6 +36,11 @@ TotalProductsResponseData _$TotalProductsResponseDataFromJson(
           .toList(),
     );
 
+Map<String, dynamic> _$TotalProductsResponseDataToJson(
+        TotalProductsResponseData instance) =>
+    <String, dynamic>{
+      'products': instance.products,
+    };
 
 TotalProductsResponseDataProducts _$TotalProductsResponseDataProductsFromJson(
         Map<String, dynamic> json) =>
@@ -37,3 +48,8 @@ TotalProductsResponseDataProducts _$TotalProductsResponseDataProductsFromJson(
       json['title'] as String?,
     );
 
+Map<String, dynamic> _$TotalProductsResponseDataProductsToJson(
+        TotalProductsResponseDataProducts instance) =>
+    <String, dynamic>{
+      'title': instance.title,
+    };
