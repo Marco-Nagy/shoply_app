@@ -5,6 +5,7 @@ import 'package:shoply/features/admin/categories/data/model/create/create_catego
 import 'package:shoply/features/admin/categories/data/model/delete/delete_response.dart';
 import 'package:shoply/features/admin/categories/data/model/get_all_categories/get_all_categories.dart';
 import 'package:shoply/features/admin/categories/data/model/update/update_category_response.dart';
+
 part 'admin_categories_api_service.g.dart';
 
 @RestApi(baseUrl: ApiConst.baseUrl)

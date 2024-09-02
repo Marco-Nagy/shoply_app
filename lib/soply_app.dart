@@ -83,7 +83,7 @@ class ShoplyApp extends StatelessWidget {
         .getString(key: SharedPrefKeys.userRole) ==
         'admin'
         ? AppRoutes.homeAdmin
-        : AppRoutes.homeAdmin
+        : AppRoutes.homeCustomer
         : AppRoutes.login;
   }
 }

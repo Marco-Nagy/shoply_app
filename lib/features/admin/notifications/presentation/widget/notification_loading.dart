@@ -6,7 +6,6 @@ import 'package:shoply/core/utils/loading/loading_shimmer.dart';
 import 'package:shoply/core/utils/widgets/custom_linear_container_admin.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
-import 'package:shoply/features/admin/notifications/data/model/add_notification_model.dart';
 
 class NotificationLoading extends StatelessWidget {
   const NotificationLoading({

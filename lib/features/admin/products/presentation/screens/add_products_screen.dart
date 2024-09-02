@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoply/core/app/di/injection_container.dart';
-import 'package:shoply/core/helpers/extension/mediaQueryValues.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
-import 'package:shoply/core/helpers/extension/navigations.dart';
 import 'package:shoply/core/styles/icons/app_animated_icons.dart';
 import 'package:shoply/core/utils/admin_app_bar.dart';
+import 'package:shoply/core/utils/animations/animate_do.dart';
 import 'package:shoply/core/utils/widgets/app_animated_icon.dart';
 import 'package:shoply/features/admin/products/presentation/bloc/admin_product_bloc.dart';
 import 'package:shoply/features/admin/products/presentation/widget/add_products_body.dart';
@@ -62,19 +61,22 @@ class _AddProductsScreenState extends State<AddProductsScreen>
         isMain: false,
         backgroundColor: context.colors.bluePinkDark,
         actionButtons: [
-          AppAnimatedIcon(
-            animationController: _animatedSearchController,
-            iconAsset: AppAnimatedIcons.search,
-            backGroundColor: context.colors.bluePinkDark,
-            onTap: ()async {
+          CustomFadeInLeft(
+            duration: 400,
+            child: AppAnimatedIcon(
+              animationController: _animatedSearchController,
+              iconAsset: AppAnimatedIcons.search,
+              backGroundColor: context.colors.bluePinkDark,
+              onTap: ()async {
 
 
-              Future.delayed(const Duration(milliseconds: 400)).then(
-                (value) {
-                  // _toggleDrawer();
-                  _scaffoldKey.currentState?.openEndDrawer();                },
-              );
-            },
+                Future.delayed(const Duration(milliseconds: 400)).then(
+                  (value) {
+                    // _toggleDrawer();
+                    _scaffoldKey.currentState?.openEndDrawer();                },
+                );
+              },
+            ),
           ),
         ],
       ),

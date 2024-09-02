@@ -7,8 +7,8 @@ import 'package:shoply/core/routes/base_routes.dart';
 import 'package:shoply/core/styles/app_images.dart';
 import 'package:shoply/core/utils/animations/animate_do.dart';
 import 'package:shoply/core/utils/widgets/images/custom_image.dart';
-import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
 import 'package:shoply/core/utils/widgets/images/hero_photo_view.dart';
+import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
 import 'package:shoply/features/files/presentation/widgets/image_menu.dart';
 
 class UserAvatarImage extends StatefulWidget {

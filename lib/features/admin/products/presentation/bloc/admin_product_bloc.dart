@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shoply/features/admin/products/data/model/create_product/create_product_request.dart';
 import 'package:shoply/features/admin/products/data/model/create_product/create_product_response.dart';
@@ -12,11 +11,9 @@ import 'package:shoply/features/admin/products/data/model/update_product/update_
 import 'package:shoply/features/admin/products/data/model/update_product/update_product_response.dart';
 import 'package:shoply/features/admin/products/data/repository/admin_product_repository.dart';
 
-part 'admin_product_event.dart';
-
-part 'admin_product_state.dart';
-
 part 'admin_product_bloc.freezed.dart';
+part 'admin_product_event.dart';
+part 'admin_product_state.dart';
 
 class AdminProductBloc extends Bloc<AdminProductEvent, AdminProductState> {
   AdminProductBloc(this._repository)
