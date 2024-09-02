@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shoply/core/styles/colors/dark_colors.dart';
 import 'package:shoply/core/styles/colors/light_colors.dart';
+import 'package:shoply/core/styles/theme/APP_assets_theme.dart';
 import 'package:shoply/core/styles/theme/app_color_theme.dart';
 
 ThemeData lightTheme = ThemeData(
@@ -9,7 +10,7 @@ ThemeData lightTheme = ThemeData(
 
   extensions: const <ThemeExtension<dynamic>>[
     AppColorTheme.light,
-
+    AppAssetsTheme.light,
   ],
   useMaterial3: true,
 );
@@ -17,6 +18,9 @@ ThemeData lightTheme = ThemeData(
 ThemeData darkTheme = ThemeData(
   scaffoldBackgroundColor: DarkColors.mainColor,
   appBarTheme: const AppBarTheme(color: DarkColors.mainColor),
-  extensions: const <ThemeExtension<dynamic>>[AppColorTheme.dark, ],
+  extensions: const <ThemeExtension<dynamic>>[
+    AppColorTheme.dark,
+    AppAssetsTheme.dark
+  ],
   useMaterial3: true,
 );

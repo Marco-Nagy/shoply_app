@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
-import 'package:shoply/core/helpers/extension/navigations.dart';
 import 'package:shoply/core/helpers/extension/string_exetension.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/styles/icons/app_animated_icons.dart';
@@ -17,7 +16,6 @@ import 'package:shoply/core/utils/widgets/text_app.dart';
 import 'package:shoply/features/admin/categories/presentation/bloc/admin_categories_bloc.dart';
 import 'package:shoply/features/admin/products/data/model/get_products_list/get_all_products.dart';
 import 'package:shoply/features/admin/products/presentation/bloc/admin_product_bloc.dart';
-import 'package:shoply/features/files/data/models/Images.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
 import 'package:vibration/vibration.dart';
 

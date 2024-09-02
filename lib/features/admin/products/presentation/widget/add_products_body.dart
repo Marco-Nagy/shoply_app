@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoply/core/utils/loading/empty_screen.dart';
 import 'package:shoply/features/admin/products/presentation/bloc/admin_product_bloc.dart';
-import 'package:shoply/features/admin/products/presentation/widget/product_admin_item.dart';
 import 'package:shoply/features/admin/products/presentation/widget/product_loading.dart';
 import 'package:shoply/features/admin/products/presentation/widget/products_list_admin.dart';
 

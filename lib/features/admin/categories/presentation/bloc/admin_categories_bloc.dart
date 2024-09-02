@@ -8,11 +8,9 @@ import 'package:shoply/features/admin/categories/data/model/get_all_categories/g
 import 'package:shoply/features/admin/categories/data/model/update/update_category_request.dart';
 import 'package:shoply/features/admin/categories/data/repository/admin_categories_repository.dart';
 
-part 'admin_categories_event.dart';
-
-part 'admin_categories_state.dart';
-
 part 'admin_categories_bloc.freezed.dart';
+part 'admin_categories_event.dart';
+part 'admin_categories_state.dart';
 
 class AdminCategoriesBloc
     extends Bloc<AdminCategoriesEvent, AdminCategoriesState> {

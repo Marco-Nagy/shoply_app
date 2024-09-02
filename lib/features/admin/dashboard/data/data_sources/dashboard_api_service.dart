@@ -4,6 +4,7 @@ import 'package:shoply/core/app/apis/api_const.dart';
 import 'package:shoply/features/admin/dashboard/data/models/total_categories_response.dart';
 import 'package:shoply/features/admin/dashboard/data/models/total_products_response.dart';
 import 'package:shoply/features/admin/dashboard/data/models/total_users_response.dart';
+
 part 'dashboard_api_service.g.dart';
 
 @RestApi(baseUrl: ApiConst.baseUrl)

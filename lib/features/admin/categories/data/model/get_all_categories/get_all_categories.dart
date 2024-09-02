@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:shoply/core/app/apis/errors/error_model.dart';
+
 part 'get_all_categories.g.dart';
 
 @JsonSerializable()

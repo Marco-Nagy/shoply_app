@@ -57,7 +57,7 @@ List<DrawerItemModel> adminDrawerList(BuildContext context) {
         style:
             MyFonts.styleBold700_18.copyWith(color: Colors.white),
       ),
-      screen: const AddNotificationScreen(),
+      screen: const AddNotificationsScreen(),
     ),
     DrawerItemModel(
       icon: const Icon(

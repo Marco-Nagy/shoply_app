@@ -6,6 +6,15 @@ class AppAnimatedIcons {
   static const menu ='assets/images/json/hamburger_menu.json';
   static const edit ='assets/images/json/icons8-edit.json';
   static const search ='assets/images/json/search_dark.json';
+  static const send ='assets/images/json/send.json';
+  static const sendIco ='assets/images/json/send_ico.json';
+  static const cart ='assets/images/json/cart_btn_light.json';
+  static const favorite ='assets/images/json/favorite_heart_light.json';
+  static const profile ='assets/images/json/profile.json';
+  static const home = 'assets/images/json/anim_home_.json';
+
+
+
 
 
 }

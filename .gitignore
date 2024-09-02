@@ -49,6 +49,7 @@ app.*.map.json
 firebase.json
 .firebaserc
 remoteconfig.template.json
+lib/core/Services/push_notifications/firebase_server_token.dart
 
 
 
