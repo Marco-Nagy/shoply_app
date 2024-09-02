@@ -4,8 +4,6 @@ import 'package:shoply/core/helpers/extension/date_extension.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/helpers/extension/string_exetension.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
-import 'package:shoply/core/styles/icons/app_animated_icons.dart';
-import 'package:shoply/core/utils/widgets/app_animated_icon.dart';
 import 'package:shoply/core/utils/widgets/custom_linear_container_admin.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';

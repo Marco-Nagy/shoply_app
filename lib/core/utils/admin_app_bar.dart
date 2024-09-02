@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
+import 'package:shoply/core/utils/animations/animate_do.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
 
 class AdminAppBar extends StatelessWidget implements PreferredSizeWidget  {
@@ -24,22 +25,25 @@ class AdminAppBar extends StatelessWidget implements PreferredSizeWidget  {
     return AppBar(
       backgroundColor: backgroundColor,
       surfaceTintColor: Colors.transparent,
-      title: TextApp(
-        text: title,
-        style: MyFonts.styleBold700_18.copyWith(
-          color: Colors.white,
+      title: CustomFadeInRight(
+        duration: 400,
+        child: TextApp(
+          text: title,
+          style: MyFonts.styleBold700_18.copyWith(
+            color: Colors.white,
+          ),
         ),
       ),
       centerTitle: true,
       elevation: 0,
       actions: actionButtons,
-      leading:  IconButton(
+      leading:  isMain?IconButton(
         icon:  const Icon(Icons.menu_rounded, color: Colors.white,),
         onPressed: () {
 
           ZoomDrawer.of(context)!.toggle();
         },
-      ),
+      ):const SizedBox.shrink(),
     );
   }
 

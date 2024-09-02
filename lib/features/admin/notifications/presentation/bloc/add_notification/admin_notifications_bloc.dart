@@ -3,16 +3,11 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shoply/core/Services/hive/hive_database.dart';
-import 'package:shoply/core/app/apis/errors/error_handler.dart';
-import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/features/admin/notifications/data/model/add_notification_model.dart';
-import 'package:shoply/features/admin/notifications/repository/add_notification_repo.dart';
-
-part 'admin_notifications_event.dart';
-
-part 'admin_notifications_state.dart';
 
 part 'admin_notifications_bloc.freezed.dart';
+part 'admin_notifications_event.dart';
+part 'admin_notifications_state.dart';
 
 class AdminNotificationsBloc
     extends Bloc<AdminNotificationsEvent, AdminNotificationsState> {

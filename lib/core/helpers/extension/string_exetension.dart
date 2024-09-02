@@ -6,7 +6,7 @@ extension StringFormate on String {
   }
 
   String toCapitalized() {
-    return '${this[0].toUpperCase()}${substring(1)}';
+    return '${this[0].toUpperCase()}${substring(1,indexOf(' '))} ${this[indexOf(' ')+1].toUpperCase()}${substring(1,indexOf(' '))}';
   }
 
   String convertLongString() {

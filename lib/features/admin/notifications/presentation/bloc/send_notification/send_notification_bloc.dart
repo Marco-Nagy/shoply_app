@@ -2,12 +2,11 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shoply/features/admin/notifications/presentation/bloc/add_notification/admin_notifications_bloc.dart';
 import 'package:shoply/features/admin/notifications/repository/add_notification_repo.dart';
 
+part 'send_notification_bloc.freezed.dart';
 part 'send_notification_event.dart';
 part 'send_notification_state.dart';
-part 'send_notification_bloc.freezed.dart';
 
 class SendNotificationBloc extends Bloc<SendNotificationEvent, SendNotificationState> {
   SendNotificationBloc(this._notificationRepo) : super(const SendNotificationState.initial()) {

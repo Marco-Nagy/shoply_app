@@ -1,5 +1,4 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_swipe_action_cell/core/controller.dart';
@@ -18,6 +17,7 @@ import 'package:shoply/features/admin/categories/presentation/widget/add_categor
 import 'package:shoply/features/admin/categories/presentation/widget/create/create_category.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
 import 'package:vibration/vibration.dart';
+
 import 'add_category_loading.dart';
 import 'create/create_category_bottom_sheet_widget.dart';
 
@@ -44,6 +44,7 @@ bool myAnimation = false;
         setState(() {
           animationController = AnimationController(
               vsync: this, duration: const Duration(milliseconds: 300));
+          width = context.width;
           myAnimation = true;
         });
       },
@@ -52,7 +53,6 @@ bool myAnimation = false;
 
   @override
   Widget build(BuildContext context) {
-    width = context.width;
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(8.0),

@@ -8,4 +8,9 @@ class AppImages{
   static const products ='assets/images/admin/products_drawer.png';
   static const users ='assets/images/admin/users_drawer.png';
   static const gallery ='assets/images/admin/gallery_ico.png';
+  static const   String homeBackgroundDark ='assets/images/customer/home_bg_dark.png';
+  static const  String homeBackgroundLight ='assets/images/customer/home_bg_light.png';
+  static const   String bigNavBarDark ='assets/images/customer/big_nav_bar_dark.png';
+  static const   String bigNavBarLight ='assets/images/customer/big_nav_bar_light.png';
+
 }

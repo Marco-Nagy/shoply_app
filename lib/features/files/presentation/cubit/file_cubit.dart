@@ -8,7 +8,6 @@ import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/core/utils/image_picker.dart';
-import 'package:shoply/features/files/data/models/Images.dart';
 import 'package:shoply/features/files/data/repositories/upload_file_repository.dart';
 
 part 'file_cubit.freezed.dart';

@@ -1,9 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart';
 import 'package:shoply/core/app/env_variables.dart';
-
 import 'firebase_server_token.dart';
 
 class FirebaseCloudMessaging {
@@ -28,7 +26,7 @@ class FirebaseCloudMessaging {
 
     //? Handle foreground messages
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      print('Message received: ${message.notification?.title}');
+      debugPrint('Message received: ${message.notification?.title}');
     });
   }
 
@@ -131,6 +129,6 @@ class FirebaseCloudMessaging {
   static Future<void> _firebaseMessagingBackgroundHandler(
       RemoteMessage message) async {
     // Handle background messages here
-    print("Handling a background message: ${message.messageId}");
+    debugPrint("Handling a background message: ${message.messageId}");
   }
 }

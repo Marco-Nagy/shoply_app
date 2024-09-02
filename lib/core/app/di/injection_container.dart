@@ -20,6 +20,10 @@ import 'package:shoply/features/admin/products/presentation/bloc/admin_product_b
 import 'package:shoply/features/auth/data/data_sources/auth_data_source.dart';
 import 'package:shoply/features/auth/data/repositories/auth_repository.dart';
 import 'package:shoply/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:shoply/features/customer/main/presentation/cubit/main_cubit.dart';
+import 'package:shoply/features/customer/profile/data/data_sources/profile_dat_source.dart';
+import 'package:shoply/features/customer/profile/data/repositories/profile_repo.dart';
+import 'package:shoply/features/customer/profile/presentation/bloc/profile_bloc.dart';
 import 'package:shoply/features/files/data/data_sources/upload_file_data_source.dart';
 import 'package:shoply/features/files/data/repositories/upload_file_repository.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
@@ -36,6 +40,8 @@ Future<void> setupInjector() async {
   await _initAdminCategories();
   await _initAdminProducts();
   await _initAdminNotifications();
+  await _initMain();
+  await _initProfile();
 }
 
 Future<void> _initCore() async {
@@ -97,3 +103,14 @@ Future<void> _initAdminNotifications() async {
     ..registerLazySingleton(() => AddNotificationRepo(sl()))
     ..registerLazySingleton( AddNotificationDataSource.new);
 }
+Future<void> _initMain() async {
+  sl.registerFactory(MainCubit.new);
+}
+Future<void> _initProfile() async {
+  DioFactory.getInstance();
+  sl
+    ..registerFactory(() => ProfileBloc(sl()))
+    ..registerLazySingleton(() => ProfileRepo(sl()))
+    ..registerLazySingleton(() => ProfileDataSource(sl()));
+}
+
