@@ -1,7 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/core/app/env_variables.dart';
+import 'package:shoply/core/helpers/extension/my_context.dart';
+import 'package:shoply/core/localization/lang_keys.dart';
+import 'package:shoply/core/utils/message_type_const.dart';
+import 'package:shoply/core/utils/widgets/snack_bar.dart';
 import 'firebase_server_token.dart';
 
 class FirebaseCloudMessaging {
@@ -35,8 +40,24 @@ class FirebaseCloudMessaging {
       _requestPermissions();
     } else if (isNotificationSubscribed.value == false) {
       _subscribeToTopic(subscribeKey);
+      aweSnackBar(
+          title: 'Success',
+          msg: sl<GlobalKey<NavigatorState>>()
+              .currentState!
+              .context
+              .translate(LangKeys.subscribedToNotifications),
+          context: sl<GlobalKey<NavigatorState>>().currentState!.context,
+          type: MessageTypeConst.success);
     } else {
       _unsubscribeFromTopic(subscribeKey);
+      aweSnackBar(
+          title: '',
+          msg: sl<GlobalKey<NavigatorState>>()
+              .currentState!
+              .context
+              .translate(LangKeys.unsubscribedToNotifications),
+          context: sl<GlobalKey<NavigatorState>>().currentState!.context,
+          type: MessageTypeConst.warning);
     }
   }
 

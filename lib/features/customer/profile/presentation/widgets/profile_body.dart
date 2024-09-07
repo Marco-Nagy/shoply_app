@@ -10,9 +10,15 @@ import 'package:shoply/core/utils/widgets/snack_bar.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
 import 'package:shoply/features/customer/profile/presentation/bloc/profile_bloc.dart';
+import 'package:shoply/features/customer/profile/presentation/widgets/build_developer.dart';
 import 'package:shoply/features/customer/profile/presentation/widgets/language_change.dart';
+import 'package:shoply/features/customer/profile/presentation/widgets/logout_widget.dart';
+import 'package:shoply/features/customer/profile/presentation/widgets/theme_mode_change.dart';
 import 'package:shoply/features/customer/profile/presentation/widgets/user_profile_info.dart';
 import 'package:shoply/features/customer/profile/presentation/widgets/user_profile_shimmer.dart';
+
+import 'build_version.dart';
+import 'notification_change.dart';
 
 class ProfileBody extends StatelessWidget {
   const ProfileBody({Key? key}) : super(key: key);
@@ -41,9 +47,18 @@ class ProfileBody extends StatelessWidget {
             textAlign: TextAlign.start,
             style: MyFonts.styleSemiBold600_18.copyWith(color: context.colors.textColor)),
           ),
-          verticalSpacing(20.h),
+          verticalSpacing(20),
           const CustomFadeInRight(duration: 400, child: LanguageChange()),
-
+          verticalSpacing(20),
+          const CustomFadeInRight(duration: 400, child: ThemeModeChange()),
+          const SizedBox(height: 20),
+          const CustomFadeInRight(duration: 400, child: BuildDeveloper()),
+          const SizedBox(height: 20),
+          const CustomFadeInRight(duration: 400, child: NotificationChange()),
+          const SizedBox(height: 20),
+          const CustomFadeInRight(duration: 400, child: BuildVersion()),
+          const SizedBox(height: 20),
+          const CustomFadeInRight(duration: 400, child: LogoutWidget()),
         ],
       ),
     );

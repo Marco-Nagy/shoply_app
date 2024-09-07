@@ -2,6 +2,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/core/routes/base_routes.dart';
+import 'package:shoply/core/utils/screens/custom_web_view.dart';
 import 'package:shoply/core/utils/screens/under_build_screen.dart';
 import 'package:shoply/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:shoply/features/auth/presentation/screens/login_screen.dart';
@@ -15,8 +16,10 @@ class AppRoutes {
   static const String signUp = 'signUp';
   static const String homeAdmin = 'homeAdmin';
   static const String homeCustomer = 'homeCustomer';
+  static const String webView = 'webView';
 
   static Route<void> onGenerateRoute(RouteSettings settings) {
+    final args = settings.arguments;
     switch (settings.name) {
       case AppRoutes.login:
         return BaseRoute(page: BlocProvider(
@@ -39,6 +42,9 @@ class AppRoutes {
       case AppRoutes.homeCustomer:
         return BaseRoute(
           page: const MainScreen(),
+        );  case AppRoutes.webView:
+        return BaseRoute(
+          page:  CustomWebView(url: args! as String),
         );
       default:
         return BaseRoute(page: const PageUnderBuildScreen());

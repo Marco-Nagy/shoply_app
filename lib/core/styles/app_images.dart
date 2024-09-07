@@ -15,4 +15,5 @@ class AppImages{
   static const String language = 'assets/images/svg/language.svg';
   static const String buildDeveloper = 'assets/images/svg/build_developer.svg';
   static const String buildVersion = 'assets/images/svg/build_version.svg';
+  static const String logout = 'assets/images/svg/logout.svg';
 }
