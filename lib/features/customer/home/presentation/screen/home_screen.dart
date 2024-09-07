@@ -5,6 +5,8 @@ import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/styles/icons/app_animated_icons.dart';
 import 'package:shoply/core/utils/animations/animate_do.dart';
 import 'package:shoply/core/utils/widgets/app_animated_icon.dart';
+import 'package:shoply/core/utils/widgets/buttons/custom_linear_button.dart';
+import 'package:shoply/features/customer/home/presentation/widgets/home_body.dart';
 import 'package:shoply/features/customer/main/presentation/widgets/main_customer_app_bar.dart';
 import 'package:shoply/features/search/presentation/screens/products_search.dart';
 
@@ -21,7 +23,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   GlobalKey bottomNavigationKey = GlobalKey();
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final scrollController = ScrollController();
 
+  scrollUp(){
+    scrollController.animateTo(0, duration: const Duration(seconds: 1), curve: Curves.easeIn);
+
+  }
   @override
   void initState() {
     super.initState();
@@ -36,6 +43,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   void dispose() {
     _animatedSearchController!.dispose();
+    scrollController.dispose();
     super.dispose();
   }
   @override
@@ -50,32 +58,54 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         actionButtons: [
           CustomFadeInLeft(
             duration: 400,
-            child: AppAnimatedIcon(
-              animationController: _animatedSearchController!,
-              iconAsset: AppAnimatedIcons.search,
-              backGroundColor: context.colors.mainColor,
-              onTap: () async {
-                Future.delayed(const Duration(milliseconds: 400)).then(
-                      (value) {
-                    _scaffoldKey.currentState?.openEndDrawer();
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: CustomLinearButton(
+              width: 55,
+                height: 55,
+                onTap: () {  },
+                child: AppAnimatedIcon(
+                  animationController: _animatedSearchController!,
+                  iconAsset: AppAnimatedIcons.search,
+                  backGroundColor: Colors.transparent,
+                  size: 40,
+                  onTap: () async {
+                    Future.delayed(const Duration(milliseconds: 400)).then(
+                          (value) {
+                        _scaffoldKey.currentState?.openEndDrawer();
+                      },
+                    );
                   },
-                );
-              },
+                ),
+              ),
             ),
           ),
         ],
       ),
-      body:  Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Welcome to the Home Screen',
-              style: MyFonts.styleBold700_18
-                  .copyWith(color: context.colors.textColor),),
+      body: Stack(
+        children: [
+           HomeBody(scrollController: scrollController,),
+          CustomFadeInLeft(
+            duration: 400,
+            child: Align(
+              alignment: Alignment.bottomRight,
 
-          ],
-        ),
-      ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: FloatingActionButton(
+                  onPressed:scrollUp,
+                  elevation: 12,
+                backgroundColor: context.colors.bluePinkLight,
+                  child: const Icon(Icons.arrow_upward_rounded,size: 30.0,color: Colors.white,),
+
+
+                ),
+              ),
+            ),
+          )
+
+        ],
+      )
     );
   }
 }

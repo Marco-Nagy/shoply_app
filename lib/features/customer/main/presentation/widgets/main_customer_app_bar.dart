@@ -27,7 +27,7 @@ class MainCustomerAppBar extends StatelessWidget
         duration: 400,
         child: TextApp(
           text: title,
-          style: MyFonts.styleBold700_24.copyWith(
+          style: MyFonts.styleBold700_18.copyWith(
             color: context.colors.textColor,
           ),
         ),
