@@ -20,6 +20,10 @@ import 'package:shoply/features/admin/products/presentation/bloc/admin_product_b
 import 'package:shoply/features/auth/data/data_sources/auth_data_source.dart';
 import 'package:shoply/features/auth/data/repositories/auth_repository.dart';
 import 'package:shoply/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:shoply/features/customer/home/data/data_sources/home_api_service.dart';
+import 'package:shoply/features/customer/home/data/data_sources/home_data_source.dart';
+import 'package:shoply/features/customer/home/data/repositories/home_repository.dart';
+import 'package:shoply/features/customer/home/presentation/bloc/home_bloc.dart';
 import 'package:shoply/features/customer/main/presentation/cubit/main_cubit.dart';
 import 'package:shoply/features/customer/profile/data/data_sources/profile_dat_source.dart';
 import 'package:shoply/features/customer/profile/data/repositories/profile_repo.dart';
@@ -42,6 +46,7 @@ Future<void> setupInjector() async {
   await _initAdminNotifications();
   await _initMain();
   await _initProfile();
+  await _initHomeCustomer();
 }
 
 Future<void> _initCore() async {
@@ -95,7 +100,6 @@ Future<void> _initAdminProducts() async {
     ..registerLazySingleton<AdminProductsApiService>(
         () => AdminProductsApiService(dio));
 }
-
 Future<void> _initAdminNotifications() async {
   sl
     ..registerFactory(AdminNotificationsBloc.new)
@@ -112,5 +116,16 @@ Future<void> _initProfile() async {
     ..registerFactory(() => ProfileBloc(sl()))
     ..registerLazySingleton(() => ProfileRepo(sl()))
     ..registerLazySingleton(() => ProfileDataSource(sl()));
+}
+Future<void> _initHomeCustomer() async {
+  final dio = DioFactory.getInstance();
+  sl
+    ..registerFactory(() => HomeBloc(sl()))
+    ..registerLazySingleton(
+            () => HomeRepository(sl()))
+    ..registerLazySingleton(
+            () => HomeDataSource(sl()))
+    ..registerLazySingleton(
+            () => HomeApiService(dio));
 }
 

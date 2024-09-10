@@ -80,7 +80,7 @@ dependencies:
   cached_network_image: ^3.3.1
   webview_flutter: ^4.8.0
   url_launcher: ^6.3.0
-
+  carousel_slider: ^5.0.0
 
   #  Image Picker
   image_picker: ^1.1.2
