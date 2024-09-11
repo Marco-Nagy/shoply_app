@@ -8,7 +8,6 @@ import 'package:shoply/core/utils/message_type_const.dart';
 import 'package:shoply/core/utils/widgets/snack_bar.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
-import 'package:shoply/features/auth/data/models/role/user_role_response.dart';
 import 'package:shoply/features/customer/profile/presentation/bloc/profile_bloc.dart';
 import 'package:shoply/features/customer/profile/presentation/widgets/build_developer.dart';
 import 'package:shoply/features/customer/profile/presentation/widgets/language_change.dart';
@@ -16,12 +15,11 @@ import 'package:shoply/features/customer/profile/presentation/widgets/logout_wid
 import 'package:shoply/features/customer/profile/presentation/widgets/theme_mode_change.dart';
 import 'package:shoply/features/customer/profile/presentation/widgets/user_profile_info.dart';
 import 'package:shoply/features/customer/profile/presentation/widgets/user_profile_shimmer.dart';
-
 import 'build_version.dart';
 import 'notification_change.dart';
 
 class ProfileBody extends StatelessWidget {
-  const ProfileBody({Key? key}) : super(key: key);
+  const ProfileBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +30,8 @@ class ProfileBody extends StatelessWidget {
           BlocBuilder<ProfileBloc, ProfileState>(
             builder: (context, state) {
               return state.when(loading: () {
-                UserRoleResponse userInfo =   UserRoleResponse(0, '', '', '', '', '', '', '');
 
-                return  UserProfileInfo(userInfo: userInfo,);
+                return  const UserProfileShimmer();
               }, success: (userInfo) {
                 return UserProfileInfo(userInfo: userInfo,);
               }, error: (errorMessage) {

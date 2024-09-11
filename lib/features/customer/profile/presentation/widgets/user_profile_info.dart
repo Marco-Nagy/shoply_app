@@ -5,18 +5,13 @@ import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/helpers/extension/string_exetension.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/features/auth/data/models/role/user_role_response.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 
 class UserProfileInfo extends StatelessWidget {
   const UserProfileInfo({super.key,  required this.userInfo});
 final UserRoleResponse userInfo;
   @override
   Widget build(BuildContext context) {
-    return Skeletonizer(
-      enabled: userInfo.id==0,
-      enableSwitchAnimation: true,
-      effect: ShimmerEffect.raw(colors: [context.colors.containerShadow1, context.colors.textFormBorder, context.colors.navBarSelectedTab]),
-      child: Column(
+    return Column(
         children: [
            ClipRRect(
         borderRadius:   BorderRadius.circular(45),
@@ -34,7 +29,6 @@ final UserRoleResponse userInfo;
               .copyWith(color: context.colors.textColor),),
           const SizedBox(height: 8),
         ],
-      ),
     );
   }
 }

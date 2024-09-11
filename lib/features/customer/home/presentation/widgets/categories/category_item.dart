@@ -7,7 +7,6 @@ import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/utils/widgets/custom_linear_container_admin.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 
 class CategoryItem extends StatelessWidget {
   const CategoryItem(
