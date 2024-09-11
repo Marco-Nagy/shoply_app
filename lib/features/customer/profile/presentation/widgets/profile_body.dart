@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/localization/lang_keys.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
@@ -16,12 +15,11 @@ import 'package:shoply/features/customer/profile/presentation/widgets/logout_wid
 import 'package:shoply/features/customer/profile/presentation/widgets/theme_mode_change.dart';
 import 'package:shoply/features/customer/profile/presentation/widgets/user_profile_info.dart';
 import 'package:shoply/features/customer/profile/presentation/widgets/user_profile_shimmer.dart';
-
 import 'build_version.dart';
 import 'notification_change.dart';
 
 class ProfileBody extends StatelessWidget {
-  const ProfileBody({Key? key}) : super(key: key);
+  const ProfileBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +29,10 @@ class ProfileBody extends StatelessWidget {
         children: [
           BlocBuilder<ProfileBloc, ProfileState>(
             builder: (context, state) {
-              return state.when(loading: () => const UserProfileShimmer(), success: (userInfo) {
+              return state.when(loading: () {
+
+                return  const UserProfileShimmer();
+              }, success: (userInfo) {
                 return UserProfileInfo(userInfo: userInfo,);
               }, error: (errorMessage) {
                 return aweSnackBar(
