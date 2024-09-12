@@ -12,10 +12,12 @@ class MainCustomerAppBar extends StatelessWidget
     super.key,
     required this.title,
     this.actionButtons,
+    this.leadingButtons,
   });
 
   final String title;
   final List<Widget>? actionButtons;
+  final Widget? leadingButtons;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +25,7 @@ class MainCustomerAppBar extends StatelessWidget
       automaticallyImplyLeading: false,
       backgroundColor: context.colors.mainColor,
       surfaceTintColor: Colors.transparent,
+      leading: leadingButtons,
       title: CustomFadeInRight(
         duration: 400,
         child: TextApp(

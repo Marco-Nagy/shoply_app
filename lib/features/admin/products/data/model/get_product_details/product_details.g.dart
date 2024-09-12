@@ -42,10 +42,12 @@ ProductDetails _$ProductDetailsFromJson(Map<String, dynamic> json) =>
       (json['price'] as num?)?.toInt(),
       (json['images'] as List<dynamic>?)?.map((e) => e as String).toList(),
       json['description'] as String?,
+      json['id'] as String?,
     );
 
 Map<String, dynamic> _$ProductDetailsToJson(ProductDetails instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'title': instance.title,
       'price': instance.price,
       'images': instance.images,
