@@ -31,13 +31,14 @@ class ProductDetailsData {
 
 @JsonSerializable()
 class ProductDetails {
+  final String? id;
   final String? title;
   final int? price;
   final List<String>? images;
   final String? description;
 
   ProductDetails(
-      this.title, this.price, this.images, this.description);
+      this.title, this.price, this.images, this.description, this.id);
 
   factory ProductDetails.fromJson(Map<String, dynamic> json) =>
       _$ProductDetailsFromJson(json);

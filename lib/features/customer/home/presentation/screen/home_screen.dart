@@ -21,6 +21,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   AnimationController? _animatedSearchController;
+  AnimationController? _animatedUpController;
 
   GlobalKey bottomNavigationKey = GlobalKey();
 
@@ -39,11 +40,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       duration: const Duration(milliseconds: 300),
       vsync: this,
     );
+    _animatedUpController = AnimationController(
+      duration: const Duration(milliseconds: 300),
+      vsync: this,
+    );
   }
 
   @override
   void dispose() {
     _animatedSearchController!.dispose();
+    _animatedUpController!.dispose();
     scrollController.dispose();
     super.dispose();
   }
@@ -73,6 +79,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     child: AppAnimatedIcon(
                       animationController: _animatedSearchController!,
                       iconAsset: AppAnimatedIcons.search,
+                      iconColor: context.colors.white,
                       backGroundColor: Colors.transparent,
                       size: 40,
                       onTap: () async {
@@ -103,10 +110,19 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       onPressed: scrollUp,
                       elevation: 12,
                       backgroundColor: context.colors.bluePinkLight,
-                      child: const Icon(
-                        Icons.arrow_upward_rounded,
-                        size: 30.0,
-                        color: Colors.white,
+                      child:  AppAnimatedIcon(
+                        animationController: _animatedUpController!,
+                        iconAsset: AppAnimatedIcons.upArrow,
+                        backGroundColor: Colors.transparent,
+                        iconColor: context.colors.white,
+                        size: 60,
+                        onTap: () async {
+                          Future.delayed(const Duration(milliseconds: 400)).then(
+                                (value) {
+                             scrollUp();
+                            },
+                          );
+                        },
                       ),
                     ),
                   ),

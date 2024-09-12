@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
+import 'package:shoply/core/helpers/extension/navigations.dart';
 import 'package:shoply/core/helpers/extension/string_exetension.dart';
+import 'package:shoply/core/routes/app_routes.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/styles/icons/app_animated_icons.dart';
 import 'package:shoply/core/utils/animations/animate_do.dart';
@@ -28,14 +30,14 @@ class HomeProductItem extends StatefulWidget {
 
 class _HomeProductItemState extends State<HomeProductItem>
     with TickerProviderStateMixin {
-  late AnimationController animationTrashController;
+  late AnimationController animationFavoritController;
   late AnimationController animationEditController;
   ValueNotifier<bool> itemPressed = ValueNotifier(false);
 
   @override
   void initState() {
     super.initState();
-    animationTrashController = AnimationController(
+    animationFavoritController = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 300));
     animationEditController = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 300));
@@ -43,7 +45,7 @@ class _HomeProductItemState extends State<HomeProductItem>
 
   @override
   void dispose() {
-    animationTrashController.dispose();
+    animationFavoritController.dispose();
     animationEditController.dispose();
     super.dispose();
   }
@@ -55,6 +57,9 @@ class _HomeProductItemState extends State<HomeProductItem>
         InkWell(
           onLongPress: () {
             itemPressed.value = true;
+          },
+          onTap: () {
+            context.pushNamed(AppRoutes.productDetails,arguments: widget.product.id);
           },
           child: CustomContainerLinearCustomer(
             height: 250.h,
@@ -78,8 +83,10 @@ class _HomeProductItemState extends State<HomeProductItem>
                         clipBehavior: Clip.antiAliasWithSaveLayer,
                         elevation: 10.w,
                         child: CustomImage(
+                          tag: 'tag${widget.product.id}',
                           imageUrl:
                               widget.product.images!.first.imageProductFormat(),
+
                         )),
                   ),
                 ),
@@ -148,12 +155,14 @@ class _HomeProductItemState extends State<HomeProductItem>
                             size: 35,
                             backGroundColor: Colors.blue,
                             animationController: animationEditController,
-                            iconAsset: AppAnimatedIcons.send,
+                            iconAsset: AppAnimatedIcons.share,
                             onTap: () async {
                               Vibration.vibrate(
                                   duration: 700, pattern: [50, 100, 50, 500]);
-                              Future.delayed(const Duration(milliseconds: 700));
+                              Future.delayed(const Duration(milliseconds: 800)).whenComplete(() {
                               itemPressed.value = false;
+
+                              });
                             },
                           ),
                         ),
@@ -165,19 +174,21 @@ class _HomeProductItemState extends State<HomeProductItem>
                           width: 70,
                           padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                            color: Colors.redAccent,
+                            color: Colors.red.shade200,
                             borderRadius: BorderRadius.circular(50),
                           ),
                           child: AppAnimatedIcon(
                             size: 35,
                             backGroundColor: Colors.red.shade200,
-                            animationController: animationTrashController,
+                            animationController: animationFavoritController,
                             iconAsset: AppAnimatedIcons.favorite,
                             onTap: () async {
                               Vibration.vibrate(
                                   duration: 700, pattern: [50, 100, 50, 500]);
-                              Future.delayed(const Duration(milliseconds: 700));
-                              itemPressed.value = false;
+                              Future.delayed(const Duration(milliseconds: 700)).whenComplete(() {
+                                itemPressed.value = false;
+
+                              },);
                             },
                           ),
                         ),
