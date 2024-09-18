@@ -18,7 +18,7 @@ class HomeState with _$HomeState {
   const factory HomeState.getHomeProductListEmpty() = GetHomeProductListEmpty;
   const factory HomeState.getHomeProductListFailure(String errorMessage) = GetHomeProductListFailure;
   //* Get Home Product Details States
-  const factory HomeState.getHomeProductDetailsSuccess(ProductDetails product) = GetHomeProductDetailsSuccess;
+  const factory HomeState.getHomeProductDetailsSuccess(ProductsDetailsEntity product) = GetHomeProductDetailsSuccess;
   const factory HomeState.getHomeProductDetailsEmpty() = GetHomeProductDetailsEmpty;
   const factory HomeState.getHomeProductDetailsFailure(String errorMessage) = GetHomeProductDetailsFailure;
 

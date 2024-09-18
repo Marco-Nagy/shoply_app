@@ -22,7 +22,8 @@ class AppLogout {
     await SharedPrefHelper().removePreference(key: SharedPrefKeys.userRole);
     await SharedPrefHelper().removePreference(key: SharedPrefKeys.userId);
     await HiveDatabase().clearAllBoxes();
+    await SharedPrefHelper().clearPreferences();
     if (!context.mounted) return;
-    await context.pushNamed(AppRoutes.login);
+    await context.pushReplacementNamed(AppRoutes.login);
   }
 }

@@ -58,7 +58,7 @@ class _AddProductsScreenState extends State<AddProductsScreen>
       endDrawer: const ProductsSearch(),
       appBar: AdminAppBar(
         title: 'Add Products',
-        isMain: false,
+        isMain: true,
         backgroundColor: context.colors.bluePinkDark,
         actionButtons: [
           CustomFadeInLeft(

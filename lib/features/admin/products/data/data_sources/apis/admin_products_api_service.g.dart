@@ -50,35 +50,6 @@ class _AdminProductsApiService implements AdminProductsApiService {
   }
 
   @override
-  Future<ProductDetailsResponse> getProductDetails(
-      Map<String, dynamic> query) async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(query);
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<ProductDetailsResponse>(Options(
-      method: 'POST',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/graphql',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = ProductDetailsResponse.fromJson(_result.data!);
-    return value;
-  }
-
-  @override
   Future<CreateProductResponse> createProduct(
       Map<String, dynamic> mutation) async {
     final _extra = <String, dynamic>{};
