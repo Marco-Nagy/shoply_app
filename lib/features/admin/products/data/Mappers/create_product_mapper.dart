@@ -2,8 +2,8 @@ import 'package:shoply/features/admin/products/data/model/create_product/create_
 import 'package:shoply/features/admin/products/domain/entities/create_product_entity.dart';
 
 class CreateProductMapper {
-  static toEntity(CreateProductResponseData response) {
-    if (response.addProduct == null) return;
-    return response.addProduct!.id;
+  static toEntity(CreateProductResponse response) {
+    if (response.data == null) return;
+    return response.data!.addProduct!.id;
   }
 }

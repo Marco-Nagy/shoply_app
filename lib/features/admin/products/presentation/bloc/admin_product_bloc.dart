@@ -72,7 +72,7 @@ class AdminProductBloc extends Bloc<AdminProductEvent, AdminProductState> {
     var result = await _createProductUseCase.call(event.body);
     result.when(success: (data) {
         emit(AdminProductState.createNewProductSuccess(
-            CreateProductMapper.toEntity(data.data!)));
+            CreateProductMapper.toEntity(data)));
         // Emit new product list to reflect the update
 
     }, failure: (errorHandler) {
@@ -86,7 +86,7 @@ class AdminProductBloc extends Bloc<AdminProductEvent, AdminProductState> {
     var result = await _updateProductUseCase.call(event.body);
     result.when(success: (data) {
         emit(AdminProductState.updateProductSuccess(
-            UpdateProductMapper.toEntity(data.data!)));
+            UpdateProductMapper.toEntity(data)));
         // Emit updated product list to reflect the update
     },failure: (errorHandler) {
 
