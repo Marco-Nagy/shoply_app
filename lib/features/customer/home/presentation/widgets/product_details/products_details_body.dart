@@ -5,7 +5,7 @@ import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
-import 'package:shoply/features/admin/products/data/model/get_product_details/product_details.dart';
+import 'package:shoply/features/customer/home/domain/entities/products_details_entity.dart';
 import 'package:shoply/features/customer/home/presentation/widgets/product_details/product_action_buttons.dart';
 import 'package:shoply/features/customer/home/presentation/widgets/product_details/product_deatils_custom_painter.dart';
 import 'package:shoply/features/customer/home/presentation/widgets/product_details/product_images_slider.dart';
@@ -15,7 +15,7 @@ import 'add_to_cart_button.dart';
 class ProductsDetailsBody extends StatefulWidget {
   const ProductsDetailsBody({super.key, required this.product});
 
-  final ProductDetails product;
+  final ProductsDetailsEntity product;
 
   @override
   State<ProductsDetailsBody> createState() => _ProductsDetailsBodyState();

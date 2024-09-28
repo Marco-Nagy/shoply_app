@@ -1,51 +1,20 @@
 import 'package:shoply/features/admin/products/data/model/create_product/create_product_request.dart';
 import 'package:shoply/features/admin/products/data/model/update_product/update_product_request.dart';
+import 'package:shoply/features/admin/products/domain/entities/create_product_entity.dart';
+import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
+import 'package:shoply/features/admin/products/domain/entities/update_product_entity.dart';
 
-class ProductsQueries {
+import '../base_products_data_source.dart';
+
+class ProductsQueries implements BaseProductsDataSource{
   factory ProductsQueries() => _instance;
   ProductsQueries._();
   static final ProductsQueries _instance = ProductsQueries._();
 
-  Map<String, dynamic> getProductsListMapQuery() {
-    return {
-      'query': '''{
-       products{
-         id
-         title
-         price
-         description
-         images
-         category{
-           id
-           name
-         }
-       }
-     }''',
-    };
-  }
 
-  Map<String, dynamic> getProductDetailsMapQuery(String productId) {
-    return {
-      'query': '''{
-        product(id: $productId) {
-          id
-          title
-          price
-          description
-          images
-          category{
-            id
-            name
-          }
-        }
-      }''',
-      'variables': {
-        'productId': productId,
-      }
-    };
-  }
 
-  Map<String, dynamic> createProductMapMutation(CreateProductRequest body) {
+  @override
+  Map<String, dynamic> createProduct(CreateProductEntity body) {
     return {
       'query': r'''mutation createProduct(
           $title: String!
@@ -75,7 +44,41 @@ class ProductsQueries {
     };
   }
 
-  Map<String, dynamic> updateProductMapMutation(UpdateProductRequest body) {
+
+  @override
+  Map<String, dynamic> deleteProduct({required String productId})  {
+    return {
+      'query': r'''mutation DeleteProduct($id: ID!) {
+        deleteProduct(id: $id) 
+    
+      }''',
+      'variables': {
+        'id': productId,
+      }
+    };
+  }
+
+  @override
+  Map<String, dynamic> getProductsList() {
+    return {
+      'query': '''{
+       products{
+         id
+         title
+         price
+         description
+         images
+         category{
+           id
+           name
+         }
+       }
+     }''',
+    };
+  }
+
+  @override
+  Map<String, dynamic> updateProduct(UpdateProductEntity body) {
     return {
       'query': r'''mutation updateProduct($id: ID!,
           $title: String!
@@ -107,16 +110,6 @@ class ProductsQueries {
     };
   }
 
-  Map<String, dynamic> deleteProductMapMutation(String productId) {
-    return {
-      'query': r'''mutation DeleteProduct($id: ID!) {
-        deleteProduct(id: $id) 
-    
-      }''',
-      'variables': {
-        'id': productId,
-      }
-    };
-  }
+
 
 }

@@ -18,9 +18,9 @@ class DeleteProductResponse {
 
 @JsonSerializable()
 class DeleteProduct {
-  final bool? deleteProduct;
+  final bool? isDeleted;
 
-  DeleteProduct(this.deleteProduct);
+  DeleteProduct(this.isDeleted);
 
   factory DeleteProduct.fromJson(Map<String, dynamic> json) =>
       _$DeleteProductFromJson(json);

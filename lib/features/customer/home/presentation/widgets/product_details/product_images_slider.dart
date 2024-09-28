@@ -8,11 +8,11 @@ import 'package:shoply/core/helpers/extension/string_exetension.dart';
 import 'package:shoply/core/styles/app_images.dart';
 import 'package:shoply/core/utils/widgets/custom_linear_container_admin.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
-import 'package:shoply/features/admin/products/data/model/get_product_details/product_details.dart';
+import 'package:shoply/features/customer/home/domain/entities/products_details_entity.dart';
 
 class ProductImagesSlider extends StatefulWidget {
   const ProductImagesSlider({super.key, required this.product});
-  final ProductDetails product;
+  final ProductsDetailsEntity product;
   @override
   State<ProductImagesSlider> createState() => _ProductImagesSliderState();
 }
@@ -36,7 +36,7 @@ class _ProductImagesSliderState extends State<ProductImagesSlider> {
               });
             },
           ),
-          itemCount: widget.product.images!.length,
+          itemCount: widget.product.images.length,
           itemBuilder: (context, index, realIndex) {
             return CustomLinearContainerAdmin(
                 width: context.width*.8,
@@ -46,7 +46,7 @@ class _ProductImagesSliderState extends State<ProductImagesSlider> {
                     child: Hero(
                       tag: 'tag${widget.product.id}',
                       child: CachedNetworkImage(
-                          fit: BoxFit.fill, imageUrl: widget.product.images![index].imageProductFormat(),
+                          fit: BoxFit.fill, imageUrl: widget.product.images[index].imageProductFormat(),
                         placeholder: (context, url) => Image.asset(
                           AppImages.appImage,
                           height: 100,
@@ -67,7 +67,7 @@ class _ProductImagesSliderState extends State<ProductImagesSlider> {
         Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: widget.product.images!
+            children: widget.product.images
                 .asMap()
                 .entries
                 .map(

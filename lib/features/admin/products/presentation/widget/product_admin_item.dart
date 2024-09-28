@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
+import 'package:shoply/core/helpers/extension/navigations.dart';
 import 'package:shoply/core/helpers/extension/string_exetension.dart';
+import 'package:shoply/core/routes/app_routes.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/styles/icons/app_animated_icons.dart';
 import 'package:shoply/core/utils/animations/animate_do.dart';
@@ -14,7 +16,7 @@ import 'package:shoply/core/utils/widgets/custom_linear_container_admin.dart';
 import 'package:shoply/core/utils/widgets/images/custom_image.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
 import 'package:shoply/features/admin/categories/presentation/bloc/admin_categories_bloc.dart';
-import 'package:shoply/features/admin/products/data/model/get_products_list/get_all_products.dart';
+import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
 import 'package:shoply/features/admin/products/presentation/bloc/admin_product_bloc.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
 import 'package:vibration/vibration.dart';
@@ -27,7 +29,7 @@ class ProductAdminItem extends StatefulWidget {
     required this.product,
   });
 
-  final Product product;
+  final GetProductEntity product;
 
   @override
   State<ProductAdminItem> createState() => _ProductAdminItemState();
@@ -85,7 +87,9 @@ class _ProductAdminItemState extends State<ProductAdminItem>
                         clipBehavior: Clip.antiAliasWithSaveLayer,
                         elevation: 10.w,
                         child: CustomImage(
-                          imageUrl: widget.product.images!.first.imageProductFormat(),
+                          tag: 'tag${widget.product.id}',
+                          imageUrl:
+                              widget.product.images.first.imageProductFormat(),
                         )),
                   ),
                 ),
@@ -94,7 +98,7 @@ class _ProductAdminItemState extends State<ProductAdminItem>
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10.w),
                   child: TextApp(
-                    text: widget.product.title!,
+                    text: widget.product.title,
                     style: MyFonts.styleBold700_14
                         .copyWith(color: context.colors.textColor),
                     maxLines: 1,
@@ -105,7 +109,7 @@ class _ProductAdminItemState extends State<ProductAdminItem>
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10.w),
                   child: TextApp(
-                    text: widget.product.category!.name!,
+                    text: widget.product.category.name,
                     style: MyFonts.styleBold700_12
                         .copyWith(color: context.colors.textColor),
                     maxLines: 1,
@@ -177,8 +181,8 @@ class _ProductAdminItemState extends State<ProductAdminItem>
                                               ..add(const AdminCategoriesEvent
                                                   .fetchAdminCategories())),
                                       ],
-                                      child:
-                                           CreateProductBottomSheetWidget(product:widget.product)));
+                                      child: CreateProductBottomSheetWidget(
+                                          product: widget.product)));
                               itemPressed.value= false;
                             },
                           ),
@@ -213,7 +217,7 @@ class _ProductAdminItemState extends State<ProductAdminItem>
                                   textButton2: 'Cancel',
                                   onPressed: () async {
                                     _deleteProduct(context,
-                                            productId: widget.product.id!)
+                                            productId: widget.product.id)
                                         .whenComplete(
                                       () {
                                         context

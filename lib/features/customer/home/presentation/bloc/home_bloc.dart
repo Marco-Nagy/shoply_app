@@ -4,8 +4,8 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shoply/features/admin/categories/data/model/get_all_categories/get_all_categories.dart';
-import 'package:shoply/features/admin/products/data/model/get_product_details/product_details.dart';
 import 'package:shoply/features/admin/products/data/model/get_products_list/get_all_products.dart';
+import 'package:shoply/features/customer/home/domain/entities/products_details_entity.dart';
 import 'package:shoply/features/customer/home/data/repositories/home_repository.dart';
 
 part 'home_bloc.freezed.dart';
@@ -18,7 +18,6 @@ class HomeBloc
       : super(const HomeState.initial()) {
     on<FetchHomeCategoriesListEvent>(_fetchHomeCategoriesList);
     on<GetHomeProductListEvent>(_getHomeProductList);
-    on<GetHomeProductDetailsEvent>(_getProductDetails);
 
   }
  final HomeRepository _homeRepo;
@@ -62,22 +61,23 @@ class HomeBloc
       },
     );
   }
-  Future<FutureOr<void>> _getProductDetails(GetHomeProductDetailsEvent event,
-      Emitter<HomeState> emit) async {
-    emit(const HomeState.productsLoading());
-    var result = await _homeRepo.getProductDetailsById(event.productId);
-    result.when(
-      success: (data) {
-        if (data.data != null && data.data!.product != null) {
-          emit(HomeState.getHomeProductDetailsSuccess(
-              data.data!.product!));
-        }
-      },
-      failure: (errorHandler) {
-        emit(HomeState.getHomeProductDetailsFailure(
-            errorHandler.errorMsg));
-      },
-    );
-  }
+  // Future<FutureOr<void>> _getProductDetails(GetHomeProductDetailsEvent event,
+  //     Emitter<HomeState> emit) async {
+  //   emit(const HomeState.productsLoading());
+  //   var result = await _homeRepo.getProductDetailsById(event.productId);
+  //   result.when(
+  //     success: (data) {
+  //       if (data.data != null && data.data!.product != null) {
+  //         emit(HomeState.getHomeProductDetailsSuccess(
+  //           /// parsing Response Data from modelResponse into Entity
+  //             ProductsDetailsMapper.productDetailsMapper(data)));
+  //       }
+  //     },
+  //     failure: (errorHandler) {
+  //       emit(HomeState.getHomeProductDetailsFailure(
+  //           errorHandler.errorMsg));
+  //     },
+  //   );
+  // }
   
 }

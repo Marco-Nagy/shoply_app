@@ -26,10 +26,10 @@ Map<String, dynamic> _$DeleteProductResponseToJson(
 
 DeleteProduct _$DeleteProductFromJson(Map<String, dynamic> json) =>
     DeleteProduct(
-      json['deleteProduct'] as bool?,
+      json['isDeleted'] as bool?,
     );
 
 Map<String, dynamic> _$DeleteProductToJson(DeleteProduct instance) =>
     <String, dynamic>{
-      'deleteProduct': instance.deleteProduct,
+      'isDeleted': instance.isDeleted,
     };

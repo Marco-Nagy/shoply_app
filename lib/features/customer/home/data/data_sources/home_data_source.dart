@@ -1,7 +1,6 @@
 import 'package:shoply/core/app/apis/graphQl/admin/categories_queries.dart';
-import 'package:shoply/core/app/apis/graphQl/admin/products_queries.dart';
+import 'package:shoply/features/admin/products/data/data_sources/apis/products_queries.dart';
 import 'package:shoply/features/admin/categories/data/model/get_all_categories/get_all_categories.dart';
-import 'package:shoply/features/admin/products/data/model/get_product_details/product_details.dart';
 import 'package:shoply/features/admin/products/data/model/get_products_list/get_all_products.dart';
 
 import 'home_api_service.dart';
@@ -18,12 +17,12 @@ class HomeDataSource {
   }
   Future<GetAllProductsResponse> getProductsList() async {
     return await _apiService
-        .getProductList(ProductsQueries().getProductsListMapQuery());
+        .getProductList(ProductsQueries().getProductsList());
   }
 
-  Future<ProductDetailsResponse> getProductDetails(
-      {required String productId}) async {
-    return await _apiService.getProductDetails(
-        ProductsQueries().getProductDetailsMapQuery(productId));
-  }
+  // Future<ProductDetailsResponse> getProductDetails(
+  //     {required String productId}) async {
+  //   return await _apiService.getProductDetails(
+  //       ProductsQueries().getProductDetails(productId: productId));
+  // }
 }
