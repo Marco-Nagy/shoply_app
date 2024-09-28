@@ -5,6 +5,8 @@ import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/core/helpers/extension/navigations.dart';
 import 'package:shoply/core/routes/app_routes.dart';
 
+import '../Services/hive/hive_database.dart';
+
 class AppLogout {
   factory AppLogout() {
     return _instance;
@@ -19,9 +21,9 @@ class AppLogout {
     await SharedPrefHelper().removePreference(key: SharedPrefKeys.accessToken);
     await SharedPrefHelper().removePreference(key: SharedPrefKeys.userRole);
     await SharedPrefHelper().removePreference(key: SharedPrefKeys.userId);
-
-    // await HiveDatabase().clearAllBox();
-    // if (!context.mounted) return;
-    await context.pushNamed(AppRoutes.login);
+    await HiveDatabase().clearAllBoxes();
+    await SharedPrefHelper().clearPreferences();
+    if (!context.mounted) return;
+    await context.pushReplacementNamed(AppRoutes.login);
   }
 }

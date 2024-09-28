@@ -21,8 +21,8 @@ mixin _$AdminProductEvent {
     required TResult Function() started,
     required TResult Function() getAdminProductList,
     required TResult Function(String productId) getAdminProductDetails,
-    required TResult Function(CreateProductRequest body) createAdminProduct,
-    required TResult Function(UpdateProductRequest body) updateAdminProduct,
+    required TResult Function(CreateProductEntity body) createAdminProduct,
+    required TResult Function(UpdateProductEntity body) updateAdminProduct,
     required TResult Function(String productId) deleteAdminProduct,
   }) =>
       throw _privateConstructorUsedError;
@@ -31,8 +31,8 @@ mixin _$AdminProductEvent {
     TResult? Function()? started,
     TResult? Function()? getAdminProductList,
     TResult? Function(String productId)? getAdminProductDetails,
-    TResult? Function(CreateProductRequest body)? createAdminProduct,
-    TResult? Function(UpdateProductRequest body)? updateAdminProduct,
+    TResult? Function(CreateProductEntity body)? createAdminProduct,
+    TResult? Function(UpdateProductEntity body)? updateAdminProduct,
     TResult? Function(String productId)? deleteAdminProduct,
   }) =>
       throw _privateConstructorUsedError;
@@ -41,8 +41,8 @@ mixin _$AdminProductEvent {
     TResult Function()? started,
     TResult Function()? getAdminProductList,
     TResult Function(String productId)? getAdminProductDetails,
-    TResult Function(CreateProductRequest body)? createAdminProduct,
-    TResult Function(UpdateProductRequest body)? updateAdminProduct,
+    TResult Function(CreateProductEntity body)? createAdminProduct,
+    TResult Function(UpdateProductEntity body)? updateAdminProduct,
     TResult Function(String productId)? deleteAdminProduct,
     required TResult orElse(),
   }) =>
@@ -142,8 +142,8 @@ class _$StartedImpl implements _Started {
     required TResult Function() started,
     required TResult Function() getAdminProductList,
     required TResult Function(String productId) getAdminProductDetails,
-    required TResult Function(CreateProductRequest body) createAdminProduct,
-    required TResult Function(UpdateProductRequest body) updateAdminProduct,
+    required TResult Function(CreateProductEntity body) createAdminProduct,
+    required TResult Function(UpdateProductEntity body) updateAdminProduct,
     required TResult Function(String productId) deleteAdminProduct,
   }) {
     return started();
@@ -155,8 +155,8 @@ class _$StartedImpl implements _Started {
     TResult? Function()? started,
     TResult? Function()? getAdminProductList,
     TResult? Function(String productId)? getAdminProductDetails,
-    TResult? Function(CreateProductRequest body)? createAdminProduct,
-    TResult? Function(UpdateProductRequest body)? updateAdminProduct,
+    TResult? Function(CreateProductEntity body)? createAdminProduct,
+    TResult? Function(UpdateProductEntity body)? updateAdminProduct,
     TResult? Function(String productId)? deleteAdminProduct,
   }) {
     return started?.call();
@@ -168,8 +168,8 @@ class _$StartedImpl implements _Started {
     TResult Function()? started,
     TResult Function()? getAdminProductList,
     TResult Function(String productId)? getAdminProductDetails,
-    TResult Function(CreateProductRequest body)? createAdminProduct,
-    TResult Function(UpdateProductRequest body)? updateAdminProduct,
+    TResult Function(CreateProductEntity body)? createAdminProduct,
+    TResult Function(UpdateProductEntity body)? updateAdminProduct,
     TResult Function(String productId)? deleteAdminProduct,
     required TResult orElse(),
   }) {
@@ -275,8 +275,8 @@ class _$GetAdminProductListEventImpl implements GetAdminProductListEvent {
     required TResult Function() started,
     required TResult Function() getAdminProductList,
     required TResult Function(String productId) getAdminProductDetails,
-    required TResult Function(CreateProductRequest body) createAdminProduct,
-    required TResult Function(UpdateProductRequest body) updateAdminProduct,
+    required TResult Function(CreateProductEntity body) createAdminProduct,
+    required TResult Function(UpdateProductEntity body) updateAdminProduct,
     required TResult Function(String productId) deleteAdminProduct,
   }) {
     return getAdminProductList();
@@ -288,8 +288,8 @@ class _$GetAdminProductListEventImpl implements GetAdminProductListEvent {
     TResult? Function()? started,
     TResult? Function()? getAdminProductList,
     TResult? Function(String productId)? getAdminProductDetails,
-    TResult? Function(CreateProductRequest body)? createAdminProduct,
-    TResult? Function(UpdateProductRequest body)? updateAdminProduct,
+    TResult? Function(CreateProductEntity body)? createAdminProduct,
+    TResult? Function(UpdateProductEntity body)? updateAdminProduct,
     TResult? Function(String productId)? deleteAdminProduct,
   }) {
     return getAdminProductList?.call();
@@ -301,8 +301,8 @@ class _$GetAdminProductListEventImpl implements GetAdminProductListEvent {
     TResult Function()? started,
     TResult Function()? getAdminProductList,
     TResult Function(String productId)? getAdminProductDetails,
-    TResult Function(CreateProductRequest body)? createAdminProduct,
-    TResult Function(UpdateProductRequest body)? updateAdminProduct,
+    TResult Function(CreateProductEntity body)? createAdminProduct,
+    TResult Function(UpdateProductEntity body)? updateAdminProduct,
     TResult Function(String productId)? deleteAdminProduct,
     required TResult orElse(),
   }) {
@@ -435,8 +435,8 @@ class _$GetAdminProductDetailsEventImpl implements GetAdminProductDetailsEvent {
     required TResult Function() started,
     required TResult Function() getAdminProductList,
     required TResult Function(String productId) getAdminProductDetails,
-    required TResult Function(CreateProductRequest body) createAdminProduct,
-    required TResult Function(UpdateProductRequest body) updateAdminProduct,
+    required TResult Function(CreateProductEntity body) createAdminProduct,
+    required TResult Function(UpdateProductEntity body) updateAdminProduct,
     required TResult Function(String productId) deleteAdminProduct,
   }) {
     return getAdminProductDetails(productId);
@@ -448,8 +448,8 @@ class _$GetAdminProductDetailsEventImpl implements GetAdminProductDetailsEvent {
     TResult? Function()? started,
     TResult? Function()? getAdminProductList,
     TResult? Function(String productId)? getAdminProductDetails,
-    TResult? Function(CreateProductRequest body)? createAdminProduct,
-    TResult? Function(UpdateProductRequest body)? updateAdminProduct,
+    TResult? Function(CreateProductEntity body)? createAdminProduct,
+    TResult? Function(UpdateProductEntity body)? updateAdminProduct,
     TResult? Function(String productId)? deleteAdminProduct,
   }) {
     return getAdminProductDetails?.call(productId);
@@ -461,8 +461,8 @@ class _$GetAdminProductDetailsEventImpl implements GetAdminProductDetailsEvent {
     TResult Function()? started,
     TResult Function()? getAdminProductList,
     TResult Function(String productId)? getAdminProductDetails,
-    TResult Function(CreateProductRequest body)? createAdminProduct,
-    TResult Function(UpdateProductRequest body)? updateAdminProduct,
+    TResult Function(CreateProductEntity body)? createAdminProduct,
+    TResult Function(UpdateProductEntity body)? updateAdminProduct,
     TResult Function(String productId)? deleteAdminProduct,
     required TResult orElse(),
   }) {
@@ -536,7 +536,7 @@ abstract class _$$CreateAdminProductEventImplCopyWith<$Res> {
           $Res Function(_$CreateAdminProductEventImpl) then) =
       __$$CreateAdminProductEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({CreateProductRequest body});
+  $Res call({CreateProductEntity body});
 }
 
 /// @nodoc
@@ -557,7 +557,7 @@ class __$$CreateAdminProductEventImplCopyWithImpl<$Res>
       body: null == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as CreateProductRequest,
+              as CreateProductEntity,
     ));
   }
 }
@@ -568,7 +568,7 @@ class _$CreateAdminProductEventImpl implements CreateAdminProductEvent {
   const _$CreateAdminProductEventImpl({required this.body});
 
   @override
-  final CreateProductRequest body;
+  final CreateProductEntity body;
 
   @override
   String toString() {
@@ -599,8 +599,8 @@ class _$CreateAdminProductEventImpl implements CreateAdminProductEvent {
     required TResult Function() started,
     required TResult Function() getAdminProductList,
     required TResult Function(String productId) getAdminProductDetails,
-    required TResult Function(CreateProductRequest body) createAdminProduct,
-    required TResult Function(UpdateProductRequest body) updateAdminProduct,
+    required TResult Function(CreateProductEntity body) createAdminProduct,
+    required TResult Function(UpdateProductEntity body) updateAdminProduct,
     required TResult Function(String productId) deleteAdminProduct,
   }) {
     return createAdminProduct(body);
@@ -612,8 +612,8 @@ class _$CreateAdminProductEventImpl implements CreateAdminProductEvent {
     TResult? Function()? started,
     TResult? Function()? getAdminProductList,
     TResult? Function(String productId)? getAdminProductDetails,
-    TResult? Function(CreateProductRequest body)? createAdminProduct,
-    TResult? Function(UpdateProductRequest body)? updateAdminProduct,
+    TResult? Function(CreateProductEntity body)? createAdminProduct,
+    TResult? Function(UpdateProductEntity body)? updateAdminProduct,
     TResult? Function(String productId)? deleteAdminProduct,
   }) {
     return createAdminProduct?.call(body);
@@ -625,8 +625,8 @@ class _$CreateAdminProductEventImpl implements CreateAdminProductEvent {
     TResult Function()? started,
     TResult Function()? getAdminProductList,
     TResult Function(String productId)? getAdminProductDetails,
-    TResult Function(CreateProductRequest body)? createAdminProduct,
-    TResult Function(UpdateProductRequest body)? updateAdminProduct,
+    TResult Function(CreateProductEntity body)? createAdminProduct,
+    TResult Function(UpdateProductEntity body)? updateAdminProduct,
     TResult Function(String productId)? deleteAdminProduct,
     required TResult orElse(),
   }) {
@@ -685,10 +685,10 @@ class _$CreateAdminProductEventImpl implements CreateAdminProductEvent {
 
 abstract class CreateAdminProductEvent implements AdminProductEvent {
   const factory CreateAdminProductEvent(
-          {required final CreateProductRequest body}) =
+          {required final CreateProductEntity body}) =
       _$CreateAdminProductEventImpl;
 
-  CreateProductRequest get body;
+  CreateProductEntity get body;
   @JsonKey(ignore: true)
   _$$CreateAdminProductEventImplCopyWith<_$CreateAdminProductEventImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -701,7 +701,7 @@ abstract class _$$UpdateAdminProductEventImplCopyWith<$Res> {
           $Res Function(_$UpdateAdminProductEventImpl) then) =
       __$$UpdateAdminProductEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({UpdateProductRequest body});
+  $Res call({UpdateProductEntity body});
 }
 
 /// @nodoc
@@ -722,7 +722,7 @@ class __$$UpdateAdminProductEventImplCopyWithImpl<$Res>
       body: null == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as UpdateProductRequest,
+              as UpdateProductEntity,
     ));
   }
 }
@@ -733,7 +733,7 @@ class _$UpdateAdminProductEventImpl implements UpdateAdminProductEvent {
   const _$UpdateAdminProductEventImpl({required this.body});
 
   @override
-  final UpdateProductRequest body;
+  final UpdateProductEntity body;
 
   @override
   String toString() {
@@ -764,8 +764,8 @@ class _$UpdateAdminProductEventImpl implements UpdateAdminProductEvent {
     required TResult Function() started,
     required TResult Function() getAdminProductList,
     required TResult Function(String productId) getAdminProductDetails,
-    required TResult Function(CreateProductRequest body) createAdminProduct,
-    required TResult Function(UpdateProductRequest body) updateAdminProduct,
+    required TResult Function(CreateProductEntity body) createAdminProduct,
+    required TResult Function(UpdateProductEntity body) updateAdminProduct,
     required TResult Function(String productId) deleteAdminProduct,
   }) {
     return updateAdminProduct(body);
@@ -777,8 +777,8 @@ class _$UpdateAdminProductEventImpl implements UpdateAdminProductEvent {
     TResult? Function()? started,
     TResult? Function()? getAdminProductList,
     TResult? Function(String productId)? getAdminProductDetails,
-    TResult? Function(CreateProductRequest body)? createAdminProduct,
-    TResult? Function(UpdateProductRequest body)? updateAdminProduct,
+    TResult? Function(CreateProductEntity body)? createAdminProduct,
+    TResult? Function(UpdateProductEntity body)? updateAdminProduct,
     TResult? Function(String productId)? deleteAdminProduct,
   }) {
     return updateAdminProduct?.call(body);
@@ -790,8 +790,8 @@ class _$UpdateAdminProductEventImpl implements UpdateAdminProductEvent {
     TResult Function()? started,
     TResult Function()? getAdminProductList,
     TResult Function(String productId)? getAdminProductDetails,
-    TResult Function(CreateProductRequest body)? createAdminProduct,
-    TResult Function(UpdateProductRequest body)? updateAdminProduct,
+    TResult Function(CreateProductEntity body)? createAdminProduct,
+    TResult Function(UpdateProductEntity body)? updateAdminProduct,
     TResult Function(String productId)? deleteAdminProduct,
     required TResult orElse(),
   }) {
@@ -850,10 +850,10 @@ class _$UpdateAdminProductEventImpl implements UpdateAdminProductEvent {
 
 abstract class UpdateAdminProductEvent implements AdminProductEvent {
   const factory UpdateAdminProductEvent(
-          {required final UpdateProductRequest body}) =
+          {required final UpdateProductEntity body}) =
       _$UpdateAdminProductEventImpl;
 
-  UpdateProductRequest get body;
+  UpdateProductEntity get body;
   @JsonKey(ignore: true)
   _$$UpdateAdminProductEventImplCopyWith<_$UpdateAdminProductEventImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -930,8 +930,8 @@ class _$DeleteAdminProductEventImpl implements DeleteAdminProductEvent {
     required TResult Function() started,
     required TResult Function() getAdminProductList,
     required TResult Function(String productId) getAdminProductDetails,
-    required TResult Function(CreateProductRequest body) createAdminProduct,
-    required TResult Function(UpdateProductRequest body) updateAdminProduct,
+    required TResult Function(CreateProductEntity body) createAdminProduct,
+    required TResult Function(UpdateProductEntity body) updateAdminProduct,
     required TResult Function(String productId) deleteAdminProduct,
   }) {
     return deleteAdminProduct(productId);
@@ -943,8 +943,8 @@ class _$DeleteAdminProductEventImpl implements DeleteAdminProductEvent {
     TResult? Function()? started,
     TResult? Function()? getAdminProductList,
     TResult? Function(String productId)? getAdminProductDetails,
-    TResult? Function(CreateProductRequest body)? createAdminProduct,
-    TResult? Function(UpdateProductRequest body)? updateAdminProduct,
+    TResult? Function(CreateProductEntity body)? createAdminProduct,
+    TResult? Function(UpdateProductEntity body)? updateAdminProduct,
     TResult? Function(String productId)? deleteAdminProduct,
   }) {
     return deleteAdminProduct?.call(productId);
@@ -956,8 +956,8 @@ class _$DeleteAdminProductEventImpl implements DeleteAdminProductEvent {
     TResult Function()? started,
     TResult Function()? getAdminProductList,
     TResult Function(String productId)? getAdminProductDetails,
-    TResult Function(CreateProductRequest body)? createAdminProduct,
-    TResult Function(UpdateProductRequest body)? updateAdminProduct,
+    TResult Function(CreateProductEntity body)? createAdminProduct,
+    TResult Function(UpdateProductEntity body)? updateAdminProduct,
     TResult Function(String productId)? deleteAdminProduct,
     required TResult orElse(),
   }) {
@@ -1030,21 +1030,20 @@ mixin _$AdminProductState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminProductLoading,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity>? productList)
         getAdminProductListSuccess,
     required TResult Function() getAdminProductListEmpty,
     required TResult Function(String errorMessage) getAdminProductListFailure,
-    required TResult Function(ProductDetails product)
+    required TResult Function(ProductsDetailsEntity product)
         getAdminProductDetailsSuccess,
     required TResult Function() getAdminProductDetailsEmpty,
     required TResult Function(String errorMessage)
         getAdminProductDetailsFailure,
-    required TResult Function(CreateProductResponse body)
-        createNewProductSuccess,
+    required TResult Function(String body) createNewProductSuccess,
     required TResult Function(String errorMessage) createNewProductFailure,
-    required TResult Function(UpdateProductResponse body) updateProductSuccess,
+    required TResult Function(String body) updateProductSuccess,
     required TResult Function(String errorMessage) updateProductFailure,
-    required TResult Function() deleteProductSuccess,
+    required TResult Function(bool isDeleted) deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -1052,17 +1051,19 @@ mixin _$AdminProductState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminProductLoading,
-    TResult? Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult? Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult? Function()? getAdminProductListEmpty,
     TResult? Function(String errorMessage)? getAdminProductListFailure,
-    TResult? Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult? Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult? Function()? getAdminProductDetailsEmpty,
     TResult? Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult? Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult? Function(String body)? createNewProductSuccess,
     TResult? Function(String errorMessage)? createNewProductFailure,
-    TResult? Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult? Function(String body)? updateProductSuccess,
     TResult? Function(String errorMessage)? updateProductFailure,
-    TResult? Function()? deleteProductSuccess,
+    TResult? Function(bool isDeleted)? deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -1070,17 +1071,19 @@ mixin _$AdminProductState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminProductLoading,
-    TResult Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult Function()? getAdminProductListEmpty,
     TResult Function(String errorMessage)? getAdminProductListFailure,
-    TResult Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult Function()? getAdminProductDetailsEmpty,
     TResult Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult Function(String body)? createNewProductSuccess,
     TResult Function(String errorMessage)? createNewProductFailure,
-    TResult Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult Function(String body)? updateProductSuccess,
     TResult Function(String errorMessage)? updateProductFailure,
-    TResult Function()? deleteProductSuccess,
+    TResult Function(bool isDeleted)? deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
     required TResult orElse(),
   }) =>
@@ -1218,21 +1221,20 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminProductLoading,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity>? productList)
         getAdminProductListSuccess,
     required TResult Function() getAdminProductListEmpty,
     required TResult Function(String errorMessage) getAdminProductListFailure,
-    required TResult Function(ProductDetails product)
+    required TResult Function(ProductsDetailsEntity product)
         getAdminProductDetailsSuccess,
     required TResult Function() getAdminProductDetailsEmpty,
     required TResult Function(String errorMessage)
         getAdminProductDetailsFailure,
-    required TResult Function(CreateProductResponse body)
-        createNewProductSuccess,
+    required TResult Function(String body) createNewProductSuccess,
     required TResult Function(String errorMessage) createNewProductFailure,
-    required TResult Function(UpdateProductResponse body) updateProductSuccess,
+    required TResult Function(String body) updateProductSuccess,
     required TResult Function(String errorMessage) updateProductFailure,
-    required TResult Function() deleteProductSuccess,
+    required TResult Function(bool isDeleted) deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
   }) {
     return initial();
@@ -1243,17 +1245,19 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminProductLoading,
-    TResult? Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult? Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult? Function()? getAdminProductListEmpty,
     TResult? Function(String errorMessage)? getAdminProductListFailure,
-    TResult? Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult? Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult? Function()? getAdminProductDetailsEmpty,
     TResult? Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult? Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult? Function(String body)? createNewProductSuccess,
     TResult? Function(String errorMessage)? createNewProductFailure,
-    TResult? Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult? Function(String body)? updateProductSuccess,
     TResult? Function(String errorMessage)? updateProductFailure,
-    TResult? Function()? deleteProductSuccess,
+    TResult? Function(bool isDeleted)? deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
   }) {
     return initial?.call();
@@ -1264,17 +1268,19 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminProductLoading,
-    TResult Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult Function()? getAdminProductListEmpty,
     TResult Function(String errorMessage)? getAdminProductListFailure,
-    TResult Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult Function()? getAdminProductDetailsEmpty,
     TResult Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult Function(String body)? createNewProductSuccess,
     TResult Function(String errorMessage)? createNewProductFailure,
-    TResult Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult Function(String body)? updateProductSuccess,
     TResult Function(String errorMessage)? updateProductFailure,
-    TResult Function()? deleteProductSuccess,
+    TResult Function(bool isDeleted)? deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
     required TResult orElse(),
   }) {
@@ -1415,21 +1421,20 @@ class _$AdminProductLoadingImpl implements AdminProductLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminProductLoading,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity>? productList)
         getAdminProductListSuccess,
     required TResult Function() getAdminProductListEmpty,
     required TResult Function(String errorMessage) getAdminProductListFailure,
-    required TResult Function(ProductDetails product)
+    required TResult Function(ProductsDetailsEntity product)
         getAdminProductDetailsSuccess,
     required TResult Function() getAdminProductDetailsEmpty,
     required TResult Function(String errorMessage)
         getAdminProductDetailsFailure,
-    required TResult Function(CreateProductResponse body)
-        createNewProductSuccess,
+    required TResult Function(String body) createNewProductSuccess,
     required TResult Function(String errorMessage) createNewProductFailure,
-    required TResult Function(UpdateProductResponse body) updateProductSuccess,
+    required TResult Function(String body) updateProductSuccess,
     required TResult Function(String errorMessage) updateProductFailure,
-    required TResult Function() deleteProductSuccess,
+    required TResult Function(bool isDeleted) deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
   }) {
     return adminProductLoading();
@@ -1440,17 +1445,19 @@ class _$AdminProductLoadingImpl implements AdminProductLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminProductLoading,
-    TResult? Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult? Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult? Function()? getAdminProductListEmpty,
     TResult? Function(String errorMessage)? getAdminProductListFailure,
-    TResult? Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult? Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult? Function()? getAdminProductDetailsEmpty,
     TResult? Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult? Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult? Function(String body)? createNewProductSuccess,
     TResult? Function(String errorMessage)? createNewProductFailure,
-    TResult? Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult? Function(String body)? updateProductSuccess,
     TResult? Function(String errorMessage)? updateProductFailure,
-    TResult? Function()? deleteProductSuccess,
+    TResult? Function(bool isDeleted)? deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
   }) {
     return adminProductLoading?.call();
@@ -1461,17 +1468,19 @@ class _$AdminProductLoadingImpl implements AdminProductLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminProductLoading,
-    TResult Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult Function()? getAdminProductListEmpty,
     TResult Function(String errorMessage)? getAdminProductListFailure,
-    TResult Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult Function()? getAdminProductDetailsEmpty,
     TResult Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult Function(String body)? createNewProductSuccess,
     TResult Function(String errorMessage)? createNewProductFailure,
-    TResult Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult Function(String body)? updateProductSuccess,
     TResult Function(String errorMessage)? updateProductFailure,
-    TResult Function()? deleteProductSuccess,
+    TResult Function(bool isDeleted)? deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
     required TResult orElse(),
   }) {
@@ -1578,7 +1587,7 @@ abstract class _$$GetAdminProductListSuccessImplCopyWith<$Res> {
           $Res Function(_$GetAdminProductListSuccessImpl) then) =
       __$$GetAdminProductListSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Product>? productList});
+  $Res call({List<GetProductEntity>? productList});
 }
 
 /// @nodoc
@@ -1600,7 +1609,7 @@ class __$$GetAdminProductListSuccessImplCopyWithImpl<$Res>
       freezed == productList
           ? _value._productList
           : productList // ignore: cast_nullable_to_non_nullable
-              as List<Product>?,
+              as List<GetProductEntity>?,
     ));
   }
 }
@@ -1608,12 +1617,13 @@ class __$$GetAdminProductListSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetAdminProductListSuccessImpl implements GetAdminProductListSuccess {
-  const _$GetAdminProductListSuccessImpl(final List<Product>? productList)
+  const _$GetAdminProductListSuccessImpl(
+      final List<GetProductEntity>? productList)
       : _productList = productList;
 
-  final List<Product>? _productList;
+  final List<GetProductEntity>? _productList;
   @override
-  List<Product>? get productList {
+  List<GetProductEntity>? get productList {
     final value = _productList;
     if (value == null) return null;
     if (_productList is EqualUnmodifiableListView) return _productList;
@@ -1651,21 +1661,20 @@ class _$GetAdminProductListSuccessImpl implements GetAdminProductListSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminProductLoading,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity>? productList)
         getAdminProductListSuccess,
     required TResult Function() getAdminProductListEmpty,
     required TResult Function(String errorMessage) getAdminProductListFailure,
-    required TResult Function(ProductDetails product)
+    required TResult Function(ProductsDetailsEntity product)
         getAdminProductDetailsSuccess,
     required TResult Function() getAdminProductDetailsEmpty,
     required TResult Function(String errorMessage)
         getAdminProductDetailsFailure,
-    required TResult Function(CreateProductResponse body)
-        createNewProductSuccess,
+    required TResult Function(String body) createNewProductSuccess,
     required TResult Function(String errorMessage) createNewProductFailure,
-    required TResult Function(UpdateProductResponse body) updateProductSuccess,
+    required TResult Function(String body) updateProductSuccess,
     required TResult Function(String errorMessage) updateProductFailure,
-    required TResult Function() deleteProductSuccess,
+    required TResult Function(bool isDeleted) deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
   }) {
     return getAdminProductListSuccess(productList);
@@ -1676,17 +1685,19 @@ class _$GetAdminProductListSuccessImpl implements GetAdminProductListSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminProductLoading,
-    TResult? Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult? Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult? Function()? getAdminProductListEmpty,
     TResult? Function(String errorMessage)? getAdminProductListFailure,
-    TResult? Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult? Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult? Function()? getAdminProductDetailsEmpty,
     TResult? Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult? Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult? Function(String body)? createNewProductSuccess,
     TResult? Function(String errorMessage)? createNewProductFailure,
-    TResult? Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult? Function(String body)? updateProductSuccess,
     TResult? Function(String errorMessage)? updateProductFailure,
-    TResult? Function()? deleteProductSuccess,
+    TResult? Function(bool isDeleted)? deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
   }) {
     return getAdminProductListSuccess?.call(productList);
@@ -1697,17 +1708,19 @@ class _$GetAdminProductListSuccessImpl implements GetAdminProductListSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminProductLoading,
-    TResult Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult Function()? getAdminProductListEmpty,
     TResult Function(String errorMessage)? getAdminProductListFailure,
-    TResult Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult Function()? getAdminProductDetailsEmpty,
     TResult Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult Function(String body)? createNewProductSuccess,
     TResult Function(String errorMessage)? createNewProductFailure,
-    TResult Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult Function(String body)? updateProductSuccess,
     TResult Function(String errorMessage)? updateProductFailure,
-    TResult Function()? deleteProductSuccess,
+    TResult Function(bool isDeleted)? deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
     required TResult orElse(),
   }) {
@@ -1804,10 +1817,11 @@ class _$GetAdminProductListSuccessImpl implements GetAdminProductListSuccess {
 }
 
 abstract class GetAdminProductListSuccess implements AdminProductState {
-  const factory GetAdminProductListSuccess(final List<Product>? productList) =
+  const factory GetAdminProductListSuccess(
+          final List<GetProductEntity>? productList) =
       _$GetAdminProductListSuccessImpl;
 
-  List<Product>? get productList;
+  List<GetProductEntity>? get productList;
   @JsonKey(ignore: true)
   _$$GetAdminProductListSuccessImplCopyWith<_$GetAdminProductListSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1857,21 +1871,20 @@ class _$GetAdminProductListEmptyImpl implements GetAdminProductListEmpty {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminProductLoading,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity>? productList)
         getAdminProductListSuccess,
     required TResult Function() getAdminProductListEmpty,
     required TResult Function(String errorMessage) getAdminProductListFailure,
-    required TResult Function(ProductDetails product)
+    required TResult Function(ProductsDetailsEntity product)
         getAdminProductDetailsSuccess,
     required TResult Function() getAdminProductDetailsEmpty,
     required TResult Function(String errorMessage)
         getAdminProductDetailsFailure,
-    required TResult Function(CreateProductResponse body)
-        createNewProductSuccess,
+    required TResult Function(String body) createNewProductSuccess,
     required TResult Function(String errorMessage) createNewProductFailure,
-    required TResult Function(UpdateProductResponse body) updateProductSuccess,
+    required TResult Function(String body) updateProductSuccess,
     required TResult Function(String errorMessage) updateProductFailure,
-    required TResult Function() deleteProductSuccess,
+    required TResult Function(bool isDeleted) deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
   }) {
     return getAdminProductListEmpty();
@@ -1882,17 +1895,19 @@ class _$GetAdminProductListEmptyImpl implements GetAdminProductListEmpty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminProductLoading,
-    TResult? Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult? Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult? Function()? getAdminProductListEmpty,
     TResult? Function(String errorMessage)? getAdminProductListFailure,
-    TResult? Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult? Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult? Function()? getAdminProductDetailsEmpty,
     TResult? Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult? Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult? Function(String body)? createNewProductSuccess,
     TResult? Function(String errorMessage)? createNewProductFailure,
-    TResult? Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult? Function(String body)? updateProductSuccess,
     TResult? Function(String errorMessage)? updateProductFailure,
-    TResult? Function()? deleteProductSuccess,
+    TResult? Function(bool isDeleted)? deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
   }) {
     return getAdminProductListEmpty?.call();
@@ -1903,17 +1918,19 @@ class _$GetAdminProductListEmptyImpl implements GetAdminProductListEmpty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminProductLoading,
-    TResult Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult Function()? getAdminProductListEmpty,
     TResult Function(String errorMessage)? getAdminProductListFailure,
-    TResult Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult Function()? getAdminProductDetailsEmpty,
     TResult Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult Function(String body)? createNewProductSuccess,
     TResult Function(String errorMessage)? createNewProductFailure,
-    TResult Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult Function(String body)? updateProductSuccess,
     TResult Function(String errorMessage)? updateProductFailure,
-    TResult Function()? deleteProductSuccess,
+    TResult Function(bool isDeleted)? deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
     required TResult orElse(),
   }) {
@@ -2084,21 +2101,20 @@ class _$GetAdminProductListFailureImpl implements GetAdminProductListFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminProductLoading,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity>? productList)
         getAdminProductListSuccess,
     required TResult Function() getAdminProductListEmpty,
     required TResult Function(String errorMessage) getAdminProductListFailure,
-    required TResult Function(ProductDetails product)
+    required TResult Function(ProductsDetailsEntity product)
         getAdminProductDetailsSuccess,
     required TResult Function() getAdminProductDetailsEmpty,
     required TResult Function(String errorMessage)
         getAdminProductDetailsFailure,
-    required TResult Function(CreateProductResponse body)
-        createNewProductSuccess,
+    required TResult Function(String body) createNewProductSuccess,
     required TResult Function(String errorMessage) createNewProductFailure,
-    required TResult Function(UpdateProductResponse body) updateProductSuccess,
+    required TResult Function(String body) updateProductSuccess,
     required TResult Function(String errorMessage) updateProductFailure,
-    required TResult Function() deleteProductSuccess,
+    required TResult Function(bool isDeleted) deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
   }) {
     return getAdminProductListFailure(errorMessage);
@@ -2109,17 +2125,19 @@ class _$GetAdminProductListFailureImpl implements GetAdminProductListFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminProductLoading,
-    TResult? Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult? Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult? Function()? getAdminProductListEmpty,
     TResult? Function(String errorMessage)? getAdminProductListFailure,
-    TResult? Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult? Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult? Function()? getAdminProductDetailsEmpty,
     TResult? Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult? Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult? Function(String body)? createNewProductSuccess,
     TResult? Function(String errorMessage)? createNewProductFailure,
-    TResult? Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult? Function(String body)? updateProductSuccess,
     TResult? Function(String errorMessage)? updateProductFailure,
-    TResult? Function()? deleteProductSuccess,
+    TResult? Function(bool isDeleted)? deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
   }) {
     return getAdminProductListFailure?.call(errorMessage);
@@ -2130,17 +2148,19 @@ class _$GetAdminProductListFailureImpl implements GetAdminProductListFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminProductLoading,
-    TResult Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult Function()? getAdminProductListEmpty,
     TResult Function(String errorMessage)? getAdminProductListFailure,
-    TResult Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult Function()? getAdminProductDetailsEmpty,
     TResult Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult Function(String body)? createNewProductSuccess,
     TResult Function(String errorMessage)? createNewProductFailure,
-    TResult Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult Function(String body)? updateProductSuccess,
     TResult Function(String errorMessage)? updateProductFailure,
-    TResult Function()? deleteProductSuccess,
+    TResult Function(bool isDeleted)? deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
     required TResult orElse(),
   }) {
@@ -2253,7 +2273,7 @@ abstract class _$$GetAdminProductDetailsSuccessImplCopyWith<$Res> {
           $Res Function(_$GetAdminProductDetailsSuccessImpl) then) =
       __$$GetAdminProductDetailsSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ProductDetails product});
+  $Res call({ProductsDetailsEntity product});
 }
 
 /// @nodoc
@@ -2275,7 +2295,7 @@ class __$$GetAdminProductDetailsSuccessImplCopyWithImpl<$Res>
       null == product
           ? _value.product
           : product // ignore: cast_nullable_to_non_nullable
-              as ProductDetails,
+              as ProductsDetailsEntity,
     ));
   }
 }
@@ -2287,7 +2307,7 @@ class _$GetAdminProductDetailsSuccessImpl
   const _$GetAdminProductDetailsSuccessImpl(this.product);
 
   @override
-  final ProductDetails product;
+  final ProductsDetailsEntity product;
 
   @override
   String toString() {
@@ -2318,21 +2338,20 @@ class _$GetAdminProductDetailsSuccessImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminProductLoading,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity>? productList)
         getAdminProductListSuccess,
     required TResult Function() getAdminProductListEmpty,
     required TResult Function(String errorMessage) getAdminProductListFailure,
-    required TResult Function(ProductDetails product)
+    required TResult Function(ProductsDetailsEntity product)
         getAdminProductDetailsSuccess,
     required TResult Function() getAdminProductDetailsEmpty,
     required TResult Function(String errorMessage)
         getAdminProductDetailsFailure,
-    required TResult Function(CreateProductResponse body)
-        createNewProductSuccess,
+    required TResult Function(String body) createNewProductSuccess,
     required TResult Function(String errorMessage) createNewProductFailure,
-    required TResult Function(UpdateProductResponse body) updateProductSuccess,
+    required TResult Function(String body) updateProductSuccess,
     required TResult Function(String errorMessage) updateProductFailure,
-    required TResult Function() deleteProductSuccess,
+    required TResult Function(bool isDeleted) deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
   }) {
     return getAdminProductDetailsSuccess(product);
@@ -2343,17 +2362,19 @@ class _$GetAdminProductDetailsSuccessImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminProductLoading,
-    TResult? Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult? Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult? Function()? getAdminProductListEmpty,
     TResult? Function(String errorMessage)? getAdminProductListFailure,
-    TResult? Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult? Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult? Function()? getAdminProductDetailsEmpty,
     TResult? Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult? Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult? Function(String body)? createNewProductSuccess,
     TResult? Function(String errorMessage)? createNewProductFailure,
-    TResult? Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult? Function(String body)? updateProductSuccess,
     TResult? Function(String errorMessage)? updateProductFailure,
-    TResult? Function()? deleteProductSuccess,
+    TResult? Function(bool isDeleted)? deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
   }) {
     return getAdminProductDetailsSuccess?.call(product);
@@ -2364,17 +2385,19 @@ class _$GetAdminProductDetailsSuccessImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminProductLoading,
-    TResult Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult Function()? getAdminProductListEmpty,
     TResult Function(String errorMessage)? getAdminProductListFailure,
-    TResult Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult Function()? getAdminProductDetailsEmpty,
     TResult Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult Function(String body)? createNewProductSuccess,
     TResult Function(String errorMessage)? createNewProductFailure,
-    TResult Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult Function(String body)? updateProductSuccess,
     TResult Function(String errorMessage)? updateProductFailure,
-    TResult Function()? deleteProductSuccess,
+    TResult Function(bool isDeleted)? deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
     required TResult orElse(),
   }) {
@@ -2471,10 +2494,11 @@ class _$GetAdminProductDetailsSuccessImpl
 }
 
 abstract class GetAdminProductDetailsSuccess implements AdminProductState {
-  const factory GetAdminProductDetailsSuccess(final ProductDetails product) =
+  const factory GetAdminProductDetailsSuccess(
+          final ProductsDetailsEntity product) =
       _$GetAdminProductDetailsSuccessImpl;
 
-  ProductDetails get product;
+  ProductsDetailsEntity get product;
   @JsonKey(ignore: true)
   _$$GetAdminProductDetailsSuccessImplCopyWith<
           _$GetAdminProductDetailsSuccessImpl>
@@ -2525,21 +2549,20 @@ class _$GetAdminProductDetailsEmptyImpl implements GetAdminProductDetailsEmpty {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminProductLoading,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity>? productList)
         getAdminProductListSuccess,
     required TResult Function() getAdminProductListEmpty,
     required TResult Function(String errorMessage) getAdminProductListFailure,
-    required TResult Function(ProductDetails product)
+    required TResult Function(ProductsDetailsEntity product)
         getAdminProductDetailsSuccess,
     required TResult Function() getAdminProductDetailsEmpty,
     required TResult Function(String errorMessage)
         getAdminProductDetailsFailure,
-    required TResult Function(CreateProductResponse body)
-        createNewProductSuccess,
+    required TResult Function(String body) createNewProductSuccess,
     required TResult Function(String errorMessage) createNewProductFailure,
-    required TResult Function(UpdateProductResponse body) updateProductSuccess,
+    required TResult Function(String body) updateProductSuccess,
     required TResult Function(String errorMessage) updateProductFailure,
-    required TResult Function() deleteProductSuccess,
+    required TResult Function(bool isDeleted) deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
   }) {
     return getAdminProductDetailsEmpty();
@@ -2550,17 +2573,19 @@ class _$GetAdminProductDetailsEmptyImpl implements GetAdminProductDetailsEmpty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminProductLoading,
-    TResult? Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult? Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult? Function()? getAdminProductListEmpty,
     TResult? Function(String errorMessage)? getAdminProductListFailure,
-    TResult? Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult? Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult? Function()? getAdminProductDetailsEmpty,
     TResult? Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult? Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult? Function(String body)? createNewProductSuccess,
     TResult? Function(String errorMessage)? createNewProductFailure,
-    TResult? Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult? Function(String body)? updateProductSuccess,
     TResult? Function(String errorMessage)? updateProductFailure,
-    TResult? Function()? deleteProductSuccess,
+    TResult? Function(bool isDeleted)? deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
   }) {
     return getAdminProductDetailsEmpty?.call();
@@ -2571,17 +2596,19 @@ class _$GetAdminProductDetailsEmptyImpl implements GetAdminProductDetailsEmpty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminProductLoading,
-    TResult Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult Function()? getAdminProductListEmpty,
     TResult Function(String errorMessage)? getAdminProductListFailure,
-    TResult Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult Function()? getAdminProductDetailsEmpty,
     TResult Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult Function(String body)? createNewProductSuccess,
     TResult Function(String errorMessage)? createNewProductFailure,
-    TResult Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult Function(String body)? updateProductSuccess,
     TResult Function(String errorMessage)? updateProductFailure,
-    TResult Function()? deleteProductSuccess,
+    TResult Function(bool isDeleted)? deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
     required TResult orElse(),
   }) {
@@ -2755,21 +2782,20 @@ class _$GetAdminProductDetailsFailureImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminProductLoading,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity>? productList)
         getAdminProductListSuccess,
     required TResult Function() getAdminProductListEmpty,
     required TResult Function(String errorMessage) getAdminProductListFailure,
-    required TResult Function(ProductDetails product)
+    required TResult Function(ProductsDetailsEntity product)
         getAdminProductDetailsSuccess,
     required TResult Function() getAdminProductDetailsEmpty,
     required TResult Function(String errorMessage)
         getAdminProductDetailsFailure,
-    required TResult Function(CreateProductResponse body)
-        createNewProductSuccess,
+    required TResult Function(String body) createNewProductSuccess,
     required TResult Function(String errorMessage) createNewProductFailure,
-    required TResult Function(UpdateProductResponse body) updateProductSuccess,
+    required TResult Function(String body) updateProductSuccess,
     required TResult Function(String errorMessage) updateProductFailure,
-    required TResult Function() deleteProductSuccess,
+    required TResult Function(bool isDeleted) deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
   }) {
     return getAdminProductDetailsFailure(errorMessage);
@@ -2780,17 +2806,19 @@ class _$GetAdminProductDetailsFailureImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminProductLoading,
-    TResult? Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult? Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult? Function()? getAdminProductListEmpty,
     TResult? Function(String errorMessage)? getAdminProductListFailure,
-    TResult? Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult? Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult? Function()? getAdminProductDetailsEmpty,
     TResult? Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult? Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult? Function(String body)? createNewProductSuccess,
     TResult? Function(String errorMessage)? createNewProductFailure,
-    TResult? Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult? Function(String body)? updateProductSuccess,
     TResult? Function(String errorMessage)? updateProductFailure,
-    TResult? Function()? deleteProductSuccess,
+    TResult? Function(bool isDeleted)? deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
   }) {
     return getAdminProductDetailsFailure?.call(errorMessage);
@@ -2801,17 +2829,19 @@ class _$GetAdminProductDetailsFailureImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminProductLoading,
-    TResult Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult Function()? getAdminProductListEmpty,
     TResult Function(String errorMessage)? getAdminProductListFailure,
-    TResult Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult Function()? getAdminProductDetailsEmpty,
     TResult Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult Function(String body)? createNewProductSuccess,
     TResult Function(String errorMessage)? createNewProductFailure,
-    TResult Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult Function(String body)? updateProductSuccess,
     TResult Function(String errorMessage)? updateProductFailure,
-    TResult Function()? deleteProductSuccess,
+    TResult Function(bool isDeleted)? deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
     required TResult orElse(),
   }) {
@@ -2925,7 +2955,7 @@ abstract class _$$CreateNewProductSuccessImplCopyWith<$Res> {
           $Res Function(_$CreateNewProductSuccessImpl) then) =
       __$$CreateNewProductSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({CreateProductResponse body});
+  $Res call({String body});
 }
 
 /// @nodoc
@@ -2946,7 +2976,7 @@ class __$$CreateNewProductSuccessImplCopyWithImpl<$Res>
       null == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as CreateProductResponse,
+              as String,
     ));
   }
 }
@@ -2957,7 +2987,7 @@ class _$CreateNewProductSuccessImpl implements CreateNewProductSuccess {
   const _$CreateNewProductSuccessImpl(this.body);
 
   @override
-  final CreateProductResponse body;
+  final String body;
 
   @override
   String toString() {
@@ -2987,21 +3017,20 @@ class _$CreateNewProductSuccessImpl implements CreateNewProductSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminProductLoading,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity>? productList)
         getAdminProductListSuccess,
     required TResult Function() getAdminProductListEmpty,
     required TResult Function(String errorMessage) getAdminProductListFailure,
-    required TResult Function(ProductDetails product)
+    required TResult Function(ProductsDetailsEntity product)
         getAdminProductDetailsSuccess,
     required TResult Function() getAdminProductDetailsEmpty,
     required TResult Function(String errorMessage)
         getAdminProductDetailsFailure,
-    required TResult Function(CreateProductResponse body)
-        createNewProductSuccess,
+    required TResult Function(String body) createNewProductSuccess,
     required TResult Function(String errorMessage) createNewProductFailure,
-    required TResult Function(UpdateProductResponse body) updateProductSuccess,
+    required TResult Function(String body) updateProductSuccess,
     required TResult Function(String errorMessage) updateProductFailure,
-    required TResult Function() deleteProductSuccess,
+    required TResult Function(bool isDeleted) deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
   }) {
     return createNewProductSuccess(body);
@@ -3012,17 +3041,19 @@ class _$CreateNewProductSuccessImpl implements CreateNewProductSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminProductLoading,
-    TResult? Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult? Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult? Function()? getAdminProductListEmpty,
     TResult? Function(String errorMessage)? getAdminProductListFailure,
-    TResult? Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult? Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult? Function()? getAdminProductDetailsEmpty,
     TResult? Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult? Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult? Function(String body)? createNewProductSuccess,
     TResult? Function(String errorMessage)? createNewProductFailure,
-    TResult? Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult? Function(String body)? updateProductSuccess,
     TResult? Function(String errorMessage)? updateProductFailure,
-    TResult? Function()? deleteProductSuccess,
+    TResult? Function(bool isDeleted)? deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
   }) {
     return createNewProductSuccess?.call(body);
@@ -3033,17 +3064,19 @@ class _$CreateNewProductSuccessImpl implements CreateNewProductSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminProductLoading,
-    TResult Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult Function()? getAdminProductListEmpty,
     TResult Function(String errorMessage)? getAdminProductListFailure,
-    TResult Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult Function()? getAdminProductDetailsEmpty,
     TResult Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult Function(String body)? createNewProductSuccess,
     TResult Function(String errorMessage)? createNewProductFailure,
-    TResult Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult Function(String body)? updateProductSuccess,
     TResult Function(String errorMessage)? updateProductFailure,
-    TResult Function()? deleteProductSuccess,
+    TResult Function(bool isDeleted)? deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
     required TResult orElse(),
   }) {
@@ -3140,10 +3173,10 @@ class _$CreateNewProductSuccessImpl implements CreateNewProductSuccess {
 }
 
 abstract class CreateNewProductSuccess implements AdminProductState {
-  const factory CreateNewProductSuccess(final CreateProductResponse body) =
+  const factory CreateNewProductSuccess(final String body) =
       _$CreateNewProductSuccessImpl;
 
-  CreateProductResponse get body;
+  String get body;
   @JsonKey(ignore: true)
   _$$CreateNewProductSuccessImplCopyWith<_$CreateNewProductSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -3219,21 +3252,20 @@ class _$CreateNewProductFailureImpl implements CreateNewProductFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminProductLoading,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity>? productList)
         getAdminProductListSuccess,
     required TResult Function() getAdminProductListEmpty,
     required TResult Function(String errorMessage) getAdminProductListFailure,
-    required TResult Function(ProductDetails product)
+    required TResult Function(ProductsDetailsEntity product)
         getAdminProductDetailsSuccess,
     required TResult Function() getAdminProductDetailsEmpty,
     required TResult Function(String errorMessage)
         getAdminProductDetailsFailure,
-    required TResult Function(CreateProductResponse body)
-        createNewProductSuccess,
+    required TResult Function(String body) createNewProductSuccess,
     required TResult Function(String errorMessage) createNewProductFailure,
-    required TResult Function(UpdateProductResponse body) updateProductSuccess,
+    required TResult Function(String body) updateProductSuccess,
     required TResult Function(String errorMessage) updateProductFailure,
-    required TResult Function() deleteProductSuccess,
+    required TResult Function(bool isDeleted) deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
   }) {
     return createNewProductFailure(errorMessage);
@@ -3244,17 +3276,19 @@ class _$CreateNewProductFailureImpl implements CreateNewProductFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminProductLoading,
-    TResult? Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult? Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult? Function()? getAdminProductListEmpty,
     TResult? Function(String errorMessage)? getAdminProductListFailure,
-    TResult? Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult? Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult? Function()? getAdminProductDetailsEmpty,
     TResult? Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult? Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult? Function(String body)? createNewProductSuccess,
     TResult? Function(String errorMessage)? createNewProductFailure,
-    TResult? Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult? Function(String body)? updateProductSuccess,
     TResult? Function(String errorMessage)? updateProductFailure,
-    TResult? Function()? deleteProductSuccess,
+    TResult? Function(bool isDeleted)? deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
   }) {
     return createNewProductFailure?.call(errorMessage);
@@ -3265,17 +3299,19 @@ class _$CreateNewProductFailureImpl implements CreateNewProductFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminProductLoading,
-    TResult Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult Function()? getAdminProductListEmpty,
     TResult Function(String errorMessage)? getAdminProductListFailure,
-    TResult Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult Function()? getAdminProductDetailsEmpty,
     TResult Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult Function(String body)? createNewProductSuccess,
     TResult Function(String errorMessage)? createNewProductFailure,
-    TResult Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult Function(String body)? updateProductSuccess,
     TResult Function(String errorMessage)? updateProductFailure,
-    TResult Function()? deleteProductSuccess,
+    TResult Function(bool isDeleted)? deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
     required TResult orElse(),
   }) {
@@ -3387,7 +3423,7 @@ abstract class _$$UpdateProductSuccessImplCopyWith<$Res> {
           $Res Function(_$UpdateProductSuccessImpl) then) =
       __$$UpdateProductSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({UpdateProductResponse body});
+  $Res call({String body});
 }
 
 /// @nodoc
@@ -3407,7 +3443,7 @@ class __$$UpdateProductSuccessImplCopyWithImpl<$Res>
       null == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as UpdateProductResponse,
+              as String,
     ));
   }
 }
@@ -3418,7 +3454,7 @@ class _$UpdateProductSuccessImpl implements UpdateProductSuccess {
   const _$UpdateProductSuccessImpl(this.body);
 
   @override
-  final UpdateProductResponse body;
+  final String body;
 
   @override
   String toString() {
@@ -3449,21 +3485,20 @@ class _$UpdateProductSuccessImpl implements UpdateProductSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminProductLoading,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity>? productList)
         getAdminProductListSuccess,
     required TResult Function() getAdminProductListEmpty,
     required TResult Function(String errorMessage) getAdminProductListFailure,
-    required TResult Function(ProductDetails product)
+    required TResult Function(ProductsDetailsEntity product)
         getAdminProductDetailsSuccess,
     required TResult Function() getAdminProductDetailsEmpty,
     required TResult Function(String errorMessage)
         getAdminProductDetailsFailure,
-    required TResult Function(CreateProductResponse body)
-        createNewProductSuccess,
+    required TResult Function(String body) createNewProductSuccess,
     required TResult Function(String errorMessage) createNewProductFailure,
-    required TResult Function(UpdateProductResponse body) updateProductSuccess,
+    required TResult Function(String body) updateProductSuccess,
     required TResult Function(String errorMessage) updateProductFailure,
-    required TResult Function() deleteProductSuccess,
+    required TResult Function(bool isDeleted) deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
   }) {
     return updateProductSuccess(body);
@@ -3474,17 +3509,19 @@ class _$UpdateProductSuccessImpl implements UpdateProductSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminProductLoading,
-    TResult? Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult? Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult? Function()? getAdminProductListEmpty,
     TResult? Function(String errorMessage)? getAdminProductListFailure,
-    TResult? Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult? Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult? Function()? getAdminProductDetailsEmpty,
     TResult? Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult? Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult? Function(String body)? createNewProductSuccess,
     TResult? Function(String errorMessage)? createNewProductFailure,
-    TResult? Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult? Function(String body)? updateProductSuccess,
     TResult? Function(String errorMessage)? updateProductFailure,
-    TResult? Function()? deleteProductSuccess,
+    TResult? Function(bool isDeleted)? deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
   }) {
     return updateProductSuccess?.call(body);
@@ -3495,17 +3532,19 @@ class _$UpdateProductSuccessImpl implements UpdateProductSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminProductLoading,
-    TResult Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult Function()? getAdminProductListEmpty,
     TResult Function(String errorMessage)? getAdminProductListFailure,
-    TResult Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult Function()? getAdminProductDetailsEmpty,
     TResult Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult Function(String body)? createNewProductSuccess,
     TResult Function(String errorMessage)? createNewProductFailure,
-    TResult Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult Function(String body)? updateProductSuccess,
     TResult Function(String errorMessage)? updateProductFailure,
-    TResult Function()? deleteProductSuccess,
+    TResult Function(bool isDeleted)? deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
     required TResult orElse(),
   }) {
@@ -3602,10 +3641,10 @@ class _$UpdateProductSuccessImpl implements UpdateProductSuccess {
 }
 
 abstract class UpdateProductSuccess implements AdminProductState {
-  const factory UpdateProductSuccess(final UpdateProductResponse body) =
+  const factory UpdateProductSuccess(final String body) =
       _$UpdateProductSuccessImpl;
 
-  UpdateProductResponse get body;
+  String get body;
   @JsonKey(ignore: true)
   _$$UpdateProductSuccessImplCopyWith<_$UpdateProductSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -3680,21 +3719,20 @@ class _$UpdateProductFailureImpl implements UpdateProductFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminProductLoading,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity>? productList)
         getAdminProductListSuccess,
     required TResult Function() getAdminProductListEmpty,
     required TResult Function(String errorMessage) getAdminProductListFailure,
-    required TResult Function(ProductDetails product)
+    required TResult Function(ProductsDetailsEntity product)
         getAdminProductDetailsSuccess,
     required TResult Function() getAdminProductDetailsEmpty,
     required TResult Function(String errorMessage)
         getAdminProductDetailsFailure,
-    required TResult Function(CreateProductResponse body)
-        createNewProductSuccess,
+    required TResult Function(String body) createNewProductSuccess,
     required TResult Function(String errorMessage) createNewProductFailure,
-    required TResult Function(UpdateProductResponse body) updateProductSuccess,
+    required TResult Function(String body) updateProductSuccess,
     required TResult Function(String errorMessage) updateProductFailure,
-    required TResult Function() deleteProductSuccess,
+    required TResult Function(bool isDeleted) deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
   }) {
     return updateProductFailure(errorMessage);
@@ -3705,17 +3743,19 @@ class _$UpdateProductFailureImpl implements UpdateProductFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminProductLoading,
-    TResult? Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult? Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult? Function()? getAdminProductListEmpty,
     TResult? Function(String errorMessage)? getAdminProductListFailure,
-    TResult? Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult? Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult? Function()? getAdminProductDetailsEmpty,
     TResult? Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult? Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult? Function(String body)? createNewProductSuccess,
     TResult? Function(String errorMessage)? createNewProductFailure,
-    TResult? Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult? Function(String body)? updateProductSuccess,
     TResult? Function(String errorMessage)? updateProductFailure,
-    TResult? Function()? deleteProductSuccess,
+    TResult? Function(bool isDeleted)? deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
   }) {
     return updateProductFailure?.call(errorMessage);
@@ -3726,17 +3766,19 @@ class _$UpdateProductFailureImpl implements UpdateProductFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminProductLoading,
-    TResult Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult Function()? getAdminProductListEmpty,
     TResult Function(String errorMessage)? getAdminProductListFailure,
-    TResult Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult Function()? getAdminProductDetailsEmpty,
     TResult Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult Function(String body)? createNewProductSuccess,
     TResult Function(String errorMessage)? createNewProductFailure,
-    TResult Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult Function(String body)? updateProductSuccess,
     TResult Function(String errorMessage)? updateProductFailure,
-    TResult Function()? deleteProductSuccess,
+    TResult Function(bool isDeleted)? deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
     required TResult orElse(),
   }) {
@@ -3847,6 +3889,8 @@ abstract class _$$DeleteProductSuccessImplCopyWith<$Res> {
   factory _$$DeleteProductSuccessImplCopyWith(_$DeleteProductSuccessImpl value,
           $Res Function(_$DeleteProductSuccessImpl) then) =
       __$$DeleteProductSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isDeleted});
 }
 
 /// @nodoc
@@ -3856,51 +3900,76 @@ class __$$DeleteProductSuccessImplCopyWithImpl<$Res>
   __$$DeleteProductSuccessImplCopyWithImpl(_$DeleteProductSuccessImpl _value,
       $Res Function(_$DeleteProductSuccessImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isDeleted = null,
+  }) {
+    return _then(_$DeleteProductSuccessImpl(
+      null == isDeleted
+          ? _value.isDeleted
+          : isDeleted // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$DeleteProductSuccessImpl implements DeleteProductSuccess {
-  const _$DeleteProductSuccessImpl();
+  const _$DeleteProductSuccessImpl(this.isDeleted);
+
+  @override
+  final bool isDeleted;
 
   @override
   String toString() {
-    return 'AdminProductState.deleteProductSuccess()';
+    return 'AdminProductState.deleteProductSuccess(isDeleted: $isDeleted)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DeleteProductSuccessImpl);
+            other is _$DeleteProductSuccessImpl &&
+            (identical(other.isDeleted, isDeleted) ||
+                other.isDeleted == isDeleted));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, isDeleted);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteProductSuccessImplCopyWith<_$DeleteProductSuccessImpl>
+      get copyWith =>
+          __$$DeleteProductSuccessImplCopyWithImpl<_$DeleteProductSuccessImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminProductLoading,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity>? productList)
         getAdminProductListSuccess,
     required TResult Function() getAdminProductListEmpty,
     required TResult Function(String errorMessage) getAdminProductListFailure,
-    required TResult Function(ProductDetails product)
+    required TResult Function(ProductsDetailsEntity product)
         getAdminProductDetailsSuccess,
     required TResult Function() getAdminProductDetailsEmpty,
     required TResult Function(String errorMessage)
         getAdminProductDetailsFailure,
-    required TResult Function(CreateProductResponse body)
-        createNewProductSuccess,
+    required TResult Function(String body) createNewProductSuccess,
     required TResult Function(String errorMessage) createNewProductFailure,
-    required TResult Function(UpdateProductResponse body) updateProductSuccess,
+    required TResult Function(String body) updateProductSuccess,
     required TResult Function(String errorMessage) updateProductFailure,
-    required TResult Function() deleteProductSuccess,
+    required TResult Function(bool isDeleted) deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
   }) {
-    return deleteProductSuccess();
+    return deleteProductSuccess(isDeleted);
   }
 
   @override
@@ -3908,20 +3977,22 @@ class _$DeleteProductSuccessImpl implements DeleteProductSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminProductLoading,
-    TResult? Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult? Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult? Function()? getAdminProductListEmpty,
     TResult? Function(String errorMessage)? getAdminProductListFailure,
-    TResult? Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult? Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult? Function()? getAdminProductDetailsEmpty,
     TResult? Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult? Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult? Function(String body)? createNewProductSuccess,
     TResult? Function(String errorMessage)? createNewProductFailure,
-    TResult? Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult? Function(String body)? updateProductSuccess,
     TResult? Function(String errorMessage)? updateProductFailure,
-    TResult? Function()? deleteProductSuccess,
+    TResult? Function(bool isDeleted)? deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
   }) {
-    return deleteProductSuccess?.call();
+    return deleteProductSuccess?.call(isDeleted);
   }
 
   @override
@@ -3929,22 +4000,24 @@ class _$DeleteProductSuccessImpl implements DeleteProductSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminProductLoading,
-    TResult Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult Function()? getAdminProductListEmpty,
     TResult Function(String errorMessage)? getAdminProductListFailure,
-    TResult Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult Function()? getAdminProductDetailsEmpty,
     TResult Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult Function(String body)? createNewProductSuccess,
     TResult Function(String errorMessage)? createNewProductFailure,
-    TResult Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult Function(String body)? updateProductSuccess,
     TResult Function(String errorMessage)? updateProductFailure,
-    TResult Function()? deleteProductSuccess,
+    TResult Function(bool isDeleted)? deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
     required TResult orElse(),
   }) {
     if (deleteProductSuccess != null) {
-      return deleteProductSuccess();
+      return deleteProductSuccess(isDeleted);
     }
     return orElse();
   }
@@ -4036,7 +4109,13 @@ class _$DeleteProductSuccessImpl implements DeleteProductSuccess {
 }
 
 abstract class DeleteProductSuccess implements AdminProductState {
-  const factory DeleteProductSuccess() = _$DeleteProductSuccessImpl;
+  const factory DeleteProductSuccess(final bool isDeleted) =
+      _$DeleteProductSuccessImpl;
+
+  bool get isDeleted;
+  @JsonKey(ignore: true)
+  _$$DeleteProductSuccessImplCopyWith<_$DeleteProductSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -4108,21 +4187,20 @@ class _$DeleteProductFailureImpl implements DeleteProductFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminProductLoading,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity>? productList)
         getAdminProductListSuccess,
     required TResult Function() getAdminProductListEmpty,
     required TResult Function(String errorMessage) getAdminProductListFailure,
-    required TResult Function(ProductDetails product)
+    required TResult Function(ProductsDetailsEntity product)
         getAdminProductDetailsSuccess,
     required TResult Function() getAdminProductDetailsEmpty,
     required TResult Function(String errorMessage)
         getAdminProductDetailsFailure,
-    required TResult Function(CreateProductResponse body)
-        createNewProductSuccess,
+    required TResult Function(String body) createNewProductSuccess,
     required TResult Function(String errorMessage) createNewProductFailure,
-    required TResult Function(UpdateProductResponse body) updateProductSuccess,
+    required TResult Function(String body) updateProductSuccess,
     required TResult Function(String errorMessage) updateProductFailure,
-    required TResult Function() deleteProductSuccess,
+    required TResult Function(bool isDeleted) deleteProductSuccess,
     required TResult Function(String errorMessage) deleteProductFailure,
   }) {
     return deleteProductFailure(errorMessage);
@@ -4133,17 +4211,19 @@ class _$DeleteProductFailureImpl implements DeleteProductFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminProductLoading,
-    TResult? Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult? Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult? Function()? getAdminProductListEmpty,
     TResult? Function(String errorMessage)? getAdminProductListFailure,
-    TResult? Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult? Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult? Function()? getAdminProductDetailsEmpty,
     TResult? Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult? Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult? Function(String body)? createNewProductSuccess,
     TResult? Function(String errorMessage)? createNewProductFailure,
-    TResult? Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult? Function(String body)? updateProductSuccess,
     TResult? Function(String errorMessage)? updateProductFailure,
-    TResult? Function()? deleteProductSuccess,
+    TResult? Function(bool isDeleted)? deleteProductSuccess,
     TResult? Function(String errorMessage)? deleteProductFailure,
   }) {
     return deleteProductFailure?.call(errorMessage);
@@ -4154,17 +4234,19 @@ class _$DeleteProductFailureImpl implements DeleteProductFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminProductLoading,
-    TResult Function(List<Product>? productList)? getAdminProductListSuccess,
+    TResult Function(List<GetProductEntity>? productList)?
+        getAdminProductListSuccess,
     TResult Function()? getAdminProductListEmpty,
     TResult Function(String errorMessage)? getAdminProductListFailure,
-    TResult Function(ProductDetails product)? getAdminProductDetailsSuccess,
+    TResult Function(ProductsDetailsEntity product)?
+        getAdminProductDetailsSuccess,
     TResult Function()? getAdminProductDetailsEmpty,
     TResult Function(String errorMessage)? getAdminProductDetailsFailure,
-    TResult Function(CreateProductResponse body)? createNewProductSuccess,
+    TResult Function(String body)? createNewProductSuccess,
     TResult Function(String errorMessage)? createNewProductFailure,
-    TResult Function(UpdateProductResponse body)? updateProductSuccess,
+    TResult Function(String body)? updateProductSuccess,
     TResult Function(String errorMessage)? updateProductFailure,
-    TResult Function()? deleteProductSuccess,
+    TResult Function(bool isDeleted)? deleteProductSuccess,
     TResult Function(String errorMessage)? deleteProductFailure,
     required TResult orElse(),
   }) {

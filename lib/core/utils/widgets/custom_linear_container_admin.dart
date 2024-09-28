@@ -24,7 +24,7 @@ class CustomLinearContainerAdmin extends StatelessWidget {
         gradient: LinearGradient(
           colors: [
             context.colors.bluePinkLight.withOpacity(.08),
-            context.colors.bluePinkLight.withOpacity(.08),
+            context.colors.bluePinkDark.withOpacity(.08),
           ],
           begin: const Alignment(.36, .27),
           end: const Alignment(.64, .73),

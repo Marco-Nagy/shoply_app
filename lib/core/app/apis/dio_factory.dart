@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:shoply/core/Services/shared_preference/shared_pref_keys.dart';
 import 'package:shoply/core/Services/shared_preference/shared_preference_helper.dart';
+import 'package:shoply/core/utils/app_logout.dart';
 
 class DioFactory {
   DioFactory._();
@@ -40,8 +41,11 @@ class DioFactory {
         },
         onError: (error, handler) {
           if (error.response!= null) {
-            if (error.response!.statusCode == 401) {
+            if ( error.response!.statusCode==401) {
+              // Handle 400 or 401 error
               SharedPrefHelper().clearPreferences();
+              // Navigate to login screen or handle error accordingly
+              AppLogout().logout();
             }
           }
         },

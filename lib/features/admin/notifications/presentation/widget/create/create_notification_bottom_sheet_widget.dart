@@ -17,7 +17,7 @@ import 'package:shoply/core/utils/widgets/text_app.dart';
 import 'package:shoply/features/admin/notifications/data/model/add_notification_model.dart';
 import 'package:shoply/features/admin/notifications/presentation/bloc/add_notification/admin_notifications_bloc.dart';
 import 'package:shoply/features/admin/notifications/presentation/widget/create/product_item.dart';
-import 'package:shoply/features/admin/products/data/model/get_products_list/get_all_products.dart';
+import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
 import 'package:shoply/features/admin/products/presentation/bloc/admin_product_bloc.dart';
 
 class CreateNotificationBottomSheetWidget extends StatefulWidget {
@@ -43,15 +43,15 @@ class _CreateNotificationBottomSheetWidgetState
   String notificationTitleStatus = "Create";
   String notificationStatus = "Add";
 
-  Product? _selectedProduct = Product(
-      '',
-      '',
-      0,
-      '',
-      [],
-      CategoryProductModel(
-        '',
-        '',
+  GetProductEntity _selectedProduct = const GetProductEntity(
+      id: '',
+      title: '',
+      price: 0,
+      description: '',
+      images: [],
+      category: CategoryProductEntity(
+        id: '',
+        name: '',
       ));
 
   // SingleSelectController<Product>? _selectController;
@@ -67,11 +67,16 @@ class _CreateNotificationBottomSheetWidgetState
       notificationBodyController.text = widget.notification!.body;
       productNameController.text = widget.notification!.productName;
       productId = widget.notification!.productId;
-      _selectedProduct = Product(
-        productId,
-        productNameController.text,
-        0,
-        '',[],CategoryProductModel('','',));
+      _selectedProduct = GetProductEntity(
+          id: productId,
+          title: productNameController.text,
+          price: 0,
+          description: '',
+          images: const [],
+          category: const CategoryProductEntity(
+            id: '',
+            name: '',
+          ));
       notificationTitleStatus = "Update";
       notificationStatus = "Edit";
       debugPrint('productId $productId');
@@ -156,39 +161,38 @@ class _CreateNotificationBottomSheetWidgetState
                     return SizedBox(
                       width: double.infinity,
                       child: SizedBox(
-                        child: CustomDropdownSearch<Product>(
-
+                        child: CustomDropdownSearch<GetProductEntity>(
                           itemList: productsList ?? [],
 
                           onChanged: (item) {
                             setState(() {
-                              productId = item.id ?? '';
-                              productNameController.text = item.title??'';
+                              productId = item.id;
+                              productNameController.text = item.title;
                               _selectedProduct = item;
                               debugPrint('productId $productId');
                               debugPrint('productName ${productNameController.text}');
                             });
                           },
                           itemAsString: (item) {
-                            productId = item.id ?? '';
-                            productNameController.text = item.title??'';
+                            productId = item.id;
+                            productNameController.text = item.title;
                             _selectedProduct = item;
                             debugPrint('productId $productId');
                             debugPrint('productName ${productNameController.text}');
-                            return item.title ?? '';
+                            return item.title;
                           },
-                          itemBuilder: (Product item, bool isSelected) {
+                          itemBuilder: (GetProductEntity item, bool isSelected) {
                             return Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: ProductItem(
-                                name: item.title ?? '',
-                                image: item.images!.first ?? '',
+                                name: item.title,
+                                image: item.images.first,
                               ),
                             );
                           },
                           hintText: 'Select a product',
                           controller: productNameController,
-                          selectedItem: _selectedProduct!,
+                          selectedItem: _selectedProduct,
                         ),
                       ),
                     );

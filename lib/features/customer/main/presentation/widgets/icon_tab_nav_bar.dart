@@ -77,7 +77,7 @@ class _IconTabNavBarState extends State<IconTabNavBar>
             animationController: animationController!,
             iconAsset: widget.iconAsset,
             size: 30,
-            iconColor: widget.isSelected.value?context.colors.navBarSelectedTab:Colors.grey,
+            iconColor: widget.isSelected.value?context.colors.white:Colors.grey,
             backGroundColor: Colors.transparent,
             onTap: widget.onTap,
 

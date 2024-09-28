@@ -19,6 +19,9 @@ import 'package:shoply/features/admin/categories/data/model/get_all_categories/g
 import 'package:shoply/features/admin/categories/presentation/bloc/admin_categories_bloc.dart';
 import 'package:shoply/features/admin/products/data/model/create_product/create_product_request.dart';
 import 'package:shoply/features/admin/products/data/model/update_product/update_product_request.dart';
+import 'package:shoply/features/admin/products/domain/entities/create_product_entity.dart';
+import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
+import 'package:shoply/features/admin/products/domain/entities/update_product_entity.dart';
 import 'package:shoply/features/admin/products/presentation/bloc/admin_product_bloc.dart';
 import 'package:shoply/features/admin/products/presentation/widget/productImage/upload_product_images_list.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
@@ -31,7 +34,7 @@ class CreateProductBottomSheetWidget extends StatefulWidget {
     this.product,
   });
 
-  final Product? product;
+  final GetProductEntity? product;
   @override
   State<CreateProductBottomSheetWidget> createState() =>
       _CreateProductBottomSheetWidgetState();
@@ -314,7 +317,7 @@ class _CreateProductBottomSheetWidgetState
     }
     if (formKye.currentState!.validate() && productImagesList.isNotEmpty &&categoryNameController.text.isNotEmpty&& categoryId.isNotEmpty) {
       context.read<AdminProductBloc>().add(AdminProductEvent.updateAdminProduct(
-              body: UpdateProductRequest(
+              body: UpdateProductEntity(
             id: widget.product!.id!,
             title: productNameController.text.trim(),
             price: int.parse(priceController.text.trim()),
@@ -344,7 +347,7 @@ class _CreateProductBottomSheetWidgetState
     }
     if (formKye.currentState!.validate() && productImagesList.isNotEmpty &&categoryNameController.text.isNotEmpty) {
       context.read<AdminProductBloc>().add(AdminProductEvent.createAdminProduct(
-              body: CreateProductRequest(
+              body: CreateProductEntity(
             title: productNameController.text.trim(),
             price: double.parse(priceController.text.trim()).toDouble(),
             description: descriptionController.text.trim(),

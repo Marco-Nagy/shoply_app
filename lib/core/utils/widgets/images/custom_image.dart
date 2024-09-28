@@ -9,11 +9,12 @@ import 'package:shoply/core/styles/app_images.dart';
 class CustomImage extends StatelessWidget {
   const CustomImage({
     super.key,
-    required this.imageUrl,
+    required this.imageUrl, this.tag,
 
   });
 
   final String imageUrl;
+  final String? tag;
 
 
   @override
@@ -21,13 +22,13 @@ class CustomImage extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 2.5 / 4,
       child: Hero(
-        tag: 'tag$imageUrl',
+        tag:tag?? 'tag$imageUrl',
         flightShuttleBuilder: (flightContext, animation, flightDirection,
                 fromHeroContext, toHeroContext) =>
-            // RotationTransition(
-            //   turns: animation,
-            ScaleTransition(
-          scale: animation,
+            RotationTransition(
+              turns: animation,
+          //   ScaleTransition(
+          // scale: animation,
           // SlideTransition(
           //   transformHitTests: false,
           //   position: Tween<Offset>(

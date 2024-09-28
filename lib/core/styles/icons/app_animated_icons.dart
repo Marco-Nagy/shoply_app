@@ -12,6 +12,10 @@ class AppAnimatedIcons {
   static const favorite ='assets/images/json/favorite_heart_light.json';
   static const profile ='assets/images/json/profile.json';
   static const home = 'assets/images/json/anim_home_.json';
+  static const backArrow = 'assets/images/json/arrow_back_light.json';
+  static const upArrow = 'assets/images/json/arrow_up.json';
+  static const share = 'assets/images/json/share_light.json';
+  static const addToCart = 'assets/images/json/add_to_cart.json';
 
 
 

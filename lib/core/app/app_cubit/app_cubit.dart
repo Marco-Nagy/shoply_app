@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shoply/core/Services/shared_preference/shared_pref_keys.dart';
 import 'package:shoply/core/Services/shared_preference/shared_preference_helper.dart';
+import 'package:url_launcher/url_launcher.dart';
 part 'app_state.dart';
 part 'app_cubit.freezed.dart';
 
@@ -45,6 +46,13 @@ class AppCubit extends Cubit<AppState> {
     await SharedPrefHelper()
         .setString(key: SharedPrefKeys.language, stringValue: currentLanguage);
     emit(AppState.languageChange(local: Locale(currentLanguage)));
+  }
+  // * Url Launcher *
+
+  Future<void> openUrl({required String url}) async {
+    if (!await launchUrl(Uri.parse(url),mode: LaunchMode.externalApplication)) {
+      throw 'Could not launch $url';
+    }
   }
 
   void toArabic() => _changeLanguage(langCode: 'ar');
