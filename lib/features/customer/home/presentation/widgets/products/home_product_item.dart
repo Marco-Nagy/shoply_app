@@ -13,6 +13,7 @@ import 'package:shoply/core/utils/widgets/images/custom_container_linear_custome
 import 'package:shoply/core/utils/widgets/images/custom_image.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
 import 'package:shoply/features/admin/products/data/model/get_products_list/get_all_products.dart';
+import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
 import 'package:shoply/features/admin/products/presentation/bloc/admin_product_bloc.dart';
 import 'package:vibration/vibration.dart';
 
@@ -22,7 +23,7 @@ class HomeProductItem extends StatefulWidget {
     required this.product,
   });
 
-  final Product product;
+  final GetProductEntity product;
 
   @override
   State<HomeProductItem> createState() => _HomeProductItemState();

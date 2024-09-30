@@ -1,15 +1,10 @@
-import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
-import 'package:shoply/core/helpers/extension/navigations.dart';
 import 'package:shoply/core/localization/lang_keys.dart';
-import 'package:shoply/core/styles/fonts/my_fonts.dart';
-import 'package:shoply/core/utils/loading/empty_screen.dart';
 import 'package:shoply/core/utils/widgets/buttons/custom_button.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
-import 'package:shoply/features/admin/products/presentation/widget/product_loading.dart';
 import 'package:shoply/features/customer/home/presentation/bloc/home_bloc.dart';
 import 'package:shoply/features/customer/home/presentation/widgets/banners/banner_sliders.dart';
 import 'package:shoply/features/customer/home/presentation/widgets/categories/categories_list.dart';

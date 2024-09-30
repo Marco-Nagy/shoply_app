@@ -15,8 +15,7 @@ abstract class BaseAdminProductRepository {
   Future<ApiResult<CreateProductResponse>> createProduct(
       CreateProductEntity body);
 
-  Future<ApiResult<UpdateProductResponse>> updateProduct(
-      UpdateProductEntity body);
+  Future<ApiResult<UpdateProductResponse>> updateProduct(UpdateProductEntity body);
 
   Future<ApiResult<DeleteProductResponse>> deleteProduct(String productId);
 }
