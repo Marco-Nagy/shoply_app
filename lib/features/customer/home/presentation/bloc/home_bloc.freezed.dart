@@ -22,6 +22,7 @@ mixin _$HomeEvent {
     required TResult Function() fetchHomeCategories,
     required TResult Function() getHomeProductList,
     required TResult Function(String productId) getHomeProductDetails,
+    required TResult Function(String categoryId) getHomeProductListPerCategory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$HomeEvent {
     TResult? Function()? fetchHomeCategories,
     TResult? Function()? getHomeProductList,
     TResult? Function(String productId)? getHomeProductDetails,
+    TResult? Function(String categoryId)? getHomeProductListPerCategory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$HomeEvent {
     TResult Function()? fetchHomeCategories,
     TResult Function()? getHomeProductList,
     TResult Function(String productId)? getHomeProductDetails,
+    TResult Function(String categoryId)? getHomeProductListPerCategory,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +52,8 @@ mixin _$HomeEvent {
     required TResult Function(GetHomeProductListEvent value) getHomeProductList,
     required TResult Function(GetHomeProductDetailsEvent value)
         getHomeProductDetails,
+    required TResult Function(GetHomeProductListPerCategoryEvent value)
+        getHomeProductListPerCategory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,8 @@ mixin _$HomeEvent {
     TResult? Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult? Function(GetHomeProductListEvent value)? getHomeProductList,
     TResult? Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
+    TResult? Function(GetHomeProductListPerCategoryEvent value)?
+        getHomeProductListPerCategory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +72,8 @@ mixin _$HomeEvent {
     TResult Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult Function(GetHomeProductListEvent value)? getHomeProductList,
     TResult Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
+    TResult Function(GetHomeProductListPerCategoryEvent value)?
+        getHomeProductListPerCategory,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -135,6 +144,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     required TResult Function() fetchHomeCategories,
     required TResult Function() getHomeProductList,
     required TResult Function(String productId) getHomeProductDetails,
+    required TResult Function(String categoryId) getHomeProductListPerCategory,
   }) {
     return started();
   }
@@ -146,6 +156,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult? Function()? fetchHomeCategories,
     TResult? Function()? getHomeProductList,
     TResult? Function(String productId)? getHomeProductDetails,
+    TResult? Function(String categoryId)? getHomeProductListPerCategory,
   }) {
     return started?.call();
   }
@@ -157,6 +168,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult Function()? fetchHomeCategories,
     TResult Function()? getHomeProductList,
     TResult Function(String productId)? getHomeProductDetails,
+    TResult Function(String categoryId)? getHomeProductListPerCategory,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -174,6 +186,8 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     required TResult Function(GetHomeProductListEvent value) getHomeProductList,
     required TResult Function(GetHomeProductDetailsEvent value)
         getHomeProductDetails,
+    required TResult Function(GetHomeProductListPerCategoryEvent value)
+        getHomeProductListPerCategory,
   }) {
     return started(this);
   }
@@ -185,6 +199,8 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult? Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult? Function(GetHomeProductListEvent value)? getHomeProductList,
     TResult? Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
+    TResult? Function(GetHomeProductListPerCategoryEvent value)?
+        getHomeProductListPerCategory,
   }) {
     return started?.call(this);
   }
@@ -196,6 +212,8 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult Function(GetHomeProductListEvent value)? getHomeProductList,
     TResult Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
+    TResult Function(GetHomeProductListPerCategoryEvent value)?
+        getHomeProductListPerCategory,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -263,6 +281,7 @@ class _$FetchHomeCategoriesListEventImpl
     required TResult Function() fetchHomeCategories,
     required TResult Function() getHomeProductList,
     required TResult Function(String productId) getHomeProductDetails,
+    required TResult Function(String categoryId) getHomeProductListPerCategory,
   }) {
     return fetchHomeCategories();
   }
@@ -274,6 +293,7 @@ class _$FetchHomeCategoriesListEventImpl
     TResult? Function()? fetchHomeCategories,
     TResult? Function()? getHomeProductList,
     TResult? Function(String productId)? getHomeProductDetails,
+    TResult? Function(String categoryId)? getHomeProductListPerCategory,
   }) {
     return fetchHomeCategories?.call();
   }
@@ -285,6 +305,7 @@ class _$FetchHomeCategoriesListEventImpl
     TResult Function()? fetchHomeCategories,
     TResult Function()? getHomeProductList,
     TResult Function(String productId)? getHomeProductDetails,
+    TResult Function(String categoryId)? getHomeProductListPerCategory,
     required TResult orElse(),
   }) {
     if (fetchHomeCategories != null) {
@@ -302,6 +323,8 @@ class _$FetchHomeCategoriesListEventImpl
     required TResult Function(GetHomeProductListEvent value) getHomeProductList,
     required TResult Function(GetHomeProductDetailsEvent value)
         getHomeProductDetails,
+    required TResult Function(GetHomeProductListPerCategoryEvent value)
+        getHomeProductListPerCategory,
   }) {
     return fetchHomeCategories(this);
   }
@@ -313,6 +336,8 @@ class _$FetchHomeCategoriesListEventImpl
     TResult? Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult? Function(GetHomeProductListEvent value)? getHomeProductList,
     TResult? Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
+    TResult? Function(GetHomeProductListPerCategoryEvent value)?
+        getHomeProductListPerCategory,
   }) {
     return fetchHomeCategories?.call(this);
   }
@@ -324,6 +349,8 @@ class _$FetchHomeCategoriesListEventImpl
     TResult Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult Function(GetHomeProductListEvent value)? getHomeProductList,
     TResult Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
+    TResult Function(GetHomeProductListPerCategoryEvent value)?
+        getHomeProductListPerCategory,
     required TResult orElse(),
   }) {
     if (fetchHomeCategories != null) {
@@ -391,6 +418,7 @@ class _$GetHomeProductListEventImpl
     required TResult Function() fetchHomeCategories,
     required TResult Function() getHomeProductList,
     required TResult Function(String productId) getHomeProductDetails,
+    required TResult Function(String categoryId) getHomeProductListPerCategory,
   }) {
     return getHomeProductList();
   }
@@ -402,6 +430,7 @@ class _$GetHomeProductListEventImpl
     TResult? Function()? fetchHomeCategories,
     TResult? Function()? getHomeProductList,
     TResult? Function(String productId)? getHomeProductDetails,
+    TResult? Function(String categoryId)? getHomeProductListPerCategory,
   }) {
     return getHomeProductList?.call();
   }
@@ -413,6 +442,7 @@ class _$GetHomeProductListEventImpl
     TResult Function()? fetchHomeCategories,
     TResult Function()? getHomeProductList,
     TResult Function(String productId)? getHomeProductDetails,
+    TResult Function(String categoryId)? getHomeProductListPerCategory,
     required TResult orElse(),
   }) {
     if (getHomeProductList != null) {
@@ -430,6 +460,8 @@ class _$GetHomeProductListEventImpl
     required TResult Function(GetHomeProductListEvent value) getHomeProductList,
     required TResult Function(GetHomeProductDetailsEvent value)
         getHomeProductDetails,
+    required TResult Function(GetHomeProductListPerCategoryEvent value)
+        getHomeProductListPerCategory,
   }) {
     return getHomeProductList(this);
   }
@@ -441,6 +473,8 @@ class _$GetHomeProductListEventImpl
     TResult? Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult? Function(GetHomeProductListEvent value)? getHomeProductList,
     TResult? Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
+    TResult? Function(GetHomeProductListPerCategoryEvent value)?
+        getHomeProductListPerCategory,
   }) {
     return getHomeProductList?.call(this);
   }
@@ -452,6 +486,8 @@ class _$GetHomeProductListEventImpl
     TResult Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult Function(GetHomeProductListEvent value)? getHomeProductList,
     TResult Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
+    TResult Function(GetHomeProductListPerCategoryEvent value)?
+        getHomeProductListPerCategory,
     required TResult orElse(),
   }) {
     if (getHomeProductList != null) {
@@ -547,6 +583,7 @@ class _$GetHomeProductDetailsEventImpl
     required TResult Function() fetchHomeCategories,
     required TResult Function() getHomeProductList,
     required TResult Function(String productId) getHomeProductDetails,
+    required TResult Function(String categoryId) getHomeProductListPerCategory,
   }) {
     return getHomeProductDetails(productId);
   }
@@ -558,6 +595,7 @@ class _$GetHomeProductDetailsEventImpl
     TResult? Function()? fetchHomeCategories,
     TResult? Function()? getHomeProductList,
     TResult? Function(String productId)? getHomeProductDetails,
+    TResult? Function(String categoryId)? getHomeProductListPerCategory,
   }) {
     return getHomeProductDetails?.call(productId);
   }
@@ -569,6 +607,7 @@ class _$GetHomeProductDetailsEventImpl
     TResult Function()? fetchHomeCategories,
     TResult Function()? getHomeProductList,
     TResult Function(String productId)? getHomeProductDetails,
+    TResult Function(String categoryId)? getHomeProductListPerCategory,
     required TResult orElse(),
   }) {
     if (getHomeProductDetails != null) {
@@ -586,6 +625,8 @@ class _$GetHomeProductDetailsEventImpl
     required TResult Function(GetHomeProductListEvent value) getHomeProductList,
     required TResult Function(GetHomeProductDetailsEvent value)
         getHomeProductDetails,
+    required TResult Function(GetHomeProductListPerCategoryEvent value)
+        getHomeProductListPerCategory,
   }) {
     return getHomeProductDetails(this);
   }
@@ -597,6 +638,8 @@ class _$GetHomeProductDetailsEventImpl
     TResult? Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult? Function(GetHomeProductListEvent value)? getHomeProductList,
     TResult? Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
+    TResult? Function(GetHomeProductListPerCategoryEvent value)?
+        getHomeProductListPerCategory,
   }) {
     return getHomeProductDetails?.call(this);
   }
@@ -608,6 +651,8 @@ class _$GetHomeProductDetailsEventImpl
     TResult Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult Function(GetHomeProductListEvent value)? getHomeProductList,
     TResult Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
+    TResult Function(GetHomeProductListPerCategoryEvent value)?
+        getHomeProductListPerCategory,
     required TResult orElse(),
   }) {
     if (getHomeProductDetails != null) {
@@ -628,20 +673,201 @@ abstract class GetHomeProductDetailsEvent implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$$GetHomeProductListPerCategoryEventImplCopyWith<$Res> {
+  factory _$$GetHomeProductListPerCategoryEventImplCopyWith(
+          _$GetHomeProductListPerCategoryEventImpl value,
+          $Res Function(_$GetHomeProductListPerCategoryEventImpl) then) =
+      __$$GetHomeProductListPerCategoryEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String categoryId});
+}
+
+/// @nodoc
+class __$$GetHomeProductListPerCategoryEventImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res,
+        _$GetHomeProductListPerCategoryEventImpl>
+    implements _$$GetHomeProductListPerCategoryEventImplCopyWith<$Res> {
+  __$$GetHomeProductListPerCategoryEventImplCopyWithImpl(
+      _$GetHomeProductListPerCategoryEventImpl _value,
+      $Res Function(_$GetHomeProductListPerCategoryEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? categoryId = null,
+  }) {
+    return _then(_$GetHomeProductListPerCategoryEventImpl(
+      categoryId: null == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetHomeProductListPerCategoryEventImpl
+    with DiagnosticableTreeMixin
+    implements GetHomeProductListPerCategoryEvent {
+  const _$GetHomeProductListPerCategoryEventImpl({required this.categoryId});
+
+  @override
+  final String categoryId;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeEvent.getHomeProductListPerCategory(categoryId: $categoryId)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'HomeEvent.getHomeProductListPerCategory'))
+      ..add(DiagnosticsProperty('categoryId', categoryId));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetHomeProductListPerCategoryEventImpl &&
+            (identical(other.categoryId, categoryId) ||
+                other.categoryId == categoryId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, categoryId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetHomeProductListPerCategoryEventImplCopyWith<
+          _$GetHomeProductListPerCategoryEventImpl>
+      get copyWith => __$$GetHomeProductListPerCategoryEventImplCopyWithImpl<
+          _$GetHomeProductListPerCategoryEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() fetchHomeCategories,
+    required TResult Function() getHomeProductList,
+    required TResult Function(String productId) getHomeProductDetails,
+    required TResult Function(String categoryId) getHomeProductListPerCategory,
+  }) {
+    return getHomeProductListPerCategory(categoryId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? fetchHomeCategories,
+    TResult? Function()? getHomeProductList,
+    TResult? Function(String productId)? getHomeProductDetails,
+    TResult? Function(String categoryId)? getHomeProductListPerCategory,
+  }) {
+    return getHomeProductListPerCategory?.call(categoryId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? fetchHomeCategories,
+    TResult Function()? getHomeProductList,
+    TResult Function(String productId)? getHomeProductDetails,
+    TResult Function(String categoryId)? getHomeProductListPerCategory,
+    required TResult orElse(),
+  }) {
+    if (getHomeProductListPerCategory != null) {
+      return getHomeProductListPerCategory(categoryId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(FetchHomeCategoriesListEvent value)
+        fetchHomeCategories,
+    required TResult Function(GetHomeProductListEvent value) getHomeProductList,
+    required TResult Function(GetHomeProductDetailsEvent value)
+        getHomeProductDetails,
+    required TResult Function(GetHomeProductListPerCategoryEvent value)
+        getHomeProductListPerCategory,
+  }) {
+    return getHomeProductListPerCategory(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
+    TResult? Function(GetHomeProductListEvent value)? getHomeProductList,
+    TResult? Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
+    TResult? Function(GetHomeProductListPerCategoryEvent value)?
+        getHomeProductListPerCategory,
+  }) {
+    return getHomeProductListPerCategory?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
+    TResult Function(GetHomeProductListEvent value)? getHomeProductList,
+    TResult Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
+    TResult Function(GetHomeProductListPerCategoryEvent value)?
+        getHomeProductListPerCategory,
+    required TResult orElse(),
+  }) {
+    if (getHomeProductListPerCategory != null) {
+      return getHomeProductListPerCategory(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetHomeProductListPerCategoryEvent implements HomeEvent {
+  const factory GetHomeProductListPerCategoryEvent(
+          {required final String categoryId}) =
+      _$GetHomeProductListPerCategoryEventImpl;
+
+  String get categoryId;
+  @JsonKey(ignore: true)
+  _$$GetHomeProductListPerCategoryEventImplCopyWith<
+          _$GetHomeProductListPerCategoryEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$HomeState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() categoriesLoading,
     required TResult Function() productsLoading,
-    required TResult Function(List<Categories?> categoriesList)
-        getHomeListSuccess,
+    required TResult Function(List<CategoryEntity> categoriesList)
+        getHomeCategoriesListSuccess,
     required TResult Function() getHomeCategoriesListEmpty,
     required TResult Function(String errorMessage) getHomeCategoriesListFailure,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity> productList)
         getHomeProductListSuccess,
     required TResult Function() getHomeProductListEmpty,
     required TResult Function(String errorMessage) getHomeProductListFailure,
+    required TResult Function(List<GetProductEntity> productList)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function() getHomeProductListPerCategoryEmpty,
+    required TResult Function(String errorMessage)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(ProductsDetailsEntity product)
         getHomeProductDetailsSuccess,
     required TResult Function() getHomeProductDetailsEmpty,
@@ -653,12 +879,19 @@ mixin _$HomeState {
     TResult? Function()? initial,
     TResult? Function()? categoriesLoading,
     TResult? Function()? productsLoading,
-    TResult? Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult? Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult? Function()? getHomeCategoriesListEmpty,
     TResult? Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult? Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult? Function()? getHomeProductListEmpty,
     TResult? Function(String errorMessage)? getHomeProductListFailure,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function()? getHomeProductListPerCategoryEmpty,
+    TResult? Function(String errorMessage)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult? Function()? getHomeProductDetailsEmpty,
@@ -670,12 +903,18 @@ mixin _$HomeState {
     TResult Function()? initial,
     TResult Function()? categoriesLoading,
     TResult Function()? productsLoading,
-    TResult Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult Function()? getHomeCategoriesListEmpty,
     TResult Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult Function()? getHomeProductListEmpty,
     TResult Function(String errorMessage)? getHomeProductListFailure,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function()? getHomeProductListPerCategoryEmpty,
+    TResult Function(String errorMessage)? getHomeProductListPerCategoryFailure,
     TResult Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult Function()? getHomeProductDetailsEmpty,
@@ -689,7 +928,7 @@ mixin _$HomeState {
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
-        getHomeListSuccess,
+        getHomeCategoriesListSuccess,
     required TResult Function(GetHomeCategoriesListEmpty value)
         getHomeCategoriesListEmpty,
     required TResult Function(GetHomeCategoriesListFailure value)
@@ -700,6 +939,12 @@ mixin _$HomeState {
         getHomeProductListEmpty,
     required TResult Function(GetHomeProductListFailure value)
         getHomeProductListFailure,
+    required TResult Function(GetHomeProductListPerCategorySuccess value)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function(GetHomeProductListPerCategoryEmpty value)
+        getHomeProductListPerCategoryEmpty,
+    required TResult Function(GetHomeProductListPerCategoryFailure value)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(GetHomeProductDetailsSuccess value)
         getHomeProductDetailsSuccess,
     required TResult Function(GetHomeProductDetailsEmpty value)
@@ -713,7 +958,8 @@ mixin _$HomeState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
-    TResult? Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult? Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult? Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult? Function(GetHomeCategoriesListFailure value)?
@@ -723,6 +969,12 @@ mixin _$HomeState {
     TResult? Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult? Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult? Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult? Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult? Function(GetHomeProductDetailsEmpty value)?
@@ -736,7 +988,8 @@ mixin _$HomeState {
     TResult Function(_Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
-    TResult Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult Function(GetHomeCategoriesListFailure value)?
@@ -746,6 +999,12 @@ mixin _$HomeState {
     TResult Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult Function(GetHomeProductDetailsEmpty value)?
@@ -821,14 +1080,19 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     required TResult Function() initial,
     required TResult Function() categoriesLoading,
     required TResult Function() productsLoading,
-    required TResult Function(List<Categories?> categoriesList)
-        getHomeListSuccess,
+    required TResult Function(List<CategoryEntity> categoriesList)
+        getHomeCategoriesListSuccess,
     required TResult Function() getHomeCategoriesListEmpty,
     required TResult Function(String errorMessage) getHomeCategoriesListFailure,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity> productList)
         getHomeProductListSuccess,
     required TResult Function() getHomeProductListEmpty,
     required TResult Function(String errorMessage) getHomeProductListFailure,
+    required TResult Function(List<GetProductEntity> productList)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function() getHomeProductListPerCategoryEmpty,
+    required TResult Function(String errorMessage)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(ProductsDetailsEntity product)
         getHomeProductDetailsSuccess,
     required TResult Function() getHomeProductDetailsEmpty,
@@ -843,12 +1107,19 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? categoriesLoading,
     TResult? Function()? productsLoading,
-    TResult? Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult? Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult? Function()? getHomeCategoriesListEmpty,
     TResult? Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult? Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult? Function()? getHomeProductListEmpty,
     TResult? Function(String errorMessage)? getHomeProductListFailure,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function()? getHomeProductListPerCategoryEmpty,
+    TResult? Function(String errorMessage)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult? Function()? getHomeProductDetailsEmpty,
@@ -863,12 +1134,18 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult Function()? initial,
     TResult Function()? categoriesLoading,
     TResult Function()? productsLoading,
-    TResult Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult Function()? getHomeCategoriesListEmpty,
     TResult Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult Function()? getHomeProductListEmpty,
     TResult Function(String errorMessage)? getHomeProductListFailure,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function()? getHomeProductListPerCategoryEmpty,
+    TResult Function(String errorMessage)? getHomeProductListPerCategoryFailure,
     TResult Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult Function()? getHomeProductDetailsEmpty,
@@ -888,7 +1165,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
-        getHomeListSuccess,
+        getHomeCategoriesListSuccess,
     required TResult Function(GetHomeCategoriesListEmpty value)
         getHomeCategoriesListEmpty,
     required TResult Function(GetHomeCategoriesListFailure value)
@@ -899,6 +1176,12 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
         getHomeProductListEmpty,
     required TResult Function(GetHomeProductListFailure value)
         getHomeProductListFailure,
+    required TResult Function(GetHomeProductListPerCategorySuccess value)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function(GetHomeProductListPerCategoryEmpty value)
+        getHomeProductListPerCategoryEmpty,
+    required TResult Function(GetHomeProductListPerCategoryFailure value)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(GetHomeProductDetailsSuccess value)
         getHomeProductDetailsSuccess,
     required TResult Function(GetHomeProductDetailsEmpty value)
@@ -915,7 +1198,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
-    TResult? Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult? Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult? Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult? Function(GetHomeCategoriesListFailure value)?
@@ -925,6 +1209,12 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult? Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult? Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult? Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult? Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult? Function(GetHomeProductDetailsEmpty value)?
@@ -941,7 +1231,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
-    TResult Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult Function(GetHomeCategoriesListFailure value)?
@@ -951,6 +1242,12 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult Function(GetHomeProductDetailsEmpty value)?
@@ -1020,14 +1317,19 @@ class _$HomeCategorieLoadingImpl
     required TResult Function() initial,
     required TResult Function() categoriesLoading,
     required TResult Function() productsLoading,
-    required TResult Function(List<Categories?> categoriesList)
-        getHomeListSuccess,
+    required TResult Function(List<CategoryEntity> categoriesList)
+        getHomeCategoriesListSuccess,
     required TResult Function() getHomeCategoriesListEmpty,
     required TResult Function(String errorMessage) getHomeCategoriesListFailure,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity> productList)
         getHomeProductListSuccess,
     required TResult Function() getHomeProductListEmpty,
     required TResult Function(String errorMessage) getHomeProductListFailure,
+    required TResult Function(List<GetProductEntity> productList)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function() getHomeProductListPerCategoryEmpty,
+    required TResult Function(String errorMessage)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(ProductsDetailsEntity product)
         getHomeProductDetailsSuccess,
     required TResult Function() getHomeProductDetailsEmpty,
@@ -1042,12 +1344,19 @@ class _$HomeCategorieLoadingImpl
     TResult? Function()? initial,
     TResult? Function()? categoriesLoading,
     TResult? Function()? productsLoading,
-    TResult? Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult? Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult? Function()? getHomeCategoriesListEmpty,
     TResult? Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult? Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult? Function()? getHomeProductListEmpty,
     TResult? Function(String errorMessage)? getHomeProductListFailure,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function()? getHomeProductListPerCategoryEmpty,
+    TResult? Function(String errorMessage)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult? Function()? getHomeProductDetailsEmpty,
@@ -1062,12 +1371,18 @@ class _$HomeCategorieLoadingImpl
     TResult Function()? initial,
     TResult Function()? categoriesLoading,
     TResult Function()? productsLoading,
-    TResult Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult Function()? getHomeCategoriesListEmpty,
     TResult Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult Function()? getHomeProductListEmpty,
     TResult Function(String errorMessage)? getHomeProductListFailure,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function()? getHomeProductListPerCategoryEmpty,
+    TResult Function(String errorMessage)? getHomeProductListPerCategoryFailure,
     TResult Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult Function()? getHomeProductDetailsEmpty,
@@ -1087,7 +1402,7 @@ class _$HomeCategorieLoadingImpl
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
-        getHomeListSuccess,
+        getHomeCategoriesListSuccess,
     required TResult Function(GetHomeCategoriesListEmpty value)
         getHomeCategoriesListEmpty,
     required TResult Function(GetHomeCategoriesListFailure value)
@@ -1098,6 +1413,12 @@ class _$HomeCategorieLoadingImpl
         getHomeProductListEmpty,
     required TResult Function(GetHomeProductListFailure value)
         getHomeProductListFailure,
+    required TResult Function(GetHomeProductListPerCategorySuccess value)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function(GetHomeProductListPerCategoryEmpty value)
+        getHomeProductListPerCategoryEmpty,
+    required TResult Function(GetHomeProductListPerCategoryFailure value)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(GetHomeProductDetailsSuccess value)
         getHomeProductDetailsSuccess,
     required TResult Function(GetHomeProductDetailsEmpty value)
@@ -1114,7 +1435,8 @@ class _$HomeCategorieLoadingImpl
     TResult? Function(_Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
-    TResult? Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult? Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult? Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult? Function(GetHomeCategoriesListFailure value)?
@@ -1124,6 +1446,12 @@ class _$HomeCategorieLoadingImpl
     TResult? Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult? Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult? Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult? Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult? Function(GetHomeProductDetailsEmpty value)?
@@ -1140,7 +1468,8 @@ class _$HomeCategorieLoadingImpl
     TResult Function(_Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
-    TResult Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult Function(GetHomeCategoriesListFailure value)?
@@ -1150,6 +1479,12 @@ class _$HomeCategorieLoadingImpl
     TResult Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult Function(GetHomeProductDetailsEmpty value)?
@@ -1219,14 +1554,19 @@ class _$HomeProductsLoadingImpl
     required TResult Function() initial,
     required TResult Function() categoriesLoading,
     required TResult Function() productsLoading,
-    required TResult Function(List<Categories?> categoriesList)
-        getHomeListSuccess,
+    required TResult Function(List<CategoryEntity> categoriesList)
+        getHomeCategoriesListSuccess,
     required TResult Function() getHomeCategoriesListEmpty,
     required TResult Function(String errorMessage) getHomeCategoriesListFailure,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity> productList)
         getHomeProductListSuccess,
     required TResult Function() getHomeProductListEmpty,
     required TResult Function(String errorMessage) getHomeProductListFailure,
+    required TResult Function(List<GetProductEntity> productList)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function() getHomeProductListPerCategoryEmpty,
+    required TResult Function(String errorMessage)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(ProductsDetailsEntity product)
         getHomeProductDetailsSuccess,
     required TResult Function() getHomeProductDetailsEmpty,
@@ -1241,12 +1581,19 @@ class _$HomeProductsLoadingImpl
     TResult? Function()? initial,
     TResult? Function()? categoriesLoading,
     TResult? Function()? productsLoading,
-    TResult? Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult? Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult? Function()? getHomeCategoriesListEmpty,
     TResult? Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult? Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult? Function()? getHomeProductListEmpty,
     TResult? Function(String errorMessage)? getHomeProductListFailure,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function()? getHomeProductListPerCategoryEmpty,
+    TResult? Function(String errorMessage)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult? Function()? getHomeProductDetailsEmpty,
@@ -1261,12 +1608,18 @@ class _$HomeProductsLoadingImpl
     TResult Function()? initial,
     TResult Function()? categoriesLoading,
     TResult Function()? productsLoading,
-    TResult Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult Function()? getHomeCategoriesListEmpty,
     TResult Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult Function()? getHomeProductListEmpty,
     TResult Function(String errorMessage)? getHomeProductListFailure,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function()? getHomeProductListPerCategoryEmpty,
+    TResult Function(String errorMessage)? getHomeProductListPerCategoryFailure,
     TResult Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult Function()? getHomeProductDetailsEmpty,
@@ -1286,7 +1639,7 @@ class _$HomeProductsLoadingImpl
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
-        getHomeListSuccess,
+        getHomeCategoriesListSuccess,
     required TResult Function(GetHomeCategoriesListEmpty value)
         getHomeCategoriesListEmpty,
     required TResult Function(GetHomeCategoriesListFailure value)
@@ -1297,6 +1650,12 @@ class _$HomeProductsLoadingImpl
         getHomeProductListEmpty,
     required TResult Function(GetHomeProductListFailure value)
         getHomeProductListFailure,
+    required TResult Function(GetHomeProductListPerCategorySuccess value)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function(GetHomeProductListPerCategoryEmpty value)
+        getHomeProductListPerCategoryEmpty,
+    required TResult Function(GetHomeProductListPerCategoryFailure value)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(GetHomeProductDetailsSuccess value)
         getHomeProductDetailsSuccess,
     required TResult Function(GetHomeProductDetailsEmpty value)
@@ -1313,7 +1672,8 @@ class _$HomeProductsLoadingImpl
     TResult? Function(_Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
-    TResult? Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult? Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult? Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult? Function(GetHomeCategoriesListFailure value)?
@@ -1323,6 +1683,12 @@ class _$HomeProductsLoadingImpl
     TResult? Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult? Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult? Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult? Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult? Function(GetHomeProductDetailsEmpty value)?
@@ -1339,7 +1705,8 @@ class _$HomeProductsLoadingImpl
     TResult Function(_Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
-    TResult Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult Function(GetHomeCategoriesListFailure value)?
@@ -1349,6 +1716,12 @@ class _$HomeProductsLoadingImpl
     TResult Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult Function(GetHomeProductDetailsEmpty value)?
@@ -1375,7 +1748,7 @@ abstract class _$$GetHomeCategoriesListSuccessImplCopyWith<$Res> {
           $Res Function(_$GetHomeCategoriesListSuccessImpl) then) =
       __$$GetHomeCategoriesListSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Categories?> categoriesList});
+  $Res call({List<CategoryEntity> categoriesList});
 }
 
 /// @nodoc
@@ -1396,7 +1769,7 @@ class __$$GetHomeCategoriesListSuccessImplCopyWithImpl<$Res>
       null == categoriesList
           ? _value._categoriesList
           : categoriesList // ignore: cast_nullable_to_non_nullable
-              as List<Categories?>,
+              as List<CategoryEntity>,
     ));
   }
 }
@@ -1407,12 +1780,12 @@ class _$GetHomeCategoriesListSuccessImpl
     with DiagnosticableTreeMixin
     implements GetHomeCategoriesListSuccess {
   const _$GetHomeCategoriesListSuccessImpl(
-      final List<Categories?> categoriesList)
+      final List<CategoryEntity> categoriesList)
       : _categoriesList = categoriesList;
 
-  final List<Categories?> _categoriesList;
+  final List<CategoryEntity> _categoriesList;
   @override
-  List<Categories?> get categoriesList {
+  List<CategoryEntity> get categoriesList {
     if (_categoriesList is EqualUnmodifiableListView) return _categoriesList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_categoriesList);
@@ -1420,14 +1793,15 @@ class _$GetHomeCategoriesListSuccessImpl
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeState.getHomeListSuccess(categoriesList: $categoriesList)';
+    return 'HomeState.getHomeCategoriesListSuccess(categoriesList: $categoriesList)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'HomeState.getHomeListSuccess'))
+      ..add(
+          DiagnosticsProperty('type', 'HomeState.getHomeCategoriesListSuccess'))
       ..add(DiagnosticsProperty('categoriesList', categoriesList));
   }
 
@@ -1458,20 +1832,25 @@ class _$GetHomeCategoriesListSuccessImpl
     required TResult Function() initial,
     required TResult Function() categoriesLoading,
     required TResult Function() productsLoading,
-    required TResult Function(List<Categories?> categoriesList)
-        getHomeListSuccess,
+    required TResult Function(List<CategoryEntity> categoriesList)
+        getHomeCategoriesListSuccess,
     required TResult Function() getHomeCategoriesListEmpty,
     required TResult Function(String errorMessage) getHomeCategoriesListFailure,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity> productList)
         getHomeProductListSuccess,
     required TResult Function() getHomeProductListEmpty,
     required TResult Function(String errorMessage) getHomeProductListFailure,
+    required TResult Function(List<GetProductEntity> productList)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function() getHomeProductListPerCategoryEmpty,
+    required TResult Function(String errorMessage)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(ProductsDetailsEntity product)
         getHomeProductDetailsSuccess,
     required TResult Function() getHomeProductDetailsEmpty,
     required TResult Function(String errorMessage) getHomeProductDetailsFailure,
   }) {
-    return getHomeListSuccess(categoriesList);
+    return getHomeCategoriesListSuccess(categoriesList);
   }
 
   @override
@@ -1480,18 +1859,25 @@ class _$GetHomeCategoriesListSuccessImpl
     TResult? Function()? initial,
     TResult? Function()? categoriesLoading,
     TResult? Function()? productsLoading,
-    TResult? Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult? Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult? Function()? getHomeCategoriesListEmpty,
     TResult? Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult? Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult? Function()? getHomeProductListEmpty,
     TResult? Function(String errorMessage)? getHomeProductListFailure,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function()? getHomeProductListPerCategoryEmpty,
+    TResult? Function(String errorMessage)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult? Function()? getHomeProductDetailsEmpty,
     TResult? Function(String errorMessage)? getHomeProductDetailsFailure,
   }) {
-    return getHomeListSuccess?.call(categoriesList);
+    return getHomeCategoriesListSuccess?.call(categoriesList);
   }
 
   @override
@@ -1500,20 +1886,26 @@ class _$GetHomeCategoriesListSuccessImpl
     TResult Function()? initial,
     TResult Function()? categoriesLoading,
     TResult Function()? productsLoading,
-    TResult Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult Function()? getHomeCategoriesListEmpty,
     TResult Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult Function()? getHomeProductListEmpty,
     TResult Function(String errorMessage)? getHomeProductListFailure,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function()? getHomeProductListPerCategoryEmpty,
+    TResult Function(String errorMessage)? getHomeProductListPerCategoryFailure,
     TResult Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult Function()? getHomeProductDetailsEmpty,
     TResult Function(String errorMessage)? getHomeProductDetailsFailure,
     required TResult orElse(),
   }) {
-    if (getHomeListSuccess != null) {
-      return getHomeListSuccess(categoriesList);
+    if (getHomeCategoriesListSuccess != null) {
+      return getHomeCategoriesListSuccess(categoriesList);
     }
     return orElse();
   }
@@ -1525,7 +1917,7 @@ class _$GetHomeCategoriesListSuccessImpl
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
-        getHomeListSuccess,
+        getHomeCategoriesListSuccess,
     required TResult Function(GetHomeCategoriesListEmpty value)
         getHomeCategoriesListEmpty,
     required TResult Function(GetHomeCategoriesListFailure value)
@@ -1536,6 +1928,12 @@ class _$GetHomeCategoriesListSuccessImpl
         getHomeProductListEmpty,
     required TResult Function(GetHomeProductListFailure value)
         getHomeProductListFailure,
+    required TResult Function(GetHomeProductListPerCategorySuccess value)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function(GetHomeProductListPerCategoryEmpty value)
+        getHomeProductListPerCategoryEmpty,
+    required TResult Function(GetHomeProductListPerCategoryFailure value)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(GetHomeProductDetailsSuccess value)
         getHomeProductDetailsSuccess,
     required TResult Function(GetHomeProductDetailsEmpty value)
@@ -1543,7 +1941,7 @@ class _$GetHomeCategoriesListSuccessImpl
     required TResult Function(GetHomeProductDetailsFailure value)
         getHomeProductDetailsFailure,
   }) {
-    return getHomeListSuccess(this);
+    return getHomeCategoriesListSuccess(this);
   }
 
   @override
@@ -1552,7 +1950,8 @@ class _$GetHomeCategoriesListSuccessImpl
     TResult? Function(_Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
-    TResult? Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult? Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult? Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult? Function(GetHomeCategoriesListFailure value)?
@@ -1562,6 +1961,12 @@ class _$GetHomeCategoriesListSuccessImpl
     TResult? Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult? Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult? Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult? Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult? Function(GetHomeProductDetailsEmpty value)?
@@ -1569,7 +1974,7 @@ class _$GetHomeCategoriesListSuccessImpl
     TResult? Function(GetHomeProductDetailsFailure value)?
         getHomeProductDetailsFailure,
   }) {
-    return getHomeListSuccess?.call(this);
+    return getHomeCategoriesListSuccess?.call(this);
   }
 
   @override
@@ -1578,7 +1983,8 @@ class _$GetHomeCategoriesListSuccessImpl
     TResult Function(_Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
-    TResult Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult Function(GetHomeCategoriesListFailure value)?
@@ -1588,6 +1994,12 @@ class _$GetHomeCategoriesListSuccessImpl
     TResult Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult Function(GetHomeProductDetailsEmpty value)?
@@ -1596,8 +2008,8 @@ class _$GetHomeCategoriesListSuccessImpl
         getHomeProductDetailsFailure,
     required TResult orElse(),
   }) {
-    if (getHomeListSuccess != null) {
-      return getHomeListSuccess(this);
+    if (getHomeCategoriesListSuccess != null) {
+      return getHomeCategoriesListSuccess(this);
     }
     return orElse();
   }
@@ -1605,10 +2017,10 @@ class _$GetHomeCategoriesListSuccessImpl
 
 abstract class GetHomeCategoriesListSuccess implements HomeState {
   const factory GetHomeCategoriesListSuccess(
-          final List<Categories?> categoriesList) =
+          final List<CategoryEntity> categoriesList) =
       _$GetHomeCategoriesListSuccessImpl;
 
-  List<Categories?> get categoriesList;
+  List<CategoryEntity> get categoriesList;
   @JsonKey(ignore: true)
   _$$GetHomeCategoriesListSuccessImplCopyWith<
           _$GetHomeCategoriesListSuccessImpl>
@@ -1668,14 +2080,19 @@ class _$GetHomeCategoriesListEmptyImpl
     required TResult Function() initial,
     required TResult Function() categoriesLoading,
     required TResult Function() productsLoading,
-    required TResult Function(List<Categories?> categoriesList)
-        getHomeListSuccess,
+    required TResult Function(List<CategoryEntity> categoriesList)
+        getHomeCategoriesListSuccess,
     required TResult Function() getHomeCategoriesListEmpty,
     required TResult Function(String errorMessage) getHomeCategoriesListFailure,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity> productList)
         getHomeProductListSuccess,
     required TResult Function() getHomeProductListEmpty,
     required TResult Function(String errorMessage) getHomeProductListFailure,
+    required TResult Function(List<GetProductEntity> productList)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function() getHomeProductListPerCategoryEmpty,
+    required TResult Function(String errorMessage)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(ProductsDetailsEntity product)
         getHomeProductDetailsSuccess,
     required TResult Function() getHomeProductDetailsEmpty,
@@ -1690,12 +2107,19 @@ class _$GetHomeCategoriesListEmptyImpl
     TResult? Function()? initial,
     TResult? Function()? categoriesLoading,
     TResult? Function()? productsLoading,
-    TResult? Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult? Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult? Function()? getHomeCategoriesListEmpty,
     TResult? Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult? Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult? Function()? getHomeProductListEmpty,
     TResult? Function(String errorMessage)? getHomeProductListFailure,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function()? getHomeProductListPerCategoryEmpty,
+    TResult? Function(String errorMessage)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult? Function()? getHomeProductDetailsEmpty,
@@ -1710,12 +2134,18 @@ class _$GetHomeCategoriesListEmptyImpl
     TResult Function()? initial,
     TResult Function()? categoriesLoading,
     TResult Function()? productsLoading,
-    TResult Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult Function()? getHomeCategoriesListEmpty,
     TResult Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult Function()? getHomeProductListEmpty,
     TResult Function(String errorMessage)? getHomeProductListFailure,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function()? getHomeProductListPerCategoryEmpty,
+    TResult Function(String errorMessage)? getHomeProductListPerCategoryFailure,
     TResult Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult Function()? getHomeProductDetailsEmpty,
@@ -1735,7 +2165,7 @@ class _$GetHomeCategoriesListEmptyImpl
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
-        getHomeListSuccess,
+        getHomeCategoriesListSuccess,
     required TResult Function(GetHomeCategoriesListEmpty value)
         getHomeCategoriesListEmpty,
     required TResult Function(GetHomeCategoriesListFailure value)
@@ -1746,6 +2176,12 @@ class _$GetHomeCategoriesListEmptyImpl
         getHomeProductListEmpty,
     required TResult Function(GetHomeProductListFailure value)
         getHomeProductListFailure,
+    required TResult Function(GetHomeProductListPerCategorySuccess value)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function(GetHomeProductListPerCategoryEmpty value)
+        getHomeProductListPerCategoryEmpty,
+    required TResult Function(GetHomeProductListPerCategoryFailure value)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(GetHomeProductDetailsSuccess value)
         getHomeProductDetailsSuccess,
     required TResult Function(GetHomeProductDetailsEmpty value)
@@ -1762,7 +2198,8 @@ class _$GetHomeCategoriesListEmptyImpl
     TResult? Function(_Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
-    TResult? Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult? Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult? Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult? Function(GetHomeCategoriesListFailure value)?
@@ -1772,6 +2209,12 @@ class _$GetHomeCategoriesListEmptyImpl
     TResult? Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult? Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult? Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult? Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult? Function(GetHomeProductDetailsEmpty value)?
@@ -1788,7 +2231,8 @@ class _$GetHomeCategoriesListEmptyImpl
     TResult Function(_Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
-    TResult Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult Function(GetHomeCategoriesListFailure value)?
@@ -1798,6 +2242,12 @@ class _$GetHomeCategoriesListEmptyImpl
     TResult Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult Function(GetHomeProductDetailsEmpty value)?
@@ -1900,14 +2350,19 @@ class _$GetHomeCategoriesListFailureImpl
     required TResult Function() initial,
     required TResult Function() categoriesLoading,
     required TResult Function() productsLoading,
-    required TResult Function(List<Categories?> categoriesList)
-        getHomeListSuccess,
+    required TResult Function(List<CategoryEntity> categoriesList)
+        getHomeCategoriesListSuccess,
     required TResult Function() getHomeCategoriesListEmpty,
     required TResult Function(String errorMessage) getHomeCategoriesListFailure,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity> productList)
         getHomeProductListSuccess,
     required TResult Function() getHomeProductListEmpty,
     required TResult Function(String errorMessage) getHomeProductListFailure,
+    required TResult Function(List<GetProductEntity> productList)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function() getHomeProductListPerCategoryEmpty,
+    required TResult Function(String errorMessage)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(ProductsDetailsEntity product)
         getHomeProductDetailsSuccess,
     required TResult Function() getHomeProductDetailsEmpty,
@@ -1922,12 +2377,19 @@ class _$GetHomeCategoriesListFailureImpl
     TResult? Function()? initial,
     TResult? Function()? categoriesLoading,
     TResult? Function()? productsLoading,
-    TResult? Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult? Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult? Function()? getHomeCategoriesListEmpty,
     TResult? Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult? Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult? Function()? getHomeProductListEmpty,
     TResult? Function(String errorMessage)? getHomeProductListFailure,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function()? getHomeProductListPerCategoryEmpty,
+    TResult? Function(String errorMessage)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult? Function()? getHomeProductDetailsEmpty,
@@ -1942,12 +2404,18 @@ class _$GetHomeCategoriesListFailureImpl
     TResult Function()? initial,
     TResult Function()? categoriesLoading,
     TResult Function()? productsLoading,
-    TResult Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult Function()? getHomeCategoriesListEmpty,
     TResult Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult Function()? getHomeProductListEmpty,
     TResult Function(String errorMessage)? getHomeProductListFailure,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function()? getHomeProductListPerCategoryEmpty,
+    TResult Function(String errorMessage)? getHomeProductListPerCategoryFailure,
     TResult Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult Function()? getHomeProductDetailsEmpty,
@@ -1967,7 +2435,7 @@ class _$GetHomeCategoriesListFailureImpl
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
-        getHomeListSuccess,
+        getHomeCategoriesListSuccess,
     required TResult Function(GetHomeCategoriesListEmpty value)
         getHomeCategoriesListEmpty,
     required TResult Function(GetHomeCategoriesListFailure value)
@@ -1978,6 +2446,12 @@ class _$GetHomeCategoriesListFailureImpl
         getHomeProductListEmpty,
     required TResult Function(GetHomeProductListFailure value)
         getHomeProductListFailure,
+    required TResult Function(GetHomeProductListPerCategorySuccess value)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function(GetHomeProductListPerCategoryEmpty value)
+        getHomeProductListPerCategoryEmpty,
+    required TResult Function(GetHomeProductListPerCategoryFailure value)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(GetHomeProductDetailsSuccess value)
         getHomeProductDetailsSuccess,
     required TResult Function(GetHomeProductDetailsEmpty value)
@@ -1994,7 +2468,8 @@ class _$GetHomeCategoriesListFailureImpl
     TResult? Function(_Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
-    TResult? Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult? Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult? Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult? Function(GetHomeCategoriesListFailure value)?
@@ -2004,6 +2479,12 @@ class _$GetHomeCategoriesListFailureImpl
     TResult? Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult? Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult? Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult? Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult? Function(GetHomeProductDetailsEmpty value)?
@@ -2020,7 +2501,8 @@ class _$GetHomeCategoriesListFailureImpl
     TResult Function(_Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
-    TResult Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult Function(GetHomeCategoriesListFailure value)?
@@ -2030,6 +2512,12 @@ class _$GetHomeCategoriesListFailureImpl
     TResult Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult Function(GetHomeProductDetailsEmpty value)?
@@ -2063,7 +2551,7 @@ abstract class _$$GetHomeProductListSuccessImplCopyWith<$Res> {
           $Res Function(_$GetHomeProductListSuccessImpl) then) =
       __$$GetHomeProductListSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Product>? productList});
+  $Res call({List<GetProductEntity> productList});
 }
 
 /// @nodoc
@@ -2078,13 +2566,13 @@ class __$$GetHomeProductListSuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? productList = freezed,
+    Object? productList = null,
   }) {
     return _then(_$GetHomeProductListSuccessImpl(
-      freezed == productList
+      null == productList
           ? _value._productList
           : productList // ignore: cast_nullable_to_non_nullable
-              as List<Product>?,
+              as List<GetProductEntity>,
     ));
   }
 }
@@ -2094,17 +2582,16 @@ class __$$GetHomeProductListSuccessImplCopyWithImpl<$Res>
 class _$GetHomeProductListSuccessImpl
     with DiagnosticableTreeMixin
     implements GetHomeProductListSuccess {
-  const _$GetHomeProductListSuccessImpl(final List<Product>? productList)
+  const _$GetHomeProductListSuccessImpl(
+      final List<GetProductEntity> productList)
       : _productList = productList;
 
-  final List<Product>? _productList;
+  final List<GetProductEntity> _productList;
   @override
-  List<Product>? get productList {
-    final value = _productList;
-    if (value == null) return null;
+  List<GetProductEntity> get productList {
     if (_productList is EqualUnmodifiableListView) return _productList;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_productList);
   }
 
   @override
@@ -2146,14 +2633,19 @@ class _$GetHomeProductListSuccessImpl
     required TResult Function() initial,
     required TResult Function() categoriesLoading,
     required TResult Function() productsLoading,
-    required TResult Function(List<Categories?> categoriesList)
-        getHomeListSuccess,
+    required TResult Function(List<CategoryEntity> categoriesList)
+        getHomeCategoriesListSuccess,
     required TResult Function() getHomeCategoriesListEmpty,
     required TResult Function(String errorMessage) getHomeCategoriesListFailure,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity> productList)
         getHomeProductListSuccess,
     required TResult Function() getHomeProductListEmpty,
     required TResult Function(String errorMessage) getHomeProductListFailure,
+    required TResult Function(List<GetProductEntity> productList)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function() getHomeProductListPerCategoryEmpty,
+    required TResult Function(String errorMessage)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(ProductsDetailsEntity product)
         getHomeProductDetailsSuccess,
     required TResult Function() getHomeProductDetailsEmpty,
@@ -2168,12 +2660,19 @@ class _$GetHomeProductListSuccessImpl
     TResult? Function()? initial,
     TResult? Function()? categoriesLoading,
     TResult? Function()? productsLoading,
-    TResult? Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult? Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult? Function()? getHomeCategoriesListEmpty,
     TResult? Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult? Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult? Function()? getHomeProductListEmpty,
     TResult? Function(String errorMessage)? getHomeProductListFailure,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function()? getHomeProductListPerCategoryEmpty,
+    TResult? Function(String errorMessage)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult? Function()? getHomeProductDetailsEmpty,
@@ -2188,12 +2687,18 @@ class _$GetHomeProductListSuccessImpl
     TResult Function()? initial,
     TResult Function()? categoriesLoading,
     TResult Function()? productsLoading,
-    TResult Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult Function()? getHomeCategoriesListEmpty,
     TResult Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult Function()? getHomeProductListEmpty,
     TResult Function(String errorMessage)? getHomeProductListFailure,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function()? getHomeProductListPerCategoryEmpty,
+    TResult Function(String errorMessage)? getHomeProductListPerCategoryFailure,
     TResult Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult Function()? getHomeProductDetailsEmpty,
@@ -2213,7 +2718,7 @@ class _$GetHomeProductListSuccessImpl
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
-        getHomeListSuccess,
+        getHomeCategoriesListSuccess,
     required TResult Function(GetHomeCategoriesListEmpty value)
         getHomeCategoriesListEmpty,
     required TResult Function(GetHomeCategoriesListFailure value)
@@ -2224,6 +2729,12 @@ class _$GetHomeProductListSuccessImpl
         getHomeProductListEmpty,
     required TResult Function(GetHomeProductListFailure value)
         getHomeProductListFailure,
+    required TResult Function(GetHomeProductListPerCategorySuccess value)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function(GetHomeProductListPerCategoryEmpty value)
+        getHomeProductListPerCategoryEmpty,
+    required TResult Function(GetHomeProductListPerCategoryFailure value)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(GetHomeProductDetailsSuccess value)
         getHomeProductDetailsSuccess,
     required TResult Function(GetHomeProductDetailsEmpty value)
@@ -2240,7 +2751,8 @@ class _$GetHomeProductListSuccessImpl
     TResult? Function(_Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
-    TResult? Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult? Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult? Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult? Function(GetHomeCategoriesListFailure value)?
@@ -2250,6 +2762,12 @@ class _$GetHomeProductListSuccessImpl
     TResult? Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult? Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult? Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult? Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult? Function(GetHomeProductDetailsEmpty value)?
@@ -2266,7 +2784,8 @@ class _$GetHomeProductListSuccessImpl
     TResult Function(_Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
-    TResult Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult Function(GetHomeCategoriesListFailure value)?
@@ -2276,6 +2795,12 @@ class _$GetHomeProductListSuccessImpl
     TResult Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult Function(GetHomeProductDetailsEmpty value)?
@@ -2292,10 +2817,11 @@ class _$GetHomeProductListSuccessImpl
 }
 
 abstract class GetHomeProductListSuccess implements HomeState {
-  const factory GetHomeProductListSuccess(final List<Product>? productList) =
+  const factory GetHomeProductListSuccess(
+          final List<GetProductEntity> productList) =
       _$GetHomeProductListSuccessImpl;
 
-  List<Product>? get productList;
+  List<GetProductEntity> get productList;
   @JsonKey(ignore: true)
   _$$GetHomeProductListSuccessImplCopyWith<_$GetHomeProductListSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -2354,14 +2880,19 @@ class _$GetHomeProductListEmptyImpl
     required TResult Function() initial,
     required TResult Function() categoriesLoading,
     required TResult Function() productsLoading,
-    required TResult Function(List<Categories?> categoriesList)
-        getHomeListSuccess,
+    required TResult Function(List<CategoryEntity> categoriesList)
+        getHomeCategoriesListSuccess,
     required TResult Function() getHomeCategoriesListEmpty,
     required TResult Function(String errorMessage) getHomeCategoriesListFailure,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity> productList)
         getHomeProductListSuccess,
     required TResult Function() getHomeProductListEmpty,
     required TResult Function(String errorMessage) getHomeProductListFailure,
+    required TResult Function(List<GetProductEntity> productList)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function() getHomeProductListPerCategoryEmpty,
+    required TResult Function(String errorMessage)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(ProductsDetailsEntity product)
         getHomeProductDetailsSuccess,
     required TResult Function() getHomeProductDetailsEmpty,
@@ -2376,12 +2907,19 @@ class _$GetHomeProductListEmptyImpl
     TResult? Function()? initial,
     TResult? Function()? categoriesLoading,
     TResult? Function()? productsLoading,
-    TResult? Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult? Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult? Function()? getHomeCategoriesListEmpty,
     TResult? Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult? Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult? Function()? getHomeProductListEmpty,
     TResult? Function(String errorMessage)? getHomeProductListFailure,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function()? getHomeProductListPerCategoryEmpty,
+    TResult? Function(String errorMessage)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult? Function()? getHomeProductDetailsEmpty,
@@ -2396,12 +2934,18 @@ class _$GetHomeProductListEmptyImpl
     TResult Function()? initial,
     TResult Function()? categoriesLoading,
     TResult Function()? productsLoading,
-    TResult Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult Function()? getHomeCategoriesListEmpty,
     TResult Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult Function()? getHomeProductListEmpty,
     TResult Function(String errorMessage)? getHomeProductListFailure,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function()? getHomeProductListPerCategoryEmpty,
+    TResult Function(String errorMessage)? getHomeProductListPerCategoryFailure,
     TResult Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult Function()? getHomeProductDetailsEmpty,
@@ -2421,7 +2965,7 @@ class _$GetHomeProductListEmptyImpl
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
-        getHomeListSuccess,
+        getHomeCategoriesListSuccess,
     required TResult Function(GetHomeCategoriesListEmpty value)
         getHomeCategoriesListEmpty,
     required TResult Function(GetHomeCategoriesListFailure value)
@@ -2432,6 +2976,12 @@ class _$GetHomeProductListEmptyImpl
         getHomeProductListEmpty,
     required TResult Function(GetHomeProductListFailure value)
         getHomeProductListFailure,
+    required TResult Function(GetHomeProductListPerCategorySuccess value)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function(GetHomeProductListPerCategoryEmpty value)
+        getHomeProductListPerCategoryEmpty,
+    required TResult Function(GetHomeProductListPerCategoryFailure value)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(GetHomeProductDetailsSuccess value)
         getHomeProductDetailsSuccess,
     required TResult Function(GetHomeProductDetailsEmpty value)
@@ -2448,7 +2998,8 @@ class _$GetHomeProductListEmptyImpl
     TResult? Function(_Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
-    TResult? Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult? Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult? Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult? Function(GetHomeCategoriesListFailure value)?
@@ -2458,6 +3009,12 @@ class _$GetHomeProductListEmptyImpl
     TResult? Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult? Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult? Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult? Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult? Function(GetHomeProductDetailsEmpty value)?
@@ -2474,7 +3031,8 @@ class _$GetHomeProductListEmptyImpl
     TResult Function(_Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
-    TResult Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult Function(GetHomeCategoriesListFailure value)?
@@ -2484,6 +3042,12 @@ class _$GetHomeProductListEmptyImpl
     TResult Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult Function(GetHomeProductDetailsEmpty value)?
@@ -2584,14 +3148,19 @@ class _$GetHomeProductListFailureImpl
     required TResult Function() initial,
     required TResult Function() categoriesLoading,
     required TResult Function() productsLoading,
-    required TResult Function(List<Categories?> categoriesList)
-        getHomeListSuccess,
+    required TResult Function(List<CategoryEntity> categoriesList)
+        getHomeCategoriesListSuccess,
     required TResult Function() getHomeCategoriesListEmpty,
     required TResult Function(String errorMessage) getHomeCategoriesListFailure,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity> productList)
         getHomeProductListSuccess,
     required TResult Function() getHomeProductListEmpty,
     required TResult Function(String errorMessage) getHomeProductListFailure,
+    required TResult Function(List<GetProductEntity> productList)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function() getHomeProductListPerCategoryEmpty,
+    required TResult Function(String errorMessage)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(ProductsDetailsEntity product)
         getHomeProductDetailsSuccess,
     required TResult Function() getHomeProductDetailsEmpty,
@@ -2606,12 +3175,19 @@ class _$GetHomeProductListFailureImpl
     TResult? Function()? initial,
     TResult? Function()? categoriesLoading,
     TResult? Function()? productsLoading,
-    TResult? Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult? Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult? Function()? getHomeCategoriesListEmpty,
     TResult? Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult? Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult? Function()? getHomeProductListEmpty,
     TResult? Function(String errorMessage)? getHomeProductListFailure,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function()? getHomeProductListPerCategoryEmpty,
+    TResult? Function(String errorMessage)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult? Function()? getHomeProductDetailsEmpty,
@@ -2626,12 +3202,18 @@ class _$GetHomeProductListFailureImpl
     TResult Function()? initial,
     TResult Function()? categoriesLoading,
     TResult Function()? productsLoading,
-    TResult Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult Function()? getHomeCategoriesListEmpty,
     TResult Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult Function()? getHomeProductListEmpty,
     TResult Function(String errorMessage)? getHomeProductListFailure,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function()? getHomeProductListPerCategoryEmpty,
+    TResult Function(String errorMessage)? getHomeProductListPerCategoryFailure,
     TResult Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult Function()? getHomeProductDetailsEmpty,
@@ -2651,7 +3233,7 @@ class _$GetHomeProductListFailureImpl
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
-        getHomeListSuccess,
+        getHomeCategoriesListSuccess,
     required TResult Function(GetHomeCategoriesListEmpty value)
         getHomeCategoriesListEmpty,
     required TResult Function(GetHomeCategoriesListFailure value)
@@ -2662,6 +3244,12 @@ class _$GetHomeProductListFailureImpl
         getHomeProductListEmpty,
     required TResult Function(GetHomeProductListFailure value)
         getHomeProductListFailure,
+    required TResult Function(GetHomeProductListPerCategorySuccess value)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function(GetHomeProductListPerCategoryEmpty value)
+        getHomeProductListPerCategoryEmpty,
+    required TResult Function(GetHomeProductListPerCategoryFailure value)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(GetHomeProductDetailsSuccess value)
         getHomeProductDetailsSuccess,
     required TResult Function(GetHomeProductDetailsEmpty value)
@@ -2678,7 +3266,8 @@ class _$GetHomeProductListFailureImpl
     TResult? Function(_Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
-    TResult? Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult? Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult? Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult? Function(GetHomeCategoriesListFailure value)?
@@ -2688,6 +3277,12 @@ class _$GetHomeProductListFailureImpl
     TResult? Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult? Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult? Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult? Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult? Function(GetHomeProductDetailsEmpty value)?
@@ -2704,7 +3299,8 @@ class _$GetHomeProductListFailureImpl
     TResult Function(_Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
-    TResult Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult Function(GetHomeCategoriesListFailure value)?
@@ -2714,6 +3310,12 @@ class _$GetHomeProductListFailureImpl
     TResult Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult Function(GetHomeProductDetailsEmpty value)?
@@ -2736,6 +3338,813 @@ abstract class GetHomeProductListFailure implements HomeState {
   String get errorMessage;
   @JsonKey(ignore: true)
   _$$GetHomeProductListFailureImplCopyWith<_$GetHomeProductListFailureImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetHomeProductListPerCategorySuccessImplCopyWith<$Res> {
+  factory _$$GetHomeProductListPerCategorySuccessImplCopyWith(
+          _$GetHomeProductListPerCategorySuccessImpl value,
+          $Res Function(_$GetHomeProductListPerCategorySuccessImpl) then) =
+      __$$GetHomeProductListPerCategorySuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<GetProductEntity> productList});
+}
+
+/// @nodoc
+class __$$GetHomeProductListPerCategorySuccessImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res,
+        _$GetHomeProductListPerCategorySuccessImpl>
+    implements _$$GetHomeProductListPerCategorySuccessImplCopyWith<$Res> {
+  __$$GetHomeProductListPerCategorySuccessImplCopyWithImpl(
+      _$GetHomeProductListPerCategorySuccessImpl _value,
+      $Res Function(_$GetHomeProductListPerCategorySuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? productList = null,
+  }) {
+    return _then(_$GetHomeProductListPerCategorySuccessImpl(
+      null == productList
+          ? _value._productList
+          : productList // ignore: cast_nullable_to_non_nullable
+              as List<GetProductEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetHomeProductListPerCategorySuccessImpl
+    with DiagnosticableTreeMixin
+    implements GetHomeProductListPerCategorySuccess {
+  const _$GetHomeProductListPerCategorySuccessImpl(
+      final List<GetProductEntity> productList)
+      : _productList = productList;
+
+  final List<GetProductEntity> _productList;
+  @override
+  List<GetProductEntity> get productList {
+    if (_productList is EqualUnmodifiableListView) return _productList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_productList);
+  }
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeState.getHomeProductListPerCategorySuccess(productList: $productList)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'HomeState.getHomeProductListPerCategorySuccess'))
+      ..add(DiagnosticsProperty('productList', productList));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetHomeProductListPerCategorySuccessImpl &&
+            const DeepCollectionEquality()
+                .equals(other._productList, _productList));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_productList));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetHomeProductListPerCategorySuccessImplCopyWith<
+          _$GetHomeProductListPerCategorySuccessImpl>
+      get copyWith => __$$GetHomeProductListPerCategorySuccessImplCopyWithImpl<
+          _$GetHomeProductListPerCategorySuccessImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() categoriesLoading,
+    required TResult Function() productsLoading,
+    required TResult Function(List<CategoryEntity> categoriesList)
+        getHomeCategoriesListSuccess,
+    required TResult Function() getHomeCategoriesListEmpty,
+    required TResult Function(String errorMessage) getHomeCategoriesListFailure,
+    required TResult Function(List<GetProductEntity> productList)
+        getHomeProductListSuccess,
+    required TResult Function() getHomeProductListEmpty,
+    required TResult Function(String errorMessage) getHomeProductListFailure,
+    required TResult Function(List<GetProductEntity> productList)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function() getHomeProductListPerCategoryEmpty,
+    required TResult Function(String errorMessage)
+        getHomeProductListPerCategoryFailure,
+    required TResult Function(ProductsDetailsEntity product)
+        getHomeProductDetailsSuccess,
+    required TResult Function() getHomeProductDetailsEmpty,
+    required TResult Function(String errorMessage) getHomeProductDetailsFailure,
+  }) {
+    return getHomeProductListPerCategorySuccess(productList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? categoriesLoading,
+    TResult? Function()? productsLoading,
+    TResult? Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
+    TResult? Function()? getHomeCategoriesListEmpty,
+    TResult? Function(String errorMessage)? getHomeCategoriesListFailure,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
+    TResult? Function()? getHomeProductListEmpty,
+    TResult? Function(String errorMessage)? getHomeProductListFailure,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function()? getHomeProductListPerCategoryEmpty,
+    TResult? Function(String errorMessage)?
+        getHomeProductListPerCategoryFailure,
+    TResult? Function(ProductsDetailsEntity product)?
+        getHomeProductDetailsSuccess,
+    TResult? Function()? getHomeProductDetailsEmpty,
+    TResult? Function(String errorMessage)? getHomeProductDetailsFailure,
+  }) {
+    return getHomeProductListPerCategorySuccess?.call(productList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? categoriesLoading,
+    TResult Function()? productsLoading,
+    TResult Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
+    TResult Function()? getHomeCategoriesListEmpty,
+    TResult Function(String errorMessage)? getHomeCategoriesListFailure,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
+    TResult Function()? getHomeProductListEmpty,
+    TResult Function(String errorMessage)? getHomeProductListFailure,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function()? getHomeProductListPerCategoryEmpty,
+    TResult Function(String errorMessage)? getHomeProductListPerCategoryFailure,
+    TResult Function(ProductsDetailsEntity product)?
+        getHomeProductDetailsSuccess,
+    TResult Function()? getHomeProductDetailsEmpty,
+    TResult Function(String errorMessage)? getHomeProductDetailsFailure,
+    required TResult orElse(),
+  }) {
+    if (getHomeProductListPerCategorySuccess != null) {
+      return getHomeProductListPerCategorySuccess(productList);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(HomeCategorieLoading value) categoriesLoading,
+    required TResult Function(HomeProductsLoading value) productsLoading,
+    required TResult Function(GetHomeCategoriesListSuccess value)
+        getHomeCategoriesListSuccess,
+    required TResult Function(GetHomeCategoriesListEmpty value)
+        getHomeCategoriesListEmpty,
+    required TResult Function(GetHomeCategoriesListFailure value)
+        getHomeCategoriesListFailure,
+    required TResult Function(GetHomeProductListSuccess value)
+        getHomeProductListSuccess,
+    required TResult Function(GetHomeProductListEmpty value)
+        getHomeProductListEmpty,
+    required TResult Function(GetHomeProductListFailure value)
+        getHomeProductListFailure,
+    required TResult Function(GetHomeProductListPerCategorySuccess value)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function(GetHomeProductListPerCategoryEmpty value)
+        getHomeProductListPerCategoryEmpty,
+    required TResult Function(GetHomeProductListPerCategoryFailure value)
+        getHomeProductListPerCategoryFailure,
+    required TResult Function(GetHomeProductDetailsSuccess value)
+        getHomeProductDetailsSuccess,
+    required TResult Function(GetHomeProductDetailsEmpty value)
+        getHomeProductDetailsEmpty,
+    required TResult Function(GetHomeProductDetailsFailure value)
+        getHomeProductDetailsFailure,
+  }) {
+    return getHomeProductListPerCategorySuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(HomeCategorieLoading value)? categoriesLoading,
+    TResult? Function(HomeProductsLoading value)? productsLoading,
+    TResult? Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
+    TResult? Function(GetHomeCategoriesListEmpty value)?
+        getHomeCategoriesListEmpty,
+    TResult? Function(GetHomeCategoriesListFailure value)?
+        getHomeCategoriesListFailure,
+    TResult? Function(GetHomeProductListSuccess value)?
+        getHomeProductListSuccess,
+    TResult? Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
+    TResult? Function(GetHomeProductListFailure value)?
+        getHomeProductListFailure,
+    TResult? Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult? Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
+    TResult? Function(GetHomeProductDetailsSuccess value)?
+        getHomeProductDetailsSuccess,
+    TResult? Function(GetHomeProductDetailsEmpty value)?
+        getHomeProductDetailsEmpty,
+    TResult? Function(GetHomeProductDetailsFailure value)?
+        getHomeProductDetailsFailure,
+  }) {
+    return getHomeProductListPerCategorySuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(HomeCategorieLoading value)? categoriesLoading,
+    TResult Function(HomeProductsLoading value)? productsLoading,
+    TResult Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
+    TResult Function(GetHomeCategoriesListEmpty value)?
+        getHomeCategoriesListEmpty,
+    TResult Function(GetHomeCategoriesListFailure value)?
+        getHomeCategoriesListFailure,
+    TResult Function(GetHomeProductListSuccess value)?
+        getHomeProductListSuccess,
+    TResult Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
+    TResult Function(GetHomeProductListFailure value)?
+        getHomeProductListFailure,
+    TResult Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
+    TResult Function(GetHomeProductDetailsSuccess value)?
+        getHomeProductDetailsSuccess,
+    TResult Function(GetHomeProductDetailsEmpty value)?
+        getHomeProductDetailsEmpty,
+    TResult Function(GetHomeProductDetailsFailure value)?
+        getHomeProductDetailsFailure,
+    required TResult orElse(),
+  }) {
+    if (getHomeProductListPerCategorySuccess != null) {
+      return getHomeProductListPerCategorySuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetHomeProductListPerCategorySuccess implements HomeState {
+  const factory GetHomeProductListPerCategorySuccess(
+          final List<GetProductEntity> productList) =
+      _$GetHomeProductListPerCategorySuccessImpl;
+
+  List<GetProductEntity> get productList;
+  @JsonKey(ignore: true)
+  _$$GetHomeProductListPerCategorySuccessImplCopyWith<
+          _$GetHomeProductListPerCategorySuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetHomeProductListPerCategoryEmptyImplCopyWith<$Res> {
+  factory _$$GetHomeProductListPerCategoryEmptyImplCopyWith(
+          _$GetHomeProductListPerCategoryEmptyImpl value,
+          $Res Function(_$GetHomeProductListPerCategoryEmptyImpl) then) =
+      __$$GetHomeProductListPerCategoryEmptyImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetHomeProductListPerCategoryEmptyImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res,
+        _$GetHomeProductListPerCategoryEmptyImpl>
+    implements _$$GetHomeProductListPerCategoryEmptyImplCopyWith<$Res> {
+  __$$GetHomeProductListPerCategoryEmptyImplCopyWithImpl(
+      _$GetHomeProductListPerCategoryEmptyImpl _value,
+      $Res Function(_$GetHomeProductListPerCategoryEmptyImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetHomeProductListPerCategoryEmptyImpl
+    with DiagnosticableTreeMixin
+    implements GetHomeProductListPerCategoryEmpty {
+  const _$GetHomeProductListPerCategoryEmptyImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeState.getHomeProductListPerCategoryEmpty()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty(
+        'type', 'HomeState.getHomeProductListPerCategoryEmpty'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetHomeProductListPerCategoryEmptyImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() categoriesLoading,
+    required TResult Function() productsLoading,
+    required TResult Function(List<CategoryEntity> categoriesList)
+        getHomeCategoriesListSuccess,
+    required TResult Function() getHomeCategoriesListEmpty,
+    required TResult Function(String errorMessage) getHomeCategoriesListFailure,
+    required TResult Function(List<GetProductEntity> productList)
+        getHomeProductListSuccess,
+    required TResult Function() getHomeProductListEmpty,
+    required TResult Function(String errorMessage) getHomeProductListFailure,
+    required TResult Function(List<GetProductEntity> productList)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function() getHomeProductListPerCategoryEmpty,
+    required TResult Function(String errorMessage)
+        getHomeProductListPerCategoryFailure,
+    required TResult Function(ProductsDetailsEntity product)
+        getHomeProductDetailsSuccess,
+    required TResult Function() getHomeProductDetailsEmpty,
+    required TResult Function(String errorMessage) getHomeProductDetailsFailure,
+  }) {
+    return getHomeProductListPerCategoryEmpty();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? categoriesLoading,
+    TResult? Function()? productsLoading,
+    TResult? Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
+    TResult? Function()? getHomeCategoriesListEmpty,
+    TResult? Function(String errorMessage)? getHomeCategoriesListFailure,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
+    TResult? Function()? getHomeProductListEmpty,
+    TResult? Function(String errorMessage)? getHomeProductListFailure,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function()? getHomeProductListPerCategoryEmpty,
+    TResult? Function(String errorMessage)?
+        getHomeProductListPerCategoryFailure,
+    TResult? Function(ProductsDetailsEntity product)?
+        getHomeProductDetailsSuccess,
+    TResult? Function()? getHomeProductDetailsEmpty,
+    TResult? Function(String errorMessage)? getHomeProductDetailsFailure,
+  }) {
+    return getHomeProductListPerCategoryEmpty?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? categoriesLoading,
+    TResult Function()? productsLoading,
+    TResult Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
+    TResult Function()? getHomeCategoriesListEmpty,
+    TResult Function(String errorMessage)? getHomeCategoriesListFailure,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
+    TResult Function()? getHomeProductListEmpty,
+    TResult Function(String errorMessage)? getHomeProductListFailure,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function()? getHomeProductListPerCategoryEmpty,
+    TResult Function(String errorMessage)? getHomeProductListPerCategoryFailure,
+    TResult Function(ProductsDetailsEntity product)?
+        getHomeProductDetailsSuccess,
+    TResult Function()? getHomeProductDetailsEmpty,
+    TResult Function(String errorMessage)? getHomeProductDetailsFailure,
+    required TResult orElse(),
+  }) {
+    if (getHomeProductListPerCategoryEmpty != null) {
+      return getHomeProductListPerCategoryEmpty();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(HomeCategorieLoading value) categoriesLoading,
+    required TResult Function(HomeProductsLoading value) productsLoading,
+    required TResult Function(GetHomeCategoriesListSuccess value)
+        getHomeCategoriesListSuccess,
+    required TResult Function(GetHomeCategoriesListEmpty value)
+        getHomeCategoriesListEmpty,
+    required TResult Function(GetHomeCategoriesListFailure value)
+        getHomeCategoriesListFailure,
+    required TResult Function(GetHomeProductListSuccess value)
+        getHomeProductListSuccess,
+    required TResult Function(GetHomeProductListEmpty value)
+        getHomeProductListEmpty,
+    required TResult Function(GetHomeProductListFailure value)
+        getHomeProductListFailure,
+    required TResult Function(GetHomeProductListPerCategorySuccess value)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function(GetHomeProductListPerCategoryEmpty value)
+        getHomeProductListPerCategoryEmpty,
+    required TResult Function(GetHomeProductListPerCategoryFailure value)
+        getHomeProductListPerCategoryFailure,
+    required TResult Function(GetHomeProductDetailsSuccess value)
+        getHomeProductDetailsSuccess,
+    required TResult Function(GetHomeProductDetailsEmpty value)
+        getHomeProductDetailsEmpty,
+    required TResult Function(GetHomeProductDetailsFailure value)
+        getHomeProductDetailsFailure,
+  }) {
+    return getHomeProductListPerCategoryEmpty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(HomeCategorieLoading value)? categoriesLoading,
+    TResult? Function(HomeProductsLoading value)? productsLoading,
+    TResult? Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
+    TResult? Function(GetHomeCategoriesListEmpty value)?
+        getHomeCategoriesListEmpty,
+    TResult? Function(GetHomeCategoriesListFailure value)?
+        getHomeCategoriesListFailure,
+    TResult? Function(GetHomeProductListSuccess value)?
+        getHomeProductListSuccess,
+    TResult? Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
+    TResult? Function(GetHomeProductListFailure value)?
+        getHomeProductListFailure,
+    TResult? Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult? Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
+    TResult? Function(GetHomeProductDetailsSuccess value)?
+        getHomeProductDetailsSuccess,
+    TResult? Function(GetHomeProductDetailsEmpty value)?
+        getHomeProductDetailsEmpty,
+    TResult? Function(GetHomeProductDetailsFailure value)?
+        getHomeProductDetailsFailure,
+  }) {
+    return getHomeProductListPerCategoryEmpty?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(HomeCategorieLoading value)? categoriesLoading,
+    TResult Function(HomeProductsLoading value)? productsLoading,
+    TResult Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
+    TResult Function(GetHomeCategoriesListEmpty value)?
+        getHomeCategoriesListEmpty,
+    TResult Function(GetHomeCategoriesListFailure value)?
+        getHomeCategoriesListFailure,
+    TResult Function(GetHomeProductListSuccess value)?
+        getHomeProductListSuccess,
+    TResult Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
+    TResult Function(GetHomeProductListFailure value)?
+        getHomeProductListFailure,
+    TResult Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
+    TResult Function(GetHomeProductDetailsSuccess value)?
+        getHomeProductDetailsSuccess,
+    TResult Function(GetHomeProductDetailsEmpty value)?
+        getHomeProductDetailsEmpty,
+    TResult Function(GetHomeProductDetailsFailure value)?
+        getHomeProductDetailsFailure,
+    required TResult orElse(),
+  }) {
+    if (getHomeProductListPerCategoryEmpty != null) {
+      return getHomeProductListPerCategoryEmpty(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetHomeProductListPerCategoryEmpty implements HomeState {
+  const factory GetHomeProductListPerCategoryEmpty() =
+      _$GetHomeProductListPerCategoryEmptyImpl;
+}
+
+/// @nodoc
+abstract class _$$GetHomeProductListPerCategoryFailureImplCopyWith<$Res> {
+  factory _$$GetHomeProductListPerCategoryFailureImplCopyWith(
+          _$GetHomeProductListPerCategoryFailureImpl value,
+          $Res Function(_$GetHomeProductListPerCategoryFailureImpl) then) =
+      __$$GetHomeProductListPerCategoryFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String errorMessage});
+}
+
+/// @nodoc
+class __$$GetHomeProductListPerCategoryFailureImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res,
+        _$GetHomeProductListPerCategoryFailureImpl>
+    implements _$$GetHomeProductListPerCategoryFailureImplCopyWith<$Res> {
+  __$$GetHomeProductListPerCategoryFailureImplCopyWithImpl(
+      _$GetHomeProductListPerCategoryFailureImpl _value,
+      $Res Function(_$GetHomeProductListPerCategoryFailureImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorMessage = null,
+  }) {
+    return _then(_$GetHomeProductListPerCategoryFailureImpl(
+      null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetHomeProductListPerCategoryFailureImpl
+    with DiagnosticableTreeMixin
+    implements GetHomeProductListPerCategoryFailure {
+  const _$GetHomeProductListPerCategoryFailureImpl(this.errorMessage);
+
+  @override
+  final String errorMessage;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeState.getHomeProductListPerCategoryFailure(errorMessage: $errorMessage)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'HomeState.getHomeProductListPerCategoryFailure'))
+      ..add(DiagnosticsProperty('errorMessage', errorMessage));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetHomeProductListPerCategoryFailureImpl &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorMessage);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetHomeProductListPerCategoryFailureImplCopyWith<
+          _$GetHomeProductListPerCategoryFailureImpl>
+      get copyWith => __$$GetHomeProductListPerCategoryFailureImplCopyWithImpl<
+          _$GetHomeProductListPerCategoryFailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() categoriesLoading,
+    required TResult Function() productsLoading,
+    required TResult Function(List<CategoryEntity> categoriesList)
+        getHomeCategoriesListSuccess,
+    required TResult Function() getHomeCategoriesListEmpty,
+    required TResult Function(String errorMessage) getHomeCategoriesListFailure,
+    required TResult Function(List<GetProductEntity> productList)
+        getHomeProductListSuccess,
+    required TResult Function() getHomeProductListEmpty,
+    required TResult Function(String errorMessage) getHomeProductListFailure,
+    required TResult Function(List<GetProductEntity> productList)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function() getHomeProductListPerCategoryEmpty,
+    required TResult Function(String errorMessage)
+        getHomeProductListPerCategoryFailure,
+    required TResult Function(ProductsDetailsEntity product)
+        getHomeProductDetailsSuccess,
+    required TResult Function() getHomeProductDetailsEmpty,
+    required TResult Function(String errorMessage) getHomeProductDetailsFailure,
+  }) {
+    return getHomeProductListPerCategoryFailure(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? categoriesLoading,
+    TResult? Function()? productsLoading,
+    TResult? Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
+    TResult? Function()? getHomeCategoriesListEmpty,
+    TResult? Function(String errorMessage)? getHomeCategoriesListFailure,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
+    TResult? Function()? getHomeProductListEmpty,
+    TResult? Function(String errorMessage)? getHomeProductListFailure,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function()? getHomeProductListPerCategoryEmpty,
+    TResult? Function(String errorMessage)?
+        getHomeProductListPerCategoryFailure,
+    TResult? Function(ProductsDetailsEntity product)?
+        getHomeProductDetailsSuccess,
+    TResult? Function()? getHomeProductDetailsEmpty,
+    TResult? Function(String errorMessage)? getHomeProductDetailsFailure,
+  }) {
+    return getHomeProductListPerCategoryFailure?.call(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? categoriesLoading,
+    TResult Function()? productsLoading,
+    TResult Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
+    TResult Function()? getHomeCategoriesListEmpty,
+    TResult Function(String errorMessage)? getHomeCategoriesListFailure,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
+    TResult Function()? getHomeProductListEmpty,
+    TResult Function(String errorMessage)? getHomeProductListFailure,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function()? getHomeProductListPerCategoryEmpty,
+    TResult Function(String errorMessage)? getHomeProductListPerCategoryFailure,
+    TResult Function(ProductsDetailsEntity product)?
+        getHomeProductDetailsSuccess,
+    TResult Function()? getHomeProductDetailsEmpty,
+    TResult Function(String errorMessage)? getHomeProductDetailsFailure,
+    required TResult orElse(),
+  }) {
+    if (getHomeProductListPerCategoryFailure != null) {
+      return getHomeProductListPerCategoryFailure(errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(HomeCategorieLoading value) categoriesLoading,
+    required TResult Function(HomeProductsLoading value) productsLoading,
+    required TResult Function(GetHomeCategoriesListSuccess value)
+        getHomeCategoriesListSuccess,
+    required TResult Function(GetHomeCategoriesListEmpty value)
+        getHomeCategoriesListEmpty,
+    required TResult Function(GetHomeCategoriesListFailure value)
+        getHomeCategoriesListFailure,
+    required TResult Function(GetHomeProductListSuccess value)
+        getHomeProductListSuccess,
+    required TResult Function(GetHomeProductListEmpty value)
+        getHomeProductListEmpty,
+    required TResult Function(GetHomeProductListFailure value)
+        getHomeProductListFailure,
+    required TResult Function(GetHomeProductListPerCategorySuccess value)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function(GetHomeProductListPerCategoryEmpty value)
+        getHomeProductListPerCategoryEmpty,
+    required TResult Function(GetHomeProductListPerCategoryFailure value)
+        getHomeProductListPerCategoryFailure,
+    required TResult Function(GetHomeProductDetailsSuccess value)
+        getHomeProductDetailsSuccess,
+    required TResult Function(GetHomeProductDetailsEmpty value)
+        getHomeProductDetailsEmpty,
+    required TResult Function(GetHomeProductDetailsFailure value)
+        getHomeProductDetailsFailure,
+  }) {
+    return getHomeProductListPerCategoryFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(HomeCategorieLoading value)? categoriesLoading,
+    TResult? Function(HomeProductsLoading value)? productsLoading,
+    TResult? Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
+    TResult? Function(GetHomeCategoriesListEmpty value)?
+        getHomeCategoriesListEmpty,
+    TResult? Function(GetHomeCategoriesListFailure value)?
+        getHomeCategoriesListFailure,
+    TResult? Function(GetHomeProductListSuccess value)?
+        getHomeProductListSuccess,
+    TResult? Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
+    TResult? Function(GetHomeProductListFailure value)?
+        getHomeProductListFailure,
+    TResult? Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult? Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
+    TResult? Function(GetHomeProductDetailsSuccess value)?
+        getHomeProductDetailsSuccess,
+    TResult? Function(GetHomeProductDetailsEmpty value)?
+        getHomeProductDetailsEmpty,
+    TResult? Function(GetHomeProductDetailsFailure value)?
+        getHomeProductDetailsFailure,
+  }) {
+    return getHomeProductListPerCategoryFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(HomeCategorieLoading value)? categoriesLoading,
+    TResult Function(HomeProductsLoading value)? productsLoading,
+    TResult Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
+    TResult Function(GetHomeCategoriesListEmpty value)?
+        getHomeCategoriesListEmpty,
+    TResult Function(GetHomeCategoriesListFailure value)?
+        getHomeCategoriesListFailure,
+    TResult Function(GetHomeProductListSuccess value)?
+        getHomeProductListSuccess,
+    TResult Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
+    TResult Function(GetHomeProductListFailure value)?
+        getHomeProductListFailure,
+    TResult Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
+    TResult Function(GetHomeProductDetailsSuccess value)?
+        getHomeProductDetailsSuccess,
+    TResult Function(GetHomeProductDetailsEmpty value)?
+        getHomeProductDetailsEmpty,
+    TResult Function(GetHomeProductDetailsFailure value)?
+        getHomeProductDetailsFailure,
+    required TResult orElse(),
+  }) {
+    if (getHomeProductListPerCategoryFailure != null) {
+      return getHomeProductListPerCategoryFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetHomeProductListPerCategoryFailure implements HomeState {
+  const factory GetHomeProductListPerCategoryFailure(
+      final String errorMessage) = _$GetHomeProductListPerCategoryFailureImpl;
+
+  String get errorMessage;
+  @JsonKey(ignore: true)
+  _$$GetHomeProductListPerCategoryFailureImplCopyWith<
+          _$GetHomeProductListPerCategoryFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2821,14 +4230,19 @@ class _$GetHomeProductDetailsSuccessImpl
     required TResult Function() initial,
     required TResult Function() categoriesLoading,
     required TResult Function() productsLoading,
-    required TResult Function(List<Categories?> categoriesList)
-        getHomeListSuccess,
+    required TResult Function(List<CategoryEntity> categoriesList)
+        getHomeCategoriesListSuccess,
     required TResult Function() getHomeCategoriesListEmpty,
     required TResult Function(String errorMessage) getHomeCategoriesListFailure,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity> productList)
         getHomeProductListSuccess,
     required TResult Function() getHomeProductListEmpty,
     required TResult Function(String errorMessage) getHomeProductListFailure,
+    required TResult Function(List<GetProductEntity> productList)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function() getHomeProductListPerCategoryEmpty,
+    required TResult Function(String errorMessage)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(ProductsDetailsEntity product)
         getHomeProductDetailsSuccess,
     required TResult Function() getHomeProductDetailsEmpty,
@@ -2843,12 +4257,19 @@ class _$GetHomeProductDetailsSuccessImpl
     TResult? Function()? initial,
     TResult? Function()? categoriesLoading,
     TResult? Function()? productsLoading,
-    TResult? Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult? Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult? Function()? getHomeCategoriesListEmpty,
     TResult? Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult? Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult? Function()? getHomeProductListEmpty,
     TResult? Function(String errorMessage)? getHomeProductListFailure,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function()? getHomeProductListPerCategoryEmpty,
+    TResult? Function(String errorMessage)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult? Function()? getHomeProductDetailsEmpty,
@@ -2863,12 +4284,18 @@ class _$GetHomeProductDetailsSuccessImpl
     TResult Function()? initial,
     TResult Function()? categoriesLoading,
     TResult Function()? productsLoading,
-    TResult Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult Function()? getHomeCategoriesListEmpty,
     TResult Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult Function()? getHomeProductListEmpty,
     TResult Function(String errorMessage)? getHomeProductListFailure,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function()? getHomeProductListPerCategoryEmpty,
+    TResult Function(String errorMessage)? getHomeProductListPerCategoryFailure,
     TResult Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult Function()? getHomeProductDetailsEmpty,
@@ -2888,7 +4315,7 @@ class _$GetHomeProductDetailsSuccessImpl
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
-        getHomeListSuccess,
+        getHomeCategoriesListSuccess,
     required TResult Function(GetHomeCategoriesListEmpty value)
         getHomeCategoriesListEmpty,
     required TResult Function(GetHomeCategoriesListFailure value)
@@ -2899,6 +4326,12 @@ class _$GetHomeProductDetailsSuccessImpl
         getHomeProductListEmpty,
     required TResult Function(GetHomeProductListFailure value)
         getHomeProductListFailure,
+    required TResult Function(GetHomeProductListPerCategorySuccess value)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function(GetHomeProductListPerCategoryEmpty value)
+        getHomeProductListPerCategoryEmpty,
+    required TResult Function(GetHomeProductListPerCategoryFailure value)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(GetHomeProductDetailsSuccess value)
         getHomeProductDetailsSuccess,
     required TResult Function(GetHomeProductDetailsEmpty value)
@@ -2915,7 +4348,8 @@ class _$GetHomeProductDetailsSuccessImpl
     TResult? Function(_Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
-    TResult? Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult? Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult? Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult? Function(GetHomeCategoriesListFailure value)?
@@ -2925,6 +4359,12 @@ class _$GetHomeProductDetailsSuccessImpl
     TResult? Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult? Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult? Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult? Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult? Function(GetHomeProductDetailsEmpty value)?
@@ -2941,7 +4381,8 @@ class _$GetHomeProductDetailsSuccessImpl
     TResult Function(_Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
-    TResult Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult Function(GetHomeCategoriesListFailure value)?
@@ -2951,6 +4392,12 @@ class _$GetHomeProductDetailsSuccessImpl
     TResult Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult Function(GetHomeProductDetailsEmpty value)?
@@ -3030,14 +4477,19 @@ class _$GetHomeProductDetailsEmptyImpl
     required TResult Function() initial,
     required TResult Function() categoriesLoading,
     required TResult Function() productsLoading,
-    required TResult Function(List<Categories?> categoriesList)
-        getHomeListSuccess,
+    required TResult Function(List<CategoryEntity> categoriesList)
+        getHomeCategoriesListSuccess,
     required TResult Function() getHomeCategoriesListEmpty,
     required TResult Function(String errorMessage) getHomeCategoriesListFailure,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity> productList)
         getHomeProductListSuccess,
     required TResult Function() getHomeProductListEmpty,
     required TResult Function(String errorMessage) getHomeProductListFailure,
+    required TResult Function(List<GetProductEntity> productList)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function() getHomeProductListPerCategoryEmpty,
+    required TResult Function(String errorMessage)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(ProductsDetailsEntity product)
         getHomeProductDetailsSuccess,
     required TResult Function() getHomeProductDetailsEmpty,
@@ -3052,12 +4504,19 @@ class _$GetHomeProductDetailsEmptyImpl
     TResult? Function()? initial,
     TResult? Function()? categoriesLoading,
     TResult? Function()? productsLoading,
-    TResult? Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult? Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult? Function()? getHomeCategoriesListEmpty,
     TResult? Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult? Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult? Function()? getHomeProductListEmpty,
     TResult? Function(String errorMessage)? getHomeProductListFailure,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function()? getHomeProductListPerCategoryEmpty,
+    TResult? Function(String errorMessage)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult? Function()? getHomeProductDetailsEmpty,
@@ -3072,12 +4531,18 @@ class _$GetHomeProductDetailsEmptyImpl
     TResult Function()? initial,
     TResult Function()? categoriesLoading,
     TResult Function()? productsLoading,
-    TResult Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult Function()? getHomeCategoriesListEmpty,
     TResult Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult Function()? getHomeProductListEmpty,
     TResult Function(String errorMessage)? getHomeProductListFailure,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function()? getHomeProductListPerCategoryEmpty,
+    TResult Function(String errorMessage)? getHomeProductListPerCategoryFailure,
     TResult Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult Function()? getHomeProductDetailsEmpty,
@@ -3097,7 +4562,7 @@ class _$GetHomeProductDetailsEmptyImpl
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
-        getHomeListSuccess,
+        getHomeCategoriesListSuccess,
     required TResult Function(GetHomeCategoriesListEmpty value)
         getHomeCategoriesListEmpty,
     required TResult Function(GetHomeCategoriesListFailure value)
@@ -3108,6 +4573,12 @@ class _$GetHomeProductDetailsEmptyImpl
         getHomeProductListEmpty,
     required TResult Function(GetHomeProductListFailure value)
         getHomeProductListFailure,
+    required TResult Function(GetHomeProductListPerCategorySuccess value)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function(GetHomeProductListPerCategoryEmpty value)
+        getHomeProductListPerCategoryEmpty,
+    required TResult Function(GetHomeProductListPerCategoryFailure value)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(GetHomeProductDetailsSuccess value)
         getHomeProductDetailsSuccess,
     required TResult Function(GetHomeProductDetailsEmpty value)
@@ -3124,7 +4595,8 @@ class _$GetHomeProductDetailsEmptyImpl
     TResult? Function(_Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
-    TResult? Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult? Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult? Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult? Function(GetHomeCategoriesListFailure value)?
@@ -3134,6 +4606,12 @@ class _$GetHomeProductDetailsEmptyImpl
     TResult? Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult? Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult? Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult? Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult? Function(GetHomeProductDetailsEmpty value)?
@@ -3150,7 +4628,8 @@ class _$GetHomeProductDetailsEmptyImpl
     TResult Function(_Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
-    TResult Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult Function(GetHomeCategoriesListFailure value)?
@@ -3160,6 +4639,12 @@ class _$GetHomeProductDetailsEmptyImpl
     TResult Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult Function(GetHomeProductDetailsEmpty value)?
@@ -3262,14 +4747,19 @@ class _$GetHomeProductDetailsFailureImpl
     required TResult Function() initial,
     required TResult Function() categoriesLoading,
     required TResult Function() productsLoading,
-    required TResult Function(List<Categories?> categoriesList)
-        getHomeListSuccess,
+    required TResult Function(List<CategoryEntity> categoriesList)
+        getHomeCategoriesListSuccess,
     required TResult Function() getHomeCategoriesListEmpty,
     required TResult Function(String errorMessage) getHomeCategoriesListFailure,
-    required TResult Function(List<Product>? productList)
+    required TResult Function(List<GetProductEntity> productList)
         getHomeProductListSuccess,
     required TResult Function() getHomeProductListEmpty,
     required TResult Function(String errorMessage) getHomeProductListFailure,
+    required TResult Function(List<GetProductEntity> productList)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function() getHomeProductListPerCategoryEmpty,
+    required TResult Function(String errorMessage)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(ProductsDetailsEntity product)
         getHomeProductDetailsSuccess,
     required TResult Function() getHomeProductDetailsEmpty,
@@ -3284,12 +4774,19 @@ class _$GetHomeProductDetailsFailureImpl
     TResult? Function()? initial,
     TResult? Function()? categoriesLoading,
     TResult? Function()? productsLoading,
-    TResult? Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult? Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult? Function()? getHomeCategoriesListEmpty,
     TResult? Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult? Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult? Function()? getHomeProductListEmpty,
     TResult? Function(String errorMessage)? getHomeProductListFailure,
+    TResult? Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function()? getHomeProductListPerCategoryEmpty,
+    TResult? Function(String errorMessage)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult? Function()? getHomeProductDetailsEmpty,
@@ -3304,12 +4801,18 @@ class _$GetHomeProductDetailsFailureImpl
     TResult Function()? initial,
     TResult Function()? categoriesLoading,
     TResult Function()? productsLoading,
-    TResult Function(List<Categories?> categoriesList)? getHomeListSuccess,
+    TResult Function(List<CategoryEntity> categoriesList)?
+        getHomeCategoriesListSuccess,
     TResult Function()? getHomeCategoriesListEmpty,
     TResult Function(String errorMessage)? getHomeCategoriesListFailure,
-    TResult Function(List<Product>? productList)? getHomeProductListSuccess,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListSuccess,
     TResult Function()? getHomeProductListEmpty,
     TResult Function(String errorMessage)? getHomeProductListFailure,
+    TResult Function(List<GetProductEntity> productList)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function()? getHomeProductListPerCategoryEmpty,
+    TResult Function(String errorMessage)? getHomeProductListPerCategoryFailure,
     TResult Function(ProductsDetailsEntity product)?
         getHomeProductDetailsSuccess,
     TResult Function()? getHomeProductDetailsEmpty,
@@ -3329,7 +4832,7 @@ class _$GetHomeProductDetailsFailureImpl
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
-        getHomeListSuccess,
+        getHomeCategoriesListSuccess,
     required TResult Function(GetHomeCategoriesListEmpty value)
         getHomeCategoriesListEmpty,
     required TResult Function(GetHomeCategoriesListFailure value)
@@ -3340,6 +4843,12 @@ class _$GetHomeProductDetailsFailureImpl
         getHomeProductListEmpty,
     required TResult Function(GetHomeProductListFailure value)
         getHomeProductListFailure,
+    required TResult Function(GetHomeProductListPerCategorySuccess value)
+        getHomeProductListPerCategorySuccess,
+    required TResult Function(GetHomeProductListPerCategoryEmpty value)
+        getHomeProductListPerCategoryEmpty,
+    required TResult Function(GetHomeProductListPerCategoryFailure value)
+        getHomeProductListPerCategoryFailure,
     required TResult Function(GetHomeProductDetailsSuccess value)
         getHomeProductDetailsSuccess,
     required TResult Function(GetHomeProductDetailsEmpty value)
@@ -3356,7 +4865,8 @@ class _$GetHomeProductDetailsFailureImpl
     TResult? Function(_Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
-    TResult? Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult? Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult? Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult? Function(GetHomeCategoriesListFailure value)?
@@ -3366,6 +4876,12 @@ class _$GetHomeProductDetailsFailureImpl
     TResult? Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult? Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult? Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult? Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult? Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult? Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult? Function(GetHomeProductDetailsEmpty value)?
@@ -3382,7 +4898,8 @@ class _$GetHomeProductDetailsFailureImpl
     TResult Function(_Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
-    TResult Function(GetHomeCategoriesListSuccess value)? getHomeListSuccess,
+    TResult Function(GetHomeCategoriesListSuccess value)?
+        getHomeCategoriesListSuccess,
     TResult Function(GetHomeCategoriesListEmpty value)?
         getHomeCategoriesListEmpty,
     TResult Function(GetHomeCategoriesListFailure value)?
@@ -3392,6 +4909,12 @@ class _$GetHomeProductDetailsFailureImpl
     TResult Function(GetHomeProductListEmpty value)? getHomeProductListEmpty,
     TResult Function(GetHomeProductListFailure value)?
         getHomeProductListFailure,
+    TResult Function(GetHomeProductListPerCategorySuccess value)?
+        getHomeProductListPerCategorySuccess,
+    TResult Function(GetHomeProductListPerCategoryEmpty value)?
+        getHomeProductListPerCategoryEmpty,
+    TResult Function(GetHomeProductListPerCategoryFailure value)?
+        getHomeProductListPerCategoryFailure,
     TResult Function(GetHomeProductDetailsSuccess value)?
         getHomeProductDetailsSuccess,
     TResult Function(GetHomeProductDetailsEmpty value)?

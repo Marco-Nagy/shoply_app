@@ -1,27 +1,26 @@
 import 'package:dio/dio.dart';
 import 'package:shoply/core/app/Apis/api_result.dart';
 import 'package:shoply/core/app/apis/errors/error_handler.dart';
-import 'package:shoply/features/admin/categories/data/data_source/admin_categries_data_source.dart';
-import 'package:shoply/features/admin/categories/data/model/create/create_category_request.dart';
-import 'package:shoply/features/admin/categories/data/model/create/create_category_response.dart';
-import 'package:shoply/features/admin/categories/data/model/delete/delete_response.dart';
-import 'package:shoply/features/admin/categories/data/model/get_all_categories/get_all_categories.dart';
-import 'package:shoply/features/admin/categories/data/model/update/update_category_request.dart';
-import 'package:shoply/features/admin/categories/data/model/update/update_category_response.dart';
-
-import 'package:shoply/features/admin/products/data/model/get_products_list/get_all_products.dart';
+import 'package:shoply/features/admin/products/data/Mappers/product_mapper.dart';
+import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
+import 'package:shoply/features/customer/home/data/Mappers/categories_mapper.dart';
+import 'package:shoply/features/customer/home/data/Mappers/products_details_mapper.dart';
 import 'package:shoply/features/customer/home/data/data_sources/home_data_source.dart';
+import 'package:shoply/features/customer/home/domain/entities/category_entity.dart';
+import 'package:shoply/features/customer/home/domain/entities/products_details_entity.dart';
+import 'package:shoply/features/customer/home/domain/repositories/base_home_repository.dart';
 
-class HomeRepository {
+class HomeRepository implements BaseHomeRepository {
   final HomeDataSource _dataSource;
 
   HomeRepository(this._dataSource);
 
-  Future<ApiResult<GetAllCategoriesResponse>> getAllCategories() async {
+  @override
+  Future<ApiResult<List<CategoryEntity>>> getAllCategories() async {
     try {
       final response = await _dataSource.getAllCategories();
       if (response.data != null) {
-        return ApiResult.success(response);
+        return ApiResult.success(CategoriesMapper.toEntity(response));
       } else {
         return ApiResult.failure(ServerFailure(response.errors!.first.message));
       }
@@ -32,11 +31,28 @@ class HomeRepository {
     }
   }
 
-  Future<ApiResult<GetAllProductsResponse>> getAllProducts() async {
+  @override
+  Future<ApiResult<ProductsDetailsEntity>> getProductDetails({required String productId}) async {
+      try {
+        final response = await _dataSource.getProductDetails(productId: productId);
+        if (response.data != null) {
+          return  ApiResult.success(ProductsDetailsMapper.productDetailsMapper(response));
+        } else {
+          return ApiResult.failure(ServerFailure(response.errors!.first.message));
+        }
+      } on DioException catch (dioError) {
+        return ApiResult.failure(ServerFailure.fromDioException(dioError));
+      } catch (error) {
+        return ApiResult.failure(ServerFailure(error.toString()));
+      }
+  }
+
+  @override
+  Future<ApiResult<List<GetProductEntity>>> getProductListPerCategory({required String categoryId}) async {
     try {
-      final response = await _dataSource.getProductsList();
+      final response = await _dataSource.getProductListPerCategory(categoryId: categoryId);
       if (response.data != null) {
-        return ApiResult.success(response);
+        return ApiResult.success(ProductMapper.fromResponse(response));
       } else {
         return ApiResult.failure(ServerFailure(response.errors!.first.message));
       }
@@ -46,19 +62,22 @@ class HomeRepository {
       return ApiResult.failure(ServerFailure(error.toString()));
     }
   }
-  // Future<ApiResult<ProductDetailsResponse>> getProductDetailsById(String productId) async {
-  //   try {
-  //     final response = await _dataSource.getProductDetails(productId: productId);
-  //     if (response.data != null) {
-  //       return ApiResult.success(response);
-  //     } else {
-  //       return ApiResult.failure(ServerFailure(response.errors!.first.message));
-  //     }
-  //   } on DioException catch (dioError) {
-  //     return ApiResult.failure(ServerFailure.fromDioException(dioError));
-  //   } catch (error) {
-  //     return ApiResult.failure(ServerFailure(error.toString()));
-  //   }
-  // }
+
+  @override
+  Future<ApiResult<List<GetProductEntity>>> getProductsList() async {
+    try {
+      final response = await _dataSource.getProductsList();
+      if (response.data != null) {
+        return ApiResult.success(ProductMapper.fromResponse(response));
+      } else {
+        return ApiResult.failure(ServerFailure(response.errors!.first.message));
+      }
+    } on DioException catch (dioError) {
+      return ApiResult.failure(ServerFailure.fromDioException(dioError));
+    } catch (error) {
+      return ApiResult.failure(ServerFailure(error.toString()));
+    }
+  }
+
 
 }

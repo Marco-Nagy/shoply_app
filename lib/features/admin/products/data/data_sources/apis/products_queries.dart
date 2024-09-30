@@ -109,7 +109,26 @@ class ProductsQueries implements BaseProductsDataSource{
       }
     };
   }
-
+  Map<String, dynamic> getProductDetails({required String productId}) {
+    return {
+      'query': '''{
+        product(id: $productId) {
+          id
+          title
+          price
+          description
+          images
+          category{
+            id
+            name
+          }
+        }
+      }''',
+      'variables': {
+        'productId': productId,
+      }
+    };
+  }
 
 
 }

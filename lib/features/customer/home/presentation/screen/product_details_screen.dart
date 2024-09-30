@@ -40,11 +40,8 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen>
   }
   @override
   Widget build(BuildContext context) {
-    String isAdmin =
-        SharedPrefHelper().getString(key: SharedPrefKeys.userRole).toString();
-    return isAdmin == "admin"
-        ? adminProductDetailsScreen()
-        : customerProductDetailsScreen();
+
+    return  customerProductDetailsScreen();
   }
 
   Widget customerProductDetailsScreen() {
@@ -91,25 +88,25 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen>
       },
     );
   }
-
-  Widget adminProductDetailsScreen() {
-    return BlocBuilder<AdminProductBloc, AdminProductState>(
-      builder: (context, state) {
-        return state.maybeWhen(
-          getAdminProductDetailsSuccess: (product) {
-            return Scaffold(
-              appBar: AdminAppBar(
-                title: product.title ?? '',
-                isMain: true,
-                backgroundColor: context.colors.bluePinkDark,
-              ),
-              body: ProductsDetailsBody(product: product),
-              // bottomNavigationBar: const AddToCartButton(),
-            );
-          },
-          orElse: () => const SizedBox(),
-        );
-      },
-    );
-  }
+  //
+  // Widget adminProductDetailsScreen() {
+  //   return BlocBuilder<AdminProductBloc, AdminProductState>(
+  //     builder: (context, state) {
+  //       return state.maybeWhen(
+  //         getAdminProductDetailsSuccess: (product) {
+  //           return Scaffold(
+  //             appBar: AdminAppBar(
+  //               title: product.title ?? '',
+  //               isMain: true,
+  //               backgroundColor: context.colors.bluePinkDark,
+  //             ),
+  //             body: ProductsDetailsBody(product: product),
+  //             // bottomNavigationBar: const AddToCartButton(),
+  //           );
+  //         },
+  //         orElse: () => const SizedBox(),
+  //       );
+  //     },
+  //   );
+  // }
 }
