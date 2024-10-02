@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
-import 'package:shoply/core/localization/lang_keys.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/utils/animations/animate_do.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';

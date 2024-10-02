@@ -3,14 +3,14 @@ import 'package:shoply/core/helpers/usecases/usecase.dart';
 import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
 import 'package:shoply/features/customer/home/domain/repositories/base_home_repository.dart';
 
-class HomeProductsListUseCase extends UseCase<List<GetProductEntity>,NoParams>{
+class HomeProductsListUseCase extends UseCase<List<GetProductEntity>,int>{
   final BaseHomeRepository _repository;
 
   HomeProductsListUseCase(this._repository);
 
   @override
-  Future<ApiResult<List<GetProductEntity>>> call(NoParams params) async {
-   return await _repository.getProductsList();
+  Future<ApiResult<List<GetProductEntity>>> call(int params) async {
+   return await _repository.getProductsList(offset: params);
   }
 
 }

@@ -17,8 +17,6 @@ import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
 import 'package:shoply/features/admin/categories/data/model/get_all_categories/get_all_categories.dart';
 import 'package:shoply/features/admin/categories/presentation/bloc/admin_categories_bloc.dart';
-import 'package:shoply/features/admin/products/data/model/create_product/create_product_request.dart';
-import 'package:shoply/features/admin/products/data/model/update_product/update_product_request.dart';
 import 'package:shoply/features/admin/products/domain/entities/create_product_entity.dart';
 import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
 import 'package:shoply/features/admin/products/domain/entities/update_product_entity.dart';
@@ -26,7 +24,6 @@ import 'package:shoply/features/admin/products/presentation/bloc/admin_product_b
 import 'package:shoply/features/admin/products/presentation/widget/productImage/upload_product_images_list.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
 
-import '../../data/model/get_products_list/get_all_products.dart';
 
 class CreateProductBottomSheetWidget extends StatefulWidget {
   const CreateProductBottomSheetWidget({
@@ -60,11 +57,11 @@ class _CreateProductBottomSheetWidgetState
   void _updateFormToEdit() {
     if (widget.product != null) {
       setState(() {
-        categoryId = widget.product!.category!.id!;
-        categoryNameController.text = widget.product!.category!.name!;
-        productNameController.text = widget.product!.title!;
-        priceController.text = widget.product!.price!.toString();
-        descriptionController.text = widget.product!.description!;
+        categoryId = widget.product!.category.id;
+        categoryNameController.text = widget.product!.category.name;
+        productNameController.text = widget.product!.title;
+        priceController.text = widget.product!.price.toString();
+        descriptionController.text = widget.product!.description;
         productTitleStatus = "Update";
         productStatus = "Edit";
       });
@@ -173,8 +170,8 @@ class _CreateProductBottomSheetWidgetState
                 return state.maybeWhen(
                   getAdminCategoriesListSuccess: (categoriesList) {
                     if(widget.product!= null){
-                      categoryId = widget.product!.category!.id!;
-                      categoryNameController.text = widget.product!.category!.name!;
+                      categoryId = widget.product!.category.id;
+                      categoryNameController.text = widget.product!.category.name;
                     }
                     return SizedBox(
                       width: double.infinity,
@@ -318,7 +315,7 @@ class _CreateProductBottomSheetWidgetState
     if (formKye.currentState!.validate() && productImagesList.isNotEmpty &&categoryNameController.text.isNotEmpty&& categoryId.isNotEmpty) {
       context.read<AdminProductBloc>().add(AdminProductEvent.updateAdminProduct(
               body: UpdateProductEntity(
-            id: widget.product!.id!,
+            id: widget.product!.id,
             title: productNameController.text.trim(),
             price: int.parse(priceController.text.trim()),
             description: descriptionController.text.trim(),

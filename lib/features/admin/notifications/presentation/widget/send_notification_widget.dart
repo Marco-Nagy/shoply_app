@@ -100,7 +100,7 @@ class _SendNotificationWidgetState extends State<SendNotificationWidget>
               child: AppAnimatedIcon(
                 size: 35,
                 backGroundColor: Colors.transparent,
-                animationController: _controller!,
+                animationController: _controller,
                 iconAsset: AppAnimatedIcons.send,
                 onTap: () {
                   Vibration.vibrate(duration: 700, pattern: [50, 50, 50, 500]);
@@ -141,7 +141,7 @@ class _SendNotificationWidgetState extends State<SendNotificationWidget>
               child: AppAnimatedIcon(
                 size: 35,
                 backGroundColor: Colors.transparent,
-                animationController: _controller!,
+                animationController: _controller,
                 iconAsset: AppAnimatedIcons.send,
                 onTap: () {
                   Vibration.vibrate(duration: 700, pattern: [50, 50, 50, 500]);

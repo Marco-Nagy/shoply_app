@@ -38,7 +38,7 @@ class MockProductTest {
       title: 'Smartphone',
       price: 999,
       description: 'A high-end smartphone',
-      images: [],
+      images: const [],
       category: mockCategoryProductEntity);
   static CreateProductEntity createProductEntity = const CreateProductEntity(
     title: 'New Product',

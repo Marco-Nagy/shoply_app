@@ -8,10 +8,10 @@ class HomeQueries implements BaseHomeDataSource {
   static final HomeQueries _instance = HomeQueries._();
 
   @override
-  Map<String, dynamic> getProductsList() {
+  Map<String, dynamic> getProductsList({required int offset}) {
     return {
       'query': '''{
-       products{
+       products(limit: 6, offset: $offset){
          id
          title
          price
@@ -23,6 +23,7 @@ class HomeQueries implements BaseHomeDataSource {
          }
        }
      }''',
+
     };
   }
 

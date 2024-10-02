@@ -5,7 +5,7 @@ import 'package:shoply/features/customer/home/domain/entities/products_details_e
 
 abstract class BaseHomeRepository {
   Future<ApiResult<List<CategoryEntity>>>  getAllCategories();
-  Future<ApiResult<List<GetProductEntity>>> getProductsList();
+  Future<ApiResult<List<GetProductEntity>>> getProductsList({required int offset});
   Future<ApiResult<List<GetProductEntity>>>  getProductListPerCategory({required String categoryId});
   Future<ApiResult<ProductsDetailsEntity>>  getProductDetails ({required String productId});
 

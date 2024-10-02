@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:shoply/core/app/apis/errors/error_model.dart';
-import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
 
 part 'product_details.g.dart';
 

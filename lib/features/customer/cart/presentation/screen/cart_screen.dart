@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shoply/core/helpers/extension/my_context.dart';
-import 'package:shoply/core/localization/lang_keys.dart';
 import 'package:shoply/features/customer/main/presentation/widgets/main_customer_app_bar.dart';
 
 class CartScreen extends StatelessWidget {

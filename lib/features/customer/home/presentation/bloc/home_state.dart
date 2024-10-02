@@ -2,7 +2,7 @@ part of 'home_bloc.dart';
 
 @freezed
 class HomeState with _$HomeState {
-  const factory HomeState.initial() = _Initial;
+  const factory HomeState.initial() = Initial;
 
   const factory HomeState.categoriesLoading() = HomeCategorieLoading;
   const factory HomeState.productsLoading() = HomeProductsLoading;
@@ -14,7 +14,7 @@ class HomeState with _$HomeState {
 
 
   //* Get Home Product List States
-  const factory HomeState.getHomeProductListSuccess(List<GetProductEntity> productList) = GetHomeProductListSuccess;
+  const factory HomeState.getHomeProductListSuccess(List<GetProductEntity> productList,) = GetHomeProductListSuccess;
   const factory HomeState.getHomeProductListEmpty() = GetHomeProductListEmpty;
   const factory HomeState.getHomeProductListFailure(String errorMessage) = GetHomeProductListFailure;
   //* Get Home Product List PerCategory States

@@ -1,16 +1,12 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shoply/core/helpers/usecases/usecase.dart';
-import 'package:shoply/features/admin/categories/data/model/get_all_categories/get_all_categories.dart';
-import 'package:shoply/features/admin/products/data/model/get_products_list/get_all_products.dart';
 import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
-import 'package:shoply/features/customer/home/data/Mappers/products_details_mapper.dart';
 import 'package:shoply/features/customer/home/domain/entities/category_entity.dart';
 import 'package:shoply/features/customer/home/domain/entities/products_details_entity.dart';
-import 'package:shoply/features/customer/home/data/repositories/home_repository.dart';
 import 'package:shoply/features/customer/home/domain/use_cases/home_categories_list_use_case.dart';
 import 'package:shoply/features/customer/home/domain/use_cases/home_products_list_per_category_use_case.dart';
 import 'package:shoply/features/customer/home/domain/use_cases/home_products_list_use_case.dart';
@@ -39,6 +35,10 @@ class HomeBloc
   final HomeCategoriesListUseCase homeCategoriesListUseCase;
   final ProductsDetailsUseCase productsDetailsUseCase;
   bool loadMoreProducts =false;
+
+  int offset = 1;
+  List<GetProductEntity> newList = [];
+
   Future<FutureOr<void>> _fetchHomeCategoriesList(FetchHomeCategoriesListEvent event,
       Emitter<HomeState> emit)  {
     emit(const HomeState.categoriesLoading());
@@ -61,19 +61,30 @@ class HomeBloc
   }
   Future<FutureOr<void>> _getHomeProductList(
       GetHomeProductListEvent event, Emitter<HomeState> emit)  {
-    emit(const HomeProductsLoading());
- return homeProductsListUseCase.call(NoParams()).then(
+    if (offset == 1) {
+      emit(const HomeProductsLoading());
+    }
+    return homeProductsListUseCase.call(offset).then(
       (value) {
         value.when(
           success: (data) {
             if (data.isEmpty) {
               emit(const HomeState.getHomeProductListEmpty());
             } else {
-              emit(HomeState.getHomeProductListSuccess(data));
+              if (offset == 1) {
+                newList = data; // First time load
+              } else {
+                newList = newList + data; // Load more and append to the list
+              }
+              loadMoreProducts = false; // Reset the flag
+              emit(HomeState.getHomeProductListSuccess(
+                newList,
+              ));
             }
           },
           failure: (errorHandler) {
             emit(HomeState.getHomeProductListFailure(errorHandler.errorMsg));
+            loadMoreProducts = false; // Reset the flag in case of failure
           },
         );
       },
@@ -116,5 +127,20 @@ class HomeBloc
         );
       },
     );
+  }
+
+  handlePagination({
+    required ScrollController scrollController,
+    required double loadMorePosition,
+  }) {
+    final offsetPosition = scrollController.position.pixels;
+    final maxScroll = scrollController.position.maxScrollExtent;
+
+    if (!loadMoreProducts && offsetPosition >= maxScroll - loadMorePosition) {
+      loadMoreProducts = true; // Prevent multiple calls
+      offset++; // Increment the offset
+      add(const GetHomeProductListEvent()); // Dispatch the event
+
+    }
   }
 }
