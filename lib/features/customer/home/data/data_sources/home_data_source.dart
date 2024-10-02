@@ -1,5 +1,3 @@
-import 'package:shoply/core/app/apis/graphQl/admin/categories_queries.dart';
-import 'package:shoply/features/admin/products/data/data_sources/apis/products_queries.dart';
 import 'package:shoply/features/admin/categories/data/model/get_all_categories/get_all_categories.dart';
 import 'package:shoply/features/admin/products/data/model/get_products_list/get_all_products.dart';
 import 'package:shoply/features/customer/home/data/data_sources/base_home_data_source.dart';
@@ -20,9 +18,9 @@ class HomeDataSource extends BaseHomeDataSource{
         .getAllCategories(HomeQueries().getAllCategories());
   }
   @override
-  Future<GetAllProductsResponse> getProductsList() async {
+  Future<GetAllProductsResponse> getProductsList({required int offset}) async {
     return await _apiService
-        .getProductList(HomeQueries().getProductsList());
+        .getProductList(HomeQueries().getProductsList(offset: offset));
   }
 
   @override

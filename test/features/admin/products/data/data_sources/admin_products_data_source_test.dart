@@ -4,12 +4,6 @@ import 'package:mockito/mockito.dart';
 import 'package:shoply/features/admin/products/data/data_sources/admin_products_data_source.dart';
 import 'package:shoply/features/admin/products/data/data_sources/apis/admin_products_api_service.dart';
 import 'package:shoply/features/admin/products/data/data_sources/apis/products_queries.dart';
-import 'package:shoply/features/admin/products/data/model/create_product/create_product_response.dart';
-import 'package:shoply/features/admin/products/data/model/delete_category/delete_product.dart';
-import 'package:shoply/features/admin/products/data/model/get_products_list/get_all_products.dart';
-import 'package:shoply/features/admin/products/data/model/update_product/update_product_response.dart';
-import 'package:shoply/features/admin/products/domain/entities/create_product_entity.dart';
-import 'package:shoply/features/admin/products/domain/entities/update_product_entity.dart';
 
 import '../../product_test_helper.dart';
 import 'admin_products_data_source_test.mocks.dart';

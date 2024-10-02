@@ -64,9 +64,9 @@ class HomeRepository implements BaseHomeRepository {
   }
 
   @override
-  Future<ApiResult<List<GetProductEntity>>> getProductsList() async {
+  Future<ApiResult<List<GetProductEntity>>> getProductsList({required int offset}) async {
     try {
-      final response = await _dataSource.getProductsList();
+      final response = await _dataSource.getProductsList(offset: offset);
       if (response.data != null) {
         return ApiResult.success(ProductMapper.fromResponse(response));
       } else {

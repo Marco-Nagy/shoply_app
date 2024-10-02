@@ -21,6 +21,7 @@ mixin _$HomeEvent {
     required TResult Function() started,
     required TResult Function() fetchHomeCategories,
     required TResult Function() getHomeProductList,
+    required TResult Function() loadMoreProducts,
     required TResult Function(String productId) getHomeProductDetails,
     required TResult Function(String categoryId) getHomeProductListPerCategory,
   }) =>
@@ -30,6 +31,7 @@ mixin _$HomeEvent {
     TResult? Function()? started,
     TResult? Function()? fetchHomeCategories,
     TResult? Function()? getHomeProductList,
+    TResult? Function()? loadMoreProducts,
     TResult? Function(String productId)? getHomeProductDetails,
     TResult? Function(String categoryId)? getHomeProductListPerCategory,
   }) =>
@@ -39,6 +41,7 @@ mixin _$HomeEvent {
     TResult Function()? started,
     TResult Function()? fetchHomeCategories,
     TResult Function()? getHomeProductList,
+    TResult Function()? loadMoreProducts,
     TResult Function(String productId)? getHomeProductDetails,
     TResult Function(String categoryId)? getHomeProductListPerCategory,
     required TResult orElse(),
@@ -50,6 +53,7 @@ mixin _$HomeEvent {
     required TResult Function(FetchHomeCategoriesListEvent value)
         fetchHomeCategories,
     required TResult Function(GetHomeProductListEvent value) getHomeProductList,
+    required TResult Function(LoadMoreProductsEvent value) loadMoreProducts,
     required TResult Function(GetHomeProductDetailsEvent value)
         getHomeProductDetails,
     required TResult Function(GetHomeProductListPerCategoryEvent value)
@@ -61,6 +65,7 @@ mixin _$HomeEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult? Function(GetHomeProductListEvent value)? getHomeProductList,
+    TResult? Function(LoadMoreProductsEvent value)? loadMoreProducts,
     TResult? Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
     TResult? Function(GetHomeProductListPerCategoryEvent value)?
         getHomeProductListPerCategory,
@@ -71,6 +76,7 @@ mixin _$HomeEvent {
     TResult Function(_Started value)? started,
     TResult Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult Function(GetHomeProductListEvent value)? getHomeProductList,
+    TResult Function(LoadMoreProductsEvent value)? loadMoreProducts,
     TResult Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
     TResult Function(GetHomeProductListPerCategoryEvent value)?
         getHomeProductListPerCategory,
@@ -114,18 +120,12 @@ class __$$StartedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
+class _$StartedImpl implements _Started {
   const _$StartedImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HomeEvent.started()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'HomeEvent.started'));
   }
 
   @override
@@ -143,6 +143,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     required TResult Function() started,
     required TResult Function() fetchHomeCategories,
     required TResult Function() getHomeProductList,
+    required TResult Function() loadMoreProducts,
     required TResult Function(String productId) getHomeProductDetails,
     required TResult Function(String categoryId) getHomeProductListPerCategory,
   }) {
@@ -155,6 +156,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult? Function()? started,
     TResult? Function()? fetchHomeCategories,
     TResult? Function()? getHomeProductList,
+    TResult? Function()? loadMoreProducts,
     TResult? Function(String productId)? getHomeProductDetails,
     TResult? Function(String categoryId)? getHomeProductListPerCategory,
   }) {
@@ -167,6 +169,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult Function()? started,
     TResult Function()? fetchHomeCategories,
     TResult Function()? getHomeProductList,
+    TResult Function()? loadMoreProducts,
     TResult Function(String productId)? getHomeProductDetails,
     TResult Function(String categoryId)? getHomeProductListPerCategory,
     required TResult orElse(),
@@ -184,6 +187,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     required TResult Function(FetchHomeCategoriesListEvent value)
         fetchHomeCategories,
     required TResult Function(GetHomeProductListEvent value) getHomeProductList,
+    required TResult Function(LoadMoreProductsEvent value) loadMoreProducts,
     required TResult Function(GetHomeProductDetailsEvent value)
         getHomeProductDetails,
     required TResult Function(GetHomeProductListPerCategoryEvent value)
@@ -198,6 +202,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult? Function(_Started value)? started,
     TResult? Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult? Function(GetHomeProductListEvent value)? getHomeProductList,
+    TResult? Function(LoadMoreProductsEvent value)? loadMoreProducts,
     TResult? Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
     TResult? Function(GetHomeProductListPerCategoryEvent value)?
         getHomeProductListPerCategory,
@@ -211,6 +216,7 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult Function(GetHomeProductListEvent value)? getHomeProductList,
+    TResult Function(LoadMoreProductsEvent value)? loadMoreProducts,
     TResult Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
     TResult Function(GetHomeProductListPerCategoryEvent value)?
         getHomeProductListPerCategory,
@@ -248,20 +254,12 @@ class __$$FetchHomeCategoriesListEventImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FetchHomeCategoriesListEventImpl
-    with DiagnosticableTreeMixin
     implements FetchHomeCategoriesListEvent {
   const _$FetchHomeCategoriesListEventImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HomeEvent.fetchHomeCategories()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-        .add(DiagnosticsProperty('type', 'HomeEvent.fetchHomeCategories'));
   }
 
   @override
@@ -280,6 +278,7 @@ class _$FetchHomeCategoriesListEventImpl
     required TResult Function() started,
     required TResult Function() fetchHomeCategories,
     required TResult Function() getHomeProductList,
+    required TResult Function() loadMoreProducts,
     required TResult Function(String productId) getHomeProductDetails,
     required TResult Function(String categoryId) getHomeProductListPerCategory,
   }) {
@@ -292,6 +291,7 @@ class _$FetchHomeCategoriesListEventImpl
     TResult? Function()? started,
     TResult? Function()? fetchHomeCategories,
     TResult? Function()? getHomeProductList,
+    TResult? Function()? loadMoreProducts,
     TResult? Function(String productId)? getHomeProductDetails,
     TResult? Function(String categoryId)? getHomeProductListPerCategory,
   }) {
@@ -304,6 +304,7 @@ class _$FetchHomeCategoriesListEventImpl
     TResult Function()? started,
     TResult Function()? fetchHomeCategories,
     TResult Function()? getHomeProductList,
+    TResult Function()? loadMoreProducts,
     TResult Function(String productId)? getHomeProductDetails,
     TResult Function(String categoryId)? getHomeProductListPerCategory,
     required TResult orElse(),
@@ -321,6 +322,7 @@ class _$FetchHomeCategoriesListEventImpl
     required TResult Function(FetchHomeCategoriesListEvent value)
         fetchHomeCategories,
     required TResult Function(GetHomeProductListEvent value) getHomeProductList,
+    required TResult Function(LoadMoreProductsEvent value) loadMoreProducts,
     required TResult Function(GetHomeProductDetailsEvent value)
         getHomeProductDetails,
     required TResult Function(GetHomeProductListPerCategoryEvent value)
@@ -335,6 +337,7 @@ class _$FetchHomeCategoriesListEventImpl
     TResult? Function(_Started value)? started,
     TResult? Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult? Function(GetHomeProductListEvent value)? getHomeProductList,
+    TResult? Function(LoadMoreProductsEvent value)? loadMoreProducts,
     TResult? Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
     TResult? Function(GetHomeProductListPerCategoryEvent value)?
         getHomeProductListPerCategory,
@@ -348,6 +351,7 @@ class _$FetchHomeCategoriesListEventImpl
     TResult Function(_Started value)? started,
     TResult Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult Function(GetHomeProductListEvent value)? getHomeProductList,
+    TResult Function(LoadMoreProductsEvent value)? loadMoreProducts,
     TResult Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
     TResult Function(GetHomeProductListPerCategoryEvent value)?
         getHomeProductListPerCategory,
@@ -385,20 +389,12 @@ class __$$GetHomeProductListEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetHomeProductListEventImpl
-    with DiagnosticableTreeMixin
-    implements GetHomeProductListEvent {
+class _$GetHomeProductListEventImpl implements GetHomeProductListEvent {
   const _$GetHomeProductListEventImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HomeEvent.getHomeProductList()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'HomeEvent.getHomeProductList'));
   }
 
   @override
@@ -417,6 +413,7 @@ class _$GetHomeProductListEventImpl
     required TResult Function() started,
     required TResult Function() fetchHomeCategories,
     required TResult Function() getHomeProductList,
+    required TResult Function() loadMoreProducts,
     required TResult Function(String productId) getHomeProductDetails,
     required TResult Function(String categoryId) getHomeProductListPerCategory,
   }) {
@@ -429,6 +426,7 @@ class _$GetHomeProductListEventImpl
     TResult? Function()? started,
     TResult? Function()? fetchHomeCategories,
     TResult? Function()? getHomeProductList,
+    TResult? Function()? loadMoreProducts,
     TResult? Function(String productId)? getHomeProductDetails,
     TResult? Function(String categoryId)? getHomeProductListPerCategory,
   }) {
@@ -441,6 +439,7 @@ class _$GetHomeProductListEventImpl
     TResult Function()? started,
     TResult Function()? fetchHomeCategories,
     TResult Function()? getHomeProductList,
+    TResult Function()? loadMoreProducts,
     TResult Function(String productId)? getHomeProductDetails,
     TResult Function(String categoryId)? getHomeProductListPerCategory,
     required TResult orElse(),
@@ -458,6 +457,7 @@ class _$GetHomeProductListEventImpl
     required TResult Function(FetchHomeCategoriesListEvent value)
         fetchHomeCategories,
     required TResult Function(GetHomeProductListEvent value) getHomeProductList,
+    required TResult Function(LoadMoreProductsEvent value) loadMoreProducts,
     required TResult Function(GetHomeProductDetailsEvent value)
         getHomeProductDetails,
     required TResult Function(GetHomeProductListPerCategoryEvent value)
@@ -472,6 +472,7 @@ class _$GetHomeProductListEventImpl
     TResult? Function(_Started value)? started,
     TResult? Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult? Function(GetHomeProductListEvent value)? getHomeProductList,
+    TResult? Function(LoadMoreProductsEvent value)? loadMoreProducts,
     TResult? Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
     TResult? Function(GetHomeProductListPerCategoryEvent value)?
         getHomeProductListPerCategory,
@@ -485,6 +486,7 @@ class _$GetHomeProductListEventImpl
     TResult Function(_Started value)? started,
     TResult Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult Function(GetHomeProductListEvent value)? getHomeProductList,
+    TResult Function(LoadMoreProductsEvent value)? loadMoreProducts,
     TResult Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
     TResult Function(GetHomeProductListPerCategoryEvent value)?
         getHomeProductListPerCategory,
@@ -499,6 +501,139 @@ class _$GetHomeProductListEventImpl
 
 abstract class GetHomeProductListEvent implements HomeEvent {
   const factory GetHomeProductListEvent() = _$GetHomeProductListEventImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadMoreProductsEventImplCopyWith<$Res> {
+  factory _$$LoadMoreProductsEventImplCopyWith(
+          _$LoadMoreProductsEventImpl value,
+          $Res Function(_$LoadMoreProductsEventImpl) then) =
+      __$$LoadMoreProductsEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadMoreProductsEventImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$LoadMoreProductsEventImpl>
+    implements _$$LoadMoreProductsEventImplCopyWith<$Res> {
+  __$$LoadMoreProductsEventImplCopyWithImpl(_$LoadMoreProductsEventImpl _value,
+      $Res Function(_$LoadMoreProductsEventImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadMoreProductsEventImpl implements LoadMoreProductsEvent {
+  const _$LoadMoreProductsEventImpl();
+
+  @override
+  String toString() {
+    return 'HomeEvent.loadMoreProducts()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadMoreProductsEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() fetchHomeCategories,
+    required TResult Function() getHomeProductList,
+    required TResult Function() loadMoreProducts,
+    required TResult Function(String productId) getHomeProductDetails,
+    required TResult Function(String categoryId) getHomeProductListPerCategory,
+  }) {
+    return loadMoreProducts();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? fetchHomeCategories,
+    TResult? Function()? getHomeProductList,
+    TResult? Function()? loadMoreProducts,
+    TResult? Function(String productId)? getHomeProductDetails,
+    TResult? Function(String categoryId)? getHomeProductListPerCategory,
+  }) {
+    return loadMoreProducts?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? fetchHomeCategories,
+    TResult Function()? getHomeProductList,
+    TResult Function()? loadMoreProducts,
+    TResult Function(String productId)? getHomeProductDetails,
+    TResult Function(String categoryId)? getHomeProductListPerCategory,
+    required TResult orElse(),
+  }) {
+    if (loadMoreProducts != null) {
+      return loadMoreProducts();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(FetchHomeCategoriesListEvent value)
+        fetchHomeCategories,
+    required TResult Function(GetHomeProductListEvent value) getHomeProductList,
+    required TResult Function(LoadMoreProductsEvent value) loadMoreProducts,
+    required TResult Function(GetHomeProductDetailsEvent value)
+        getHomeProductDetails,
+    required TResult Function(GetHomeProductListPerCategoryEvent value)
+        getHomeProductListPerCategory,
+  }) {
+    return loadMoreProducts(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
+    TResult? Function(GetHomeProductListEvent value)? getHomeProductList,
+    TResult? Function(LoadMoreProductsEvent value)? loadMoreProducts,
+    TResult? Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
+    TResult? Function(GetHomeProductListPerCategoryEvent value)?
+        getHomeProductListPerCategory,
+  }) {
+    return loadMoreProducts?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
+    TResult Function(GetHomeProductListEvent value)? getHomeProductList,
+    TResult Function(LoadMoreProductsEvent value)? loadMoreProducts,
+    TResult Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
+    TResult Function(GetHomeProductListPerCategoryEvent value)?
+        getHomeProductListPerCategory,
+    required TResult orElse(),
+  }) {
+    if (loadMoreProducts != null) {
+      return loadMoreProducts(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadMoreProductsEvent implements HomeEvent {
+  const factory LoadMoreProductsEvent() = _$LoadMoreProductsEventImpl;
 }
 
 /// @nodoc
@@ -536,25 +671,15 @@ class __$$GetHomeProductDetailsEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetHomeProductDetailsEventImpl
-    with DiagnosticableTreeMixin
-    implements GetHomeProductDetailsEvent {
+class _$GetHomeProductDetailsEventImpl implements GetHomeProductDetailsEvent {
   const _$GetHomeProductDetailsEventImpl({required this.productId});
 
   @override
   final String productId;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HomeEvent.getHomeProductDetails(productId: $productId)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'HomeEvent.getHomeProductDetails'))
-      ..add(DiagnosticsProperty('productId', productId));
   }
 
   @override
@@ -582,6 +707,7 @@ class _$GetHomeProductDetailsEventImpl
     required TResult Function() started,
     required TResult Function() fetchHomeCategories,
     required TResult Function() getHomeProductList,
+    required TResult Function() loadMoreProducts,
     required TResult Function(String productId) getHomeProductDetails,
     required TResult Function(String categoryId) getHomeProductListPerCategory,
   }) {
@@ -594,6 +720,7 @@ class _$GetHomeProductDetailsEventImpl
     TResult? Function()? started,
     TResult? Function()? fetchHomeCategories,
     TResult? Function()? getHomeProductList,
+    TResult? Function()? loadMoreProducts,
     TResult? Function(String productId)? getHomeProductDetails,
     TResult? Function(String categoryId)? getHomeProductListPerCategory,
   }) {
@@ -606,6 +733,7 @@ class _$GetHomeProductDetailsEventImpl
     TResult Function()? started,
     TResult Function()? fetchHomeCategories,
     TResult Function()? getHomeProductList,
+    TResult Function()? loadMoreProducts,
     TResult Function(String productId)? getHomeProductDetails,
     TResult Function(String categoryId)? getHomeProductListPerCategory,
     required TResult orElse(),
@@ -623,6 +751,7 @@ class _$GetHomeProductDetailsEventImpl
     required TResult Function(FetchHomeCategoriesListEvent value)
         fetchHomeCategories,
     required TResult Function(GetHomeProductListEvent value) getHomeProductList,
+    required TResult Function(LoadMoreProductsEvent value) loadMoreProducts,
     required TResult Function(GetHomeProductDetailsEvent value)
         getHomeProductDetails,
     required TResult Function(GetHomeProductListPerCategoryEvent value)
@@ -637,6 +766,7 @@ class _$GetHomeProductDetailsEventImpl
     TResult? Function(_Started value)? started,
     TResult? Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult? Function(GetHomeProductListEvent value)? getHomeProductList,
+    TResult? Function(LoadMoreProductsEvent value)? loadMoreProducts,
     TResult? Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
     TResult? Function(GetHomeProductListPerCategoryEvent value)?
         getHomeProductListPerCategory,
@@ -650,6 +780,7 @@ class _$GetHomeProductDetailsEventImpl
     TResult Function(_Started value)? started,
     TResult Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult Function(GetHomeProductListEvent value)? getHomeProductList,
+    TResult Function(LoadMoreProductsEvent value)? loadMoreProducts,
     TResult Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
     TResult Function(GetHomeProductListPerCategoryEvent value)?
         getHomeProductListPerCategory,
@@ -709,7 +840,6 @@ class __$$GetHomeProductListPerCategoryEventImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetHomeProductListPerCategoryEventImpl
-    with DiagnosticableTreeMixin
     implements GetHomeProductListPerCategoryEvent {
   const _$GetHomeProductListPerCategoryEventImpl({required this.categoryId});
 
@@ -717,17 +847,8 @@ class _$GetHomeProductListPerCategoryEventImpl
   final String categoryId;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HomeEvent.getHomeProductListPerCategory(categoryId: $categoryId)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'HomeEvent.getHomeProductListPerCategory'))
-      ..add(DiagnosticsProperty('categoryId', categoryId));
   }
 
   @override
@@ -756,6 +877,7 @@ class _$GetHomeProductListPerCategoryEventImpl
     required TResult Function() started,
     required TResult Function() fetchHomeCategories,
     required TResult Function() getHomeProductList,
+    required TResult Function() loadMoreProducts,
     required TResult Function(String productId) getHomeProductDetails,
     required TResult Function(String categoryId) getHomeProductListPerCategory,
   }) {
@@ -768,6 +890,7 @@ class _$GetHomeProductListPerCategoryEventImpl
     TResult? Function()? started,
     TResult? Function()? fetchHomeCategories,
     TResult? Function()? getHomeProductList,
+    TResult? Function()? loadMoreProducts,
     TResult? Function(String productId)? getHomeProductDetails,
     TResult? Function(String categoryId)? getHomeProductListPerCategory,
   }) {
@@ -780,6 +903,7 @@ class _$GetHomeProductListPerCategoryEventImpl
     TResult Function()? started,
     TResult Function()? fetchHomeCategories,
     TResult Function()? getHomeProductList,
+    TResult Function()? loadMoreProducts,
     TResult Function(String productId)? getHomeProductDetails,
     TResult Function(String categoryId)? getHomeProductListPerCategory,
     required TResult orElse(),
@@ -797,6 +921,7 @@ class _$GetHomeProductListPerCategoryEventImpl
     required TResult Function(FetchHomeCategoriesListEvent value)
         fetchHomeCategories,
     required TResult Function(GetHomeProductListEvent value) getHomeProductList,
+    required TResult Function(LoadMoreProductsEvent value) loadMoreProducts,
     required TResult Function(GetHomeProductDetailsEvent value)
         getHomeProductDetails,
     required TResult Function(GetHomeProductListPerCategoryEvent value)
@@ -811,6 +936,7 @@ class _$GetHomeProductListPerCategoryEventImpl
     TResult? Function(_Started value)? started,
     TResult? Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult? Function(GetHomeProductListEvent value)? getHomeProductList,
+    TResult? Function(LoadMoreProductsEvent value)? loadMoreProducts,
     TResult? Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
     TResult? Function(GetHomeProductListPerCategoryEvent value)?
         getHomeProductListPerCategory,
@@ -824,6 +950,7 @@ class _$GetHomeProductListPerCategoryEventImpl
     TResult Function(_Started value)? started,
     TResult Function(FetchHomeCategoriesListEvent value)? fetchHomeCategories,
     TResult Function(GetHomeProductListEvent value)? getHomeProductList,
+    TResult Function(LoadMoreProductsEvent value)? loadMoreProducts,
     TResult Function(GetHomeProductDetailsEvent value)? getHomeProductDetails,
     TResult Function(GetHomeProductListPerCategoryEvent value)?
         getHomeProductListPerCategory,
@@ -924,7 +1051,7 @@ mixin _$HomeState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
@@ -955,7 +1082,7 @@ mixin _$HomeState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
     TResult? Function(GetHomeCategoriesListSuccess value)?
@@ -985,7 +1112,7 @@ mixin _$HomeState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
     TResult Function(GetHomeCategoriesListSuccess value)?
@@ -1051,18 +1178,12 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
+class _$InitialImpl implements Initial {
   const _$InitialImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HomeState.initial()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'HomeState.initial'));
   }
 
   @override
@@ -1161,7 +1282,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
@@ -1195,7 +1316,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
     TResult? Function(GetHomeCategoriesListSuccess value)?
@@ -1228,7 +1349,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
     TResult Function(GetHomeCategoriesListSuccess value)?
@@ -1263,8 +1384,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   }
 }
 
-abstract class _Initial implements HomeState {
-  const factory _Initial() = _$InitialImpl;
+abstract class Initial implements HomeState {
+  const factory Initial() = _$InitialImpl;
 }
 
 /// @nodoc
@@ -1285,20 +1406,12 @@ class __$$HomeCategorieLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HomeCategorieLoadingImpl
-    with DiagnosticableTreeMixin
-    implements HomeCategorieLoading {
+class _$HomeCategorieLoadingImpl implements HomeCategorieLoading {
   const _$HomeCategorieLoadingImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HomeState.categoriesLoading()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'HomeState.categoriesLoading'));
   }
 
   @override
@@ -1398,7 +1511,7 @@ class _$HomeCategorieLoadingImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
@@ -1432,7 +1545,7 @@ class _$HomeCategorieLoadingImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
     TResult? Function(GetHomeCategoriesListSuccess value)?
@@ -1465,7 +1578,7 @@ class _$HomeCategorieLoadingImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
     TResult Function(GetHomeCategoriesListSuccess value)?
@@ -1522,20 +1635,12 @@ class __$$HomeProductsLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HomeProductsLoadingImpl
-    with DiagnosticableTreeMixin
-    implements HomeProductsLoading {
+class _$HomeProductsLoadingImpl implements HomeProductsLoading {
   const _$HomeProductsLoadingImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HomeState.productsLoading()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'HomeState.productsLoading'));
   }
 
   @override
@@ -1635,7 +1740,7 @@ class _$HomeProductsLoadingImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
@@ -1669,7 +1774,7 @@ class _$HomeProductsLoadingImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
     TResult? Function(GetHomeCategoriesListSuccess value)?
@@ -1702,7 +1807,7 @@ class _$HomeProductsLoadingImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
     TResult Function(GetHomeCategoriesListSuccess value)?
@@ -1777,7 +1882,6 @@ class __$$GetHomeCategoriesListSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetHomeCategoriesListSuccessImpl
-    with DiagnosticableTreeMixin
     implements GetHomeCategoriesListSuccess {
   const _$GetHomeCategoriesListSuccessImpl(
       final List<CategoryEntity> categoriesList)
@@ -1792,17 +1896,8 @@ class _$GetHomeCategoriesListSuccessImpl
   }
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HomeState.getHomeCategoriesListSuccess(categoriesList: $categoriesList)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'HomeState.getHomeCategoriesListSuccess'))
-      ..add(DiagnosticsProperty('categoriesList', categoriesList));
   }
 
   @override
@@ -1913,7 +2008,7 @@ class _$GetHomeCategoriesListSuccessImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
@@ -1947,7 +2042,7 @@ class _$GetHomeCategoriesListSuccessImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
     TResult? Function(GetHomeCategoriesListSuccess value)?
@@ -1980,7 +2075,7 @@ class _$GetHomeCategoriesListSuccessImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
     TResult Function(GetHomeCategoriesListSuccess value)?
@@ -2047,21 +2142,12 @@ class __$$GetHomeCategoriesListEmptyImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetHomeCategoriesListEmptyImpl
-    with DiagnosticableTreeMixin
-    implements GetHomeCategoriesListEmpty {
+class _$GetHomeCategoriesListEmptyImpl implements GetHomeCategoriesListEmpty {
   const _$GetHomeCategoriesListEmptyImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HomeState.getHomeCategoriesListEmpty()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(
-        DiagnosticsProperty('type', 'HomeState.getHomeCategoriesListEmpty'));
   }
 
   @override
@@ -2161,7 +2247,7 @@ class _$GetHomeCategoriesListEmptyImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
@@ -2195,7 +2281,7 @@ class _$GetHomeCategoriesListEmptyImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
     TResult? Function(GetHomeCategoriesListSuccess value)?
@@ -2228,7 +2314,7 @@ class _$GetHomeCategoriesListEmptyImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
     TResult Function(GetHomeCategoriesListSuccess value)?
@@ -2303,7 +2389,6 @@ class __$$GetHomeCategoriesListFailureImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetHomeCategoriesListFailureImpl
-    with DiagnosticableTreeMixin
     implements GetHomeCategoriesListFailure {
   const _$GetHomeCategoriesListFailureImpl(this.errorMessage);
 
@@ -2311,17 +2396,8 @@ class _$GetHomeCategoriesListFailureImpl
   final String errorMessage;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HomeState.getHomeCategoriesListFailure(errorMessage: $errorMessage)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'HomeState.getHomeCategoriesListFailure'))
-      ..add(DiagnosticsProperty('errorMessage', errorMessage));
   }
 
   @override
@@ -2431,7 +2507,7 @@ class _$GetHomeCategoriesListFailureImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
@@ -2465,7 +2541,7 @@ class _$GetHomeCategoriesListFailureImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
     TResult? Function(GetHomeCategoriesListSuccess value)?
@@ -2498,7 +2574,7 @@ class _$GetHomeCategoriesListFailureImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
     TResult Function(GetHomeCategoriesListSuccess value)?
@@ -2579,9 +2655,7 @@ class __$$GetHomeProductListSuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetHomeProductListSuccessImpl
-    with DiagnosticableTreeMixin
-    implements GetHomeProductListSuccess {
+class _$GetHomeProductListSuccessImpl implements GetHomeProductListSuccess {
   const _$GetHomeProductListSuccessImpl(
       final List<GetProductEntity> productList)
       : _productList = productList;
@@ -2595,16 +2669,8 @@ class _$GetHomeProductListSuccessImpl
   }
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HomeState.getHomeProductListSuccess(productList: $productList)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'HomeState.getHomeProductListSuccess'))
-      ..add(DiagnosticsProperty('productList', productList));
   }
 
   @override
@@ -2714,7 +2780,7 @@ class _$GetHomeProductListSuccessImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
@@ -2748,7 +2814,7 @@ class _$GetHomeProductListSuccessImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
     TResult? Function(GetHomeCategoriesListSuccess value)?
@@ -2781,7 +2847,7 @@ class _$GetHomeProductListSuccessImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
     TResult Function(GetHomeCategoriesListSuccess value)?
@@ -2847,21 +2913,12 @@ class __$$GetHomeProductListEmptyImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetHomeProductListEmptyImpl
-    with DiagnosticableTreeMixin
-    implements GetHomeProductListEmpty {
+class _$GetHomeProductListEmptyImpl implements GetHomeProductListEmpty {
   const _$GetHomeProductListEmptyImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HomeState.getHomeProductListEmpty()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-        .add(DiagnosticsProperty('type', 'HomeState.getHomeProductListEmpty'));
   }
 
   @override
@@ -2961,7 +3018,7 @@ class _$GetHomeProductListEmptyImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
@@ -2995,7 +3052,7 @@ class _$GetHomeProductListEmptyImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
     TResult? Function(GetHomeCategoriesListSuccess value)?
@@ -3028,7 +3085,7 @@ class _$GetHomeProductListEmptyImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
     TResult Function(GetHomeCategoriesListSuccess value)?
@@ -3102,25 +3159,15 @@ class __$$GetHomeProductListFailureImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetHomeProductListFailureImpl
-    with DiagnosticableTreeMixin
-    implements GetHomeProductListFailure {
+class _$GetHomeProductListFailureImpl implements GetHomeProductListFailure {
   const _$GetHomeProductListFailureImpl(this.errorMessage);
 
   @override
   final String errorMessage;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HomeState.getHomeProductListFailure(errorMessage: $errorMessage)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'HomeState.getHomeProductListFailure'))
-      ..add(DiagnosticsProperty('errorMessage', errorMessage));
   }
 
   @override
@@ -3229,7 +3276,7 @@ class _$GetHomeProductListFailureImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
@@ -3263,7 +3310,7 @@ class _$GetHomeProductListFailureImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
     TResult? Function(GetHomeCategoriesListSuccess value)?
@@ -3296,7 +3343,7 @@ class _$GetHomeProductListFailureImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
     TResult Function(GetHomeCategoriesListSuccess value)?
@@ -3378,7 +3425,6 @@ class __$$GetHomeProductListPerCategorySuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetHomeProductListPerCategorySuccessImpl
-    with DiagnosticableTreeMixin
     implements GetHomeProductListPerCategorySuccess {
   const _$GetHomeProductListPerCategorySuccessImpl(
       final List<GetProductEntity> productList)
@@ -3393,17 +3439,8 @@ class _$GetHomeProductListPerCategorySuccessImpl
   }
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HomeState.getHomeProductListPerCategorySuccess(productList: $productList)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'HomeState.getHomeProductListPerCategorySuccess'))
-      ..add(DiagnosticsProperty('productList', productList));
   }
 
   @override
@@ -3514,7 +3551,7 @@ class _$GetHomeProductListPerCategorySuccessImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
@@ -3548,7 +3585,7 @@ class _$GetHomeProductListPerCategorySuccessImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
     TResult? Function(GetHomeCategoriesListSuccess value)?
@@ -3581,7 +3618,7 @@ class _$GetHomeProductListPerCategorySuccessImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
     TResult Function(GetHomeCategoriesListSuccess value)?
@@ -3650,20 +3687,12 @@ class __$$GetHomeProductListPerCategoryEmptyImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetHomeProductListPerCategoryEmptyImpl
-    with DiagnosticableTreeMixin
     implements GetHomeProductListPerCategoryEmpty {
   const _$GetHomeProductListPerCategoryEmptyImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HomeState.getHomeProductListPerCategoryEmpty()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty(
-        'type', 'HomeState.getHomeProductListPerCategoryEmpty'));
   }
 
   @override
@@ -3763,7 +3792,7 @@ class _$GetHomeProductListPerCategoryEmptyImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
@@ -3797,7 +3826,7 @@ class _$GetHomeProductListPerCategoryEmptyImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
     TResult? Function(GetHomeCategoriesListSuccess value)?
@@ -3830,7 +3859,7 @@ class _$GetHomeProductListPerCategoryEmptyImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
     TResult Function(GetHomeCategoriesListSuccess value)?
@@ -3907,7 +3936,6 @@ class __$$GetHomeProductListPerCategoryFailureImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetHomeProductListPerCategoryFailureImpl
-    with DiagnosticableTreeMixin
     implements GetHomeProductListPerCategoryFailure {
   const _$GetHomeProductListPerCategoryFailureImpl(this.errorMessage);
 
@@ -3915,17 +3943,8 @@ class _$GetHomeProductListPerCategoryFailureImpl
   final String errorMessage;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HomeState.getHomeProductListPerCategoryFailure(errorMessage: $errorMessage)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'HomeState.getHomeProductListPerCategoryFailure'))
-      ..add(DiagnosticsProperty('errorMessage', errorMessage));
   }
 
   @override
@@ -4035,7 +4054,7 @@ class _$GetHomeProductListPerCategoryFailureImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
@@ -4069,7 +4088,7 @@ class _$GetHomeProductListPerCategoryFailureImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
     TResult? Function(GetHomeCategoriesListSuccess value)?
@@ -4102,7 +4121,7 @@ class _$GetHomeProductListPerCategoryFailureImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
     TResult Function(GetHomeCategoriesListSuccess value)?
@@ -4184,7 +4203,6 @@ class __$$GetHomeProductDetailsSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetHomeProductDetailsSuccessImpl
-    with DiagnosticableTreeMixin
     implements GetHomeProductDetailsSuccess {
   const _$GetHomeProductDetailsSuccessImpl(this.product);
 
@@ -4192,17 +4210,8 @@ class _$GetHomeProductDetailsSuccessImpl
   final ProductsDetailsEntity product;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HomeState.getHomeProductDetailsSuccess(product: $product)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'HomeState.getHomeProductDetailsSuccess'))
-      ..add(DiagnosticsProperty('product', product));
   }
 
   @override
@@ -4311,7 +4320,7 @@ class _$GetHomeProductDetailsSuccessImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
@@ -4345,7 +4354,7 @@ class _$GetHomeProductDetailsSuccessImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
     TResult? Function(GetHomeCategoriesListSuccess value)?
@@ -4378,7 +4387,7 @@ class _$GetHomeProductDetailsSuccessImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
     TResult Function(GetHomeCategoriesListSuccess value)?
@@ -4444,21 +4453,12 @@ class __$$GetHomeProductDetailsEmptyImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetHomeProductDetailsEmptyImpl
-    with DiagnosticableTreeMixin
-    implements GetHomeProductDetailsEmpty {
+class _$GetHomeProductDetailsEmptyImpl implements GetHomeProductDetailsEmpty {
   const _$GetHomeProductDetailsEmptyImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HomeState.getHomeProductDetailsEmpty()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(
-        DiagnosticsProperty('type', 'HomeState.getHomeProductDetailsEmpty'));
   }
 
   @override
@@ -4558,7 +4558,7 @@ class _$GetHomeProductDetailsEmptyImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
@@ -4592,7 +4592,7 @@ class _$GetHomeProductDetailsEmptyImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
     TResult? Function(GetHomeCategoriesListSuccess value)?
@@ -4625,7 +4625,7 @@ class _$GetHomeProductDetailsEmptyImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
     TResult Function(GetHomeCategoriesListSuccess value)?
@@ -4700,7 +4700,6 @@ class __$$GetHomeProductDetailsFailureImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetHomeProductDetailsFailureImpl
-    with DiagnosticableTreeMixin
     implements GetHomeProductDetailsFailure {
   const _$GetHomeProductDetailsFailureImpl(this.errorMessage);
 
@@ -4708,17 +4707,8 @@ class _$GetHomeProductDetailsFailureImpl
   final String errorMessage;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'HomeState.getHomeProductDetailsFailure(errorMessage: $errorMessage)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'HomeState.getHomeProductDetailsFailure'))
-      ..add(DiagnosticsProperty('errorMessage', errorMessage));
   }
 
   @override
@@ -4828,7 +4818,7 @@ class _$GetHomeProductDetailsFailureImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(HomeCategorieLoading value) categoriesLoading,
     required TResult Function(HomeProductsLoading value) productsLoading,
     required TResult Function(GetHomeCategoriesListSuccess value)
@@ -4862,7 +4852,7 @@ class _$GetHomeProductDetailsFailureImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(HomeCategorieLoading value)? categoriesLoading,
     TResult? Function(HomeProductsLoading value)? productsLoading,
     TResult? Function(GetHomeCategoriesListSuccess value)?
@@ -4895,7 +4885,7 @@ class _$GetHomeProductDetailsFailureImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(HomeCategorieLoading value)? categoriesLoading,
     TResult Function(HomeProductsLoading value)? productsLoading,
     TResult Function(GetHomeCategoriesListSuccess value)?

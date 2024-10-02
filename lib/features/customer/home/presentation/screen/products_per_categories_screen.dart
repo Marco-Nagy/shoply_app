@@ -78,7 +78,7 @@ class _ProductsPerCategoriesScreenState extends State<ProductsPerCategoriesScree
 
           ;
         },
-        child: const CustomScrollView(
+        child:  CustomScrollView(
 
           slivers: [
 

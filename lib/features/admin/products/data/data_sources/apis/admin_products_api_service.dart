@@ -6,7 +6,6 @@ import 'package:shoply/features/admin/products/data/model/delete_category/delete
 
 import 'package:shoply/features/admin/products/data/model/get_products_list/get_all_products.dart';
 import 'package:shoply/features/admin/products/data/model/update_product/update_product_response.dart';
-import 'package:shoply/features/customer/home/data/models/get_product_details/product_details.dart';
 
 part 'admin_products_api_service.g.dart';
 

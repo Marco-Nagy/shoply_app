@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoply/core/helpers/extension/navigations.dart';
-import 'package:shoply/core/helpers/extension/string_exetension.dart';
 import 'package:shoply/core/routes/app_routes.dart';
 import 'package:shoply/core/utils/loading/empty_screen.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';

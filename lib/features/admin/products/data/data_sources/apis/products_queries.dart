@@ -1,7 +1,4 @@
-import 'package:shoply/features/admin/products/data/model/create_product/create_product_request.dart';
-import 'package:shoply/features/admin/products/data/model/update_product/update_product_request.dart';
 import 'package:shoply/features/admin/products/domain/entities/create_product_entity.dart';
-import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
 import 'package:shoply/features/admin/products/domain/entities/update_product_entity.dart';
 
 import '../base_products_data_source.dart';

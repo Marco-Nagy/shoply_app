@@ -1,6 +1,8 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
+import 'package:shoply/core/helpers/extension/mediaQueryValues.dart';
 import 'package:shoply/core/utils/loading/empty_screen.dart';
 import 'package:shoply/features/customer/home/presentation/bloc/home_bloc.dart';
 import 'package:shoply/features/customer/home/presentation/widgets/products/home_product_item.dart';
@@ -27,9 +29,9 @@ class HomeProductsList extends StatelessWidget {
               message: errorMessage,
               contentType: ContentType.failure),
           getHomeProductListSuccess: (productList) =>
-             getHomeProductList(productList),
+              getHomeProductList(productList, context),
           getHomeProductListPerCategorySuccess: (productList) =>
-              getHomeProductList(productList),
+              getHomeProductList(productList, context),
           productsLoading: () {
             return   const ProductShimmer();
           },
@@ -39,7 +41,7 @@ class HomeProductsList extends StatelessWidget {
     );
   }
 
-  getHomeProductList(productList) {
+  getHomeProductList(productList, BuildContext context) {
     return GridView.builder(
       shrinkWrap: true,
       padding: const EdgeInsets.symmetric(horizontal: 8),

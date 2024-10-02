@@ -53,6 +53,6 @@ class UploadingImagesLoading extends StatelessWidget {
           ),
         ],
       ),
-    );;
+    );
   }
 }

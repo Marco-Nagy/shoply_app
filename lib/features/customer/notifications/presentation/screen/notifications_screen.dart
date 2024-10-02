@@ -24,7 +24,7 @@ class NotificationsScreen extends StatelessWidget {
                 // For example, navigate to a notification detail screen
                 // Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationDetailScreen()));
               },
-              child: Text(
+              child: const Text(
                 'View all notifications',
               ),
             ),
