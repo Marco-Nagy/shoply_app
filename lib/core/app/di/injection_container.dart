@@ -45,6 +45,12 @@ import 'package:shoply/features/customer/profile/presentation/bloc/profile_bloc.
 import 'package:shoply/features/files/data/data_sources/upload_file_data_source.dart';
 import 'package:shoply/features/files/data/repositories/upload_file_repository.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
+import 'package:shoply/features/filter/data/data_sources/apis/filter_products_api_service.dart';
+import 'package:shoply/features/filter/data/data_sources/filter_products_data_source.dart';
+import 'package:shoply/features/filter/data/repositories/filter_products_repository.dart';
+import 'package:shoply/features/filter/domain/repositories/base_admin_product_repository.dart';
+import 'package:shoply/features/filter/domain/use_cases/get_products_list_use_case.dart';
+import 'package:shoply/features/filter/presentation/bloc/filter_bloc.dart';
 
 final sl = GetIt.instance;
 
@@ -58,6 +64,7 @@ Future<void> setupInjector() async {
   await _initMain();
   await _initProfile();
   await _initHomeCustomer();
+  await _initFilterProducts();
 }
 
 Future<void> _initCore() async {
@@ -178,6 +185,26 @@ Future<void> _initHomeCustomer() async {
     ..registerLazySingleton<HomeDataSource>(() => HomeDataSource(sl()))
     //* ApiService
     ..registerLazySingleton<HomeApiService>(() => HomeApiService(dio));
+
+}
+Future<void> _initFilterProducts() async {
+  final dio = DioFactory.getInstance();
+  sl
+    ..registerFactory(() => FilterBloc(
+          sl(),
+        ))
+
+    /// UseCases
+    ..registerLazySingleton(
+      () => FilterProductsListUseCase(sl()),
+    )
+    //! Repositories
+    ..registerLazySingleton<BaseFilterProductsRepository>(() => FilterProductsRepository(sl()))
+    ..registerLazySingleton(() => FilterProductsRepository(sl()))
+    // ? DataSource
+    ..registerLazySingleton<FilterProductsDataSource>(() => FilterProductsDataSource(sl()))
+    //* ApiService
+    ..registerLazySingleton<FilterProductsApiService>(() => FilterProductsApiService(dio));
 
 }
 

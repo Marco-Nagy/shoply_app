@@ -61,7 +61,12 @@ class _AddProductsBodyState extends State<AddProductsBody>
                   },
                   adminProductLoading: () => const ProductLoading(),
                   getAdminProductListSuccess: (productList) {
-                    return ProductsListAdmin(productList: productList! );
+                    return RefreshIndicator(
+                        onRefresh: () async {
+                          context
+                              .read<AdminProductBloc>()
+                              .add(const AdminProductEvent.getAdminProductList());
+                        },child: ProductsListAdmin(productList: productList! ));
                   },
                   orElse: () => const SizedBox.shrink(),
                 );
