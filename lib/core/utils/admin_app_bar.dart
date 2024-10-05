@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/utils/animations/animate_do.dart';
+import 'package:shoply/core/utils/widgets/buttons/custom_back_button.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
 
 class AdminAppBar extends StatelessWidget implements PreferredSizeWidget  {
@@ -43,7 +44,7 @@ class AdminAppBar extends StatelessWidget implements PreferredSizeWidget  {
 
           ZoomDrawer.of(context)!.toggle();
         },
-      ):const SizedBox.shrink(),
+      ): const CustomBackButton(),
     );
   }
 

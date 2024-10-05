@@ -5,6 +5,7 @@ import 'package:shoply/core/helpers/extension/navigations.dart';
 import 'package:shoply/core/styles/icons/app_animated_icons.dart';
 import 'package:shoply/core/utils/animations/animate_do.dart';
 import 'package:shoply/core/utils/widgets/app_animated_icon.dart';
+import 'package:shoply/core/utils/widgets/buttons/custom_back_button.dart';
 import 'package:shoply/core/utils/widgets/buttons/custom_linear_button.dart';
 import 'package:shoply/features/customer/home/presentation/bloc/home_bloc.dart';
 import 'package:shoply/features/customer/home/presentation/widgets/products/home_products_list.dart';
@@ -43,32 +44,7 @@ class _ProductsPerCategoriesScreenState extends State<ProductsPerCategoriesScree
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MainCustomerAppBar(
-        leadingButtons: CustomFadeInLeft(
-          duration: 400,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: CustomLinearButton(
-              width: 55,
-              height: 55,
-              onTap: () {},
-              child: AppAnimatedIcon(
-                animationController: _controller!,
-                iconAsset: AppAnimatedIcons.backArrow,
-                backGroundColor: Colors.transparent,
-                iconColor: context.colors.white,
-                size: 40,
-                onTap: () async {
-                  Future.delayed(const Duration(milliseconds: 400))
-                      .then(
-                        (value) {
-                      context.pop();
-                    },
-                  );
-                },
-              ),
-            ),
-          ),
-        ),
+        leadingButton:  const CustomBackButton(),
         title: widget.categoryInfo.categoryName,
       ),
       body: RefreshIndicator(
@@ -78,8 +54,7 @@ class _ProductsPerCategoriesScreenState extends State<ProductsPerCategoriesScree
 
           ;
         },
-        child:  CustomScrollView(
-
+        child: const CustomScrollView(
           slivers: [
 
             //* Products
