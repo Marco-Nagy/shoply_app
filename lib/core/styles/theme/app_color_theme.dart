@@ -15,6 +15,7 @@ class AppColorTheme extends ThemeExtension<AppColorTheme> {
     required this.containerShadow2,
     required this.containerLinear1,
     required this.containerLinear2,
+    required this.white,
   });
 
   final Color mainColor;
@@ -28,6 +29,7 @@ class AppColorTheme extends ThemeExtension<AppColorTheme> {
   final Color containerShadow2;
   final Color containerLinear1;
   final Color containerLinear2;
+  final Color white;
 
   @override
   ThemeExtension<AppColorTheme> copyWith() {
@@ -43,6 +45,7 @@ class AppColorTheme extends ThemeExtension<AppColorTheme> {
       containerShadow2: containerShadow2,
       containerLinear1: containerLinear1,
       containerLinear2: containerLinear2,
+      white: white,
     );
   }
 
@@ -66,6 +69,7 @@ class AppColorTheme extends ThemeExtension<AppColorTheme> {
         containerShadow2: containerShadow2,
         containerLinear1: containerLinear1,
         containerLinear2: containerLinear2,
+        white: white,
       );
     }
   }
@@ -82,6 +86,7 @@ class AppColorTheme extends ThemeExtension<AppColorTheme> {
     containerShadow2: DarkColors.black2,
     containerLinear1: DarkColors.black1,
     containerLinear2: DarkColors.black2,
+    white: DarkColors.white,
   );
   static const AppColorTheme light = AppColorTheme(
     mainColor: LightColors.mainColor,
@@ -95,5 +100,6 @@ class AppColorTheme extends ThemeExtension<AppColorTheme> {
     containerShadow2: LightColors.white,
     containerLinear1: LightColors.pinkDark,
     containerLinear2: LightColors.pinkLight,
+    white: LightColors.white,
   );
 }

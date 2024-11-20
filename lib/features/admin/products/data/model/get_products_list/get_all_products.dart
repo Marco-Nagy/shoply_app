@@ -39,8 +39,14 @@ class Product {
   @JsonKey(name: 'category')
   final CategoryProductModel? category;
 
-  Product(this.id, this.title, this.price, this.description,
-      this.images, this.category);
+  Product(
+    this.id,
+    this.title,
+    this.price,
+    this.description,
+    this.images,
+    this.category,
+  );
 
   factory Product.fromJson(Map<String, dynamic> json) =>
       _$ProductFromJson(json);
@@ -53,7 +59,10 @@ class CategoryProductModel {
   @JsonKey(name: 'name')
   final String? name;
 
-  CategoryProductModel(this.id, this.name);
+  CategoryProductModel(
+    this.id,
+    this.name,
+  );
 
   factory CategoryProductModel.fromJson(
           Map<String, dynamic> json) =>

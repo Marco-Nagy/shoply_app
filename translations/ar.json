@@ -30,7 +30,8 @@
     "log_out_from_app": "هل تريد تسجيل الخروج؟",
     "yes": "نعم",
     "no": "لا",
-    "dark_mode": "Dark Mode",
+    "dark_mode" : "الوضع المظلم",
+    "light_mode" : "الوضع المضيئ",
     "lang_code": "العربية",
     "notifications": "إشعارات",
     "subscribed_to_notifications": "تم الاشتراك في إشعارات",
@@ -41,4 +42,5 @@
     "gallery": "معرض الصور",
     "remove": "ازالة",
     "category_name" : "اسم الفئة"
+
 }
