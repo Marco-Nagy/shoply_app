@@ -1,7 +1,4 @@
-import 'package:shoply/features/admin/products/data/model/create_product/create_product_request.dart';
-import 'package:shoply/features/admin/products/data/model/update_product/update_product_request.dart';
 import 'package:shoply/features/admin/products/domain/entities/create_product_entity.dart';
-import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
 import 'package:shoply/features/admin/products/domain/entities/update_product_entity.dart';
 
 import '../base_products_data_source.dart';
@@ -109,7 +106,26 @@ class ProductsQueries implements BaseProductsDataSource{
       }
     };
   }
-
+  Map<String, dynamic> getProductDetails({required String productId}) {
+    return {
+      'query': '''{
+        product(id: $productId) {
+          id
+          title
+          price
+          description
+          images
+          category{
+            id
+            name
+          }
+        }
+      }''',
+      'variables': {
+        'productId': productId,
+      }
+    };
+  }
 
 
 }

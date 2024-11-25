@@ -1,4 +1,3 @@
-import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
 import 'package:shoply/features/customer/home/domain/entities/products_details_entity.dart';
 import 'package:shoply/features/customer/home/data/models/get_product_details/product_details.dart';
 

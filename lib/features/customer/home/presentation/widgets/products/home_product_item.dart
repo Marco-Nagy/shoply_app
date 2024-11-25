@@ -12,7 +12,7 @@ import 'package:shoply/core/utils/widgets/app_animated_icon.dart';
 import 'package:shoply/core/utils/widgets/images/custom_container_linear_customer.dart';
 import 'package:shoply/core/utils/widgets/images/custom_image.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
-import 'package:shoply/features/admin/products/data/model/get_products_list/get_all_products.dart';
+import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
 import 'package:shoply/features/admin/products/presentation/bloc/admin_product_bloc.dart';
 import 'package:vibration/vibration.dart';
 
@@ -22,7 +22,7 @@ class HomeProductItem extends StatefulWidget {
     required this.product,
   });
 
-  final Product product;
+  final GetProductEntity product;
 
   @override
   State<HomeProductItem> createState() => _HomeProductItemState();
@@ -85,7 +85,7 @@ class _HomeProductItemState extends State<HomeProductItem>
                         child: CustomImage(
                           tag: 'tag${widget.product.id}',
                           imageUrl:
-                              widget.product.images!.first.imageProductFormat(),
+                              widget.product.images.first.imageProductFormat(),
 
                         )),
                   ),
@@ -95,7 +95,7 @@ class _HomeProductItemState extends State<HomeProductItem>
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10.w),
                   child: TextApp(
-                    text: widget.product.title!,
+                    text: widget.product.title,
                     style: MyFonts.styleBold700_14
                         .copyWith(color: context.colors.textColor),
                     maxLines: 1,
@@ -106,7 +106,7 @@ class _HomeProductItemState extends State<HomeProductItem>
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10.w),
                   child: TextApp(
-                    text: widget.product.category!.name!,
+                    text: widget.product.category.name,
                     style: MyFonts.styleBold700_12
                         .copyWith(color: context.colors.textColor),
                     maxLines: 1,

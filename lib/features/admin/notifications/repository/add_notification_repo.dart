@@ -3,7 +3,7 @@ import 'package:shoply/core/app/apis/errors/error_handler.dart';
 import 'package:shoply/features/admin/notifications/data/data_sources/add_notification_data_source.dart';
 
 class AddNotificationRepo {
-  AddNotificationDataSource _dataSource;
+  final AddNotificationDataSource _dataSource;
 
   AddNotificationRepo(this._dataSource);
 

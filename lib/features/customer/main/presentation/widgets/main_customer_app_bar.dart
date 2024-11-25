@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
-import 'package:shoply/core/localization/lang_keys.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/utils/animations/animate_do.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
@@ -12,12 +11,12 @@ class MainCustomerAppBar extends StatelessWidget
     super.key,
     required this.title,
     this.actionButtons,
-    this.leadingButtons,
+    this.leadingButton,
   });
 
   final String title;
   final List<Widget>? actionButtons;
-  final Widget? leadingButtons;
+  final Widget? leadingButton;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +24,7 @@ class MainCustomerAppBar extends StatelessWidget
       automaticallyImplyLeading: false,
       backgroundColor: context.colors.mainColor,
       surfaceTintColor: Colors.transparent,
-      leading: leadingButtons,
+      leading: leadingButton,
       title: CustomFadeInRight(
         duration: 400,
         child: TextApp(

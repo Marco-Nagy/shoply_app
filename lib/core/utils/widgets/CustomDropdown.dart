@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoply/core/helpers/extension/mediaQueryValues.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
-import 'package:shoply/core/utils/screens/app_text_form_field.dart';
 
 class CustomDropdownMenu<T> extends StatefulWidget {
   const CustomDropdownMenu(

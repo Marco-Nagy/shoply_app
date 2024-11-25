@@ -10,7 +10,8 @@ import 'package:shoply/core/utils/widgets/buttons/custom_linear_button.dart';
 import 'package:shoply/features/customer/home/presentation/bloc/home_bloc.dart';
 import 'package:shoply/features/customer/home/presentation/widgets/home_body.dart';
 import 'package:shoply/features/customer/main/presentation/widgets/main_customer_app_bar.dart';
-import 'package:shoply/features/search/presentation/screens/products_search.dart';
+import 'package:shoply/features/filter/presentation/bloc/filter_bloc.dart';
+import 'package:shoply/features/filter/presentation/screens/filter_products.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -64,7 +65,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           key: _scaffoldKey,
           backgroundColor: Colors.transparent,
           endDrawerEnableOpenDragGesture: false,
-          endDrawer: const ProductsSearch(),
+          endDrawer: BlocProvider(
+            create: (context) => sl<FilterBloc>(),
+            child: const FilterProducts(),
+          ),
           appBar: MainCustomerAppBar(
             title: context.translate(LangKeys.chooseProducts),
             actionButtons: [

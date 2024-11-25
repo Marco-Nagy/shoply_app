@@ -8,7 +8,8 @@ import 'package:shoply/core/utils/animations/animate_do.dart';
 import 'package:shoply/core/utils/widgets/app_animated_icon.dart';
 import 'package:shoply/features/admin/products/presentation/bloc/admin_product_bloc.dart';
 import 'package:shoply/features/admin/products/presentation/widget/add_products_body.dart';
-import 'package:shoply/features/search/presentation/screens/products_search.dart';
+import 'package:shoply/features/filter/presentation/bloc/filter_bloc.dart';
+import 'package:shoply/features/filter/presentation/screens/filter_products.dart';
 
 class AddProductsScreen extends StatefulWidget {
   const AddProductsScreen({super.key});
@@ -32,7 +33,6 @@ class _AddProductsScreenState extends State<AddProductsScreen>
       duration: const Duration(milliseconds: 300),
       vsync: this,
     );
-
   }
 
   void _toggleDrawer() {
@@ -54,8 +54,11 @@ class _AddProductsScreenState extends State<AddProductsScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
- endDrawerEnableOpenDragGesture: false,
-      endDrawer: const ProductsSearch(),
+      endDrawerEnableOpenDragGesture: false,
+      endDrawer: BlocProvider(
+        create: (context) => sl<FilterBloc>(),
+        child: const FilterProducts(),
+      ),
       appBar: AdminAppBar(
         title: 'Add Products',
         isMain: true,
@@ -67,13 +70,12 @@ class _AddProductsScreenState extends State<AddProductsScreen>
               animationController: _animatedSearchController,
               iconAsset: AppAnimatedIcons.search,
               backGroundColor: context.colors.bluePinkDark,
-              onTap: ()async {
-
-
+              onTap: () async {
                 Future.delayed(const Duration(milliseconds: 400)).then(
-                  (value) {
+                      (value) {
                     // _toggleDrawer();
-                    _scaffoldKey.currentState?.openEndDrawer();                },
+                    _scaffoldKey.currentState?.openEndDrawer();
+                  },
                 );
               },
             ),
@@ -81,7 +83,8 @@ class _AddProductsScreenState extends State<AddProductsScreen>
         ],
       ),
       body: BlocProvider(
-        create: (context) => sl<AdminProductBloc>()
+        create: (context) =>
+        sl<AdminProductBloc>()
           ..add(
             const AdminProductEvent.getAdminProductList(),
           ),

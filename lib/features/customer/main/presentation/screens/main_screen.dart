@@ -11,7 +11,6 @@ import 'package:shoply/features/customer/main/presentation/cubit/main_cubit.dart
 import 'package:shoply/features/customer/main/presentation/widgets/main_bottom_nav_bar.dart';
 import 'package:shoply/features/customer/notifications/presentation/screen/notifications_screen.dart';
 import 'package:shoply/features/customer/profile/presentation/screen/profile_screen.dart';
-import 'package:shoply/features/search/presentation/screens/products_search.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

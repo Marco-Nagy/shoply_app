@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
 
 class ProductsDetailsEntity extends Equatable {
   final String id;

@@ -9,9 +9,14 @@ import 'package:shoply/features/auth/presentation/screens/login_screen.dart';
 import 'package:shoply/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:shoply/features/customer/home/presentation/bloc/home_bloc.dart';
 import 'package:shoply/features/customer/home/presentation/screen/product_details_screen.dart';
+import 'package:shoply/features/customer/home/presentation/screen/products_per_categories_screen.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
 import 'package:shoply/features/admin/home_admin_screen.dart';
 import 'package:shoply/features/customer/main/presentation/screens/main_screen.dart';
+import 'package:shoply/features/filter/domain/entities/filter_products_entity.dart';
+import 'package:shoply/features/filter/presentation/bloc/filter_bloc.dart';
+import 'package:shoply/features/filter/presentation/screens/filtered_admin_products_screen.dart';
+import 'package:shoply/features/filter/presentation/screens/filtered_customer_products_screen.dart';
 
 class AppRoutes {
   static const String login = '/';
@@ -20,6 +25,9 @@ class AppRoutes {
   static const String homeCustomer = 'homeCustomer';
   static const String webView = 'webView';
   static const String productDetails = 'productDetails';
+  static const String productsPerCategory = 'productsPerCategory';
+  static const filteredAdminProducts = 'filteredAdminProducts';
+  static const filteredCustomerProducts = 'filteredCustomerProducts';
 
   static Route<void> onGenerateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -55,6 +63,41 @@ class AppRoutes {
           page: BlocProvider(
             create: (context) => sl<HomeBloc>()..add(HomeEvent.getHomeProductDetails(productId: args as String)),
             child: ProductDetailsScreen(productId: args! as String),
+          ),
+        );
+        case AppRoutes.productsPerCategory:
+        return BaseRoute(
+          page: BlocProvider(
+            create: (context) => sl<HomeBloc>(),
+            child: ProductsPerCategoriesScreen(categoryInfo: args! as ({String categoryId, String categoryName,})),
+          ),
+        );
+      case AppRoutes.filteredAdminProducts:
+        return BaseRoute(
+          page: BlocProvider(
+            create: (context) => sl<FilterBloc>()
+              ..add(
+                FilterEvent.getFilteredProductsList(
+                  body: args as FilterProductsEntity,
+                ),
+              ),
+            child: FilteredAdminProductsScreen(
+              // filteredProducts: args! as FilterProductsEntity,
+            ),
+          ),
+        );
+      case AppRoutes.filteredCustomerProducts:
+        return BaseRoute(
+          page: BlocProvider(
+            create: (context) => sl<FilterBloc>()
+              ..add(
+                FilterEvent.getFilteredProductsList(
+                  body: args as FilterProductsEntity,
+                ),
+              ),
+            child: FilteredCustomerProductsScreen(
+              // filteredProducts: args! as FilterProductsEntity,
+            ),
           ),
         );
       default:

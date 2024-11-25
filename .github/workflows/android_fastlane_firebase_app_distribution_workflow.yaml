@@ -20,6 +20,11 @@ jobs:
           channel: 'stable'
           flutter-version: '3.22.1'
 
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+
       - name: Flutter Clean
         run: flutter clean
 

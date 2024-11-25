@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:shoply/core/app/Apis/api_result.dart';
 import 'package:shoply/core/app/apis/errors/error_handler.dart';
 import 'package:shoply/features/auth/data/models/role/user_role_response.dart';

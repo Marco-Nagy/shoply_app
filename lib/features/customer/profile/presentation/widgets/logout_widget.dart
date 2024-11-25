@@ -1,13 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shoply/core/app/app_cubit/app_cubit.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
-import 'package:shoply/core/helpers/extension/navigations.dart';
-import 'package:shoply/core/localization/app_localizations.dart';
 import 'package:shoply/core/localization/lang_keys.dart';
 import 'package:shoply/core/styles/app_images.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
@@ -15,7 +9,7 @@ import 'package:shoply/core/utils/app_logout.dart';
 import 'package:shoply/core/utils/widgets/custom_dialogs.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
 class LogoutWidget extends StatelessWidget {
-  const LogoutWidget({Key? key}) : super(key: key);
+  const LogoutWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

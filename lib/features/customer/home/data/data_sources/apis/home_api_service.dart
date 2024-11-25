@@ -14,10 +14,12 @@ factory  HomeApiService(Dio dio,{ String baseUrl}) =_HomeApiService;
   @POST(ApiConst.graphql)
   Future<GetAllCategoriesResponse> getAllCategories(@Body() Map<String, dynamic> query);
 @POST(ApiConst.graphql)
-Future<GetAllProductsResponse> getProductList(
-    @Body() Map<String, dynamic> query);
+Future<GetAllProductsResponse> getProductList(@Body() Map<String, dynamic> query);
+@POST(ApiConst.graphql)
+Future<GetAllProductsResponse> getProductListPerCategory(@Body() Map<String, dynamic> query);
 
 @POST(ApiConst.graphql)
-Future<ProductDetailsResponse> getProductDetails(
-    @Body() Map<String, dynamic> query);
+Future<ProductDetailsResponse> getProductDetails(@Body() Map<String, dynamic> query);
+
+
 }

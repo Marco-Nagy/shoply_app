@@ -29,7 +29,7 @@ Future<void> main() async {
     ),
   );
 
-  final appConfig = const AppConfig(
+  const appConfig = AppConfig(
     appEnvironment: EnvTypeEnum.prod,
     appName: 'Shoply',
     description: 'This is a Production version of Shoply',

@@ -46,7 +46,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState<dynamic>> {
 
         /// call userProfile method to get User Role
       final userRole=  await _authRepository.userRole();
-
+        await SharedPrefHelper().setString(
+          key: SharedPrefKeys.userRole,
+          stringValue: userRole.role??'',
+        );
         emit(AuthState.success(userRole: userRole.role!));
       },
       failure: (error) {

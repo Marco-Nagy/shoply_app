@@ -29,9 +29,14 @@ import 'package:shoply/features/admin/products/presentation/bloc/admin_product_b
 import 'package:shoply/features/auth/data/data_sources/auth_data_source.dart';
 import 'package:shoply/features/auth/data/repositories/auth_repository.dart';
 import 'package:shoply/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:shoply/features/customer/home/data/data_sources/home_api_service.dart';
+import 'package:shoply/features/customer/home/data/data_sources/apis/home_api_service.dart';
 import 'package:shoply/features/customer/home/data/data_sources/home_data_source.dart';
 import 'package:shoply/features/customer/home/data/repositories/home_repository.dart';
+import 'package:shoply/features/customer/home/domain/repositories/base_home_repository.dart';
+import 'package:shoply/features/customer/home/domain/use_cases/home_categories_list_use_case.dart';
+import 'package:shoply/features/customer/home/domain/use_cases/home_products_list_per_category_use_case.dart';
+import 'package:shoply/features/customer/home/domain/use_cases/home_products_list_use_case.dart';
+import 'package:shoply/features/customer/home/domain/use_cases/products_details_use_case.dart';
 import 'package:shoply/features/customer/home/presentation/bloc/home_bloc.dart';
 import 'package:shoply/features/customer/main/presentation/cubit/main_cubit.dart';
 import 'package:shoply/features/customer/profile/data/data_sources/profile_dat_source.dart';
@@ -40,6 +45,12 @@ import 'package:shoply/features/customer/profile/presentation/bloc/profile_bloc.
 import 'package:shoply/features/files/data/data_sources/upload_file_data_source.dart';
 import 'package:shoply/features/files/data/repositories/upload_file_repository.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
+import 'package:shoply/features/filter/data/data_sources/apis/filter_products_api_service.dart';
+import 'package:shoply/features/filter/data/data_sources/filter_products_data_source.dart';
+import 'package:shoply/features/filter/data/repositories/filter_products_repository.dart';
+import 'package:shoply/features/filter/domain/repositories/base_admin_product_repository.dart';
+import 'package:shoply/features/filter/domain/use_cases/get_products_list_use_case.dart';
+import 'package:shoply/features/filter/presentation/bloc/filter_bloc.dart';
 
 final sl = GetIt.instance;
 
@@ -53,6 +64,7 @@ Future<void> setupInjector() async {
   await _initMain();
   await _initProfile();
   await _initHomeCustomer();
+  await _initFilterProducts();
 }
 
 Future<void> _initCore() async {
@@ -146,12 +158,53 @@ Future<void> _initProfile() async {
 Future<void> _initHomeCustomer() async {
   final dio = DioFactory.getInstance();
   sl
-    ..registerFactory(() => HomeBloc(sl()))
+    ..registerFactory(() => HomeBloc(
+          sl(),
+          sl(),
+          sl(),
+          sl(),
+        ))
+
+    /// UseCases
     ..registerLazySingleton(
-            () => HomeRepository(sl()))
+      () => HomeCategoriesListUseCase(sl()),
+    )
     ..registerLazySingleton(
-            () => HomeDataSource(sl()))
+      () => HomeProductsListUseCase(sl()),
+    )
     ..registerLazySingleton(
-            () => HomeApiService(dio));
+      () => HomeProductsListPerCategoryUseCase(sl()),
+    )
+    ..registerLazySingleton(
+      () => ProductsDetailsUseCase(sl()),
+    )
+    //! Repositories
+    ..registerLazySingleton<BaseHomeRepository>(() => HomeRepository(sl()))
+    ..registerLazySingleton(() => HomeRepository(sl()))
+    // ? DataSource
+    ..registerLazySingleton<HomeDataSource>(() => HomeDataSource(sl()))
+    //* ApiService
+    ..registerLazySingleton<HomeApiService>(() => HomeApiService(dio));
+
+}
+Future<void> _initFilterProducts() async {
+  final dio = DioFactory.getInstance();
+  sl
+    ..registerFactory(() => FilterBloc(
+          sl(),
+        ))
+
+    /// UseCases
+    ..registerLazySingleton(
+      () => FilterProductsListUseCase(sl()),
+    )
+    //! Repositories
+    ..registerLazySingleton<BaseFilterProductsRepository>(() => FilterProductsRepository(sl()))
+    ..registerLazySingleton(() => FilterProductsRepository(sl()))
+    // ? DataSource
+    ..registerLazySingleton<FilterProductsDataSource>(() => FilterProductsDataSource(sl()))
+    //* ApiService
+    ..registerLazySingleton<FilterProductsApiService>(() => FilterProductsApiService(dio));
+
 }
 
