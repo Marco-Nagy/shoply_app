@@ -1,16 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shoply/core/Services/shared_preference/shared_pref_keys.dart';
 import 'package:shoply/core/Services/shared_preference/shared_preference_helper.dart';
 import 'package:shoply/features/auth/data/models/login/login_request.dart';
 import 'package:shoply/features/auth/data/models/login/login_response.dart';
-import 'package:shoply/features/auth/data/models/role/user_role_response.dart';
 import 'package:shoply/features/auth/data/models/sign_up/signup_request.dart';
-import 'package:shoply/features/auth/data/models/sign_up/signup_response.dart';
 import 'package:shoply/features/auth/data/repositories/auth_repository.dart';
 
 part 'auth_bloc.freezed.dart';
@@ -48,41 +45,46 @@ class AuthBloc extends Bloc<AuthEvent, AuthState<dynamic>> {
         );
 
         /// call userProfile method to get User Role
-        await getUserRole();
-        emit(AuthState.success(success));
-      },
-      failure: (error) {
-        emit(AuthState.failure(error: error));
-      },
-    );
-  }
-
-  Future<void> getUserRole() async {
-    emit(const AuthState.loading());
-
-    /// call userRole method
-    final result = await _authRepository.userRole();
-    result.when(
-      success: (UserRoleResponse success) {
-        /// save user id if get profile successful
-        SharedPrefHelper().setInt(
-          key: SharedPrefKeys.userId,
-          intValue: success.id ?? 0,
-        );
-        SharedPrefHelper().setString(
+      final userRole=  await _authRepository.userRole();
+        await SharedPrefHelper().setString(
           key: SharedPrefKeys.userRole,
-          stringValue: success.role!,
+          stringValue: userRole.role??'',
         );
-        if (kDebugMode) {
-          print('SharedPrefKeys.userRole  ${success.role} ');
-        }
-        emit(AuthState.success(success));
+        emit(AuthState.success(userRole: userRole.role!));
       },
       failure: (error) {
-        emit(AuthState.failure(error: error));
+        debugPrint('error.errorMsg ${error.errorMsg}');
+        emit(AuthState.failure(error: error.errorMsg));
       },
     );
   }
+
+  // Future<void> getUserRole() async {
+  //   emit(const AuthState.loading());
+  //
+  //   /// call userRole method
+  //   final result = await _authRepository.userRole();
+  //   result.when(
+  //     success: (UserRoleResponse success) {
+  //       /// save user id if get profile successful
+  //       SharedPrefHelper().setInt(
+  //         key: SharedPrefKeys.userId,
+  //         intValue: success.id ?? 0,
+  //       );
+  //       SharedPrefHelper().setString(
+  //         key: SharedPrefKeys.userRole,
+  //         stringValue: success.role!,
+  //       );
+  //       if (kDebugMode) {
+  //         print('SharedPrefKeys.userRole  ${success.role} ');
+  //       }
+  //       emit(AuthState.success(success));
+  //     },
+  //     failure: (error) {
+  //       emit(AuthState.failure(error: error));
+  //     },
+  //   );
+  // }
 
   Future<FutureOr<void>> _signUp(
       SignUpEvent event, Emitter<AuthState> emit,) async {
@@ -102,7 +104,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState<dynamic>> {
         add(const AuthEvent.login());
       },
       failure: (error) {
-        emit(AuthState.failure(error: error));
+        emit(AuthState.failure(error: error.errorMsg));
       },
     );
   }

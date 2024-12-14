@@ -10,7 +10,7 @@ import 'package:shoply/core/routes/app_routes.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/utils/animations/animate_do.dart';
 import 'package:shoply/core/utils/message_type_const.dart';
-import 'package:shoply/core/utils/widgets/custom_linear_button.dart';
+import 'package:shoply/core/utils/widgets/buttons/custom_linear_button.dart';
 import 'package:shoply/core/utils/widgets/snack_bar.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';

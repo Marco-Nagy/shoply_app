@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:meta/meta.dart';
 import 'package:shoply/core/app/env_variables.dart';
 
 
 class AppConfig extends InheritedWidget {
-   AppConfig({
+   const AppConfig({
     required this.appEnvironment,
     required this.appName,
     required this.description,
@@ -24,7 +22,6 @@ class AppConfig extends InheritedWidget {
     return context.dependOnInheritedWidgetOfExactType();
   }
 
-  
 
   @override
   bool updateShouldNotify(InheritedWidget oldWidget) => false;

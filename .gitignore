@@ -49,26 +49,8 @@ app.*.map.json
 firebase.json
 .firebaserc
 remoteconfig.template.json
+lib/core/Services/push_notifications/firebase_server_token.dart
 
-
-/android/app/google-services.json
-#.env variables
-.env.prod
-.env.dev
-.env.firebase
-firebase.json
-.firebaserc
-remoteconfig.template.json
-
-
-/android/app/google-services.json
-#.env variables
-.env.prod
-.env.dev
-.env.firebase
-firebase.json
-.firebaserc
-remoteconfig.template.json
 
 
 lib/core/Services/push_notifications/firebase_server_token.dart

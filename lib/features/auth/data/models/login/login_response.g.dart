@@ -11,11 +11,15 @@ LoginResponse _$LoginResponseFromJson(Map<String, dynamic> json) =>
       json['data'] == null
           ? null
           : LoginResponseData.fromJson(json['data'] as Map<String, dynamic>),
+      (json['errors'] as List<dynamic>?)
+          ?.map((e) => ErrorModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$LoginResponseToJson(LoginResponse instance) =>
     <String, dynamic>{
       'data': instance.data,
+      'errors': instance.errorResponse,
     };
 
 LoginResponseData _$LoginResponseDataFromJson(Map<String, dynamic> json) =>

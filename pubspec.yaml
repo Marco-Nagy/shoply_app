@@ -4,51 +4,37 @@ description: "shop app"
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-# The following defines the version and build number for your application.
-# A version number is three numbers separated by dots, like 1.2.43
-# followed by an optional build number separated by a +.
-# Both the version and the builder number may be overridden in flutter
-# build by specifying --build-name and --build-number, respectively.
-# In Android, build-name is used as versionName while build-number used as versionCode.
-# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
-# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
-# Read more about iOS versioning at
-# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-# In Windows, build-name is used as the major, minor, and patch parts
-# of the product and file versions while build-number is used as the build suffix.
 version: 1.0.2+1
 
 environment:
   sdk: '>=3.3.3 <4.0.0'
 
-# Dependencies specify other packages that your package needs in order to work.
-# To automatically upgrade your package dependencies to the latest versions
-# consider running `flutter pub upgrade --major-versions`. Alternatively,
-# dependencies can be manually updated by changing the version numbers below to
-# the latest version available on pub.dev. To see which dependencies have newer
-# versions available, run `flutter pub outdated`.
 dependencies:
+  internet_connection_checker: any
   flutter:
     sdk: flutter
 
   #firebase
-  firebase_auth: ^5.1.0
-  firebase_core: ^3.1.0
+  firebase_auth: ^5.1.4
+  firebase_core: ^3.3.0
 
-
-
-
+  # Notifications
+  firebase_messaging: ^15.0.4
+  flutter_local_notifications: ^17.2.2
+  googleapis_auth: ^1.6.0
+#  awesome_notifications: ^0.9.3+1
   #core
 #  very_good_analysis: ^5.1.0
   connectivity_plus: ^6.0.3
   flutter_dotenv: ^5.1.0
   flutter_screenutil: ^5.9.3
-#  flutter_launcher_icons: ^0.13.1
-#  flutter_lints: ^4.0.0
+  intl: ^0.19.0
   flutter_native_splash: ^2.4.0
   google_fonts: ^6.2.1
   flutter_translate: ^4.1.0
   get_it: ^7.7.0
+  package_info_plus: ^8.0.2
+  equatable: ^2.0.5
 
   #language
   flutter_localizations:
@@ -63,13 +49,23 @@ dependencies:
   oktoast: ^3.4.0
   awesome_snackbar_content: ^0.1.3
   font_awesome_flutter: ^10.7.0
+  flutter_zoom_drawer: ^3.2.0
+  shimmer: ^3.0.0
+  flutter_swipe_action_cell: ^3.1.3
+  vibration: ^1.9.0
+  cached_network_image: ^3.3.1
+  webview_flutter: ^4.8.0
+  url_launcher: ^6.3.0
+  carousel_slider: ^5.0.0
 
-#  Image Picker
+  #  Image Picker
   image_picker: ^1.1.2
   image_cropper: ^7.0.5
   permission_handler: ^11.3.1
   photo_view: ^0.15.0
   card_swiper: ^3.0.1
+  path_provider: ^2.1.3
+
 
   # bloc
   flutter_bloc: ^8.1.6
@@ -85,16 +81,29 @@ dependencies:
   pretty_dio_logger: ^1.3.1
   retrofit: ^4.1.0
   json_annotation: ^4.9.0
+  dropdown_search: ^5.0.6
+# Data Source database Hive
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
 
 
 
 dev_dependencies:
+  # Unit testing
   flutter_test:
     sdk: flutter
+  mockito: ^5.4.4
+  mocktail: ^1.0.4
+  bloc_test: ^9.1.7
 #    core
   flutter_launcher_icons: ^0.13.1
   flutter_lints: ^4.0.0
-  very_good_analysis: ^5.1.0
+  very_good_analysis: ^6.0.0
+
+
+#  test: ^1.17.1
+#  flutter_test_platform_widgets: ^3.1.0
+#  flutter_driver: ^0.11.0
 
 #  freezed
 # dart run build_runner build --delete-conflicting-outputs
@@ -102,10 +111,11 @@ dev_dependencies:
   build_runner: ^2.4.11
 
 
-#  APIs
+#  Remote Database using APIs
   retrofit_generator: ^8.1.0
   json_serializable: ^6.8.0
-
+# Local Database using hive generator
+  hive_generator: ^2.0.1
 
 
 
@@ -159,4 +169,3 @@ flutter:
           weight: 500
         - asset: assets/fonts/english/poppins/Poppins-Regular.ttf
           weight: 400
-
