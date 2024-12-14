@@ -26,11 +26,13 @@ plugins {
     id "org.jetbrains.kotlin.android" version "1.9.10" apply false
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS) // Enforces centralized repositories
     repositories {
-        google()
-        mavenCentral()
+        google() // Required for Android dependencies
+        mavenCentral() // Standard Java and Kotlin dependencies
+        jcenter() // Optional, but not recommended (deprecated)
     }
 }
 
-include ":app"
+rootProject.name = "Shoply"
+include ':app'
