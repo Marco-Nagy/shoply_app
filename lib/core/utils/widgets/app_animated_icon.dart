@@ -10,7 +10,7 @@ class AppAnimatedIcon extends StatefulWidget {
     super.key,
     this.iconColor,
     this.backGroundColor,
-    this.size,
+    this.size, this.animationDuration, this.animateTo,
   });
 
   final AnimationController animationController;
@@ -19,6 +19,8 @@ class AppAnimatedIcon extends StatefulWidget {
   final Color? iconColor;
   final Color? backGroundColor;
   final double? size;
+  final int? animationDuration;
+  final double? animateTo;
 
   @override
   _AppAnimatedIconState createState() => _AppAnimatedIconState();
@@ -30,8 +32,10 @@ class _AppAnimatedIconState extends State<AppAnimatedIcon> {
     return InkWell(
       onTap: ()async {
         widget.onTap();
+setState(() {
+  _animateIcon(widget.animationController,widget.animationDuration??600, widget.animateTo??.9);
+});
 
-        // _animateIcon(widget.animationController);
       },
       child: Container(
         color: widget.backGroundColor ?? context.colors.mainColor,
@@ -52,18 +56,18 @@ class _AppAnimatedIconState extends State<AppAnimatedIcon> {
     );
   }
 
-  dynamic _animateIcon(AnimationController animation) {
+  dynamic _animateIcon(AnimationController animation,int animationDuration ,double animateTo) {
     if (animation.status == AnimationStatus.dismissed) {
       animation
         ..reset()
         ..animateTo(
-          0.9,
-          duration: const Duration(milliseconds: 400),
+          animateTo,
+          duration:  Duration(milliseconds:animationDuration),
         );
     } else {
-      animation
-        ..reverseDuration = const Duration(milliseconds: 300)
-        ..reverse();
+      animation.reverse()
+
+      ;
     }
   }
 }

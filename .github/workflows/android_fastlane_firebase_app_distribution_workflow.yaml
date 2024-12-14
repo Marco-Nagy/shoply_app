@@ -20,6 +20,7 @@ jobs:
           channel: 'stable'
           flutter-version: '3.24.4'
 
+
       - name: Setup Java
         uses: actions/setup-java@v3
         with:

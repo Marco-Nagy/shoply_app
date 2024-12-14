@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shoply/core/Services/shared_preference/shared_pref_keys.dart';
-import 'package:shoply/core/Services/shared_preference/shared_preference_helper.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/helpers/extension/navigations.dart';
 import 'package:shoply/core/localization/lang_keys.dart';
@@ -10,7 +8,7 @@ import 'package:shoply/core/routes/app_routes.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/utils/animations/animate_do.dart';
 import 'package:shoply/core/utils/message_type_const.dart';
-import 'package:shoply/core/utils/widgets/custom_linear_button.dart';
+import 'package:shoply/core/utils/widgets/buttons/custom_linear_button.dart';
 import 'package:shoply/core/utils/widgets/snack_bar.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
@@ -45,37 +43,29 @@ class LoginBody extends StatelessWidget {
             CustomFadeInRight(
               duration: 400,
               child: BlocConsumer<AuthBloc, AuthState<dynamic>>(
-                listener: (context, state) async {
-                  await state.whenOrNull(
-                    success: (data) async {
-                      final userRole = SharedPrefHelper()
-                          .getString(key: SharedPrefKeys.userRole);
-
-                      if (userRole == 'admin') {
-                        await Navigator.of(context).pushReplacementNamed(
+                listener: (context, state)  {
+                   state.whenOrNull(
+                    success: (userRole) async {
+                        aweSnackBar(
+                        title: 'Success',
+                        msg: context.translate(LangKeys.loggedSuccessfully),
+                        context: context,
+                        type: MessageTypeConst.success,
+                      );
+                        if (userRole == 'admin') {
+                       context.pushReplacementNamed(
                           AppRoutes.homeAdmin,
-                          arguments: data,
                         );
-                      await  aweSnackBar(
-                          title: 'Success',
-                          msg: context.translate(LangKeys.loggedSuccessfully),
-                          context: context,
-                          type: MessageTypeConst.success,
-                        );
+
                       } else {
-                        await Navigator.of(context).pushReplacementNamed(
+                        context.pushReplacementNamed(
                           AppRoutes.homeCustomer,
-                          arguments: data,
                         );
-                      await  aweSnackBar(
-                          title: 'Success',
-                          msg:context.translate(LangKeys.loggedSuccessfully),
-                          context: context,
-                          type: MessageTypeConst.help,
-                        );
+
                       }
                     },
                     failure: (error) {
+                      debugPrint('error.errorMsg $error');
                       aweSnackBar(
                         title: 'Error',
                         msg: context.translate(LangKeys.loggedError),
@@ -110,10 +100,10 @@ class LoginBody extends StatelessWidget {
                           ),
                         ),
                         onTap: () async {
-                          final _bloc = context.read<AuthBloc>();
-                          if (_bloc.formKye.currentState!
+                          final bloc = context.read<AuthBloc>();
+                          if (bloc.formKye.currentState!
                               .validate()) {
-                            _bloc.add(const AuthEvent.login());
+                            bloc.add(const AuthEvent.login());
                           }
                         },
                       );

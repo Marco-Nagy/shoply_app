@@ -14,23 +14,19 @@ class AuthDataSource {
   final ApiService _apiService;
 
   Future<LoginResponse> login(LoginRequest body) async {
-    final response =
-        await _apiService.login(AuthQueries().loginQuery(body: body));
-    return response;
+    return await _apiService.login(AuthQueries().loginQuery(body: body));
   }
 
   Future<UserRoleResponse> userRole() async {
     final accessToken =
-        SharedPrefHelper().getString(key: SharedPrefKeys.accessToken)??'';
-    final response = await _apiService.userRole(
+        SharedPrefHelper().getString(key: SharedPrefKeys.accessToken) ?? '';
+    return await _apiService.userRole(
       'Bearer ${accessToken ?? 'Null Token'}',
     );
-    return response;
   }
   Future<SignupResponse> signUp(SignupRequest body) async {
-    final response = await _apiService.signUp(
+    return await _apiService.signUp(
       AuthQueries().signUpQuery(body: body),
     );
-    return response;
   }
 }

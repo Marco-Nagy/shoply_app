@@ -7,7 +7,7 @@ import 'package:shoply/core/localization/app_localizations.dart';
 import 'package:shoply/core/localization/lang_keys.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/utils/animations/animate_do.dart';
-import 'package:shoply/core/utils/widgets/custom_linear_button.dart';
+import 'package:shoply/core/utils/widgets/buttons/custom_linear_button.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
 
 class SwitchButtons extends StatelessWidget {
