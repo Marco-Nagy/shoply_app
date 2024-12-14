@@ -71,3 +71,4 @@ firebase.json
 remoteconfig.template.json
 
 
+lib/core/Services/push_notifications/firebase_server_token.dart

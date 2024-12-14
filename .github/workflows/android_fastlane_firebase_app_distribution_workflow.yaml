@@ -1,38 +1,44 @@
 name: Android Fastlane with Firebase App Distribution Workflow
+
+
 on:
   push:
     branches:
       - master
+
 jobs:
-    distribute_to_firebase:
-      runs-on: ubuntu-latest
-      steps:
-      - name: checkout my repo code,
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup JDK 11
-        uses: actions/setup-java@v2
-        with:
-          java-version: '11'
-          distribution: 'temurin'
-
-      - name: Install Flutter
+      - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
+          flutter-version: '3.24.4'
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+      - name: Setup Java
+        uses: actions/setup-java@v3
         with:
-          ruby-version: '3.2.3'
-          architecture: 'x86_64-linux'
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          working-directory: android
+          java-version: '17'
 
-      - name: Build and Distribute App
-        env:
-          FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}
+      - name: Flutter Clean
+        run: flutter clean
 
-        run:
-          bundle exec fastlane android firebase_distribution
-        working-directory: android
+      - name: Build APK for Production
+        run: flutter build apk --release --flavor production -t lib/main_production.dart
+
+      - name: Upload APK to Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        with:
+          appId: ${{ secrets.ANDROID_APP_ID }}
+          token: ${{ secrets.FIREBASE_CLI_TOKEN }}
+          groups: pre-tester # Refactor to use a secret for tester group
+          file: ../build/app/outputs/flutter-apk/app-production-release.apk
+          releaseNotes: "First GitHub Action Firebase Distribution"
+
+      # Optionally, you can add steps for notifications, testing, etc.
+
