@@ -30,7 +30,6 @@ dependencyResolutionManagement {
     repositories {
         google() // Required for Android dependencies
         mavenCentral() // Standard Java and Kotlin dependencies
-        jcenter() // Optional, but not recommended (deprecated)
     }
 }
 
