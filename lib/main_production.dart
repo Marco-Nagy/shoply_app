@@ -10,7 +10,7 @@ import 'package:shoply/firebase_options.dart';
 import 'package:shoply/soply_app.dart';
 
 import 'app_config.dart';
-import 'core/Services/hive/hive_database.dart';
+import 'core/Services/localDataSource/hive_database.dart';
 import 'core/Services/push_notifications/firebase_cloud_messaging.dart';
 
 Future<void> main() async {

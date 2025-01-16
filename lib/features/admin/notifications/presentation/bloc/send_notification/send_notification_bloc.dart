@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shoply/features/admin/notifications/repository/add_notification_repo.dart';
+import 'package:shoply/features/admin/notifications/domain/repository/add_notification_repo.dart';
 
 part 'send_notification_bloc.freezed.dart';
 part 'send_notification_event.dart';

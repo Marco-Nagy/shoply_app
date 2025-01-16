@@ -13,9 +13,7 @@ class FileDataSource {
     form.files.add(
       MapEntry(
         'file',
-        await MultipartFile.fromFile(
-          file.path,
-          filename: file.path.split('/').last,
+        await MultipartFile.fromFile(file.path, filename: file.path.split('/').last,
         ),
       ),
     );

@@ -9,7 +9,7 @@ class AdminNotificationsState with _$AdminNotificationsState {
 
   //* Get Admin Notifications List States
   const factory AdminNotificationsState.getAdminNotificationsListSuccess(
-          List<AddNotificationModel?> notificationsList) =
+          List<AddNotificationEntity?> notificationsList) =
       GetAdminNotificationsListSuccess;
 
   const factory AdminNotificationsState.getAdminNotificationsListEmpty() =

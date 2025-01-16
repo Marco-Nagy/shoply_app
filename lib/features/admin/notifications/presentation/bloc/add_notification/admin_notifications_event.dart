@@ -8,13 +8,13 @@ class AdminNotificationsEvent with _$AdminNotificationsEvent {
       FetchAdminNotificationsListEvent;
 
   const factory AdminNotificationsEvent.createNewNotificationEvent(
-      {required AddNotificationModel body}) = CreateNotificationEvent;
+      {required AddNotificationEntity body}) = CreateNotificationEvent;
 
   const factory AdminNotificationsEvent.updateNotificationEvent(
-      {required AddNotificationModel body}) = UpdateNotificationEvent;
+      {required AddNotificationEntity body}) = UpdateNotificationEvent;
 
   const factory AdminNotificationsEvent.deleteNotificationEvent(
-      {required AddNotificationModel notification}) = DeleteNotificationEvent;
+      {required AddNotificationEntity notification}) = DeleteNotificationEvent;
 
 
 }
