@@ -7,6 +7,7 @@ import 'package:shoply/core/styles/icons/app_animated_icons.dart';
 import 'package:shoply/core/utils/animations/animate_do.dart';
 import 'package:shoply/core/utils/widgets/app_animated_icon.dart';
 import 'package:shoply/core/utils/widgets/buttons/custom_linear_button.dart';
+import 'package:shoply/features/customer/favorites/presentation/cubit/favorites_cubit.dart';
 import 'package:shoply/features/customer/home/presentation/bloc/home_bloc.dart';
 import 'package:shoply/features/customer/home/presentation/widgets/home_body.dart';
 import 'package:shoply/features/customer/main/presentation/widgets/main_customer_app_bar.dart';
@@ -57,10 +58,18 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) =>
-          sl<HomeBloc>()..add(const HomeEvent.fetchHomeCategories())
-        ..add(const HomeEvent.getHomeProductList()),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) =>
+          sl<HomeBloc>()
+            ..add(const HomeEvent.fetchHomeCategories())..add(
+              const HomeEvent.getHomeProductList()),
+        ),
+        BlocProvider(
+          create: (context) => sl<FavoritesCubit>()..getFavorites(),
+        ),
+      ],
       child: Scaffold(
           key: _scaffoldKey,
           backgroundColor: Colors.transparent,
@@ -88,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       size: 40,
                       onTap: () async {
                         Future.delayed(const Duration(milliseconds: 400)).then(
-                          (value) {
+                              (value) {
                             _scaffoldKey.currentState?.openEndDrawer();
                           },
                         );
@@ -114,16 +123,17 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       onPressed: scrollUp,
                       elevation: 12,
                       backgroundColor: context.colors.bluePinkLight,
-                      child:  AppAnimatedIcon(
+                      child: AppAnimatedIcon(
                         animationController: _animatedUpController!,
                         iconAsset: AppAnimatedIcons.upArrow,
                         backGroundColor: Colors.transparent,
                         iconColor: context.colors.white,
                         size: 60,
                         onTap: () async {
-                          Future.delayed(const Duration(milliseconds: 400)).then(
+                          Future.delayed(const Duration(milliseconds: 400))
+                              .then(
                                 (value) {
-                             scrollUp();
+                              scrollUp();
                             },
                           );
                         },

@@ -30,6 +30,11 @@ import 'package:shoply/features/admin/products/presentation/bloc/admin_product_b
 import 'package:shoply/features/auth/data/data_sources/auth_data_source.dart';
 import 'package:shoply/features/auth/data/repositories/auth_repository.dart';
 import 'package:shoply/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:shoply/features/customer/favorites/data/data_sources/favorites_data_source.dart';
+import 'package:shoply/features/customer/favorites/data/repositories/favorites_repo_impl.dart';
+import 'package:shoply/features/customer/favorites/domain/repositories/favorites_repo.dart';
+import 'package:shoply/features/customer/favorites/domain/use_cases/get_favorites_use_case.dart';
+import 'package:shoply/features/customer/favorites/domain/use_cases/manage_favorite_use_case.dart';
 import 'package:shoply/features/customer/favorites/presentation/cubit/favorites_cubit.dart';
 import 'package:shoply/features/customer/home/data/data_sources/apis/home_api_service.dart';
 import 'package:shoply/features/customer/home/data/data_sources/home_data_source.dart';
@@ -195,9 +200,22 @@ Future<void> _initFilterProducts() async {
 
 Future<void> _initIsar() async {
   final isarDatabaseHelper = IsarDatabaseHelper();
-  await isarDatabaseHelper.initialize(); // Ensure Isar is initialized
+  await isarDatabaseHelper.initialize(); // Ensure initialization
   sl.registerSingleton<IsarDatabaseHelper>(isarDatabaseHelper);
 }
 Future<void> _initFavorites() async {
-  sl.registerFactory(FavoritesCubit.new);
+  final isar = IsarDatabaseHelper();
+  sl
+    ..registerFactory(() => FavoritesCubit(sl(), sl()))
+
+  /// UseCases
+    ..registerLazySingleton(() => ManageFavoriteUseCase(sl()))
+    ..registerLazySingleton(() => GetFavoritesUseCase(sl()))
+  //! Repositories
+    ..registerLazySingleton<FavoritesRepo>(() => FavoritesRepoImpl(sl()))
+    ..registerLazySingleton(() => FavoritesRepoImpl(sl()))
+  // ? DataSource
+    ..registerLazySingleton<FavoritesDataSource>(() => FavoritesDataSource(isar));
+  //* LocalDataSource
+
 }

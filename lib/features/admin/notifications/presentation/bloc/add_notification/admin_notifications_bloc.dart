@@ -25,10 +25,10 @@ class AdminNotificationsBloc
     try {
       final isarHelper = sl<IsarDatabaseHelper>();
 
-      // Ensure Isar is initialized
-      if (isarHelper.isar == null) {
-        await isarHelper.initialize();
-      }
+      // // Ensure Isar is initialized
+      // if (isarHelper.isar == null) {
+      //   await isarHelper.initialize();
+      // }
 
       // Convert entity to schema and save
       await isarHelper.addEntity(event.body.toSchema());
@@ -46,9 +46,9 @@ class AdminNotificationsBloc
     emit(const AdminNotificationsState.adminNotificationsLoading());
     try {
       final isarHelper = sl<IsarDatabaseHelper>();
-      if (isarHelper.isar == null) {
-        await isarHelper.initialize(); // Ensure Isar is initialized
-      }
+      // if (isarHelper.isar == null) {
+      //   await isarHelper.initialize(); // Ensure Isar is initialized
+      // }
 
       final notifications =
           await isarHelper.getAllEntities<AddNotificationTableSchema>();

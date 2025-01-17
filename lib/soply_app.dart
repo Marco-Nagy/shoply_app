@@ -35,7 +35,7 @@ class ShoplyApp extends StatelessWidget {
                   ),
               ),
               BlocProvider<FavoritesCubit>(
-                  create: (context) => sl<FavoritesCubit>()),
+                  create: (context) => sl<FavoritesCubit>()..getFavorites()),
             ],
             child: ScreenUtilInit(
               designSize: kIsWeb

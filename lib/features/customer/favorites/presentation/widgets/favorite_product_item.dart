@@ -12,25 +12,23 @@ import 'package:shoply/core/utils/widgets/app_animated_icon.dart';
 import 'package:shoply/core/utils/widgets/images/custom_container_linear_customer.dart';
 import 'package:shoply/core/utils/widgets/images/custom_image.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
-import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
-import 'package:shoply/features/customer/favorites/data/mappers/favorites_mappers.dart';
 import 'package:shoply/features/customer/favorites/domain/entities/favorites_entity.dart';
 import 'package:shoply/features/customer/favorites/presentation/cubit/favorites_cubit.dart';
 import 'package:vibration/vibration.dart';
 
-class HomeProductItem extends StatefulWidget {
-  const HomeProductItem({
+class FavoriteProductItem extends StatefulWidget {
+  const FavoriteProductItem({
     super.key,
     required this.product,
   });
 
-  final GetProductEntity product;
+  final FavoritesEntity product;
 
   @override
-  State<HomeProductItem> createState() => _HomeProductItemState();
+  State<FavoriteProductItem> createState() => _FavoriteProductItemState();
 }
 
-class _HomeProductItemState extends State<HomeProductItem>
+class _FavoriteProductItemState extends State<FavoriteProductItem>
     with TickerProviderStateMixin {
   late AnimationController animationFavoritController;
   late AnimationController animationEditController;
@@ -44,15 +42,9 @@ class _HomeProductItemState extends State<HomeProductItem>
         vsync: this, duration: const Duration(milliseconds: 300));
     animationEditController = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 300));
-    checkFavorite();
   }
 
-  checkFavorite() async {
-    context.read<FavoritesCubit>().getFavorites();
 
-    isFavorite = await context.read<FavoritesCubit>().isFavorite(widget.product.id);
-
-  }
 
   @override
   void dispose() {
@@ -97,7 +89,7 @@ class _HomeProductItemState extends State<HomeProductItem>
                         child: CustomImage(
                           tag: 'tag${widget.product.id}',
                           imageUrl:
-                          widget.product.images.first.imageProductFormat(),
+                          widget.product.image.imageProductFormat(),
                         )),
                   ),
                 ),
@@ -106,7 +98,7 @@ class _HomeProductItemState extends State<HomeProductItem>
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10.w),
                   child: TextApp(
-                    text: widget.product.title,
+                    text: widget.product.productName,
                     style: MyFonts.styleBold700_14
                         .copyWith(color: context.colors.textColor),
                     maxLines: 1,
@@ -117,7 +109,7 @@ class _HomeProductItemState extends State<HomeProductItem>
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10.w),
                   child: TextApp(
-                    text: widget.product.category.name,
+                    text: widget.product.categoryName,
                     style: MyFonts.styleBold700_12
                         .copyWith(color: context.colors.textColor),
                     maxLines: 1,
@@ -192,7 +184,7 @@ class _HomeProductItemState extends State<HomeProductItem>
                             builder: (context, state) {
                               switch (state) {
                             case SuccessFavoritesState():
-                              return favoriteIcon( state.favorites.any((element) =>element.productId==widget.product.id ,));
+                              return favoriteIcon( state.favorites.any((element) =>element.productId==widget.product.id.toString() ,));
                             }
                               return favoriteIcon( isFavorite);
                             },
@@ -226,8 +218,7 @@ favoriteIcon(bool isFavorite)=>  AppAnimatedIcon(
           () {
         itemPressed.value = false;
         _deleteProduct(context,
-            favorite: FavoritesMappers()
-                .fromModel(widget.product));
+            favorite: widget.product);
       },
     );
   },

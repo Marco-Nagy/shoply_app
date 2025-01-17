@@ -1,45 +1,60 @@
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shoply/features/admin/notifications/data/model/add_notification_table_schema.dart';
+import 'package:shoply/features/customer/favorites/data/models/favorites_table.dart';
 
 class IsarDatabaseHelper {
-  late final Isar _isar;
+  static Isar? _isar;
 
   /// Initializes the Isar database with the required schemas.
   Future<void> initialize() async {
+    if (_isar != null && _isar!.isOpen) return; // Avoid re-initialization if already opened
+
     final dir = await getApplicationSupportDirectory();
     _isar = await Isar.open(
-      [AddNotificationTableSchemaSchema], // List all schemas here
+      [AddNotificationTableSchemaSchema, FavoritesTableSchema], // List all schemas here
       directory: dir.path,
     );
   }
 
+  /// Ensures Isar is initialized before performing any action.
+  Future<Isar> _ensureInitialized() async {
+    if (_isar == null || !_isar!.isOpen) {
+      await initialize();
+    }
+    return _isar!;
+  }
+
   /// Clears all collections in the Isar database.
   Future<void> clearAllCollections() async {
-    await _isar.writeTxn(() async {
-       _isar.clearSync(); // Clear specific collections
+    final isar = await _ensureInitialized();
+    await isar.writeTxn(() async {
+      await isar.clear(); // Clear all collections
     });
   }
 
-  /// Returns the Isar instance for direct use.
-  Isar get isar => _isar;
-
   /// Adds an entity to the specified collection.
   Future<void> addEntity<T>(T entity) async {
-    await _isar.writeTxn(() async {
-      await _isar.collection<T>().put(entity);
+    final isar = await _ensureInitialized();
+    await isar.writeTxn(() async {
+      await isar.collection<T>().put(entity);
     });
   }
 
   /// Retrieves all entities from the specified collection.
   Future<List<T>> getAllEntities<T>() async {
-    return _isar.collection<T>().where().findAll();
+    final isar = await _ensureInitialized();
+    return isar.collection<T>().where().findAll();
   }
 
   /// Deletes an entity from the specified collection by ID.
-  Future<void> deleteEntity<T>(id) async {
-    await _isar.writeTxn(() async {
-      await _isar.collection<T>().delete(id);
+  Future<void> deleteEntity<T>(dynamic id) async {
+    final isar = await _ensureInitialized();
+    await isar.writeTxn(() async {
+      await isar.collection<T>().delete(id);
     });
   }
+
+  /// Checks if Isar is open.
+  bool get isIsarOpen => _isar != null && _isar!.isOpen;
 }
