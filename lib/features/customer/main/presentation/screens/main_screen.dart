@@ -5,7 +5,7 @@ import 'package:shoply/core/helpers/enums/nav_bar_enum.dart';
 import 'package:shoply/core/helpers/extension/mediaQueryValues.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/features/customer/cart/presentation/screen/cart_screen.dart';
-import 'package:shoply/features/customer/favorits/presentation/screen/favorites_screen.dart';
+import 'package:shoply/features/customer/favorites/presentation/screen/favorites_screen.dart';
 import 'package:shoply/features/customer/home/presentation/screen/home_screen.dart';
 import 'package:shoply/features/customer/main/presentation/cubit/main_cubit.dart';
 import 'package:shoply/features/customer/main/presentation/widgets/main_bottom_nav_bar.dart';
@@ -98,8 +98,6 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
         return const FavoritesScreen();
       case NavBarEnum.profile:
         return const ProfileScreen();
-      default:
-        const HomeScreen();
-    }
+      }
   }
 }

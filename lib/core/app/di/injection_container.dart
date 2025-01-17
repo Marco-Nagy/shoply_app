@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
+import 'package:shoply/core/Services/localDataSource/isar_database_helper.dart';
 import 'package:shoply/core/app/Apis/api_service.dart';
 import 'package:shoply/core/app/Apis/dio_factory.dart';
 import 'package:shoply/core/app/app_cubit/app_cubit.dart';
@@ -14,9 +15,9 @@ import 'package:shoply/features/admin/dashboard/data/data_sources/dashboard_data
 import 'package:shoply/features/admin/dashboard/data/repositories/dashboard_repository.dart';
 import 'package:shoply/features/admin/dashboard/presentation/cubit/dashboard_bloc.dart';
 import 'package:shoply/features/admin/notifications/data/data_sources/add_notification_data_source.dart';
+import 'package:shoply/features/admin/notifications/domain/repository/add_notification_repo.dart';
 import 'package:shoply/features/admin/notifications/presentation/bloc/add_notification/admin_notifications_bloc.dart';
 import 'package:shoply/features/admin/notifications/presentation/bloc/send_notification/send_notification_bloc.dart';
-import 'package:shoply/features/admin/notifications/repository/add_notification_repo.dart';
 import 'package:shoply/features/admin/products/data/data_sources/admin_products_data_source.dart';
 import 'package:shoply/features/admin/products/data/data_sources/apis/admin_products_api_service.dart';
 import 'package:shoply/features/admin/products/data/repository/admin_product_repository.dart';
@@ -29,6 +30,12 @@ import 'package:shoply/features/admin/products/presentation/bloc/admin_product_b
 import 'package:shoply/features/auth/data/data_sources/auth_data_source.dart';
 import 'package:shoply/features/auth/data/repositories/auth_repository.dart';
 import 'package:shoply/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:shoply/features/customer/favorites/data/data_sources/favorites_data_source.dart';
+import 'package:shoply/features/customer/favorites/data/repositories/favorites_repo_impl.dart';
+import 'package:shoply/features/customer/favorites/domain/repositories/favorites_repo.dart';
+import 'package:shoply/features/customer/favorites/domain/use_cases/get_favorites_use_case.dart';
+import 'package:shoply/features/customer/favorites/domain/use_cases/manage_favorite_use_case.dart';
+import 'package:shoply/features/customer/favorites/presentation/cubit/favorites_cubit.dart';
 import 'package:shoply/features/customer/home/data/data_sources/apis/home_api_service.dart';
 import 'package:shoply/features/customer/home/data/data_sources/home_data_source.dart';
 import 'package:shoply/features/customer/home/data/repositories/home_repository.dart';
@@ -65,6 +72,8 @@ Future<void> setupInjector() async {
   await _initProfile();
   await _initHomeCustomer();
   await _initFilterProducts();
+  await _initIsar();
+  await _initFavorites();
 }
 
 Future<void> _initCore() async {
@@ -73,12 +82,10 @@ Future<void> _initCore() async {
   sl
     ..registerFactory(AppCubit.new)
     ..registerLazySingleton<ApiService>(() => ApiService(dio))
-    ..registerSingleton <GlobalKey<NavigatorState>>(navigatorState)
-    ..registerFactory(()=>FileCubit(sl()))
-    ..registerLazySingleton(()=>FileRepository(sl()))
-    ..registerLazySingleton(()=>FileDataSource(sl()))
-
-  ;
+    ..registerSingleton<GlobalKey<NavigatorState>>(navigatorState)
+    ..registerFactory(() => FileCubit(sl()))
+    ..registerLazySingleton(() => FileRepository(sl()))
+    ..registerLazySingleton(() => FileDataSource(sl()));
 }
 
 Future<void> _initAuth() async {
@@ -88,6 +95,7 @@ Future<void> _initAuth() async {
     ..registerLazySingleton<AuthRepository>(() => AuthRepository(sl()))
     ..registerLazySingleton<AuthDataSource>(() => AuthDataSource(sl()));
 }
+
 Future<void> _initDashboard() async {
   final dio = DioFactory.getInstance();
   sl
@@ -96,58 +104,52 @@ Future<void> _initDashboard() async {
     ..registerLazySingleton<DashboardDataSource>(() => DashboardDataSource(sl()))
     ..registerLazySingleton<DashboardApiService>(() => DashboardApiService(dio));
 }
+
 Future<void> _initAdminCategories() async {
   final dio = DioFactory.getInstance();
   sl
     ..registerFactory(() => AdminCategoriesBloc(sl()))
-    ..registerLazySingleton<AdminCategoriesRepository>(
-        () => AdminCategoriesRepository(sl()))
-    ..registerLazySingleton<AdminCategoriesDataSource>(
-        () => AdminCategoriesDataSource(sl()))
-    ..registerLazySingleton<AdminCategoriesApiService>(
-        () => AdminCategoriesApiService(dio));
+    ..registerLazySingleton<AdminCategoriesRepository>(() => AdminCategoriesRepository(sl()))
+    ..registerLazySingleton<AdminCategoriesDataSource>(() => AdminCategoriesDataSource(sl()))
+    ..registerLazySingleton<AdminCategoriesApiService>(() => AdminCategoriesApiService(dio));
 }
+
 Future<void> _initAdminProducts() async {
   final dio = DioFactory.getInstance();
   sl
     ..registerFactory(() => AdminProductBloc(
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-        ))
+      sl(),
+      sl(),
+      sl(),
+      sl(),
+    ))
 
-    /// UseCases
-    ..registerLazySingleton(
-      () => GetProductsListUseCase(sl()),
-    )
-    ..registerLazySingleton(
-      () => CreateProductUseCase(sl()),
-    )
-    ..registerLazySingleton(
-      () => UpdateProductUseCase(sl()),
-    )
-    ..registerLazySingleton(() => DeleteProductUseCase(sl()),)
-    //! Repositories
+  /// UseCases
+    ..registerLazySingleton(() => GetProductsListUseCase(sl()))
+    ..registerLazySingleton(() => CreateProductUseCase(sl()))
+    ..registerLazySingleton(() => UpdateProductUseCase(sl()))
+    ..registerLazySingleton(() => DeleteProductUseCase(sl()))
+  //! Repositories
     ..registerLazySingleton<BaseAdminProductRepository>(() => AdminProductRepository(sl()))
     ..registerLazySingleton(() => AdminProductRepository(sl()))
-    // ? DataSource
-    ..registerLazySingleton<AdminProductsDataSource>(
-        () => AdminProductsDataSource(sl()))
-    //* ApiService
-    ..registerLazySingleton<AdminProductsApiService>(
-        () => AdminProductsApiService(dio));
+  // ? DataSource
+    ..registerLazySingleton<AdminProductsDataSource>(() => AdminProductsDataSource(sl()))
+  //* ApiService
+    ..registerLazySingleton<AdminProductsApiService>(() => AdminProductsApiService(dio));
 }
+
 Future<void> _initAdminNotifications() async {
   sl
     ..registerFactory(AdminNotificationsBloc.new)
     ..registerFactory(() => SendNotificationBloc(sl()))
     ..registerLazySingleton(() => AddNotificationRepo(sl()))
-    ..registerLazySingleton( AddNotificationDataSource.new);
+    ..registerLazySingleton(AddNotificationDataSource.new);
 }
+
 Future<void> _initMain() async {
   sl.registerFactory(MainCubit.new);
 }
+
 Future<void> _initProfile() async {
   DioFactory.getInstance();
   sl
@@ -155,56 +157,65 @@ Future<void> _initProfile() async {
     ..registerLazySingleton(() => ProfileRepo(sl()))
     ..registerLazySingleton(() => ProfileDataSource(sl()));
 }
+
 Future<void> _initHomeCustomer() async {
   final dio = DioFactory.getInstance();
   sl
     ..registerFactory(() => HomeBloc(
-          sl(),
-          sl(),
-          sl(),
-          sl(),
-        ))
+      sl(),
+      sl(),
+      sl(),
+      sl(),
+    ))
 
-    /// UseCases
-    ..registerLazySingleton(
-      () => HomeCategoriesListUseCase(sl()),
-    )
-    ..registerLazySingleton(
-      () => HomeProductsListUseCase(sl()),
-    )
-    ..registerLazySingleton(
-      () => HomeProductsListPerCategoryUseCase(sl()),
-    )
-    ..registerLazySingleton(
-      () => ProductsDetailsUseCase(sl()),
-    )
-    //! Repositories
+  /// UseCases
+    ..registerLazySingleton(() => HomeCategoriesListUseCase(sl()))
+    ..registerLazySingleton(() => HomeProductsListUseCase(sl()))
+    ..registerLazySingleton(() => HomeProductsListPerCategoryUseCase(sl()))
+    ..registerLazySingleton(() => ProductsDetailsUseCase(sl()))
+  //! Repositories
     ..registerLazySingleton<BaseHomeRepository>(() => HomeRepository(sl()))
     ..registerLazySingleton(() => HomeRepository(sl()))
-    // ? DataSource
+  // ? DataSource
     ..registerLazySingleton<HomeDataSource>(() => HomeDataSource(sl()))
-    //* ApiService
+  //* ApiService
     ..registerLazySingleton<HomeApiService>(() => HomeApiService(dio));
-
 }
+
 Future<void> _initFilterProducts() async {
   final dio = DioFactory.getInstance();
   sl
-    ..registerFactory(() => FilterBloc(
-          sl(),
-        ))
+    ..registerFactory(() => FilterBloc(sl()))
 
-    /// UseCases
-    ..registerLazySingleton(
-      () => FilterProductsListUseCase(sl()),
-    )
-    //! Repositories
+  /// UseCases
+    ..registerLazySingleton(() => FilterProductsListUseCase(sl()))
+  //! Repositories
     ..registerLazySingleton<BaseFilterProductsRepository>(() => FilterProductsRepository(sl()))
     ..registerLazySingleton(() => FilterProductsRepository(sl()))
-    // ? DataSource
+  // ? DataSource
     ..registerLazySingleton<FilterProductsDataSource>(() => FilterProductsDataSource(sl()))
-    //* ApiService
+  //* ApiService
     ..registerLazySingleton<FilterProductsApiService>(() => FilterProductsApiService(dio));
-
 }
 
+Future<void> _initIsar() async {
+  final isarDatabaseHelper = IsarDatabaseHelper();
+  await isarDatabaseHelper.initialize(); // Ensure initialization
+  sl.registerSingleton<IsarDatabaseHelper>(isarDatabaseHelper);
+}
+Future<void> _initFavorites() async {
+  final isar = IsarDatabaseHelper();
+  sl
+    ..registerFactory(() => FavoritesCubit(sl(), sl()))
+
+  /// UseCases
+    ..registerLazySingleton(() => ManageFavoriteUseCase(sl()))
+    ..registerLazySingleton(() => GetFavoritesUseCase(sl()))
+  //! Repositories
+    ..registerLazySingleton<FavoritesRepo>(() => FavoritesRepoImpl(sl()))
+    ..registerLazySingleton(() => FavoritesRepoImpl(sl()))
+  // ? DataSource
+    ..registerLazySingleton<FavoritesDataSource>(() => FavoritesDataSource(isar));
+  //* LocalDataSource
+
+}

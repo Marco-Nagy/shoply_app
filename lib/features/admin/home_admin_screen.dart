@@ -36,7 +36,7 @@ class _HomeAdminScreenState extends State<HomeAdminScreen> {
       showShadow: true,
       angle: -12.0,
       drawerShadowsBackgroundColor:
-          context.colors.mainColor.withOpacity(.6),
+          context.colors.mainColor.withValues(alpha:.6),
       menuBackgroundColor: context.colors.bluePinkDark,
       slideWidth: MediaQuery.of(context).size.width * .671,
       openCurve: Curves.fastOutSlowIn,

@@ -73,7 +73,7 @@ class _BannerSlidersState extends State<BannerSliders> {
                           color: activeIndex == e.key
                               ? context.colors.bluePinkLight
                               : Colors.grey.shade50
-                              .withOpacity(activeIndex == e.key ? 0.9 : 0.4)),
+                              .withValues(alpha:activeIndex == e.key ? 0.9 : 0.4)),
                     ),
                   )
                   .toList(),

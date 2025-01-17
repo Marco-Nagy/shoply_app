@@ -85,7 +85,8 @@ dependencies:
 # Data Source database Hive
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-
+  isar: ^3.1.0+1
+  isar_flutter_libs: ^3.1.0+1
 
 
 dev_dependencies:
@@ -114,8 +115,9 @@ dev_dependencies:
 #  Remote Database using APIs
   retrofit_generator: ^8.1.0
   json_serializable: ^6.8.0
-# Local Database using hive generator
+# Local Database using localDataSource generator
   hive_generator: ^2.0.1
+  isar_generator: ^3.1.0+1
 
 
 

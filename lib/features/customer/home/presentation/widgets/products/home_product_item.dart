@@ -13,7 +13,9 @@ import 'package:shoply/core/utils/widgets/images/custom_container_linear_custome
 import 'package:shoply/core/utils/widgets/images/custom_image.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
 import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
-import 'package:shoply/features/admin/products/presentation/bloc/admin_product_bloc.dart';
+import 'package:shoply/features/customer/favorites/data/mappers/favorites_mappers.dart';
+import 'package:shoply/features/customer/favorites/domain/entities/favorites_entity.dart';
+import 'package:shoply/features/customer/favorites/presentation/cubit/favorites_cubit.dart';
 import 'package:vibration/vibration.dart';
 
 class HomeProductItem extends StatefulWidget {
@@ -33,14 +35,23 @@ class _HomeProductItemState extends State<HomeProductItem>
   late AnimationController animationFavoritController;
   late AnimationController animationEditController;
   ValueNotifier<bool> itemPressed = ValueNotifier(false);
+  bool isFavorite = false;
 
   @override
-  void initState() {
+  initState() {
     super.initState();
     animationFavoritController = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 300));
     animationEditController = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 300));
+    checkFavorite();
+  }
+
+  checkFavorite() async {
+    context.read<FavoritesCubit>().getFavorites();
+
+    isFavorite = await context.read<FavoritesCubit>().isFavorite(widget.product.id);
+
   }
 
   @override
@@ -59,7 +70,8 @@ class _HomeProductItemState extends State<HomeProductItem>
             itemPressed.value = true;
           },
           onTap: () {
-            context.pushNamed(AppRoutes.productDetails,arguments: widget.product.id);
+            context.pushNamed(AppRoutes.productDetails,
+                arguments: widget.product.id);
           },
           child: CustomContainerLinearCustomer(
             height: 250.h,
@@ -75,7 +87,7 @@ class _HomeProductItemState extends State<HomeProductItem>
                     height: 160.h,
                     width: 160.w,
                     padding:
-                        const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                    const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15.w),
                     ),
@@ -85,8 +97,7 @@ class _HomeProductItemState extends State<HomeProductItem>
                         child: CustomImage(
                           tag: 'tag${widget.product.id}',
                           imageUrl:
-                              widget.product.images.first.imageProductFormat(),
-
+                          widget.product.images.first.imageProductFormat(),
                         )),
                   ),
                 ),
@@ -159,9 +170,9 @@ class _HomeProductItemState extends State<HomeProductItem>
                             onTap: () async {
                               Vibration.vibrate(
                                   duration: 700, pattern: [50, 100, 50, 500]);
-                              Future.delayed(const Duration(milliseconds: 800)).whenComplete(() {
-                              itemPressed.value = false;
-
+                              Future.delayed(const Duration(milliseconds: 800))
+                                  .whenComplete(() {
+                                itemPressed.value = false;
                               });
                             },
                           ),
@@ -177,18 +188,13 @@ class _HomeProductItemState extends State<HomeProductItem>
                             color: Colors.red.shade200,
                             borderRadius: BorderRadius.circular(50),
                           ),
-                          child: AppAnimatedIcon(
-                            size: 35,
-                            backGroundColor: Colors.red.shade200,
-                            animationController: animationFavoritController,
-                            iconAsset: AppAnimatedIcons.favorite,
-                            onTap: () async {
-                              Vibration.vibrate(
-                                  duration: 700, pattern: [50, 100, 50, 500]);
-                              Future.delayed(const Duration(milliseconds: 700)).whenComplete(() {
-                                itemPressed.value = false;
-
-                              },);
+                          child: BlocBuilder<FavoritesCubit, FavoritesState>(
+                            builder: (context, state) {
+                              switch (state) {
+                            case SuccessFavoritesState():
+                              return favoriteIcon( state.favorites.any((element) =>element.productId==widget.product.id ,));
+                            }
+                              return favoriteIcon( isFavorite);
                             },
                           ),
                         ),
@@ -203,11 +209,34 @@ class _HomeProductItemState extends State<HomeProductItem>
       ],
     );
   }
+favoriteIcon(bool isFavorite)=>  AppAnimatedIcon(
+  size: 35,
+  iconColor: isFavorite ? Colors.red : Colors
+      .white,
+  backGroundColor: Colors.red.shade200,
+  animationController: animationFavoritController,
+  iconAsset: AppAnimatedIcons.favorite,
+  onTap: () async {
+    Vibration.vibrate(
+        duration: 700,
+        pattern: [50, 100, 50, 500]);
+    Future.delayed(
+        const Duration(milliseconds: 700))
+        .whenComplete(
+          () {
+        itemPressed.value = false;
+        _deleteProduct(context,
+            favorite: FavoritesMappers()
+                .fromModel(widget.product));
+      },
+    );
+  },
+);
 
   Future<void> _deleteProduct(BuildContext context,
-      {required String productId}) async {
-    context
-        .read<AdminProductBloc>()
-        .add(AdminProductEvent.deleteAdminProduct(productId: productId));
+      {required FavoritesEntity favorite}) async {
+    context.read<FavoritesCubit>().manageFavoriteUseCase(favorite: favorite).whenComplete(() {
+      context.read<FavoritesCubit>().getFavorites();
+    },);
   }
 }

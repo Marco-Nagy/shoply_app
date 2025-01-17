@@ -40,7 +40,7 @@ class _FilterProductsState extends State<FilterProducts> {
           ),
           boxShadow: [
             BoxShadow(
-                color: context.colors.bluePinkLight.withOpacity(0.5),
+                color: context.colors.bluePinkLight.withValues(alpha:0.5),
                 spreadRadius: 5,
                 blurRadius: 7,
                 offset: const Offset(5, 3),
@@ -190,7 +190,7 @@ class _FilterProductsState extends State<FilterProducts> {
                         topRight: Radius.circular(150)),
                     boxShadow: [
                       BoxShadow(
-                          color: context.colors.bluePinkLight.withOpacity(0.5),
+                          color: context.colors.bluePinkLight.withValues(alpha:0.5),
                           spreadRadius: 5,
                           blurRadius: 7,
                           offset: const Offset(5, 3),
@@ -219,7 +219,7 @@ class _FilterProductsState extends State<FilterProducts> {
                                 boxShadow: [
                                   BoxShadow(
                                       color: context.colors.bluePinkLight
-                                          .withOpacity(0.5),
+                                          .withValues(alpha:0.5),
                                       spreadRadius: 5,
                                       blurRadius: 7,
                                       offset: const Offset(5, 3),
@@ -257,7 +257,7 @@ class _FilterProductsState extends State<FilterProducts> {
                                 boxShadow: [
                                   BoxShadow(
                                       color: context.colors.bluePinkLight
-                                          .withOpacity(0.5),
+                                          .withValues(alpha:0.5),
                                       spreadRadius: 1,
                                       blurRadius: 2,
                                       offset: const Offset(5, 3),

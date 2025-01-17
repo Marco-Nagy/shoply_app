@@ -15,6 +15,7 @@ import 'package:shoply/core/utils/widgets/snack_bar.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
 import 'package:shoply/features/admin/notifications/data/model/add_notification_model.dart';
+import 'package:shoply/features/admin/notifications/data/model/add_notification_table_schema.dart';
 import 'package:shoply/features/admin/notifications/presentation/bloc/add_notification/admin_notifications_bloc.dart';
 import 'package:shoply/features/admin/notifications/presentation/widget/create/product_item.dart';
 import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
@@ -26,7 +27,7 @@ class CreateNotificationBottomSheetWidget extends StatefulWidget {
     this.notification,
   });
 
-  final AddNotificationModel? notification;
+  final AddNotificationEntity? notification;
 
   @override
   State<CreateNotificationBottomSheetWidget> createState() =>
@@ -285,7 +286,7 @@ class _CreateNotificationBottomSheetWidgetState
 
   Future<void> _addNotification(BuildContext context) async {
     if (formKye.currentState!.validate()) {
-      var notification = AddNotificationModel(
+      var notification = AddNotificationEntity(
         title: notificationTitleController.text.trim(),
         body: notificationBodyController.text.trim(),
         productId: productId,
@@ -305,7 +306,7 @@ class _CreateNotificationBottomSheetWidgetState
       widget.notification!.body = notificationBodyController.text.trim();
       widget.notification!.productId = productId;
       widget.notification!.productName = productNameController.text.trim();
-      widget.notification!.save();
+      // widget.notification!.save();
     }
   }
 }
