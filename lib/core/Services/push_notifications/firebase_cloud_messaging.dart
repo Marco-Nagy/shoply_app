@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:shoply/core/app/di/injection_container.dart';
+import 'package:shoply/core/app/di/injection.dart';
 import 'package:shoply/core/app/env_variables.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/localization/lang_keys.dart';
@@ -79,23 +79,23 @@ class FirebaseCloudMessaging {
 
   //* Subscribe Notification
   Future<void> _subscribeToTopic(String topic) async {
-      await messaging.subscribeToTopic(topic);
-      isNotificationSubscribed.value = true;
-      debugPrint('🔔🔔 Subscribed to $topic🔔🔔');
+    await messaging.subscribeToTopic(topic);
+    isNotificationSubscribed.value = true;
+    debugPrint('🔔🔔 Subscribed to $topic🔔🔔');
   }
 
   //* Unsubscribe Notification
   Future<void> _unsubscribeFromTopic(String topic) async {
-      await messaging.unsubscribeFromTopic(topic);
-      isNotificationSubscribed.value = false;
-      debugPrint('🔕🔕 Unsubscribed from $topic 🔕🔕 ');
+    await messaging.unsubscribeFromTopic(topic);
+    isNotificationSubscribed.value = false;
+    debugPrint('🔕🔕 Unsubscribed from $topic 🔕🔕 ');
   }
 
   //* Send Notification with Api
   Future<void> sendTopicNotification(
       {String? topic,
       String? token,
-        String? productId,
+      String? productId,
       required String title,
       required String body}) async {
     FirebaseServerToken firebaseServerToken = FirebaseServerToken();
@@ -144,8 +144,6 @@ class FirebaseCloudMessaging {
     debugPrint('FCM Token: $deviceToken');
     return deviceToken;
   }
-
-
 
   static Future<void> _firebaseMessagingBackgroundHandler(
       RemoteMessage message) async {

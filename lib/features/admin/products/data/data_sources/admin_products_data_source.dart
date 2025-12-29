@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:shoply/features/admin/products/data/data_sources/apis/admin_products_api_service.dart';
 import 'package:shoply/features/admin/products/data/data_sources/base_products_data_source.dart';
 import 'package:shoply/features/admin/products/data/model/create_product/create_product_response.dart';
@@ -9,13 +10,15 @@ import 'package:shoply/features/admin/products/domain/entities/update_product_en
 
 import 'apis/products_queries.dart';
 
+@lazySingleton
 class AdminProductsDataSource implements BaseProductsDataSource {
   AdminProductsDataSource(this._apiService);
 
   final AdminProductsApiService _apiService;
   @override
   Future<GetAllProductsResponse> getProductsList() async {
-    return await _apiService.getProductList(ProductsQueries().getProductsList());
+    return await _apiService
+        .getProductList(ProductsQueries().getProductsList());
   }
 
   @override

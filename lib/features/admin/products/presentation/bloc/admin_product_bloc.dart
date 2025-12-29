@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:shoply/core/helpers/usecases/usecase.dart';
 import 'package:shoply/features/admin/products/data/Mappers/create_product_mapper.dart';
 import 'package:shoply/features/admin/products/data/Mappers/delete_product_mapper.dart';
@@ -20,6 +21,7 @@ part 'admin_product_bloc.freezed.dart';
 part 'admin_product_event.dart';
 part 'admin_product_state.dart';
 
+@injectable
 class AdminProductBloc extends Bloc<AdminProductEvent, AdminProductState> {
   AdminProductBloc(
     this._productsListUseCase,
@@ -70,40 +72,46 @@ class AdminProductBloc extends Bloc<AdminProductEvent, AdminProductState> {
     debugPrint('Create new product body : ${event.body.description}');
     debugPrint('Create new product body : ${event.body.categoryId}');
     var result = await _createProductUseCase.call(event.body);
-    result.when(success: (data) {
+    result.when(
+      success: (data) {
         emit(AdminProductState.createNewProductSuccess(
             CreateProductMapper.toEntity(data)));
         // Emit new product list to reflect the update
-
-    }, failure: (errorHandler) {
+      },
+      failure: (errorHandler) {
         emit(AdminProductState.createNewProductFailure(errorHandler.errorMsg));
-      },);
+      },
+    );
   }
 
   FutureOr<void> _updateProduct(
       UpdateAdminProductEvent event, Emitter<AdminProductState> emit) async {
     emit(const AdminProductState.adminProductLoading());
     var result = await _updateProductUseCase.call(event.body);
-    result.when(success: (data) {
+    result.when(
+      success: (data) {
         emit(AdminProductState.updateProductSuccess(
             UpdateProductMapper.toEntity(data)));
         // Emit updated product list to reflect the update
-    },failure: (errorHandler) {
-
-      emit(AdminProductState.updateProductFailure(errorHandler.errorMsg));
-    },);
+      },
+      failure: (errorHandler) {
+        emit(AdminProductState.updateProductFailure(errorHandler.errorMsg));
+      },
+    );
   }
 
   FutureOr<void> _deleteProduct(
       DeleteAdminProductEvent event, Emitter<AdminProductState> emit) async {
     emit(const AdminProductState.adminProductLoading());
     var result = await _deleteProductUseCase.call(event.productId);
-    result.when(success: (data) {
+    result.when(
+      success: (data) {
         emit(AdminProductState.deleteProductSuccess(
             DeleteProductMapper.toEntity(data)));
         // Emit updated product list to reflect the update
-    },failure: (errorHandler) {
-      emit(AdminProductState.deleteProductFailure(errorHandler.errorMsg));
+      },
+      failure: (errorHandler) {
+        emit(AdminProductState.deleteProductFailure(errorHandler.errorMsg));
       },
     );
   }

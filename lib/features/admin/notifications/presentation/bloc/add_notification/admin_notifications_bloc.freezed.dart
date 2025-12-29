@@ -20,11 +20,11 @@ mixin _$AdminNotificationsEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() fetchAdminNotifications,
-    required TResult Function(AddNotificationModel body)
+    required TResult Function(AddNotificationEntity body)
         createNewNotificationEvent,
-    required TResult Function(AddNotificationModel body)
+    required TResult Function(AddNotificationEntity body)
         updateNotificationEvent,
-    required TResult Function(AddNotificationModel notification)
+    required TResult Function(AddNotificationEntity notification)
         deleteNotificationEvent,
   }) =>
       throw _privateConstructorUsedError;
@@ -32,9 +32,9 @@ mixin _$AdminNotificationsEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? fetchAdminNotifications,
-    TResult? Function(AddNotificationModel body)? createNewNotificationEvent,
-    TResult? Function(AddNotificationModel body)? updateNotificationEvent,
-    TResult? Function(AddNotificationModel notification)?
+    TResult? Function(AddNotificationEntity body)? createNewNotificationEvent,
+    TResult? Function(AddNotificationEntity body)? updateNotificationEvent,
+    TResult? Function(AddNotificationEntity notification)?
         deleteNotificationEvent,
   }) =>
       throw _privateConstructorUsedError;
@@ -42,9 +42,9 @@ mixin _$AdminNotificationsEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? fetchAdminNotifications,
-    TResult Function(AddNotificationModel body)? createNewNotificationEvent,
-    TResult Function(AddNotificationModel body)? updateNotificationEvent,
-    TResult Function(AddNotificationModel notification)?
+    TResult Function(AddNotificationEntity body)? createNewNotificationEvent,
+    TResult Function(AddNotificationEntity body)? updateNotificationEvent,
+    TResult Function(AddNotificationEntity notification)?
         deleteNotificationEvent,
     required TResult orElse(),
   }) =>
@@ -103,6 +103,9 @@ class _$AdminNotificationsEventCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -119,6 +122,9 @@ class __$$StartedImplCopyWithImpl<$Res>
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -145,11 +151,11 @@ class _$StartedImpl implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() fetchAdminNotifications,
-    required TResult Function(AddNotificationModel body)
+    required TResult Function(AddNotificationEntity body)
         createNewNotificationEvent,
-    required TResult Function(AddNotificationModel body)
+    required TResult Function(AddNotificationEntity body)
         updateNotificationEvent,
-    required TResult Function(AddNotificationModel notification)
+    required TResult Function(AddNotificationEntity notification)
         deleteNotificationEvent,
   }) {
     return started();
@@ -160,9 +166,9 @@ class _$StartedImpl implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? fetchAdminNotifications,
-    TResult? Function(AddNotificationModel body)? createNewNotificationEvent,
-    TResult? Function(AddNotificationModel body)? updateNotificationEvent,
-    TResult? Function(AddNotificationModel notification)?
+    TResult? Function(AddNotificationEntity body)? createNewNotificationEvent,
+    TResult? Function(AddNotificationEntity body)? updateNotificationEvent,
+    TResult? Function(AddNotificationEntity notification)?
         deleteNotificationEvent,
   }) {
     return started?.call();
@@ -173,9 +179,9 @@ class _$StartedImpl implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? fetchAdminNotifications,
-    TResult Function(AddNotificationModel body)? createNewNotificationEvent,
-    TResult Function(AddNotificationModel body)? updateNotificationEvent,
-    TResult Function(AddNotificationModel notification)?
+    TResult Function(AddNotificationEntity body)? createNewNotificationEvent,
+    TResult Function(AddNotificationEntity body)? updateNotificationEvent,
+    TResult Function(AddNotificationEntity notification)?
         deleteNotificationEvent,
     required TResult orElse(),
   }) {
@@ -254,6 +260,9 @@ class __$$FetchAdminNotificationsListEventImplCopyWithImpl<$Res>
       _$FetchAdminNotificationsListEventImpl _value,
       $Res Function(_$FetchAdminNotificationsListEventImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -282,11 +291,11 @@ class _$FetchAdminNotificationsListEventImpl
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() fetchAdminNotifications,
-    required TResult Function(AddNotificationModel body)
+    required TResult Function(AddNotificationEntity body)
         createNewNotificationEvent,
-    required TResult Function(AddNotificationModel body)
+    required TResult Function(AddNotificationEntity body)
         updateNotificationEvent,
-    required TResult Function(AddNotificationModel notification)
+    required TResult Function(AddNotificationEntity notification)
         deleteNotificationEvent,
   }) {
     return fetchAdminNotifications();
@@ -297,9 +306,9 @@ class _$FetchAdminNotificationsListEventImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? fetchAdminNotifications,
-    TResult? Function(AddNotificationModel body)? createNewNotificationEvent,
-    TResult? Function(AddNotificationModel body)? updateNotificationEvent,
-    TResult? Function(AddNotificationModel notification)?
+    TResult? Function(AddNotificationEntity body)? createNewNotificationEvent,
+    TResult? Function(AddNotificationEntity body)? updateNotificationEvent,
+    TResult? Function(AddNotificationEntity notification)?
         deleteNotificationEvent,
   }) {
     return fetchAdminNotifications?.call();
@@ -310,9 +319,9 @@ class _$FetchAdminNotificationsListEventImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? fetchAdminNotifications,
-    TResult Function(AddNotificationModel body)? createNewNotificationEvent,
-    TResult Function(AddNotificationModel body)? updateNotificationEvent,
-    TResult Function(AddNotificationModel notification)?
+    TResult Function(AddNotificationEntity body)? createNewNotificationEvent,
+    TResult Function(AddNotificationEntity body)? updateNotificationEvent,
+    TResult Function(AddNotificationEntity notification)?
         deleteNotificationEvent,
     required TResult orElse(),
   }) {
@@ -383,7 +392,7 @@ abstract class _$$CreateNotificationEventImplCopyWith<$Res> {
           $Res Function(_$CreateNotificationEventImpl) then) =
       __$$CreateNotificationEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({AddNotificationModel body});
+  $Res call({AddNotificationEntity body});
 }
 
 /// @nodoc
@@ -396,6 +405,8 @@ class __$$CreateNotificationEventImplCopyWithImpl<$Res>
       $Res Function(_$CreateNotificationEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -405,7 +416,7 @@ class __$$CreateNotificationEventImplCopyWithImpl<$Res>
       body: null == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as AddNotificationModel,
+              as AddNotificationEntity,
     ));
   }
 }
@@ -416,7 +427,7 @@ class _$CreateNotificationEventImpl implements CreateNotificationEvent {
   const _$CreateNotificationEventImpl({required this.body});
 
   @override
-  final AddNotificationModel body;
+  final AddNotificationEntity body;
 
   @override
   String toString() {
@@ -434,7 +445,9 @@ class _$CreateNotificationEventImpl implements CreateNotificationEvent {
   @override
   int get hashCode => Object.hash(runtimeType, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CreateNotificationEventImplCopyWith<_$CreateNotificationEventImpl>
@@ -446,11 +459,11 @@ class _$CreateNotificationEventImpl implements CreateNotificationEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() fetchAdminNotifications,
-    required TResult Function(AddNotificationModel body)
+    required TResult Function(AddNotificationEntity body)
         createNewNotificationEvent,
-    required TResult Function(AddNotificationModel body)
+    required TResult Function(AddNotificationEntity body)
         updateNotificationEvent,
-    required TResult Function(AddNotificationModel notification)
+    required TResult Function(AddNotificationEntity notification)
         deleteNotificationEvent,
   }) {
     return createNewNotificationEvent(body);
@@ -461,9 +474,9 @@ class _$CreateNotificationEventImpl implements CreateNotificationEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? fetchAdminNotifications,
-    TResult? Function(AddNotificationModel body)? createNewNotificationEvent,
-    TResult? Function(AddNotificationModel body)? updateNotificationEvent,
-    TResult? Function(AddNotificationModel notification)?
+    TResult? Function(AddNotificationEntity body)? createNewNotificationEvent,
+    TResult? Function(AddNotificationEntity body)? updateNotificationEvent,
+    TResult? Function(AddNotificationEntity notification)?
         deleteNotificationEvent,
   }) {
     return createNewNotificationEvent?.call(body);
@@ -474,9 +487,9 @@ class _$CreateNotificationEventImpl implements CreateNotificationEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? fetchAdminNotifications,
-    TResult Function(AddNotificationModel body)? createNewNotificationEvent,
-    TResult Function(AddNotificationModel body)? updateNotificationEvent,
-    TResult Function(AddNotificationModel notification)?
+    TResult Function(AddNotificationEntity body)? createNewNotificationEvent,
+    TResult Function(AddNotificationEntity body)? updateNotificationEvent,
+    TResult Function(AddNotificationEntity notification)?
         deleteNotificationEvent,
     required TResult orElse(),
   }) {
@@ -536,11 +549,14 @@ class _$CreateNotificationEventImpl implements CreateNotificationEvent {
 
 abstract class CreateNotificationEvent implements AdminNotificationsEvent {
   const factory CreateNotificationEvent(
-          {required final AddNotificationModel body}) =
+          {required final AddNotificationEntity body}) =
       _$CreateNotificationEventImpl;
 
-  AddNotificationModel get body;
-  @JsonKey(ignore: true)
+  AddNotificationEntity get body;
+
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CreateNotificationEventImplCopyWith<_$CreateNotificationEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -552,7 +568,7 @@ abstract class _$$UpdateNotificationEventImplCopyWith<$Res> {
           $Res Function(_$UpdateNotificationEventImpl) then) =
       __$$UpdateNotificationEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({AddNotificationModel body});
+  $Res call({AddNotificationEntity body});
 }
 
 /// @nodoc
@@ -565,6 +581,8 @@ class __$$UpdateNotificationEventImplCopyWithImpl<$Res>
       $Res Function(_$UpdateNotificationEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -574,7 +592,7 @@ class __$$UpdateNotificationEventImplCopyWithImpl<$Res>
       body: null == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as AddNotificationModel,
+              as AddNotificationEntity,
     ));
   }
 }
@@ -585,7 +603,7 @@ class _$UpdateNotificationEventImpl implements UpdateNotificationEvent {
   const _$UpdateNotificationEventImpl({required this.body});
 
   @override
-  final AddNotificationModel body;
+  final AddNotificationEntity body;
 
   @override
   String toString() {
@@ -603,7 +621,9 @@ class _$UpdateNotificationEventImpl implements UpdateNotificationEvent {
   @override
   int get hashCode => Object.hash(runtimeType, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateNotificationEventImplCopyWith<_$UpdateNotificationEventImpl>
@@ -615,11 +635,11 @@ class _$UpdateNotificationEventImpl implements UpdateNotificationEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() fetchAdminNotifications,
-    required TResult Function(AddNotificationModel body)
+    required TResult Function(AddNotificationEntity body)
         createNewNotificationEvent,
-    required TResult Function(AddNotificationModel body)
+    required TResult Function(AddNotificationEntity body)
         updateNotificationEvent,
-    required TResult Function(AddNotificationModel notification)
+    required TResult Function(AddNotificationEntity notification)
         deleteNotificationEvent,
   }) {
     return updateNotificationEvent(body);
@@ -630,9 +650,9 @@ class _$UpdateNotificationEventImpl implements UpdateNotificationEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? fetchAdminNotifications,
-    TResult? Function(AddNotificationModel body)? createNewNotificationEvent,
-    TResult? Function(AddNotificationModel body)? updateNotificationEvent,
-    TResult? Function(AddNotificationModel notification)?
+    TResult? Function(AddNotificationEntity body)? createNewNotificationEvent,
+    TResult? Function(AddNotificationEntity body)? updateNotificationEvent,
+    TResult? Function(AddNotificationEntity notification)?
         deleteNotificationEvent,
   }) {
     return updateNotificationEvent?.call(body);
@@ -643,9 +663,9 @@ class _$UpdateNotificationEventImpl implements UpdateNotificationEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? fetchAdminNotifications,
-    TResult Function(AddNotificationModel body)? createNewNotificationEvent,
-    TResult Function(AddNotificationModel body)? updateNotificationEvent,
-    TResult Function(AddNotificationModel notification)?
+    TResult Function(AddNotificationEntity body)? createNewNotificationEvent,
+    TResult Function(AddNotificationEntity body)? updateNotificationEvent,
+    TResult Function(AddNotificationEntity notification)?
         deleteNotificationEvent,
     required TResult orElse(),
   }) {
@@ -705,11 +725,14 @@ class _$UpdateNotificationEventImpl implements UpdateNotificationEvent {
 
 abstract class UpdateNotificationEvent implements AdminNotificationsEvent {
   const factory UpdateNotificationEvent(
-          {required final AddNotificationModel body}) =
+          {required final AddNotificationEntity body}) =
       _$UpdateNotificationEventImpl;
 
-  AddNotificationModel get body;
-  @JsonKey(ignore: true)
+  AddNotificationEntity get body;
+
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateNotificationEventImplCopyWith<_$UpdateNotificationEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -721,7 +744,7 @@ abstract class _$$DeleteNotificationEventImplCopyWith<$Res> {
           $Res Function(_$DeleteNotificationEventImpl) then) =
       __$$DeleteNotificationEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({AddNotificationModel notification});
+  $Res call({AddNotificationEntity notification});
 }
 
 /// @nodoc
@@ -734,6 +757,8 @@ class __$$DeleteNotificationEventImplCopyWithImpl<$Res>
       $Res Function(_$DeleteNotificationEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -743,7 +768,7 @@ class __$$DeleteNotificationEventImplCopyWithImpl<$Res>
       notification: null == notification
           ? _value.notification
           : notification // ignore: cast_nullable_to_non_nullable
-              as AddNotificationModel,
+              as AddNotificationEntity,
     ));
   }
 }
@@ -754,7 +779,7 @@ class _$DeleteNotificationEventImpl implements DeleteNotificationEvent {
   const _$DeleteNotificationEventImpl({required this.notification});
 
   @override
-  final AddNotificationModel notification;
+  final AddNotificationEntity notification;
 
   @override
   String toString() {
@@ -773,7 +798,9 @@ class _$DeleteNotificationEventImpl implements DeleteNotificationEvent {
   @override
   int get hashCode => Object.hash(runtimeType, notification);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteNotificationEventImplCopyWith<_$DeleteNotificationEventImpl>
@@ -785,11 +812,11 @@ class _$DeleteNotificationEventImpl implements DeleteNotificationEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() fetchAdminNotifications,
-    required TResult Function(AddNotificationModel body)
+    required TResult Function(AddNotificationEntity body)
         createNewNotificationEvent,
-    required TResult Function(AddNotificationModel body)
+    required TResult Function(AddNotificationEntity body)
         updateNotificationEvent,
-    required TResult Function(AddNotificationModel notification)
+    required TResult Function(AddNotificationEntity notification)
         deleteNotificationEvent,
   }) {
     return deleteNotificationEvent(notification);
@@ -800,9 +827,9 @@ class _$DeleteNotificationEventImpl implements DeleteNotificationEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? fetchAdminNotifications,
-    TResult? Function(AddNotificationModel body)? createNewNotificationEvent,
-    TResult? Function(AddNotificationModel body)? updateNotificationEvent,
-    TResult? Function(AddNotificationModel notification)?
+    TResult? Function(AddNotificationEntity body)? createNewNotificationEvent,
+    TResult? Function(AddNotificationEntity body)? updateNotificationEvent,
+    TResult? Function(AddNotificationEntity notification)?
         deleteNotificationEvent,
   }) {
     return deleteNotificationEvent?.call(notification);
@@ -813,9 +840,9 @@ class _$DeleteNotificationEventImpl implements DeleteNotificationEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? fetchAdminNotifications,
-    TResult Function(AddNotificationModel body)? createNewNotificationEvent,
-    TResult Function(AddNotificationModel body)? updateNotificationEvent,
-    TResult Function(AddNotificationModel notification)?
+    TResult Function(AddNotificationEntity body)? createNewNotificationEvent,
+    TResult Function(AddNotificationEntity body)? updateNotificationEvent,
+    TResult Function(AddNotificationEntity notification)?
         deleteNotificationEvent,
     required TResult orElse(),
   }) {
@@ -875,11 +902,14 @@ class _$DeleteNotificationEventImpl implements DeleteNotificationEvent {
 
 abstract class DeleteNotificationEvent implements AdminNotificationsEvent {
   const factory DeleteNotificationEvent(
-          {required final AddNotificationModel notification}) =
+          {required final AddNotificationEntity notification}) =
       _$DeleteNotificationEventImpl;
 
-  AddNotificationModel get notification;
-  @JsonKey(ignore: true)
+  AddNotificationEntity get notification;
+
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DeleteNotificationEventImplCopyWith<_$DeleteNotificationEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -890,7 +920,7 @@ mixin _$AdminNotificationsState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminNotificationsLoading,
-    required TResult Function(List<AddNotificationModel?> notificationsList)
+    required TResult Function(List<AddNotificationEntity?> notificationsList)
         getAdminNotificationsListSuccess,
     required TResult Function() getAdminNotificationsListEmpty,
     required TResult Function(String errorMessage)
@@ -905,7 +935,7 @@ mixin _$AdminNotificationsState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminNotificationsLoading,
-    TResult? Function(List<AddNotificationModel?> notificationsList)?
+    TResult? Function(List<AddNotificationEntity?> notificationsList)?
         getAdminNotificationsListSuccess,
     TResult? Function()? getAdminNotificationsListEmpty,
     TResult? Function(String errorMessage)? getAdminNotificationsListFailure,
@@ -919,7 +949,7 @@ mixin _$AdminNotificationsState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminNotificationsLoading,
-    TResult Function(List<AddNotificationModel?> notificationsList)?
+    TResult Function(List<AddNotificationEntity?> notificationsList)?
         getAdminNotificationsListSuccess,
     TResult Function()? getAdminNotificationsListEmpty,
     TResult Function(String errorMessage)? getAdminNotificationsListFailure,
@@ -1009,6 +1039,9 @@ class _$AdminNotificationsStateCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1025,6 +1058,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1051,7 +1087,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminNotificationsLoading,
-    required TResult Function(List<AddNotificationModel?> notificationsList)
+    required TResult Function(List<AddNotificationEntity?> notificationsList)
         getAdminNotificationsListSuccess,
     required TResult Function() getAdminNotificationsListEmpty,
     required TResult Function(String errorMessage)
@@ -1069,7 +1105,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminNotificationsLoading,
-    TResult? Function(List<AddNotificationModel?> notificationsList)?
+    TResult? Function(List<AddNotificationEntity?> notificationsList)?
         getAdminNotificationsListSuccess,
     TResult? Function()? getAdminNotificationsListEmpty,
     TResult? Function(String errorMessage)? getAdminNotificationsListFailure,
@@ -1086,7 +1122,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminNotificationsLoading,
-    TResult Function(List<AddNotificationModel?> notificationsList)?
+    TResult Function(List<AddNotificationEntity?> notificationsList)?
         getAdminNotificationsListSuccess,
     TResult Function()? getAdminNotificationsListEmpty,
     TResult Function(String errorMessage)? getAdminNotificationsListFailure,
@@ -1196,6 +1232,9 @@ class __$$AdminNotificationsLoadingImplCopyWithImpl<$Res>
       _$AdminNotificationsLoadingImpl _value,
       $Res Function(_$AdminNotificationsLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1223,7 +1262,7 @@ class _$AdminNotificationsLoadingImpl implements AdminNotificationsLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminNotificationsLoading,
-    required TResult Function(List<AddNotificationModel?> notificationsList)
+    required TResult Function(List<AddNotificationEntity?> notificationsList)
         getAdminNotificationsListSuccess,
     required TResult Function() getAdminNotificationsListEmpty,
     required TResult Function(String errorMessage)
@@ -1241,7 +1280,7 @@ class _$AdminNotificationsLoadingImpl implements AdminNotificationsLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminNotificationsLoading,
-    TResult? Function(List<AddNotificationModel?> notificationsList)?
+    TResult? Function(List<AddNotificationEntity?> notificationsList)?
         getAdminNotificationsListSuccess,
     TResult? Function()? getAdminNotificationsListEmpty,
     TResult? Function(String errorMessage)? getAdminNotificationsListFailure,
@@ -1258,7 +1297,7 @@ class _$AdminNotificationsLoadingImpl implements AdminNotificationsLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminNotificationsLoading,
-    TResult Function(List<AddNotificationModel?> notificationsList)?
+    TResult Function(List<AddNotificationEntity?> notificationsList)?
         getAdminNotificationsListSuccess,
     TResult Function()? getAdminNotificationsListEmpty,
     TResult Function(String errorMessage)? getAdminNotificationsListFailure,
@@ -1358,7 +1397,7 @@ abstract class _$$GetAdminNotificationsListSuccessImplCopyWith<$Res> {
           $Res Function(_$GetAdminNotificationsListSuccessImpl) then) =
       __$$GetAdminNotificationsListSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<AddNotificationModel?> notificationsList});
+  $Res call({List<AddNotificationEntity?> notificationsList});
 }
 
 /// @nodoc
@@ -1371,6 +1410,8 @@ class __$$GetAdminNotificationsListSuccessImplCopyWithImpl<$Res>
       $Res Function(_$GetAdminNotificationsListSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1380,7 +1421,7 @@ class __$$GetAdminNotificationsListSuccessImplCopyWithImpl<$Res>
       null == notificationsList
           ? _value._notificationsList
           : notificationsList // ignore: cast_nullable_to_non_nullable
-              as List<AddNotificationModel?>,
+              as List<AddNotificationEntity?>,
     ));
   }
 }
@@ -1390,12 +1431,12 @@ class __$$GetAdminNotificationsListSuccessImplCopyWithImpl<$Res>
 class _$GetAdminNotificationsListSuccessImpl
     implements GetAdminNotificationsListSuccess {
   const _$GetAdminNotificationsListSuccessImpl(
-      final List<AddNotificationModel?> notificationsList)
+      final List<AddNotificationEntity?> notificationsList)
       : _notificationsList = notificationsList;
 
-  final List<AddNotificationModel?> _notificationsList;
+  final List<AddNotificationEntity?> _notificationsList;
   @override
-  List<AddNotificationModel?> get notificationsList {
+  List<AddNotificationEntity?> get notificationsList {
     if (_notificationsList is EqualUnmodifiableListView)
       return _notificationsList;
     // ignore: implicit_dynamic_type
@@ -1420,7 +1461,9 @@ class _$GetAdminNotificationsListSuccessImpl
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_notificationsList));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAdminNotificationsListSuccessImplCopyWith<
@@ -1433,7 +1476,7 @@ class _$GetAdminNotificationsListSuccessImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminNotificationsLoading,
-    required TResult Function(List<AddNotificationModel?> notificationsList)
+    required TResult Function(List<AddNotificationEntity?> notificationsList)
         getAdminNotificationsListSuccess,
     required TResult Function() getAdminNotificationsListEmpty,
     required TResult Function(String errorMessage)
@@ -1451,7 +1494,7 @@ class _$GetAdminNotificationsListSuccessImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminNotificationsLoading,
-    TResult? Function(List<AddNotificationModel?> notificationsList)?
+    TResult? Function(List<AddNotificationEntity?> notificationsList)?
         getAdminNotificationsListSuccess,
     TResult? Function()? getAdminNotificationsListEmpty,
     TResult? Function(String errorMessage)? getAdminNotificationsListFailure,
@@ -1468,7 +1511,7 @@ class _$GetAdminNotificationsListSuccessImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminNotificationsLoading,
-    TResult Function(List<AddNotificationModel?> notificationsList)?
+    TResult Function(List<AddNotificationEntity?> notificationsList)?
         getAdminNotificationsListSuccess,
     TResult Function()? getAdminNotificationsListEmpty,
     TResult Function(String errorMessage)? getAdminNotificationsListFailure,
@@ -1560,11 +1603,14 @@ class _$GetAdminNotificationsListSuccessImpl
 abstract class GetAdminNotificationsListSuccess
     implements AdminNotificationsState {
   const factory GetAdminNotificationsListSuccess(
-          final List<AddNotificationModel?> notificationsList) =
+          final List<AddNotificationEntity?> notificationsList) =
       _$GetAdminNotificationsListSuccessImpl;
 
-  List<AddNotificationModel?> get notificationsList;
-  @JsonKey(ignore: true)
+  List<AddNotificationEntity?> get notificationsList;
+
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAdminNotificationsListSuccessImplCopyWith<
           _$GetAdminNotificationsListSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1587,6 +1633,9 @@ class __$$GetAdminNotificationsListEmptyImplCopyWithImpl<$Res>
       _$GetAdminNotificationsListEmptyImpl _value,
       $Res Function(_$GetAdminNotificationsListEmptyImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1615,7 +1664,7 @@ class _$GetAdminNotificationsListEmptyImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminNotificationsLoading,
-    required TResult Function(List<AddNotificationModel?> notificationsList)
+    required TResult Function(List<AddNotificationEntity?> notificationsList)
         getAdminNotificationsListSuccess,
     required TResult Function() getAdminNotificationsListEmpty,
     required TResult Function(String errorMessage)
@@ -1633,7 +1682,7 @@ class _$GetAdminNotificationsListEmptyImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminNotificationsLoading,
-    TResult? Function(List<AddNotificationModel?> notificationsList)?
+    TResult? Function(List<AddNotificationEntity?> notificationsList)?
         getAdminNotificationsListSuccess,
     TResult? Function()? getAdminNotificationsListEmpty,
     TResult? Function(String errorMessage)? getAdminNotificationsListFailure,
@@ -1650,7 +1699,7 @@ class _$GetAdminNotificationsListEmptyImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminNotificationsLoading,
-    TResult Function(List<AddNotificationModel?> notificationsList)?
+    TResult Function(List<AddNotificationEntity?> notificationsList)?
         getAdminNotificationsListSuccess,
     TResult Function()? getAdminNotificationsListEmpty,
     TResult Function(String errorMessage)? getAdminNotificationsListFailure,
@@ -1765,6 +1814,8 @@ class __$$GetAdminNotificationsListFailureImplCopyWithImpl<$Res>
       $Res Function(_$GetAdminNotificationsListFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1805,7 +1856,9 @@ class _$GetAdminNotificationsListFailureImpl
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAdminNotificationsListFailureImplCopyWith<
@@ -1818,7 +1871,7 @@ class _$GetAdminNotificationsListFailureImpl
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminNotificationsLoading,
-    required TResult Function(List<AddNotificationModel?> notificationsList)
+    required TResult Function(List<AddNotificationEntity?> notificationsList)
         getAdminNotificationsListSuccess,
     required TResult Function() getAdminNotificationsListEmpty,
     required TResult Function(String errorMessage)
@@ -1836,7 +1889,7 @@ class _$GetAdminNotificationsListFailureImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminNotificationsLoading,
-    TResult? Function(List<AddNotificationModel?> notificationsList)?
+    TResult? Function(List<AddNotificationEntity?> notificationsList)?
         getAdminNotificationsListSuccess,
     TResult? Function()? getAdminNotificationsListEmpty,
     TResult? Function(String errorMessage)? getAdminNotificationsListFailure,
@@ -1853,7 +1906,7 @@ class _$GetAdminNotificationsListFailureImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminNotificationsLoading,
-    TResult Function(List<AddNotificationModel?> notificationsList)?
+    TResult Function(List<AddNotificationEntity?> notificationsList)?
         getAdminNotificationsListSuccess,
     TResult Function()? getAdminNotificationsListEmpty,
     TResult Function(String errorMessage)? getAdminNotificationsListFailure,
@@ -1948,7 +2001,10 @@ abstract class GetAdminNotificationsListFailure
       _$GetAdminNotificationsListFailureImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAdminNotificationsListFailureImplCopyWith<
           _$GetAdminNotificationsListFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1971,6 +2027,9 @@ class __$$AddNewNotificationSuccessImplCopyWithImpl<$Res>
       _$AddNewNotificationSuccessImpl _value,
       $Res Function(_$AddNewNotificationSuccessImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1998,7 +2057,7 @@ class _$AddNewNotificationSuccessImpl implements AddNewNotificationSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminNotificationsLoading,
-    required TResult Function(List<AddNotificationModel?> notificationsList)
+    required TResult Function(List<AddNotificationEntity?> notificationsList)
         getAdminNotificationsListSuccess,
     required TResult Function() getAdminNotificationsListEmpty,
     required TResult Function(String errorMessage)
@@ -2016,7 +2075,7 @@ class _$AddNewNotificationSuccessImpl implements AddNewNotificationSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminNotificationsLoading,
-    TResult? Function(List<AddNotificationModel?> notificationsList)?
+    TResult? Function(List<AddNotificationEntity?> notificationsList)?
         getAdminNotificationsListSuccess,
     TResult? Function()? getAdminNotificationsListEmpty,
     TResult? Function(String errorMessage)? getAdminNotificationsListFailure,
@@ -2033,7 +2092,7 @@ class _$AddNewNotificationSuccessImpl implements AddNewNotificationSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminNotificationsLoading,
-    TResult Function(List<AddNotificationModel?> notificationsList)?
+    TResult Function(List<AddNotificationEntity?> notificationsList)?
         getAdminNotificationsListSuccess,
     TResult Function()? getAdminNotificationsListEmpty,
     TResult Function(String errorMessage)? getAdminNotificationsListFailure,
@@ -2146,6 +2205,8 @@ class __$$AddNewNotificationFailureImplCopyWithImpl<$Res>
       $Res Function(_$AddNewNotificationFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2185,7 +2246,9 @@ class _$AddNewNotificationFailureImpl implements AddNewNotificationFailure {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AddNewNotificationFailureImplCopyWith<_$AddNewNotificationFailureImpl>
@@ -2197,7 +2260,7 @@ class _$AddNewNotificationFailureImpl implements AddNewNotificationFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminNotificationsLoading,
-    required TResult Function(List<AddNotificationModel?> notificationsList)
+    required TResult Function(List<AddNotificationEntity?> notificationsList)
         getAdminNotificationsListSuccess,
     required TResult Function() getAdminNotificationsListEmpty,
     required TResult Function(String errorMessage)
@@ -2215,7 +2278,7 @@ class _$AddNewNotificationFailureImpl implements AddNewNotificationFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminNotificationsLoading,
-    TResult? Function(List<AddNotificationModel?> notificationsList)?
+    TResult? Function(List<AddNotificationEntity?> notificationsList)?
         getAdminNotificationsListSuccess,
     TResult? Function()? getAdminNotificationsListEmpty,
     TResult? Function(String errorMessage)? getAdminNotificationsListFailure,
@@ -2232,7 +2295,7 @@ class _$AddNewNotificationFailureImpl implements AddNewNotificationFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminNotificationsLoading,
-    TResult Function(List<AddNotificationModel?> notificationsList)?
+    TResult Function(List<AddNotificationEntity?> notificationsList)?
         getAdminNotificationsListSuccess,
     TResult Function()? getAdminNotificationsListEmpty,
     TResult Function(String errorMessage)? getAdminNotificationsListFailure,
@@ -2326,7 +2389,10 @@ abstract class AddNewNotificationFailure implements AdminNotificationsState {
       _$AddNewNotificationFailureImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AddNewNotificationFailureImplCopyWith<_$AddNewNotificationFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2348,6 +2414,9 @@ class __$$DeleteNotificationSuccessImplCopyWithImpl<$Res>
       _$DeleteNotificationSuccessImpl _value,
       $Res Function(_$DeleteNotificationSuccessImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2375,7 +2444,7 @@ class _$DeleteNotificationSuccessImpl implements DeleteNotificationSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminNotificationsLoading,
-    required TResult Function(List<AddNotificationModel?> notificationsList)
+    required TResult Function(List<AddNotificationEntity?> notificationsList)
         getAdminNotificationsListSuccess,
     required TResult Function() getAdminNotificationsListEmpty,
     required TResult Function(String errorMessage)
@@ -2393,7 +2462,7 @@ class _$DeleteNotificationSuccessImpl implements DeleteNotificationSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminNotificationsLoading,
-    TResult? Function(List<AddNotificationModel?> notificationsList)?
+    TResult? Function(List<AddNotificationEntity?> notificationsList)?
         getAdminNotificationsListSuccess,
     TResult? Function()? getAdminNotificationsListEmpty,
     TResult? Function(String errorMessage)? getAdminNotificationsListFailure,
@@ -2410,7 +2479,7 @@ class _$DeleteNotificationSuccessImpl implements DeleteNotificationSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminNotificationsLoading,
-    TResult Function(List<AddNotificationModel?> notificationsList)?
+    TResult Function(List<AddNotificationEntity?> notificationsList)?
         getAdminNotificationsListSuccess,
     TResult Function()? getAdminNotificationsListEmpty,
     TResult Function(String errorMessage)? getAdminNotificationsListFailure,
@@ -2523,6 +2592,8 @@ class __$$DeleteNotificationFailureImplCopyWithImpl<$Res>
       $Res Function(_$DeleteNotificationFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2562,7 +2633,9 @@ class _$DeleteNotificationFailureImpl implements DeleteNotificationFailure {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteNotificationFailureImplCopyWith<_$DeleteNotificationFailureImpl>
@@ -2574,7 +2647,7 @@ class _$DeleteNotificationFailureImpl implements DeleteNotificationFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() adminNotificationsLoading,
-    required TResult Function(List<AddNotificationModel?> notificationsList)
+    required TResult Function(List<AddNotificationEntity?> notificationsList)
         getAdminNotificationsListSuccess,
     required TResult Function() getAdminNotificationsListEmpty,
     required TResult Function(String errorMessage)
@@ -2592,7 +2665,7 @@ class _$DeleteNotificationFailureImpl implements DeleteNotificationFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? adminNotificationsLoading,
-    TResult? Function(List<AddNotificationModel?> notificationsList)?
+    TResult? Function(List<AddNotificationEntity?> notificationsList)?
         getAdminNotificationsListSuccess,
     TResult? Function()? getAdminNotificationsListEmpty,
     TResult? Function(String errorMessage)? getAdminNotificationsListFailure,
@@ -2609,7 +2682,7 @@ class _$DeleteNotificationFailureImpl implements DeleteNotificationFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? adminNotificationsLoading,
-    TResult Function(List<AddNotificationModel?> notificationsList)?
+    TResult Function(List<AddNotificationEntity?> notificationsList)?
         getAdminNotificationsListSuccess,
     TResult Function()? getAdminNotificationsListEmpty,
     TResult Function(String errorMessage)? getAdminNotificationsListFailure,
@@ -2703,7 +2776,10 @@ abstract class DeleteNotificationFailure implements AdminNotificationsState {
       _$DeleteNotificationFailureImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DeleteNotificationFailureImplCopyWith<_$DeleteNotificationFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

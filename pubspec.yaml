@@ -1,8 +1,6 @@
 name: shoply
 description: "shop app"
-# The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none'
 
 version: 1.0.2+1
 
@@ -14,37 +12,34 @@ dependencies:
   flutter:
     sdk: flutter
 
-  #firebase
-  firebase_auth: ^5.1.4
-  firebase_core: ^3.3.0
+  # Firebase
+  firebase_auth: ^6.0.2
+  firebase_core: ^4.1.0
+  firebase_messaging: ^16.0.1
+  flutter_local_notifications: ^19.4.1
+  googleapis_auth: ^2.0.0
 
-  # Notifications
-  firebase_messaging: ^15.0.4
-  flutter_local_notifications: ^17.2.2
-  googleapis_auth: ^1.6.0
-#  awesome_notifications: ^0.9.3+1
-  #core
-#  very_good_analysis: ^5.1.0
+  # Core & Utils
   connectivity_plus: ^6.0.3
-  flutter_dotenv: ^5.1.0
+  flutter_dotenv: ^6.0.0
   flutter_screenutil: ^5.9.3
-  intl: ^0.19.0
+  intl: ^0.20.2
+  intl_utils: ^2.8.2
   flutter_native_splash: ^2.4.0
   google_fonts: ^6.2.1
-  flutter_translate: ^4.1.0
-  get_it: ^7.7.0
+  get_it: ^9.2.0
   package_info_plus: ^8.0.2
   equatable: ^2.0.5
 
-  #language
+  # Localization
   flutter_localizations:
     sdk: flutter
   cupertino_icons: ^1.0.8
 
-  #UI
+  # UI
   flutter_svg: ^2.0.10+1
   lottie: ^3.1.2
-  animate_do: ^3.3.4
+  animate_do: ^4.2.0
   animations: ^2.0.11
   oktoast: ^3.4.0
   awesome_snackbar_content: ^0.1.3
@@ -52,40 +47,40 @@ dependencies:
   flutter_zoom_drawer: ^3.2.0
   shimmer: ^3.0.0
   flutter_swipe_action_cell: ^3.1.3
-  vibration: ^1.9.0
+  vibration: ^3.1.3
   cached_network_image: ^3.3.1
   webview_flutter: ^4.8.0
   url_launcher: ^6.3.0
   carousel_slider: ^5.0.0
 
-  #  Image Picker
+  # Image handling
   image_picker: ^1.1.2
-  image_cropper: ^7.0.5
-  permission_handler: ^11.3.1
+  image_cropper: ^9.1.0
+  permission_handler: ^12.0.1
   photo_view: ^0.15.0
   card_swiper: ^3.0.1
   path_provider: ^2.1.3
 
+  # State management
+  flutter_bloc: ^9.1.1
+  bloc: ^9.0.0
 
-  # bloc
-  flutter_bloc: ^8.1.6
-  bloc: ^8.1.4
-
-#  Shared Preferences
+  # Shared prefs
   shared_preferences: ^2.2.3
-#  freezed:
-  freezed_annotation: ^2.4.1
 
-# APIs
+  # Code generation
+  freezed_annotation: ^2.4.4
+
+  # APIs
   dio: ^5.4.3+1
   pretty_dio_logger: ^1.3.1
-  retrofit: ^4.1.0
+  retrofit: ">=4.4.4 <4.9.0"  # Temporarily disabled for build_runner
   json_annotation: ^4.9.0
   dropdown_search: ^5.0.6
 # Data Source database Hive
-  hive: ^2.2.3
-  hive_flutter: ^1.1.0
-
+  hive_ce: ^2.16.0
+  hive_ce_flutter: ^2.3.3
+  injectable: 2.7.1+4
 
 
 dev_dependencies:
@@ -94,11 +89,11 @@ dev_dependencies:
     sdk: flutter
   mockito: ^5.4.4
   mocktail: ^1.0.4
-  bloc_test: ^9.1.7
+  bloc_test: ^10.0.0
 #    core
-  flutter_launcher_icons: ^0.13.1
-  flutter_lints: ^4.0.0
-  very_good_analysis: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+  flutter_lints: ^6.0.0
+  very_good_analysis: ^9.0.0
 
 
 #  test: ^1.17.1
@@ -112,12 +107,11 @@ dev_dependencies:
 
 
 #  Remote Database using APIs
-  retrofit_generator: ^8.1.0
+  retrofit_generator: ^9.0.0
   json_serializable: ^6.8.0
-# Local Database using hive generator
-  hive_generator: ^2.0.1
-
-
+# Local Database using localDataSource generator
+  hive_ce_generator: ^1.4.0
+  injectable_generator: ^2.7.0
 
 flutter_launcher_icons:
   android: true
@@ -126,18 +120,8 @@ flutter_launcher_icons:
   adaptive_icon_background: "assets/images/core/launcher_background.png"
   adaptive_icon_foreground: "assets/images/core/launcher_foreground.png"
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-
-# The following section is specific to Flutter packages.
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
-
-  # To add assets to your application, add an assets section, like this:
   assets:
     - .env.dev
     - .env.prod
@@ -151,7 +135,6 @@ flutter:
     - translations/en.json
 
   fonts:
-    # Arabic Font
     - family: Cairo
       fonts:
         - asset: assets/fonts/arabic/cairo/Cairo-Bold.ttf
@@ -160,7 +143,6 @@ flutter:
           weight: 500
         - asset: assets/fonts/arabic/cairo/Cairo-Regular.ttf
           weight: 400
-    # English Font
     - family: Poppins
       fonts:
         - asset: assets/fonts/english/poppins/Poppins-Bold.ttf

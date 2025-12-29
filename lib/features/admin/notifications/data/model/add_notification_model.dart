@@ -1,6 +1,7 @@
-import 'package:hive/hive.dart';
+import 'package:hive_ce/hive.dart';
 
 part 'add_notification_model.g.dart';
+
 @HiveType(typeId: 0)
 class AddNotificationModel extends HiveObject {
   @HiveField(0)
@@ -14,13 +15,11 @@ class AddNotificationModel extends HiveObject {
   @HiveField(3)
   final DateTime createAt;
 
-  AddNotificationModel(
- {
+  AddNotificationModel({
     required this.title,
     required this.body,
     required this.createAt,
     required this.productId,
     required this.productName,
-
   });
 }

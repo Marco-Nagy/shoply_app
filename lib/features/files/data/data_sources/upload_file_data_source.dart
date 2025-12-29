@@ -1,8 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:shoply/core/app/Apis/api_service.dart';
+import 'package:injectable/injectable.dart';
+import 'package:shoply/core/app/apis/api_service.dart';
 import 'package:shoply/features/files/data/models/upload_model.dart';
 
+@lazySingleton
 class FileDataSource {
   FileDataSource(this._apiService);
 
@@ -19,6 +21,6 @@ class FileDataSource {
         ),
       ),
     );
-    return  _apiService.uploadFile(form);
+    return _apiService.uploadFile(form);
   }
 }

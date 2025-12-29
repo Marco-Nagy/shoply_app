@@ -6,7 +6,7 @@ import 'package:shoply/core/styles/icons/app_animated_icons.dart';
 import 'package:shoply/core/utils/message_type_const.dart';
 import 'package:shoply/core/utils/widgets/app_animated_icon.dart';
 import 'package:shoply/core/utils/widgets/snack_bar.dart';
-import 'package:shoply/features/admin/notifications/data/model/add_notification_model.dart';
+import 'package:shoply/features/admin/notifications/domain/entities/add_notification_entity.dart';
 import 'package:shoply/features/admin/notifications/presentation/bloc/send_notification/send_notification_bloc.dart';
 import 'package:vibration/vibration.dart';
 
@@ -17,7 +17,7 @@ class SendNotificationWidget extends StatefulWidget {
     required this.index,
   });
 
-  final AddNotificationModel notification;
+  final AddNotificationEntity notification;
   final int index;
 
   @override
@@ -83,13 +83,13 @@ class _SendNotificationWidgetState extends State<SendNotificationWidget>
                 color: context.colors.navBarbg,
                 boxShadow: [
                   BoxShadow(
-                      color: context.colors.bluePinkDark.withOpacity(0.5),
+                      color: context.colors.bluePinkDark.withValues(alpha: .5),
                       spreadRadius: 10,
                       blurRadius: 10,
                       offset: const Offset(0, 0),
                       blurStyle: BlurStyle.solid),
                   BoxShadow(
-                      color: context.colors.bluePinkLight.withOpacity(1),
+                      color: context.colors.bluePinkLight.withValues(alpha:1),
                       spreadRadius: 3,
                       blurRadius: 2,
                       offset: const Offset(0, 0),
@@ -124,13 +124,13 @@ class _SendNotificationWidgetState extends State<SendNotificationWidget>
                 color: context.colors.navBarbg,
                 boxShadow: [
                   BoxShadow(
-                      color: context.colors.bluePinkDark.withOpacity(0.5),
+                      color: context.colors.bluePinkDark.withValues(alpha: 0.5),
                       spreadRadius: 10,
                       blurRadius: 10,
                       offset: const Offset(0, 0),
                       blurStyle: BlurStyle.solid),
                   BoxShadow(
-                      color: context.colors.bluePinkLight.withOpacity(1),
+                      color: context.colors.bluePinkLight.withValues(alpha:1),
                       spreadRadius: 3,
                       blurRadius: 2,
                       offset: const Offset(0, 0),

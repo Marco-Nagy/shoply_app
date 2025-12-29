@@ -71,6 +71,9 @@ class _$MainStateCopyWithImpl<$Res, $Val extends MainState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of MainState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -87,6 +90,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of MainState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -193,6 +199,8 @@ class __$$BarSelectedIconsStateImplCopyWithImpl<$Res>
       $Res Function(_$BarSelectedIconsStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MainState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -231,7 +239,9 @@ class _$BarSelectedIconsStateImpl implements BarSelectedIconsState {
   @override
   int get hashCode => Object.hash(runtimeType, iconTab);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MainState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BarSelectedIconsStateImplCopyWith<_$BarSelectedIconsStateImpl>
@@ -306,7 +316,10 @@ abstract class BarSelectedIconsState implements MainState {
       _$BarSelectedIconsStateImpl;
 
   NavBarEnum get iconTab;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MainState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BarSelectedIconsStateImplCopyWith<_$BarSelectedIconsStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

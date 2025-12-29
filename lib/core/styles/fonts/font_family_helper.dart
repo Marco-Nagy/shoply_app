@@ -7,8 +7,7 @@ class FontFamilyHelper {
 
   static const String poppinsEn = 'Poppins';
 static String getLocalFontFamily(){
-    final currentLanguage =
-        SharedPrefHelper().getString(key: SharedPrefKeys.language);
+    final currentLanguage = SharedPrefHelper().getString(key: SharedPrefKeys.language);
     switch (currentLanguage) {
     case 'ar':
       return FontFamilyHelper.cairoAr;

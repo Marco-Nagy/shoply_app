@@ -2,7 +2,7 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_swipe_action_cell/core/controller.dart';
-import 'package:shoply/core/app/di/injection_container.dart';
+import 'package:shoply/core/app/di/injection.dart';
 import 'package:shoply/core/helpers/extension/mediaQueryValues.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/helpers/extension/navigations.dart';
@@ -13,6 +13,7 @@ import 'package:shoply/core/utils/widgets/custom_dialogs.dart';
 import 'package:shoply/core/utils/widgets/custom_swipe_to_action.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/features/admin/notifications/data/model/add_notification_model.dart';
+import 'package:shoply/features/admin/notifications/domain/entities/add_notification_entity.dart';
 import 'package:shoply/features/admin/notifications/presentation/bloc/add_notification/admin_notifications_bloc.dart';
 import 'package:shoply/features/admin/notifications/presentation/widget/notification_loading.dart';
 import 'package:shoply/features/admin/products/presentation/bloc/admin_product_bloc.dart';
@@ -62,8 +63,8 @@ class _AddNotificationBodyState extends State<AddNotificationBody>
             const CreateNotification(),
             verticalSpacing(8),
             Expanded(
-                child: RefreshIndicator(
-                    onRefresh: () async {
+              child: RefreshIndicator(
+                onRefresh: () async {
                   context.read<AdminNotificationsBloc>().add(
                       const AdminNotificationsEvent.fetchAdminNotifications());
                 },
@@ -90,52 +91,54 @@ class _AddNotificationBodyState extends State<AddNotificationBody>
                             return CustomSwipeToAction(
                               index: index,
                               rightButtonBackgroundColor: Colors.redAccent,
-                          animatedRightButtonAsset: AppAnimatedIcons.trash,
-                          animatedLiftButtonAsset: AppAnimatedIcons.edit,
-                          leftButtonBackgroundColor: Colors.blue,
-                          onPressRightButton: () async {
-                            Vibration.vibrate(
-                                duration: 700, pattern: [50, 100, 50, 500]);
-                            Future.delayed(const Duration(milliseconds: 700));
-                            CustomDialog.twoButtonDialog(
-                                context: context,
-                                textBody: 'Are you sure you want to delete ',
-                                // ${categoriesList[index]!.name} ??',
-                                textButton1: 'Delete',
-                                textButton2: 'Cancel',
-                                onPressed: () async {
-                                  setState(() {
+                              animatedRightButtonAsset: AppAnimatedIcons.trash,
+                              animatedLiftButtonAsset: AppAnimatedIcons.edit,
+                              leftButtonBackgroundColor: Colors.blue,
+                              onPressRightButton: () async {
+                                Vibration.vibrate(
+                                    duration: 700, pattern: [50, 100, 50, 500]);
+                                Future.delayed(
+                                    const Duration(milliseconds: 700));
+                                CustomDialog.twoButtonDialog(
+                                    context: context,
+                                    textBody:
+                                        'Are you sure you want to delete ',
+                                    // ${categoriesList[index]!.name} ??',
+                                    textButton1: 'Delete',
+                                    textButton2: 'Cancel',
+                                    onPressed: () async {
+                                      setState(() {});
+                                      // notificationsList[index]!.delete();
 
-                                  });
-                                      notificationsList[index]!.delete();
-
-                                      _deleteCategory(context,
-                                          notification:
-                                          notificationsList[
-                                      index]!)
-                                      .whenComplete(
+                                      _deleteNotification(context,
+                                              notification:
+                                                  notificationsList[index]!)
+                                          .whenComplete(
                                         () {
-                                      context
-                                          .read<AdminNotificationsBloc>()
-                                          .add(const AdminNotificationsEvent.fetchAdminNotifications()
-                                   );
-                                      context.pop();
+                                          context
+                                              .read<AdminNotificationsBloc>()
+                                              .add(const AdminNotificationsEvent
+                                                  .fetchAdminNotifications());
+                                          context.pop();
+                                        },
+                                      );
                                     },
-                                  );
-                                },
-                                isLoading: true);
-                          },
-                          onPressLeftButton: () async {
-                            Vibration.vibrate(
-                                duration: 500, pattern: [50, 200, 50, 100]);
-                            Future.delayed(const Duration(milliseconds: 500));
-                            CustomBottomSheet.showModalBottomSheetWidget(
-                              context: context,
-                              child: MultiBlocProvider(
-                                providers: [
-                                  BlocProvider(
-                                      create: (context) => sl<
-                                          AdminProductBloc>()..add(const AdminProductEvent.getAdminProductList())),
+                                    isLoading: true);
+                              },
+                              onPressLeftButton: () async {
+                                Vibration.vibrate(
+                                    duration: 500, pattern: [50, 200, 50, 100]);
+                                Future.delayed(
+                                    const Duration(milliseconds: 500));
+                                CustomBottomSheet.showModalBottomSheetWidget(
+                                  context: context,
+                                  child: MultiBlocProvider(
+                                    providers: [
+                                      BlocProvider(
+                                          create: (context) =>
+                                              sl<AdminProductBloc>()
+                                                ..add(const AdminProductEvent
+                                                    .getAdminProductList())),
                                       BlocProvider(
                                           create: (context) =>
                                               sl<AdminNotificationsBloc>()),
@@ -157,20 +160,21 @@ class _AddNotificationBodyState extends State<AddNotificationBody>
                                 );
                               },
                               child: AnimatedContainer(
-                            duration:
-                                Duration(milliseconds: 400 + (index * 250)),
-                            curve: Curves.easeIn,
-                            transform: Matrix4.translationValues(
-                                myAnimation ? 0 : width, 0, 0),
+                                duration:
+                                    Duration(milliseconds: 400 + (index * 250)),
+                                curve: Curves.easeIn,
+                                transform: Matrix4.translationValues(
+                                    myAnimation ? 0 : width, 0, 0),
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: NotificationItem(
-                                    notification: notificationsList[index]!, index: index,
+                                    notification: notificationsList[index]!,
+                                    index: index,
                                   ),
                                 ),
                               ),
                             );
-                      },
+                          },
                         );
                       },
                       orElse: () => const SizedBox.shrink(),
@@ -185,8 +189,8 @@ class _AddNotificationBodyState extends State<AddNotificationBody>
     );
   }
 
-  Future<void> _deleteCategory(BuildContext context,
-      {required AddNotificationModel notification}) async {
+  Future<void> _deleteNotification(BuildContext context,
+      {required AddNotificationEntity notification}) async {
     context
         .read<AdminNotificationsBloc>()
         .add(DeleteNotificationEvent(notification: notification));

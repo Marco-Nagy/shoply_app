@@ -100,6 +100,9 @@ class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -116,6 +119,9 @@ class __$$StartedImplCopyWithImpl<$Res>
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -249,6 +255,9 @@ class __$$FetchHomeCategoriesListEventImplCopyWithImpl<$Res>
       _$FetchHomeCategoriesListEventImpl _value,
       $Res Function(_$FetchHomeCategoriesListEventImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -385,6 +394,9 @@ class __$$GetHomeProductListEventImplCopyWithImpl<$Res>
       _$GetHomeProductListEventImpl _value,
       $Res Function(_$GetHomeProductListEventImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -518,6 +530,9 @@ class __$$LoadMoreProductsEventImplCopyWithImpl<$Res>
   __$$LoadMoreProductsEventImplCopyWithImpl(_$LoadMoreProductsEventImpl _value,
       $Res Function(_$LoadMoreProductsEventImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -655,6 +670,8 @@ class __$$GetHomeProductDetailsEventImplCopyWithImpl<$Res>
       $Res Function(_$GetHomeProductDetailsEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -694,7 +711,9 @@ class _$GetHomeProductDetailsEventImpl implements GetHomeProductDetailsEvent {
   @override
   int get hashCode => Object.hash(runtimeType, productId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetHomeProductDetailsEventImplCopyWith<_$GetHomeProductDetailsEventImpl>
@@ -798,7 +817,10 @@ abstract class GetHomeProductDetailsEvent implements HomeEvent {
       _$GetHomeProductDetailsEventImpl;
 
   String get productId;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetHomeProductDetailsEventImplCopyWith<_$GetHomeProductDetailsEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -823,6 +845,8 @@ class __$$GetHomeProductListPerCategoryEventImplCopyWithImpl<$Res>
       $Res Function(_$GetHomeProductListPerCategoryEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -863,7 +887,9 @@ class _$GetHomeProductListPerCategoryEventImpl
   @override
   int get hashCode => Object.hash(runtimeType, categoryId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetHomeProductListPerCategoryEventImplCopyWith<
@@ -969,7 +995,10 @@ abstract class GetHomeProductListPerCategoryEvent implements HomeEvent {
       _$GetHomeProductListPerCategoryEventImpl;
 
   String get categoryId;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetHomeProductListPerCategoryEventImplCopyWith<
           _$GetHomeProductListPerCategoryEventImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1158,6 +1187,9 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1174,6 +1206,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1402,6 +1437,9 @@ class __$$HomeCategorieLoadingImplCopyWithImpl<$Res>
   __$$HomeCategorieLoadingImplCopyWithImpl(_$HomeCategorieLoadingImpl _value,
       $Res Function(_$HomeCategorieLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1631,6 +1669,9 @@ class __$$HomeProductsLoadingImplCopyWithImpl<$Res>
   __$$HomeProductsLoadingImplCopyWithImpl(_$HomeProductsLoadingImpl _value,
       $Res Function(_$HomeProductsLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1865,6 +1906,8 @@ class __$$GetHomeCategoriesListSuccessImplCopyWithImpl<$Res>
       $Res Function(_$GetHomeCategoriesListSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1913,7 +1956,9 @@ class _$GetHomeCategoriesListSuccessImpl
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_categoriesList));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetHomeCategoriesListSuccessImplCopyWith<
@@ -2116,7 +2161,10 @@ abstract class GetHomeCategoriesListSuccess implements HomeState {
       _$GetHomeCategoriesListSuccessImpl;
 
   List<CategoryEntity> get categoriesList;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetHomeCategoriesListSuccessImplCopyWith<
           _$GetHomeCategoriesListSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -2138,6 +2186,9 @@ class __$$GetHomeCategoriesListEmptyImplCopyWithImpl<$Res>
       _$GetHomeCategoriesListEmptyImpl _value,
       $Res Function(_$GetHomeCategoriesListEmptyImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2372,6 +2423,8 @@ class __$$GetHomeCategoriesListFailureImplCopyWithImpl<$Res>
       $Res Function(_$GetHomeCategoriesListFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2412,7 +2465,9 @@ class _$GetHomeCategoriesListFailureImpl
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetHomeCategoriesListFailureImplCopyWith<
@@ -2614,7 +2669,10 @@ abstract class GetHomeCategoriesListFailure implements HomeState {
       _$GetHomeCategoriesListFailureImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetHomeCategoriesListFailureImplCopyWith<
           _$GetHomeCategoriesListFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -2639,6 +2697,8 @@ class __$$GetHomeProductListSuccessImplCopyWithImpl<$Res>
       $Res Function(_$GetHomeProductListSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2686,7 +2746,9 @@ class _$GetHomeProductListSuccessImpl implements GetHomeProductListSuccess {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_productList));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetHomeProductListSuccessImplCopyWith<_$GetHomeProductListSuccessImpl>
@@ -2888,7 +2950,10 @@ abstract class GetHomeProductListSuccess implements HomeState {
       _$GetHomeProductListSuccessImpl;
 
   List<GetProductEntity> get productList;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetHomeProductListSuccessImplCopyWith<_$GetHomeProductListSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2909,6 +2974,9 @@ class __$$GetHomeProductListEmptyImplCopyWithImpl<$Res>
       _$GetHomeProductListEmptyImpl _value,
       $Res Function(_$GetHomeProductListEmptyImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3143,6 +3211,8 @@ class __$$GetHomeProductListFailureImplCopyWithImpl<$Res>
       $Res Function(_$GetHomeProductListFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3182,7 +3252,9 @@ class _$GetHomeProductListFailureImpl implements GetHomeProductListFailure {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetHomeProductListFailureImplCopyWith<_$GetHomeProductListFailureImpl>
@@ -3383,7 +3455,10 @@ abstract class GetHomeProductListFailure implements HomeState {
       _$GetHomeProductListFailureImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetHomeProductListFailureImplCopyWith<_$GetHomeProductListFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3408,6 +3483,8 @@ class __$$GetHomeProductListPerCategorySuccessImplCopyWithImpl<$Res>
       $Res Function(_$GetHomeProductListPerCategorySuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3456,7 +3533,9 @@ class _$GetHomeProductListPerCategorySuccessImpl
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_productList));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetHomeProductListPerCategorySuccessImplCopyWith<
@@ -3659,7 +3738,10 @@ abstract class GetHomeProductListPerCategorySuccess implements HomeState {
       _$GetHomeProductListPerCategorySuccessImpl;
 
   List<GetProductEntity> get productList;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetHomeProductListPerCategorySuccessImplCopyWith<
           _$GetHomeProductListPerCategorySuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -3682,6 +3764,9 @@ class __$$GetHomeProductListPerCategoryEmptyImplCopyWithImpl<$Res>
       _$GetHomeProductListPerCategoryEmptyImpl _value,
       $Res Function(_$GetHomeProductListPerCategoryEmptyImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3919,6 +4004,8 @@ class __$$GetHomeProductListPerCategoryFailureImplCopyWithImpl<$Res>
       $Res Function(_$GetHomeProductListPerCategoryFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3959,7 +4046,9 @@ class _$GetHomeProductListPerCategoryFailureImpl
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetHomeProductListPerCategoryFailureImplCopyWith<
@@ -4161,7 +4250,10 @@ abstract class GetHomeProductListPerCategoryFailure implements HomeState {
       final String errorMessage) = _$GetHomeProductListPerCategoryFailureImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetHomeProductListPerCategoryFailureImplCopyWith<
           _$GetHomeProductListPerCategoryFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -4186,6 +4278,8 @@ class __$$GetHomeProductDetailsSuccessImplCopyWithImpl<$Res>
       $Res Function(_$GetHomeProductDetailsSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4225,7 +4319,9 @@ class _$GetHomeProductDetailsSuccessImpl
   @override
   int get hashCode => Object.hash(runtimeType, product);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetHomeProductDetailsSuccessImplCopyWith<
@@ -4427,7 +4523,10 @@ abstract class GetHomeProductDetailsSuccess implements HomeState {
       final ProductsDetailsEntity product) = _$GetHomeProductDetailsSuccessImpl;
 
   ProductsDetailsEntity get product;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetHomeProductDetailsSuccessImplCopyWith<
           _$GetHomeProductDetailsSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -4449,6 +4548,9 @@ class __$$GetHomeProductDetailsEmptyImplCopyWithImpl<$Res>
       _$GetHomeProductDetailsEmptyImpl _value,
       $Res Function(_$GetHomeProductDetailsEmptyImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -4683,6 +4785,8 @@ class __$$GetHomeProductDetailsFailureImplCopyWithImpl<$Res>
       $Res Function(_$GetHomeProductDetailsFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4723,7 +4827,9 @@ class _$GetHomeProductDetailsFailureImpl
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetHomeProductDetailsFailureImplCopyWith<
@@ -4925,7 +5031,10 @@ abstract class GetHomeProductDetailsFailure implements HomeState {
       _$GetHomeProductDetailsFailureImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HomeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetHomeProductDetailsFailureImplCopyWith<
           _$GetHomeProductDetailsFailureImpl>
       get copyWith => throw _privateConstructorUsedError;

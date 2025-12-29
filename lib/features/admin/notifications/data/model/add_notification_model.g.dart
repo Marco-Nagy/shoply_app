@@ -8,7 +8,7 @@ part of 'add_notification_model.dart';
 
 class AddNotificationModelAdapter extends TypeAdapter<AddNotificationModel> {
   @override
-  final int typeId = 0;
+  final typeId = 0;
 
   @override
   AddNotificationModel read(BinaryReader reader) {
@@ -35,10 +35,10 @@ class AddNotificationModelAdapter extends TypeAdapter<AddNotificationModel> {
       ..write(obj.body)
       ..writeByte(2)
       ..write(obj.productId)
-      ..writeByte(4)
-      ..write(obj.productName)
       ..writeByte(3)
-      ..write(obj.createAt);
+      ..write(obj.createAt)
+      ..writeByte(4)
+      ..write(obj.productName);
   }
 
   @override

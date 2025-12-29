@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:shoply/core/app/Apis/api_result.dart';
+import 'package:injectable/injectable.dart';
+import 'package:shoply/core/app/apis/api_result.dart';
 import 'package:shoply/core/app/apis/errors/error_handler.dart';
 import 'package:shoply/features/auth/data/data_sources/auth_data_source.dart';
 import 'package:shoply/features/auth/data/models/login/login_request.dart';
@@ -8,6 +9,7 @@ import 'package:shoply/features/auth/data/models/role/user_role_response.dart';
 import 'package:shoply/features/auth/data/models/sign_up/signup_request.dart';
 import 'package:shoply/features/auth/data/models/sign_up/signup_response.dart';
 
+@lazySingleton
 class AuthRepository {
   AuthRepository(this._authDataSource);
 
@@ -32,6 +34,7 @@ class AuthRepository {
     final response = await _authDataSource.userRole();
     return response;
   }
+
   Future<ApiResult<SignupResponse>> signUp(SignupRequest body) async {
     try {
       final response = await _authDataSource.signUp(body);

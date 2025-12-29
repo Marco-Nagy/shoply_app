@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:shoply/core/app/Apis/api_result.dart';
+import 'package:injectable/injectable.dart';
+import 'package:shoply/core/app/apis/api_result.dart';
 import 'package:shoply/core/app/apis/errors/error_handler.dart';
 import 'package:shoply/features/admin/categories/data/data_source/admin_categries_data_source.dart';
 import 'package:shoply/features/admin/categories/data/model/create/create_category_request.dart';
@@ -9,6 +10,7 @@ import 'package:shoply/features/admin/categories/data/model/get_all_categories/g
 import 'package:shoply/features/admin/categories/data/model/update/update_category_request.dart';
 import 'package:shoply/features/admin/categories/data/model/update/update_category_response.dart';
 
+@lazySingleton
 class AdminCategoriesRepository {
   final AdminCategoriesDataSource _dataSource;
 
@@ -28,7 +30,9 @@ class AdminCategoriesRepository {
       return ApiResult.failure(ServerFailure(error.toString()));
     }
   }
-  Future<ApiResult<CreateCategoryResponse>> createNewCategory(CreateCategoryRequest body) async {
+
+  Future<ApiResult<CreateCategoryResponse>> createNewCategory(
+      CreateCategoryRequest body) async {
     try {
       final response = await _dataSource.createCategory(body);
       if (response.data != null) {
@@ -42,7 +46,9 @@ class AdminCategoriesRepository {
       return ApiResult.failure(ServerFailure(error.toString()));
     }
   }
-  Future<ApiResult<UpdateCategoryResponse>> updateCategory(UpdateCategoryRequest body)async {
+
+  Future<ApiResult<UpdateCategoryResponse>> updateCategory(
+      UpdateCategoryRequest body) async {
     try {
       final response = await _dataSource.updateCategory(body);
       if (response.data != null) {
@@ -55,10 +61,10 @@ class AdminCategoriesRepository {
     } catch (error) {
       return ApiResult.failure(ServerFailure(error.toString()));
     }
-
   }
 
-  Future<ApiResult<DeleteCategoryResponse>> deleteCategory(String categoryId)async {
+  Future<ApiResult<DeleteCategoryResponse>> deleteCategory(
+      String categoryId) async {
     try {
       final response = await _dataSource.deleteCategory(categoryId);
       if (response.data != null) {
@@ -72,5 +78,4 @@ class AdminCategoriesRepository {
       return ApiResult.failure(ServerFailure(error.toString()));
     }
   }
-
 }

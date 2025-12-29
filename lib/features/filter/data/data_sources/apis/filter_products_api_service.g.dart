@@ -6,13 +6,10 @@ part of 'filter_products_api_service.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations,unused_element_parameter
 
 class _FilterProductsApiService implements FilterProductsApiService {
-  _FilterProductsApiService(
-    this._dio, {
-    this.baseUrl,
-  }) {
+  _FilterProductsApiService(this._dio, {this.baseUrl, this.errorLogger}) {
     baseUrl ??= 'https://api.escuelajs.co';
   }
 
@@ -20,33 +17,36 @@ class _FilterProductsApiService implements FilterProductsApiService {
 
   String? baseUrl;
 
+  final ParseErrorLogger? errorLogger;
+
   @override
   Future<GetAllProductsResponse> filterProducts(
-      Map<String, dynamic> query) async {
+    Map<String, dynamic> query,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(query);
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<GetAllProductsResponse>(Options(
-      method: 'POST',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/graphql',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final value = GetAllProductsResponse.fromJson(_result.data!);
-    return value;
+    final _options = _setStreamType<GetAllProductsResponse>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/graphql',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late GetAllProductsResponse _value;
+    try {
+      _value = GetAllProductsResponse.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
@@ -62,10 +62,7 @@ class _FilterProductsApiService implements FilterProductsApiService {
     return requestOptions;
   }
 
-  String _combineBaseUrls(
-    String dioBaseUrl,
-    String? baseUrl,
-  ) {
+  String _combineBaseUrls(String dioBaseUrl, String? baseUrl) {
     if (baseUrl == null || baseUrl.trim().isEmpty) {
       return dioBaseUrl;
     }

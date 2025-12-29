@@ -84,6 +84,9 @@ class _$DashboardEventCopyWithImpl<$Res, $Val extends DashboardEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of DashboardEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -100,6 +103,9 @@ class __$$StartedImplCopyWithImpl<$Res>
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of DashboardEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -214,6 +220,9 @@ class __$$GetProductsEventImplCopyWithImpl<$Res>
   __$$GetProductsEventImplCopyWithImpl(_$GetProductsEventImpl _value,
       $Res Function(_$GetProductsEventImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of DashboardEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -328,6 +337,9 @@ class __$$GetCategoriesEventImplCopyWithImpl<$Res>
   __$$GetCategoriesEventImplCopyWithImpl(_$GetCategoriesEventImpl _value,
       $Res Function(_$GetCategoriesEventImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of DashboardEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -442,6 +454,9 @@ class __$$GetUsersEventImplCopyWithImpl<$Res>
   __$$GetUsersEventImplCopyWithImpl(
       _$GetUsersEventImpl _value, $Res Function(_$GetUsersEventImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of DashboardEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -631,6 +646,9 @@ class _$DashboardStateCopyWithImpl<T, $Res, $Val extends DashboardState<T>>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -647,6 +665,9 @@ class __$$LoadingStateImplCopyWithImpl<T, $Res>
   __$$LoadingStateImplCopyWithImpl(
       _$LoadingStateImpl<T> _value, $Res Function(_$LoadingStateImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -783,6 +804,8 @@ class __$$ErrorProductsStateImplCopyWithImpl<T, $Res>
       $Res Function(_$ErrorProductsStateImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -821,7 +844,9 @@ class _$ErrorProductsStateImpl<T> implements ErrorProductsState<T> {
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ErrorProductsStateImplCopyWith<T, _$ErrorProductsStateImpl<T>>
@@ -927,7 +952,10 @@ abstract class ErrorProductsState<T> implements DashboardState<T> {
       _$ErrorProductsStateImpl<T>;
 
   String get error;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorProductsStateImplCopyWith<T, _$ErrorProductsStateImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -950,6 +978,8 @@ class __$$SuccessProductsStateImplCopyWithImpl<T, $Res>
       $Res Function(_$SuccessProductsStateImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -989,7 +1019,9 @@ class _$SuccessProductsStateImpl<T> implements SuccessProductsState<T> {
   @override
   int get hashCode => Object.hash(runtimeType, totalProducts);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SuccessProductsStateImplCopyWith<T, _$SuccessProductsStateImpl<T>>
@@ -1095,7 +1127,10 @@ abstract class SuccessProductsState<T> implements DashboardState<T> {
       _$SuccessProductsStateImpl<T>;
 
   String get totalProducts;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessProductsStateImplCopyWith<T, _$SuccessProductsStateImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1118,6 +1153,8 @@ class __$$ErrorCategoriesStateImplCopyWithImpl<T, $Res>
       $Res Function(_$ErrorCategoriesStateImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1156,7 +1193,9 @@ class _$ErrorCategoriesStateImpl<T> implements ErrorCategoriesState<T> {
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ErrorCategoriesStateImplCopyWith<T, _$ErrorCategoriesStateImpl<T>>
@@ -1262,7 +1301,10 @@ abstract class ErrorCategoriesState<T> implements DashboardState<T> {
       _$ErrorCategoriesStateImpl<T>;
 
   String get error;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorCategoriesStateImplCopyWith<T, _$ErrorCategoriesStateImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1287,6 +1329,8 @@ class __$$SuccessCategoriesStateImplCopyWithImpl<T, $Res>
       $Res Function(_$SuccessCategoriesStateImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1326,7 +1370,9 @@ class _$SuccessCategoriesStateImpl<T> implements SuccessCategoriesState<T> {
   @override
   int get hashCode => Object.hash(runtimeType, totalCategories);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SuccessCategoriesStateImplCopyWith<T, _$SuccessCategoriesStateImpl<T>>
@@ -1433,7 +1479,10 @@ abstract class SuccessCategoriesState<T> implements DashboardState<T> {
       _$SuccessCategoriesStateImpl<T>;
 
   String get totalCategories;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessCategoriesStateImplCopyWith<T, _$SuccessCategoriesStateImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1455,6 +1504,8 @@ class __$$ErrorUsersStateImplCopyWithImpl<T, $Res>
       $Res Function(_$ErrorUsersStateImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1493,7 +1544,9 @@ class _$ErrorUsersStateImpl<T> implements ErrorUsersState<T> {
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ErrorUsersStateImplCopyWith<T, _$ErrorUsersStateImpl<T>> get copyWith =>
@@ -1599,7 +1652,10 @@ abstract class ErrorUsersState<T> implements DashboardState<T> {
       _$ErrorUsersStateImpl<T>;
 
   String get error;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorUsersStateImplCopyWith<T, _$ErrorUsersStateImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1621,6 +1677,8 @@ class __$$SuccessUsersStateImplCopyWithImpl<T, $Res>
       $Res Function(_$SuccessUsersStateImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1660,7 +1718,9 @@ class _$SuccessUsersStateImpl<T> implements SuccessUsersState<T> {
   @override
   int get hashCode => Object.hash(runtimeType, totalUsers);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SuccessUsersStateImplCopyWith<T, _$SuccessUsersStateImpl<T>>
@@ -1767,7 +1827,10 @@ abstract class SuccessUsersState<T> implements DashboardState<T> {
       _$SuccessUsersStateImpl<T>;
 
   String get totalUsers;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessUsersStateImplCopyWith<T, _$SuccessUsersStateImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

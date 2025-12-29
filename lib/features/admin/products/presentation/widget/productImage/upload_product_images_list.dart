@@ -105,14 +105,14 @@ class _UploadProductImagesListState extends State<UploadProductImagesList>
                             boxShadow: [
                               BoxShadow(
                                   color: context.colors.bluePinkDark
-                                      .withOpacity(0.5),
+                                      .withValues(alpha:0.5),
                                   spreadRadius: 10,
                                   blurRadius: 10,
                                   offset: const Offset(0, 0),
                                   blurStyle: BlurStyle.solid),
                               BoxShadow(
                                   color: context.colors.bluePinkLight
-                                      .withOpacity(1),
+                                      .withValues(alpha:1),
                                   spreadRadius: 3,
                                   blurRadius: 2,
                                   offset: const Offset(0, 0),

@@ -7,12 +7,13 @@ import 'package:shoply/core/Services/shared_preference/shared_preference_helper.
 import 'package:shoply/core/app/app_cubit/app_cubit.dart';
 import 'package:shoply/core/app/connectivity_controller.dart';
 import 'package:shoply/core/app/env_variables.dart';
-import 'package:shoply/core/app/di/injection_container.dart';
 import 'package:shoply/core/helpers/extension/mediaQueryValues.dart';
 import 'package:shoply/core/localization/app_localizations_setup.dart';
 import 'package:shoply/core/routes/app_routes.dart';
 import 'package:shoply/core/styles/theme/app_theme.dart';
 import 'package:shoply/core/utils/screens/no_network_screen.dart';
+import 'package:shoply/features/customer/favorites/presentation/cubit/favorites_cubit.dart';
+import 'package:shoply/core/app/di/injection.dart';
 
 class ShoplyApp extends StatelessWidget {
   const ShoplyApp({super.key});
@@ -20,44 +21,59 @@ class ShoplyApp extends StatelessWidget {
   //!  This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    print('DEBUG: ShoplyApp build');
+    print('DEBUG: sl hash in ShoplyApp: ${sl.hashCode}');
+    try {
+      print(
+          'DEBUG: AppCubit registered in ShoplyApp: ${sl.isRegistered<AppCubit>()}');
+    } catch (e) {
+      print('DEBUG: Error checking AppCubit: $e');
+    }
     return ValueListenableBuilder(
       valueListenable: ConnectivityController.instance.isConnected,
       builder: (_, value, __) {
         if (value) {
-          return BlocProvider(
-            create: (context) =>
-            sl<AppCubit>()
-              ..changeTheme(
-                  sharedMode: SharedPrefHelper()
-                      .getBoolean(key: SharedPrefKeys.themeMode),),
+          return MultiBlocProvider(
+            providers: [
+              BlocProvider<AppCubit>(
+                create: (context) => sl<AppCubit>()
+                  ..changeTheme(
+                    sharedMode: SharedPrefHelper()
+                        .getBoolean(key: SharedPrefKeys.themeMode),
+                  ),
+              ),
+              BlocProvider<FavoritesCubit>(
+                  create: (context) => sl<FavoritesCubit>()..getFavorites()),
+            ],
             child: ScreenUtilInit(
-              designSize:kIsWeb?Size(context.width, context.height) :const Size(390, 844),
+              designSize: kIsWeb
+                  ? Size(context.width, context.height)
+                  : const Size(390, 844),
               minTextAdapt: true,
               child: BlocBuilder<AppCubit, AppState>(
                 buildWhen: (previous, current) {
-                return  previous != current;
+                  return previous != current;
                 },
                 builder: (context, state) {
                   final cubit = context.read<AppCubit>();
                   return MaterialApp(
                     title: 'Shoply App',
                     debugShowCheckedModeBanner: EnvVariables.instance.debugMode,
-                    theme:cubit.isDark? darkTheme:lightTheme,
-                    locale:  Locale(cubit.currentLanguage),
+                    theme: cubit.isDark ? darkTheme : lightTheme,
+                    locale: Locale(cubit.currentLanguage),
                     supportedLocales: AppLocalizationsSetup.supportedLocales,
                     localeResolutionCallback:
-                    AppLocalizationsSetup.localeResolutionCallback,
+                        AppLocalizationsSetup.localeResolutionCallback,
                     localizationsDelegates:
-                    AppLocalizationsSetup.localizationsDelegates,
-                    builder: (context, child) =>
-                        Scaffold(
-                          body: Builder(
-                            builder: (context) {
-                              ConnectivityController.instance.init();
-                              return child!;
-                            },
-                          ),
-                        ),
+                        AppLocalizationsSetup.localizationsDelegates,
+                    builder: (context, child) => Scaffold(
+                      body: Builder(
+                        builder: (context) {
+                          ConnectivityController.instance.init();
+                          return child!;
+                        },
+                      ),
+                    ),
                     navigatorKey: sl<GlobalKey<NavigatorState>>(),
                     initialRoute: _getInitialRoute(),
                     onGenerateRoute: AppRoutes.onGenerateRoute,
@@ -75,15 +91,12 @@ class ShoplyApp extends StatelessWidget {
       },
     );
   }
-  String _getInitialRoute () {
-    return  SharedPrefHelper()
-        .getString(key: SharedPrefKeys.accessToken) !=
-        null
-        ? SharedPrefHelper()
-        .getString(key: SharedPrefKeys.userRole) ==
-        'admin'
-        ? AppRoutes.homeAdmin
-        : AppRoutes.homeCustomer
+
+  String _getInitialRoute() {
+    return SharedPrefHelper().getString(key: SharedPrefKeys.accessToken) != null
+        ? SharedPrefHelper().getString(key: SharedPrefKeys.userRole) == 'admin'
+            ? AppRoutes.homeAdmin
+            : AppRoutes.homeCustomer
         : AppRoutes.login;
   }
 }

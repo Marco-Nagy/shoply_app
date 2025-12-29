@@ -18,7 +18,7 @@ class HomeProductListWidget extends StatelessWidget {
         crossAxisCount: 2, //Number of cloums
         crossAxisSpacing: 8, // Spacing between colums
         mainAxisSpacing: 1, //Spacing between rows
-        childAspectRatio: 165 / 250,
+        childAspectRatio: 165 / 300,
       ),
       itemBuilder: (context, index) {
         return HomeProductItem(

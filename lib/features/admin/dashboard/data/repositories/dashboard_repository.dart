@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:shoply/core/app/Apis/api_result.dart';
+import 'package:injectable/injectable.dart';
+import 'package:shoply/core/app/apis/api_result.dart';
 import 'package:shoply/features/admin/dashboard/data/data_sources/dashboard_data_source.dart';
 import 'package:shoply/features/admin/dashboard/data/models/total_categories_response.dart';
 import 'package:shoply/features/admin/dashboard/data/models/total_products_response.dart';
@@ -8,6 +9,7 @@ import 'package:shoply/features/admin/dashboard/data/models/total_users_response
 
 import '../../../../../core/app/apis/errors/error_handler.dart';
 
+@lazySingleton
 class DashboardRepository {
   final DashboardDataSource _dataSource;
 
@@ -20,14 +22,14 @@ class DashboardRepository {
         return ApiResult.success(response);
       }
       debugPrint('errorResponse ${response.error.toString()}');
-      return ApiResult.failure(
-          ServerFailure(response.error!.first.message));
+      return ApiResult.failure(ServerFailure(response.error!.first.message));
     } on DioException catch (dioError) {
       return ApiResult.failure(ServerFailure.fromDioException(dioError));
     } catch (error) {
       return ApiResult.failure(ServerFailure(error.toString()));
     }
   }
+
   Future<ApiResult<TotalCategoriesResponse>> getTotalCategories() async {
     try {
       final response = await _dataSource.getTotalCategories();
@@ -35,8 +37,7 @@ class DashboardRepository {
         return ApiResult.success(response);
       }
       debugPrint('errorResponse ${response.errors.toString()}');
-      return ApiResult.failure(
-          ServerFailure(response.errors!.first.message));
+      return ApiResult.failure(ServerFailure(response.errors!.first.message));
     } on DioException catch (dioError) {
       return ApiResult.failure(ServerFailure.fromDioException(dioError));
     } catch (error) {
@@ -51,14 +52,11 @@ class DashboardRepository {
         return ApiResult.success(response);
       }
       debugPrint('errorResponse ${response.errors.toString()}');
-      return ApiResult.failure(
-          ServerFailure(response.errors!.first.message));
+      return ApiResult.failure(ServerFailure(response.errors!.first.message));
     } on DioException catch (dioError) {
       return ApiResult.failure(ServerFailure.fromDioException(dioError));
     } catch (error) {
       return ApiResult.failure(ServerFailure(error.toString()));
     }
   }
-
-
 }

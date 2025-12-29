@@ -1,10 +1,11 @@
-
 import 'package:image_picker/image_picker.dart';
-import 'package:shoply/core/app/Apis/api_result.dart';
+import 'package:injectable/injectable.dart';
+import 'package:shoply/core/app/apis/api_result.dart';
 import 'package:shoply/core/app/apis/errors/error_handler.dart';
 import 'package:shoply/features/files/data/data_sources/upload_file_data_source.dart';
 import 'package:shoply/features/files/data/models/upload_model.dart';
 
+@lazySingleton
 class FileRepository {
   FileRepository(this._fileDataSource);
 

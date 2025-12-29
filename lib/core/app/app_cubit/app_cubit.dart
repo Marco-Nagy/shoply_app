@@ -1,12 +1,15 @@
 import 'dart:ui';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:shoply/core/Services/shared_preference/shared_pref_keys.dart';
 import 'package:shoply/core/Services/shared_preference/shared_preference_helper.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 part 'app_state.dart';
 part 'app_cubit.freezed.dart';
 
+@injectable
 class AppCubit extends Cubit<AppState> {
   AppCubit() : super(const AppState.initial());
   bool isDark = true;
@@ -50,7 +53,8 @@ class AppCubit extends Cubit<AppState> {
   // * Url Launcher *
 
   Future<void> openUrl({required String url}) async {
-    if (!await launchUrl(Uri.parse(url),mode: LaunchMode.externalApplication)) {
+    if (!await launchUrl(Uri.parse(url),
+        mode: LaunchMode.externalApplication)) {
       throw 'Could not launch $url';
     }
   }

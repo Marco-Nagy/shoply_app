@@ -14,7 +14,7 @@ import 'package:shoply/core/utils/widgets/custom_dropdown_search.dart';
 import 'package:shoply/core/utils/widgets/snack_bar.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
-import 'package:shoply/features/admin/notifications/data/model/add_notification_model.dart';
+import 'package:shoply/features/admin/notifications/domain/entities/add_notification_entity.dart';
 import 'package:shoply/features/admin/notifications/presentation/bloc/add_notification/admin_notifications_bloc.dart';
 import 'package:shoply/features/admin/notifications/presentation/widget/create/product_item.dart';
 import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
@@ -26,7 +26,7 @@ class CreateNotificationBottomSheetWidget extends StatefulWidget {
     this.notification,
   });
 
-  final AddNotificationModel? notification;
+  final AddNotificationEntity? notification;
 
   @override
   State<CreateNotificationBottomSheetWidget> createState() =>
@@ -100,16 +100,13 @@ class _CreateNotificationBottomSheetWidgetState
                     .copyWith(color: context.colors.textColor),
               ),
             ),
-
             verticalSpacing(8),
-
             TextApp(
               text: '$notificationStatus Notification Title',
               style: MyFonts.styleMedium500_16
                   .copyWith(color: context.colors.textColor),
             ),
             verticalSpacing(5),
-
             CustomFadeInRight(
               duration: 400,
               child: AppTextFormField(
@@ -129,7 +126,6 @@ class _CreateNotificationBottomSheetWidgetState
                   .copyWith(color: context.colors.textColor),
             ),
             verticalSpacing(5),
-
             CustomFadeInRight(
               duration: 400,
               child: AppTextFormField(
@@ -154,23 +150,24 @@ class _CreateNotificationBottomSheetWidgetState
               builder: (context, state) {
                 return state.maybeWhen(
                   getAdminProductListSuccess: (productsList) {
-                    if(widget.notification!= null){
-                      productNameController.text = widget.notification?.title??'';
-                      productId = widget.notification?.productId?? '';
+                    if (widget.notification != null) {
+                      productNameController.text =
+                          widget.notification?.title ?? '';
+                      productId = widget.notification?.productId ?? '';
                     }
                     return SizedBox(
                       width: double.infinity,
                       child: SizedBox(
                         child: CustomDropdownSearch<GetProductEntity>(
                           itemList: productsList ?? [],
-
                           onChanged: (item) {
                             setState(() {
                               productId = item.id;
                               productNameController.text = item.title;
                               _selectedProduct = item;
                               debugPrint('productId $productId');
-                              debugPrint('productName ${productNameController.text}');
+                              debugPrint(
+                                  'productName ${productNameController.text}');
                             });
                           },
                           itemAsString: (item) {
@@ -178,10 +175,12 @@ class _CreateNotificationBottomSheetWidgetState
                             productNameController.text = item.title;
                             _selectedProduct = item;
                             debugPrint('productId $productId');
-                            debugPrint('productName ${productNameController.text}');
+                            debugPrint(
+                                'productName ${productNameController.text}');
                             return item.title;
                           },
-                          itemBuilder: (GetProductEntity item, bool isSelected) {
+                          itemBuilder:
+                              (GetProductEntity item, bool isSelected) {
                             return Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: ProductItem(
@@ -228,7 +227,6 @@ class _CreateNotificationBottomSheetWidgetState
                       context: context,
                       type: MessageTypeConst.success);
                 },
-
                 addNotificationFailure: (errorMessage) {
                   aweSnackBar(
                       title: 'Failed to add Notification',
@@ -236,7 +234,6 @@ class _CreateNotificationBottomSheetWidgetState
                       context: context,
                       type: MessageTypeConst.failure);
                 },
-
                 orElse: () {},
               );
             }, builder: (context, state) {
@@ -259,24 +256,22 @@ class _CreateNotificationBottomSheetWidgetState
                         if (widget.notification != null) {
                           _updateCategory(context);
                         } else {
-                           _addNotification(context);
+                          _addNotification(context);
                         }
-                      context.pop();
+                        context.pop();
                       },
                       text: '$notificationTitleStatus Notification',
-                width: double.infinity,
-                height: 60.h,
-                backgroundColor: Colors.white,
-                textColor: context.colors.bluePinkDark,
-                threeRadius: 50,
-                lastRadius: 50,
-              ),
+                      width: double.infinity,
+                      height: 60.h,
+                      backgroundColor: Colors.white,
+                      textColor: context.colors.bluePinkDark,
+                      threeRadius: 50,
+                      lastRadius: 50,
+                    ),
                   );
                 },
-
               );
             }),
-
           ],
         ),
       ),
@@ -285,7 +280,7 @@ class _CreateNotificationBottomSheetWidgetState
 
   Future<void> _addNotification(BuildContext context) async {
     if (formKye.currentState!.validate()) {
-      var notification = AddNotificationModel(
+      var notification = AddNotificationEntity(
         title: notificationTitleController.text.trim(),
         body: notificationBodyController.text.trim(),
         productId: productId,
@@ -301,11 +296,18 @@ class _CreateNotificationBottomSheetWidgetState
 
   _updateCategory(BuildContext context) {
     if (formKye.currentState!.validate()) {
-      widget.notification!.title = notificationTitleController.text.trim();
-      widget.notification!.body = notificationBodyController.text.trim();
-      widget.notification!.productId = productId;
-      widget.notification!.productName = productNameController.text.trim();
-      widget.notification!.save();
+      var updatedNotification = AddNotificationEntity(
+        title: notificationTitleController.text.trim(),
+        body: notificationBodyController.text.trim(),
+        productId: productId,
+        productName: productNameController.text.trim(),
+        createAt:
+            widget.notification!.createAt, // Keep the original creation time
+      );
+
+      context.read<AdminNotificationsBloc>().add(
+          AdminNotificationsEvent.updateNotificationEvent(
+              body: updatedNotification));
     }
   }
 }

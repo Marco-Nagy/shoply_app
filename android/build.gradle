@@ -1,13 +1,13 @@
-import kotlin.KotlinVersion
-
 buildscript {
-    ext.kotlin_version = '1.9.10' // Update to the latest version
+    ext.kotlin_version = '1.9.22'  // Updated Kotlin version
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.10"
+        classpath 'com.android.tools.build:gradle:8.13.0' // تأكد من هذا السطر
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.4.3'  // Make sure this is up to date
     }
 }
 

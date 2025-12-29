@@ -1,5 +1,7 @@
+import 'package:injectable/injectable.dart';
 import 'package:shoply/core/Services/push_notifications/firebase_cloud_messaging.dart';
 
+@lazySingleton
 class AddNotificationDataSource {
   //* Send notification topic to users
   Future<void> sendNotifications({
@@ -9,8 +11,11 @@ class AddNotificationDataSource {
   }) async {
     //* Use Firebase Cloud Messaging to send notifications
     //* Example: FirebaseMessaging.instance.send(Notification(title: title, body: body));
-    final response = await FirebaseCloudMessaging()
-        .sendTopicNotification(topic:FirebaseCloudMessaging.subscribeKey ,title: title, body: body, productId: productId);
+    final response = await FirebaseCloudMessaging().sendTopicNotification(
+        topic: FirebaseCloudMessaging.subscribeKey,
+        title: title,
+        body: body,
+        productId: productId);
 
     return response;
   }

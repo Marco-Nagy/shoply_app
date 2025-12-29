@@ -95,6 +95,9 @@ class _$AdminCategoriesEventCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -111,6 +114,9 @@ class __$$StartedImplCopyWithImpl<$Res>
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -126,7 +132,8 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'AdminCategoriesEvent.started'));
+    properties
+      ..add(DiagnosticsProperty('type', 'AdminCategoriesEvent.started'));
   }
 
   @override
@@ -244,6 +251,9 @@ class __$$FetchAdminCategoriesListEventImplCopyWithImpl<$Res>
       _$FetchAdminCategoriesListEventImpl _value,
       $Res Function(_$FetchAdminCategoriesListEventImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -261,8 +271,9 @@ class _$FetchAdminCategoriesListEventImpl
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty(
-        'type', 'AdminCategoriesEvent.fetchAdminCategories'));
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AdminCategoriesEvent.fetchAdminCategories'));
   }
 
   @override
@@ -385,6 +396,8 @@ class __$$CreateNewCategoryEventImplCopyWithImpl<$Res>
       $Res Function(_$CreateNewCategoryEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -434,7 +447,9 @@ class _$CreateNewCategoryEventImpl
   @override
   int get hashCode => Object.hash(runtimeType, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CreateNewCategoryEventImplCopyWith<_$CreateNewCategoryEventImpl>
@@ -532,7 +547,10 @@ abstract class CreateNewCategoryEvent implements AdminCategoriesEvent {
       _$CreateNewCategoryEventImpl;
 
   CreateCategoryRequest get body;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CreateNewCategoryEventImplCopyWith<_$CreateNewCategoryEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -554,6 +572,8 @@ class __$$UpdateCategoryEventImplCopyWithImpl<$Res>
       $Res Function(_$UpdateCategoryEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -603,7 +623,9 @@ class _$UpdateCategoryEventImpl
   @override
   int get hashCode => Object.hash(runtimeType, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateCategoryEventImplCopyWith<_$UpdateCategoryEventImpl> get copyWith =>
@@ -700,7 +722,10 @@ abstract class UpdateCategoryEvent implements AdminCategoriesEvent {
       {required final UpdateCategoryRequest body}) = _$UpdateCategoryEventImpl;
 
   UpdateCategoryRequest get body;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateCategoryEventImplCopyWith<_$UpdateCategoryEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -722,6 +747,8 @@ class __$$DeleteCategoryEventImplCopyWithImpl<$Res>
       $Res Function(_$DeleteCategoryEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -772,7 +799,9 @@ class _$DeleteCategoryEventImpl
   @override
   int get hashCode => Object.hash(runtimeType, categoryId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteCategoryEventImplCopyWith<_$DeleteCategoryEventImpl> get copyWith =>
@@ -869,7 +898,10 @@ abstract class DeleteCategoryEvent implements AdminCategoriesEvent {
       _$DeleteCategoryEventImpl;
 
   String get categoryId;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DeleteCategoryEventImplCopyWith<_$DeleteCategoryEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1007,6 +1039,9 @@ class _$AdminCategoriesStateCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1023,6 +1058,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1038,7 +1076,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'AdminCategoriesState.initial'));
+    properties
+      ..add(DiagnosticsProperty('type', 'AdminCategoriesState.initial'));
   }
 
   @override
@@ -1208,6 +1247,9 @@ class __$$AdminCategoriesLoadingImplCopyWithImpl<$Res>
       _$AdminCategoriesLoadingImpl _value,
       $Res Function(_$AdminCategoriesLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1225,8 +1267,9 @@ class _$AdminCategoriesLoadingImpl
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty(
-        'type', 'AdminCategoriesState.adminCategoriesLoading'));
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AdminCategoriesState.adminCategoriesLoading'));
   }
 
   @override
@@ -1400,6 +1443,8 @@ class __$$GetAdminCategoriesListSuccessImplCopyWithImpl<$Res>
       $Res Function(_$GetAdminCategoriesListSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1458,7 +1503,9 @@ class _$GetAdminCategoriesListSuccessImpl
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_categoriesList));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAdminCategoriesListSuccessImplCopyWith<
@@ -1609,7 +1656,10 @@ abstract class GetAdminCategoriesListSuccess implements AdminCategoriesState {
       _$GetAdminCategoriesListSuccessImpl;
 
   List<Categories?> get categoriesList;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAdminCategoriesListSuccessImplCopyWith<
           _$GetAdminCategoriesListSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1632,6 +1682,9 @@ class __$$GetAdminCategoriesListEmptyImplCopyWithImpl<$Res>
       _$GetAdminCategoriesListEmptyImpl _value,
       $Res Function(_$GetAdminCategoriesListEmptyImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1649,8 +1702,9 @@ class _$GetAdminCategoriesListEmptyImpl
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty(
-        'type', 'AdminCategoriesState.getAdminCategoriesListEmpty'));
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AdminCategoriesState.getAdminCategoriesListEmpty'));
   }
 
   @override
@@ -1825,6 +1879,8 @@ class __$$GetAdminCategoriesListFailureImplCopyWithImpl<$Res>
       $Res Function(_$GetAdminCategoriesListFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1875,7 +1931,9 @@ class _$GetAdminCategoriesListFailureImpl
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAdminCategoriesListFailureImplCopyWith<
@@ -2025,7 +2083,10 @@ abstract class GetAdminCategoriesListFailure implements AdminCategoriesState {
       _$GetAdminCategoriesListFailureImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAdminCategoriesListFailureImplCopyWith<
           _$GetAdminCategoriesListFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -2047,6 +2108,9 @@ class __$$AddNewCategorySuccessImplCopyWithImpl<$Res>
   __$$AddNewCategorySuccessImplCopyWithImpl(_$AddNewCategorySuccessImpl _value,
       $Res Function(_$AddNewCategorySuccessImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2064,8 +2128,9 @@ class _$AddNewCategorySuccessImpl
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty(
-        'type', 'AdminCategoriesState.addNewCategorySuccess'));
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AdminCategoriesState.addNewCategorySuccess'));
   }
 
   @override
@@ -2238,6 +2303,8 @@ class __$$AddNewCategoryFailureImplCopyWithImpl<$Res>
       $Res Function(_$AddNewCategoryFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2288,7 +2355,9 @@ class _$AddNewCategoryFailureImpl
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AddNewCategoryFailureImplCopyWith<_$AddNewCategoryFailureImpl>
@@ -2437,7 +2506,10 @@ abstract class AddNewCategoryFailure implements AdminCategoriesState {
       _$AddNewCategoryFailureImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AddNewCategoryFailureImplCopyWith<_$AddNewCategoryFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2458,6 +2530,9 @@ class __$$UpdateCategorySuccessImplCopyWithImpl<$Res>
   __$$UpdateCategorySuccessImplCopyWithImpl(_$UpdateCategorySuccessImpl _value,
       $Res Function(_$UpdateCategorySuccessImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2475,8 +2550,9 @@ class _$UpdateCategorySuccessImpl
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty(
-        'type', 'AdminCategoriesState.updateCategorySuccess'));
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AdminCategoriesState.updateCategorySuccess'));
   }
 
   @override
@@ -2649,6 +2725,8 @@ class __$$UpdateCategoryFailureImplCopyWithImpl<$Res>
       $Res Function(_$UpdateCategoryFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2699,7 +2777,9 @@ class _$UpdateCategoryFailureImpl
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateCategoryFailureImplCopyWith<_$UpdateCategoryFailureImpl>
@@ -2848,7 +2928,10 @@ abstract class UpdateCategoryFailure implements AdminCategoriesState {
       _$UpdateCategoryFailureImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateCategoryFailureImplCopyWith<_$UpdateCategoryFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2869,6 +2952,9 @@ class __$$DeleteCategorySuccessImplCopyWithImpl<$Res>
   __$$DeleteCategorySuccessImplCopyWithImpl(_$DeleteCategorySuccessImpl _value,
       $Res Function(_$DeleteCategorySuccessImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2886,8 +2972,9 @@ class _$DeleteCategorySuccessImpl
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty(
-        'type', 'AdminCategoriesState.deleteCategorySuccess'));
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AdminCategoriesState.deleteCategorySuccess'));
   }
 
   @override
@@ -3060,6 +3147,8 @@ class __$$DeleteCategoryFailureImplCopyWithImpl<$Res>
       $Res Function(_$DeleteCategoryFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3110,7 +3199,9 @@ class _$DeleteCategoryFailureImpl
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteCategoryFailureImplCopyWith<_$DeleteCategoryFailureImpl>
@@ -3259,7 +3350,10 @@ abstract class DeleteCategoryFailure implements AdminCategoriesState {
       _$DeleteCategoryFailureImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DeleteCategoryFailureImplCopyWith<_$DeleteCategoryFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
