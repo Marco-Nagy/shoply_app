@@ -18,12 +18,14 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          flutter-version: '3.22.1'
+          flutter-version: '3.24.4'
 
-      - name: Setup Java
+      - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          java-version: '17'
+          java-version: 17
+          distribution: temurin # Specify the distribution
+          cache: gradle # Optionally enable caching for Gradle or Maven
 
       - name: Flutter Clean
         run: flutter clean
