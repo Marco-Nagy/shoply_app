@@ -1,11 +1,13 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:shoply/core/helpers/enums/nav_bar_enum.dart';
 
 part 'main_state.dart';
 
 part 'main_cubit.freezed.dart';
 
+@injectable
 class MainCubit extends Cubit<MainState> {
   MainCubit() : super(const MainState.initial());
   NavBarEnum iconNavBar = NavBarEnum.home;

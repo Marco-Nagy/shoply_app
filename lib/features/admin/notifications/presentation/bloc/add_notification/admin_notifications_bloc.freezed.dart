@@ -103,6 +103,9 @@ class _$AdminNotificationsEventCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -119,6 +122,9 @@ class __$$StartedImplCopyWithImpl<$Res>
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -254,6 +260,9 @@ class __$$FetchAdminNotificationsListEventImplCopyWithImpl<$Res>
       _$FetchAdminNotificationsListEventImpl _value,
       $Res Function(_$FetchAdminNotificationsListEventImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -396,6 +405,8 @@ class __$$CreateNotificationEventImplCopyWithImpl<$Res>
       $Res Function(_$CreateNotificationEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -434,7 +445,9 @@ class _$CreateNotificationEventImpl implements CreateNotificationEvent {
   @override
   int get hashCode => Object.hash(runtimeType, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CreateNotificationEventImplCopyWith<_$CreateNotificationEventImpl>
@@ -540,7 +553,10 @@ abstract class CreateNotificationEvent implements AdminNotificationsEvent {
       _$CreateNotificationEventImpl;
 
   AddNotificationEntity get body;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CreateNotificationEventImplCopyWith<_$CreateNotificationEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -565,6 +581,8 @@ class __$$UpdateNotificationEventImplCopyWithImpl<$Res>
       $Res Function(_$UpdateNotificationEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -603,7 +621,9 @@ class _$UpdateNotificationEventImpl implements UpdateNotificationEvent {
   @override
   int get hashCode => Object.hash(runtimeType, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateNotificationEventImplCopyWith<_$UpdateNotificationEventImpl>
@@ -709,7 +729,10 @@ abstract class UpdateNotificationEvent implements AdminNotificationsEvent {
       _$UpdateNotificationEventImpl;
 
   AddNotificationEntity get body;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateNotificationEventImplCopyWith<_$UpdateNotificationEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -734,6 +757,8 @@ class __$$DeleteNotificationEventImplCopyWithImpl<$Res>
       $Res Function(_$DeleteNotificationEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -773,7 +798,9 @@ class _$DeleteNotificationEventImpl implements DeleteNotificationEvent {
   @override
   int get hashCode => Object.hash(runtimeType, notification);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteNotificationEventImplCopyWith<_$DeleteNotificationEventImpl>
@@ -879,7 +906,10 @@ abstract class DeleteNotificationEvent implements AdminNotificationsEvent {
       _$DeleteNotificationEventImpl;
 
   AddNotificationEntity get notification;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminNotificationsEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DeleteNotificationEventImplCopyWith<_$DeleteNotificationEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1009,6 +1039,9 @@ class _$AdminNotificationsStateCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1025,6 +1058,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1196,6 +1232,9 @@ class __$$AdminNotificationsLoadingImplCopyWithImpl<$Res>
       _$AdminNotificationsLoadingImpl _value,
       $Res Function(_$AdminNotificationsLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1371,6 +1410,8 @@ class __$$GetAdminNotificationsListSuccessImplCopyWithImpl<$Res>
       $Res Function(_$GetAdminNotificationsListSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1420,7 +1461,9 @@ class _$GetAdminNotificationsListSuccessImpl
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_notificationsList));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAdminNotificationsListSuccessImplCopyWith<
@@ -1564,7 +1607,10 @@ abstract class GetAdminNotificationsListSuccess
       _$GetAdminNotificationsListSuccessImpl;
 
   List<AddNotificationEntity?> get notificationsList;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAdminNotificationsListSuccessImplCopyWith<
           _$GetAdminNotificationsListSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1587,6 +1633,9 @@ class __$$GetAdminNotificationsListEmptyImplCopyWithImpl<$Res>
       _$GetAdminNotificationsListEmptyImpl _value,
       $Res Function(_$GetAdminNotificationsListEmptyImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1765,6 +1814,8 @@ class __$$GetAdminNotificationsListFailureImplCopyWithImpl<$Res>
       $Res Function(_$GetAdminNotificationsListFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1805,7 +1856,9 @@ class _$GetAdminNotificationsListFailureImpl
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAdminNotificationsListFailureImplCopyWith<
@@ -1948,7 +2001,10 @@ abstract class GetAdminNotificationsListFailure
       _$GetAdminNotificationsListFailureImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAdminNotificationsListFailureImplCopyWith<
           _$GetAdminNotificationsListFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1971,6 +2027,9 @@ class __$$AddNewNotificationSuccessImplCopyWithImpl<$Res>
       _$AddNewNotificationSuccessImpl _value,
       $Res Function(_$AddNewNotificationSuccessImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2146,6 +2205,8 @@ class __$$AddNewNotificationFailureImplCopyWithImpl<$Res>
       $Res Function(_$AddNewNotificationFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2185,7 +2246,9 @@ class _$AddNewNotificationFailureImpl implements AddNewNotificationFailure {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AddNewNotificationFailureImplCopyWith<_$AddNewNotificationFailureImpl>
@@ -2326,7 +2389,10 @@ abstract class AddNewNotificationFailure implements AdminNotificationsState {
       _$AddNewNotificationFailureImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AddNewNotificationFailureImplCopyWith<_$AddNewNotificationFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2348,6 +2414,9 @@ class __$$DeleteNotificationSuccessImplCopyWithImpl<$Res>
       _$DeleteNotificationSuccessImpl _value,
       $Res Function(_$DeleteNotificationSuccessImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2523,6 +2592,8 @@ class __$$DeleteNotificationFailureImplCopyWithImpl<$Res>
       $Res Function(_$DeleteNotificationFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2562,7 +2633,9 @@ class _$DeleteNotificationFailureImpl implements DeleteNotificationFailure {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteNotificationFailureImplCopyWith<_$DeleteNotificationFailureImpl>
@@ -2703,7 +2776,10 @@ abstract class DeleteNotificationFailure implements AdminNotificationsState {
       _$DeleteNotificationFailureImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminNotificationsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DeleteNotificationFailureImplCopyWith<_$DeleteNotificationFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

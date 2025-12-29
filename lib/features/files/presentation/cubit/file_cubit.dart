@@ -6,16 +6,20 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:shoply/core/app/di/injection_container.dart';
+import 'package:injectable/injectable.dart'; // import injectable
 import 'package:shoply/core/utils/image_picker.dart';
 import 'package:shoply/features/files/data/repositories/upload_file_repository.dart';
 
 part 'file_cubit.freezed.dart';
 part 'file_state.dart';
 
-class FileCubit extends Cubit<FileState<dynamic>>   {
-  FileCubit(this._fileRepository) : super(const FileState.initial());
+@injectable
+class FileCubit extends Cubit<FileState<dynamic>> {
+  FileCubit(this._fileRepository, this._navigatorKey)
+      : super(const FileState.initial());
   final FileRepository _fileRepository;
+  final GlobalKey<NavigatorState> _navigatorKey;
+
   static String base64Image = '';
   XFile? imageFile;
   File? cachedFile;
@@ -23,8 +27,8 @@ class FileCubit extends Cubit<FileState<dynamic>>   {
   String getImageUrl = '';
   List<String> imagesList = [];
   List<XFile?> imagesFileList = [];
-  BuildContext myContext =
-      sl<GlobalKey<NavigatorState>>().currentState!.context;
+
+  BuildContext get myContext => _navigatorKey.currentState!.context;
   final GlobalKey<AnimatedListState> globalKey = GlobalKey<AnimatedListState>();
   final ScrollController scrollController = ScrollController();
 
@@ -41,7 +45,7 @@ class FileCubit extends Cubit<FileState<dynamic>>   {
     if (file == null) return;
     final croppedFile = await imageHelper.imageCropper(
       file: file,
-      cropStyle:isCircle? CropStyle.circle: CropStyle.rectangle,
+      cropStyle: isCircle ? CropStyle.circle : CropStyle.rectangle,
     );
     if (croppedFile != null) {
       imageFile = XFile(croppedFile.path);
@@ -49,23 +53,22 @@ class FileCubit extends Cubit<FileState<dynamic>>   {
       emit(FileState.crop(imageFile));
     }
     emit(const FileState.loading());
-      final result = await _fileRepository.uploadFile(imageFile!);
-      result.when(
-        success: (data) {
-          getImageUrl = data.location ?? '';
-          debugPrint('getImageUrl $getImageUrl');
-          emit(FileState.success(getImageUrl));
-        },
-        failure: (error) {
+    final result = await _fileRepository.uploadFile(imageFile!);
+    result.when(
+      success: (data) {
+        getImageUrl = data.location ?? '';
+        debugPrint('getImageUrl $getImageUrl');
+        emit(FileState.success(getImageUrl));
+      },
+      failure: (error) {
         debugPrint('error ==>> $error');
         emit(
-            FileState.failure(
-              error: error.errorMsg,
-            ),
-          );
-        },
-      );
-
+          FileState.failure(
+            error: error.errorMsg,
+          ),
+        );
+      },
+    );
   }
 
   Future<void> uploadLocalImageList() async {
@@ -83,11 +86,9 @@ class FileCubit extends Cubit<FileState<dynamic>>   {
     emit(FileState.success(base64Image));
     imagesFileList.add(imageFile);
     emit(FileState.success(imageFile));
-
   }
 
   Future<void> uploadNetworkImageList() async {
-
     final file = await imageHelper.imagePicker(
       source: ImageSource.gallery,
     );
@@ -112,9 +113,7 @@ class FileCubit extends Cubit<FileState<dynamic>>   {
         );
       },
     );
-
   }
-
 
   void removeImage() {
     getImageUrl = '';
@@ -138,7 +137,7 @@ class FileCubit extends Cubit<FileState<dynamic>>   {
   void removeImageFromList(
       {required int index, Widget? widget, required String removedItem}) {
     if (imagesList.isNotEmpty) {
-      removedItem = imagesList.removeAt(index) ;
+      removedItem = imagesList.removeAt(index);
       globalKey.currentState!.removeItem(
         index,
         (context, animation) => widget!,

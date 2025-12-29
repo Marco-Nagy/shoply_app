@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:shoply/core/app/Apis/api_result.dart';
+import 'package:injectable/injectable.dart';
+import 'package:shoply/core/app/apis/api_result.dart';
 import 'package:shoply/core/app/apis/errors/error_handler.dart';
 import 'package:shoply/features/admin/products/data/Mappers/product_mapper.dart';
 import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
@@ -10,6 +11,7 @@ import 'package:shoply/features/customer/home/domain/entities/category_entity.da
 import 'package:shoply/features/customer/home/domain/entities/products_details_entity.dart';
 import 'package:shoply/features/customer/home/domain/repositories/base_home_repository.dart';
 
+@LazySingleton(as: BaseHomeRepository)
 class HomeRepository implements BaseHomeRepository {
   final HomeDataSource _dataSource;
 
@@ -32,25 +34,30 @@ class HomeRepository implements BaseHomeRepository {
   }
 
   @override
-  Future<ApiResult<ProductsDetailsEntity>> getProductDetails({required String productId}) async {
-      try {
-        final response = await _dataSource.getProductDetails(productId: productId);
-        if (response.data != null) {
-          return  ApiResult.success(ProductsDetailsMapper.productDetailsMapper(response));
-        } else {
-          return ApiResult.failure(ServerFailure(response.errors!.first.message));
-        }
-      } on DioException catch (dioError) {
-        return ApiResult.failure(ServerFailure.fromDioException(dioError));
-      } catch (error) {
-        return ApiResult.failure(ServerFailure(error.toString()));
+  Future<ApiResult<ProductsDetailsEntity>> getProductDetails(
+      {required String productId}) async {
+    try {
+      final response =
+          await _dataSource.getProductDetails(productId: productId);
+      if (response.data != null) {
+        return ApiResult.success(
+            ProductsDetailsMapper.productDetailsMapper(response));
+      } else {
+        return ApiResult.failure(ServerFailure(response.errors!.first.message));
       }
+    } on DioException catch (dioError) {
+      return ApiResult.failure(ServerFailure.fromDioException(dioError));
+    } catch (error) {
+      return ApiResult.failure(ServerFailure(error.toString()));
+    }
   }
 
   @override
-  Future<ApiResult<List<GetProductEntity>>> getProductListPerCategory({required String categoryId}) async {
+  Future<ApiResult<List<GetProductEntity>>> getProductListPerCategory(
+      {required String categoryId}) async {
     try {
-      final response = await _dataSource.getProductListPerCategory(categoryId: categoryId);
+      final response =
+          await _dataSource.getProductListPerCategory(categoryId: categoryId);
       if (response.data != null) {
         return ApiResult.success(ProductMapper.fromResponse(response));
       } else {
@@ -64,7 +71,8 @@ class HomeRepository implements BaseHomeRepository {
   }
 
   @override
-  Future<ApiResult<List<GetProductEntity>>> getProductsList({required int offset}) async {
+  Future<ApiResult<List<GetProductEntity>>> getProductsList(
+      {required int offset}) async {
     try {
       final response = await _dataSource.getProductsList(offset: offset);
       if (response.data != null) {
@@ -78,6 +86,4 @@ class HomeRepository implements BaseHomeRepository {
       return ApiResult.failure(ServerFailure(error.toString()));
     }
   }
-
-
 }

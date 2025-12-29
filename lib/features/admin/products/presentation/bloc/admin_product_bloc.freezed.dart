@@ -99,6 +99,9 @@ class _$AdminProductEventCopyWithImpl<$Res, $Val extends AdminProductEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of AdminProductEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -115,6 +118,9 @@ class __$$StartedImplCopyWithImpl<$Res>
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminProductEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -247,6 +253,9 @@ class __$$GetAdminProductListEventImplCopyWithImpl<$Res>
       _$GetAdminProductListEventImpl _value,
       $Res Function(_$GetAdminProductListEventImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminProductEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -383,6 +392,8 @@ class __$$GetAdminProductDetailsEventImplCopyWithImpl<$Res>
       $Res Function(_$GetAdminProductDetailsEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminProductEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -422,7 +433,9 @@ class _$GetAdminProductDetailsEventImpl implements GetAdminProductDetailsEvent {
   @override
   int get hashCode => Object.hash(runtimeType, productId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAdminProductDetailsEventImplCopyWith<_$GetAdminProductDetailsEventImpl>
@@ -524,7 +537,10 @@ abstract class GetAdminProductDetailsEvent implements AdminProductEvent {
       _$GetAdminProductDetailsEventImpl;
 
   String get productId;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAdminProductDetailsEventImplCopyWith<_$GetAdminProductDetailsEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -548,6 +564,8 @@ class __$$CreateAdminProductEventImplCopyWithImpl<$Res>
       $Res Function(_$CreateAdminProductEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminProductEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -586,7 +604,9 @@ class _$CreateAdminProductEventImpl implements CreateAdminProductEvent {
   @override
   int get hashCode => Object.hash(runtimeType, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CreateAdminProductEventImplCopyWith<_$CreateAdminProductEventImpl>
@@ -689,7 +709,10 @@ abstract class CreateAdminProductEvent implements AdminProductEvent {
       _$CreateAdminProductEventImpl;
 
   CreateProductEntity get body;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CreateAdminProductEventImplCopyWith<_$CreateAdminProductEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -713,6 +736,8 @@ class __$$UpdateAdminProductEventImplCopyWithImpl<$Res>
       $Res Function(_$UpdateAdminProductEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminProductEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -751,7 +776,9 @@ class _$UpdateAdminProductEventImpl implements UpdateAdminProductEvent {
   @override
   int get hashCode => Object.hash(runtimeType, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateAdminProductEventImplCopyWith<_$UpdateAdminProductEventImpl>
@@ -854,7 +881,10 @@ abstract class UpdateAdminProductEvent implements AdminProductEvent {
       _$UpdateAdminProductEventImpl;
 
   UpdateProductEntity get body;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateAdminProductEventImplCopyWith<_$UpdateAdminProductEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -878,6 +908,8 @@ class __$$DeleteAdminProductEventImplCopyWithImpl<$Res>
       $Res Function(_$DeleteAdminProductEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminProductEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -917,7 +949,9 @@ class _$DeleteAdminProductEventImpl implements DeleteAdminProductEvent {
   @override
   int get hashCode => Object.hash(runtimeType, productId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteAdminProductEventImplCopyWith<_$DeleteAdminProductEventImpl>
@@ -1019,7 +1053,10 @@ abstract class DeleteAdminProductEvent implements AdminProductEvent {
       _$DeleteAdminProductEventImpl;
 
   String get productId;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminProductEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DeleteAdminProductEventImplCopyWith<_$DeleteAdminProductEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1179,6 +1216,9 @@ class _$AdminProductStateCopyWithImpl<$Res, $Val extends AdminProductState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1195,6 +1235,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1394,6 +1437,9 @@ class __$$AdminProductLoadingImplCopyWithImpl<$Res>
   __$$AdminProductLoadingImplCopyWithImpl(_$AdminProductLoadingImpl _value,
       $Res Function(_$AdminProductLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1600,6 +1646,8 @@ class __$$GetAdminProductListSuccessImplCopyWithImpl<$Res>
       $Res Function(_$GetAdminProductListSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1649,7 +1697,9 @@ class _$GetAdminProductListSuccessImpl implements GetAdminProductListSuccess {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_productList));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAdminProductListSuccessImplCopyWith<_$GetAdminProductListSuccessImpl>
@@ -1822,7 +1872,10 @@ abstract class GetAdminProductListSuccess implements AdminProductState {
       _$GetAdminProductListSuccessImpl;
 
   List<GetProductEntity>? get productList;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAdminProductListSuccessImplCopyWith<_$GetAdminProductListSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1844,6 +1897,9 @@ class __$$GetAdminProductListEmptyImplCopyWithImpl<$Res>
       _$GetAdminProductListEmptyImpl _value,
       $Res Function(_$GetAdminProductListEmptyImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2050,6 +2106,8 @@ class __$$GetAdminProductListFailureImplCopyWithImpl<$Res>
       $Res Function(_$GetAdminProductListFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2089,7 +2147,9 @@ class _$GetAdminProductListFailureImpl implements GetAdminProductListFailure {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAdminProductListFailureImplCopyWith<_$GetAdminProductListFailureImpl>
@@ -2261,7 +2321,10 @@ abstract class GetAdminProductListFailure implements AdminProductState {
       _$GetAdminProductListFailureImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAdminProductListFailureImplCopyWith<_$GetAdminProductListFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2286,6 +2349,8 @@ class __$$GetAdminProductDetailsSuccessImplCopyWithImpl<$Res>
       $Res Function(_$GetAdminProductDetailsSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2325,7 +2390,9 @@ class _$GetAdminProductDetailsSuccessImpl
   @override
   int get hashCode => Object.hash(runtimeType, product);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAdminProductDetailsSuccessImplCopyWith<
@@ -2499,7 +2566,10 @@ abstract class GetAdminProductDetailsSuccess implements AdminProductState {
       _$GetAdminProductDetailsSuccessImpl;
 
   ProductsDetailsEntity get product;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAdminProductDetailsSuccessImplCopyWith<
           _$GetAdminProductDetailsSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -2522,6 +2592,9 @@ class __$$GetAdminProductDetailsEmptyImplCopyWithImpl<$Res>
       _$GetAdminProductDetailsEmptyImpl _value,
       $Res Function(_$GetAdminProductDetailsEmptyImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2729,6 +2802,8 @@ class __$$GetAdminProductDetailsFailureImplCopyWithImpl<$Res>
       $Res Function(_$GetAdminProductDetailsFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2769,7 +2844,9 @@ class _$GetAdminProductDetailsFailureImpl
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAdminProductDetailsFailureImplCopyWith<
@@ -2942,7 +3019,10 @@ abstract class GetAdminProductDetailsFailure implements AdminProductState {
       _$GetAdminProductDetailsFailureImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAdminProductDetailsFailureImplCopyWith<
           _$GetAdminProductDetailsFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -2967,6 +3047,8 @@ class __$$CreateNewProductSuccessImplCopyWithImpl<$Res>
       $Res Function(_$CreateNewProductSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3005,7 +3087,9 @@ class _$CreateNewProductSuccessImpl implements CreateNewProductSuccess {
   @override
   int get hashCode => Object.hash(runtimeType, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CreateNewProductSuccessImplCopyWith<_$CreateNewProductSuccessImpl>
@@ -3177,7 +3261,10 @@ abstract class CreateNewProductSuccess implements AdminProductState {
       _$CreateNewProductSuccessImpl;
 
   String get body;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CreateNewProductSuccessImplCopyWith<_$CreateNewProductSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3201,6 +3288,8 @@ class __$$CreateNewProductFailureImplCopyWithImpl<$Res>
       $Res Function(_$CreateNewProductFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3240,7 +3329,9 @@ class _$CreateNewProductFailureImpl implements CreateNewProductFailure {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CreateNewProductFailureImplCopyWith<_$CreateNewProductFailureImpl>
@@ -3412,7 +3503,10 @@ abstract class CreateNewProductFailure implements AdminProductState {
       _$CreateNewProductFailureImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CreateNewProductFailureImplCopyWith<_$CreateNewProductFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3434,6 +3528,8 @@ class __$$UpdateProductSuccessImplCopyWithImpl<$Res>
       $Res Function(_$UpdateProductSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3472,7 +3568,9 @@ class _$UpdateProductSuccessImpl implements UpdateProductSuccess {
   @override
   int get hashCode => Object.hash(runtimeType, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateProductSuccessImplCopyWith<_$UpdateProductSuccessImpl>
@@ -3645,7 +3743,10 @@ abstract class UpdateProductSuccess implements AdminProductState {
       _$UpdateProductSuccessImpl;
 
   String get body;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateProductSuccessImplCopyWith<_$UpdateProductSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3667,6 +3768,8 @@ class __$$UpdateProductFailureImplCopyWithImpl<$Res>
       $Res Function(_$UpdateProductFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3706,7 +3809,9 @@ class _$UpdateProductFailureImpl implements UpdateProductFailure {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateProductFailureImplCopyWith<_$UpdateProductFailureImpl>
@@ -3879,7 +3984,10 @@ abstract class UpdateProductFailure implements AdminProductState {
       _$UpdateProductFailureImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdateProductFailureImplCopyWith<_$UpdateProductFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3901,6 +4009,8 @@ class __$$DeleteProductSuccessImplCopyWithImpl<$Res>
       $Res Function(_$DeleteProductSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3940,7 +4050,9 @@ class _$DeleteProductSuccessImpl implements DeleteProductSuccess {
   @override
   int get hashCode => Object.hash(runtimeType, isDeleted);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteProductSuccessImplCopyWith<_$DeleteProductSuccessImpl>
@@ -4113,7 +4225,10 @@ abstract class DeleteProductSuccess implements AdminProductState {
       _$DeleteProductSuccessImpl;
 
   bool get isDeleted;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DeleteProductSuccessImplCopyWith<_$DeleteProductSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -4135,6 +4250,8 @@ class __$$DeleteProductFailureImplCopyWithImpl<$Res>
       $Res Function(_$DeleteProductFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4174,7 +4291,9 @@ class _$DeleteProductFailureImpl implements DeleteProductFailure {
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteProductFailureImplCopyWith<_$DeleteProductFailureImpl>
@@ -4347,7 +4466,10 @@ abstract class DeleteProductFailure implements AdminProductState {
       _$DeleteProductFailureImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AdminProductState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DeleteProductFailureImplCopyWith<_$DeleteProductFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

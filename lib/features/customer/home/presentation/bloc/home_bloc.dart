@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:shoply/core/helpers/usecases/usecase.dart';
 import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
 import 'package:shoply/features/customer/home/domain/entities/category_entity.dart';
@@ -16,8 +17,8 @@ part 'home_bloc.freezed.dart';
 part 'home_event.dart';
 part 'home_state.dart';
 
-class HomeBloc
-    extends Bloc<HomeEvent, HomeState> {
+@injectable
+class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc(
     this.homeProductsListUseCase,
     this.homeProductsListPerCategoryUseCase,
@@ -34,15 +35,15 @@ class HomeBloc
   final HomeProductsListPerCategoryUseCase homeProductsListPerCategoryUseCase;
   final HomeCategoriesListUseCase homeCategoriesListUseCase;
   final ProductsDetailsUseCase productsDetailsUseCase;
-  bool loadMoreProducts =false;
+  bool loadMoreProducts = false;
 
   int offset = 1;
   List<GetProductEntity> newList = [];
 
-  Future<FutureOr<void>> _fetchHomeCategoriesList(FetchHomeCategoriesListEvent event,
-      Emitter<HomeState> emit)  {
+  Future<FutureOr<void>> _fetchHomeCategoriesList(
+      FetchHomeCategoriesListEvent event, Emitter<HomeState> emit) {
     emit(const HomeState.categoriesLoading());
-     return homeCategoriesListUseCase.call(NoParams()).then(
+    return homeCategoriesListUseCase.call(NoParams()).then(
       (value) {
         value.when(
           success: (data) {
@@ -59,8 +60,9 @@ class HomeBloc
       },
     );
   }
+
   Future<FutureOr<void>> _getHomeProductList(
-      GetHomeProductListEvent event, Emitter<HomeState> emit)  {
+      GetHomeProductListEvent event, Emitter<HomeState> emit) {
     if (offset == 1) {
       emit(const HomeProductsLoading());
     }
@@ -92,9 +94,9 @@ class HomeBloc
   }
 
   Future<FutureOr<void>> _getProductDetails(
-      GetHomeProductDetailsEvent event, Emitter<HomeState> emit)   {
+      GetHomeProductDetailsEvent event, Emitter<HomeState> emit) {
     emit(const HomeState.productsLoading());
- return productsDetailsUseCase.call(event.productId).then(
+    return productsDetailsUseCase.call(event.productId).then(
       (value) {
         value.when(
           success: (data) {
@@ -112,7 +114,7 @@ class HomeBloc
       GetHomeProductListPerCategoryEvent event, Emitter<HomeState> emit) {
     emit(const HomeState.productsLoading());
     return homeProductsListPerCategoryUseCase.call(event.categoryId).then(
-          (value) {
+      (value) {
         value.when(
           success: (data) {
             if (data.isEmpty) {
@@ -122,7 +124,8 @@ class HomeBloc
             }
           },
           failure: (errorHandler) {
-            emit(HomeState.getHomeProductListPerCategoryFailure(errorHandler.errorMsg));
+            emit(HomeState.getHomeProductListPerCategoryFailure(
+                errorHandler.errorMsg));
           },
         );
       },
@@ -140,7 +143,6 @@ class HomeBloc
       loadMoreProducts = true; // Prevent multiple calls
       offset++; // Increment the offset
       add(const GetHomeProductListEvent()); // Dispatch the event
-
     }
   }
 }

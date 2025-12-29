@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shoply/core/app/di/injection_container.dart';
+import 'package:shoply/core/app/di/injection.dart';
 import 'package:shoply/core/routes/base_routes.dart';
 import 'package:shoply/core/utils/screens/custom_web_view.dart';
 import 'package:shoply/core/utils/screens/under_build_screen.dart';

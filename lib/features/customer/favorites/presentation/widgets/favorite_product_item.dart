@@ -44,8 +44,6 @@ class _FavoriteProductItemState extends State<FavoriteProductItem>
         vsync: this, duration: const Duration(milliseconds: 300));
   }
 
-
-
   @override
   void dispose() {
     animationFavoritController.dispose();
@@ -63,7 +61,7 @@ class _FavoriteProductItemState extends State<FavoriteProductItem>
           },
           onTap: () {
             context.pushNamed(AppRoutes.productDetails,
-                arguments: widget.product.id);
+                arguments: widget.product.productId);
           },
           child: CustomContainerLinearCustomer(
             height: 250.h,
@@ -79,7 +77,7 @@ class _FavoriteProductItemState extends State<FavoriteProductItem>
                     height: 160.h,
                     width: 160.w,
                     padding:
-                    const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                        const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15.w),
                     ),
@@ -87,9 +85,8 @@ class _FavoriteProductItemState extends State<FavoriteProductItem>
                         clipBehavior: Clip.antiAliasWithSaveLayer,
                         elevation: 10.w,
                         child: CustomImage(
-                          tag: 'tag${widget.product.id}',
-                          imageUrl:
-                          widget.product.image.imageProductFormat(),
+                          tag: 'tag${widget.product.productId}',
+                          imageUrl: widget.product.image.imageProductFormat(),
                         )),
                   ),
                 ),
@@ -183,10 +180,14 @@ class _FavoriteProductItemState extends State<FavoriteProductItem>
                           child: BlocBuilder<FavoritesCubit, FavoritesState>(
                             builder: (context, state) {
                               switch (state) {
-                            case SuccessFavoritesState():
-                              return favoriteIcon( state.favorites.any((element) =>element.productId==widget.product.id.toString() ,));
-                            }
-                              return favoriteIcon( isFavorite);
+                                case SuccessFavoritesState():
+                                  return favoriteIcon(state.favorites.any(
+                                    (element) =>
+                                        element.productId ==
+                                        widget.product.productId,
+                                  ));
+                              }
+                              return favoriteIcon(isFavorite);
                             },
                           ),
                         ),
@@ -201,33 +202,28 @@ class _FavoriteProductItemState extends State<FavoriteProductItem>
       ],
     );
   }
-favoriteIcon(bool isFavorite)=>  AppAnimatedIcon(
-  size: 35,
-  iconColor: isFavorite ? Colors.red : Colors
-      .white,
-  backGroundColor: Colors.red.shade200,
-  animationController: animationFavoritController,
-  iconAsset: AppAnimatedIcons.favorite,
-  onTap: () async {
-    Vibration.vibrate(
-        duration: 700,
-        pattern: [50, 100, 50, 500]);
-    Future.delayed(
-        const Duration(milliseconds: 700))
-        .whenComplete(
-          () {
-        itemPressed.value = false;
-        _deleteProduct(context,
-            favorite: widget.product);
-      },
-    );
-  },
-);
 
-  Future<void> _deleteProduct(BuildContext context,
-      {required FavoritesEntity favorite}) async {
-    context.read<FavoritesCubit>().manageFavoriteUseCase(favorite: favorite).whenComplete(() {
-      context.read<FavoritesCubit>().getFavorites();
-    },);
+  Widget favoriteIcon(bool isFavorite) => AppAnimatedIcon(
+        size: 35,
+        iconColor: isFavorite ? Colors.red : Colors.white,
+        backGroundColor: Colors.red.shade200,
+        animationController: animationFavoritController,
+        iconAsset: AppAnimatedIcons.favorite,
+        onTap: () async {
+          Vibration.vibrate(duration: 700, pattern: [50, 100, 50, 500]);
+          await Future.delayed(const Duration(milliseconds: 700));
+          if (!mounted) return;
+          itemPressed.value = false;
+          _deleteProduct(favorite: widget.product);
+        },
+      );
+
+  Future<void> _deleteProduct({required FavoritesEntity favorite}) async {
+    if (!mounted) return;
+    await context
+        .read<FavoritesCubit>()
+        .manageFavoriteUseCase(favorite: favorite);
+    if (!mounted) return;
+    context.read<FavoritesCubit>().getFavorites();
   }
 }

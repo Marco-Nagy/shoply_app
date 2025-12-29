@@ -1,8 +1,10 @@
+import 'package:injectable/injectable.dart';
 import 'package:shoply/core/Services/shared_preference/shared_pref_keys.dart';
 import 'package:shoply/core/Services/shared_preference/shared_preference_helper.dart';
-import 'package:shoply/core/app/Apis/api_service.dart';
+import 'package:shoply/core/app/apis/api_service.dart';
 import 'package:shoply/features/auth/data/models/role/user_role_response.dart';
 
+@lazySingleton
 class ProfileDataSource {
   final ApiService _apiService;
 

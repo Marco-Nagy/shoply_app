@@ -1,7 +1,6 @@
-import 'package:shoply/features/customer/favorites/data/models/favorites_table.dart';
+import 'package:shoply/features/customer/favorites/data/models/favorites_hive.dart';
 
 class FavoritesEntity {
-  late int id;
   late String image;
   late String price;
   late String productId;
@@ -9,7 +8,6 @@ class FavoritesEntity {
   late String categoryName;
 
   FavoritesEntity({
-    required this.id,
     required this.image,
     required this.price,
     required this.productId,
@@ -17,21 +15,20 @@ class FavoritesEntity {
     required this.categoryName,
   });
 
-  /// Converts from schema to entity
-  factory FavoritesEntity.fromSchema(FavoritesTable schema) {
+  /// Converts from Hive model to entity
+  factory FavoritesEntity.fromHive(FavoritesHive hive) {
     return FavoritesEntity(
-      id: schema.id,
-      productName: schema.productName,
-      price: schema.price,
-      categoryName: schema.categoryName,
-      productId: schema.productId,
-      image: schema.image,
+      productName: hive.productName,
+      price: hive.price,
+      categoryName: hive.categoryName,
+      productId: hive.productId,
+      image: hive.image,
     );
   }
 
-  /// Converts from entity to schema
-  FavoritesTable toSchema() {
-    return FavoritesTable(
+  /// Converts from entity to Hive model
+  FavoritesHive toHive() {
+    return FavoritesHive(
       image: image,
       price: price,
       categoryName: categoryName,

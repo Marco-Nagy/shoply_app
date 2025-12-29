@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shoply/core/app/di/injection_container.dart';
+import 'package:shoply/core/app/di/injection.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/styles/icons/app_animated_icons.dart';
 import 'package:shoply/core/utils/admin_app_bar.dart';

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:shoply/core/Services/shared_preference/shared_pref_keys.dart';
 import 'package:shoply/core/Services/shared_preference/shared_preference_helper.dart';
 import 'package:shoply/features/auth/data/models/login/login_request.dart';
@@ -14,6 +15,7 @@ part 'auth_bloc.freezed.dart';
 part 'auth_event.dart';
 part 'auth_state.dart';
 
+@injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState<dynamic>> {
   AuthBloc(this._authRepository) : super(const AuthState.initial()) {
     on<LoginEvent>(_login);
@@ -45,10 +47,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState<dynamic>> {
         );
 
         /// call userProfile method to get User Role
-      final userRole=  await _authRepository.userRole();
+        final userRole = await _authRepository.userRole();
         await SharedPrefHelper().setString(
           key: SharedPrefKeys.userRole,
-          stringValue: userRole.role??'',
+          stringValue: userRole.role ?? '',
         );
         emit(AuthState.success(userRole: userRole.role!));
       },
@@ -87,7 +89,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState<dynamic>> {
   // }
 
   Future<FutureOr<void>> _signUp(
-      SignUpEvent event, Emitter<AuthState> emit,) async {
+    SignUpEvent event,
+    Emitter<AuthState> emit,
+  ) async {
     emit(const AuthState.loading());
 
     /// call signUp method

@@ -76,6 +76,9 @@ class _$FilterEventCopyWithImpl<$Res, $Val extends FilterEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of FilterEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -92,6 +95,9 @@ class __$$StartedImplCopyWithImpl<$Res>
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of FilterEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -203,6 +209,8 @@ class __$$GetFilteredProductsListEventImplCopyWithImpl<$Res>
       $Res Function(_$GetFilteredProductsListEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FilterEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -242,7 +250,9 @@ class _$GetFilteredProductsListEventImpl
   @override
   int get hashCode => Object.hash(runtimeType, body);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FilterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetFilteredProductsListEventImplCopyWith<
@@ -323,7 +333,10 @@ abstract class GetFilteredProductsListEvent implements FilterEvent {
       _$GetFilteredProductsListEventImpl;
 
   FilterProductsEntity get body;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FilterEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetFilteredProductsListEventImplCopyWith<
           _$GetFilteredProductsListEventImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -419,6 +432,9 @@ class _$FilterStateCopyWithImpl<$Res, $Val extends FilterState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of FilterState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -435,6 +451,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of FilterState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -571,6 +590,9 @@ class __$$FilteredProductsLoadingImplCopyWithImpl<$Res>
       _$FilteredProductsLoadingImpl _value,
       $Res Function(_$FilteredProductsLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of FilterState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -712,6 +734,8 @@ class __$$GetFilteredProductsListSuccessImplCopyWithImpl<$Res>
       $Res Function(_$GetFilteredProductsListSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FilterState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -762,7 +786,9 @@ class _$GetFilteredProductsListSuccessImpl
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_productList));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetFilteredProductsListSuccessImplCopyWith<
@@ -871,7 +897,10 @@ abstract class GetFilteredProductsListSuccess implements FilterState {
       _$GetFilteredProductsListSuccessImpl;
 
   List<GetProductEntity>? get productList;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetFilteredProductsListSuccessImplCopyWith<
           _$GetFilteredProductsListSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -893,6 +922,9 @@ class __$$GetFilteredProductsListEmptyImplCopyWithImpl<$Res>
       _$GetFilteredProductsListEmptyImpl _value,
       $Res Function(_$GetFilteredProductsListEmptyImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of FilterState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1036,6 +1068,8 @@ class __$$GetFilteredProductsListFailureImplCopyWithImpl<$Res>
       $Res Function(_$GetFilteredProductsListFailureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FilterState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1076,7 +1110,9 @@ class _$GetFilteredProductsListFailureImpl
   @override
   int get hashCode => Object.hash(runtimeType, errorMessage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GetFilteredProductsListFailureImplCopyWith<
@@ -1184,7 +1220,10 @@ abstract class GetFilteredProductsListFailure implements FilterState {
       _$GetFilteredProductsListFailureImpl;
 
   String get errorMessage;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FilterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetFilteredProductsListFailureImplCopyWith<
           _$GetFilteredProductsListFailureImpl>
       get copyWith => throw _privateConstructorUsedError;

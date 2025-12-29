@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:shoply/core/app/Apis/api_result.dart';
+import 'package:shoply/core/app/apis/api_result.dart';
 import 'package:shoply/features/admin/products/data/Mappers/create_product_mapper.dart';
 import 'package:shoply/features/admin/products/data/Mappers/delete_product_mapper.dart';
 import 'package:shoply/features/admin/products/data/Mappers/update_product_mapper.dart';
@@ -97,14 +97,12 @@ void main() {
       test('should return CreateProductResponse on success', () async {
         // Arrange
 
-        when(mockDataSource
-                .createProduct(MockProductTest.createProductEntity))
-            .thenAnswer(
-                (_) async => MockProductTest.mockCreateProductResponse);
+        when(mockDataSource.createProduct(MockProductTest.createProductEntity))
+            .thenAnswer((_) async => MockProductTest.mockCreateProductResponse);
 
         // Act
-        final result = await repository
-            .createProduct(MockProductTest.createProductEntity);
+        final result =
+            await repository.createProduct(MockProductTest.createProductEntity);
 
         // Assert
         expect(result, isA<ApiResult<CreateProductResponse>>());
@@ -119,14 +117,12 @@ void main() {
       test('should return failure when API returns an error', () async {
         // Arrange
 
-        when(mockDataSource
-                .createProduct(MockProductTest.createProductEntity))
-            .thenAnswer(
-                (_) async => MockProductTest.mockCreateProductResponse);
+        when(mockDataSource.createProduct(MockProductTest.createProductEntity))
+            .thenAnswer((_) async => MockProductTest.mockCreateProductResponse);
 
         // Act
-        final result = await repository
-            .createProduct(MockProductTest.createProductEntity);
+        final result =
+            await repository.createProduct(MockProductTest.createProductEntity);
 
         // Assert
         expect(result, isA<ApiResult<CreateProductResponse>>());
@@ -140,14 +136,12 @@ void main() {
       test('should return Update Product Response on success', () async {
         // Arrange
 
-        when(mockDataSource
-                .updateProduct(MockProductTest.updateProductEntity))
-            .thenAnswer(
-                (_) async => MockProductTest.mockUpdateProductResponse);
+        when(mockDataSource.updateProduct(MockProductTest.updateProductEntity))
+            .thenAnswer((_) async => MockProductTest.mockUpdateProductResponse);
 
         // Act
-        final result = await repository
-            .updateProduct(MockProductTest.updateProductEntity);
+        final result =
+            await repository.updateProduct(MockProductTest.updateProductEntity);
 
         // Assert
         expect(result, isA<ApiResult<UpdateProductResponse>>());
@@ -162,14 +156,12 @@ void main() {
       test('should return failure when API returns an error', () async {
         // Arrange
 
-        when(mockDataSource
-                .updateProduct(MockProductTest.updateProductEntity))
-            .thenAnswer(
-                (_) async => MockProductTest.mockUpdateProductResponse);
+        when(mockDataSource.updateProduct(MockProductTest.updateProductEntity))
+            .thenAnswer((_) async => MockProductTest.mockUpdateProductResponse);
 
         // Act
-        final result = await repository
-            .updateProduct(MockProductTest.updateProductEntity);
+        final result =
+            await repository.updateProduct(MockProductTest.updateProductEntity);
 
         // Assert
         expect(result, isA<ApiResult<UpdateProductResponse>>());
@@ -183,14 +175,12 @@ void main() {
       test('should return Update Product Response on success', () async {
         // Arrange
 
-        when(mockDataSource
-                .deleteProduct(productId: MockProductTest.productId))
-            .thenAnswer(
-                (_) async => MockProductTest.mockDeleteProductResponse);
+        when(mockDataSource.deleteProduct(productId: MockProductTest.productId))
+            .thenAnswer((_) async => MockProductTest.mockDeleteProductResponse);
 
         // Act
-        final result = await repository
-            .deleteProduct(MockProductTest.productId);
+        final result =
+            await repository.deleteProduct(MockProductTest.productId);
 
         // Assert
         expect(result, isA<ApiResult<DeleteProductResponse>>());
@@ -205,14 +195,12 @@ void main() {
       test('should return failure when API returns an error', () async {
         // Arrange
 
-        when(mockDataSource
-                .deleteProduct(productId: MockProductTest.productId))
-            .thenAnswer(
-                (_) async => MockProductTest.mockDeleteProductResponse);
+        when(mockDataSource.deleteProduct(productId: MockProductTest.productId))
+            .thenAnswer((_) async => MockProductTest.mockDeleteProductResponse);
 
         // Act
-        final result = await repository
-            .deleteProduct( MockProductTest.productId);
+        final result =
+            await repository.deleteProduct(MockProductTest.productId);
 
         // Assert
         expect(result, isA<ApiResult<DeleteProductResponse>>());

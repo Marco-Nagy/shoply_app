@@ -114,6 +114,9 @@ class _$FileStateCopyWithImpl<T, $Res, $Val extends FileState<T>>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of FileState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -130,6 +133,9 @@ class __$$InitialImplCopyWithImpl<T, $Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl<T> _value, $Res Function(_$InitialImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of FileState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -274,6 +280,9 @@ class __$$LoadingStateImplCopyWithImpl<T, $Res>
   __$$LoadingStateImplCopyWithImpl(
       _$LoadingStateImpl<T> _value, $Res Function(_$LoadingStateImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of FileState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -421,6 +430,9 @@ class __$$LoadingUploadImageListStateImplCopyWithImpl<T, $Res>
       _$LoadingUploadImageListStateImpl<T> _value,
       $Res Function(_$LoadingUploadImageListStateImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of FileState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -571,6 +583,8 @@ class __$$SuccessStateImplCopyWithImpl<T, $Res>
       _$SuccessStateImpl<T> _value, $Res Function(_$SuccessStateImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of FileState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -610,7 +624,9 @@ class _$SuccessStateImpl<T> implements SuccessState<T> {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SuccessStateImplCopyWith<T, _$SuccessStateImpl<T>> get copyWith =>
@@ -726,7 +742,10 @@ abstract class SuccessState<T> implements FileState<T> {
   const factory SuccessState(final T data) = _$SuccessStateImpl<T>;
 
   T get data;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessStateImplCopyWith<T, _$SuccessStateImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -751,6 +770,8 @@ class __$$SuccessUploadImageListStateImplCopyWithImpl<T, $Res>
       $Res Function(_$SuccessUploadImageListStateImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of FileState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -790,7 +811,9 @@ class _$SuccessUploadImageListStateImpl<T>
   @override
   int get hashCode => Object.hash(runtimeType, msg);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SuccessUploadImageListStateImplCopyWith<T,
@@ -908,7 +931,10 @@ abstract class SuccessUploadImageListState<T> implements FileState<T> {
       _$SuccessUploadImageListStateImpl<T>;
 
   String get msg;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessUploadImageListStateImplCopyWith<T,
           _$SuccessUploadImageListStateImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
@@ -931,6 +957,8 @@ class __$$RemoveStateImplCopyWithImpl<T, $Res>
       _$RemoveStateImpl<T> _value, $Res Function(_$RemoveStateImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of FileState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -970,7 +998,9 @@ class _$RemoveStateImpl<T> implements RemoveState<T> {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RemoveStateImplCopyWith<T, _$RemoveStateImpl<T>> get copyWith =>
@@ -1086,7 +1116,10 @@ abstract class RemoveState<T> implements FileState<T> {
   const factory RemoveState(final T data) = _$RemoveStateImpl<T>;
 
   T get data;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RemoveStateImplCopyWith<T, _$RemoveStateImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1108,6 +1141,8 @@ class __$$CropStateImplCopyWithImpl<T, $Res>
       _$CropStateImpl<T> _value, $Res Function(_$CropStateImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of FileState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1147,7 +1182,9 @@ class _$CropStateImpl<T> implements CropState<T> {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CropStateImplCopyWith<T, _$CropStateImpl<T>> get copyWith =>
@@ -1262,7 +1299,10 @@ abstract class CropState<T> implements FileState<T> {
   const factory CropState(final T data) = _$CropStateImpl<T>;
 
   T get data;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CropStateImplCopyWith<T, _$CropStateImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1284,6 +1324,8 @@ class __$$FailureStateImplCopyWithImpl<T, $Res>
       _$FailureStateImpl<T> _value, $Res Function(_$FailureStateImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of FileState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1322,7 +1364,9 @@ class _$FailureStateImpl<T> implements FailureState<T> {
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureStateImplCopyWith<T, _$FailureStateImpl<T>> get copyWith =>
@@ -1439,7 +1483,10 @@ abstract class FailureState<T> implements FileState<T> {
       _$FailureStateImpl<T>;
 
   String get error;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FailureStateImplCopyWith<T, _$FailureStateImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

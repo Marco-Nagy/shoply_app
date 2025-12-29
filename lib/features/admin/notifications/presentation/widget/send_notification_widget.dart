@@ -6,8 +6,7 @@ import 'package:shoply/core/styles/icons/app_animated_icons.dart';
 import 'package:shoply/core/utils/message_type_const.dart';
 import 'package:shoply/core/utils/widgets/app_animated_icon.dart';
 import 'package:shoply/core/utils/widgets/snack_bar.dart';
-import 'package:shoply/features/admin/notifications/data/model/add_notification_model.dart';
-import 'package:shoply/features/admin/notifications/data/model/add_notification_table_schema.dart';
+import 'package:shoply/features/admin/notifications/domain/entities/add_notification_entity.dart';
 import 'package:shoply/features/admin/notifications/presentation/bloc/send_notification/send_notification_bloc.dart';
 import 'package:vibration/vibration.dart';
 

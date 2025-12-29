@@ -4,11 +4,11 @@ import 'package:shoply/features/customer/favorites/domain/entities/favorites_ent
 class FavoritesMappers {
   FavoritesEntity fromModel(GetProductEntity model) {
     return FavoritesEntity(
-      id: 0,
       productName: model.title,
       image: model.images.first,
       price: model.price.toString(),
-      categoryName: model.category.name, productId: model.id,
+      categoryName: model.category.name,
+      productId: model.id,
     );
   }
 
@@ -18,8 +18,8 @@ class FavoritesMappers {
       title: entity.productName,
       images: [entity.image],
       price: int.parse(entity.price),
-      category: CategoryProductEntity(id:'', name: entity.categoryName), description: '',
+      category: CategoryProductEntity(id: '', name: entity.categoryName),
+      description: '',
     );
   }
-
 }

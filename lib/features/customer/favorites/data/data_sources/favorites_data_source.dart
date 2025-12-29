@@ -1,27 +1,37 @@
-import 'package:shoply/core/Services/localDataSource/isar_database_helper.dart';
-import 'package:shoply/features/customer/favorites/data/models/favorites_table.dart';
+import 'package:injectable/injectable.dart';
+import 'package:shoply/core/Services/localDataSource/hive_database.dart';
+import 'package:shoply/features/customer/favorites/data/models/favorites_hive.dart';
 import 'package:shoply/features/customer/favorites/domain/entities/favorites_entity.dart';
 
 import 'base_favorite_data_source.dart';
 
+@lazySingleton
 class FavoritesDataSource implements BaseFavoritesDataSource {
-  final IsarDatabaseHelper isarDatabaseHelper;
+  final HiveDatabaseHelper _hiveDatabaseHelper;
 
-  FavoritesDataSource(this.isarDatabaseHelper);
+  FavoritesDataSource(this._hiveDatabaseHelper);
 
   @override
-  addFavorite({required FavoritesEntity body}) {
-    return isarDatabaseHelper.addEntity(body.toSchema());
+  Future<void> addFavorite({required FavoritesEntity body}) async {
+    final hive = body.toHive();
+    await _hiveDatabaseHelper.addEntity<FavoritesHive>(
+      hive,
+      key: body.productId,
+    );
   }
 
   @override
-  Future<List<FavoritesTable>> getFavorites() async {
-    return await isarDatabaseHelper.getAllEntities<FavoritesTable>();
-
+  Future<List<FavoritesHive>> getFavorites() async {
+    return await _hiveDatabaseHelper.getAllEntities<FavoritesHive>(
+      HiveDatabaseHelper.favoritesBoxName,
+    );
   }
 
   @override
-  removeFavorite({required int id}) {
-    return isarDatabaseHelper.deleteEntity<FavoritesTable>(id);
+  Future<void> removeFavorite({required String productId}) async {
+    await _hiveDatabaseHelper.deleteEntity<FavoritesHive>(
+      HiveDatabaseHelper.favoritesBoxName,
+      productId,
+    );
   }
 }

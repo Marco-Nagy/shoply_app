@@ -2,36 +2,43 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shoply/core/Services/localDataSource/isar_database_helper.dart';
-import 'package:shoply/core/app/di/injection_container.dart';
-import 'package:shoply/features/admin/notifications/data/model/add_notification_table_schema.dart';
+import 'package:injectable/injectable.dart';
+import 'package:shoply/core/Services/localDataSource/hive_database.dart';
+import 'package:shoply/features/admin/notifications/data/model/add_notification_model.dart';
+import 'package:shoply/features/admin/notifications/domain/entities/add_notification_entity.dart';
 
 part 'admin_notifications_bloc.freezed.dart';
 part 'admin_notifications_event.dart';
 part 'admin_notifications_state.dart';
 
+@injectable
 class AdminNotificationsBloc
     extends Bloc<AdminNotificationsEvent, AdminNotificationsState> {
-  AdminNotificationsBloc() : super(const AdminNotificationsState.initial()) {
+  AdminNotificationsBloc(this._hiveHelper)
+      : super(const AdminNotificationsState.initial()) {
     on<CreateNotificationEvent>(_createNotification);
     on<FetchAdminNotificationsListEvent>(_fetchAdminNotificationsList);
     on<DeleteNotificationEvent>(_deleteNotification);
   }
 
-  Future<FutureOr<void>> _createNotification(
-      CreateNotificationEvent event,
+  final HiveDatabaseHelper _hiveHelper;
+
+  Future<FutureOr<void>> _createNotification(CreateNotificationEvent event,
       Emitter<AdminNotificationsState> emit) async {
     emit(const AdminNotificationsState.adminNotificationsLoading());
     try {
-      final isarHelper = sl<IsarDatabaseHelper>();
+      // Convert entity to model and save
 
-      // // Ensure Isar is initialized
-      // if (isarHelper.isar == null) {
-      //   await isarHelper.initialize();
-      // }
+      // Convert entity to model and save
+      final model = AddNotificationModel(
+        title: event.body.title,
+        body: event.body.body,
+        createAt: event.body.createAt,
+        productId: event.body.productId,
+        productName: event.body.productName,
+      );
 
-      // Convert entity to schema and save
-      await isarHelper.addEntity(event.body.toSchema());
+      await _hiveHelper.addEntity<AddNotificationModel>(model);
       emit(const AdminNotificationsState.addNotificationSuccess());
     } catch (e) {
       emit(AdminNotificationsState.getAdminNotificationsListFailure(
@@ -39,26 +46,29 @@ class AdminNotificationsBloc
     }
   }
 
-
   Future<FutureOr<void>> _fetchAdminNotificationsList(
       FetchAdminNotificationsListEvent event,
       Emitter<AdminNotificationsState> emit) async {
     emit(const AdminNotificationsState.adminNotificationsLoading());
     try {
-      final isarHelper = sl<IsarDatabaseHelper>();
-      // if (isarHelper.isar == null) {
-      //   await isarHelper.initialize(); // Ensure Isar is initialized
-      // }
-
       final notifications =
-          await isarHelper.getAllEntities<AddNotificationTableSchema>();
+          await _hiveHelper.getAllEntities<AddNotificationModel>(
+        HiveDatabaseHelper.notificationBoxName,
+      );
       if (notifications.isEmpty) {
         emit(const AdminNotificationsState.getAdminNotificationsListEmpty());
       } else {
+        // Convert AddNotificationModel to AddNotificationEntity
         emit(AdminNotificationsState.getAdminNotificationsListSuccess(
             notifications
                 .map(
-                  (e) => AddNotificationEntity.fromSchema(e),
+                  (model) => AddNotificationEntity(
+                    title: model.title,
+                    body: model.body,
+                    createAt: model.createAt,
+                    productId: model.productId,
+                    productName: model.productName,
+                  ),
                 )
                 .toList()));
       }
@@ -72,7 +82,12 @@ class AdminNotificationsBloc
       DeleteNotificationEvent event, Emitter<AdminNotificationsState> emit) {
     emit(const AdminNotificationsState.adminNotificationsLoading());
 
-    return sl<IsarDatabaseHelper>().deleteEntity(event.notification).then((_) {
+    return _hiveHelper
+        .deleteEntity<AddNotificationModel>(
+      HiveDatabaseHelper.notificationBoxName,
+      event.notification,
+    )
+        .then((_) {
       emit(const AdminNotificationsState.deleteNotificationSuccess());
     }).catchError((error) {
       emit(AdminNotificationsState.deleteNotificationFailure(error.toString()));

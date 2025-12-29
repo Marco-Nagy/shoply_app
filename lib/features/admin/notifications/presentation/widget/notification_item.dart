@@ -7,8 +7,7 @@ import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/utils/widgets/custom_linear_container_admin.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
-import 'package:shoply/features/admin/notifications/data/model/add_notification_model.dart';
-import 'package:shoply/features/admin/notifications/data/model/add_notification_table_schema.dart';
+import 'package:shoply/features/admin/notifications/domain/entities/add_notification_entity.dart';
 import 'package:shoply/features/admin/notifications/presentation/widget/send_notification_widget.dart';
 
 class NotificationItem extends StatefulWidget {

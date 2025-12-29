@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:shoply/core/app/apis/graphQl/admin/categories_queries.dart';
 import 'package:shoply/features/admin/categories/data/data_source/admin_categories_api_service.dart';
 import 'package:shoply/features/admin/categories/data/model/create/create_category_request.dart';
@@ -7,6 +8,7 @@ import 'package:shoply/features/admin/categories/data/model/get_all_categories/g
 import 'package:shoply/features/admin/categories/data/model/update/update_category_request.dart';
 import 'package:shoply/features/admin/categories/data/model/update/update_category_response.dart';
 
+@lazySingleton
 base class AdminCategoriesDataSource {
   AdminCategoriesDataSource(this._apiService);
 

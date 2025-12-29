@@ -6,11 +6,10 @@ import 'package:shoply/core/Services/push_notifications/firebase_cloud_messaging
 import 'package:shoply/core/Services/shared_preference/shared_preference_helper.dart';
 import 'package:shoply/core/app/abb_bloc_observer.dart';
 import 'package:shoply/core/app/env_variables.dart';
-import 'package:shoply/core/app/di/injection_container.dart';
+import 'package:shoply/core/app/di/injection.dart';
 import 'package:shoply/firebase_options.dart';
 import 'package:shoply/soply_app.dart';
 import 'app_config.dart';
-import 'core/Services/localDataSource/hive_database.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,11 +17,11 @@ Future<void> main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await FirebaseCloudMessaging().initialize();
   await SharedPrefHelper().instantiatePreferences();
-  await HiveDatabase().setUp();
-  await setupInjector();
+  await configureInjection();
   Bloc.observer = MyBlocObserver();
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Colors.green,
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.green,
       systemNavigationBarColor: Colors.green,
     ),
   );

@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:shoply/core/app/Apis/api_result.dart';
+import 'package:shoply/core/app/apis/api_result.dart';
 import 'package:shoply/core/helpers/usecases/usecase.dart';
 import 'package:shoply/features/admin/products/data/model/create_product/create_product_response.dart';
 import 'package:shoply/features/admin/products/data/model/delete_category/delete_product.dart';
@@ -32,73 +32,97 @@ void main() {
       deleteProductUseCase = DeleteProductUseCase(repository);
     },
   );
-  test('TODO: Implement tests for get_products_list_use_case.dart', ()  async {
+  test('TODO: Implement tests for get_products_list_use_case.dart', () async {
     // Arrange
-    List<GetProductEntity> getProductsList =[MockProductTest.mockGetProductEntity];
+    List<GetProductEntity> getProductsList = [
+      MockProductTest.mockGetProductEntity
+    ];
     Future<ApiResult<List<GetProductEntity>>> successResult =
-    Future.value(ApiResult.success(getProductsList));
-    when(repository.getAllProducts()).thenAnswer((_) async =>  successResult);
+        Future.value(ApiResult.success(getProductsList));
+    when(repository.getAllProducts()).thenAnswer((_) async => successResult);
     // Act
-    final result =await   getProductsListUseCase.call(NoParams());
+    final result = await getProductsListUseCase.call(NoParams());
     // Assert
     expect(result, isA<ApiResult<List<GetProductEntity>>>());
     result.when(
       success: (data) {
-        expect(data, equals(getProductsList));  // Compare the data inside the success result
+        expect(
+            data,
+            equals(
+                getProductsList)); // Compare the data inside the success result
       },
       failure: (error) => fail('Expected success, but got failure: $error'),
     );
 
     verify(repository.getAllProducts()).called(1);
   });
-  test('TODO: Implement tests for create_product_use_case.dart', ()  async {
+  test('TODO: Implement tests for create_product_use_case.dart', () async {
     // Arrange
 
-    Future<ApiResult<CreateProductResponse>> successResult = Future.value(ApiResult.success( MockProductTest.mockCreateProductResponse));
-    when(repository.createProduct(MockProductTest.createProductEntity)).thenAnswer((_) async => successResult);
+    Future<ApiResult<CreateProductResponse>> successResult = Future.value(
+        ApiResult.success(MockProductTest.mockCreateProductResponse));
+    when(repository.createProduct(MockProductTest.createProductEntity))
+        .thenAnswer((_) async => successResult);
     // Act
-    final result =await   createProductUseCase.call(MockProductTest.createProductEntity);
+    final result =
+        await createProductUseCase.call(MockProductTest.createProductEntity);
     // Assert
     expect(result, isA<ApiResult<CreateProductResponse>>());
     result.when(
       success: (data) {
-        expect(data, equals(MockProductTest.mockCreateProductResponse));  // Compare the data inside the success result
+        expect(
+            data,
+            equals(MockProductTest
+                .mockCreateProductResponse)); // Compare the data inside the success result
       },
       failure: (error) => fail('Expected success, but got failure: $error'),
     );
 
-    verify(repository.createProduct(MockProductTest.createProductEntity)).called(1);
+    verify(repository.createProduct(MockProductTest.createProductEntity))
+        .called(1);
   });
-  test('TODO: Implement tests for update_product_use_case.dart', ()  async {
+  test('TODO: Implement tests for update_product_use_case.dart', () async {
     // Arrange
 
-    Future<ApiResult<UpdateProductResponse>> successResult = Future.value(ApiResult.success( MockProductTest.mockUpdateProductResponse));
-    when(repository.updateProduct(MockProductTest.updateProductEntity)).thenAnswer((_) async => successResult);
+    Future<ApiResult<UpdateProductResponse>> successResult = Future.value(
+        ApiResult.success(MockProductTest.mockUpdateProductResponse));
+    when(repository.updateProduct(MockProductTest.updateProductEntity))
+        .thenAnswer((_) async => successResult);
     // Act
-    final result =await   updateProductUseCase.call(MockProductTest.updateProductEntity);
+    final result =
+        await updateProductUseCase.call(MockProductTest.updateProductEntity);
     // Assert
     expect(result, isA<ApiResult<UpdateProductResponse>>());
     result.when(
       success: (data) {
-        expect(data, equals(MockProductTest.mockUpdateProductResponse));  // Compare the data inside the success result
+        expect(
+            data,
+            equals(MockProductTest
+                .mockUpdateProductResponse)); // Compare the data inside the success result
       },
       failure: (error) => fail('Expected success, but got failure: $error'),
     );
 
-    verify(repository.updateProduct(MockProductTest.updateProductEntity)).called(1);
+    verify(repository.updateProduct(MockProductTest.updateProductEntity))
+        .called(1);
   });
-  test('TODO: Implement tests for delete_product_use_case.dart', ()  async {
+  test('TODO: Implement tests for delete_product_use_case.dart', () async {
     // Arrange
 
-    Future<ApiResult<DeleteProductResponse>> successResult = Future.value(ApiResult.success( MockProductTest.mockDeleteProductResponse));
-    when(repository.deleteProduct(MockProductTest.productId)).thenAnswer((_) async => successResult);
+    Future<ApiResult<DeleteProductResponse>> successResult = Future.value(
+        ApiResult.success(MockProductTest.mockDeleteProductResponse));
+    when(repository.deleteProduct(MockProductTest.productId))
+        .thenAnswer((_) async => successResult);
     // Act
-    final result =await   deleteProductUseCase.call(MockProductTest.productId);
+    final result = await deleteProductUseCase.call(MockProductTest.productId);
     // Assert
     expect(result, isA<ApiResult<DeleteProductResponse>>());
     result.when(
       success: (data) {
-        expect(data, equals(MockProductTest.mockDeleteProductResponse));  // Compare the data inside the success result
+        expect(
+            data,
+            equals(MockProductTest
+                .mockDeleteProductResponse)); // Compare the data inside the success result
       },
       failure: (error) => fail('Expected success, but got failure: $error'),
     );

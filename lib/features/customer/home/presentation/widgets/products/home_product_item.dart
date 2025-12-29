@@ -50,8 +50,8 @@ class _HomeProductItemState extends State<HomeProductItem>
   checkFavorite() async {
     context.read<FavoritesCubit>().getFavorites();
 
-    isFavorite = await context.read<FavoritesCubit>().isFavorite(widget.product.id);
-
+    isFavorite =
+        await context.read<FavoritesCubit>().isFavorite(widget.product.id);
   }
 
   @override
@@ -74,9 +74,10 @@ class _HomeProductItemState extends State<HomeProductItem>
                 arguments: widget.product.id);
           },
           child: CustomContainerLinearCustomer(
-            height: 250.h,
+            height: 400.h,
             width: 165.w,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 //Buttons
@@ -87,7 +88,7 @@ class _HomeProductItemState extends State<HomeProductItem>
                     height: 160.h,
                     width: 160.w,
                     padding:
-                    const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                        const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15.w),
                     ),
@@ -97,7 +98,7 @@ class _HomeProductItemState extends State<HomeProductItem>
                         child: CustomImage(
                           tag: 'tag${widget.product.id}',
                           imageUrl:
-                          widget.product.images.first.imageProductFormat(),
+                              widget.product.images.first.imageProductFormat(),
                         )),
                   ),
                 ),
@@ -191,10 +192,13 @@ class _HomeProductItemState extends State<HomeProductItem>
                           child: BlocBuilder<FavoritesCubit, FavoritesState>(
                             builder: (context, state) {
                               switch (state) {
-                            case SuccessFavoritesState():
-                              return favoriteIcon( state.favorites.any((element) =>element.productId==widget.product.id ,));
-                            }
-                              return favoriteIcon( isFavorite);
+                                case SuccessFavoritesState():
+                                  return favoriteIcon(state.favorites.any(
+                                    (element) =>
+                                        element.productId == widget.product.id,
+                                  ));
+                              }
+                              return favoriteIcon(isFavorite);
                             },
                           ),
                         ),
@@ -209,34 +213,34 @@ class _HomeProductItemState extends State<HomeProductItem>
       ],
     );
   }
-favoriteIcon(bool isFavorite)=>  AppAnimatedIcon(
-  size: 35,
-  iconColor: isFavorite ? Colors.red : Colors
-      .white,
-  backGroundColor: Colors.red.shade200,
-  animationController: animationFavoritController,
-  iconAsset: AppAnimatedIcons.favorite,
-  onTap: () async {
-    Vibration.vibrate(
-        duration: 700,
-        pattern: [50, 100, 50, 500]);
-    Future.delayed(
-        const Duration(milliseconds: 700))
-        .whenComplete(
-          () {
-        itemPressed.value = false;
-        _deleteProduct(context,
-            favorite: FavoritesMappers()
-                .fromModel(widget.product));
-      },
-    );
-  },
-);
+
+  favoriteIcon(bool isFavorite) => AppAnimatedIcon(
+        size: 35,
+        iconColor: isFavorite ? Colors.red : Colors.white,
+        backGroundColor: Colors.red.shade200,
+        animationController: animationFavoritController,
+        iconAsset: AppAnimatedIcons.favorite,
+        onTap: () async {
+          Vibration.vibrate(duration: 700, pattern: [50, 100, 50, 500]);
+          Future.delayed(const Duration(milliseconds: 700)).whenComplete(
+            () {
+              itemPressed.value = false;
+              _deleteProduct(context,
+                  favorite: FavoritesMappers().fromModel(widget.product));
+            },
+          );
+        },
+      );
 
   Future<void> _deleteProduct(BuildContext context,
       {required FavoritesEntity favorite}) async {
-    context.read<FavoritesCubit>().manageFavoriteUseCase(favorite: favorite).whenComplete(() {
-      context.read<FavoritesCubit>().getFavorites();
-    },);
+    context
+        .read<FavoritesCubit>()
+        .manageFavoriteUseCase(favorite: favorite)
+        .whenComplete(
+      () {
+        context.read<FavoritesCubit>().getFavorites();
+      },
+    );
   }
 }

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:shoply/features/auth/data/models/role/user_role_response.dart';
 import 'package:shoply/features/customer/profile/data/repositories/profile_repo.dart';
 
@@ -11,6 +12,7 @@ part 'profile_state.dart';
 
 part 'profile_bloc.freezed.dart';
 
+@injectable
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   ProfileBloc(this._profileRepo) : super(const ProfileState.loading()) {
     on<GetUserInfoEvent>(_getUserInfo);

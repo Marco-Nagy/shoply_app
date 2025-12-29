@@ -1,14 +1,16 @@
+import 'package:injectable/injectable.dart';
 import 'package:shoply/features/customer/favorites/data/data_sources/favorites_data_source.dart';
 import 'package:shoply/features/customer/favorites/domain/entities/favorites_entity.dart';
 import 'package:shoply/features/customer/favorites/domain/repositories/favorites_repo.dart';
 
+@LazySingleton(as: FavoritesRepo)
 class FavoritesRepoImpl implements FavoritesRepo {
   final FavoritesDataSource _favoritesDataSource;
 
   FavoritesRepoImpl(this._favoritesDataSource);
 
   @override
-  addFavorite({required FavoritesEntity body}) {
+  Future<void> addFavorite({required FavoritesEntity body}) {
     return _favoritesDataSource.addFavorite(body: body);
   }
 
@@ -17,13 +19,13 @@ class FavoritesRepoImpl implements FavoritesRepo {
     final result = await _favoritesDataSource.getFavorites();
     return result
         .map(
-          (e) => FavoritesEntity.fromSchema(e),
+          (e) => FavoritesEntity.fromHive(e),
         )
         .toList();
   }
 
   @override
-  removeFavorite({required int id}) {
-    return _favoritesDataSource.removeFavorite(id: id);
+  Future<void> removeFavorite({required String productId}) {
+    return _favoritesDataSource.removeFavorite(productId: productId);
   }
 }
