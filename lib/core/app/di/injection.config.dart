@@ -11,11 +11,12 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:dio/dio.dart' as _i361;
 import 'package:flutter/material.dart' as _i409;
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart' as _i806;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
-import 'package:shoply/core/app/apis/api_service.dart' as _i489;
 import 'package:shoply/core/app/app_cubit/app_cubit.dart' as _i755;
 import 'package:shoply/core/app/di/module/app_module.dart' as _i545;
+import 'package:shoply/core/app/Networking/apis/api_service.dart' as _i376;
 import 'package:shoply/core/Services/localDataSource/hive_database.dart'
     as _i661;
 import 'package:shoply/features/admin/categories/data/data_source/admin_categories_api_service.dart'
@@ -60,10 +61,16 @@ import 'package:shoply/features/admin/products/domain/use_cases/update_product_u
     as _i839;
 import 'package:shoply/features/admin/products/presentation/bloc/admin_product_bloc.dart'
     as _i575;
-import 'package:shoply/features/auth/data/data_sources/auth_data_source.dart'
-    as _i814;
+import 'package:shoply/features/auth/data/data_sources/contracts/auth_data_source.dart'
+    as _i600;
+import 'package:shoply/features/auth/data/data_sources/contracts/facebook_auth_data_source.dart'
+    as _i856;
+import 'package:shoply/features/auth/data/data_sources/contracts/google_auth_data_source.dart'
+    as _i330;
 import 'package:shoply/features/auth/data/repositories/auth_repository.dart'
     as _i98;
+import 'package:shoply/features/auth/domain/use_cases/sign_in_use_case.dart'
+    as _i146;
 import 'package:shoply/features/auth/presentation/bloc/auth_bloc.dart' as _i269;
 import 'package:shoply/features/customer/favorites/data/data_sources/favorites_data_source.dart'
     as _i252;
@@ -143,7 +150,7 @@ extension GetItInjectableX on _i174.GetIt {
       preResolve: true,
     );
     gh.lazySingleton<_i361.Dio>(() => appModule.dio);
-    gh.lazySingleton<_i489.ApiService>(() => appModule.apiService);
+    gh.lazySingleton<_i376.ApiService>(() => appModule.apiService);
     gh.lazySingleton<_i213.DashboardApiService>(
         () => appModule.dashboardApiService);
     gh.lazySingleton<_i314.AdminCategoriesApiService>(
@@ -155,22 +162,30 @@ extension GetItInjectableX on _i174.GetIt {
         () => appModule.filterProductsApiService);
     gh.lazySingleton<_i118.AddNotificationDataSource>(
         () => _i118.AddNotificationDataSource());
+    gh.lazySingleton<_i330.GoogleAuthDataSource>(
+        () => _i330.GoogleAuthDataSource());
+    gh.lazySingleton<_i600.AuthDataSource>(
+        () => _i600.AuthDataSource(gh<_i376.ApiService>()));
+    gh.lazySingleton<_i605.ProfileDataSource>(
+        () => _i605.ProfileDataSource(gh<_i376.ApiService>()));
+    gh.lazySingleton<_i786.FileDataSource>(
+        () => _i786.FileDataSource(gh<_i376.ApiService>()));
+    gh.lazySingleton<_i574.ProfileRepo>(
+        () => _i574.ProfileRepo(gh<_i605.ProfileDataSource>()));
     gh.factory<_i246.AdminNotificationsBloc>(
         () => _i246.AdminNotificationsBloc(gh<_i661.HiveDatabaseHelper>()));
     gh.lazySingleton<_i252.FavoritesDataSource>(
         () => _i252.FavoritesDataSource(gh<_i661.HiveDatabaseHelper>()));
     gh.lazySingleton<_i638.AddNotificationRepo>(
         () => _i638.AddNotificationRepo(gh<_i118.AddNotificationDataSource>()));
+    gh.lazySingleton<_i856.FacebookAuthDataSource>(() =>
+        _i856.FacebookAuthDataSource(facebookAuth: gh<_i806.FacebookAuth>()));
     gh.lazySingleton<_i414.DashboardDataSource>(
         () => _i414.DashboardDataSource(gh<_i213.DashboardApiService>()));
+    gh.factory<_i377.ProfileBloc>(
+        () => _i377.ProfileBloc(gh<_i574.ProfileRepo>()));
     gh.lazySingleton<_i848.HomeDataSource>(
         () => _i848.HomeDataSource(gh<_i304.HomeApiService>()));
-    gh.lazySingleton<_i814.AuthDataSource>(
-        () => _i814.AuthDataSource(gh<_i489.ApiService>()));
-    gh.lazySingleton<_i605.ProfileDataSource>(
-        () => _i605.ProfileDataSource(gh<_i489.ApiService>()));
-    gh.lazySingleton<_i786.FileDataSource>(
-        () => _i786.FileDataSource(gh<_i489.ApiService>()));
     gh.lazySingleton<_i711.FilterProductsDataSource>(() =>
         _i711.FilterProductsDataSource(gh<_i872.FilterProductsApiService>()));
     gh.lazySingleton<_i569.BaseHomeRepository>(
@@ -191,17 +206,16 @@ extension GetItInjectableX on _i174.GetIt {
         _i771.FilterProductsRepository(gh<_i711.FilterProductsDataSource>()));
     gh.lazySingleton<_i675.BaseAdminProductRepository>(() =>
         _i590.AdminProductRepository(gh<_i550.AdminProductsDataSource>()));
-    gh.lazySingleton<_i574.ProfileRepo>(
-        () => _i574.ProfileRepo(gh<_i605.ProfileDataSource>()));
-    gh.lazySingleton<_i98.AuthRepository>(
-        () => _i98.AuthRepository(gh<_i814.AuthDataSource>()));
+    gh.lazySingleton<_i98.AuthRepository>(() => _i98.AuthRepository(
+          gh<_i600.AuthDataSource>(),
+          gh<_i856.FacebookAuthDataSource>(),
+          gh<_i330.GoogleAuthDataSource>(),
+        ));
     gh.lazySingleton<_i1013.DashboardRepository>(
         () => _i1013.DashboardRepository(gh<_i414.DashboardDataSource>()));
     gh.lazySingleton<_i366.FilterProductsListUseCase>(() =>
         _i366.FilterProductsListUseCase(
             gh<_i794.BaseFilterProductsRepository>()));
-    gh.factory<_i377.ProfileBloc>(
-        () => _i377.ProfileBloc(gh<_i574.ProfileRepo>()));
     gh.lazySingleton<_i554.AdminCategoriesRepository>(() =>
         _i554.AdminCategoriesRepository(gh<_i702.AdminCategoriesDataSource>()));
     gh.factory<_i462.FilterBloc>(
@@ -217,6 +231,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i563.ProductsDetailsUseCase(gh<_i569.BaseHomeRepository>()));
     gh.lazySingleton<_i966.GetFavoritesUseCase>(
         () => _i966.GetFavoritesUseCase(gh<_i98.FavoritesRepo>()));
+    gh.factory<_i146.SignInUseCase>(
+        () => _i146.SignInUseCase(gh<_i98.AuthRepository>()));
     gh.factory<_i269.AuthBloc>(() => _i269.AuthBloc(gh<_i98.AuthRepository>()));
     gh.factory<_i847.FileCubit>(() => _i847.FileCubit(
           gh<_i11.FileRepository>(),

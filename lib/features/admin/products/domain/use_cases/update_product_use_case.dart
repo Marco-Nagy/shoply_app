@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:shoply/core/app/apis/api_result.dart';
+import 'package:shoply/core/app/Networking/data_result.dart';
 import 'package:shoply/core/helpers/usecases/usecase.dart';
 import 'package:shoply/features/admin/products/data/model/update_product/update_product_response.dart';
 import 'package:shoply/features/admin/products/domain/entities/update_product_entity.dart';
@@ -13,7 +13,7 @@ class UpdateProductUseCase
   UpdateProductUseCase(this._repository);
 
   @override
-  Future<ApiResult<UpdateProductResponse>> call(UpdateProductEntity params) {
+  Future<DataResult<UpdateProductResponse>> call(UpdateProductEntity params) {
     return _repository.updateProduct(params);
   }
 }

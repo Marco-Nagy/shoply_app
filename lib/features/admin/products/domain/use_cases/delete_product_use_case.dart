@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:shoply/core/app/apis/api_result.dart';
+import 'package:shoply/core/app/Networking/data_result.dart';
 import 'package:shoply/core/helpers/usecases/usecase.dart';
 import 'package:shoply/features/admin/products/data/model/delete_category/delete_product.dart';
 import 'package:shoply/features/admin/products/domain/repositories/base_admin_product_repository.dart';
@@ -11,7 +11,7 @@ class DeleteProductUseCase extends UseCase<DeleteProductResponse, String> {
   DeleteProductUseCase(this._repository);
 
   @override
-  Future<ApiResult<DeleteProductResponse>> call(String params) {
+  Future<DataResult<DeleteProductResponse>> call(String params) {
     return _repository.deleteProduct(params);
   }
 }

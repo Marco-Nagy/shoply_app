@@ -10,24 +10,24 @@ import 'package:shoply/firebase_options.dart';
 import 'package:shoply/soply_app.dart';
 
 Future<void> main() async {
-  print('DEBUG: main() ENTRY');
+  debugPrint('DEBUG: main() ENTRY');
   WidgetsFlutterBinding.ensureInitialized();
-  print('DEBUG: WidgetsFlutterBinding initialized');
+  debugPrint('DEBUG: WidgetsFlutterBinding initialized');
   await EnvVariables.instance.init(envType: EnvTypeEnum.dev);
-  print('DEBUG: EnvVariables initialized');
+  debugPrint('DEBUG: EnvVariables initialized');
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  print('DEBUG: Firebase initialized');
+  debugPrint('DEBUG: Firebase initialized');
   await SharedPrefHelper().instantiatePreferences();
-  print('DEBUG: SharedPrefHelper initialized');
+  debugPrint('DEBUG: SharedPrefHelper initialized');
   try {
     await configureInjection();
-    print('DEBUG: configureInjection passed');
-    print('DEBUG: AppCubit registered in main: ${sl.isRegistered<AppCubit>()}');
+    debugPrint('DEBUG: configureInjection passed');
+    debugPrint('DEBUG: AppCubit registered in main: ${sl.isRegistered<AppCubit>()}');
   } catch (e, s) {
-    print('DEBUG: configureInjection FAILED: $e');
-    print('DEBUG: Stack trace: $s');
+    debugPrint('DEBUG: configureInjection FAILED: $e');
+    debugPrint('DEBUG: Stack trace: $s');
   }
-  print('DEBUG: sl hash in main: ${sl.hashCode}');
+  debugPrint('DEBUG: sl hash in main: ${sl.hashCode}');
   Bloc.observer = MyBlocObserver();
 
   runApp(const ShoplyApp());

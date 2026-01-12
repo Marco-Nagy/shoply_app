@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:shoply/core/app/apis/graphQl/admin/dashboard_queries.dart';
+import 'package:shoply/core/app/Networking/graphQl/admin/dashboard_queries.dart';
 import 'package:shoply/features/admin/dashboard/data/data_sources/dashboard_api_service.dart';
 import 'package:shoply/features/admin/dashboard/data/models/total_categories_response.dart';
 import 'package:shoply/features/admin/dashboard/data/models/total_products_response.dart';

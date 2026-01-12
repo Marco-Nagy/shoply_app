@@ -1,4 +1,4 @@
-import 'package:shoply/core/app/apis/errors/error_model.dart';
+import 'package:shoply/core/app/Networking/errors/error_model.dart';
 import 'package:shoply/features/admin/categories/data/model/create/create_category_request.dart';
 import 'package:shoply/features/admin/categories/data/model/create/create_category_response.dart';
 import 'package:shoply/features/admin/categories/data/model/delete/delete_response.dart';

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
-import 'package:shoply/core/app/apis/api_service.dart';
+import 'package:shoply/core/app/Networking/apis/api_service.dart';
 import 'package:shoply/features/files/data/models/upload_model.dart';
 
 @lazySingleton
