@@ -10,9 +10,11 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:dio/dio.dart' as _i361;
+import 'package:firebase_auth/firebase_auth.dart' as _i59;
 import 'package:flutter/material.dart' as _i409;
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart' as _i806;
 import 'package:get_it/get_it.dart' as _i174;
+import 'package:google_sign_in/google_sign_in.dart' as _i116;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:shoply/core/app/app_cubit/app_cubit.dart' as _i755;
 import 'package:shoply/core/app/di/module/app_module.dart' as _i545;
@@ -63,13 +65,15 @@ import 'package:shoply/features/admin/products/presentation/bloc/admin_product_b
     as _i575;
 import 'package:shoply/features/auth/data/data_sources/contracts/auth_data_source.dart'
     as _i600;
-import 'package:shoply/features/auth/data/data_sources/contracts/facebook_auth_data_source.dart'
-    as _i856;
-import 'package:shoply/features/auth/data/data_sources/contracts/google_auth_data_source.dart'
-    as _i330;
-import 'package:shoply/features/auth/data/repositories/auth_repository.dart'
+import 'package:shoply/features/auth/data/data_sources/contracts/firebase_data_source.dart'
+    as _i663;
+import 'package:shoply/features/auth/data/data_sources/impl/firebase_data_source_impl.dart'
+    as _i243;
+import 'package:shoply/features/auth/data/repositories/auth_repository_impl.dart'
     as _i98;
-import 'package:shoply/features/auth/domain/use_cases/sign_in_use_case.dart'
+import 'package:shoply/features/auth/domain/repositories/auth_repository.dart'
+    as _i229;
+import 'package:shoply/features/auth/domain/use_cases/sign_in_with_email_case.dart'
     as _i146;
 import 'package:shoply/features/auth/presentation/bloc/auth_bloc.dart' as _i269;
 import 'package:shoply/features/customer/favorites/data/data_sources/favorites_data_source.dart'
@@ -162,8 +166,6 @@ extension GetItInjectableX on _i174.GetIt {
         () => appModule.filterProductsApiService);
     gh.lazySingleton<_i118.AddNotificationDataSource>(
         () => _i118.AddNotificationDataSource());
-    gh.lazySingleton<_i330.GoogleAuthDataSource>(
-        () => _i330.GoogleAuthDataSource());
     gh.lazySingleton<_i600.AuthDataSource>(
         () => _i600.AuthDataSource(gh<_i376.ApiService>()));
     gh.lazySingleton<_i605.ProfileDataSource>(
@@ -178,8 +180,13 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i252.FavoritesDataSource(gh<_i661.HiveDatabaseHelper>()));
     gh.lazySingleton<_i638.AddNotificationRepo>(
         () => _i638.AddNotificationRepo(gh<_i118.AddNotificationDataSource>()));
-    gh.lazySingleton<_i856.FacebookAuthDataSource>(() =>
-        _i856.FacebookAuthDataSource(facebookAuth: gh<_i806.FacebookAuth>()));
+    gh.factory<_i146.SignInWithEmailCase>(
+        () => _i146.SignInWithEmailCase(gh<_i229.AuthRepository>()));
+    gh.factory<_i663.FirebaseDataSource>(() => _i243.FirebaseDataSourceImpl(
+          gh<_i59.FirebaseAuth>(),
+          gh<_i116.GoogleSignIn>(),
+          gh<_i806.FacebookAuth>(),
+        ));
     gh.lazySingleton<_i414.DashboardDataSource>(
         () => _i414.DashboardDataSource(gh<_i213.DashboardApiService>()));
     gh.factory<_i377.ProfileBloc>(
@@ -206,10 +213,9 @@ extension GetItInjectableX on _i174.GetIt {
         _i771.FilterProductsRepository(gh<_i711.FilterProductsDataSource>()));
     gh.lazySingleton<_i675.BaseAdminProductRepository>(() =>
         _i590.AdminProductRepository(gh<_i550.AdminProductsDataSource>()));
-    gh.lazySingleton<_i98.AuthRepository>(() => _i98.AuthRepository(
+    gh.lazySingleton<_i98.AuthRepositoryImpl>(() => _i98.AuthRepositoryImpl(
           gh<_i600.AuthDataSource>(),
-          gh<_i856.FacebookAuthDataSource>(),
-          gh<_i330.GoogleAuthDataSource>(),
+          gh<_i663.FirebaseDataSource>(),
         ));
     gh.lazySingleton<_i1013.DashboardRepository>(
         () => _i1013.DashboardRepository(gh<_i414.DashboardDataSource>()));
@@ -231,9 +237,7 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i563.ProductsDetailsUseCase(gh<_i569.BaseHomeRepository>()));
     gh.lazySingleton<_i966.GetFavoritesUseCase>(
         () => _i966.GetFavoritesUseCase(gh<_i98.FavoritesRepo>()));
-    gh.factory<_i146.SignInUseCase>(
-        () => _i146.SignInUseCase(gh<_i98.AuthRepository>()));
-    gh.factory<_i269.AuthBloc>(() => _i269.AuthBloc(gh<_i98.AuthRepository>()));
+    gh.factory<_i269.AuthBloc>(() => _i269.AuthBloc(gh<_i98.AuthRepositoryImpl>()));
     gh.factory<_i847.FileCubit>(() => _i847.FileCubit(
           gh<_i11.FileRepository>(),
           gh<_i409.GlobalKey<_i409.NavigatorState>>(),

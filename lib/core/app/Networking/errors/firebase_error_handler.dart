@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:shoply/core/app/Networking/errors/error_handler.dart';
+import 'package:shoply/core/localization/lang_keys.dart';
+import 'package:shoply/core/helpers/extension/string_exetension.dart';
 
 class FirebaseErrorHandler extends ErrorHandler {
   FirebaseErrorHandler(super.errorMsg);
@@ -19,7 +21,7 @@ class FirebaseErrorHandler extends ErrorHandler {
     } else if (error is PlatformException) {
       return _getPlatformErrorMessage(error);
     } else {
-      return "An unknown error occurred. Please check your internet connection and try again.";
+      return LangKeys.errorUnknown.toTranslate();
     }
   }
 
@@ -28,38 +30,38 @@ class FirebaseErrorHandler extends ErrorHandler {
     switch (e.code) {
       // --- Generic Auth ---
       case 'invalid-email':
-        return "The email address is badly formatted.";
+        return LangKeys.errorInvalidEmail.toTranslate();
       case 'user-disabled':
-        return "This user has been disabled. Please contact support.";
+        return LangKeys.errorUserDisabled.toTranslate();
       case 'user-not-found':
-        return "No user found for that email.";
+        return LangKeys.errorUserNotFound.toTranslate();
       case 'wrong-password':
-        return "Wrong password provided.";
+        return LangKeys.errorWrongPassword.toTranslate();
 
       // --- Social Auth Specifics ---
       case 'account-exists-with-different-credential':
         // **Critical for Social Auth**: Occurs when a user tries to sign in with
         // Facebook/Apple but already has a Password/Google account with the same email.
-        return "An account already exists with the same email address but different sign-in credentials. Please sign in with your original provider.";
+        return LangKeys.errorAccountExistsDifferentCredential.toTranslate();
 
       case 'credential-already-in-use':
         // Occurs when linking a social account (e.g., linking Google to existing Email user)
         // and that Google account is already used by someone else.
-        return "This account credential is already associated with another user account.";
+        return LangKeys.errorCredentialInUse.toTranslate();
 
       case 'popup-closed-by-user':
-        return "Sign-in popup was closed before completion.";
+        return LangKeys.errorPopupClosed.toTranslate();
 
       case 'cancelled-popup-request':
-        return "Only one popup request is allowed at one time.";
+        return LangKeys.errorPopupCancelled.toTranslate();
 
       // --- Security & Network ---
       case 'operation-not-allowed':
-        return "This sign-in method is not enabled. Please contact support.";
+        return LangKeys.errorOperationNotAllowed.toTranslate();
       case 'network-request-failed':
-        return "Network error. Please check your connection.";
+        return LangKeys.errorNetworkFailed.toTranslate();
       case 'too-many-requests':
-        return "Too many requests. Try again later.";
+        return LangKeys.errorTooManyRequests.toTranslate();
 
       default:
         return "Authentication Error: ${e.message ?? "Unknown error"}";
@@ -70,13 +72,13 @@ class FirebaseErrorHandler extends ErrorHandler {
   static String _getFirestoreErrorMessage(FirebaseException e) {
     switch (e.code) {
       case 'permission-denied':
-        return "You do not have permission to access this data.";
+        return LangKeys.errorPermissionDenied.toTranslate();
       case 'unavailable':
-        return "The service is currently unavailable. Check internet connection.";
+        return LangKeys.errorServiceUnavailable.toTranslate();
       case 'not-found':
-        return "The requested document was not found.";
+        return LangKeys.errorDocumentNotFound.toTranslate();
       case 'already-exists':
-        return "The document already exists.";
+        return LangKeys.errorDocumentExists.toTranslate();
       default:
         return "Database Error: ${e.message ?? "Unknown error"}";
     }
@@ -89,29 +91,29 @@ class FirebaseErrorHandler extends ErrorHandler {
     switch (e.code) {
       // --- Google Sign In ---
       case 'sign_in_canceled':
-        return "Google Sign-In was cancelled.";
+        return LangKeys.errorGoogleSignInCancelled.toTranslate();
       case 'network_error':
-        return "Network error occurred during Google Sign-In.";
+        return LangKeys.errorGoogleNetworkError.toTranslate();
 
       // --- Facebook Login ---
       case 'CANCELLED':
       case 'cancelled': // flutter_facebook_auth often returns this
-        return "Facebook Login was cancelled.";
+        return LangKeys.errorFacebookCancelled.toTranslate();
       case 'FAILED':
       case 'failed':
-        return "Facebook Login failed. Please try again.";
+        return LangKeys.errorFacebookFailed.toTranslate();
 
       // --- Apple Sign In ---
       case 'AuthorizationErrorCode.canceled': // iOS native code
       case '1001': // Common iOS error code for cancellation
-        return "Apple Sign-In was cancelled.";
+        return LangKeys.errorAppleCancelled.toTranslate();
       case 'AuthorizationErrorCode.unknown':
       case '1000':
-        return "Apple Sign-In failed due to an unknown error.";
+        return LangKeys.errorAppleUnknown.toTranslate();
 
       // --- Generic ---
       case 'sign_in_failed':
-        return "Sign in failed. Please try again.";
+        return LangKeys.errorSignInFailed.toTranslate();
       default:
         // Strip technical prefixes if possible to make it cleaner
         return "System Error: ${e.message?.replaceAll("Exception:", "") ?? "Unknown platform error"}";

@@ -38,6 +38,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   cupertino_icons: ^1.0.8
+  easy_localization: ^3.0.8
 
   # UI
   flutter_svg: ^2.0.10+1

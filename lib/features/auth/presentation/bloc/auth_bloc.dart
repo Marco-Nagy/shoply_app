@@ -4,12 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:shoply/core/Services/shared_preference/shared_pref_keys.dart';
-import 'package:shoply/core/Services/shared_preference/shared_preference_helper.dart';
 import 'package:shoply/features/auth/data/models/login/login_request.dart';
-import 'package:shoply/features/auth/data/models/login/login_response.dart';
 import 'package:shoply/features/auth/data/models/sign_up/signup_request.dart';
-import 'package:shoply/features/auth/data/repositories/auth_repository.dart';
+import 'package:shoply/features/auth/domain/entities/auth_provider_type.dart';
+import 'package:shoply/features/auth/domain/repositories/auth_repository.dart';
 
 part 'auth_bloc.freezed.dart';
 part 'auth_event.dart';
@@ -35,24 +33,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState<dynamic>> {
     emit(const AuthState.loading());
 
     /// call login method
-    final result = await _authRepository.login(
-      LoginRequest(emailController.text.trim(), passwordController.text.trim()),
+    final result = await _authRepository.signIn(
+      AuthProviderType.email,
+      loginRequest: LoginRequest(
+          emailController.text.trim(), passwordController.text.trim()),
     );
     await result.when(
-      success: (LoginResponse success) async {
-        /// save access token if login successful
-        await SharedPrefHelper().setString(
-          key: SharedPrefKeys.accessToken,
-          stringValue: success.data?.login!.accessToken ?? '',
-        );
-
-        /// call userProfile method to get User Role
-        final userRole = await _authRepository.userRole();
-        await SharedPrefHelper().setString(
-          key: SharedPrefKeys.userRole,
-          stringValue: userRole.role ?? '',
-        );
-        emit(AuthState.success(userRole: userRole.role!));
+      success: (data) {
+        emit(AuthState.success(userRole: data.role!));
       },
       failure: (error) {
         debugPrint('error.errorMsg ${error.errorMsg}');
@@ -95,8 +83,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState<dynamic>> {
     emit(const AuthState.loading());
 
     /// call signUp method
-    final result = await _authRepository.signUp(
-      SignupRequest(
+    final result = await _authRepository.signIn(
+      AuthProviderType.email,
+      signupRequest: SignupRequest(
         name: nameController.text.trim(),
         email: emailController.text.trim(),
         password: passwordController.text.trim(),

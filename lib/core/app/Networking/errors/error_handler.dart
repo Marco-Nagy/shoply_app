@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
-
+import 'package:shoply/core/localization/lang_keys.dart';
+import 'package:shoply/core/helpers/extension/string_exetension.dart';
 import 'error_model.dart';
 
 abstract class ErrorHandler {
-
   ErrorHandler(this.errorMsg);
   final String errorMsg;
 }
@@ -14,26 +14,28 @@ class ServerFailure extends ErrorHandler {
   factory ServerFailure.fromDioException(DioException dioException) {
     switch (dioException.type) {
       case DioExceptionType.connectionTimeout:
-        return ServerFailure('Connection timeout with ApiServer');
+        return ServerFailure(LangKeys.errorConnectionTimeout.toTranslate());
       case DioExceptionType.sendTimeout:
-        return ServerFailure('Send timeout with ApiServer');
+        return ServerFailure(LangKeys.errorSendTimeout.toTranslate());
       case DioExceptionType.receiveTimeout:
-        return ServerFailure('Receive timeout with ApiServer');
+        return ServerFailure(LangKeys.errorReceiveTimeout.toTranslate());
 
       case DioExceptionType.badCertificate:
-        return ServerFailure('Bad Certificate with ApiServer');
+        return ServerFailure(LangKeys.errorBadCertificate.toTranslate());
       case DioExceptionType.badResponse:
-        return ServerFailure.fromResponse(dioException.response!.statusCode,
-            dioException.response!.data,);
+        return ServerFailure.fromResponse(
+          dioException.response!.statusCode,
+          dioException.response!.data,
+        );
       case DioExceptionType.cancel:
-        return ServerFailure('Request to ApiServer was Canceled');
+        return ServerFailure(LangKeys.errorRequestCanceled.toTranslate());
       case DioExceptionType.unknown:
         if (dioException.message!.contains('SocketException')) {
-          return ServerFailure('No Internet Connection');
+          return ServerFailure(LangKeys.errorNoInternet.toTranslate());
         }
-        return ServerFailure('Unexpected Error, Please try again!');
+        return ServerFailure(LangKeys.errorUnexpected.toTranslate());
       default:
-        return ServerFailure('Opps There was an Error, Please try again');
+        return ServerFailure(LangKeys.errorGeneral.toTranslate());
     }
   }
 
@@ -44,11 +46,11 @@ class ServerFailure extends ErrorHandler {
       case 403:
         return ServerFailure(response.message);
       case 404:
-        return ServerFailure('Yor Request not found , Please Try later!');
+        return ServerFailure(LangKeys.errorNotFound.toTranslate());
       case 500:
-        return ServerFailure('Internal Server error , Please Try later!');
+        return ServerFailure(LangKeys.errorInternalServer.toTranslate());
       default:
-        return ServerFailure('Opps There was an Error, Please try again');
+        return ServerFailure(LangKeys.errorGeneral.toTranslate());
     }
   }
 }
