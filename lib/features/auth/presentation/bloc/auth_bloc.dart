@@ -4,10 +4,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:shoply/core/Services/shared_preference/shared_pref_keys.dart';
+import 'package:shoply/core/Services/shared_preference/shared_preference_helper.dart';
 import 'package:shoply/features/auth/data/models/login/login_request.dart';
 import 'package:shoply/features/auth/data/models/sign_up/signup_request.dart';
 import 'package:shoply/features/auth/domain/entities/auth_provider_type.dart';
 import 'package:shoply/features/auth/domain/repositories/auth_repository.dart';
+import 'package:shoply/features/customer/profile/presentation/bloc/profile_bloc.dart';
 
 part 'auth_bloc.freezed.dart';
 part 'auth_event.dart';
@@ -41,6 +44,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState<dynamic>> {
     );
     await result.when(
       success: (data) {
+
         emit(AuthState.success(userRole: data.role!));
       },
       failure: (error) {
@@ -110,10 +114,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState<dynamic>> {
 
     final result = await _authRepository.signIn(
       event.type,
+      signupRequest: SignupRequest(role: event.rule)
     );
     result.when(
       success: (user) {
-        emit(AuthState.success(userRole: user.role ?? 'buyer'));
+        SharedPrefHelper().setString(key: SharedPrefKeys.userId, stringValue: user.id);
+
+        emit(AuthState.success(userRole: user.role ?? UserRole.costumer.name));
       },
       failure: (error) {
         emit(AuthState.failure(error: error.errorMsg));

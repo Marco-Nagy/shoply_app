@@ -21,7 +21,7 @@ mixin _$AuthEvent {
     required TResult Function() started,
     required TResult Function() login,
     required TResult Function(String imgUrl, String role) signUp,
-    required TResult Function(AuthProviderType type) socialSignIn,
+    required TResult Function(AuthProviderType type, String? rule) socialSignIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +29,7 @@ mixin _$AuthEvent {
     TResult? Function()? started,
     TResult? Function()? login,
     TResult? Function(String imgUrl, String role)? signUp,
-    TResult? Function(AuthProviderType type)? socialSignIn,
+    TResult? Function(AuthProviderType type, String? rule)? socialSignIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +37,7 @@ mixin _$AuthEvent {
     TResult Function()? started,
     TResult Function()? login,
     TResult Function(String imgUrl, String role)? signUp,
-    TResult Function(AuthProviderType type)? socialSignIn,
+    TResult Function(AuthProviderType type, String? rule)? socialSignIn,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -132,7 +132,7 @@ class _$StartedImpl implements _Started {
     required TResult Function() started,
     required TResult Function() login,
     required TResult Function(String imgUrl, String role) signUp,
-    required TResult Function(AuthProviderType type) socialSignIn,
+    required TResult Function(AuthProviderType type, String? rule) socialSignIn,
   }) {
     return started();
   }
@@ -143,7 +143,7 @@ class _$StartedImpl implements _Started {
     TResult? Function()? started,
     TResult? Function()? login,
     TResult? Function(String imgUrl, String role)? signUp,
-    TResult? Function(AuthProviderType type)? socialSignIn,
+    TResult? Function(AuthProviderType type, String? rule)? socialSignIn,
   }) {
     return started?.call();
   }
@@ -154,7 +154,7 @@ class _$StartedImpl implements _Started {
     TResult Function()? started,
     TResult Function()? login,
     TResult Function(String imgUrl, String role)? signUp,
-    TResult Function(AuthProviderType type)? socialSignIn,
+    TResult Function(AuthProviderType type, String? rule)? socialSignIn,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -249,7 +249,7 @@ class _$LoginEventImpl implements LoginEvent {
     required TResult Function() started,
     required TResult Function() login,
     required TResult Function(String imgUrl, String role) signUp,
-    required TResult Function(AuthProviderType type) socialSignIn,
+    required TResult Function(AuthProviderType type, String? rule) socialSignIn,
   }) {
     return login();
   }
@@ -260,7 +260,7 @@ class _$LoginEventImpl implements LoginEvent {
     TResult? Function()? started,
     TResult? Function()? login,
     TResult? Function(String imgUrl, String role)? signUp,
-    TResult? Function(AuthProviderType type)? socialSignIn,
+    TResult? Function(AuthProviderType type, String? rule)? socialSignIn,
   }) {
     return login?.call();
   }
@@ -271,7 +271,7 @@ class _$LoginEventImpl implements LoginEvent {
     TResult Function()? started,
     TResult Function()? login,
     TResult Function(String imgUrl, String role)? signUp,
-    TResult Function(AuthProviderType type)? socialSignIn,
+    TResult Function(AuthProviderType type, String? rule)? socialSignIn,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -401,7 +401,7 @@ class _$SignUpEventImpl implements SignUpEvent {
     required TResult Function() started,
     required TResult Function() login,
     required TResult Function(String imgUrl, String role) signUp,
-    required TResult Function(AuthProviderType type) socialSignIn,
+    required TResult Function(AuthProviderType type, String? rule) socialSignIn,
   }) {
     return signUp(imgUrl, role);
   }
@@ -412,7 +412,7 @@ class _$SignUpEventImpl implements SignUpEvent {
     TResult? Function()? started,
     TResult? Function()? login,
     TResult? Function(String imgUrl, String role)? signUp,
-    TResult? Function(AuthProviderType type)? socialSignIn,
+    TResult? Function(AuthProviderType type, String? rule)? socialSignIn,
   }) {
     return signUp?.call(imgUrl, role);
   }
@@ -423,7 +423,7 @@ class _$SignUpEventImpl implements SignUpEvent {
     TResult Function()? started,
     TResult Function()? login,
     TResult Function(String imgUrl, String role)? signUp,
-    TResult Function(AuthProviderType type)? socialSignIn,
+    TResult Function(AuthProviderType type, String? rule)? socialSignIn,
     required TResult orElse(),
   }) {
     if (signUp != null) {
@@ -491,7 +491,7 @@ abstract class _$$SocialSignInEventImplCopyWith<$Res> {
           $Res Function(_$SocialSignInEventImpl) then) =
       __$$SocialSignInEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({AuthProviderType type});
+  $Res call({AuthProviderType type, String? rule});
 }
 
 /// @nodoc
@@ -508,12 +508,17 @@ class __$$SocialSignInEventImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? type = null,
+    Object? rule = freezed,
   }) {
     return _then(_$SocialSignInEventImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as AuthProviderType,
+      rule: freezed == rule
+          ? _value.rule
+          : rule // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -521,14 +526,16 @@ class __$$SocialSignInEventImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SocialSignInEventImpl implements SocialSignInEvent {
-  const _$SocialSignInEventImpl({required this.type});
+  const _$SocialSignInEventImpl({required this.type, this.rule});
 
   @override
   final AuthProviderType type;
+  @override
+  final String? rule;
 
   @override
   String toString() {
-    return 'AuthEvent.socialSignIn(type: $type)';
+    return 'AuthEvent.socialSignIn(type: $type, rule: $rule)';
   }
 
   @override
@@ -536,11 +543,12 @@ class _$SocialSignInEventImpl implements SocialSignInEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SocialSignInEventImpl &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.rule, rule) || other.rule == rule));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type);
+  int get hashCode => Object.hash(runtimeType, type, rule);
 
   /// Create a copy of AuthEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -557,9 +565,9 @@ class _$SocialSignInEventImpl implements SocialSignInEvent {
     required TResult Function() started,
     required TResult Function() login,
     required TResult Function(String imgUrl, String role) signUp,
-    required TResult Function(AuthProviderType type) socialSignIn,
+    required TResult Function(AuthProviderType type, String? rule) socialSignIn,
   }) {
-    return socialSignIn(type);
+    return socialSignIn(type, rule);
   }
 
   @override
@@ -568,9 +576,9 @@ class _$SocialSignInEventImpl implements SocialSignInEvent {
     TResult? Function()? started,
     TResult? Function()? login,
     TResult? Function(String imgUrl, String role)? signUp,
-    TResult? Function(AuthProviderType type)? socialSignIn,
+    TResult? Function(AuthProviderType type, String? rule)? socialSignIn,
   }) {
-    return socialSignIn?.call(type);
+    return socialSignIn?.call(type, rule);
   }
 
   @override
@@ -579,11 +587,11 @@ class _$SocialSignInEventImpl implements SocialSignInEvent {
     TResult Function()? started,
     TResult Function()? login,
     TResult Function(String imgUrl, String role)? signUp,
-    TResult Function(AuthProviderType type)? socialSignIn,
+    TResult Function(AuthProviderType type, String? rule)? socialSignIn,
     required TResult orElse(),
   }) {
     if (socialSignIn != null) {
-      return socialSignIn(type);
+      return socialSignIn(type, rule);
     }
     return orElse();
   }
@@ -627,10 +635,12 @@ class _$SocialSignInEventImpl implements SocialSignInEvent {
 }
 
 abstract class SocialSignInEvent implements AuthEvent {
-  const factory SocialSignInEvent({required final AuthProviderType type}) =
-      _$SocialSignInEventImpl;
+  const factory SocialSignInEvent(
+      {required final AuthProviderType type,
+      final String? rule}) = _$SocialSignInEventImpl;
 
   AuthProviderType get type;
+  String? get rule;
 
   /// Create a copy of AuthEvent
   /// with the given fields replaced by the non-null parameter values.

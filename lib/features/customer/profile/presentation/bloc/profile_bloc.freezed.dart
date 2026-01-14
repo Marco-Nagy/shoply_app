@@ -564,7 +564,7 @@ mixin _$ProfileState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(UserRoleResponse userInfo) success,
+    required TResult Function(UserProfile userInfo) success,
     required TResult Function(String errorMessage) error,
     required TResult Function(String role) role,
   }) =>
@@ -572,7 +572,7 @@ mixin _$ProfileState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(UserRoleResponse userInfo)? success,
+    TResult? Function(UserProfile userInfo)? success,
     TResult? Function(String errorMessage)? error,
     TResult? Function(String role)? role,
   }) =>
@@ -580,7 +580,7 @@ mixin _$ProfileState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(UserRoleResponse userInfo)? success,
+    TResult Function(UserProfile userInfo)? success,
     TResult Function(String errorMessage)? error,
     TResult Function(String role)? role,
     required TResult orElse(),
@@ -676,7 +676,7 @@ class _$LoadingStaeImpl implements LoadingStae {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(UserRoleResponse userInfo) success,
+    required TResult Function(UserProfile userInfo) success,
     required TResult Function(String errorMessage) error,
     required TResult Function(String role) role,
   }) {
@@ -687,7 +687,7 @@ class _$LoadingStaeImpl implements LoadingStae {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(UserRoleResponse userInfo)? success,
+    TResult? Function(UserProfile userInfo)? success,
     TResult? Function(String errorMessage)? error,
     TResult? Function(String role)? role,
   }) {
@@ -698,7 +698,7 @@ class _$LoadingStaeImpl implements LoadingStae {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(UserRoleResponse userInfo)? success,
+    TResult Function(UserProfile userInfo)? success,
     TResult Function(String errorMessage)? error,
     TResult Function(String role)? role,
     required TResult orElse(),
@@ -757,7 +757,7 @@ abstract class _$$SuccessStateImplCopyWith<$Res> {
           _$SuccessStateImpl value, $Res Function(_$SuccessStateImpl) then) =
       __$$SuccessStateImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({UserRoleResponse userInfo});
+  $Res call({UserProfile userInfo});
 }
 
 /// @nodoc
@@ -779,7 +779,7 @@ class __$$SuccessStateImplCopyWithImpl<$Res>
       userInfo: null == userInfo
           ? _value.userInfo
           : userInfo // ignore: cast_nullable_to_non_nullable
-              as UserRoleResponse,
+              as UserProfile,
     ));
   }
 }
@@ -790,7 +790,7 @@ class _$SuccessStateImpl implements SuccessState {
   const _$SuccessStateImpl({required this.userInfo});
 
   @override
-  final UserRoleResponse userInfo;
+  final UserProfile userInfo;
 
   @override
   String toString() {
@@ -821,7 +821,7 @@ class _$SuccessStateImpl implements SuccessState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(UserRoleResponse userInfo) success,
+    required TResult Function(UserProfile userInfo) success,
     required TResult Function(String errorMessage) error,
     required TResult Function(String role) role,
   }) {
@@ -832,7 +832,7 @@ class _$SuccessStateImpl implements SuccessState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(UserRoleResponse userInfo)? success,
+    TResult? Function(UserProfile userInfo)? success,
     TResult? Function(String errorMessage)? error,
     TResult? Function(String role)? role,
   }) {
@@ -843,7 +843,7 @@ class _$SuccessStateImpl implements SuccessState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(UserRoleResponse userInfo)? success,
+    TResult Function(UserProfile userInfo)? success,
     TResult Function(String errorMessage)? error,
     TResult Function(String role)? role,
     required TResult orElse(),
@@ -893,10 +893,10 @@ class _$SuccessStateImpl implements SuccessState {
 }
 
 abstract class SuccessState implements ProfileState {
-  const factory SuccessState({required final UserRoleResponse userInfo}) =
+  const factory SuccessState({required final UserProfile userInfo}) =
       _$SuccessStateImpl;
 
-  UserRoleResponse get userInfo;
+  UserProfile get userInfo;
 
   /// Create a copy of ProfileState
   /// with the given fields replaced by the non-null parameter values.
@@ -975,7 +975,7 @@ class _$ErrorStateImpl implements ErrorState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(UserRoleResponse userInfo) success,
+    required TResult Function(UserProfile userInfo) success,
     required TResult Function(String errorMessage) error,
     required TResult Function(String role) role,
   }) {
@@ -986,7 +986,7 @@ class _$ErrorStateImpl implements ErrorState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(UserRoleResponse userInfo)? success,
+    TResult? Function(UserProfile userInfo)? success,
     TResult? Function(String errorMessage)? error,
     TResult? Function(String role)? role,
   }) {
@@ -997,7 +997,7 @@ class _$ErrorStateImpl implements ErrorState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(UserRoleResponse userInfo)? success,
+    TResult Function(UserProfile userInfo)? success,
     TResult Function(String errorMessage)? error,
     TResult Function(String role)? role,
     required TResult orElse(),
@@ -1127,7 +1127,7 @@ class _$RoleStateImpl implements RoleState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(UserRoleResponse userInfo) success,
+    required TResult Function(UserProfile userInfo) success,
     required TResult Function(String errorMessage) error,
     required TResult Function(String role) role,
   }) {
@@ -1138,7 +1138,7 @@ class _$RoleStateImpl implements RoleState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(UserRoleResponse userInfo)? success,
+    TResult? Function(UserProfile userInfo)? success,
     TResult? Function(String errorMessage)? error,
     TResult? Function(String role)? role,
   }) {
@@ -1149,7 +1149,7 @@ class _$RoleStateImpl implements RoleState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(UserRoleResponse userInfo)? success,
+    TResult Function(UserProfile userInfo)? success,
     TResult Function(String errorMessage)? error,
     TResult Function(String role)? role,
     required TResult orElse(),

@@ -1,13 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class UserProfile {
+class UserProfileResponse {
   final String uid;
   final String? name;
   final String? email;
   final String? avatarUrl;
   final String role; // customer | merchant | admin
 
-  const UserProfile({
+  const UserProfileResponse({
     required this.uid,
     this.name,
     this.email,
@@ -25,7 +25,7 @@ class UserProfile {
     'createdAt': FieldValue.serverTimestamp(),
   };
 
-  static UserProfile fromJson(Map<String, dynamic> json) => UserProfile(
+  static UserProfileResponse fromJson(Map<String, dynamic> json) => UserProfileResponse(
     uid: json['uid'],
     name: json['name'],
     email: json['email'],

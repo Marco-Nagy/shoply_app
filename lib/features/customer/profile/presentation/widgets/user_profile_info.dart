@@ -4,18 +4,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/helpers/extension/string_exetension.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
-import 'package:shoply/features/auth/data/models/role/user_role_response.dart';
+import 'package:shoply/features/customer/profile/domain/entity/user_profile.dart';
 
 class UserProfileInfo extends StatelessWidget {
   const UserProfileInfo({super.key,  required this.userInfo});
-final UserRoleResponse userInfo;
+final UserProfile userInfo;
   @override
   Widget build(BuildContext context) {
     return Column(
         children: [
            ClipRRect(
         borderRadius:   BorderRadius.circular(45),
-            child: CachedNetworkImage(imageUrl: userInfo.avatar??'',
+            child: CachedNetworkImage(imageUrl: userInfo.avatarUrl??'',
             height: 80.h,
             width: 80.w,
             fit: BoxFit.fill,

@@ -6,7 +6,6 @@ import 'package:shoply/core/app/Networking/errors/error_handler.dart';
 import 'package:shoply/features/auth/data/data_sources/contracts/auth_data_source.dart';
 import 'package:shoply/features/auth/data/data_sources/contracts/firebase_data_source.dart';
 import 'package:shoply/features/auth/data/mappers/auth_mappers.dart';
-import 'package:shoply/features/auth/data/models/auth_user_response.dart';
 import 'package:shoply/features/auth/data/models/login/login_request.dart';
 import 'package:shoply/features/auth/data/models/login/login_response.dart';
 import 'package:shoply/features/auth/data/models/role/user_role_response.dart';
@@ -16,10 +15,12 @@ import 'package:shoply/features/auth/domain/entities/auth_provider_type.dart';
 import 'package:shoply/features/auth/domain/entities/auth_user.dart';
 import 'package:shoply/features/auth/domain/repositories/auth_repository.dart';
 import 'package:shoply/features/customer/profile/data/data_sources/contract/user_profile_data_source.dart';
+import 'package:shoply/features/customer/profile/data/models/user_profile_response.dart';
 
 @Injectable(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {
-  AuthRepositoryImpl(this._authDataSource, this._firebaseDataSource, this._userProfileDataSource);
+  AuthRepositoryImpl(this._authDataSource, this._firebaseDataSource,
+      this._userProfileDataSource);
 
   final AuthDataSource _authDataSource;
   final FirebaseDataSource _firebaseDataSource;
@@ -60,9 +61,14 @@ class AuthRepositoryImpl implements AuthRepository {
     var response = await _firebaseDataSource.signIn(provider,
         loginRequest: loginRequest, signupRequest: signupRequest);
     return response.when(success: (data) async {
-      var user= await  _userProfileDataSource.getProfile(data.uid);
-      if(user==null){
-        _userProfileDataSource.updateUserProfile(data);
+      var user = await _userProfileDataSource.getProfile(data.uid);
+      if (user == null) {
+        _userProfileDataSource.createUserProfile(UserProfileResponse(
+            uid: data.uid,
+            name: data.name,
+            email: data.email,
+            avatarUrl: data.avatarUrl,
+            role: signupRequest!.role!));
       }
 
       debugPrint('executeData success: $data');

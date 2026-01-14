@@ -37,7 +37,8 @@ class SignUpBody extends StatelessWidget {
             final userRole =
                 SharedPrefHelper().getString(key: SharedPrefKeys.userRole);
 
-            if (userRole == 'seller') {
+
+            if (userRole == UserRole.admin.name) {
               await Navigator.of(context).pushReplacementNamed(
                 AppRoutes.homeAdmin,
                 arguments: data,
@@ -157,15 +158,18 @@ class SignUpBody extends StatelessWidget {
                         onGooglePressed: () {
                           context
                               .read<AuthBloc>()
-                              .add(const AuthEvent.socialSignIn(
+                              .add( AuthEvent.socialSignIn(
                                 type: AuthProviderType.google,
+                            rule: context.read<ProfileBloc>().role,
+
                               ));
                         },
                         onFacebookPressed: () {
                           context
                               .read<AuthBloc>()
-                              .add(const AuthEvent.socialSignIn(
+                              .add( AuthEvent.socialSignIn(
                                 type: AuthProviderType.facebook,
+                            rule: context.read<ProfileBloc>().role,
                               ));
                         },
                         onApplePressed: () {

@@ -1,6 +1,8 @@
-import 'package:shoply/features/auth/data/models/auth_user_response.dart';
+import 'package:shoply/features/customer/profile/data/models/user_profile_response.dart';
+import 'package:shoply/features/customer/profile/domain/entity/user_profile.dart';
 
 abstract class UserProfileDataSource {
-  Future<void> updateUserProfile(AuthUserResponse profile);
-  Future<AuthUserResponse?> getProfile(String uid);
+  Future<void> createUserProfile(UserProfileResponse profile);
+  Future<UserProfileResponse?> getProfile(String uid);
+  Future<UserProfile> updateUserProfile(UserProfileResponse profile);
 }

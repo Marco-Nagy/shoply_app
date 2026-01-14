@@ -1,11 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
-import 'package:shoply/core/Services/firebase_helper/fire_store_ref_key.dart';
 import 'package:shoply/core/app/Networking/data_result.dart';
 import 'package:shoply/core/app/Networking/execute_data.dart';
 import 'package:shoply/core/helpers/extension/string_exetension.dart';

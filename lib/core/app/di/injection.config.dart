@@ -125,6 +125,14 @@ import 'package:shoply/features/customer/profile/data/data_sources/profile_dat_s
     as _i605;
 import 'package:shoply/features/customer/profile/data/repositories/profile_repo.dart'
     as _i574;
+import 'package:shoply/features/customer/profile/data/repositories/user_profile_repo.dart'
+    as _i784;
+import 'package:shoply/features/customer/profile/domain/repositories/user_profile_repo.dart'
+    as _i790;
+import 'package:shoply/features/customer/profile/domain/use_cases/get_user_profile_use_case.dart'
+    as _i742;
+import 'package:shoply/features/customer/profile/domain/use_cases/update_user_profile_use_case.dart'
+    as _i954;
 import 'package:shoply/features/customer/profile/presentation/bloc/profile_bloc.dart'
     as _i377;
 import 'package:shoply/features/files/data/data_sources/upload_file_data_source.dart'
@@ -187,10 +195,10 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i118.AddNotificationDataSource());
     gh.lazySingleton<_i600.AuthDataSource>(
         () => _i600.AuthDataSource(gh<_i376.ApiService>()));
-    gh.lazySingleton<_i786.FileDataSource>(
-        () => _i786.FileDataSource(gh<_i376.ApiService>()));
     gh.lazySingleton<_i605.ProfileDataSource>(
         () => _i605.ProfileDataSource(gh<_i376.ApiService>()));
+    gh.lazySingleton<_i786.FileDataSource>(
+        () => _i786.FileDataSource(gh<_i376.ApiService>()));
     gh.lazySingleton<_i574.ProfileRepo>(
         () => _i574.ProfileRepo(gh<_i605.ProfileDataSource>()));
     gh.factory<_i246.AdminNotificationsBloc>(
@@ -203,8 +211,6 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i815.UserProfileDataSourceImpl(gh<_i745.FireStoreService>()));
     gh.lazySingleton<_i414.DashboardDataSource>(
         () => _i414.DashboardDataSource(gh<_i213.DashboardApiService>()));
-    gh.factory<_i377.ProfileBloc>(
-        () => _i377.ProfileBloc(gh<_i574.ProfileRepo>()));
     gh.lazySingleton<_i848.HomeDataSource>(
         () => _i848.HomeDataSource(gh<_i304.HomeApiService>()));
     gh.lazySingleton<_i711.FilterProductsDataSource>(() =>
@@ -248,6 +254,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i1016.SignUpWithEmailCase(gh<_i229.AuthRepository>()));
     gh.factory<_i269.AuthBloc>(
         () => _i269.AuthBloc(gh<_i229.AuthRepository>()));
+    gh.factory<_i790.UserProfileRepo>(
+        () => _i784.UserProfileRepoImpl(gh<_i739.UserProfileDataSource>()));
     gh.lazySingleton<_i1013.DashboardRepository>(
         () => _i1013.DashboardRepository(gh<_i414.DashboardDataSource>()));
     gh.lazySingleton<_i366.FilterProductsListUseCase>(() =>
@@ -274,6 +282,10 @@ extension GetItInjectableX on _i174.GetIt {
         ));
     gh.factory<_i413.DashboardBloc>(
         () => _i413.DashboardBloc(gh<_i1013.DashboardRepository>()));
+    gh.factory<_i742.GetUserProfileUseCase>(
+        () => _i742.GetUserProfileUseCase(gh<_i790.UserProfileRepo>()));
+    gh.factory<_i954.UpdateUserProfileUseCase>(
+        () => _i954.UpdateUserProfileUseCase(gh<_i790.UserProfileRepo>()));
     gh.factory<_i482.FavoritesCubit>(() => _i482.FavoritesCubit(
           gh<_i112.ManageFavoriteUseCase>(),
           gh<_i966.GetFavoritesUseCase>(),
@@ -288,6 +300,11 @@ extension GetItInjectableX on _i174.GetIt {
         _i839.UpdateProductUseCase(gh<_i675.BaseAdminProductRepository>()));
     gh.factory<_i374.AdminCategoriesBloc>(
         () => _i374.AdminCategoriesBloc(gh<_i554.AdminCategoriesRepository>()));
+    gh.factory<_i377.ProfileBloc>(() => _i377.ProfileBloc(
+          gh<_i574.ProfileRepo>(),
+          gh<_i742.GetUserProfileUseCase>(),
+          gh<_i954.UpdateUserProfileUseCase>(),
+        ));
     gh.factory<_i132.HomeBloc>(() => _i132.HomeBloc(
           gh<_i717.HomeProductsListUseCase>(),
           gh<_i113.HomeProductsListPerCategoryUseCase>(),
