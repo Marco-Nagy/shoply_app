@@ -93,4 +93,12 @@ class LangKeys {
   static const String gallery = 'gallery';
   static const String remove = 'remove';
   static const String categoryName = 'category_name';
+
+  // User Role keys
+  static const String buyer = 'buyer';
+  static const String seller = 'seller';
+
+  // Social sign-in keys
+  static const String orSignInWith = 'or_sign_in_with';
+  static const String orSignUpWith = 'or_sign_up_with';
 }

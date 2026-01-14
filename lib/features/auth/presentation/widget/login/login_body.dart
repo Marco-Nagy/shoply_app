@@ -12,9 +12,11 @@ import 'package:shoply/core/utils/widgets/buttons/custom_linear_button.dart';
 import 'package:shoply/core/utils/widgets/snack_bar.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
+import 'package:shoply/features/auth/domain/entities/auth_provider_type.dart';
 import 'package:shoply/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:shoply/features/auth/presentation/widget/header_title.dart';
 import 'package:shoply/features/auth/presentation/widget/login/login_form_field.dart';
+import 'package:shoply/features/auth/presentation/widget/social_signin_buttons.dart';
 import 'package:shoply/features/auth/presentation/widget/switch_buttons.dart';
 
 class LoginBody extends StatelessWidget {
@@ -43,32 +45,30 @@ class LoginBody extends StatelessWidget {
             CustomFadeInRight(
               duration: 400,
               child: BlocConsumer<AuthBloc, AuthState<dynamic>>(
-                listener: (context, state)  {
-                   state.whenOrNull(
+                listener: (context, state) {
+                  state.whenOrNull(
                     success: (userRole) async {
-                        aweSnackBar(
+                      aweSnackBar(
                         title: 'Success',
                         msg: context.translate(LangKeys.loggedSuccessfully),
                         context: context,
                         type: MessageTypeConst.success,
                       );
-                        if (userRole == 'admin') {
-                       context.pushReplacementNamed(
+                      if (userRole == 'admin') {
+                        context.pushReplacementNamed(
                           AppRoutes.homeAdmin,
                         );
-
                       } else {
                         context.pushReplacementNamed(
                           AppRoutes.homeCustomer,
                         );
-
                       }
                     },
                     failure: (error) {
                       debugPrint('error.errorMsg $error');
                       aweSnackBar(
                         title: 'Error',
-                        msg: context.translate(LangKeys.loggedError),
+                        msg: context.translate(error),
                         context: context,
                         type: MessageTypeConst.failure,
                       );
@@ -101,8 +101,7 @@ class LoginBody extends StatelessWidget {
                         ),
                         onTap: () async {
                           final bloc = context.read<AuthBloc>();
-                          if (bloc.formKye.currentState!
-                              .validate()) {
+                          if (bloc.formKye.currentState!.validate()) {
                             bloc.add(const AuthEvent.login());
                           }
                         },
@@ -112,7 +111,34 @@ class LoginBody extends StatelessWidget {
                 },
               ),
             ),
-            verticalSpacing(30),
+            verticalSpacing(20),
+            //? Social sign-in buttons
+            CustomFadeInUp(
+              duration: 400,
+              child: SocialSignInButtons(
+                isSignUp: false,
+                onGooglePressed: () {
+                  context.read<AuthBloc>().add(const AuthEvent.socialSignIn(
+                        type: AuthProviderType.google,
+                      ));
+                },
+                onFacebookPressed: () {
+                  // TODO: Implement Facebook sign-in
+                  context.read<AuthBloc>().add(const AuthEvent.socialSignIn(
+                        type: AuthProviderType.facebook,
+                      ));
+                  debugPrint('Facebook sign-in pressed');
+                },
+                onApplePressed: () {
+                  // TODO: Implement Apple sign-in
+                  // context.read<AuthBloc>().add(const AuthEvent.socialSignIn(
+                  //   type: AuthProviderType.apple,
+                  // ));
+                  debugPrint('Apple sign-in pressed');
+                },
+              ),
+            ),
+            verticalSpacing(20),
             //? go to sign up screen
             CustomFadeInDown(
               duration: 400,

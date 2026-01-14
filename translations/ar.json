@@ -79,5 +79,9 @@
     "camera": "كاميرا",
     "gallery": "معرض الصور",
     "remove": "ازالة",
-    "category_name": "اسم الفئة"
+    "category_name": "اسم الفئة",
+    "buyer": "مشتري",
+    "seller": "بائع",
+    "or_sign_in_with": "أو سجل الدخول باستخدام",
+    "or_sign_up_with": "أو أنشئ حساب باستخدام"
 }

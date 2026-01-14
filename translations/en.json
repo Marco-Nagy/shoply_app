@@ -80,5 +80,9 @@
     "camera": "Camera",
     "gallery": "Gallery",
     "remove": "Remove",
-    "category_name": "Category Name"
+    "category_name": "Category Name",
+    "buyer": "Buyer",
+    "seller": "Seller",
+    "or_sign_in_with": "Or sign in with",
+    "or_sign_up_with": "Or sign up with"
 }

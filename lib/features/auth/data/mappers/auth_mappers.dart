@@ -27,12 +27,13 @@ class AuthMappers {
 }
 
 extension AuthUserResponseMapper on AuthUserResponse {
-  AuthUser toDomain( ) {
+  AuthUser toDomain() {
     return AuthUser(
       id: uid,
       name: name,
       email: email,
       avatarUrl: avatarUrl,
+      role: role,
     );
   }
 }

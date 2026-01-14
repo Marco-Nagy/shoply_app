@@ -9,6 +9,7 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:cloud_firestore/cloud_firestore.dart' as _i974;
 import 'package:dio/dio.dart' as _i361;
 import 'package:firebase_auth/firebase_auth.dart' as _i59;
 import 'package:flutter/material.dart' as _i409;
@@ -19,6 +20,8 @@ import 'package:injectable/injectable.dart' as _i526;
 import 'package:shoply/core/app/app_cubit/app_cubit.dart' as _i755;
 import 'package:shoply/core/app/di/module/app_module.dart' as _i545;
 import 'package:shoply/core/app/Networking/apis/api_service.dart' as _i376;
+import 'package:shoply/core/Services/firebase_helper/fire_store_helper.dart'
+    as _i745;
 import 'package:shoply/core/Services/localDataSource/hive_database.dart'
     as _i661;
 import 'package:shoply/features/admin/categories/data/data_source/admin_categories_api_service.dart'
@@ -70,11 +73,17 @@ import 'package:shoply/features/auth/data/data_sources/contracts/firebase_data_s
 import 'package:shoply/features/auth/data/data_sources/impl/firebase_data_source_impl.dart'
     as _i243;
 import 'package:shoply/features/auth/data/repositories/auth_repository_impl.dart'
-    as _i98;
+    as _i425;
 import 'package:shoply/features/auth/domain/repositories/auth_repository.dart'
     as _i229;
 import 'package:shoply/features/auth/domain/use_cases/sign_in_with_email_case.dart'
-    as _i146;
+    as _i734;
+import 'package:shoply/features/auth/domain/use_cases/sign_in_with_facebook_case.dart'
+    as _i707;
+import 'package:shoply/features/auth/domain/use_cases/sign_in_with_Gmail_case.dart'
+    as _i871;
+import 'package:shoply/features/auth/domain/use_cases/sign_up_with_email_case.dart'
+    as _i1016;
 import 'package:shoply/features/auth/presentation/bloc/auth_bloc.dart' as _i269;
 import 'package:shoply/features/customer/favorites/data/data_sources/favorites_data_source.dart'
     as _i252;
@@ -108,6 +117,10 @@ import 'package:shoply/features/customer/home/presentation/bloc/home_bloc.dart'
     as _i132;
 import 'package:shoply/features/customer/main/presentation/cubit/main_cubit.dart'
     as _i188;
+import 'package:shoply/features/customer/profile/data/data_sources/contract/user_profile_data_source.dart'
+    as _i739;
+import 'package:shoply/features/customer/profile/data/data_sources/impl/user_profile_data_source_impl.dart'
+    as _i815;
 import 'package:shoply/features/customer/profile/data/data_sources/profile_dat_source.dart'
     as _i605;
 import 'package:shoply/features/customer/profile/data/repositories/profile_repo.dart'
@@ -146,6 +159,7 @@ extension GetItInjectableX on _i174.GetIt {
     );
     final appModule = _$AppModule();
     gh.factory<_i755.AppCubit>(() => _i755.AppCubit());
+    gh.factory<_i745.FireStoreService>(() => _i745.FireStoreService());
     gh.factory<_i188.MainCubit>(() => _i188.MainCubit());
     gh.singleton<_i409.GlobalKey<_i409.NavigatorState>>(
         () => appModule.navigatorKey);
@@ -164,14 +178,19 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i304.HomeApiService>(() => appModule.homeApiService);
     gh.lazySingleton<_i872.FilterProductsApiService>(
         () => appModule.filterProductsApiService);
+    gh.lazySingleton<_i59.FirebaseAuth>(() => appModule.firebaseAuth);
+    gh.lazySingleton<_i116.GoogleSignIn>(() => appModule.googleSignIn);
+    gh.lazySingleton<_i806.FacebookAuth>(() => appModule.facebookAuth);
+    gh.lazySingleton<_i974.FirebaseFirestore>(
+        () => appModule.firebaseFirestore);
     gh.lazySingleton<_i118.AddNotificationDataSource>(
         () => _i118.AddNotificationDataSource());
     gh.lazySingleton<_i600.AuthDataSource>(
         () => _i600.AuthDataSource(gh<_i376.ApiService>()));
-    gh.lazySingleton<_i605.ProfileDataSource>(
-        () => _i605.ProfileDataSource(gh<_i376.ApiService>()));
     gh.lazySingleton<_i786.FileDataSource>(
         () => _i786.FileDataSource(gh<_i376.ApiService>()));
+    gh.lazySingleton<_i605.ProfileDataSource>(
+        () => _i605.ProfileDataSource(gh<_i376.ApiService>()));
     gh.lazySingleton<_i574.ProfileRepo>(
         () => _i574.ProfileRepo(gh<_i605.ProfileDataSource>()));
     gh.factory<_i246.AdminNotificationsBloc>(
@@ -180,13 +199,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i252.FavoritesDataSource(gh<_i661.HiveDatabaseHelper>()));
     gh.lazySingleton<_i638.AddNotificationRepo>(
         () => _i638.AddNotificationRepo(gh<_i118.AddNotificationDataSource>()));
-    gh.factory<_i146.SignInWithEmailCase>(
-        () => _i146.SignInWithEmailCase(gh<_i229.AuthRepository>()));
-    gh.factory<_i663.FirebaseDataSource>(() => _i243.FirebaseDataSourceImpl(
-          gh<_i59.FirebaseAuth>(),
-          gh<_i116.GoogleSignIn>(),
-          gh<_i806.FacebookAuth>(),
-        ));
+    gh.factory<_i739.UserProfileDataSource>(
+        () => _i815.UserProfileDataSourceImpl(gh<_i745.FireStoreService>()));
     gh.lazySingleton<_i414.DashboardDataSource>(
         () => _i414.DashboardDataSource(gh<_i213.DashboardApiService>()));
     gh.factory<_i377.ProfileBloc>(
@@ -195,6 +209,12 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i848.HomeDataSource(gh<_i304.HomeApiService>()));
     gh.lazySingleton<_i711.FilterProductsDataSource>(() =>
         _i711.FilterProductsDataSource(gh<_i872.FilterProductsApiService>()));
+    gh.factory<_i663.FirebaseDataSource>(() => _i243.FirebaseDataSourceImpl(
+          gh<_i59.FirebaseAuth>(),
+          gh<_i116.GoogleSignIn>(),
+          gh<_i806.FacebookAuth>(),
+          gh<_i974.FirebaseFirestore>(),
+        ));
     gh.lazySingleton<_i569.BaseHomeRepository>(
         () => _i392.HomeRepository(gh<_i848.HomeDataSource>()));
     gh.lazySingleton<_i702.AdminCategoriesDataSource>(() =>
@@ -211,12 +231,23 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i11.FileRepository(gh<_i786.FileDataSource>()));
     gh.lazySingleton<_i794.BaseFilterProductsRepository>(() =>
         _i771.FilterProductsRepository(gh<_i711.FilterProductsDataSource>()));
-    gh.lazySingleton<_i675.BaseAdminProductRepository>(() =>
-        _i590.AdminProductRepository(gh<_i550.AdminProductsDataSource>()));
-    gh.lazySingleton<_i98.AuthRepositoryImpl>(() => _i98.AuthRepositoryImpl(
+    gh.factory<_i229.AuthRepository>(() => _i425.AuthRepositoryImpl(
           gh<_i600.AuthDataSource>(),
           gh<_i663.FirebaseDataSource>(),
+          gh<_i739.UserProfileDataSource>(),
         ));
+    gh.lazySingleton<_i675.BaseAdminProductRepository>(() =>
+        _i590.AdminProductRepository(gh<_i550.AdminProductsDataSource>()));
+    gh.factory<_i734.SignInWithEmailCase>(
+        () => _i734.SignInWithEmailCase(gh<_i229.AuthRepository>()));
+    gh.factory<_i707.SignInWithFacebookCaseDart>(
+        () => _i707.SignInWithFacebookCaseDart(gh<_i229.AuthRepository>()));
+    gh.factory<_i871.SignInWithGmailCaseDart>(
+        () => _i871.SignInWithGmailCaseDart(gh<_i229.AuthRepository>()));
+    gh.factory<_i1016.SignUpWithEmailCase>(
+        () => _i1016.SignUpWithEmailCase(gh<_i229.AuthRepository>()));
+    gh.factory<_i269.AuthBloc>(
+        () => _i269.AuthBloc(gh<_i229.AuthRepository>()));
     gh.lazySingleton<_i1013.DashboardRepository>(
         () => _i1013.DashboardRepository(gh<_i414.DashboardDataSource>()));
     gh.lazySingleton<_i366.FilterProductsListUseCase>(() =>
@@ -237,7 +268,6 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i563.ProductsDetailsUseCase(gh<_i569.BaseHomeRepository>()));
     gh.lazySingleton<_i966.GetFavoritesUseCase>(
         () => _i966.GetFavoritesUseCase(gh<_i98.FavoritesRepo>()));
-    gh.factory<_i269.AuthBloc>(() => _i269.AuthBloc(gh<_i98.AuthRepositoryImpl>()));
     gh.factory<_i847.FileCubit>(() => _i847.FileCubit(
           gh<_i11.FileRepository>(),
           gh<_i409.GlobalKey<_i409.NavigatorState>>(),

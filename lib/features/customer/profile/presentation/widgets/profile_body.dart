@@ -38,6 +38,8 @@ class ProfileBody extends StatelessWidget {
                 return aweSnackBar(
                     title: 'Failed to load',
                     msg: errorMessage, context: context, type: MessageTypeConst.failure);
+              }, role: (String role) {
+                return const SizedBox();
               },);
             },
           ),

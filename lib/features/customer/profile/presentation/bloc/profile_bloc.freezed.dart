@@ -20,18 +20,24 @@ mixin _$ProfileEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getUserInfo,
+    required TResult Function() updateUserInfo,
+    required TResult Function() changeUserRole,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getUserInfo,
+    TResult? Function()? updateUserInfo,
+    TResult? Function()? changeUserRole,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getUserInfo,
+    TResult Function()? updateUserInfo,
+    TResult Function()? changeUserRole,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +45,24 @@ mixin _$ProfileEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(GetUserInfoEvent value) getUserInfo,
+    required TResult Function(UpdateUserInfoEvent value) updateUserInfo,
+    required TResult Function(ChangeUserRoleEvent value) changeUserRole,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(GetUserInfoEvent value)? getUserInfo,
+    TResult? Function(UpdateUserInfoEvent value)? updateUserInfo,
+    TResult? Function(ChangeUserRoleEvent value)? changeUserRole,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(GetUserInfoEvent value)? getUserInfo,
+    TResult Function(UpdateUserInfoEvent value)? updateUserInfo,
+    TResult Function(ChangeUserRoleEvent value)? changeUserRole,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,6 +132,8 @@ class _$StartedImpl implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getUserInfo,
+    required TResult Function() updateUserInfo,
+    required TResult Function() changeUserRole,
   }) {
     return started();
   }
@@ -129,6 +143,8 @@ class _$StartedImpl implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getUserInfo,
+    TResult? Function()? updateUserInfo,
+    TResult? Function()? changeUserRole,
   }) {
     return started?.call();
   }
@@ -138,6 +154,8 @@ class _$StartedImpl implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getUserInfo,
+    TResult Function()? updateUserInfo,
+    TResult Function()? changeUserRole,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -151,6 +169,8 @@ class _$StartedImpl implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(GetUserInfoEvent value) getUserInfo,
+    required TResult Function(UpdateUserInfoEvent value) updateUserInfo,
+    required TResult Function(ChangeUserRoleEvent value) changeUserRole,
   }) {
     return started(this);
   }
@@ -160,6 +180,8 @@ class _$StartedImpl implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(GetUserInfoEvent value)? getUserInfo,
+    TResult? Function(UpdateUserInfoEvent value)? updateUserInfo,
+    TResult? Function(ChangeUserRoleEvent value)? changeUserRole,
   }) {
     return started?.call(this);
   }
@@ -169,6 +191,8 @@ class _$StartedImpl implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(GetUserInfoEvent value)? getUserInfo,
+    TResult Function(UpdateUserInfoEvent value)? updateUserInfo,
+    TResult Function(ChangeUserRoleEvent value)? changeUserRole,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -225,6 +249,8 @@ class _$GetUserInfoEventImpl implements GetUserInfoEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() getUserInfo,
+    required TResult Function() updateUserInfo,
+    required TResult Function() changeUserRole,
   }) {
     return getUserInfo();
   }
@@ -234,6 +260,8 @@ class _$GetUserInfoEventImpl implements GetUserInfoEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? getUserInfo,
+    TResult? Function()? updateUserInfo,
+    TResult? Function()? changeUserRole,
   }) {
     return getUserInfo?.call();
   }
@@ -243,6 +271,8 @@ class _$GetUserInfoEventImpl implements GetUserInfoEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? getUserInfo,
+    TResult Function()? updateUserInfo,
+    TResult Function()? changeUserRole,
     required TResult orElse(),
   }) {
     if (getUserInfo != null) {
@@ -256,6 +286,8 @@ class _$GetUserInfoEventImpl implements GetUserInfoEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(GetUserInfoEvent value) getUserInfo,
+    required TResult Function(UpdateUserInfoEvent value) updateUserInfo,
+    required TResult Function(ChangeUserRoleEvent value) changeUserRole,
   }) {
     return getUserInfo(this);
   }
@@ -265,6 +297,8 @@ class _$GetUserInfoEventImpl implements GetUserInfoEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(GetUserInfoEvent value)? getUserInfo,
+    TResult? Function(UpdateUserInfoEvent value)? updateUserInfo,
+    TResult? Function(ChangeUserRoleEvent value)? changeUserRole,
   }) {
     return getUserInfo?.call(this);
   }
@@ -274,6 +308,8 @@ class _$GetUserInfoEventImpl implements GetUserInfoEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(GetUserInfoEvent value)? getUserInfo,
+    TResult Function(UpdateUserInfoEvent value)? updateUserInfo,
+    TResult Function(ChangeUserRoleEvent value)? changeUserRole,
     required TResult orElse(),
   }) {
     if (getUserInfo != null) {
@@ -288,12 +324,249 @@ abstract class GetUserInfoEvent implements ProfileEvent {
 }
 
 /// @nodoc
+abstract class _$$UpdateUserInfoEventImplCopyWith<$Res> {
+  factory _$$UpdateUserInfoEventImplCopyWith(_$UpdateUserInfoEventImpl value,
+          $Res Function(_$UpdateUserInfoEventImpl) then) =
+      __$$UpdateUserInfoEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UpdateUserInfoEventImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$UpdateUserInfoEventImpl>
+    implements _$$UpdateUserInfoEventImplCopyWith<$Res> {
+  __$$UpdateUserInfoEventImplCopyWithImpl(_$UpdateUserInfoEventImpl _value,
+      $Res Function(_$UpdateUserInfoEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProfileEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$UpdateUserInfoEventImpl implements UpdateUserInfoEvent {
+  const _$UpdateUserInfoEventImpl();
+
+  @override
+  String toString() {
+    return 'ProfileEvent.updateUserInfo()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateUserInfoEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getUserInfo,
+    required TResult Function() updateUserInfo,
+    required TResult Function() changeUserRole,
+  }) {
+    return updateUserInfo();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getUserInfo,
+    TResult? Function()? updateUserInfo,
+    TResult? Function()? changeUserRole,
+  }) {
+    return updateUserInfo?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getUserInfo,
+    TResult Function()? updateUserInfo,
+    TResult Function()? changeUserRole,
+    required TResult orElse(),
+  }) {
+    if (updateUserInfo != null) {
+      return updateUserInfo();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(GetUserInfoEvent value) getUserInfo,
+    required TResult Function(UpdateUserInfoEvent value) updateUserInfo,
+    required TResult Function(ChangeUserRoleEvent value) changeUserRole,
+  }) {
+    return updateUserInfo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(GetUserInfoEvent value)? getUserInfo,
+    TResult? Function(UpdateUserInfoEvent value)? updateUserInfo,
+    TResult? Function(ChangeUserRoleEvent value)? changeUserRole,
+  }) {
+    return updateUserInfo?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(GetUserInfoEvent value)? getUserInfo,
+    TResult Function(UpdateUserInfoEvent value)? updateUserInfo,
+    TResult Function(ChangeUserRoleEvent value)? changeUserRole,
+    required TResult orElse(),
+  }) {
+    if (updateUserInfo != null) {
+      return updateUserInfo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateUserInfoEvent implements ProfileEvent {
+  const factory UpdateUserInfoEvent() = _$UpdateUserInfoEventImpl;
+}
+
+/// @nodoc
+abstract class _$$ChangeUserRoleEventImplCopyWith<$Res> {
+  factory _$$ChangeUserRoleEventImplCopyWith(_$ChangeUserRoleEventImpl value,
+          $Res Function(_$ChangeUserRoleEventImpl) then) =
+      __$$ChangeUserRoleEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ChangeUserRoleEventImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$ChangeUserRoleEventImpl>
+    implements _$$ChangeUserRoleEventImplCopyWith<$Res> {
+  __$$ChangeUserRoleEventImplCopyWithImpl(_$ChangeUserRoleEventImpl _value,
+      $Res Function(_$ChangeUserRoleEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProfileEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ChangeUserRoleEventImpl implements ChangeUserRoleEvent {
+  const _$ChangeUserRoleEventImpl();
+
+  @override
+  String toString() {
+    return 'ProfileEvent.changeUserRole()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeUserRoleEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getUserInfo,
+    required TResult Function() updateUserInfo,
+    required TResult Function() changeUserRole,
+  }) {
+    return changeUserRole();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getUserInfo,
+    TResult? Function()? updateUserInfo,
+    TResult? Function()? changeUserRole,
+  }) {
+    return changeUserRole?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getUserInfo,
+    TResult Function()? updateUserInfo,
+    TResult Function()? changeUserRole,
+    required TResult orElse(),
+  }) {
+    if (changeUserRole != null) {
+      return changeUserRole();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(GetUserInfoEvent value) getUserInfo,
+    required TResult Function(UpdateUserInfoEvent value) updateUserInfo,
+    required TResult Function(ChangeUserRoleEvent value) changeUserRole,
+  }) {
+    return changeUserRole(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(GetUserInfoEvent value)? getUserInfo,
+    TResult? Function(UpdateUserInfoEvent value)? updateUserInfo,
+    TResult? Function(ChangeUserRoleEvent value)? changeUserRole,
+  }) {
+    return changeUserRole?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(GetUserInfoEvent value)? getUserInfo,
+    TResult Function(UpdateUserInfoEvent value)? updateUserInfo,
+    TResult Function(ChangeUserRoleEvent value)? changeUserRole,
+    required TResult orElse(),
+  }) {
+    if (changeUserRole != null) {
+      return changeUserRole(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeUserRoleEvent implements ProfileEvent {
+  const factory ChangeUserRoleEvent() = _$ChangeUserRoleEventImpl;
+}
+
+/// @nodoc
 mixin _$ProfileState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(UserRoleResponse userInfo) success,
     required TResult Function(String errorMessage) error,
+    required TResult Function(String role) role,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -301,6 +574,7 @@ mixin _$ProfileState {
     TResult? Function()? loading,
     TResult? Function(UserRoleResponse userInfo)? success,
     TResult? Function(String errorMessage)? error,
+    TResult? Function(String role)? role,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -308,6 +582,7 @@ mixin _$ProfileState {
     TResult Function()? loading,
     TResult Function(UserRoleResponse userInfo)? success,
     TResult Function(String errorMessage)? error,
+    TResult Function(String role)? role,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -316,6 +591,7 @@ mixin _$ProfileState {
     required TResult Function(LoadingStae value) loading,
     required TResult Function(SuccessState value) success,
     required TResult Function(ErrorState value) error,
+    required TResult Function(RoleState value) role,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -323,6 +599,7 @@ mixin _$ProfileState {
     TResult? Function(LoadingStae value)? loading,
     TResult? Function(SuccessState value)? success,
     TResult? Function(ErrorState value)? error,
+    TResult? Function(RoleState value)? role,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -330,6 +607,7 @@ mixin _$ProfileState {
     TResult Function(LoadingStae value)? loading,
     TResult Function(SuccessState value)? success,
     TResult Function(ErrorState value)? error,
+    TResult Function(RoleState value)? role,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -400,6 +678,7 @@ class _$LoadingStaeImpl implements LoadingStae {
     required TResult Function() loading,
     required TResult Function(UserRoleResponse userInfo) success,
     required TResult Function(String errorMessage) error,
+    required TResult Function(String role) role,
   }) {
     return loading();
   }
@@ -410,6 +689,7 @@ class _$LoadingStaeImpl implements LoadingStae {
     TResult? Function()? loading,
     TResult? Function(UserRoleResponse userInfo)? success,
     TResult? Function(String errorMessage)? error,
+    TResult? Function(String role)? role,
   }) {
     return loading?.call();
   }
@@ -420,6 +700,7 @@ class _$LoadingStaeImpl implements LoadingStae {
     TResult Function()? loading,
     TResult Function(UserRoleResponse userInfo)? success,
     TResult Function(String errorMessage)? error,
+    TResult Function(String role)? role,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -434,6 +715,7 @@ class _$LoadingStaeImpl implements LoadingStae {
     required TResult Function(LoadingStae value) loading,
     required TResult Function(SuccessState value) success,
     required TResult Function(ErrorState value) error,
+    required TResult Function(RoleState value) role,
   }) {
     return loading(this);
   }
@@ -444,6 +726,7 @@ class _$LoadingStaeImpl implements LoadingStae {
     TResult? Function(LoadingStae value)? loading,
     TResult? Function(SuccessState value)? success,
     TResult? Function(ErrorState value)? error,
+    TResult? Function(RoleState value)? role,
   }) {
     return loading?.call(this);
   }
@@ -454,6 +737,7 @@ class _$LoadingStaeImpl implements LoadingStae {
     TResult Function(LoadingStae value)? loading,
     TResult Function(SuccessState value)? success,
     TResult Function(ErrorState value)? error,
+    TResult Function(RoleState value)? role,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -539,6 +823,7 @@ class _$SuccessStateImpl implements SuccessState {
     required TResult Function() loading,
     required TResult Function(UserRoleResponse userInfo) success,
     required TResult Function(String errorMessage) error,
+    required TResult Function(String role) role,
   }) {
     return success(userInfo);
   }
@@ -549,6 +834,7 @@ class _$SuccessStateImpl implements SuccessState {
     TResult? Function()? loading,
     TResult? Function(UserRoleResponse userInfo)? success,
     TResult? Function(String errorMessage)? error,
+    TResult? Function(String role)? role,
   }) {
     return success?.call(userInfo);
   }
@@ -559,6 +845,7 @@ class _$SuccessStateImpl implements SuccessState {
     TResult Function()? loading,
     TResult Function(UserRoleResponse userInfo)? success,
     TResult Function(String errorMessage)? error,
+    TResult Function(String role)? role,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -573,6 +860,7 @@ class _$SuccessStateImpl implements SuccessState {
     required TResult Function(LoadingStae value) loading,
     required TResult Function(SuccessState value) success,
     required TResult Function(ErrorState value) error,
+    required TResult Function(RoleState value) role,
   }) {
     return success(this);
   }
@@ -583,6 +871,7 @@ class _$SuccessStateImpl implements SuccessState {
     TResult? Function(LoadingStae value)? loading,
     TResult? Function(SuccessState value)? success,
     TResult? Function(ErrorState value)? error,
+    TResult? Function(RoleState value)? role,
   }) {
     return success?.call(this);
   }
@@ -593,6 +882,7 @@ class _$SuccessStateImpl implements SuccessState {
     TResult Function(LoadingStae value)? loading,
     TResult Function(SuccessState value)? success,
     TResult Function(ErrorState value)? error,
+    TResult Function(RoleState value)? role,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -687,6 +977,7 @@ class _$ErrorStateImpl implements ErrorState {
     required TResult Function() loading,
     required TResult Function(UserRoleResponse userInfo) success,
     required TResult Function(String errorMessage) error,
+    required TResult Function(String role) role,
   }) {
     return error(errorMessage);
   }
@@ -697,6 +988,7 @@ class _$ErrorStateImpl implements ErrorState {
     TResult? Function()? loading,
     TResult? Function(UserRoleResponse userInfo)? success,
     TResult? Function(String errorMessage)? error,
+    TResult? Function(String role)? role,
   }) {
     return error?.call(errorMessage);
   }
@@ -707,6 +999,7 @@ class _$ErrorStateImpl implements ErrorState {
     TResult Function()? loading,
     TResult Function(UserRoleResponse userInfo)? success,
     TResult Function(String errorMessage)? error,
+    TResult Function(String role)? role,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -721,6 +1014,7 @@ class _$ErrorStateImpl implements ErrorState {
     required TResult Function(LoadingStae value) loading,
     required TResult Function(SuccessState value) success,
     required TResult Function(ErrorState value) error,
+    required TResult Function(RoleState value) role,
   }) {
     return error(this);
   }
@@ -731,6 +1025,7 @@ class _$ErrorStateImpl implements ErrorState {
     TResult? Function(LoadingStae value)? loading,
     TResult? Function(SuccessState value)? success,
     TResult? Function(ErrorState value)? error,
+    TResult? Function(RoleState value)? role,
   }) {
     return error?.call(this);
   }
@@ -741,6 +1036,7 @@ class _$ErrorStateImpl implements ErrorState {
     TResult Function(LoadingStae value)? loading,
     TResult Function(SuccessState value)? success,
     TResult Function(ErrorState value)? error,
+    TResult Function(RoleState value)? role,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -759,5 +1055,157 @@ abstract class ErrorState implements ProfileState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RoleStateImplCopyWith<$Res> {
+  factory _$$RoleStateImplCopyWith(
+          _$RoleStateImpl value, $Res Function(_$RoleStateImpl) then) =
+      __$$RoleStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String role});
+}
+
+/// @nodoc
+class __$$RoleStateImplCopyWithImpl<$Res>
+    extends _$ProfileStateCopyWithImpl<$Res, _$RoleStateImpl>
+    implements _$$RoleStateImplCopyWith<$Res> {
+  __$$RoleStateImplCopyWithImpl(
+      _$RoleStateImpl _value, $Res Function(_$RoleStateImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? role = null,
+  }) {
+    return _then(_$RoleStateImpl(
+      null == role
+          ? _value.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RoleStateImpl implements RoleState {
+  const _$RoleStateImpl(this.role);
+
+  @override
+  final String role;
+
+  @override
+  String toString() {
+    return 'ProfileState.role(role: $role)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RoleStateImpl &&
+            (identical(other.role, role) || other.role == role));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, role);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RoleStateImplCopyWith<_$RoleStateImpl> get copyWith =>
+      __$$RoleStateImplCopyWithImpl<_$RoleStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(UserRoleResponse userInfo) success,
+    required TResult Function(String errorMessage) error,
+    required TResult Function(String role) role,
+  }) {
+    return role(this.role);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function(UserRoleResponse userInfo)? success,
+    TResult? Function(String errorMessage)? error,
+    TResult? Function(String role)? role,
+  }) {
+    return role?.call(this.role);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(UserRoleResponse userInfo)? success,
+    TResult Function(String errorMessage)? error,
+    TResult Function(String role)? role,
+    required TResult orElse(),
+  }) {
+    if (role != null) {
+      return role(this.role);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoadingStae value) loading,
+    required TResult Function(SuccessState value) success,
+    required TResult Function(ErrorState value) error,
+    required TResult Function(RoleState value) role,
+  }) {
+    return role(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoadingStae value)? loading,
+    TResult? Function(SuccessState value)? success,
+    TResult? Function(ErrorState value)? error,
+    TResult? Function(RoleState value)? role,
+  }) {
+    return role?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadingStae value)? loading,
+    TResult Function(SuccessState value)? success,
+    TResult Function(ErrorState value)? error,
+    TResult Function(RoleState value)? role,
+    required TResult orElse(),
+  }) {
+    if (role != null) {
+      return role(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RoleState implements ProfileState {
+  const factory RoleState(final String role) = _$RoleStateImpl;
+
+  String get role;
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RoleStateImplCopyWith<_$RoleStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

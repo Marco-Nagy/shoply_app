@@ -1,7 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
+import 'package:shoply/core/Services/firebase_helper/fire_store_ref_key.dart';
 import 'package:shoply/core/app/Networking/data_result.dart';
 import 'package:shoply/core/app/Networking/execute_data.dart';
 import 'package:shoply/core/helpers/extension/string_exetension.dart';
@@ -12,25 +16,27 @@ import 'package:shoply/features/auth/data/models/auth_user_response.dart';
 import 'package:shoply/features/auth/data/models/login/login_request.dart';
 import 'package:shoply/features/auth/data/models/sign_up/signup_request.dart';
 import 'package:shoply/features/auth/domain/entities/auth_provider_type.dart';
-import 'package:shoply/features/auth/domain/entities/auth_user.dart';
 
 @Injectable(as: FirebaseDataSource)
 class FirebaseDataSourceImpl implements FirebaseDataSource {
   final FirebaseAuth _auth;
   final GoogleSignIn _googleSignIn;
   final FacebookAuth _facebookAuth;
+  final FirebaseFirestore _firestore;
   @factoryMethod
-  FirebaseDataSourceImpl(this._auth, this._googleSignIn, this._facebookAuth);
+  FirebaseDataSourceImpl(
+      this._auth, this._googleSignIn, this._facebookAuth, this._firestore);
   @override
   Future<DataResult<AuthUserResponse>> signIn(AuthProviderType type,
       {LoginRequest? loginRequest, SignupRequest? signupRequest}) {
     switch (type) {
       case AuthProviderType.email:
-        return signInWithEmail(loginRequest: loginRequest);
+        return signInWithEmail(
+            loginRequest: loginRequest, signupRequest: signupRequest);
       case AuthProviderType.google:
-        return signInWithGoogle(signupRequest: signupRequest);
+        return signInWithGoogle();
       case AuthProviderType.facebook:
-        return signInWithFacebook(signupRequest: signupRequest);
+        return signInWithFacebook();
     }
   }
 
@@ -48,6 +54,7 @@ class FirebaseDataSourceImpl implements FirebaseDataSource {
         if (loginRequest.password == null || loginRequest.password!.isEmpty) {
           throw Exception(LangKeys.errorWrongPassword.toTranslate());
         }
+
         response = await _auth.signInWithEmailAndPassword(
           email: loginRequest.email ?? '',
           password: loginRequest.password ?? '',
@@ -65,8 +72,7 @@ class FirebaseDataSourceImpl implements FirebaseDataSource {
     });
   }
 
-  Future<DataResult<AuthUserResponse>> signInWithGoogle(
-      {SignupRequest? signupRequest}) async {
+  Future<DataResult<AuthUserResponse>> signInWithGoogle() async {
     return executeData(() async {
       final response = await _googleSignIn.signIn();
       if (response == null) {
@@ -84,10 +90,9 @@ class FirebaseDataSourceImpl implements FirebaseDataSource {
     });
   }
 
-  Future<DataResult<AuthUserResponse>> signInWithFacebook({
-    SignupRequest? signupRequest,
-  }) async {
+  Future<DataResult<AuthUserResponse>> signInWithFacebook() async {
     return executeData(() async {
+      debugPrint('************* Facebook Sign In ****************************');
       final result = await _facebookAuth.login(
         permissions: const ['email', 'public_profile'],
       );

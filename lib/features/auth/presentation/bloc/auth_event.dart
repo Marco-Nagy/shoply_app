@@ -4,5 +4,8 @@ part of 'auth_bloc.dart';
 class AuthEvent with _$AuthEvent {
   const factory AuthEvent.started() = _Started;
   const factory AuthEvent.login() = LoginEvent;
-  const factory AuthEvent.signUp({required String imgUrl}) = SignUpEvent;
+  const factory AuthEvent.signUp(
+      {required String imgUrl, required String role}) = SignUpEvent;
+  const factory AuthEvent.socialSignIn({required AuthProviderType type}) =
+      SocialSignInEvent;
 }

@@ -18,6 +18,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState<dynamic>> {
   AuthBloc(this._authRepository) : super(const AuthState.initial()) {
     on<LoginEvent>(_login);
     on<SignUpEvent>(_signUp);
+    on<SocialSignInEvent>(_socialSignIn);
   }
 
   final AuthRepository _authRepository;
@@ -90,11 +91,29 @@ class AuthBloc extends Bloc<AuthEvent, AuthState<dynamic>> {
         email: emailController.text.trim(),
         password: passwordController.text.trim(),
         avatar: event.imgUrl.trim(),
+        role: event.role,
       ),
     );
     result.when(
       success: (_) {
         add(const AuthEvent.login());
+      },
+      failure: (error) {
+        emit(AuthState.failure(error: error.errorMsg));
+      },
+    );
+  }
+
+  Future<void> _socialSignIn(
+      SocialSignInEvent event, Emitter<AuthState> emit) async {
+    emit(const AuthState.loading());
+
+    final result = await _authRepository.signIn(
+      event.type,
+    );
+    result.when(
+      success: (user) {
+        emit(AuthState.success(userRole: user.role ?? 'buyer'));
       },
       failure: (error) {
         emit(AuthState.failure(error: error.errorMsg));

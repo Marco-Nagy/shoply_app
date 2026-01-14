@@ -14,6 +14,7 @@ import 'package:shoply/core/styles/theme/app_theme.dart';
 import 'package:shoply/core/utils/screens/no_network_screen.dart';
 import 'package:shoply/features/customer/favorites/presentation/cubit/favorites_cubit.dart';
 import 'package:shoply/core/app/di/injection.dart';
+import 'package:shoply/features/customer/profile/presentation/bloc/profile_bloc.dart';
 
 class ShoplyApp extends StatelessWidget {
   const ShoplyApp({super.key});
@@ -94,7 +95,8 @@ class ShoplyApp extends StatelessWidget {
 
   String _getInitialRoute() {
     return SharedPrefHelper().getString(key: SharedPrefKeys.accessToken) != null
-        ? SharedPrefHelper().getString(key: SharedPrefKeys.userRole) == 'admin'
+        // ? SharedPrefHelper().getString(key: SharedPrefKeys.userRole) == 'admin'
+        ? SharedPrefHelper().getString(key: SharedPrefKeys.userRole) == UserRole.admin.name
             ? AppRoutes.homeAdmin
             : AppRoutes.homeCustomer
         : AppRoutes.login;

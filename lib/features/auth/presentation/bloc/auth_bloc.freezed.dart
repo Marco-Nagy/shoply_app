@@ -20,21 +20,24 @@ mixin _$AuthEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() login,
-    required TResult Function(String imgUrl) signUp,
+    required TResult Function(String imgUrl, String role) signUp,
+    required TResult Function(AuthProviderType type) socialSignIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? login,
-    TResult? Function(String imgUrl)? signUp,
+    TResult? Function(String imgUrl, String role)? signUp,
+    TResult? Function(AuthProviderType type)? socialSignIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? login,
-    TResult Function(String imgUrl)? signUp,
+    TResult Function(String imgUrl, String role)? signUp,
+    TResult Function(AuthProviderType type)? socialSignIn,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$AuthEvent {
     required TResult Function(_Started value) started,
     required TResult Function(LoginEvent value) login,
     required TResult Function(SignUpEvent value) signUp,
+    required TResult Function(SocialSignInEvent value) socialSignIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$AuthEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(LoginEvent value)? login,
     TResult? Function(SignUpEvent value)? signUp,
+    TResult? Function(SocialSignInEvent value)? socialSignIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$AuthEvent {
     TResult Function(_Started value)? started,
     TResult Function(LoginEvent value)? login,
     TResult Function(SignUpEvent value)? signUp,
+    TResult Function(SocialSignInEvent value)? socialSignIn,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -125,7 +131,8 @@ class _$StartedImpl implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() login,
-    required TResult Function(String imgUrl) signUp,
+    required TResult Function(String imgUrl, String role) signUp,
+    required TResult Function(AuthProviderType type) socialSignIn,
   }) {
     return started();
   }
@@ -135,7 +142,8 @@ class _$StartedImpl implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? login,
-    TResult? Function(String imgUrl)? signUp,
+    TResult? Function(String imgUrl, String role)? signUp,
+    TResult? Function(AuthProviderType type)? socialSignIn,
   }) {
     return started?.call();
   }
@@ -145,7 +153,8 @@ class _$StartedImpl implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? login,
-    TResult Function(String imgUrl)? signUp,
+    TResult Function(String imgUrl, String role)? signUp,
+    TResult Function(AuthProviderType type)? socialSignIn,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -160,6 +169,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(LoginEvent value) login,
     required TResult Function(SignUpEvent value) signUp,
+    required TResult Function(SocialSignInEvent value) socialSignIn,
   }) {
     return started(this);
   }
@@ -170,6 +180,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(_Started value)? started,
     TResult? Function(LoginEvent value)? login,
     TResult? Function(SignUpEvent value)? signUp,
+    TResult? Function(SocialSignInEvent value)? socialSignIn,
   }) {
     return started?.call(this);
   }
@@ -180,6 +191,7 @@ class _$StartedImpl implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(LoginEvent value)? login,
     TResult Function(SignUpEvent value)? signUp,
+    TResult Function(SocialSignInEvent value)? socialSignIn,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -236,7 +248,8 @@ class _$LoginEventImpl implements LoginEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() login,
-    required TResult Function(String imgUrl) signUp,
+    required TResult Function(String imgUrl, String role) signUp,
+    required TResult Function(AuthProviderType type) socialSignIn,
   }) {
     return login();
   }
@@ -246,7 +259,8 @@ class _$LoginEventImpl implements LoginEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? login,
-    TResult? Function(String imgUrl)? signUp,
+    TResult? Function(String imgUrl, String role)? signUp,
+    TResult? Function(AuthProviderType type)? socialSignIn,
   }) {
     return login?.call();
   }
@@ -256,7 +270,8 @@ class _$LoginEventImpl implements LoginEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? login,
-    TResult Function(String imgUrl)? signUp,
+    TResult Function(String imgUrl, String role)? signUp,
+    TResult Function(AuthProviderType type)? socialSignIn,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -271,6 +286,7 @@ class _$LoginEventImpl implements LoginEvent {
     required TResult Function(_Started value) started,
     required TResult Function(LoginEvent value) login,
     required TResult Function(SignUpEvent value) signUp,
+    required TResult Function(SocialSignInEvent value) socialSignIn,
   }) {
     return login(this);
   }
@@ -281,6 +297,7 @@ class _$LoginEventImpl implements LoginEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(LoginEvent value)? login,
     TResult? Function(SignUpEvent value)? signUp,
+    TResult? Function(SocialSignInEvent value)? socialSignIn,
   }) {
     return login?.call(this);
   }
@@ -291,6 +308,7 @@ class _$LoginEventImpl implements LoginEvent {
     TResult Function(_Started value)? started,
     TResult Function(LoginEvent value)? login,
     TResult Function(SignUpEvent value)? signUp,
+    TResult Function(SocialSignInEvent value)? socialSignIn,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -310,7 +328,7 @@ abstract class _$$SignUpEventImplCopyWith<$Res> {
           _$SignUpEventImpl value, $Res Function(_$SignUpEventImpl) then) =
       __$$SignUpEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String imgUrl});
+  $Res call({String imgUrl, String role});
 }
 
 /// @nodoc
@@ -327,11 +345,16 @@ class __$$SignUpEventImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? imgUrl = null,
+    Object? role = null,
   }) {
     return _then(_$SignUpEventImpl(
       imgUrl: null == imgUrl
           ? _value.imgUrl
           : imgUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      role: null == role
+          ? _value.role
+          : role // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -340,14 +363,16 @@ class __$$SignUpEventImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SignUpEventImpl implements SignUpEvent {
-  const _$SignUpEventImpl({required this.imgUrl});
+  const _$SignUpEventImpl({required this.imgUrl, required this.role});
 
   @override
   final String imgUrl;
+  @override
+  final String role;
 
   @override
   String toString() {
-    return 'AuthEvent.signUp(imgUrl: $imgUrl)';
+    return 'AuthEvent.signUp(imgUrl: $imgUrl, role: $role)';
   }
 
   @override
@@ -355,11 +380,12 @@ class _$SignUpEventImpl implements SignUpEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SignUpEventImpl &&
-            (identical(other.imgUrl, imgUrl) || other.imgUrl == imgUrl));
+            (identical(other.imgUrl, imgUrl) || other.imgUrl == imgUrl) &&
+            (identical(other.role, role) || other.role == role));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, imgUrl);
+  int get hashCode => Object.hash(runtimeType, imgUrl, role);
 
   /// Create a copy of AuthEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -374,9 +400,10 @@ class _$SignUpEventImpl implements SignUpEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() login,
-    required TResult Function(String imgUrl) signUp,
+    required TResult Function(String imgUrl, String role) signUp,
+    required TResult Function(AuthProviderType type) socialSignIn,
   }) {
-    return signUp(imgUrl);
+    return signUp(imgUrl, role);
   }
 
   @override
@@ -384,9 +411,10 @@ class _$SignUpEventImpl implements SignUpEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? login,
-    TResult? Function(String imgUrl)? signUp,
+    TResult? Function(String imgUrl, String role)? signUp,
+    TResult? Function(AuthProviderType type)? socialSignIn,
   }) {
-    return signUp?.call(imgUrl);
+    return signUp?.call(imgUrl, role);
   }
 
   @override
@@ -394,11 +422,12 @@ class _$SignUpEventImpl implements SignUpEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? login,
-    TResult Function(String imgUrl)? signUp,
+    TResult Function(String imgUrl, String role)? signUp,
+    TResult Function(AuthProviderType type)? socialSignIn,
     required TResult orElse(),
   }) {
     if (signUp != null) {
-      return signUp(imgUrl);
+      return signUp(imgUrl, role);
     }
     return orElse();
   }
@@ -409,6 +438,7 @@ class _$SignUpEventImpl implements SignUpEvent {
     required TResult Function(_Started value) started,
     required TResult Function(LoginEvent value) login,
     required TResult Function(SignUpEvent value) signUp,
+    required TResult Function(SocialSignInEvent value) socialSignIn,
   }) {
     return signUp(this);
   }
@@ -419,6 +449,7 @@ class _$SignUpEventImpl implements SignUpEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(LoginEvent value)? login,
     TResult? Function(SignUpEvent value)? signUp,
+    TResult? Function(SocialSignInEvent value)? socialSignIn,
   }) {
     return signUp?.call(this);
   }
@@ -429,6 +460,7 @@ class _$SignUpEventImpl implements SignUpEvent {
     TResult Function(_Started value)? started,
     TResult Function(LoginEvent value)? login,
     TResult Function(SignUpEvent value)? signUp,
+    TResult Function(SocialSignInEvent value)? socialSignIn,
     required TResult orElse(),
   }) {
     if (signUp != null) {
@@ -439,14 +471,171 @@ class _$SignUpEventImpl implements SignUpEvent {
 }
 
 abstract class SignUpEvent implements AuthEvent {
-  const factory SignUpEvent({required final String imgUrl}) = _$SignUpEventImpl;
+  const factory SignUpEvent(
+      {required final String imgUrl,
+      required final String role}) = _$SignUpEventImpl;
 
   String get imgUrl;
+  String get role;
 
   /// Create a copy of AuthEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SignUpEventImplCopyWith<_$SignUpEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SocialSignInEventImplCopyWith<$Res> {
+  factory _$$SocialSignInEventImplCopyWith(_$SocialSignInEventImpl value,
+          $Res Function(_$SocialSignInEventImpl) then) =
+      __$$SocialSignInEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({AuthProviderType type});
+}
+
+/// @nodoc
+class __$$SocialSignInEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$SocialSignInEventImpl>
+    implements _$$SocialSignInEventImplCopyWith<$Res> {
+  __$$SocialSignInEventImplCopyWithImpl(_$SocialSignInEventImpl _value,
+      $Res Function(_$SocialSignInEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+  }) {
+    return _then(_$SocialSignInEventImpl(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as AuthProviderType,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SocialSignInEventImpl implements SocialSignInEvent {
+  const _$SocialSignInEventImpl({required this.type});
+
+  @override
+  final AuthProviderType type;
+
+  @override
+  String toString() {
+    return 'AuthEvent.socialSignIn(type: $type)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SocialSignInEventImpl &&
+            (identical(other.type, type) || other.type == type));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, type);
+
+  /// Create a copy of AuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SocialSignInEventImplCopyWith<_$SocialSignInEventImpl> get copyWith =>
+      __$$SocialSignInEventImplCopyWithImpl<_$SocialSignInEventImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() login,
+    required TResult Function(String imgUrl, String role) signUp,
+    required TResult Function(AuthProviderType type) socialSignIn,
+  }) {
+    return socialSignIn(type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? login,
+    TResult? Function(String imgUrl, String role)? signUp,
+    TResult? Function(AuthProviderType type)? socialSignIn,
+  }) {
+    return socialSignIn?.call(type);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? login,
+    TResult Function(String imgUrl, String role)? signUp,
+    TResult Function(AuthProviderType type)? socialSignIn,
+    required TResult orElse(),
+  }) {
+    if (socialSignIn != null) {
+      return socialSignIn(type);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(LoginEvent value) login,
+    required TResult Function(SignUpEvent value) signUp,
+    required TResult Function(SocialSignInEvent value) socialSignIn,
+  }) {
+    return socialSignIn(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(LoginEvent value)? login,
+    TResult? Function(SignUpEvent value)? signUp,
+    TResult? Function(SocialSignInEvent value)? socialSignIn,
+  }) {
+    return socialSignIn?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(LoginEvent value)? login,
+    TResult Function(SignUpEvent value)? signUp,
+    TResult Function(SocialSignInEvent value)? socialSignIn,
+    required TResult orElse(),
+  }) {
+    if (socialSignIn != null) {
+      return socialSignIn(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SocialSignInEvent implements AuthEvent {
+  const factory SocialSignInEvent({required final AuthProviderType type}) =
+      _$SocialSignInEventImpl;
+
+  AuthProviderType get type;
+
+  /// Create a copy of AuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SocialSignInEventImplCopyWith<_$SocialSignInEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

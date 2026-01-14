@@ -10,6 +10,7 @@ import 'package:shoply/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:shoply/features/customer/home/presentation/bloc/home_bloc.dart';
 import 'package:shoply/features/customer/home/presentation/screen/product_details_screen.dart';
 import 'package:shoply/features/customer/home/presentation/screen/products_per_categories_screen.dart';
+import 'package:shoply/features/customer/profile/presentation/bloc/profile_bloc.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
 import 'package:shoply/features/admin/home_admin_screen.dart';
 import 'package:shoply/features/customer/main/presentation/screens/main_screen.dart';
@@ -42,6 +43,7 @@ class AppRoutes {
           providers: [
             BlocProvider(create: (context) => sl<FileCubit>()),
             BlocProvider(create: (context) => sl<AuthBloc>()),
+            BlocProvider(create: (context) => sl<ProfileBloc>()),
           ],
           child: const SignUpScreen(),
         ),

@@ -19,8 +19,9 @@ dependencies:
   flutter_local_notifications: ^19.4.1
   googleapis_auth: ^2.0.0
   google_sign_in: ^6.3.0
-  flutter_facebook_auth: ^7.1.2
+  flutter_facebook_auth: ^7.1.5
   cloud_firestore: ^6.1.1
+  firebase_database: ^12.1.1
 
   # Core & Utils
   connectivity_plus: ^6.0.3

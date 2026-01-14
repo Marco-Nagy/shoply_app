@@ -14,7 +14,20 @@ import 'app_config.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EnvVariables.instance.init(envType: EnvTypeEnum.dev);
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  // Initialize Firebase only if not already initialized
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  } catch (e) {
+    if (e.toString().contains('duplicate-app')) {
+      print('Firebase already initialized');
+    } else {
+      rethrow;
+    }
+  }
+
   await FirebaseCloudMessaging().initialize();
   await SharedPrefHelper().instantiatePreferences();
   await configureInjection();

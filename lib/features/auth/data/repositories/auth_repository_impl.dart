@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shoply/core/app/Networking/data_result.dart';
 import 'package:shoply/core/app/Networking/errors/error_handler.dart';
@@ -14,13 +15,15 @@ import 'package:shoply/features/auth/data/models/sign_up/signup_response.dart';
 import 'package:shoply/features/auth/domain/entities/auth_provider_type.dart';
 import 'package:shoply/features/auth/domain/entities/auth_user.dart';
 import 'package:shoply/features/auth/domain/repositories/auth_repository.dart';
+import 'package:shoply/features/customer/profile/data/data_sources/contract/user_profile_data_source.dart';
 
 @Injectable(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {
-  AuthRepositoryImpl(this._authDataSource, this._firebaseDataSource);
+  AuthRepositoryImpl(this._authDataSource, this._firebaseDataSource, this._userProfileDataSource);
 
   final AuthDataSource _authDataSource;
   final FirebaseDataSource _firebaseDataSource;
+  final UserProfileDataSource _userProfileDataSource;
 
   Future<DataResult<LoginResponse>> login(LoginRequest body) async {
     try {
@@ -56,9 +59,19 @@ class AuthRepositoryImpl implements AuthRepository {
       {LoginRequest? loginRequest, SignupRequest? signupRequest}) async {
     var response = await _firebaseDataSource.signIn(provider,
         loginRequest: loginRequest, signupRequest: signupRequest);
-    return response.when(success: (data) {
+    return response.when(success: (data) async {
+      var user= await  _userProfileDataSource.getProfile(data.uid);
+      if(user==null){
+        _userProfileDataSource.updateUserProfile(data);
+      }
+
+      debugPrint('executeData success: $data');
+
+      debugPrint('executeData success: ${data.toJson()}');
       return DataResult.success(data.toDomain());
     }, failure: (error) {
+      debugPrint('executeData error: $error');
+      // debugPrintStack(stackTrace: s);
       return DataResult.failure(error);
     });
   }
