@@ -31,8 +31,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   final scrollController = ScrollController();
 
   scrollUp() {
-    scrollController.animateTo(0,
-        duration: const Duration(seconds: 1), curve: Curves.easeIn);
+    if (mounted && scrollController.hasClients) {
+      scrollController.animateTo(0,
+          duration: const Duration(seconds: 1), curve: Curves.easeIn);
+    }
   }
 
   @override
@@ -50,9 +52,16 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   @override
   void dispose() {
-    _animatedSearchController!.dispose();
-    _animatedUpController!.dispose();
-    scrollController.dispose();
+    _animatedSearchController?.dispose();
+    _animatedUpController?.dispose();
+
+    // Safely dispose the scroll controller
+    try {
+      scrollController.dispose();
+    } catch (e) {
+      // Controller was already disposed, ignore
+    }
+
     super.dispose();
   }
 
@@ -61,10 +70,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) =>
-          sl<HomeBloc>()
-            ..add(const HomeEvent.fetchHomeCategories())..add(
-              const HomeEvent.getHomeProductList()),
+          create: (context) => sl<HomeBloc>()
+            ..add(const HomeEvent.fetchHomeCategories())
+            ..add(const HomeEvent.getHomeProductList()),
         ),
         BlocProvider(
           create: (context) => sl<FavoritesCubit>()..getFavorites(),
@@ -97,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       size: 40,
                       onTap: () async {
                         Future.delayed(const Duration(milliseconds: 400)).then(
-                              (value) {
+                          (value) {
                             _scaffoldKey.currentState?.openEndDrawer();
                           },
                         );
@@ -132,7 +140,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         onTap: () async {
                           Future.delayed(const Duration(milliseconds: 400))
                               .then(
-                                (value) {
+                            (value) {
                               scrollUp();
                             },
                           );

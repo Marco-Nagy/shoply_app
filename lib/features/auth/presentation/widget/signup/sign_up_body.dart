@@ -22,7 +22,7 @@ import 'package:shoply/features/auth/presentation/widget/signup/user_avatar_imag
 import 'package:shoply/features/auth/presentation/widget/signup/user_role_change.dart';
 import 'package:shoply/features/auth/presentation/widget/social_signin_buttons.dart';
 import 'package:shoply/features/auth/presentation/widget/switch_buttons.dart';
-import 'package:shoply/features/customer/profile/presentation/bloc/profile_bloc.dart';
+import 'package:shoply/features/profile/presentation/bloc/profile_bloc.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
 
 class SignUpBody extends StatelessWidget {

@@ -117,24 +117,6 @@ import 'package:shoply/features/customer/home/presentation/bloc/home_bloc.dart'
     as _i132;
 import 'package:shoply/features/customer/main/presentation/cubit/main_cubit.dart'
     as _i188;
-import 'package:shoply/features/customer/profile/data/data_sources/contract/user_profile_data_source.dart'
-    as _i739;
-import 'package:shoply/features/customer/profile/data/data_sources/impl/user_profile_data_source_impl.dart'
-    as _i815;
-import 'package:shoply/features/customer/profile/data/data_sources/profile_dat_source.dart'
-    as _i605;
-import 'package:shoply/features/customer/profile/data/repositories/profile_repo.dart'
-    as _i574;
-import 'package:shoply/features/customer/profile/data/repositories/user_profile_repo.dart'
-    as _i784;
-import 'package:shoply/features/customer/profile/domain/repositories/user_profile_repo.dart'
-    as _i790;
-import 'package:shoply/features/customer/profile/domain/use_cases/get_user_profile_use_case.dart'
-    as _i742;
-import 'package:shoply/features/customer/profile/domain/use_cases/update_user_profile_use_case.dart'
-    as _i954;
-import 'package:shoply/features/customer/profile/presentation/bloc/profile_bloc.dart'
-    as _i377;
 import 'package:shoply/features/files/data/data_sources/upload_file_data_source.dart'
     as _i786;
 import 'package:shoply/features/files/data/repositories/upload_file_repository.dart'
@@ -153,6 +135,24 @@ import 'package:shoply/features/filter/domain/use_cases/get_products_list_use_ca
     as _i366;
 import 'package:shoply/features/filter/presentation/bloc/filter_bloc.dart'
     as _i462;
+import 'package:shoply/features/profile/data/data_sources/contract/user_profile_data_source.dart'
+    as _i119;
+import 'package:shoply/features/profile/data/data_sources/impl/user_profile_data_source_impl.dart'
+    as _i39;
+import 'package:shoply/features/profile/data/data_sources/profile_dat_source.dart'
+    as _i369;
+import 'package:shoply/features/profile/data/repositories/profile_repo.dart'
+    as _i277;
+import 'package:shoply/features/profile/data/repositories/user_profile_repo.dart'
+    as _i180;
+import 'package:shoply/features/profile/domain/repositories/user_profile_repo.dart'
+    as _i21;
+import 'package:shoply/features/profile/domain/use_cases/get_user_profile_use_case.dart'
+    as _i1015;
+import 'package:shoply/features/profile/domain/use_cases/update_user_profile_use_case.dart'
+    as _i993;
+import 'package:shoply/features/profile/presentation/bloc/profile_bloc.dart'
+    as _i717;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -195,20 +195,22 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i118.AddNotificationDataSource());
     gh.lazySingleton<_i600.AuthDataSource>(
         () => _i600.AuthDataSource(gh<_i376.ApiService>()));
-    gh.lazySingleton<_i605.ProfileDataSource>(
-        () => _i605.ProfileDataSource(gh<_i376.ApiService>()));
     gh.lazySingleton<_i786.FileDataSource>(
         () => _i786.FileDataSource(gh<_i376.ApiService>()));
-    gh.lazySingleton<_i574.ProfileRepo>(
-        () => _i574.ProfileRepo(gh<_i605.ProfileDataSource>()));
+    gh.lazySingleton<_i369.ProfileDataSource>(
+        () => _i369.ProfileDataSource(gh<_i376.ApiService>()));
+    gh.factory<_i119.UserProfileDataSource>(
+        () => _i39.UserProfileDataSourceImpl(gh<_i745.FireStoreService>()));
     gh.factory<_i246.AdminNotificationsBloc>(
         () => _i246.AdminNotificationsBloc(gh<_i661.HiveDatabaseHelper>()));
     gh.lazySingleton<_i252.FavoritesDataSource>(
         () => _i252.FavoritesDataSource(gh<_i661.HiveDatabaseHelper>()));
+    gh.factory<_i21.UserProfileRepo>(
+        () => _i180.UserProfileRepoImpl(gh<_i119.UserProfileDataSource>()));
     gh.lazySingleton<_i638.AddNotificationRepo>(
         () => _i638.AddNotificationRepo(gh<_i118.AddNotificationDataSource>()));
-    gh.factory<_i739.UserProfileDataSource>(
-        () => _i815.UserProfileDataSourceImpl(gh<_i745.FireStoreService>()));
+    gh.lazySingleton<_i277.ProfileRepo>(
+        () => _i277.ProfileRepo(gh<_i369.ProfileDataSource>()));
     gh.lazySingleton<_i414.DashboardDataSource>(
         () => _i414.DashboardDataSource(gh<_i213.DashboardApiService>()));
     gh.lazySingleton<_i848.HomeDataSource>(
@@ -223,12 +225,21 @@ extension GetItInjectableX on _i174.GetIt {
         ));
     gh.lazySingleton<_i569.BaseHomeRepository>(
         () => _i392.HomeRepository(gh<_i848.HomeDataSource>()));
+    gh.factory<_i1015.GetUserProfileUseCase>(
+        () => _i1015.GetUserProfileUseCase(gh<_i21.UserProfileRepo>()));
+    gh.factory<_i993.UpdateUserProfileUseCase>(
+        () => _i993.UpdateUserProfileUseCase(gh<_i21.UserProfileRepo>()));
     gh.lazySingleton<_i702.AdminCategoriesDataSource>(() =>
         _i702.AdminCategoriesDataSource(gh<_i314.AdminCategoriesApiService>()));
     gh.lazySingleton<_i98.FavoritesRepo>(
         () => _i53.FavoritesRepoImpl(gh<_i252.FavoritesDataSource>()));
     gh.lazySingleton<_i112.ManageFavoriteUseCase>(
         () => _i112.ManageFavoriteUseCase(gh<_i98.FavoritesRepo>()));
+    gh.factory<_i229.AuthRepository>(() => _i425.AuthRepositoryImpl(
+          gh<_i600.AuthDataSource>(),
+          gh<_i663.FirebaseDataSource>(),
+          gh<_i119.UserProfileDataSource>(),
+        ));
     gh.factory<_i461.SendNotificationBloc>(
         () => _i461.SendNotificationBloc(gh<_i638.AddNotificationRepo>()));
     gh.lazySingleton<_i550.AdminProductsDataSource>(
@@ -237,11 +248,6 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i11.FileRepository(gh<_i786.FileDataSource>()));
     gh.lazySingleton<_i794.BaseFilterProductsRepository>(() =>
         _i771.FilterProductsRepository(gh<_i711.FilterProductsDataSource>()));
-    gh.factory<_i229.AuthRepository>(() => _i425.AuthRepositoryImpl(
-          gh<_i600.AuthDataSource>(),
-          gh<_i663.FirebaseDataSource>(),
-          gh<_i739.UserProfileDataSource>(),
-        ));
     gh.lazySingleton<_i675.BaseAdminProductRepository>(() =>
         _i590.AdminProductRepository(gh<_i550.AdminProductsDataSource>()));
     gh.factory<_i734.SignInWithEmailCase>(
@@ -254,8 +260,10 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i1016.SignUpWithEmailCase(gh<_i229.AuthRepository>()));
     gh.factory<_i269.AuthBloc>(
         () => _i269.AuthBloc(gh<_i229.AuthRepository>()));
-    gh.factory<_i790.UserProfileRepo>(
-        () => _i784.UserProfileRepoImpl(gh<_i739.UserProfileDataSource>()));
+    gh.factory<_i717.ProfileBloc>(() => _i717.ProfileBloc(
+          gh<_i1015.GetUserProfileUseCase>(),
+          gh<_i993.UpdateUserProfileUseCase>(),
+        ));
     gh.lazySingleton<_i1013.DashboardRepository>(
         () => _i1013.DashboardRepository(gh<_i414.DashboardDataSource>()));
     gh.lazySingleton<_i366.FilterProductsListUseCase>(() =>
@@ -282,10 +290,6 @@ extension GetItInjectableX on _i174.GetIt {
         ));
     gh.factory<_i413.DashboardBloc>(
         () => _i413.DashboardBloc(gh<_i1013.DashboardRepository>()));
-    gh.factory<_i742.GetUserProfileUseCase>(
-        () => _i742.GetUserProfileUseCase(gh<_i790.UserProfileRepo>()));
-    gh.factory<_i954.UpdateUserProfileUseCase>(
-        () => _i954.UpdateUserProfileUseCase(gh<_i790.UserProfileRepo>()));
     gh.factory<_i482.FavoritesCubit>(() => _i482.FavoritesCubit(
           gh<_i112.ManageFavoriteUseCase>(),
           gh<_i966.GetFavoritesUseCase>(),
@@ -300,11 +304,6 @@ extension GetItInjectableX on _i174.GetIt {
         _i839.UpdateProductUseCase(gh<_i675.BaseAdminProductRepository>()));
     gh.factory<_i374.AdminCategoriesBloc>(
         () => _i374.AdminCategoriesBloc(gh<_i554.AdminCategoriesRepository>()));
-    gh.factory<_i377.ProfileBloc>(() => _i377.ProfileBloc(
-          gh<_i574.ProfileRepo>(),
-          gh<_i742.GetUserProfileUseCase>(),
-          gh<_i954.UpdateUserProfileUseCase>(),
-        ));
     gh.factory<_i132.HomeBloc>(() => _i132.HomeBloc(
           gh<_i717.HomeProductsListUseCase>(),
           gh<_i113.HomeProductsListPerCategoryUseCase>(),

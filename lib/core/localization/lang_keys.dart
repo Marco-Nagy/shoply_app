@@ -101,4 +101,10 @@ class LangKeys {
   // Social sign-in keys
   static const String orSignInWith = 'or_sign_in_with';
   static const String orSignUpWith = 'or_sign_up_with';
+
+  // Role change keys
+  static const String changeRoleToSeller = 'change_role_to_seller';
+  static const String changeRoleToBuyer = 'change_role_to_buyer';
+  static const String role = 'role';
+  static const String roleChangedSuccessfully = 'role_changed_successfully';
 }

@@ -14,7 +14,7 @@ import 'package:shoply/core/styles/theme/app_theme.dart';
 import 'package:shoply/core/utils/screens/no_network_screen.dart';
 import 'package:shoply/features/customer/favorites/presentation/cubit/favorites_cubit.dart';
 import 'package:shoply/core/app/di/injection.dart';
-import 'package:shoply/features/customer/profile/presentation/bloc/profile_bloc.dart';
+import 'features/profile/presentation/bloc/profile_bloc.dart';
 
 class ShoplyApp extends StatelessWidget {
   const ShoplyApp({super.key});
@@ -22,20 +22,16 @@ class ShoplyApp extends StatelessWidget {
   //!  This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    print('DEBUG: ShoplyApp build');
-    print('DEBUG: sl hash in ShoplyApp: ${sl.hashCode}');
-    try {
-      print(
-          'DEBUG: AppCubit registered in ShoplyApp: ${sl.isRegistered<AppCubit>()}');
-    } catch (e) {
-      print('DEBUG: Error checking AppCubit: $e');
-    }
     return ValueListenableBuilder(
       valueListenable: ConnectivityController.instance.isConnected,
       builder: (_, value, __) {
         if (value) {
           return MultiBlocProvider(
             providers: [
+              BlocProvider<ProfileBloc>(
+                create: (context) =>
+                    sl<ProfileBloc>()..add(const ProfileEvent.getUserInfo()),
+              ),
               BlocProvider<AppCubit>(
                 create: (context) => sl<AppCubit>()
                   ..changeTheme(
@@ -57,6 +53,7 @@ class ShoplyApp extends StatelessWidget {
                 },
                 builder: (context, state) {
                   final cubit = context.read<AppCubit>();
+
                   return MaterialApp(
                     title: 'Shoply App',
                     debugShowCheckedModeBanner: EnvVariables.instance.debugMode,
@@ -94,11 +91,25 @@ class ShoplyApp extends StatelessWidget {
   }
 
   String _getInitialRoute() {
-    return SharedPrefHelper().getString(key: SharedPrefKeys.accessToken) != null
-        // ? SharedPrefHelper().getString(key: SharedPrefKeys.userRole) == 'admin'
-        ? SharedPrefHelper().getString(key: SharedPrefKeys.userRole) == UserRole.admin.name
-            ? AppRoutes.homeAdmin
-            : AppRoutes.homeCustomer
-        : AppRoutes.login;
+    final userId = SharedPrefHelper().getString(key: SharedPrefKeys.userId);
+    final userRole = SharedPrefHelper().getString(key: SharedPrefKeys.userRole);
+
+    debugPrint('DEBUG: _getInitialRoute userId=$userId, userRole=$userRole');
+
+    // If user is not logged in, go to login
+    if (userId == null || userId.isEmpty) {
+      debugPrint('DEBUG: No userId found, going to login');
+      return AppRoutes.login;
+    }
+
+    // If user is logged in, check their role
+    if (userRole == UserRole.admin.name) {
+      debugPrint('DEBUG: User role is admin, going to homeAdmin');
+      return AppRoutes.homeAdmin;
+    } else {
+      debugPrint(
+          'DEBUG: User role is ${userRole ?? "null"}, going to homeCustomer');
+      return AppRoutes.homeCustomer;
+    }
   }
 }

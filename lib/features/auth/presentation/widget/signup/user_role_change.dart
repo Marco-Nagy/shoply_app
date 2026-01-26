@@ -3,9 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoply/core/helpers/extension/mediaQueryValues.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
-import 'package:shoply/core/helpers/extension/string_exetension.dart';
 import 'package:shoply/core/localization/lang_keys.dart';
-import 'package:shoply/features/customer/profile/presentation/bloc/profile_bloc.dart';
+import 'package:shoply/features/profile/presentation/bloc/profile_bloc.dart';
 
 class UserRoleChange extends StatelessWidget {
   const UserRoleChange({super.key});
@@ -32,7 +31,7 @@ class UserRoleChange extends StatelessWidget {
                   width: 1.5,
                   color: context.colors.bluePinkDark,
                 ),
-                color: context.colors.bluePinkLight.withOpacity(0.3),
+                color: context.colors.bluePinkLight.withValues(alpha: 0.3),
               ),
               child: Stack(
                 children: [

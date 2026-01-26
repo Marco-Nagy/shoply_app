@@ -10,7 +10,7 @@ import 'package:shoply/features/auth/data/models/login/login_request.dart';
 import 'package:shoply/features/auth/data/models/sign_up/signup_request.dart';
 import 'package:shoply/features/auth/domain/entities/auth_provider_type.dart';
 import 'package:shoply/features/auth/domain/repositories/auth_repository.dart';
-import 'package:shoply/features/customer/profile/presentation/bloc/profile_bloc.dart';
+import 'package:shoply/features/profile/presentation/bloc/profile_bloc.dart';
 
 part 'auth_bloc.freezed.dart';
 part 'auth_event.dart';

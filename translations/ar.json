@@ -83,5 +83,9 @@
     "buyer": "مشتري",
     "seller": "بائع",
     "or_sign_in_with": "أو سجل الدخول باستخدام",
-    "or_sign_up_with": "أو أنشئ حساب باستخدام"
+    "or_sign_up_with": "أو أنشئ حساب باستخدام",
+    "change_role_to_seller": "  هل تريد تأكيد تغيير الدور إلى بائع؟",
+    "change_role_to_buyer": "هل تريد تأكيد تغيير الدور إلى مشتري؟",
+    "role": "الدور",
+    "role_changed_successfully": "تم تغيير الدور بنجاح"
 }

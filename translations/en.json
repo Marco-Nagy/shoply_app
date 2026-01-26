@@ -84,5 +84,9 @@
     "buyer": "Buyer",
     "seller": "Seller",
     "or_sign_in_with": "Or sign in with",
-    "or_sign_up_with": "Or sign up with"
+    "or_sign_up_with": "Or sign up with",
+    "change_role_to_seller": "Do you want to confirm the role change to Seller?",
+    "change_role_to_buyer": "Do you want to confirm the role change to Buyer?",
+    "role": "Role",
+    "role_changed_successfully": "The role has been changed successfully"
 }

@@ -11,6 +11,6 @@ class AuthUser {
     this.name,
     this.email,
     this.avatarUrl,
-    this.role,
+     this.role,
   });
 }
