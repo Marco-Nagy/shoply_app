@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:shoply/core/app/apis/api_result.dart';
+import 'package:shoply/core/app/Networking/data_result.dart';
 import 'package:shoply/features/admin/products/data/Mappers/create_product_mapper.dart';
 import 'package:shoply/features/admin/products/data/Mappers/delete_product_mapper.dart';
 import 'package:shoply/features/admin/products/data/Mappers/update_product_mapper.dart';
@@ -40,7 +40,7 @@ void main() {
           final result = await repository.getAllProducts();
 
           // Assert
-          expect(result, isA<ApiResult<List<GetProductEntity>>>());
+          expect(result, isA<DataResult<List<GetProductEntity>>>());
           result.when(
             success: (products) {
               expect(products, isNotEmpty);
@@ -105,7 +105,7 @@ void main() {
             await repository.createProduct(MockProductTest.createProductEntity);
 
         // Assert
-        expect(result, isA<ApiResult<CreateProductResponse>>());
+        expect(result, isA<DataResult<CreateProductResponse>>());
         result.when(
             success: (product) {
               expect(product.data, isNotNull);
@@ -125,7 +125,7 @@ void main() {
             await repository.createProduct(MockProductTest.createProductEntity);
 
         // Assert
-        expect(result, isA<ApiResult<CreateProductResponse>>());
+        expect(result, isA<DataResult<CreateProductResponse>>());
         result.when(
             success: (product) => fail('Expected failure, but got success'),
             failure: (errorHandler) =>
@@ -144,7 +144,7 @@ void main() {
             await repository.updateProduct(MockProductTest.updateProductEntity);
 
         // Assert
-        expect(result, isA<ApiResult<UpdateProductResponse>>());
+        expect(result, isA<DataResult<UpdateProductResponse>>());
         result.when(
             success: (product) {
               expect(product.data, isNotNull);
@@ -164,7 +164,7 @@ void main() {
             await repository.updateProduct(MockProductTest.updateProductEntity);
 
         // Assert
-        expect(result, isA<ApiResult<UpdateProductResponse>>());
+        expect(result, isA<DataResult<UpdateProductResponse>>());
         result.when(
             success: (product) => fail('Expected failure, but got success'),
             failure: (errorHandler) =>
@@ -183,7 +183,7 @@ void main() {
             await repository.deleteProduct(MockProductTest.productId);
 
         // Assert
-        expect(result, isA<ApiResult<DeleteProductResponse>>());
+        expect(result, isA<DataResult<DeleteProductResponse>>());
         result.when(
             success: (product) {
               expect(product.data, isNotNull);
@@ -203,7 +203,7 @@ void main() {
             await repository.deleteProduct(MockProductTest.productId);
 
         // Assert
-        expect(result, isA<ApiResult<DeleteProductResponse>>());
+        expect(result, isA<DataResult<DeleteProductResponse>>());
         result.when(
             success: (product) => fail('Expected failure, but got success'),
             failure: (errorHandler) =>

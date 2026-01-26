@@ -10,7 +10,7 @@ import 'package:shoply/features/customer/home/presentation/screen/home_screen.da
 import 'package:shoply/features/customer/main/presentation/cubit/main_cubit.dart';
 import 'package:shoply/features/customer/main/presentation/widgets/main_bottom_nav_bar.dart';
 import 'package:shoply/features/customer/notifications/presentation/screen/notifications_screen.dart';
-import 'package:shoply/features/customer/profile/presentation/screen/profile_screen.dart';
+import 'package:shoply/features/profile/presentation/screen/profile_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -26,8 +26,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
 
   GlobalKey bottomNavigationKey = GlobalKey();
 
-  late Animation<Offset> _offsetAnimation;
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
 
   @override
   void initState() {
@@ -83,7 +82,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
     );
   }
 
-  toggleNavBarScreens(BuildContext context) {
+  Widget toggleNavBarScreens(BuildContext context) {
     final navBarEnum = context
         .read<MainCubit>()
         .iconNavBar;

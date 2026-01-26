@@ -35,11 +35,76 @@ class LangKeys {
   static const String langCode = 'lang_code';
   static const String notifications = 'notifications';
   static const String subscribedToNotifications = 'subscribed_to_notifications';
-  static const String unsubscribedToNotifications = 'unsubscribed_to_notifications';
+  static const String unsubscribedToNotifications =
+      'unsubscribed_to_notifications';
   static const String viewAll = 'view_all';
   static const String noNetwork = 'no_network';
+  static const String serverErrorGeneral = 'server_error_general';
+  // Authentication error keys
+  static const String firebaseUserNull = 'firebase_user_null';
+  static const String authRequestRequired = 'auth_request_required';
+  static const String googleSignInCancelled = 'google_sign_in_cancelled';
+  static const String facebookLoginFailed = 'facebook_login_failed';
+
+  // Server error keys
+  static const String errorConnectionTimeout = 'error_connection_timeout';
+  static const String errorSendTimeout = 'error_send_timeout';
+  static const String errorReceiveTimeout = 'error_receive_timeout';
+  static const String errorBadCertificate = 'error_bad_certificate';
+  static const String errorRequestCanceled = 'error_request_canceled';
+  static const String errorNoInternet = 'error_no_internet';
+  static const String errorUnexpected = 'error_unexpected';
+  static const String errorGeneral = 'error_general';
+  static const String errorNotFound = 'error_not_found';
+  static const String errorInternalServer = 'error_internal_server';
+
+  // Firebase Auth error keys
+  static const String errorUnknown = 'error_unknown';
+  static const String errorInvalidEmail = 'error_invalid_email';
+  static const String errorUserDisabled = 'error_user_disabled';
+  static const String errorUserNotFound = 'error_user_not_found';
+  static const String errorWrongPassword = 'error_wrong_password';
+  static const String errorAccountExistsDifferentCredential =
+      'error_account_exists_different_credential';
+  static const String errorCredentialInUse = 'error_credential_in_use';
+  static const String errorPopupClosed = 'error_popup_closed';
+  static const String errorPopupCancelled = 'error_popup_cancelled';
+  static const String errorOperationNotAllowed = 'error_operation_not_allowed';
+  static const String errorNetworkFailed = 'error_network_failed';
+  static const String errorTooManyRequests = 'error_too_many_requests';
+
+  // Firestore error keys
+  static const String errorPermissionDenied = 'error_permission_denied';
+  static const String errorServiceUnavailable = 'error_service_unavailable';
+  static const String errorDocumentNotFound = 'error_document_not_found';
+  static const String errorDocumentExists = 'error_document_exists';
+
+  // Platform error keys (Social auth)
+  static const String errorGoogleSignInCancelled =
+      'error_google_signin_cancelled';
+  static const String errorGoogleNetworkError = 'error_google_network_error';
+  static const String errorFacebookCancelled = 'error_facebook_cancelled';
+  static const String errorFacebookFailed = 'error_facebook_failed';
+  static const String errorAppleCancelled = 'error_apple_cancelled';
+  static const String errorAppleUnknown = 'error_apple_unknown';
+  static const String errorSignInFailed = 'error_signin_failed';
+
   static const String camera = 'camera';
   static const String gallery = 'gallery';
   static const String remove = 'remove';
   static const String categoryName = 'category_name';
+
+  // User Role keys
+  static const String buyer = 'buyer';
+  static const String seller = 'seller';
+
+  // Social sign-in keys
+  static const String orSignInWith = 'or_sign_in_with';
+  static const String orSignUpWith = 'or_sign_up_with';
+
+  // Role change keys
+  static const String changeRoleToSeller = 'change_role_to_seller';
+  static const String changeRoleToBuyer = 'change_role_to_buyer';
+  static const String role = 'role';
+  static const String roleChangedSuccessfully = 'role_changed_successfully';
 }

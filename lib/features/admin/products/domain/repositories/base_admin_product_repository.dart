@@ -1,4 +1,4 @@
-import 'package:shoply/core/app/apis/api_result.dart';
+import 'package:shoply/core/app/Networking/data_result.dart';
 import 'package:shoply/features/admin/products/data/model/create_product/create_product_response.dart';
 import 'package:shoply/features/admin/products/data/model/delete_category/delete_product.dart';
 import 'package:shoply/features/admin/products/data/model/update_product/update_product_response.dart';
@@ -7,13 +7,13 @@ import 'package:shoply/features/admin/products/domain/entities/get_product_entit
 import 'package:shoply/features/admin/products/domain/entities/update_product_entity.dart';
 
 abstract class BaseAdminProductRepository {
-  Future<ApiResult<List<GetProductEntity>>> getAllProducts();
+  Future<DataResult<List<GetProductEntity>>> getAllProducts();
 
-  Future<ApiResult<CreateProductResponse>> createProduct(
+  Future<DataResult<CreateProductResponse>> createProduct(
       CreateProductEntity body);
 
-  Future<ApiResult<UpdateProductResponse>> updateProduct(
+  Future<DataResult<UpdateProductResponse>> updateProduct(
       UpdateProductEntity body);
 
-  Future<ApiResult<DeleteProductResponse>> deleteProduct(String productId);
+  Future<DataResult<DeleteProductResponse>> deleteProduct(String productId);
 }

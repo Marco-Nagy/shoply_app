@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TODO: Replace with your actual Facebook App ID from https://developers.facebook.com/apps/ -->
+    <string name="facebook_app_id" translatable="false">754077540533781</string>
+    
+    <!-- TODO: Replace with your actual Facebook Client Token from https://developers.facebook.com/apps/ -->
+    <string name="facebook_client_token" translatable="false">80065c2cb84c93145f79fec0ced97f27</string>
+</resources>

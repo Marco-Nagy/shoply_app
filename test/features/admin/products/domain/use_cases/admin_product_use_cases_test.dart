@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:shoply/core/app/apis/api_result.dart';
+import 'package:shoply/core/app/Networking/data_result.dart';
 import 'package:shoply/core/helpers/usecases/usecase.dart';
 import 'package:shoply/features/admin/products/data/model/create_product/create_product_response.dart';
 import 'package:shoply/features/admin/products/data/model/delete_category/delete_product.dart';
@@ -37,13 +37,13 @@ void main() {
     List<GetProductEntity> getProductsList = [
       MockProductTest.mockGetProductEntity
     ];
-    Future<ApiResult<List<GetProductEntity>>> successResult =
-        Future.value(ApiResult.success(getProductsList));
+    Future<DataResult<List<GetProductEntity>>> successResult =
+        Future.value(DataResult.success(getProductsList));
     when(repository.getAllProducts()).thenAnswer((_) async => successResult);
     // Act
     final result = await getProductsListUseCase.call(NoParams());
     // Assert
-    expect(result, isA<ApiResult<List<GetProductEntity>>>());
+    expect(result, isA<DataResult<List<GetProductEntity>>>());
     result.when(
       success: (data) {
         expect(
@@ -59,15 +59,15 @@ void main() {
   test('TODO: Implement tests for create_product_use_case.dart', () async {
     // Arrange
 
-    Future<ApiResult<CreateProductResponse>> successResult = Future.value(
-        ApiResult.success(MockProductTest.mockCreateProductResponse));
+    Future<DataResult<CreateProductResponse>> successResult = Future.value(
+        DataResult.success(MockProductTest.mockCreateProductResponse));
     when(repository.createProduct(MockProductTest.createProductEntity))
         .thenAnswer((_) async => successResult);
     // Act
     final result =
         await createProductUseCase.call(MockProductTest.createProductEntity);
     // Assert
-    expect(result, isA<ApiResult<CreateProductResponse>>());
+    expect(result, isA<DataResult<CreateProductResponse>>());
     result.when(
       success: (data) {
         expect(
@@ -84,15 +84,15 @@ void main() {
   test('TODO: Implement tests for update_product_use_case.dart', () async {
     // Arrange
 
-    Future<ApiResult<UpdateProductResponse>> successResult = Future.value(
-        ApiResult.success(MockProductTest.mockUpdateProductResponse));
+    Future<DataResult<UpdateProductResponse>> successResult = Future.value(
+        DataResult.success(MockProductTest.mockUpdateProductResponse));
     when(repository.updateProduct(MockProductTest.updateProductEntity))
         .thenAnswer((_) async => successResult);
     // Act
     final result =
         await updateProductUseCase.call(MockProductTest.updateProductEntity);
     // Assert
-    expect(result, isA<ApiResult<UpdateProductResponse>>());
+    expect(result, isA<DataResult<UpdateProductResponse>>());
     result.when(
       success: (data) {
         expect(
@@ -109,14 +109,14 @@ void main() {
   test('TODO: Implement tests for delete_product_use_case.dart', () async {
     // Arrange
 
-    Future<ApiResult<DeleteProductResponse>> successResult = Future.value(
-        ApiResult.success(MockProductTest.mockDeleteProductResponse));
+    Future<DataResult<DeleteProductResponse>> successResult = Future.value(
+        DataResult.success(MockProductTest.mockDeleteProductResponse));
     when(repository.deleteProduct(MockProductTest.productId))
         .thenAnswer((_) async => successResult);
     // Act
     final result = await deleteProductUseCase.call(MockProductTest.productId);
     // Assert
-    expect(result, isA<ApiResult<DeleteProductResponse>>());
+    expect(result, isA<DataResult<DeleteProductResponse>>());
     result.when(
       success: (data) {
         expect(

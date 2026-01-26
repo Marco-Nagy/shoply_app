@@ -7,9 +7,10 @@ import 'package:injectable/injectable.dart';
 import 'package:shoply/core/Services/shared_preference/shared_pref_keys.dart';
 import 'package:shoply/core/Services/shared_preference/shared_preference_helper.dart';
 import 'package:shoply/features/auth/data/models/login/login_request.dart';
-import 'package:shoply/features/auth/data/models/login/login_response.dart';
 import 'package:shoply/features/auth/data/models/sign_up/signup_request.dart';
-import 'package:shoply/features/auth/data/repositories/auth_repository.dart';
+import 'package:shoply/features/auth/domain/entities/auth_provider_type.dart';
+import 'package:shoply/features/auth/domain/repositories/auth_repository.dart';
+import 'package:shoply/features/profile/presentation/bloc/profile_bloc.dart';
 
 part 'auth_bloc.freezed.dart';
 part 'auth_event.dart';
@@ -20,6 +21,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState<dynamic>> {
   AuthBloc(this._authRepository) : super(const AuthState.initial()) {
     on<LoginEvent>(_login);
     on<SignUpEvent>(_signUp);
+    on<SocialSignInEvent>(_socialSignIn);
   }
 
   final AuthRepository _authRepository;
@@ -35,24 +37,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState<dynamic>> {
     emit(const AuthState.loading());
 
     /// call login method
-    final result = await _authRepository.login(
-      LoginRequest(emailController.text.trim(), passwordController.text.trim()),
+    final result = await _authRepository.signIn(
+      AuthProviderType.email,
+      loginRequest: LoginRequest(
+          emailController.text.trim(), passwordController.text.trim()),
     );
     await result.when(
-      success: (LoginResponse success) async {
-        /// save access token if login successful
-        await SharedPrefHelper().setString(
-          key: SharedPrefKeys.accessToken,
-          stringValue: success.data?.login!.accessToken ?? '',
-        );
+      success: (data) {
 
-        /// call userProfile method to get User Role
-        final userRole = await _authRepository.userRole();
-        await SharedPrefHelper().setString(
-          key: SharedPrefKeys.userRole,
-          stringValue: userRole.role ?? '',
-        );
-        emit(AuthState.success(userRole: userRole.role!));
+        emit(AuthState.success(userRole: data.role!));
       },
       failure: (error) {
         debugPrint('error.errorMsg ${error.errorMsg}');
@@ -95,17 +88,39 @@ class AuthBloc extends Bloc<AuthEvent, AuthState<dynamic>> {
     emit(const AuthState.loading());
 
     /// call signUp method
-    final result = await _authRepository.signUp(
-      SignupRequest(
+    final result = await _authRepository.signIn(
+      AuthProviderType.email,
+      signupRequest: SignupRequest(
         name: nameController.text.trim(),
         email: emailController.text.trim(),
         password: passwordController.text.trim(),
         avatar: event.imgUrl.trim(),
+        role: event.role,
       ),
     );
     result.when(
       success: (_) {
         add(const AuthEvent.login());
+      },
+      failure: (error) {
+        emit(AuthState.failure(error: error.errorMsg));
+      },
+    );
+  }
+
+  Future<void> _socialSignIn(
+      SocialSignInEvent event, Emitter<AuthState> emit) async {
+    emit(const AuthState.loading());
+
+    final result = await _authRepository.signIn(
+      event.type,
+      signupRequest: SignupRequest(role: event.rule)
+    );
+    result.when(
+      success: (user) {
+        SharedPrefHelper().setString(key: SharedPrefKeys.userId, stringValue: user.id);
+
+        emit(AuthState.success(userRole: user.role ?? UserRole.costumer.name));
       },
       failure: (error) {
         emit(AuthState.failure(error: error.errorMsg));

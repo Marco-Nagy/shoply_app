@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shoply/core/app/app_cubit/app_cubit.dart';
@@ -11,8 +12,8 @@ final sl = GetIt.instance;
   asExtension: true, // default
 )
 Future<void> configureInjection() async {
-  print('DEBUG: configureInjection START - sl hash: ${sl.hashCode}');
+  debugPrint('DEBUG: configureInjection START - sl hash: ${sl.hashCode}');
   await sl.init();
-  print(
+  debugPrint(
       'DEBUG: configureInjection END - AppCubit registered: ${sl.isRegistered<AppCubit>()}');
 }

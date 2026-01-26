@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:shoply/core/app/apis/graphQl/admin/categories_queries.dart';
+import 'package:shoply/core/app/Networking/graphQl/admin/categories_queries.dart';
 import 'package:shoply/features/admin/categories/data/data_source/admin_categories_api_service.dart';
 import 'package:shoply/features/admin/categories/data/model/create/create_category_request.dart';
 import 'package:shoply/features/admin/categories/data/model/create/create_category_response.dart';

@@ -14,11 +14,15 @@ import 'package:shoply/core/utils/widgets/buttons/custom_linear_button.dart';
 import 'package:shoply/core/utils/widgets/snack_bar.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
+import 'package:shoply/features/auth/domain/entities/auth_provider_type.dart';
 import 'package:shoply/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:shoply/features/auth/presentation/widget/header_title.dart';
 import 'package:shoply/features/auth/presentation/widget/signup/sign_up_form_field.dart';
 import 'package:shoply/features/auth/presentation/widget/signup/user_avatar_image.dart';
+import 'package:shoply/features/auth/presentation/widget/signup/user_role_change.dart';
+import 'package:shoply/features/auth/presentation/widget/social_signin_buttons.dart';
 import 'package:shoply/features/auth/presentation/widget/switch_buttons.dart';
+import 'package:shoply/features/profile/presentation/bloc/profile_bloc.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
 
 class SignUpBody extends StatelessWidget {
@@ -30,15 +34,16 @@ class SignUpBody extends StatelessWidget {
       listener: (context, state) async {
         await state.whenOrNull(
           success: (data) async {
-            final userRole = SharedPrefHelper()
-                .getString(key: SharedPrefKeys.userRole);
+            final userRole =
+                SharedPrefHelper().getString(key: SharedPrefKeys.userRole);
 
-            if (userRole == 'admin') {
+
+            if (userRole == UserRole.admin.name) {
               await Navigator.of(context).pushReplacementNamed(
                 AppRoutes.homeAdmin,
                 arguments: data,
               );
-              await  aweSnackBar(
+              await aweSnackBar(
                 title: 'Success',
                 msg: context.translate(LangKeys.loggedSuccessfully),
                 context: context,
@@ -49,9 +54,9 @@ class SignUpBody extends StatelessWidget {
                 AppRoutes.homeCustomer,
                 arguments: data,
               );
-              await  aweSnackBar(
+              await aweSnackBar(
                 title: 'Success',
-                msg:context.translate(LangKeys.loggedSuccessfully),
+                msg: context.translate(LangKeys.loggedSuccessfully),
                 context: context,
                 type: MessageTypeConst.help,
               );
@@ -60,7 +65,7 @@ class SignUpBody extends StatelessWidget {
           failure: (error) {
             aweSnackBar(
               title: 'Error',
-              msg: context.translate(LangKeys.loggedError),
+              msg: context.translate(error),
               context: context,
               type: MessageTypeConst.failure,
             );
@@ -70,13 +75,15 @@ class SignUpBody extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
           loading: () {
-            return CustomLinearButton(
-              height: 50.h,
-              width: double.infinity,
-              child: CircularProgressIndicator(
-                color: context.colors.textColor,
+            return Center(
+              child: CustomLinearButton(
+                height: 50.h,
+                width: double.infinity,
+                child: CircularProgressIndicator(
+                  color: context.colors.textColor,
+                ),
+                onTap: () {},
               ),
-              onTap: () {},
             );
           },
           orElse: () {
@@ -95,6 +102,8 @@ class SignUpBody extends StatelessWidget {
                     ),
                     verticalSpacing(10),
                     const UserAvatarImage(),
+                    verticalSpacing(20),
+                    UserRoleChange(),
                     verticalSpacing(20),
                     //? SignUp form
                     const SignUpFormField(),
@@ -119,20 +128,54 @@ class SignUpBody extends StatelessWidget {
 
                           if (!authBloc.formKye.currentState!.validate()) {
                             return;
-                          } else if (fileCubit.getImageUrl.isEmpty) {
-                            aweSnackBar(
-                              msg: context.translate(LangKeys.validPickImage),
-                              title: 'Empty Image',
-                              context: context,
-                              type: MessageTypeConst.failure,
-                            );
-                          } else {
+                          }
+                          // else if (fileCubit.getImageUrl.isEmpty) {
+                          //   aweSnackBar(
+                          //     msg: context.translate(LangKeys.validPickImage),
+                          //     title: 'Empty Image',
+                          //     context: context,
+                          //     type: MessageTypeConst.failure,
+                          //   );
+                          // }
+                          else {
+                            final profileBloc = context.read<ProfileBloc>();
                             authBloc.add(
                               AuthEvent.signUp(
                                 imgUrl: fileCubit.getImageUrl,
+                                role: profileBloc.role,
                               ),
                             );
                           }
+                        },
+                      ),
+                    ),
+                    verticalSpacing(20),
+                    //? Social sign-in buttons
+                    CustomFadeInUp(
+                      duration: 400,
+                      child: SocialSignInButtons(
+                        isSignUp: true,
+                        onGooglePressed: () {
+                          context
+                              .read<AuthBloc>()
+                              .add( AuthEvent.socialSignIn(
+                                type: AuthProviderType.google,
+                            rule: context.read<ProfileBloc>().role,
+
+                              ));
+                        },
+                        onFacebookPressed: () {
+                          context
+                              .read<AuthBloc>()
+                              .add( AuthEvent.socialSignIn(
+                                type: AuthProviderType.facebook,
+                            rule: context.read<ProfileBloc>().role,
+                              ));
+                        },
+                        onApplePressed: () {
+                          // context.read<AuthBloc>().add(const AuthEvent.socialSignIn(
+                          //   type: AuthProviderType.apple,
+                          // ));
                         },
                       ),
                     ),

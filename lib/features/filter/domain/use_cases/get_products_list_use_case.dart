@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:shoply/core/app/apis/api_result.dart';
+import 'package:shoply/core/app/Networking/data_result.dart';
 import 'package:shoply/core/helpers/usecases/usecase.dart';
 import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
 import 'package:shoply/features/filter/domain/entities/filter_products_entity.dart';
@@ -13,7 +13,7 @@ class FilterProductsListUseCase
   FilterProductsListUseCase(this._repository);
 
   @override
-  Future<ApiResult<List<GetProductEntity>>> call(
+  Future<DataResult<List<GetProductEntity>>> call(
       FilterProductsEntity params) async {
     return await _repository.filterProducts(body: params);
   }

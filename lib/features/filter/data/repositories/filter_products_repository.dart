@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-import 'package:shoply/core/app/apis/api_result.dart';
-import 'package:shoply/core/app/apis/errors/error_handler.dart';
+import 'package:shoply/core/app/Networking/data_result.dart';
+import 'package:shoply/core/app/Networking/errors/error_handler.dart';
 import 'package:shoply/features/admin/products/data/Mappers/product_mapper.dart';
 import 'package:shoply/features/admin/products/domain/entities/get_product_entity.dart';
 import 'package:shoply/features/filter/data/data_sources/filter_products_data_source.dart';
@@ -15,19 +15,19 @@ class FilterProductsRepository implements BaseFilterProductsRepository {
   FilterProductsRepository(this._dataSource);
 
   @override
-  Future<ApiResult<List<GetProductEntity>>> filterProducts(
+  Future<DataResult<List<GetProductEntity>>> filterProducts(
       {required FilterProductsEntity body}) async {
     try {
       final response = await _dataSource.filterProductsList(body: body);
       if (response.data != null) {
-        return ApiResult.success(ProductMapper.fromResponse(response));
+        return DataResult.success(ProductMapper.fromResponse(response));
       } else {
-        return ApiResult.failure(ServerFailure(response.errors!.first.message));
+        return DataResult.failure(ServerFailure(response.errors!.first.message));
       }
     } on DioException catch (dioError) {
-      return ApiResult.failure(ServerFailure.fromDioException(dioError));
+      return DataResult.failure(ServerFailure.fromDioException(dioError));
     } catch (error) {
-      return ApiResult.failure(ServerFailure(error.toString()));
+      return DataResult.failure(ServerFailure(error.toString()));
     }
   }
 }

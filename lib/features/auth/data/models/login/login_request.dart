@@ -10,5 +10,6 @@ class LoginRequest {
   String? password;
 
 
+
   Map<String, dynamic> toJson() => _$LoginRequestToJson(this);
 }

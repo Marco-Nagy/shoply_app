@@ -6,7 +6,7 @@
 import 'dart:async' as _i4;
 
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:shoply/core/app/apis/api_result.dart' as _i2;
+import 'package:shoply/core/app/Networking/data_result.dart' as _i2;
 import 'package:shoply/features/admin/products/data/model/create_product/create_product_response.dart'
     as _i6;
 import 'package:shoply/features/admin/products/data/model/delete_category/delete_product.dart'
@@ -36,8 +36,8 @@ import 'package:shoply/features/admin/products/domain/repositories/base_admin_pr
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeApiResult_0<T> extends _i1.SmartFake implements _i2.ApiResult<T> {
-  _FakeApiResult_0(
+class _FakeDataResult_0<T> extends _i1.SmartFake implements _i2.DataResult<T> {
+  _FakeDataResult_0(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -56,61 +56,63 @@ class MockBaseAdminProductRepository extends _i1.Mock
   }
 
   @override
-  _i4.Future<_i2.ApiResult<List<_i5.GetProductEntity>>> getAllProducts() =>
+  _i4.Future<_i2.DataResult<List<_i5.GetProductEntity>>> getAllProducts() =>
       (super.noSuchMethod(
         Invocation.method(
           #getAllProducts,
           [],
         ),
         returnValue:
-            _i4.Future<_i2.ApiResult<List<_i5.GetProductEntity>>>.value(
-                _FakeApiResult_0<List<_i5.GetProductEntity>>(
+            _i4.Future<_i2.DataResult<List<_i5.GetProductEntity>>>.value(
+                _FakeDataResult_0<List<_i5.GetProductEntity>>(
           this,
           Invocation.method(
             #getAllProducts,
             [],
           ),
         )),
-      ) as _i4.Future<_i2.ApiResult<List<_i5.GetProductEntity>>>);
+      ) as _i4.Future<_i2.DataResult<List<_i5.GetProductEntity>>>);
 
   @override
-  _i4.Future<_i2.ApiResult<_i6.CreateProductResponse>> createProduct(
+  _i4.Future<_i2.DataResult<_i6.CreateProductResponse>> createProduct(
           _i7.CreateProductEntity? body) =>
       (super.noSuchMethod(
         Invocation.method(
           #createProduct,
           [body],
         ),
-        returnValue: _i4.Future<_i2.ApiResult<_i6.CreateProductResponse>>.value(
-            _FakeApiResult_0<_i6.CreateProductResponse>(
+        returnValue:
+            _i4.Future<_i2.DataResult<_i6.CreateProductResponse>>.value(
+                _FakeDataResult_0<_i6.CreateProductResponse>(
           this,
           Invocation.method(
             #createProduct,
             [body],
           ),
         )),
-      ) as _i4.Future<_i2.ApiResult<_i6.CreateProductResponse>>);
+      ) as _i4.Future<_i2.DataResult<_i6.CreateProductResponse>>);
 
   @override
-  _i4.Future<_i2.ApiResult<_i8.UpdateProductResponse>> updateProduct(
+  _i4.Future<_i2.DataResult<_i8.UpdateProductResponse>> updateProduct(
           _i9.UpdateProductEntity? body) =>
       (super.noSuchMethod(
         Invocation.method(
           #updateProduct,
           [body],
         ),
-        returnValue: _i4.Future<_i2.ApiResult<_i8.UpdateProductResponse>>.value(
-            _FakeApiResult_0<_i8.UpdateProductResponse>(
+        returnValue:
+            _i4.Future<_i2.DataResult<_i8.UpdateProductResponse>>.value(
+                _FakeDataResult_0<_i8.UpdateProductResponse>(
           this,
           Invocation.method(
             #updateProduct,
             [body],
           ),
         )),
-      ) as _i4.Future<_i2.ApiResult<_i8.UpdateProductResponse>>);
+      ) as _i4.Future<_i2.DataResult<_i8.UpdateProductResponse>>);
 
   @override
-  _i4.Future<_i2.ApiResult<_i10.DeleteProductResponse>> deleteProduct(
+  _i4.Future<_i2.DataResult<_i10.DeleteProductResponse>> deleteProduct(
           String? productId) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -118,13 +120,13 @@ class MockBaseAdminProductRepository extends _i1.Mock
           [productId],
         ),
         returnValue:
-            _i4.Future<_i2.ApiResult<_i10.DeleteProductResponse>>.value(
-                _FakeApiResult_0<_i10.DeleteProductResponse>(
+            _i4.Future<_i2.DataResult<_i10.DeleteProductResponse>>.value(
+                _FakeDataResult_0<_i10.DeleteProductResponse>(
           this,
           Invocation.method(
             #deleteProduct,
             [productId],
           ),
         )),
-      ) as _i4.Future<_i2.ApiResult<_i10.DeleteProductResponse>>);
+      ) as _i4.Future<_i2.DataResult<_i10.DeleteProductResponse>>);
 }

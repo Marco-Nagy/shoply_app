@@ -6,12 +6,23 @@ import 'package:shoply/features/admin/categories/presentation/screens/add_catego
 import 'package:shoply/features/admin/notifications/presentation/screens/add_notification_screen.dart';
 import 'package:shoply/features/admin/products/presentation/screens/add_products_screen.dart';
 import 'package:shoply/features/admin/dashboard/presentation/screens/dashboard_screen.dart';
+import 'package:shoply/features/profile/presentation/screen/profile_screen.dart';
 
 import '../../features/admin/users/presentation/screens/users_screen.dart';
 import 'app_logout.dart';
 
 List<DrawerItemModel> adminDrawerList(BuildContext context) {
   return <DrawerItemModel>[
+    DrawerItemModel(
+      icon: const Icon(Icons.person, color: Colors.white),
+      title: TextApp(
+        text: 'Profile',
+        style:
+            MyFonts.styleBold700_18.copyWith(color: Colors.white),
+      ),
+      screen: const ProfileScreen(),
+    ),
+
     DrawerItemModel(
       icon: const Icon(Icons.dashboard_rounded, color: Colors.white),
       title: TextApp(

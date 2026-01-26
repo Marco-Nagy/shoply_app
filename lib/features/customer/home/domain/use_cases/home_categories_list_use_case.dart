@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:shoply/core/app/apis/api_result.dart';
+import 'package:shoply/core/app/Networking/data_result.dart';
 import 'package:shoply/core/helpers/usecases/usecase.dart';
 import 'package:shoply/features/customer/home/domain/entities/category_entity.dart';
 import 'package:shoply/features/customer/home/domain/repositories/base_home_repository.dart';
@@ -11,7 +11,7 @@ class HomeCategoriesListUseCase
 
   HomeCategoriesListUseCase(this._repository);
   @override
-  Future<ApiResult<List<CategoryEntity>>> call(NoParams params) {
+  Future<DataResult<List<CategoryEntity>>> call(NoParams params) {
     return _repository.getAllCategories();
   }
 }

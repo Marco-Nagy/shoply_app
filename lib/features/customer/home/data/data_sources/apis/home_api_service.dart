@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
-import 'package:shoply/core/app/apis/api_const.dart';
+import 'package:shoply/core/app/Networking/apis/api_const.dart';
 import 'package:shoply/features/admin/categories/data/model/get_all_categories/get_all_categories.dart';
 
 import 'package:shoply/features/admin/products/data/model/get_products_list/get_all_products.dart';

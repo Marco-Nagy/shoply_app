@@ -1,4 +1,5 @@
 import 'package:intl/intl.dart';
+import 'package:shoply/core/localization/Localize.dart';
 
 extension StringFormate on String {
   String imageProductFormat() {
@@ -18,5 +19,8 @@ extension StringFormate on String {
     final now = DateTime.now();
 
     return DateFormat('d MMM, y - h:mm a').format(now);
+  }
+  String toTranslate() {
+    return Localize().get(this);
   }
 }
