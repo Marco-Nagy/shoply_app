@@ -26,8 +26,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
 
   GlobalKey bottomNavigationKey = GlobalKey();
 
-  late Animation<Offset> _offsetAnimation;
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
 
   @override
   void initState() {
