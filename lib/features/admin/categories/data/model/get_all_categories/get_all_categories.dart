@@ -13,7 +13,6 @@ class GetAllCategoriesResponse {
 
   factory GetAllCategoriesResponse.fromJson(Map<String, dynamic> json) =>
       _$GetAllCategoriesResponseFromJson(json);
-
 }
 
 @JsonSerializable()
@@ -24,7 +23,6 @@ class GetAllCategoriesList {
 
   factory GetAllCategoriesList.fromJson(Map<String, dynamic> json) =>
       _$GetAllCategoriesListFromJson(json);
-
 }
 
 @JsonSerializable()
@@ -37,5 +35,4 @@ class Categories {
 
   factory Categories.fromJson(Map<String, dynamic> json) =>
       _$CategoriesFromJson(json);
-
 }

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shoply/core/Services/local_translator.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/helpers/extension/navigations.dart';
 import 'package:shoply/core/localization/lang_keys.dart';
@@ -14,17 +15,15 @@ import 'package:shoply/core/utils/widgets/buttons/custom_button.dart';
 import 'package:shoply/core/utils/widgets/snack_bar.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
-import 'package:shoply/features/admin/categories/data/model/create/create_category_request.dart';
-import 'package:shoply/features/admin/categories/data/model/get_all_categories/get_all_categories.dart';
-import 'package:shoply/features/admin/categories/data/model/update/update_category_request.dart';
+import 'package:shoply/features/admin/categories/domain/entities/multilingual_category_entity.dart';
 import 'package:shoply/features/admin/categories/presentation/bloc/admin_categories_bloc.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
 
 import 'upload_category_image.dart';
 
 class CreateCategoryBottomSheetWidget extends StatefulWidget {
-  const CreateCategoryBottomSheetWidget( {super.key,   this.categories});
-final Categories? categories;
+  const CreateCategoryBottomSheetWidget({super.key, this.category});
+  final MultilingualCategoryEntity? category;
 
   @override
   State<CreateCategoryBottomSheetWidget> createState() =>
@@ -34,21 +33,26 @@ final Categories? categories;
 class _CreateCategoryBottomSheetWidgetState
     extends State<CreateCategoryBottomSheetWidget> {
   final formKye = GlobalKey<FormState>();
-final categoryNameController = TextEditingController();
-   String categoryTitleStatus= "Create";
-   String categoryStatus= "Add";
-@override
+  final categoryNameController = TextEditingController();
+  String categoryTitleStatus = "Create";
+  String categoryStatus = "Add";
+  bool _isTranslating = false;
+
+  @override
   void initState() {
     super.initState();
     _updateFormToEdit();
   }
+
   void _updateFormToEdit() {
-  if (widget.categories !=null) {
-      categoryNameController.text = widget.categories!.name!;
-      categoryTitleStatus= "Update";
-       categoryStatus= "Edit";
+    if (widget.category != null) {
+      categoryNameController.text =
+          LocalTranslator.translate(widget.category!.name);
+      categoryTitleStatus = "Update";
+      categoryStatus = "Edit";
+    }
   }
-  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -60,27 +64,33 @@ final categoryNameController = TextEditingController();
           children: [
             Center(
               child: TextApp(
-                text: '$categoryTitleStatus Category',
+                text: context.translate(categoryTitleStatus == "Create"
+                    ? LangKeys.createCategory
+                    : LangKeys.updateCategory),
                 style: MyFonts.styleBold700_18
                     .copyWith(color: context.colors.textColor),
               ),
             ),
             verticalSpacing(5),
             TextApp(
-              text: '$categoryStatus Photo',
+              text: context.translate(categoryStatus == "Add"
+                  ? LangKeys.addPhoto
+                  : LangKeys.editPhoto),
               style: MyFonts.styleMedium500_16
                   .copyWith(color: context.colors.textColor),
             ),
-             UploadCategoryImage(uploadCategoryImage:widget.categories!=null?widget.categories!.image!:''),
+            UploadCategoryImage(
+                uploadCategoryImage:
+                    widget.category != null ? widget.category!.image : ''),
             verticalSpacing(8),
-
             TextApp(
-              text: '$categoryStatus Category Name',
+              text: context.translate(categoryStatus == "Add"
+                  ? LangKeys.addCategoryName
+                  : LangKeys.editCategoryName),
               style: MyFonts.styleMedium500_16
                   .copyWith(color: context.colors.textColor),
             ),
             verticalSpacing(5),
-
             CustomFadeInRight(
               duration: 400,
               child: AppTextFormField(
@@ -88,7 +98,7 @@ final categoryNameController = TextEditingController();
                 hintText: context.translate(LangKeys.categoryName),
                 validator: (value) {
                   if (value == null || value.isEmpty || value.length < 2) {
-                    return 'Please Selected Your Category Name';
+                    return context.translate(LangKeys.validCategoryName);
                   }
                   return null;
                 },
@@ -98,33 +108,34 @@ final categoryNameController = TextEditingController();
             BlocConsumer<AdminCategoriesBloc, AdminCategoriesState>(
                 listener: (BuildContext context, AdminCategoriesState state) {
               state.maybeWhen(
-                addNewCategorySuccess: () {
+                addFirebaseCategorySuccess: () {
                   context.pop();
                   aweSnackBar(
-                    title: 'Successfully Added',
+                      title: context.translate(LangKeys.successfullyAdded),
                       msg:
-                          '${categoryNameController.text.trim()} Created Successfully',
+                          '${categoryNameController.text.trim()} ${context.translate(LangKeys.categoryCreatedSuccessfully)}',
                       context: context,
-                      type: MessageTypeConst.success);},
-                updateCategorySuccess: () {
+                      type: MessageTypeConst.success);
+                },
+                updateFirebaseCategorySuccess: () {
                   context.pop();
                   aweSnackBar(
-                    title: 'Successfully Updated',
+                      title: context.translate(LangKeys.successfullyUpdated),
                       msg:
-                          '${categoryNameController.text.trim()} Updated Successfully',
+                          '${categoryNameController.text.trim()} ${context.translate(LangKeys.categoryUpdatedSuccessfully)}',
                       context: context,
-                      type: MessageTypeConst.success);},
-                addNewCategoryFailure: (errorMessage) {
+                      type: MessageTypeConst.success);
+                },
+                addFirebaseCategoryFailure: (errorMessage) {
                   aweSnackBar(
-                    title:
-                      'Failed to add new category',
+                      title: context.translate(LangKeys.failedToAddCategory),
                       msg: errorMessage,
                       context: context,
                       type: MessageTypeConst.failure);
                 },
-                updateCategoryFailure: (errorMessage) {
+                updateFirebaseCategoryFailure: (errorMessage) {
                   aweSnackBar(
-                    title: 'Failed to update category',
+                      title: context.translate(LangKeys.failedToUpdateCategory),
                       msg: errorMessage,
                       context: context,
                       type: MessageTypeConst.failure);
@@ -147,20 +158,32 @@ final categoryNameController = TextEditingController();
                   return CustomFadeInUp(
                     duration: 400,
                     child: CustomButton(
-                      onPressed: () {
-                        if (widget.categories != null){
-                          _updateCategory(context).whenComplete(() {
-                            context.read<AdminCategoriesBloc>().add(const AdminCategoriesEvent.fetchAdminCategories());
-                          },);
-                        }else {
-                          _createNewCategory(context).whenComplete(() {
-
-                            context.read<AdminCategoriesBloc>().add(const AdminCategoriesEvent.fetchAdminCategories());
-
-                          },);
-                        }
-                      },
-                      text: '$categoryTitleStatus Category',
+                      onPressed: !_isTranslating
+                          ? () {
+                              if (widget.category != null) {
+                                _updateCategory(context).whenComplete(
+                                  () {
+                                    context.read<AdminCategoriesBloc>().add(
+                                        const AdminCategoriesEvent
+                                            .fetchFirebaseCategories());
+                                  },
+                                );
+                              } else {
+                                _createNewCategory(context).whenComplete(
+                                  () {
+                                    context.read<AdminCategoriesBloc>().add(
+                                        const AdminCategoriesEvent
+                                            .fetchFirebaseCategories());
+                                  },
+                                );
+                              }
+                            }
+                          : () {},
+                      text: _isTranslating
+                          ? context.translate(LangKeys.translating)
+                          : context.translate(categoryTitleStatus == "Create"
+                              ? LangKeys.createCategory
+                              : LangKeys.updateCategory),
                       width: double.infinity,
                       height: 60.h,
                       backgroundColor: Colors.white,
@@ -182,28 +205,87 @@ final categoryNameController = TextEditingController();
     final categoryImage = context.read<FileCubit>().getImageUrl;
     if (categoryImage.isEmpty) {
       aweSnackBar(
-        title: 'Empty Image',
+          title: context.translate(LangKeys.emptyImage),
           msg: context.translate(LangKeys.validPickImage),
           context: context,
           type: MessageTypeConst.help);
+      return;
     }
-    if (formKye.currentState!.validate() && categoryImage.isNotEmpty) {
-      context.read<AdminCategoriesBloc>().add(CreateNewCategoryEvent(
-          body: CreateCategoryRequest(
-              categoryNameController.text.trim(), categoryImage)));
+
+    if (!formKye.currentState!.validate()) {
+      return;
+    }
+
+    setState(() => _isTranslating = true);
+
+    try {
+      final translations = await LocalTranslator.translateFromCurrentLanguage(
+        categoryNameController.text.trim(),
+      );
+
+      final newCategory = MultilingualCategoryEntity(
+        id: '',
+        name: translations,
+        image: categoryImage,
+      );
+
+      context
+          .read<AdminCategoriesBloc>()
+          .add(CreateFirebaseCategoryEvent(category: newCategory));
+    } catch (e) {
+      aweSnackBar(
+        title: context.translate(LangKeys.translationError),
+        msg:
+            '${context.translate(LangKeys.translationFailed)}: ${e.toString()}',
+        context: context,
+        type: MessageTypeConst.failure,
+      );
+    } finally {
+      setState(() => _isTranslating = false);
     }
   }
+
   Future<void> _updateCategory(BuildContext context) async {
     final categoryImage = context.read<FileCubit>().getImageUrl;
     if (categoryImage.isEmpty) {
       aweSnackBar(
-        title: 'Empty Image',
+          title: context.translate(LangKeys.emptyImage),
           msg: context.translate(LangKeys.validPickImage),
           context: context,
           type: MessageTypeConst.help);
+      return;
     }
-    if (formKye.currentState!.validate() && categoryImage.isNotEmpty) {
-      context.read<AdminCategoriesBloc>().add(UpdateCategoryEvent(body: UpdateCategoryRequest(widget.categories!.id, categoryNameController.text.trim(), categoryImage)));
+
+    if (!formKye.currentState!.validate()) {
+      return;
+    }
+
+    setState(() => _isTranslating = true);
+
+    try {
+      final translations = await LocalTranslator.translateFromCurrentLanguage(
+        categoryNameController.text.trim(),
+      );
+
+      final updatedCategory = MultilingualCategoryEntity(
+        id: widget.category!.id,
+        name: translations,
+        image: categoryImage,
+      );
+
+      context
+          .read<AdminCategoriesBloc>()
+          .add(UpdateFirebaseCategoryEvent(category: updatedCategory));
+    } catch (e) {
+      aweSnackBar(
+        title: context.translate(LangKeys.translationError),
+        msg:
+            '${context.translate(LangKeys.translationFailed)}: ${e.toString()}',
+        context: context,
+        type: MessageTypeConst.failure,
+      );
+    } finally {
+      setState(() => _isTranslating = false);
     }
   }
 }

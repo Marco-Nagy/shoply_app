@@ -15,13 +15,6 @@ ErrorModel _$ErrorModelFromJson(Map<String, dynamic> json) => ErrorModel(
       ErrorsExtensions.fromJson(json['extensions'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$ErrorModelToJson(ErrorModel instance) =>
-    <String, dynamic>{
-      'message': instance.message,
-      'locations': instance.locations,
-      'path': instance.path,
-      'extensions': instance.extensions,
-    };
 
 ErrorsLocations _$ErrorsLocationsFromJson(Map<String, dynamic> json) =>
     ErrorsLocations(
@@ -42,11 +35,6 @@ ErrorsExtensions _$ErrorsExtensionsFromJson(Map<String, dynamic> json) =>
           json['originalError'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$ErrorsExtensionsToJson(ErrorsExtensions instance) =>
-    <String, dynamic>{
-      'code': instance.code,
-      'originalError': instance.originalError,
-    };
 
 ErrorsExtensionsOriginalError _$ErrorsExtensionsOriginalErrorFromJson(
         Map<String, dynamic> json) =>
@@ -55,9 +43,3 @@ ErrorsExtensionsOriginalError _$ErrorsExtensionsOriginalErrorFromJson(
       (json['statusCode'] as num).toInt(),
     );
 
-Map<String, dynamic> _$ErrorsExtensionsOriginalErrorToJson(
-        ErrorsExtensionsOriginalError instance) =>
-    <String, dynamic>{
-      'message': instance.message,
-      'statusCode': instance.statusCode,
-    };

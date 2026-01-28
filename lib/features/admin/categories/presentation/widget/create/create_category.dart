@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoply/core/app/di/injection.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
+import 'package:shoply/core/localization/lang_keys.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/utils/widgets/buttons/custom_button.dart';
 import 'package:shoply/core/utils/widgets/custom_bottom_sheet.dart';
@@ -20,7 +21,7 @@ class CreateCategory extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         TextApp(
-          text: 'Get All Categories',
+          text: context.translate(LangKeys.getAllCategories),
           style: MyFonts.styleMedium500_18
               .copyWith(color: context.colors.textColor),
         ),
@@ -31,9 +32,9 @@ class CreateCategory extends StatelessWidget {
                 child: MultiBlocProvider(providers: [
                   BlocProvider(create: (context) => sl<FileCubit>()),
                   BlocProvider(create: (context) => sl<AdminCategoriesBloc>()),
-                ], child:   const CreateCategoryBottomSheetWidget()));
+                ], child: const CreateCategoryBottomSheetWidget()));
           },
-          text: 'Add',
+          text: context.translate(LangKeys.addCategory),
           width: 90.w,
           height: 35.h,
           backgroundColor: context.colors.bluePinkDark,

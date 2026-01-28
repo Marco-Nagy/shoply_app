@@ -12,9 +12,8 @@ class AddCategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-      sl<AdminCategoriesBloc>()
-        ..add(const AdminCategoriesEvent.fetchAdminCategories()),
+      create: (context) => sl<AdminCategoriesBloc>()
+        ..add(const AdminCategoriesEvent.fetchFirebaseCategories()),
       child: Scaffold(
         appBar: AdminAppBar(
           title: 'Add Categories',

@@ -13,8 +13,8 @@ import 'package:shoply/core/utils/widgets/images/hero_photo_view.dart';
 import 'package:shoply/features/files/presentation/cubit/file_cubit.dart';
 
 class UploadCategoryImage extends StatefulWidget {
-  const UploadCategoryImage( {super.key, this.uploadCategoryImage});
-final String? uploadCategoryImage;
+  const UploadCategoryImage({super.key, this.uploadCategoryImage});
+  final String? uploadCategoryImage;
   @override
   _UploadCategoryImageState createState() => _UploadCategoryImageState();
 }
@@ -28,8 +28,8 @@ class _UploadCategoryImageState extends State<UploadCategoryImage>
     final cubit = context.read<FileCubit>();
 
     setState(() {
-      if (widget.uploadCategoryImage!=null) {
-        cubit.getImageUrl= widget.uploadCategoryImage!;
+      if (widget.uploadCategoryImage != null) {
+        cubit.getImageUrl = widget.uploadCategoryImage!;
       }
     });
     animationController = AnimationController(vsync: this);
@@ -81,7 +81,8 @@ class _UploadCategoryImageState extends State<UploadCategoryImage>
                             onTap: () async {
                               await context
                                   .read<FileCubit>()
-                                  .uploadCroppedImage(isCircle: false);
+                                  .uploadToCloudinary(
+                                  );
                             },
                             child: Container(
                               height: 180.h,

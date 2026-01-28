@@ -10,26 +10,31 @@ class EnvVariables {
   String _envType = '';
   String _notificationBaseUrl = '';
   String _testDeviceToken = '';
+  String _cloudinaryCloudName = '';
+  String _cloudinaryUploadPreset = '';
 
   Future<void> init({required EnvTypeEnum envType}) async {
     switch (envType) {
       case EnvTypeEnum.dev:
         await dotenv.load(fileName: '.env.dev');
 
-
       case EnvTypeEnum.prod:
         await dotenv.load(fileName: '.env.prod');
     }
     _envType = dotenv.get('ENV_TYPE');
-    await dotenv.load(fileName:'.env.firebase');
+    _cloudinaryCloudName = dotenv.get('CLOUDINARY_CLOUD_NAME');
+    _cloudinaryUploadPreset = dotenv.get('CLOUDINARY_UPLOAD_PRESET');
+
+    await dotenv.load(fileName: '.env.firebase');
     _notificationBaseUrl = dotenv.get('NOTIFICATION_BASE_URL');
     _testDeviceToken = dotenv.get('TEST_DEVICE_TOKEN');
-
   }
 
   String get envType => _envType;
   String get notificationBaseUrl => _notificationBaseUrl;
   String get testDeviceToken => _testDeviceToken;
+  String get cloudinaryCloudName => _cloudinaryCloudName;
+  String get cloudinaryUploadPreset => _cloudinaryUploadPreset;
 
   bool get debugMode => _envType == 'dev';
 }

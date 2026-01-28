@@ -20,6 +20,8 @@ import 'package:injectable/injectable.dart' as _i526;
 import 'package:shoply/core/app/app_cubit/app_cubit.dart' as _i755;
 import 'package:shoply/core/app/di/module/app_module.dart' as _i545;
 import 'package:shoply/core/app/Networking/apis/api_service.dart' as _i376;
+import 'package:shoply/core/Services/cloudinary/cloudinary_service.dart'
+    as _i857;
 import 'package:shoply/core/Services/firebase_helper/fire_store_helper.dart'
     as _i745;
 import 'package:shoply/core/Services/localDataSource/hive_database.dart'
@@ -28,8 +30,24 @@ import 'package:shoply/features/admin/categories/data/data_source/admin_categori
     as _i314;
 import 'package:shoply/features/admin/categories/data/data_source/admin_categries_data_source.dart'
     as _i702;
+import 'package:shoply/features/admin/categories/data/data_source/contract/admin_categories_firebase_data_source.dart'
+    as _i263;
+import 'package:shoply/features/admin/categories/data/data_source/impl/admin_categories_firebase_data_source_impl.dart'
+    as _i1059;
+import 'package:shoply/features/admin/categories/data/repository/admin_categories_repo_impl.dart'
+    as _i873;
 import 'package:shoply/features/admin/categories/data/repository/admin_categories_repository.dart'
     as _i554;
+import 'package:shoply/features/admin/categories/domain/repositories/admin_categories_repo.dart'
+    as _i523;
+import 'package:shoply/features/admin/categories/domain/use_cases/create_firebase_category_use_case.dart'
+    as _i118;
+import 'package:shoply/features/admin/categories/domain/use_cases/delete_firebase_category_use_case.dart'
+    as _i374;
+import 'package:shoply/features/admin/categories/domain/use_cases/get_firebase_categories_use_case.dart'
+    as _i445;
+import 'package:shoply/features/admin/categories/domain/use_cases/update_firebase_category_use_case.dart'
+    as _i603;
 import 'package:shoply/features/admin/categories/presentation/bloc/admin_categories_bloc.dart'
     as _i374;
 import 'package:shoply/features/admin/dashboard/data/data_sources/dashboard_api_service.dart'
@@ -191,12 +209,11 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i806.FacebookAuth>(() => appModule.facebookAuth);
     gh.lazySingleton<_i974.FirebaseFirestore>(
         () => appModule.firebaseFirestore);
+    gh.lazySingleton<_i857.CloudinaryService>(() => _i857.CloudinaryService());
     gh.lazySingleton<_i118.AddNotificationDataSource>(
         () => _i118.AddNotificationDataSource());
     gh.lazySingleton<_i600.AuthDataSource>(
         () => _i600.AuthDataSource(gh<_i376.ApiService>()));
-    gh.lazySingleton<_i786.FileDataSource>(
-        () => _i786.FileDataSource(gh<_i376.ApiService>()));
     gh.lazySingleton<_i369.ProfileDataSource>(
         () => _i369.ProfileDataSource(gh<_i376.ApiService>()));
     gh.factory<_i119.UserProfileDataSource>(
@@ -215,6 +232,11 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i414.DashboardDataSource(gh<_i213.DashboardApiService>()));
     gh.lazySingleton<_i848.HomeDataSource>(
         () => _i848.HomeDataSource(gh<_i304.HomeApiService>()));
+    gh.lazySingleton<_i786.FileDataSource>(() => _i786.FileDataSource(
+          gh<_i376.ApiService>(),
+          gh<_i745.FireStoreService>(),
+          gh<_i857.CloudinaryService>(),
+        ));
     gh.lazySingleton<_i711.FilterProductsDataSource>(() =>
         _i711.FilterProductsDataSource(gh<_i872.FilterProductsApiService>()));
     gh.factory<_i663.FirebaseDataSource>(() => _i243.FirebaseDataSourceImpl(
@@ -240,6 +262,9 @@ extension GetItInjectableX on _i174.GetIt {
           gh<_i663.FirebaseDataSource>(),
           gh<_i119.UserProfileDataSource>(),
         ));
+    gh.factory<_i263.AdminCategoriesFirebaseDataSource>(() =>
+        _i1059.AdminCategoriesFirebaseDataSourceImpl(
+            gh<_i745.FireStoreService>()));
     gh.factory<_i461.SendNotificationBloc>(
         () => _i461.SendNotificationBloc(gh<_i638.AddNotificationRepo>()));
     gh.lazySingleton<_i550.AdminProductsDataSource>(
@@ -288,6 +313,8 @@ extension GetItInjectableX on _i174.GetIt {
           gh<_i11.FileRepository>(),
           gh<_i409.GlobalKey<_i409.NavigatorState>>(),
         ));
+    gh.factory<_i523.AdminCategoriesRepo>(() => _i873.AdminCategoriesRepoImpl(
+        gh<_i263.AdminCategoriesFirebaseDataSource>()));
     gh.factory<_i413.DashboardBloc>(
         () => _i413.DashboardBloc(gh<_i1013.DashboardRepository>()));
     gh.factory<_i482.FavoritesCubit>(() => _i482.FavoritesCubit(
@@ -302,19 +329,32 @@ extension GetItInjectableX on _i174.GetIt {
         _i648.GetProductsListUseCase(gh<_i675.BaseAdminProductRepository>()));
     gh.lazySingleton<_i839.UpdateProductUseCase>(() =>
         _i839.UpdateProductUseCase(gh<_i675.BaseAdminProductRepository>()));
-    gh.factory<_i374.AdminCategoriesBloc>(
-        () => _i374.AdminCategoriesBloc(gh<_i554.AdminCategoriesRepository>()));
     gh.factory<_i132.HomeBloc>(() => _i132.HomeBloc(
           gh<_i717.HomeProductsListUseCase>(),
           gh<_i113.HomeProductsListPerCategoryUseCase>(),
           gh<_i98.HomeCategoriesListUseCase>(),
           gh<_i563.ProductsDetailsUseCase>(),
         ));
+    gh.factory<_i118.CreateFirebaseCategoryUseCase>(() =>
+        _i118.CreateFirebaseCategoryUseCase(gh<_i523.AdminCategoriesRepo>()));
+    gh.factory<_i374.DeleteFirebaseCategoryUseCase>(() =>
+        _i374.DeleteFirebaseCategoryUseCase(gh<_i523.AdminCategoriesRepo>()));
+    gh.factory<_i445.GetFirebaseCategoriesUseCase>(() =>
+        _i445.GetFirebaseCategoriesUseCase(gh<_i523.AdminCategoriesRepo>()));
+    gh.factory<_i603.UpdateFirebaseCategoryUseCase>(() =>
+        _i603.UpdateFirebaseCategoryUseCase(gh<_i523.AdminCategoriesRepo>()));
     gh.factory<_i575.AdminProductBloc>(() => _i575.AdminProductBloc(
           gh<_i648.GetProductsListUseCase>(),
           gh<_i743.CreateProductUseCase>(),
           gh<_i839.UpdateProductUseCase>(),
           gh<_i583.DeleteProductUseCase>(),
+        ));
+    gh.factory<_i374.AdminCategoriesBloc>(() => _i374.AdminCategoriesBloc(
+          gh<_i554.AdminCategoriesRepository>(),
+          gh<_i445.GetFirebaseCategoriesUseCase>(),
+          gh<_i118.CreateFirebaseCategoryUseCase>(),
+          gh<_i603.UpdateFirebaseCategoryUseCase>(),
+          gh<_i374.DeleteFirebaseCategoryUseCase>(),
         ));
     return this;
   }

@@ -159,10 +159,8 @@ class _ProductAdminItemState extends State<ProductAdminItem>
                             iconAsset: AppAnimatedIcons.edit,
                             onTap: () async {
                               Vibration.vibrate(
-                                  duration: 700,
-                                  pattern: [50, 100, 50, 500]);
-                              Future.delayed(
-                                  const Duration(milliseconds: 700));
+                                  duration: 700, pattern: [50, 100, 50, 500]);
+                              Future.delayed(const Duration(milliseconds: 700));
                               CustomBottomSheet.showModalBottomSheetWidget(
                                   context: context,
                                   child: MultiBlocProvider(
@@ -177,11 +175,11 @@ class _ProductAdminItemState extends State<ProductAdminItem>
                                             create: (context) => sl<
                                                 AdminCategoriesBloc>()
                                               ..add(const AdminCategoriesEvent
-                                                  .fetchAdminCategories())),
+                                                  .fetchFirebaseCategories())),
                                       ],
                                       child: CreateProductBottomSheetWidget(
                                           product: widget.product)));
-                              itemPressed.value= false;
+                              itemPressed.value = false;
                             },
                           ),
                         ),
@@ -203,10 +201,8 @@ class _ProductAdminItemState extends State<ProductAdminItem>
                             iconAsset: AppAnimatedIcons.trash,
                             onTap: () async {
                               Vibration.vibrate(
-                                  duration: 700,
-                                  pattern: [50, 100, 50, 500]);
-                              Future.delayed(
-                                  const Duration(milliseconds: 700));
+                                  duration: 700, pattern: [50, 100, 50, 500]);
+                              Future.delayed(const Duration(milliseconds: 700));
                               CustomDialog.twoButtonDialog(
                                   context: context,
                                   textBody:
@@ -218,15 +214,14 @@ class _ProductAdminItemState extends State<ProductAdminItem>
                                             productId: widget.product.id)
                                         .whenComplete(
                                       () {
-                                        context
-                                            .read<AdminProductBloc>()
-                                            .add(const AdminProductEvent
+                                        context.read<AdminProductBloc>().add(
+                                            const AdminProductEvent
                                                 .getAdminProductList());
                                       },
                                     );
                                   },
                                   isLoading: true);
-                              itemPressed.value= false;
+                              itemPressed.value = false;
                             },
                           ),
                         ),

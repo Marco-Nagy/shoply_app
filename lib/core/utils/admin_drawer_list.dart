@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shoply/core/helpers/extension/my_context.dart';
+import 'package:shoply/core/localization/lang_keys.dart';
 import 'package:shoply/core/styles/fonts/my_fonts.dart';
 import 'package:shoply/core/utils/widgets/custom_dialogs.dart';
 import 'package:shoply/core/utils/widgets/text_app.dart';
@@ -16,28 +18,24 @@ List<DrawerItemModel> adminDrawerList(BuildContext context) {
     DrawerItemModel(
       icon: const Icon(Icons.person, color: Colors.white),
       title: TextApp(
-        text: 'Profile',
-        style:
-            MyFonts.styleBold700_18.copyWith(color: Colors.white),
+        text: context.translate(LangKeys.profile),
+        style: MyFonts.styleBold700_18.copyWith(color: Colors.white),
       ),
       screen: const ProfileScreen(),
     ),
-
     DrawerItemModel(
       icon: const Icon(Icons.dashboard_rounded, color: Colors.white),
       title: TextApp(
-        text: 'DashBoard',
-        style:
-            MyFonts.styleBold700_18.copyWith(color: Colors.white),
+        text: context.translate(LangKeys.dashboard),
+        style: MyFonts.styleBold700_18.copyWith(color: Colors.white),
       ),
       screen: const DashboardScreen(),
     ),
     DrawerItemModel(
       icon: const Icon(Icons.category_rounded, color: Colors.white),
       title: TextApp(
-        text: 'Categories',
-        style:
-            MyFonts.styleBold700_18.copyWith(color: Colors.white),
+        text: context.translate(LangKeys.categories),
+        style: MyFonts.styleBold700_18.copyWith(color: Colors.white),
       ),
       screen: const AddCategoriesScreen(),
     ),
@@ -45,28 +43,24 @@ List<DrawerItemModel> adminDrawerList(BuildContext context) {
       icon: const Icon(Icons.production_quantity_limits_rounded,
           color: Colors.white),
       title: TextApp(
-        text: 'Products',
-        style:
-            MyFonts.styleBold700_18.copyWith(color: Colors.white),
+        text: context.translate(LangKeys.products),
+        style: MyFonts.styleBold700_18.copyWith(color: Colors.white),
       ),
       screen: const AddProductsScreen(),
     ),
     DrawerItemModel(
       icon: const Icon(Icons.people_alt_rounded, color: Colors.white),
       title: TextApp(
-        text: 'Users',
-        style:
-            MyFonts.styleBold700_18.copyWith(color: Colors.white),
+        text: context.translate(LangKeys.users),
+        style: MyFonts.styleBold700_18.copyWith(color: Colors.white),
       ),
       screen: const UsersScreen(),
     ),
     DrawerItemModel(
-      icon: const Icon(Icons.notifications_active_rounded,
-          color: Colors.white),
+      icon: const Icon(Icons.notifications_active_rounded, color: Colors.white),
       title: TextApp(
-        text: 'Notifications',
-        style:
-            MyFonts.styleBold700_18.copyWith(color: Colors.white),
+        text: context.translate(LangKeys.notifications),
+        style: MyFonts.styleBold700_18.copyWith(color: Colors.white),
       ),
       screen: const AddNotificationsScreen(),
     ),
@@ -79,9 +73,9 @@ List<DrawerItemModel> adminDrawerList(BuildContext context) {
         onTap: () {
           CustomDialog.twoButtonDialog(
             context: context,
-            textBody: 'Do you want log out?',
-            textButton1: 'Yes',
-            textButton2: 'No',
+            textBody: context.translate(LangKeys.logOutFromApp),
+            textButton1: context.translate(LangKeys.yes),
+            textButton2: context.translate(LangKeys.no),
             isLoading: false,
             onPressed: () async {
               await AppLogout().logout();
@@ -89,9 +83,8 @@ List<DrawerItemModel> adminDrawerList(BuildContext context) {
           );
         },
         child: Text(
-          'Logout',
-          style:
-              MyFonts.styleBold700_18.copyWith(color: Colors.white),
+          context.translate(LangKeys.logOut),
+          style: MyFonts.styleBold700_18.copyWith(color: Colors.white),
         ),
       ),
       screen: const SizedBox(),
