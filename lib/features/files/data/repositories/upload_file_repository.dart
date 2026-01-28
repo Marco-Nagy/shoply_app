@@ -19,4 +19,42 @@ class FileRepository {
       return DataResult.failure(ServerFailure(e.toString()));
     }
   }
+
+  /// Upload image to Firebase Storage and return download URL
+  /// [file] - The image file to upload
+  /// [folder] - The folder name in Firebase Storage (default: 'categories')
+  /// Returns DataResult containing the download URL
+  Future<DataResult<String>> uploadImageToFirebaseStorage({
+    required XFile file,
+    String folder = 'categories',
+  }) async {
+    try {
+      final downloadUrl = await _fileDataSource.uploadImageToFirebaseStorage(
+        file: file,
+        folder: folder,
+      );
+      return DataResult.success(downloadUrl);
+    } catch (e) {
+      return DataResult.failure(ServerFailure(e.toString()));
+    }
+  }
+
+  /// Upload image to Cloudinary and return secure URL
+  /// [file] - The image file to upload
+  /// [onSendProgress] - Callback for upload progress
+  /// Returns DataResult containing the secure URL
+  Future<DataResult<String>> uploadToCloudinary({
+    required XFile file,
+    Function(int sent, int total)? onSendProgress,
+  }) async {
+    try {
+      final downloadUrl = await _fileDataSource.uploadToCloudinary(
+        file: file,
+        onSendProgress: onSendProgress,
+      );
+      return DataResult.success(downloadUrl);
+    } catch (e) {
+      return DataResult.failure(ServerFailure(e.toString()));
+    }
+  }
 }

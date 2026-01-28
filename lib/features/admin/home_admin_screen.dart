@@ -19,10 +19,12 @@ class _HomeAdminScreenState extends State<HomeAdminScreen> {
   Widget screen = const DashboardScreen();
   @override
   Widget build(BuildContext context) {
+    final isRtl = Directionality.of(context) == TextDirection.rtl;
     return ZoomDrawer(
+      isRtl: isRtl,
       style: DrawerStyle.defaultStyle,
-      mainScreen:screen,
-      menuScreen:  Builder(builder: (context) {
+      mainScreen: screen,
+      menuScreen: Builder(builder: (context) {
         return MenuAdminScreen(
           onPageChanged: (action) {
             setState(() {
@@ -34,9 +36,9 @@ class _HomeAdminScreenState extends State<HomeAdminScreen> {
       }),
       borderRadius: 24.0,
       showShadow: true,
-      angle: -12.0,
+      angle: isRtl ? 12.0 : -12.0,
       drawerShadowsBackgroundColor:
-          context.colors.mainColor.withValues(alpha:.6),
+          context.colors.mainColor.withValues(alpha: .6),
       menuBackgroundColor: context.colors.bluePinkDark,
       slideWidth: MediaQuery.of(context).size.width * .671,
       openCurve: Curves.fastOutSlowIn,
@@ -63,7 +65,7 @@ class MenuAdminScreen extends StatelessWidget {
           children: [
             Column(
               children: adminDrawerList(context)
-                  .map(( element) => ListTile(
+                  .map((element) => ListTile(
                         leading: element.icon,
                         title: element.title,
                         onTap: () {
@@ -78,8 +80,10 @@ class MenuAdminScreen extends StatelessWidget {
                 origin: const Offset(-10, -60),
                 scaleX: 3.8,
                 scaleY: 4.5,
-                child: Image.asset(AppImages.appImage,
-                  fit: BoxFit.contain,),
+                child: Image.asset(
+                  AppImages.appImage,
+                  fit: BoxFit.contain,
+                ),
               ),
             )
           ],

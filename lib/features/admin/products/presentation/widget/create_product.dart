@@ -33,8 +33,11 @@ class CreateProduct extends StatelessWidget {
                 child: MultiBlocProvider(providers: [
                   BlocProvider(create: (context) => sl<FileCubit>()),
                   BlocProvider(create: (context) => sl<AdminProductBloc>()),
-                  BlocProvider(create: (context) => sl<AdminCategoriesBloc>()..add(const AdminCategoriesEvent.fetchAdminCategories())),
-                ], child:   const CreateProductBottomSheetWidget()));
+                  BlocProvider(
+                      create: (context) => sl<AdminCategoriesBloc>()
+                        ..add(const AdminCategoriesEvent
+                            .fetchFirebaseCategories())),
+                ], child: const CreateProductBottomSheetWidget()));
           },
           text: 'Add',
           width: 90.w,

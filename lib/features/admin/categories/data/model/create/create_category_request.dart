@@ -9,6 +9,5 @@ class CreateCategoryRequest {
 
   CreateCategoryRequest(this.name, this.image);
 
-
   Map<String, dynamic> toJson() => _$CreateCategoryRequestToJson(this);
 }

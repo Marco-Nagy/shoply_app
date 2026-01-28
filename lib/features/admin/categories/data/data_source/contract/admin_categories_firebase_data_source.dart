@@ -1,8 +1,13 @@
-import 'package:shoply/features/admin/categories/domain/entities/category_entity.dart';
+import 'package:shoply/core/app/Networking/data_result.dart';
+import 'package:shoply/features/admin/categories/data/model/multilingual_category_model_response.dart';
 
 abstract class AdminCategoriesFirebaseDataSource {
-  Future<void> addCategory(CategoryEntity category);
-  Future<void> updateCategory(CategoryEntity category);
-  Future<void> deleteCategory(String id);
-  Future<List<CategoryEntity>> getCategories();
+  // New Firebase methods returning DTOs
+  Future<DataResult<void>> createFirebaseCategory(
+      MultilingualCategoryModelResponse category);
+  Future<DataResult<void>> updateFirebaseCategory(
+      MultilingualCategoryModelResponse category);
+  Future<DataResult<void>> deleteFirebaseCategory(String id);
+  Future<DataResult<List<MultilingualCategoryModelResponse>>>
+      getFirebaseCategories();
 }

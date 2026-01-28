@@ -8,6 +8,8 @@ import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart'; // import injectable
 import 'package:shoply/core/utils/image_picker.dart';
+import 'package:shoply/core/app/Networking/data_result.dart';
+import 'package:shoply/features/files/data/models/upload_model.dart';
 import 'package:shoply/features/files/data/repositories/upload_file_repository.dart';
 
 part 'file_cubit.freezed.dart';
@@ -53,7 +55,8 @@ class FileCubit extends Cubit<FileState<dynamic>> {
       emit(FileState.crop(imageFile));
     }
     emit(const FileState.loading());
-    final result = await _fileRepository.uploadFile(imageFile!);
+    final DataResult<UploadFileResponse> result =
+        await _fileRepository.uploadFile(imageFile!);
     result.when(
       success: (data) {
         getImageUrl = data.location ?? '';
@@ -97,7 +100,8 @@ class FileCubit extends Cubit<FileState<dynamic>> {
     imageFile = XFile(file.path);
     emit(const FileState.loadingUploadImageList());
 
-    final result = await _fileRepository.uploadFile(imageFile!);
+    final DataResult<UploadFileResponse> result =
+        await _fileRepository.uploadFile(imageFile!);
     result.when(
       success: (data) {
         getImageUrl = data.location ?? '';
@@ -144,5 +148,103 @@ class FileCubit extends Cubit<FileState<dynamic>> {
       );
       emit(FileState.remove(removedItem));
     }
+  }
+
+  /// Upload cropped image to Firebase Storage
+  /// This method uploads the image directly to Firebase Storage instead of using the API
+  /// [isOpenCam] - Whether to open camera or gallery
+  /// [isCircle] - Whether to crop as circle or rectangle
+  /// [folder] - The folder name in Firebase Storage (default: 'categories')
+  Future<void> uploadCroppedImageToFirebase({
+    bool isOpenCam = false,
+    bool isCircle = true,
+    String folder = 'categories',
+  }) async {
+    final file = await imageHelper.imagePicker(
+      source: isOpenCam ? ImageSource.camera : ImageSource.gallery,
+    );
+
+    if (file == null) return;
+    final croppedFile = await imageHelper.imageCropper(
+      file: file,
+      cropStyle: isCircle ? CropStyle.circle : CropStyle.rectangle,
+    );
+    if (croppedFile != null) {
+      imageFile = XFile(croppedFile.path);
+      cachedFile = File(croppedFile.path);
+      emit(FileState.crop(imageFile));
+    }
+    emit(const FileState.loading());
+
+    final DataResult<String> result =
+        await _fileRepository.uploadImageToFirebaseStorage(
+      file: imageFile!,
+      folder: folder,
+    );
+
+    result.when(
+      success: (downloadUrl) {
+        getImageUrl = downloadUrl;
+        debugPrint('Firebase Storage URL: $getImageUrl');
+        emit(FileState.success(getImageUrl));
+      },
+      failure: (error) {
+        debugPrint('Firebase upload error ==> $error');
+        emit(
+          FileState.failure(
+            error: error.errorMsg,
+          ),
+        );
+      },
+    );
+  }
+
+  /// Upload image to Cloudinary
+  /// [isOpenCam] - Whether to open camera or gallery
+  /// [isCircle] - Whether to crop as circle or rectangle
+  Future<void> uploadToCloudinary({
+    bool isOpenCam = false,
+    bool isCircle = true,
+  }) async {
+    final file = await imageHelper.imagePicker(
+      source: isOpenCam ? ImageSource.camera : ImageSource.gallery,
+    );
+
+    if (file == null) return;
+    final croppedFile = await imageHelper.imageCropper(
+      file: file,
+      cropStyle: isCircle ? CropStyle.circle : CropStyle.rectangle,
+    );
+    if (croppedFile != null) {
+      imageFile = XFile(croppedFile.path);
+      cachedFile = File(croppedFile.path);
+      emit(FileState.crop(imageFile));
+    }
+    emit(const FileState.loading());
+
+    final DataResult<String> result = await _fileRepository.uploadToCloudinary(
+      file: imageFile!,
+      onSendProgress: (sent, total) {
+        // You can add progress logic here if you add a progress state
+        debugPrint(
+            'Cloudinary Upload Progress: ${(sent / total * 100).toStringAsFixed(2)}%');
+      },
+    );
+
+    result.when(
+      success: (secureUrl) {
+        getImageUrl = secureUrl;
+        debugPrint('Cloudinary Secure URL: $getImageUrl');
+        emit(FileState.success(getImageUrl));
+      },
+      failure: (error) {
+        debugPrint('Cloudinary upload error ==> $error');
+        emit(
+          FileState.failure(
+            error: error.errorMsg,
+          ),
+        );
+      },
+    );
   }
 }

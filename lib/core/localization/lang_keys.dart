@@ -94,6 +94,33 @@ class LangKeys {
   static const String remove = 'remove';
   static const String categoryName = 'category_name';
 
+  // Category UI keys
+  static const String translating = 'translating';
+  static const String translationError = 'translation_error';
+  static const String translationFailed = 'translation_failed';
+  static const String createCategory = 'create_category';
+  static const String updateCategory = 'update_category';
+  static const String addCategory = 'add_category';
+  static const String editCategory = 'edit_category';
+  static const String emptyImage = 'empty_image';
+  static const String addPhoto = 'add_photo';
+  static const String editPhoto = 'edit_photo';
+  static const String addCategoryName = 'add_category_name';
+  static const String editCategoryName = 'edit_category_name';
+  static const String deleteCategoryQuestion = 'delete_category_question';
+  static const String successfullyAdded = 'successfully_added';
+  static const String successfullyUpdated = 'successfully_updated';
+  static const String categoryCreatedSuccessfully =
+      'category_created_successfully';
+  static const String categoryUpdatedSuccessfully =
+      'category_updated_successfully';
+  static const String failedToAddCategory = 'failed_to_add_category';
+  static const String failedToUpdateCategory = 'failed_to_update_category';
+  static const String validCategoryName = 'valid_category_name';
+  static const String selectCategory = 'select_category';
+  static const String pleaseSelectCategory = 'please_select_category';
+  static const String getAllCategories = 'get_all_categories';
+
   // User Role keys
   static const String buyer = 'buyer';
   static const String seller = 'seller';
@@ -107,4 +134,18 @@ class LangKeys {
   static const String changeRoleToBuyer = 'change_role_to_buyer';
   static const String role = 'role';
   static const String roleChangedSuccessfully = 'role_changed_successfully';
+  static const String profile = 'profile';
+  static const String dashboard = 'dashboard';
+  static const String categories = 'categories';
+  static const String products = 'products';
+  static const String users = 'users';
+  static const String searchProducts = 'search_products';
+  static const String addProducts = 'add_products';
+  static const String productSearch = 'product_search';
+  static const String productName = 'product_name';
+  static const String searchProduct = 'search_product';
+  static const String maxPrice = 'max_price';
+  static const String minPrice = 'min_price';
+  static const String search = 'search';
+  static const String reset = 'reset';
 }

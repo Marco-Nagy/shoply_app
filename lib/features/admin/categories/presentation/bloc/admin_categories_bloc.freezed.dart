@@ -24,6 +24,12 @@ mixin _$AdminCategoriesEvent {
         createNewCategoryEvent,
     required TResult Function(UpdateCategoryRequest body) updateCategoryEvent,
     required TResult Function(String categoryId) deleteCategoryEvent,
+    required TResult Function() fetchFirebaseCategories,
+    required TResult Function(MultilingualCategoryEntity category)
+        createFirebaseCategory,
+    required TResult Function(MultilingualCategoryEntity category)
+        updateFirebaseCategory,
+    required TResult Function(String categoryId) deleteFirebaseCategory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -33,6 +39,12 @@ mixin _$AdminCategoriesEvent {
     TResult? Function(CreateCategoryRequest body)? createNewCategoryEvent,
     TResult? Function(UpdateCategoryRequest body)? updateCategoryEvent,
     TResult? Function(String categoryId)? deleteCategoryEvent,
+    TResult? Function()? fetchFirebaseCategories,
+    TResult? Function(MultilingualCategoryEntity category)?
+        createFirebaseCategory,
+    TResult? Function(MultilingualCategoryEntity category)?
+        updateFirebaseCategory,
+    TResult? Function(String categoryId)? deleteFirebaseCategory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +54,12 @@ mixin _$AdminCategoriesEvent {
     TResult Function(CreateCategoryRequest body)? createNewCategoryEvent,
     TResult Function(UpdateCategoryRequest body)? updateCategoryEvent,
     TResult Function(String categoryId)? deleteCategoryEvent,
+    TResult Function()? fetchFirebaseCategories,
+    TResult Function(MultilingualCategoryEntity category)?
+        createFirebaseCategory,
+    TResult Function(MultilingualCategoryEntity category)?
+        updateFirebaseCategory,
+    TResult Function(String categoryId)? deleteFirebaseCategory,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +72,14 @@ mixin _$AdminCategoriesEvent {
         createNewCategoryEvent,
     required TResult Function(UpdateCategoryEvent value) updateCategoryEvent,
     required TResult Function(DeleteCategoryEvent value) deleteCategoryEvent,
+    required TResult Function(FetchFirebaseCategoriesEvent value)
+        fetchFirebaseCategories,
+    required TResult Function(CreateFirebaseCategoryEvent value)
+        createFirebaseCategory,
+    required TResult Function(UpdateFirebaseCategoryEvent value)
+        updateFirebaseCategory,
+    required TResult Function(DeleteFirebaseCategoryEvent value)
+        deleteFirebaseCategory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +90,14 @@ mixin _$AdminCategoriesEvent {
     TResult? Function(CreateNewCategoryEvent value)? createNewCategoryEvent,
     TResult? Function(UpdateCategoryEvent value)? updateCategoryEvent,
     TResult? Function(DeleteCategoryEvent value)? deleteCategoryEvent,
+    TResult? Function(FetchFirebaseCategoriesEvent value)?
+        fetchFirebaseCategories,
+    TResult? Function(CreateFirebaseCategoryEvent value)?
+        createFirebaseCategory,
+    TResult? Function(UpdateFirebaseCategoryEvent value)?
+        updateFirebaseCategory,
+    TResult? Function(DeleteFirebaseCategoryEvent value)?
+        deleteFirebaseCategory,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -73,6 +107,11 @@ mixin _$AdminCategoriesEvent {
     TResult Function(CreateNewCategoryEvent value)? createNewCategoryEvent,
     TResult Function(UpdateCategoryEvent value)? updateCategoryEvent,
     TResult Function(DeleteCategoryEvent value)? deleteCategoryEvent,
+    TResult Function(FetchFirebaseCategoriesEvent value)?
+        fetchFirebaseCategories,
+    TResult Function(CreateFirebaseCategoryEvent value)? createFirebaseCategory,
+    TResult Function(UpdateFirebaseCategoryEvent value)? updateFirebaseCategory,
+    TResult Function(DeleteFirebaseCategoryEvent value)? deleteFirebaseCategory,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -121,19 +160,12 @@ class __$$StartedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
+class _$StartedImpl implements _Started {
   const _$StartedImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AdminCategoriesEvent.started()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'AdminCategoriesEvent.started'));
   }
 
   @override
@@ -154,6 +186,12 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
         createNewCategoryEvent,
     required TResult Function(UpdateCategoryRequest body) updateCategoryEvent,
     required TResult Function(String categoryId) deleteCategoryEvent,
+    required TResult Function() fetchFirebaseCategories,
+    required TResult Function(MultilingualCategoryEntity category)
+        createFirebaseCategory,
+    required TResult Function(MultilingualCategoryEntity category)
+        updateFirebaseCategory,
+    required TResult Function(String categoryId) deleteFirebaseCategory,
   }) {
     return started();
   }
@@ -166,6 +204,12 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult? Function(CreateCategoryRequest body)? createNewCategoryEvent,
     TResult? Function(UpdateCategoryRequest body)? updateCategoryEvent,
     TResult? Function(String categoryId)? deleteCategoryEvent,
+    TResult? Function()? fetchFirebaseCategories,
+    TResult? Function(MultilingualCategoryEntity category)?
+        createFirebaseCategory,
+    TResult? Function(MultilingualCategoryEntity category)?
+        updateFirebaseCategory,
+    TResult? Function(String categoryId)? deleteFirebaseCategory,
   }) {
     return started?.call();
   }
@@ -178,6 +222,12 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult Function(CreateCategoryRequest body)? createNewCategoryEvent,
     TResult Function(UpdateCategoryRequest body)? updateCategoryEvent,
     TResult Function(String categoryId)? deleteCategoryEvent,
+    TResult Function()? fetchFirebaseCategories,
+    TResult Function(MultilingualCategoryEntity category)?
+        createFirebaseCategory,
+    TResult Function(MultilingualCategoryEntity category)?
+        updateFirebaseCategory,
+    TResult Function(String categoryId)? deleteFirebaseCategory,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -196,6 +246,14 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
         createNewCategoryEvent,
     required TResult Function(UpdateCategoryEvent value) updateCategoryEvent,
     required TResult Function(DeleteCategoryEvent value) deleteCategoryEvent,
+    required TResult Function(FetchFirebaseCategoriesEvent value)
+        fetchFirebaseCategories,
+    required TResult Function(CreateFirebaseCategoryEvent value)
+        createFirebaseCategory,
+    required TResult Function(UpdateFirebaseCategoryEvent value)
+        updateFirebaseCategory,
+    required TResult Function(DeleteFirebaseCategoryEvent value)
+        deleteFirebaseCategory,
   }) {
     return started(this);
   }
@@ -209,6 +267,14 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult? Function(CreateNewCategoryEvent value)? createNewCategoryEvent,
     TResult? Function(UpdateCategoryEvent value)? updateCategoryEvent,
     TResult? Function(DeleteCategoryEvent value)? deleteCategoryEvent,
+    TResult? Function(FetchFirebaseCategoriesEvent value)?
+        fetchFirebaseCategories,
+    TResult? Function(CreateFirebaseCategoryEvent value)?
+        createFirebaseCategory,
+    TResult? Function(UpdateFirebaseCategoryEvent value)?
+        updateFirebaseCategory,
+    TResult? Function(DeleteFirebaseCategoryEvent value)?
+        deleteFirebaseCategory,
   }) {
     return started?.call(this);
   }
@@ -221,6 +287,11 @@ class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
     TResult Function(CreateNewCategoryEvent value)? createNewCategoryEvent,
     TResult Function(UpdateCategoryEvent value)? updateCategoryEvent,
     TResult Function(DeleteCategoryEvent value)? deleteCategoryEvent,
+    TResult Function(FetchFirebaseCategoriesEvent value)?
+        fetchFirebaseCategories,
+    TResult Function(CreateFirebaseCategoryEvent value)? createFirebaseCategory,
+    TResult Function(UpdateFirebaseCategoryEvent value)? updateFirebaseCategory,
+    TResult Function(DeleteFirebaseCategoryEvent value)? deleteFirebaseCategory,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -259,21 +330,12 @@ class __$$FetchAdminCategoriesListEventImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FetchAdminCategoriesListEventImpl
-    with DiagnosticableTreeMixin
     implements FetchAdminCategoriesListEvent {
   const _$FetchAdminCategoriesListEventImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AdminCategoriesEvent.fetchAdminCategories()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AdminCategoriesEvent.fetchAdminCategories'));
   }
 
   @override
@@ -295,6 +357,12 @@ class _$FetchAdminCategoriesListEventImpl
         createNewCategoryEvent,
     required TResult Function(UpdateCategoryRequest body) updateCategoryEvent,
     required TResult Function(String categoryId) deleteCategoryEvent,
+    required TResult Function() fetchFirebaseCategories,
+    required TResult Function(MultilingualCategoryEntity category)
+        createFirebaseCategory,
+    required TResult Function(MultilingualCategoryEntity category)
+        updateFirebaseCategory,
+    required TResult Function(String categoryId) deleteFirebaseCategory,
   }) {
     return fetchAdminCategories();
   }
@@ -307,6 +375,12 @@ class _$FetchAdminCategoriesListEventImpl
     TResult? Function(CreateCategoryRequest body)? createNewCategoryEvent,
     TResult? Function(UpdateCategoryRequest body)? updateCategoryEvent,
     TResult? Function(String categoryId)? deleteCategoryEvent,
+    TResult? Function()? fetchFirebaseCategories,
+    TResult? Function(MultilingualCategoryEntity category)?
+        createFirebaseCategory,
+    TResult? Function(MultilingualCategoryEntity category)?
+        updateFirebaseCategory,
+    TResult? Function(String categoryId)? deleteFirebaseCategory,
   }) {
     return fetchAdminCategories?.call();
   }
@@ -319,6 +393,12 @@ class _$FetchAdminCategoriesListEventImpl
     TResult Function(CreateCategoryRequest body)? createNewCategoryEvent,
     TResult Function(UpdateCategoryRequest body)? updateCategoryEvent,
     TResult Function(String categoryId)? deleteCategoryEvent,
+    TResult Function()? fetchFirebaseCategories,
+    TResult Function(MultilingualCategoryEntity category)?
+        createFirebaseCategory,
+    TResult Function(MultilingualCategoryEntity category)?
+        updateFirebaseCategory,
+    TResult Function(String categoryId)? deleteFirebaseCategory,
     required TResult orElse(),
   }) {
     if (fetchAdminCategories != null) {
@@ -337,6 +417,14 @@ class _$FetchAdminCategoriesListEventImpl
         createNewCategoryEvent,
     required TResult Function(UpdateCategoryEvent value) updateCategoryEvent,
     required TResult Function(DeleteCategoryEvent value) deleteCategoryEvent,
+    required TResult Function(FetchFirebaseCategoriesEvent value)
+        fetchFirebaseCategories,
+    required TResult Function(CreateFirebaseCategoryEvent value)
+        createFirebaseCategory,
+    required TResult Function(UpdateFirebaseCategoryEvent value)
+        updateFirebaseCategory,
+    required TResult Function(DeleteFirebaseCategoryEvent value)
+        deleteFirebaseCategory,
   }) {
     return fetchAdminCategories(this);
   }
@@ -350,6 +438,14 @@ class _$FetchAdminCategoriesListEventImpl
     TResult? Function(CreateNewCategoryEvent value)? createNewCategoryEvent,
     TResult? Function(UpdateCategoryEvent value)? updateCategoryEvent,
     TResult? Function(DeleteCategoryEvent value)? deleteCategoryEvent,
+    TResult? Function(FetchFirebaseCategoriesEvent value)?
+        fetchFirebaseCategories,
+    TResult? Function(CreateFirebaseCategoryEvent value)?
+        createFirebaseCategory,
+    TResult? Function(UpdateFirebaseCategoryEvent value)?
+        updateFirebaseCategory,
+    TResult? Function(DeleteFirebaseCategoryEvent value)?
+        deleteFirebaseCategory,
   }) {
     return fetchAdminCategories?.call(this);
   }
@@ -362,6 +458,11 @@ class _$FetchAdminCategoriesListEventImpl
     TResult Function(CreateNewCategoryEvent value)? createNewCategoryEvent,
     TResult Function(UpdateCategoryEvent value)? updateCategoryEvent,
     TResult Function(DeleteCategoryEvent value)? deleteCategoryEvent,
+    TResult Function(FetchFirebaseCategoriesEvent value)?
+        fetchFirebaseCategories,
+    TResult Function(CreateFirebaseCategoryEvent value)? createFirebaseCategory,
+    TResult Function(UpdateFirebaseCategoryEvent value)? updateFirebaseCategory,
+    TResult Function(DeleteFirebaseCategoryEvent value)? deleteFirebaseCategory,
     required TResult orElse(),
   }) {
     if (fetchAdminCategories != null) {
@@ -414,26 +515,15 @@ class __$$CreateNewCategoryEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CreateNewCategoryEventImpl
-    with DiagnosticableTreeMixin
-    implements CreateNewCategoryEvent {
+class _$CreateNewCategoryEventImpl implements CreateNewCategoryEvent {
   const _$CreateNewCategoryEventImpl({required this.body});
 
   @override
   final CreateCategoryRequest body;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AdminCategoriesEvent.createNewCategoryEvent(body: $body)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AdminCategoriesEvent.createNewCategoryEvent'))
-      ..add(DiagnosticsProperty('body', body));
   }
 
   @override
@@ -465,6 +555,12 @@ class _$CreateNewCategoryEventImpl
         createNewCategoryEvent,
     required TResult Function(UpdateCategoryRequest body) updateCategoryEvent,
     required TResult Function(String categoryId) deleteCategoryEvent,
+    required TResult Function() fetchFirebaseCategories,
+    required TResult Function(MultilingualCategoryEntity category)
+        createFirebaseCategory,
+    required TResult Function(MultilingualCategoryEntity category)
+        updateFirebaseCategory,
+    required TResult Function(String categoryId) deleteFirebaseCategory,
   }) {
     return createNewCategoryEvent(body);
   }
@@ -477,6 +573,12 @@ class _$CreateNewCategoryEventImpl
     TResult? Function(CreateCategoryRequest body)? createNewCategoryEvent,
     TResult? Function(UpdateCategoryRequest body)? updateCategoryEvent,
     TResult? Function(String categoryId)? deleteCategoryEvent,
+    TResult? Function()? fetchFirebaseCategories,
+    TResult? Function(MultilingualCategoryEntity category)?
+        createFirebaseCategory,
+    TResult? Function(MultilingualCategoryEntity category)?
+        updateFirebaseCategory,
+    TResult? Function(String categoryId)? deleteFirebaseCategory,
   }) {
     return createNewCategoryEvent?.call(body);
   }
@@ -489,6 +591,12 @@ class _$CreateNewCategoryEventImpl
     TResult Function(CreateCategoryRequest body)? createNewCategoryEvent,
     TResult Function(UpdateCategoryRequest body)? updateCategoryEvent,
     TResult Function(String categoryId)? deleteCategoryEvent,
+    TResult Function()? fetchFirebaseCategories,
+    TResult Function(MultilingualCategoryEntity category)?
+        createFirebaseCategory,
+    TResult Function(MultilingualCategoryEntity category)?
+        updateFirebaseCategory,
+    TResult Function(String categoryId)? deleteFirebaseCategory,
     required TResult orElse(),
   }) {
     if (createNewCategoryEvent != null) {
@@ -507,6 +615,14 @@ class _$CreateNewCategoryEventImpl
         createNewCategoryEvent,
     required TResult Function(UpdateCategoryEvent value) updateCategoryEvent,
     required TResult Function(DeleteCategoryEvent value) deleteCategoryEvent,
+    required TResult Function(FetchFirebaseCategoriesEvent value)
+        fetchFirebaseCategories,
+    required TResult Function(CreateFirebaseCategoryEvent value)
+        createFirebaseCategory,
+    required TResult Function(UpdateFirebaseCategoryEvent value)
+        updateFirebaseCategory,
+    required TResult Function(DeleteFirebaseCategoryEvent value)
+        deleteFirebaseCategory,
   }) {
     return createNewCategoryEvent(this);
   }
@@ -520,6 +636,14 @@ class _$CreateNewCategoryEventImpl
     TResult? Function(CreateNewCategoryEvent value)? createNewCategoryEvent,
     TResult? Function(UpdateCategoryEvent value)? updateCategoryEvent,
     TResult? Function(DeleteCategoryEvent value)? deleteCategoryEvent,
+    TResult? Function(FetchFirebaseCategoriesEvent value)?
+        fetchFirebaseCategories,
+    TResult? Function(CreateFirebaseCategoryEvent value)?
+        createFirebaseCategory,
+    TResult? Function(UpdateFirebaseCategoryEvent value)?
+        updateFirebaseCategory,
+    TResult? Function(DeleteFirebaseCategoryEvent value)?
+        deleteFirebaseCategory,
   }) {
     return createNewCategoryEvent?.call(this);
   }
@@ -532,6 +656,11 @@ class _$CreateNewCategoryEventImpl
     TResult Function(CreateNewCategoryEvent value)? createNewCategoryEvent,
     TResult Function(UpdateCategoryEvent value)? updateCategoryEvent,
     TResult Function(DeleteCategoryEvent value)? deleteCategoryEvent,
+    TResult Function(FetchFirebaseCategoriesEvent value)?
+        fetchFirebaseCategories,
+    TResult Function(CreateFirebaseCategoryEvent value)? createFirebaseCategory,
+    TResult Function(UpdateFirebaseCategoryEvent value)? updateFirebaseCategory,
+    TResult Function(DeleteFirebaseCategoryEvent value)? deleteFirebaseCategory,
     required TResult orElse(),
   }) {
     if (createNewCategoryEvent != null) {
@@ -590,26 +719,15 @@ class __$$UpdateCategoryEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateCategoryEventImpl
-    with DiagnosticableTreeMixin
-    implements UpdateCategoryEvent {
+class _$UpdateCategoryEventImpl implements UpdateCategoryEvent {
   const _$UpdateCategoryEventImpl({required this.body});
 
   @override
   final UpdateCategoryRequest body;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AdminCategoriesEvent.updateCategoryEvent(body: $body)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AdminCategoriesEvent.updateCategoryEvent'))
-      ..add(DiagnosticsProperty('body', body));
   }
 
   @override
@@ -641,6 +759,12 @@ class _$UpdateCategoryEventImpl
         createNewCategoryEvent,
     required TResult Function(UpdateCategoryRequest body) updateCategoryEvent,
     required TResult Function(String categoryId) deleteCategoryEvent,
+    required TResult Function() fetchFirebaseCategories,
+    required TResult Function(MultilingualCategoryEntity category)
+        createFirebaseCategory,
+    required TResult Function(MultilingualCategoryEntity category)
+        updateFirebaseCategory,
+    required TResult Function(String categoryId) deleteFirebaseCategory,
   }) {
     return updateCategoryEvent(body);
   }
@@ -653,6 +777,12 @@ class _$UpdateCategoryEventImpl
     TResult? Function(CreateCategoryRequest body)? createNewCategoryEvent,
     TResult? Function(UpdateCategoryRequest body)? updateCategoryEvent,
     TResult? Function(String categoryId)? deleteCategoryEvent,
+    TResult? Function()? fetchFirebaseCategories,
+    TResult? Function(MultilingualCategoryEntity category)?
+        createFirebaseCategory,
+    TResult? Function(MultilingualCategoryEntity category)?
+        updateFirebaseCategory,
+    TResult? Function(String categoryId)? deleteFirebaseCategory,
   }) {
     return updateCategoryEvent?.call(body);
   }
@@ -665,6 +795,12 @@ class _$UpdateCategoryEventImpl
     TResult Function(CreateCategoryRequest body)? createNewCategoryEvent,
     TResult Function(UpdateCategoryRequest body)? updateCategoryEvent,
     TResult Function(String categoryId)? deleteCategoryEvent,
+    TResult Function()? fetchFirebaseCategories,
+    TResult Function(MultilingualCategoryEntity category)?
+        createFirebaseCategory,
+    TResult Function(MultilingualCategoryEntity category)?
+        updateFirebaseCategory,
+    TResult Function(String categoryId)? deleteFirebaseCategory,
     required TResult orElse(),
   }) {
     if (updateCategoryEvent != null) {
@@ -683,6 +819,14 @@ class _$UpdateCategoryEventImpl
         createNewCategoryEvent,
     required TResult Function(UpdateCategoryEvent value) updateCategoryEvent,
     required TResult Function(DeleteCategoryEvent value) deleteCategoryEvent,
+    required TResult Function(FetchFirebaseCategoriesEvent value)
+        fetchFirebaseCategories,
+    required TResult Function(CreateFirebaseCategoryEvent value)
+        createFirebaseCategory,
+    required TResult Function(UpdateFirebaseCategoryEvent value)
+        updateFirebaseCategory,
+    required TResult Function(DeleteFirebaseCategoryEvent value)
+        deleteFirebaseCategory,
   }) {
     return updateCategoryEvent(this);
   }
@@ -696,6 +840,14 @@ class _$UpdateCategoryEventImpl
     TResult? Function(CreateNewCategoryEvent value)? createNewCategoryEvent,
     TResult? Function(UpdateCategoryEvent value)? updateCategoryEvent,
     TResult? Function(DeleteCategoryEvent value)? deleteCategoryEvent,
+    TResult? Function(FetchFirebaseCategoriesEvent value)?
+        fetchFirebaseCategories,
+    TResult? Function(CreateFirebaseCategoryEvent value)?
+        createFirebaseCategory,
+    TResult? Function(UpdateFirebaseCategoryEvent value)?
+        updateFirebaseCategory,
+    TResult? Function(DeleteFirebaseCategoryEvent value)?
+        deleteFirebaseCategory,
   }) {
     return updateCategoryEvent?.call(this);
   }
@@ -708,6 +860,11 @@ class _$UpdateCategoryEventImpl
     TResult Function(CreateNewCategoryEvent value)? createNewCategoryEvent,
     TResult Function(UpdateCategoryEvent value)? updateCategoryEvent,
     TResult Function(DeleteCategoryEvent value)? deleteCategoryEvent,
+    TResult Function(FetchFirebaseCategoriesEvent value)?
+        fetchFirebaseCategories,
+    TResult Function(CreateFirebaseCategoryEvent value)? createFirebaseCategory,
+    TResult Function(UpdateFirebaseCategoryEvent value)? updateFirebaseCategory,
+    TResult Function(DeleteFirebaseCategoryEvent value)? deleteFirebaseCategory,
     required TResult orElse(),
   }) {
     if (updateCategoryEvent != null) {
@@ -765,26 +922,15 @@ class __$$DeleteCategoryEventImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DeleteCategoryEventImpl
-    with DiagnosticableTreeMixin
-    implements DeleteCategoryEvent {
+class _$DeleteCategoryEventImpl implements DeleteCategoryEvent {
   const _$DeleteCategoryEventImpl({required this.categoryId});
 
   @override
   final String categoryId;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AdminCategoriesEvent.deleteCategoryEvent(categoryId: $categoryId)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AdminCategoriesEvent.deleteCategoryEvent'))
-      ..add(DiagnosticsProperty('categoryId', categoryId));
   }
 
   @override
@@ -817,6 +963,12 @@ class _$DeleteCategoryEventImpl
         createNewCategoryEvent,
     required TResult Function(UpdateCategoryRequest body) updateCategoryEvent,
     required TResult Function(String categoryId) deleteCategoryEvent,
+    required TResult Function() fetchFirebaseCategories,
+    required TResult Function(MultilingualCategoryEntity category)
+        createFirebaseCategory,
+    required TResult Function(MultilingualCategoryEntity category)
+        updateFirebaseCategory,
+    required TResult Function(String categoryId) deleteFirebaseCategory,
   }) {
     return deleteCategoryEvent(categoryId);
   }
@@ -829,6 +981,12 @@ class _$DeleteCategoryEventImpl
     TResult? Function(CreateCategoryRequest body)? createNewCategoryEvent,
     TResult? Function(UpdateCategoryRequest body)? updateCategoryEvent,
     TResult? Function(String categoryId)? deleteCategoryEvent,
+    TResult? Function()? fetchFirebaseCategories,
+    TResult? Function(MultilingualCategoryEntity category)?
+        createFirebaseCategory,
+    TResult? Function(MultilingualCategoryEntity category)?
+        updateFirebaseCategory,
+    TResult? Function(String categoryId)? deleteFirebaseCategory,
   }) {
     return deleteCategoryEvent?.call(categoryId);
   }
@@ -841,6 +999,12 @@ class _$DeleteCategoryEventImpl
     TResult Function(CreateCategoryRequest body)? createNewCategoryEvent,
     TResult Function(UpdateCategoryRequest body)? updateCategoryEvent,
     TResult Function(String categoryId)? deleteCategoryEvent,
+    TResult Function()? fetchFirebaseCategories,
+    TResult Function(MultilingualCategoryEntity category)?
+        createFirebaseCategory,
+    TResult Function(MultilingualCategoryEntity category)?
+        updateFirebaseCategory,
+    TResult Function(String categoryId)? deleteFirebaseCategory,
     required TResult orElse(),
   }) {
     if (deleteCategoryEvent != null) {
@@ -859,6 +1023,14 @@ class _$DeleteCategoryEventImpl
         createNewCategoryEvent,
     required TResult Function(UpdateCategoryEvent value) updateCategoryEvent,
     required TResult Function(DeleteCategoryEvent value) deleteCategoryEvent,
+    required TResult Function(FetchFirebaseCategoriesEvent value)
+        fetchFirebaseCategories,
+    required TResult Function(CreateFirebaseCategoryEvent value)
+        createFirebaseCategory,
+    required TResult Function(UpdateFirebaseCategoryEvent value)
+        updateFirebaseCategory,
+    required TResult Function(DeleteFirebaseCategoryEvent value)
+        deleteFirebaseCategory,
   }) {
     return deleteCategoryEvent(this);
   }
@@ -872,6 +1044,14 @@ class _$DeleteCategoryEventImpl
     TResult? Function(CreateNewCategoryEvent value)? createNewCategoryEvent,
     TResult? Function(UpdateCategoryEvent value)? updateCategoryEvent,
     TResult? Function(DeleteCategoryEvent value)? deleteCategoryEvent,
+    TResult? Function(FetchFirebaseCategoriesEvent value)?
+        fetchFirebaseCategories,
+    TResult? Function(CreateFirebaseCategoryEvent value)?
+        createFirebaseCategory,
+    TResult? Function(UpdateFirebaseCategoryEvent value)?
+        updateFirebaseCategory,
+    TResult? Function(DeleteFirebaseCategoryEvent value)?
+        deleteFirebaseCategory,
   }) {
     return deleteCategoryEvent?.call(this);
   }
@@ -884,6 +1064,11 @@ class _$DeleteCategoryEventImpl
     TResult Function(CreateNewCategoryEvent value)? createNewCategoryEvent,
     TResult Function(UpdateCategoryEvent value)? updateCategoryEvent,
     TResult Function(DeleteCategoryEvent value)? deleteCategoryEvent,
+    TResult Function(FetchFirebaseCategoriesEvent value)?
+        fetchFirebaseCategories,
+    TResult Function(CreateFirebaseCategoryEvent value)? createFirebaseCategory,
+    TResult Function(UpdateFirebaseCategoryEvent value)? updateFirebaseCategory,
+    TResult Function(DeleteFirebaseCategoryEvent value)? deleteFirebaseCategory,
     required TResult orElse(),
   }) {
     if (deleteCategoryEvent != null) {
@@ -907,6 +1092,801 @@ abstract class DeleteCategoryEvent implements AdminCategoriesEvent {
 }
 
 /// @nodoc
+abstract class _$$FetchFirebaseCategoriesEventImplCopyWith<$Res> {
+  factory _$$FetchFirebaseCategoriesEventImplCopyWith(
+          _$FetchFirebaseCategoriesEventImpl value,
+          $Res Function(_$FetchFirebaseCategoriesEventImpl) then) =
+      __$$FetchFirebaseCategoriesEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FetchFirebaseCategoriesEventImplCopyWithImpl<$Res>
+    extends _$AdminCategoriesEventCopyWithImpl<$Res,
+        _$FetchFirebaseCategoriesEventImpl>
+    implements _$$FetchFirebaseCategoriesEventImplCopyWith<$Res> {
+  __$$FetchFirebaseCategoriesEventImplCopyWithImpl(
+      _$FetchFirebaseCategoriesEventImpl _value,
+      $Res Function(_$FetchFirebaseCategoriesEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$FetchFirebaseCategoriesEventImpl
+    implements FetchFirebaseCategoriesEvent {
+  const _$FetchFirebaseCategoriesEventImpl();
+
+  @override
+  String toString() {
+    return 'AdminCategoriesEvent.fetchFirebaseCategories()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FetchFirebaseCategoriesEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() fetchAdminCategories,
+    required TResult Function(CreateCategoryRequest body)
+        createNewCategoryEvent,
+    required TResult Function(UpdateCategoryRequest body) updateCategoryEvent,
+    required TResult Function(String categoryId) deleteCategoryEvent,
+    required TResult Function() fetchFirebaseCategories,
+    required TResult Function(MultilingualCategoryEntity category)
+        createFirebaseCategory,
+    required TResult Function(MultilingualCategoryEntity category)
+        updateFirebaseCategory,
+    required TResult Function(String categoryId) deleteFirebaseCategory,
+  }) {
+    return fetchFirebaseCategories();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? fetchAdminCategories,
+    TResult? Function(CreateCategoryRequest body)? createNewCategoryEvent,
+    TResult? Function(UpdateCategoryRequest body)? updateCategoryEvent,
+    TResult? Function(String categoryId)? deleteCategoryEvent,
+    TResult? Function()? fetchFirebaseCategories,
+    TResult? Function(MultilingualCategoryEntity category)?
+        createFirebaseCategory,
+    TResult? Function(MultilingualCategoryEntity category)?
+        updateFirebaseCategory,
+    TResult? Function(String categoryId)? deleteFirebaseCategory,
+  }) {
+    return fetchFirebaseCategories?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? fetchAdminCategories,
+    TResult Function(CreateCategoryRequest body)? createNewCategoryEvent,
+    TResult Function(UpdateCategoryRequest body)? updateCategoryEvent,
+    TResult Function(String categoryId)? deleteCategoryEvent,
+    TResult Function()? fetchFirebaseCategories,
+    TResult Function(MultilingualCategoryEntity category)?
+        createFirebaseCategory,
+    TResult Function(MultilingualCategoryEntity category)?
+        updateFirebaseCategory,
+    TResult Function(String categoryId)? deleteFirebaseCategory,
+    required TResult orElse(),
+  }) {
+    if (fetchFirebaseCategories != null) {
+      return fetchFirebaseCategories();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(FetchAdminCategoriesListEvent value)
+        fetchAdminCategories,
+    required TResult Function(CreateNewCategoryEvent value)
+        createNewCategoryEvent,
+    required TResult Function(UpdateCategoryEvent value) updateCategoryEvent,
+    required TResult Function(DeleteCategoryEvent value) deleteCategoryEvent,
+    required TResult Function(FetchFirebaseCategoriesEvent value)
+        fetchFirebaseCategories,
+    required TResult Function(CreateFirebaseCategoryEvent value)
+        createFirebaseCategory,
+    required TResult Function(UpdateFirebaseCategoryEvent value)
+        updateFirebaseCategory,
+    required TResult Function(DeleteFirebaseCategoryEvent value)
+        deleteFirebaseCategory,
+  }) {
+    return fetchFirebaseCategories(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(FetchAdminCategoriesListEvent value)?
+        fetchAdminCategories,
+    TResult? Function(CreateNewCategoryEvent value)? createNewCategoryEvent,
+    TResult? Function(UpdateCategoryEvent value)? updateCategoryEvent,
+    TResult? Function(DeleteCategoryEvent value)? deleteCategoryEvent,
+    TResult? Function(FetchFirebaseCategoriesEvent value)?
+        fetchFirebaseCategories,
+    TResult? Function(CreateFirebaseCategoryEvent value)?
+        createFirebaseCategory,
+    TResult? Function(UpdateFirebaseCategoryEvent value)?
+        updateFirebaseCategory,
+    TResult? Function(DeleteFirebaseCategoryEvent value)?
+        deleteFirebaseCategory,
+  }) {
+    return fetchFirebaseCategories?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(FetchAdminCategoriesListEvent value)? fetchAdminCategories,
+    TResult Function(CreateNewCategoryEvent value)? createNewCategoryEvent,
+    TResult Function(UpdateCategoryEvent value)? updateCategoryEvent,
+    TResult Function(DeleteCategoryEvent value)? deleteCategoryEvent,
+    TResult Function(FetchFirebaseCategoriesEvent value)?
+        fetchFirebaseCategories,
+    TResult Function(CreateFirebaseCategoryEvent value)? createFirebaseCategory,
+    TResult Function(UpdateFirebaseCategoryEvent value)? updateFirebaseCategory,
+    TResult Function(DeleteFirebaseCategoryEvent value)? deleteFirebaseCategory,
+    required TResult orElse(),
+  }) {
+    if (fetchFirebaseCategories != null) {
+      return fetchFirebaseCategories(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FetchFirebaseCategoriesEvent implements AdminCategoriesEvent {
+  const factory FetchFirebaseCategoriesEvent() =
+      _$FetchFirebaseCategoriesEventImpl;
+}
+
+/// @nodoc
+abstract class _$$CreateFirebaseCategoryEventImplCopyWith<$Res> {
+  factory _$$CreateFirebaseCategoryEventImplCopyWith(
+          _$CreateFirebaseCategoryEventImpl value,
+          $Res Function(_$CreateFirebaseCategoryEventImpl) then) =
+      __$$CreateFirebaseCategoryEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({MultilingualCategoryEntity category});
+}
+
+/// @nodoc
+class __$$CreateFirebaseCategoryEventImplCopyWithImpl<$Res>
+    extends _$AdminCategoriesEventCopyWithImpl<$Res,
+        _$CreateFirebaseCategoryEventImpl>
+    implements _$$CreateFirebaseCategoryEventImplCopyWith<$Res> {
+  __$$CreateFirebaseCategoryEventImplCopyWithImpl(
+      _$CreateFirebaseCategoryEventImpl _value,
+      $Res Function(_$CreateFirebaseCategoryEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? category = null,
+  }) {
+    return _then(_$CreateFirebaseCategoryEventImpl(
+      category: null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as MultilingualCategoryEntity,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CreateFirebaseCategoryEventImpl implements CreateFirebaseCategoryEvent {
+  const _$CreateFirebaseCategoryEventImpl({required this.category});
+
+  @override
+  final MultilingualCategoryEntity category;
+
+  @override
+  String toString() {
+    return 'AdminCategoriesEvent.createFirebaseCategory(category: $category)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CreateFirebaseCategoryEventImpl &&
+            (identical(other.category, category) ||
+                other.category == category));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, category);
+
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CreateFirebaseCategoryEventImplCopyWith<_$CreateFirebaseCategoryEventImpl>
+      get copyWith => __$$CreateFirebaseCategoryEventImplCopyWithImpl<
+          _$CreateFirebaseCategoryEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() fetchAdminCategories,
+    required TResult Function(CreateCategoryRequest body)
+        createNewCategoryEvent,
+    required TResult Function(UpdateCategoryRequest body) updateCategoryEvent,
+    required TResult Function(String categoryId) deleteCategoryEvent,
+    required TResult Function() fetchFirebaseCategories,
+    required TResult Function(MultilingualCategoryEntity category)
+        createFirebaseCategory,
+    required TResult Function(MultilingualCategoryEntity category)
+        updateFirebaseCategory,
+    required TResult Function(String categoryId) deleteFirebaseCategory,
+  }) {
+    return createFirebaseCategory(category);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? fetchAdminCategories,
+    TResult? Function(CreateCategoryRequest body)? createNewCategoryEvent,
+    TResult? Function(UpdateCategoryRequest body)? updateCategoryEvent,
+    TResult? Function(String categoryId)? deleteCategoryEvent,
+    TResult? Function()? fetchFirebaseCategories,
+    TResult? Function(MultilingualCategoryEntity category)?
+        createFirebaseCategory,
+    TResult? Function(MultilingualCategoryEntity category)?
+        updateFirebaseCategory,
+    TResult? Function(String categoryId)? deleteFirebaseCategory,
+  }) {
+    return createFirebaseCategory?.call(category);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? fetchAdminCategories,
+    TResult Function(CreateCategoryRequest body)? createNewCategoryEvent,
+    TResult Function(UpdateCategoryRequest body)? updateCategoryEvent,
+    TResult Function(String categoryId)? deleteCategoryEvent,
+    TResult Function()? fetchFirebaseCategories,
+    TResult Function(MultilingualCategoryEntity category)?
+        createFirebaseCategory,
+    TResult Function(MultilingualCategoryEntity category)?
+        updateFirebaseCategory,
+    TResult Function(String categoryId)? deleteFirebaseCategory,
+    required TResult orElse(),
+  }) {
+    if (createFirebaseCategory != null) {
+      return createFirebaseCategory(category);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(FetchAdminCategoriesListEvent value)
+        fetchAdminCategories,
+    required TResult Function(CreateNewCategoryEvent value)
+        createNewCategoryEvent,
+    required TResult Function(UpdateCategoryEvent value) updateCategoryEvent,
+    required TResult Function(DeleteCategoryEvent value) deleteCategoryEvent,
+    required TResult Function(FetchFirebaseCategoriesEvent value)
+        fetchFirebaseCategories,
+    required TResult Function(CreateFirebaseCategoryEvent value)
+        createFirebaseCategory,
+    required TResult Function(UpdateFirebaseCategoryEvent value)
+        updateFirebaseCategory,
+    required TResult Function(DeleteFirebaseCategoryEvent value)
+        deleteFirebaseCategory,
+  }) {
+    return createFirebaseCategory(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(FetchAdminCategoriesListEvent value)?
+        fetchAdminCategories,
+    TResult? Function(CreateNewCategoryEvent value)? createNewCategoryEvent,
+    TResult? Function(UpdateCategoryEvent value)? updateCategoryEvent,
+    TResult? Function(DeleteCategoryEvent value)? deleteCategoryEvent,
+    TResult? Function(FetchFirebaseCategoriesEvent value)?
+        fetchFirebaseCategories,
+    TResult? Function(CreateFirebaseCategoryEvent value)?
+        createFirebaseCategory,
+    TResult? Function(UpdateFirebaseCategoryEvent value)?
+        updateFirebaseCategory,
+    TResult? Function(DeleteFirebaseCategoryEvent value)?
+        deleteFirebaseCategory,
+  }) {
+    return createFirebaseCategory?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(FetchAdminCategoriesListEvent value)? fetchAdminCategories,
+    TResult Function(CreateNewCategoryEvent value)? createNewCategoryEvent,
+    TResult Function(UpdateCategoryEvent value)? updateCategoryEvent,
+    TResult Function(DeleteCategoryEvent value)? deleteCategoryEvent,
+    TResult Function(FetchFirebaseCategoriesEvent value)?
+        fetchFirebaseCategories,
+    TResult Function(CreateFirebaseCategoryEvent value)? createFirebaseCategory,
+    TResult Function(UpdateFirebaseCategoryEvent value)? updateFirebaseCategory,
+    TResult Function(DeleteFirebaseCategoryEvent value)? deleteFirebaseCategory,
+    required TResult orElse(),
+  }) {
+    if (createFirebaseCategory != null) {
+      return createFirebaseCategory(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateFirebaseCategoryEvent implements AdminCategoriesEvent {
+  const factory CreateFirebaseCategoryEvent(
+          {required final MultilingualCategoryEntity category}) =
+      _$CreateFirebaseCategoryEventImpl;
+
+  MultilingualCategoryEntity get category;
+
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$CreateFirebaseCategoryEventImplCopyWith<_$CreateFirebaseCategoryEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateFirebaseCategoryEventImplCopyWith<$Res> {
+  factory _$$UpdateFirebaseCategoryEventImplCopyWith(
+          _$UpdateFirebaseCategoryEventImpl value,
+          $Res Function(_$UpdateFirebaseCategoryEventImpl) then) =
+      __$$UpdateFirebaseCategoryEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({MultilingualCategoryEntity category});
+}
+
+/// @nodoc
+class __$$UpdateFirebaseCategoryEventImplCopyWithImpl<$Res>
+    extends _$AdminCategoriesEventCopyWithImpl<$Res,
+        _$UpdateFirebaseCategoryEventImpl>
+    implements _$$UpdateFirebaseCategoryEventImplCopyWith<$Res> {
+  __$$UpdateFirebaseCategoryEventImplCopyWithImpl(
+      _$UpdateFirebaseCategoryEventImpl _value,
+      $Res Function(_$UpdateFirebaseCategoryEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? category = null,
+  }) {
+    return _then(_$UpdateFirebaseCategoryEventImpl(
+      category: null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as MultilingualCategoryEntity,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateFirebaseCategoryEventImpl implements UpdateFirebaseCategoryEvent {
+  const _$UpdateFirebaseCategoryEventImpl({required this.category});
+
+  @override
+  final MultilingualCategoryEntity category;
+
+  @override
+  String toString() {
+    return 'AdminCategoriesEvent.updateFirebaseCategory(category: $category)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateFirebaseCategoryEventImpl &&
+            (identical(other.category, category) ||
+                other.category == category));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, category);
+
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateFirebaseCategoryEventImplCopyWith<_$UpdateFirebaseCategoryEventImpl>
+      get copyWith => __$$UpdateFirebaseCategoryEventImplCopyWithImpl<
+          _$UpdateFirebaseCategoryEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() fetchAdminCategories,
+    required TResult Function(CreateCategoryRequest body)
+        createNewCategoryEvent,
+    required TResult Function(UpdateCategoryRequest body) updateCategoryEvent,
+    required TResult Function(String categoryId) deleteCategoryEvent,
+    required TResult Function() fetchFirebaseCategories,
+    required TResult Function(MultilingualCategoryEntity category)
+        createFirebaseCategory,
+    required TResult Function(MultilingualCategoryEntity category)
+        updateFirebaseCategory,
+    required TResult Function(String categoryId) deleteFirebaseCategory,
+  }) {
+    return updateFirebaseCategory(category);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? fetchAdminCategories,
+    TResult? Function(CreateCategoryRequest body)? createNewCategoryEvent,
+    TResult? Function(UpdateCategoryRequest body)? updateCategoryEvent,
+    TResult? Function(String categoryId)? deleteCategoryEvent,
+    TResult? Function()? fetchFirebaseCategories,
+    TResult? Function(MultilingualCategoryEntity category)?
+        createFirebaseCategory,
+    TResult? Function(MultilingualCategoryEntity category)?
+        updateFirebaseCategory,
+    TResult? Function(String categoryId)? deleteFirebaseCategory,
+  }) {
+    return updateFirebaseCategory?.call(category);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? fetchAdminCategories,
+    TResult Function(CreateCategoryRequest body)? createNewCategoryEvent,
+    TResult Function(UpdateCategoryRequest body)? updateCategoryEvent,
+    TResult Function(String categoryId)? deleteCategoryEvent,
+    TResult Function()? fetchFirebaseCategories,
+    TResult Function(MultilingualCategoryEntity category)?
+        createFirebaseCategory,
+    TResult Function(MultilingualCategoryEntity category)?
+        updateFirebaseCategory,
+    TResult Function(String categoryId)? deleteFirebaseCategory,
+    required TResult orElse(),
+  }) {
+    if (updateFirebaseCategory != null) {
+      return updateFirebaseCategory(category);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(FetchAdminCategoriesListEvent value)
+        fetchAdminCategories,
+    required TResult Function(CreateNewCategoryEvent value)
+        createNewCategoryEvent,
+    required TResult Function(UpdateCategoryEvent value) updateCategoryEvent,
+    required TResult Function(DeleteCategoryEvent value) deleteCategoryEvent,
+    required TResult Function(FetchFirebaseCategoriesEvent value)
+        fetchFirebaseCategories,
+    required TResult Function(CreateFirebaseCategoryEvent value)
+        createFirebaseCategory,
+    required TResult Function(UpdateFirebaseCategoryEvent value)
+        updateFirebaseCategory,
+    required TResult Function(DeleteFirebaseCategoryEvent value)
+        deleteFirebaseCategory,
+  }) {
+    return updateFirebaseCategory(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(FetchAdminCategoriesListEvent value)?
+        fetchAdminCategories,
+    TResult? Function(CreateNewCategoryEvent value)? createNewCategoryEvent,
+    TResult? Function(UpdateCategoryEvent value)? updateCategoryEvent,
+    TResult? Function(DeleteCategoryEvent value)? deleteCategoryEvent,
+    TResult? Function(FetchFirebaseCategoriesEvent value)?
+        fetchFirebaseCategories,
+    TResult? Function(CreateFirebaseCategoryEvent value)?
+        createFirebaseCategory,
+    TResult? Function(UpdateFirebaseCategoryEvent value)?
+        updateFirebaseCategory,
+    TResult? Function(DeleteFirebaseCategoryEvent value)?
+        deleteFirebaseCategory,
+  }) {
+    return updateFirebaseCategory?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(FetchAdminCategoriesListEvent value)? fetchAdminCategories,
+    TResult Function(CreateNewCategoryEvent value)? createNewCategoryEvent,
+    TResult Function(UpdateCategoryEvent value)? updateCategoryEvent,
+    TResult Function(DeleteCategoryEvent value)? deleteCategoryEvent,
+    TResult Function(FetchFirebaseCategoriesEvent value)?
+        fetchFirebaseCategories,
+    TResult Function(CreateFirebaseCategoryEvent value)? createFirebaseCategory,
+    TResult Function(UpdateFirebaseCategoryEvent value)? updateFirebaseCategory,
+    TResult Function(DeleteFirebaseCategoryEvent value)? deleteFirebaseCategory,
+    required TResult orElse(),
+  }) {
+    if (updateFirebaseCategory != null) {
+      return updateFirebaseCategory(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateFirebaseCategoryEvent implements AdminCategoriesEvent {
+  const factory UpdateFirebaseCategoryEvent(
+          {required final MultilingualCategoryEntity category}) =
+      _$UpdateFirebaseCategoryEventImpl;
+
+  MultilingualCategoryEntity get category;
+
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateFirebaseCategoryEventImplCopyWith<_$UpdateFirebaseCategoryEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteFirebaseCategoryEventImplCopyWith<$Res> {
+  factory _$$DeleteFirebaseCategoryEventImplCopyWith(
+          _$DeleteFirebaseCategoryEventImpl value,
+          $Res Function(_$DeleteFirebaseCategoryEventImpl) then) =
+      __$$DeleteFirebaseCategoryEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String categoryId});
+}
+
+/// @nodoc
+class __$$DeleteFirebaseCategoryEventImplCopyWithImpl<$Res>
+    extends _$AdminCategoriesEventCopyWithImpl<$Res,
+        _$DeleteFirebaseCategoryEventImpl>
+    implements _$$DeleteFirebaseCategoryEventImplCopyWith<$Res> {
+  __$$DeleteFirebaseCategoryEventImplCopyWithImpl(
+      _$DeleteFirebaseCategoryEventImpl _value,
+      $Res Function(_$DeleteFirebaseCategoryEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? categoryId = null,
+  }) {
+    return _then(_$DeleteFirebaseCategoryEventImpl(
+      categoryId: null == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteFirebaseCategoryEventImpl implements DeleteFirebaseCategoryEvent {
+  const _$DeleteFirebaseCategoryEventImpl({required this.categoryId});
+
+  @override
+  final String categoryId;
+
+  @override
+  String toString() {
+    return 'AdminCategoriesEvent.deleteFirebaseCategory(categoryId: $categoryId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteFirebaseCategoryEventImpl &&
+            (identical(other.categoryId, categoryId) ||
+                other.categoryId == categoryId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, categoryId);
+
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteFirebaseCategoryEventImplCopyWith<_$DeleteFirebaseCategoryEventImpl>
+      get copyWith => __$$DeleteFirebaseCategoryEventImplCopyWithImpl<
+          _$DeleteFirebaseCategoryEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() fetchAdminCategories,
+    required TResult Function(CreateCategoryRequest body)
+        createNewCategoryEvent,
+    required TResult Function(UpdateCategoryRequest body) updateCategoryEvent,
+    required TResult Function(String categoryId) deleteCategoryEvent,
+    required TResult Function() fetchFirebaseCategories,
+    required TResult Function(MultilingualCategoryEntity category)
+        createFirebaseCategory,
+    required TResult Function(MultilingualCategoryEntity category)
+        updateFirebaseCategory,
+    required TResult Function(String categoryId) deleteFirebaseCategory,
+  }) {
+    return deleteFirebaseCategory(categoryId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? fetchAdminCategories,
+    TResult? Function(CreateCategoryRequest body)? createNewCategoryEvent,
+    TResult? Function(UpdateCategoryRequest body)? updateCategoryEvent,
+    TResult? Function(String categoryId)? deleteCategoryEvent,
+    TResult? Function()? fetchFirebaseCategories,
+    TResult? Function(MultilingualCategoryEntity category)?
+        createFirebaseCategory,
+    TResult? Function(MultilingualCategoryEntity category)?
+        updateFirebaseCategory,
+    TResult? Function(String categoryId)? deleteFirebaseCategory,
+  }) {
+    return deleteFirebaseCategory?.call(categoryId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? fetchAdminCategories,
+    TResult Function(CreateCategoryRequest body)? createNewCategoryEvent,
+    TResult Function(UpdateCategoryRequest body)? updateCategoryEvent,
+    TResult Function(String categoryId)? deleteCategoryEvent,
+    TResult Function()? fetchFirebaseCategories,
+    TResult Function(MultilingualCategoryEntity category)?
+        createFirebaseCategory,
+    TResult Function(MultilingualCategoryEntity category)?
+        updateFirebaseCategory,
+    TResult Function(String categoryId)? deleteFirebaseCategory,
+    required TResult orElse(),
+  }) {
+    if (deleteFirebaseCategory != null) {
+      return deleteFirebaseCategory(categoryId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(FetchAdminCategoriesListEvent value)
+        fetchAdminCategories,
+    required TResult Function(CreateNewCategoryEvent value)
+        createNewCategoryEvent,
+    required TResult Function(UpdateCategoryEvent value) updateCategoryEvent,
+    required TResult Function(DeleteCategoryEvent value) deleteCategoryEvent,
+    required TResult Function(FetchFirebaseCategoriesEvent value)
+        fetchFirebaseCategories,
+    required TResult Function(CreateFirebaseCategoryEvent value)
+        createFirebaseCategory,
+    required TResult Function(UpdateFirebaseCategoryEvent value)
+        updateFirebaseCategory,
+    required TResult Function(DeleteFirebaseCategoryEvent value)
+        deleteFirebaseCategory,
+  }) {
+    return deleteFirebaseCategory(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(FetchAdminCategoriesListEvent value)?
+        fetchAdminCategories,
+    TResult? Function(CreateNewCategoryEvent value)? createNewCategoryEvent,
+    TResult? Function(UpdateCategoryEvent value)? updateCategoryEvent,
+    TResult? Function(DeleteCategoryEvent value)? deleteCategoryEvent,
+    TResult? Function(FetchFirebaseCategoriesEvent value)?
+        fetchFirebaseCategories,
+    TResult? Function(CreateFirebaseCategoryEvent value)?
+        createFirebaseCategory,
+    TResult? Function(UpdateFirebaseCategoryEvent value)?
+        updateFirebaseCategory,
+    TResult? Function(DeleteFirebaseCategoryEvent value)?
+        deleteFirebaseCategory,
+  }) {
+    return deleteFirebaseCategory?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(FetchAdminCategoriesListEvent value)? fetchAdminCategories,
+    TResult Function(CreateNewCategoryEvent value)? createNewCategoryEvent,
+    TResult Function(UpdateCategoryEvent value)? updateCategoryEvent,
+    TResult Function(DeleteCategoryEvent value)? deleteCategoryEvent,
+    TResult Function(FetchFirebaseCategoriesEvent value)?
+        fetchFirebaseCategories,
+    TResult Function(CreateFirebaseCategoryEvent value)? createFirebaseCategory,
+    TResult Function(UpdateFirebaseCategoryEvent value)? updateFirebaseCategory,
+    TResult Function(DeleteFirebaseCategoryEvent value)? deleteFirebaseCategory,
+    required TResult orElse(),
+  }) {
+    if (deleteFirebaseCategory != null) {
+      return deleteFirebaseCategory(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteFirebaseCategoryEvent implements AdminCategoriesEvent {
+  const factory DeleteFirebaseCategoryEvent(
+      {required final String categoryId}) = _$DeleteFirebaseCategoryEventImpl;
+
+  String get categoryId;
+
+  /// Create a copy of AdminCategoriesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DeleteFirebaseCategoryEventImplCopyWith<_$DeleteFirebaseCategoryEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$AdminCategoriesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -923,6 +1903,18 @@ mixin _$AdminCategoriesState {
     required TResult Function(String errorMessage) updateCategoryFailure,
     required TResult Function() deleteCategorySuccess,
     required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -939,6 +1931,16 @@ mixin _$AdminCategoriesState {
     TResult? Function(String errorMessage)? updateCategoryFailure,
     TResult? Function()? deleteCategorySuccess,
     TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -955,6 +1957,16 @@ mixin _$AdminCategoriesState {
     TResult Function(String errorMessage)? updateCategoryFailure,
     TResult Function()? deleteCategorySuccess,
     TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -981,6 +1993,24 @@ mixin _$AdminCategoriesState {
         deleteCategorySuccess,
     required TResult Function(DeleteCategoryFailure value)
         deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -999,6 +2029,24 @@ mixin _$AdminCategoriesState {
     TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1017,6 +2065,24 @@ mixin _$AdminCategoriesState {
     TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1065,19 +2131,12 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
+class _$InitialImpl implements _Initial {
   const _$InitialImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AdminCategoriesState.initial()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'AdminCategoriesState.initial'));
   }
 
   @override
@@ -1105,6 +2164,18 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     required TResult Function(String errorMessage) updateCategoryFailure,
     required TResult Function() deleteCategorySuccess,
     required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
   }) {
     return initial();
   }
@@ -1124,6 +2195,16 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult? Function(String errorMessage)? updateCategoryFailure,
     TResult? Function()? deleteCategorySuccess,
     TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
   }) {
     return initial?.call();
   }
@@ -1143,6 +2224,16 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult Function(String errorMessage)? updateCategoryFailure,
     TResult Function()? deleteCategorySuccess,
     TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -1175,6 +2266,24 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
         deleteCategorySuccess,
     required TResult Function(DeleteCategoryFailure value)
         deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
   }) {
     return initial(this);
   }
@@ -1196,6 +2305,24 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
   }) {
     return initial?.call(this);
   }
@@ -1217,6 +2344,24 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
     TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -1254,22 +2399,12 @@ class __$$AdminCategoriesLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AdminCategoriesLoadingImpl
-    with DiagnosticableTreeMixin
-    implements AdminCategoriesLoading {
+class _$AdminCategoriesLoadingImpl implements AdminCategoriesLoading {
   const _$AdminCategoriesLoadingImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AdminCategoriesState.adminCategoriesLoading()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AdminCategoriesState.adminCategoriesLoading'));
   }
 
   @override
@@ -1298,6 +2433,18 @@ class _$AdminCategoriesLoadingImpl
     required TResult Function(String errorMessage) updateCategoryFailure,
     required TResult Function() deleteCategorySuccess,
     required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
   }) {
     return adminCategoriesLoading();
   }
@@ -1317,6 +2464,16 @@ class _$AdminCategoriesLoadingImpl
     TResult? Function(String errorMessage)? updateCategoryFailure,
     TResult? Function()? deleteCategorySuccess,
     TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
   }) {
     return adminCategoriesLoading?.call();
   }
@@ -1336,6 +2493,16 @@ class _$AdminCategoriesLoadingImpl
     TResult Function(String errorMessage)? updateCategoryFailure,
     TResult Function()? deleteCategorySuccess,
     TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (adminCategoriesLoading != null) {
@@ -1368,6 +2535,24 @@ class _$AdminCategoriesLoadingImpl
         deleteCategorySuccess,
     required TResult Function(DeleteCategoryFailure value)
         deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
   }) {
     return adminCategoriesLoading(this);
   }
@@ -1389,6 +2574,24 @@ class _$AdminCategoriesLoadingImpl
     TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
   }) {
     return adminCategoriesLoading?.call(this);
   }
@@ -1410,6 +2613,24 @@ class _$AdminCategoriesLoadingImpl
     TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (adminCategoriesLoading != null) {
@@ -1462,7 +2683,6 @@ class __$$GetAdminCategoriesListSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetAdminCategoriesListSuccessImpl
-    with DiagnosticableTreeMixin
     implements GetAdminCategoriesListSuccess {
   const _$GetAdminCategoriesListSuccessImpl(
       final List<Categories?> categoriesList)
@@ -1477,17 +2697,8 @@ class _$GetAdminCategoriesListSuccessImpl
   }
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AdminCategoriesState.getAdminCategoriesListSuccess(categoriesList: $categoriesList)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AdminCategoriesState.getAdminCategoriesListSuccess'))
-      ..add(DiagnosticsProperty('categoriesList', categoriesList));
   }
 
   @override
@@ -1529,6 +2740,18 @@ class _$GetAdminCategoriesListSuccessImpl
     required TResult Function(String errorMessage) updateCategoryFailure,
     required TResult Function() deleteCategorySuccess,
     required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
   }) {
     return getAdminCategoriesListSuccess(categoriesList);
   }
@@ -1548,6 +2771,16 @@ class _$GetAdminCategoriesListSuccessImpl
     TResult? Function(String errorMessage)? updateCategoryFailure,
     TResult? Function()? deleteCategorySuccess,
     TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
   }) {
     return getAdminCategoriesListSuccess?.call(categoriesList);
   }
@@ -1567,6 +2800,16 @@ class _$GetAdminCategoriesListSuccessImpl
     TResult Function(String errorMessage)? updateCategoryFailure,
     TResult Function()? deleteCategorySuccess,
     TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (getAdminCategoriesListSuccess != null) {
@@ -1599,6 +2842,24 @@ class _$GetAdminCategoriesListSuccessImpl
         deleteCategorySuccess,
     required TResult Function(DeleteCategoryFailure value)
         deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
   }) {
     return getAdminCategoriesListSuccess(this);
   }
@@ -1620,6 +2881,24 @@ class _$GetAdminCategoriesListSuccessImpl
     TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
   }) {
     return getAdminCategoriesListSuccess?.call(this);
   }
@@ -1641,6 +2920,24 @@ class _$GetAdminCategoriesListSuccessImpl
     TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (getAdminCategoriesListSuccess != null) {
@@ -1689,22 +2986,12 @@ class __$$GetAdminCategoriesListEmptyImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GetAdminCategoriesListEmptyImpl
-    with DiagnosticableTreeMixin
-    implements GetAdminCategoriesListEmpty {
+class _$GetAdminCategoriesListEmptyImpl implements GetAdminCategoriesListEmpty {
   const _$GetAdminCategoriesListEmptyImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AdminCategoriesState.getAdminCategoriesListEmpty()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AdminCategoriesState.getAdminCategoriesListEmpty'));
   }
 
   @override
@@ -1733,6 +3020,18 @@ class _$GetAdminCategoriesListEmptyImpl
     required TResult Function(String errorMessage) updateCategoryFailure,
     required TResult Function() deleteCategorySuccess,
     required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
   }) {
     return getAdminCategoriesListEmpty();
   }
@@ -1752,6 +3051,16 @@ class _$GetAdminCategoriesListEmptyImpl
     TResult? Function(String errorMessage)? updateCategoryFailure,
     TResult? Function()? deleteCategorySuccess,
     TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
   }) {
     return getAdminCategoriesListEmpty?.call();
   }
@@ -1771,6 +3080,16 @@ class _$GetAdminCategoriesListEmptyImpl
     TResult Function(String errorMessage)? updateCategoryFailure,
     TResult Function()? deleteCategorySuccess,
     TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (getAdminCategoriesListEmpty != null) {
@@ -1803,6 +3122,24 @@ class _$GetAdminCategoriesListEmptyImpl
         deleteCategorySuccess,
     required TResult Function(DeleteCategoryFailure value)
         deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
   }) {
     return getAdminCategoriesListEmpty(this);
   }
@@ -1824,6 +3161,24 @@ class _$GetAdminCategoriesListEmptyImpl
     TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
   }) {
     return getAdminCategoriesListEmpty?.call(this);
   }
@@ -1845,6 +3200,24 @@ class _$GetAdminCategoriesListEmptyImpl
     TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (getAdminCategoriesListEmpty != null) {
@@ -1898,7 +3271,6 @@ class __$$GetAdminCategoriesListFailureImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetAdminCategoriesListFailureImpl
-    with DiagnosticableTreeMixin
     implements GetAdminCategoriesListFailure {
   const _$GetAdminCategoriesListFailureImpl(this.errorMessage);
 
@@ -1906,17 +3278,8 @@ class _$GetAdminCategoriesListFailureImpl
   final String errorMessage;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AdminCategoriesState.getAdminCategoriesListFailure(errorMessage: $errorMessage)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AdminCategoriesState.getAdminCategoriesListFailure'))
-      ..add(DiagnosticsProperty('errorMessage', errorMessage));
   }
 
   @override
@@ -1957,6 +3320,18 @@ class _$GetAdminCategoriesListFailureImpl
     required TResult Function(String errorMessage) updateCategoryFailure,
     required TResult Function() deleteCategorySuccess,
     required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
   }) {
     return getAdminCategoriesListFailure(errorMessage);
   }
@@ -1976,6 +3351,16 @@ class _$GetAdminCategoriesListFailureImpl
     TResult? Function(String errorMessage)? updateCategoryFailure,
     TResult? Function()? deleteCategorySuccess,
     TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
   }) {
     return getAdminCategoriesListFailure?.call(errorMessage);
   }
@@ -1995,6 +3380,16 @@ class _$GetAdminCategoriesListFailureImpl
     TResult Function(String errorMessage)? updateCategoryFailure,
     TResult Function()? deleteCategorySuccess,
     TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (getAdminCategoriesListFailure != null) {
@@ -2027,6 +3422,24 @@ class _$GetAdminCategoriesListFailureImpl
         deleteCategorySuccess,
     required TResult Function(DeleteCategoryFailure value)
         deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
   }) {
     return getAdminCategoriesListFailure(this);
   }
@@ -2048,6 +3461,24 @@ class _$GetAdminCategoriesListFailureImpl
     TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
   }) {
     return getAdminCategoriesListFailure?.call(this);
   }
@@ -2069,6 +3500,24 @@ class _$GetAdminCategoriesListFailureImpl
     TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (getAdminCategoriesListFailure != null) {
@@ -2115,22 +3564,12 @@ class __$$AddNewCategorySuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AddNewCategorySuccessImpl
-    with DiagnosticableTreeMixin
-    implements AddNewCategorySuccess {
+class _$AddNewCategorySuccessImpl implements AddNewCategorySuccess {
   const _$AddNewCategorySuccessImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AdminCategoriesState.addNewCategorySuccess()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AdminCategoriesState.addNewCategorySuccess'));
   }
 
   @override
@@ -2159,6 +3598,18 @@ class _$AddNewCategorySuccessImpl
     required TResult Function(String errorMessage) updateCategoryFailure,
     required TResult Function() deleteCategorySuccess,
     required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
   }) {
     return addNewCategorySuccess();
   }
@@ -2178,6 +3629,16 @@ class _$AddNewCategorySuccessImpl
     TResult? Function(String errorMessage)? updateCategoryFailure,
     TResult? Function()? deleteCategorySuccess,
     TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
   }) {
     return addNewCategorySuccess?.call();
   }
@@ -2197,6 +3658,16 @@ class _$AddNewCategorySuccessImpl
     TResult Function(String errorMessage)? updateCategoryFailure,
     TResult Function()? deleteCategorySuccess,
     TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (addNewCategorySuccess != null) {
@@ -2229,6 +3700,24 @@ class _$AddNewCategorySuccessImpl
         deleteCategorySuccess,
     required TResult Function(DeleteCategoryFailure value)
         deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
   }) {
     return addNewCategorySuccess(this);
   }
@@ -2250,6 +3739,24 @@ class _$AddNewCategorySuccessImpl
     TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
   }) {
     return addNewCategorySuccess?.call(this);
   }
@@ -2271,6 +3778,24 @@ class _$AddNewCategorySuccessImpl
     TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (addNewCategorySuccess != null) {
@@ -2321,26 +3846,15 @@ class __$$AddNewCategoryFailureImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AddNewCategoryFailureImpl
-    with DiagnosticableTreeMixin
-    implements AddNewCategoryFailure {
+class _$AddNewCategoryFailureImpl implements AddNewCategoryFailure {
   const _$AddNewCategoryFailureImpl(this.errorMessage);
 
   @override
   final String errorMessage;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AdminCategoriesState.addNewCategoryFailure(errorMessage: $errorMessage)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AdminCategoriesState.addNewCategoryFailure'))
-      ..add(DiagnosticsProperty('errorMessage', errorMessage));
   }
 
   @override
@@ -2380,6 +3894,18 @@ class _$AddNewCategoryFailureImpl
     required TResult Function(String errorMessage) updateCategoryFailure,
     required TResult Function() deleteCategorySuccess,
     required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
   }) {
     return addNewCategoryFailure(errorMessage);
   }
@@ -2399,6 +3925,16 @@ class _$AddNewCategoryFailureImpl
     TResult? Function(String errorMessage)? updateCategoryFailure,
     TResult? Function()? deleteCategorySuccess,
     TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
   }) {
     return addNewCategoryFailure?.call(errorMessage);
   }
@@ -2418,6 +3954,16 @@ class _$AddNewCategoryFailureImpl
     TResult Function(String errorMessage)? updateCategoryFailure,
     TResult Function()? deleteCategorySuccess,
     TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (addNewCategoryFailure != null) {
@@ -2450,6 +3996,24 @@ class _$AddNewCategoryFailureImpl
         deleteCategorySuccess,
     required TResult Function(DeleteCategoryFailure value)
         deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
   }) {
     return addNewCategoryFailure(this);
   }
@@ -2471,6 +4035,24 @@ class _$AddNewCategoryFailureImpl
     TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
   }) {
     return addNewCategoryFailure?.call(this);
   }
@@ -2492,6 +4074,24 @@ class _$AddNewCategoryFailureImpl
     TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (addNewCategoryFailure != null) {
@@ -2537,22 +4137,12 @@ class __$$UpdateCategorySuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateCategorySuccessImpl
-    with DiagnosticableTreeMixin
-    implements UpdateCategorySuccess {
+class _$UpdateCategorySuccessImpl implements UpdateCategorySuccess {
   const _$UpdateCategorySuccessImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AdminCategoriesState.updateCategorySuccess()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AdminCategoriesState.updateCategorySuccess'));
   }
 
   @override
@@ -2581,6 +4171,18 @@ class _$UpdateCategorySuccessImpl
     required TResult Function(String errorMessage) updateCategoryFailure,
     required TResult Function() deleteCategorySuccess,
     required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
   }) {
     return updateCategorySuccess();
   }
@@ -2600,6 +4202,16 @@ class _$UpdateCategorySuccessImpl
     TResult? Function(String errorMessage)? updateCategoryFailure,
     TResult? Function()? deleteCategorySuccess,
     TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
   }) {
     return updateCategorySuccess?.call();
   }
@@ -2619,6 +4231,16 @@ class _$UpdateCategorySuccessImpl
     TResult Function(String errorMessage)? updateCategoryFailure,
     TResult Function()? deleteCategorySuccess,
     TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (updateCategorySuccess != null) {
@@ -2651,6 +4273,24 @@ class _$UpdateCategorySuccessImpl
         deleteCategorySuccess,
     required TResult Function(DeleteCategoryFailure value)
         deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
   }) {
     return updateCategorySuccess(this);
   }
@@ -2672,6 +4312,24 @@ class _$UpdateCategorySuccessImpl
     TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
   }) {
     return updateCategorySuccess?.call(this);
   }
@@ -2693,6 +4351,24 @@ class _$UpdateCategorySuccessImpl
     TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (updateCategorySuccess != null) {
@@ -2743,26 +4419,15 @@ class __$$UpdateCategoryFailureImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateCategoryFailureImpl
-    with DiagnosticableTreeMixin
-    implements UpdateCategoryFailure {
+class _$UpdateCategoryFailureImpl implements UpdateCategoryFailure {
   const _$UpdateCategoryFailureImpl(this.errorMessage);
 
   @override
   final String errorMessage;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AdminCategoriesState.updateCategoryFailure(errorMessage: $errorMessage)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AdminCategoriesState.updateCategoryFailure'))
-      ..add(DiagnosticsProperty('errorMessage', errorMessage));
   }
 
   @override
@@ -2802,6 +4467,18 @@ class _$UpdateCategoryFailureImpl
     required TResult Function(String errorMessage) updateCategoryFailure,
     required TResult Function() deleteCategorySuccess,
     required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
   }) {
     return updateCategoryFailure(errorMessage);
   }
@@ -2821,6 +4498,16 @@ class _$UpdateCategoryFailureImpl
     TResult? Function(String errorMessage)? updateCategoryFailure,
     TResult? Function()? deleteCategorySuccess,
     TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
   }) {
     return updateCategoryFailure?.call(errorMessage);
   }
@@ -2840,6 +4527,16 @@ class _$UpdateCategoryFailureImpl
     TResult Function(String errorMessage)? updateCategoryFailure,
     TResult Function()? deleteCategorySuccess,
     TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (updateCategoryFailure != null) {
@@ -2872,6 +4569,24 @@ class _$UpdateCategoryFailureImpl
         deleteCategorySuccess,
     required TResult Function(DeleteCategoryFailure value)
         deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
   }) {
     return updateCategoryFailure(this);
   }
@@ -2893,6 +4608,24 @@ class _$UpdateCategoryFailureImpl
     TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
   }) {
     return updateCategoryFailure?.call(this);
   }
@@ -2914,6 +4647,24 @@ class _$UpdateCategoryFailureImpl
     TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (updateCategoryFailure != null) {
@@ -2959,22 +4710,12 @@ class __$$DeleteCategorySuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DeleteCategorySuccessImpl
-    with DiagnosticableTreeMixin
-    implements DeleteCategorySuccess {
+class _$DeleteCategorySuccessImpl implements DeleteCategorySuccess {
   const _$DeleteCategorySuccessImpl();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AdminCategoriesState.deleteCategorySuccess()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AdminCategoriesState.deleteCategorySuccess'));
   }
 
   @override
@@ -3003,6 +4744,18 @@ class _$DeleteCategorySuccessImpl
     required TResult Function(String errorMessage) updateCategoryFailure,
     required TResult Function() deleteCategorySuccess,
     required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
   }) {
     return deleteCategorySuccess();
   }
@@ -3022,6 +4775,16 @@ class _$DeleteCategorySuccessImpl
     TResult? Function(String errorMessage)? updateCategoryFailure,
     TResult? Function()? deleteCategorySuccess,
     TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
   }) {
     return deleteCategorySuccess?.call();
   }
@@ -3041,6 +4804,16 @@ class _$DeleteCategorySuccessImpl
     TResult Function(String errorMessage)? updateCategoryFailure,
     TResult Function()? deleteCategorySuccess,
     TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (deleteCategorySuccess != null) {
@@ -3073,6 +4846,24 @@ class _$DeleteCategorySuccessImpl
         deleteCategorySuccess,
     required TResult Function(DeleteCategoryFailure value)
         deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
   }) {
     return deleteCategorySuccess(this);
   }
@@ -3094,6 +4885,24 @@ class _$DeleteCategorySuccessImpl
     TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
   }) {
     return deleteCategorySuccess?.call(this);
   }
@@ -3115,6 +4924,24 @@ class _$DeleteCategorySuccessImpl
     TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (deleteCategorySuccess != null) {
@@ -3165,26 +4992,15 @@ class __$$DeleteCategoryFailureImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DeleteCategoryFailureImpl
-    with DiagnosticableTreeMixin
-    implements DeleteCategoryFailure {
+class _$DeleteCategoryFailureImpl implements DeleteCategoryFailure {
   const _$DeleteCategoryFailureImpl(this.errorMessage);
 
   @override
   final String errorMessage;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AdminCategoriesState.deleteCategoryFailure(errorMessage: $errorMessage)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AdminCategoriesState.deleteCategoryFailure'))
-      ..add(DiagnosticsProperty('errorMessage', errorMessage));
   }
 
   @override
@@ -3224,6 +5040,18 @@ class _$DeleteCategoryFailureImpl
     required TResult Function(String errorMessage) updateCategoryFailure,
     required TResult Function() deleteCategorySuccess,
     required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
   }) {
     return deleteCategoryFailure(errorMessage);
   }
@@ -3243,6 +5071,16 @@ class _$DeleteCategoryFailureImpl
     TResult? Function(String errorMessage)? updateCategoryFailure,
     TResult? Function()? deleteCategorySuccess,
     TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
   }) {
     return deleteCategoryFailure?.call(errorMessage);
   }
@@ -3262,6 +5100,16 @@ class _$DeleteCategoryFailureImpl
     TResult Function(String errorMessage)? updateCategoryFailure,
     TResult Function()? deleteCategorySuccess,
     TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (deleteCategoryFailure != null) {
@@ -3294,6 +5142,24 @@ class _$DeleteCategoryFailureImpl
         deleteCategorySuccess,
     required TResult Function(DeleteCategoryFailure value)
         deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
   }) {
     return deleteCategoryFailure(this);
   }
@@ -3315,6 +5181,24 @@ class _$DeleteCategoryFailureImpl
     TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
   }) {
     return deleteCategoryFailure?.call(this);
   }
@@ -3336,6 +5220,24 @@ class _$DeleteCategoryFailureImpl
     TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
     TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
     TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
     required TResult orElse(),
   }) {
     if (deleteCategoryFailure != null) {
@@ -3355,5 +5257,2636 @@ abstract class DeleteCategoryFailure implements AdminCategoriesState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DeleteCategoryFailureImplCopyWith<_$DeleteCategoryFailureImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetFirebaseCategoriesSuccessImplCopyWith<$Res> {
+  factory _$$GetFirebaseCategoriesSuccessImplCopyWith(
+          _$GetFirebaseCategoriesSuccessImpl value,
+          $Res Function(_$GetFirebaseCategoriesSuccessImpl) then) =
+      __$$GetFirebaseCategoriesSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<MultilingualCategoryEntity> categoriesList});
+}
+
+/// @nodoc
+class __$$GetFirebaseCategoriesSuccessImplCopyWithImpl<$Res>
+    extends _$AdminCategoriesStateCopyWithImpl<$Res,
+        _$GetFirebaseCategoriesSuccessImpl>
+    implements _$$GetFirebaseCategoriesSuccessImplCopyWith<$Res> {
+  __$$GetFirebaseCategoriesSuccessImplCopyWithImpl(
+      _$GetFirebaseCategoriesSuccessImpl _value,
+      $Res Function(_$GetFirebaseCategoriesSuccessImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? categoriesList = null,
+  }) {
+    return _then(_$GetFirebaseCategoriesSuccessImpl(
+      null == categoriesList
+          ? _value._categoriesList
+          : categoriesList // ignore: cast_nullable_to_non_nullable
+              as List<MultilingualCategoryEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetFirebaseCategoriesSuccessImpl
+    implements GetFirebaseCategoriesSuccess {
+  const _$GetFirebaseCategoriesSuccessImpl(
+      final List<MultilingualCategoryEntity> categoriesList)
+      : _categoriesList = categoriesList;
+
+  final List<MultilingualCategoryEntity> _categoriesList;
+  @override
+  List<MultilingualCategoryEntity> get categoriesList {
+    if (_categoriesList is EqualUnmodifiableListView) return _categoriesList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_categoriesList);
+  }
+
+  @override
+  String toString() {
+    return 'AdminCategoriesState.getFirebaseCategoriesSuccess(categoriesList: $categoriesList)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetFirebaseCategoriesSuccessImpl &&
+            const DeepCollectionEquality()
+                .equals(other._categoriesList, _categoriesList));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_categoriesList));
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetFirebaseCategoriesSuccessImplCopyWith<
+          _$GetFirebaseCategoriesSuccessImpl>
+      get copyWith => __$$GetFirebaseCategoriesSuccessImplCopyWithImpl<
+          _$GetFirebaseCategoriesSuccessImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() adminCategoriesLoading,
+    required TResult Function(List<Categories?> categoriesList)
+        getAdminCategoriesListSuccess,
+    required TResult Function() getAdminCategoriesListEmpty,
+    required TResult Function(String errorMessage)
+        getAdminCategoriesListFailure,
+    required TResult Function() addNewCategorySuccess,
+    required TResult Function(String errorMessage) addNewCategoryFailure,
+    required TResult Function() updateCategorySuccess,
+    required TResult Function(String errorMessage) updateCategoryFailure,
+    required TResult Function() deleteCategorySuccess,
+    required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
+  }) {
+    return getFirebaseCategoriesSuccess(categoriesList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? adminCategoriesLoading,
+    TResult? Function(List<Categories?> categoriesList)?
+        getAdminCategoriesListSuccess,
+    TResult? Function()? getAdminCategoriesListEmpty,
+    TResult? Function(String errorMessage)? getAdminCategoriesListFailure,
+    TResult? Function()? addNewCategorySuccess,
+    TResult? Function(String errorMessage)? addNewCategoryFailure,
+    TResult? Function()? updateCategorySuccess,
+    TResult? Function(String errorMessage)? updateCategoryFailure,
+    TResult? Function()? deleteCategorySuccess,
+    TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
+  }) {
+    return getFirebaseCategoriesSuccess?.call(categoriesList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? adminCategoriesLoading,
+    TResult Function(List<Categories?> categoriesList)?
+        getAdminCategoriesListSuccess,
+    TResult Function()? getAdminCategoriesListEmpty,
+    TResult Function(String errorMessage)? getAdminCategoriesListFailure,
+    TResult Function()? addNewCategorySuccess,
+    TResult Function(String errorMessage)? addNewCategoryFailure,
+    TResult Function()? updateCategorySuccess,
+    TResult Function(String errorMessage)? updateCategoryFailure,
+    TResult Function()? deleteCategorySuccess,
+    TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
+    required TResult orElse(),
+  }) {
+    if (getFirebaseCategoriesSuccess != null) {
+      return getFirebaseCategoriesSuccess(categoriesList);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(AdminCategoriesLoading value)
+        adminCategoriesLoading,
+    required TResult Function(GetAdminCategoriesListSuccess value)
+        getAdminCategoriesListSuccess,
+    required TResult Function(GetAdminCategoriesListEmpty value)
+        getAdminCategoriesListEmpty,
+    required TResult Function(GetAdminCategoriesListFailure value)
+        getAdminCategoriesListFailure,
+    required TResult Function(AddNewCategorySuccess value)
+        addNewCategorySuccess,
+    required TResult Function(AddNewCategoryFailure value)
+        addNewCategoryFailure,
+    required TResult Function(UpdateCategorySuccess value)
+        updateCategorySuccess,
+    required TResult Function(UpdateCategoryFailure value)
+        updateCategoryFailure,
+    required TResult Function(DeleteCategorySuccess value)
+        deleteCategorySuccess,
+    required TResult Function(DeleteCategoryFailure value)
+        deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
+  }) {
+    return getFirebaseCategoriesSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(AdminCategoriesLoading value)? adminCategoriesLoading,
+    TResult? Function(GetAdminCategoriesListSuccess value)?
+        getAdminCategoriesListSuccess,
+    TResult? Function(GetAdminCategoriesListEmpty value)?
+        getAdminCategoriesListEmpty,
+    TResult? Function(GetAdminCategoriesListFailure value)?
+        getAdminCategoriesListFailure,
+    TResult? Function(AddNewCategorySuccess value)? addNewCategorySuccess,
+    TResult? Function(AddNewCategoryFailure value)? addNewCategoryFailure,
+    TResult? Function(UpdateCategorySuccess value)? updateCategorySuccess,
+    TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
+    TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
+    TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
+  }) {
+    return getFirebaseCategoriesSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(AdminCategoriesLoading value)? adminCategoriesLoading,
+    TResult Function(GetAdminCategoriesListSuccess value)?
+        getAdminCategoriesListSuccess,
+    TResult Function(GetAdminCategoriesListEmpty value)?
+        getAdminCategoriesListEmpty,
+    TResult Function(GetAdminCategoriesListFailure value)?
+        getAdminCategoriesListFailure,
+    TResult Function(AddNewCategorySuccess value)? addNewCategorySuccess,
+    TResult Function(AddNewCategoryFailure value)? addNewCategoryFailure,
+    TResult Function(UpdateCategorySuccess value)? updateCategorySuccess,
+    TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
+    TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
+    TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
+    required TResult orElse(),
+  }) {
+    if (getFirebaseCategoriesSuccess != null) {
+      return getFirebaseCategoriesSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetFirebaseCategoriesSuccess implements AdminCategoriesState {
+  const factory GetFirebaseCategoriesSuccess(
+          final List<MultilingualCategoryEntity> categoriesList) =
+      _$GetFirebaseCategoriesSuccessImpl;
+
+  List<MultilingualCategoryEntity> get categoriesList;
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetFirebaseCategoriesSuccessImplCopyWith<
+          _$GetFirebaseCategoriesSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetFirebaseCategoriesEmptyImplCopyWith<$Res> {
+  factory _$$GetFirebaseCategoriesEmptyImplCopyWith(
+          _$GetFirebaseCategoriesEmptyImpl value,
+          $Res Function(_$GetFirebaseCategoriesEmptyImpl) then) =
+      __$$GetFirebaseCategoriesEmptyImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetFirebaseCategoriesEmptyImplCopyWithImpl<$Res>
+    extends _$AdminCategoriesStateCopyWithImpl<$Res,
+        _$GetFirebaseCategoriesEmptyImpl>
+    implements _$$GetFirebaseCategoriesEmptyImplCopyWith<$Res> {
+  __$$GetFirebaseCategoriesEmptyImplCopyWithImpl(
+      _$GetFirebaseCategoriesEmptyImpl _value,
+      $Res Function(_$GetFirebaseCategoriesEmptyImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetFirebaseCategoriesEmptyImpl implements GetFirebaseCategoriesEmpty {
+  const _$GetFirebaseCategoriesEmptyImpl();
+
+  @override
+  String toString() {
+    return 'AdminCategoriesState.getFirebaseCategoriesEmpty()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetFirebaseCategoriesEmptyImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() adminCategoriesLoading,
+    required TResult Function(List<Categories?> categoriesList)
+        getAdminCategoriesListSuccess,
+    required TResult Function() getAdminCategoriesListEmpty,
+    required TResult Function(String errorMessage)
+        getAdminCategoriesListFailure,
+    required TResult Function() addNewCategorySuccess,
+    required TResult Function(String errorMessage) addNewCategoryFailure,
+    required TResult Function() updateCategorySuccess,
+    required TResult Function(String errorMessage) updateCategoryFailure,
+    required TResult Function() deleteCategorySuccess,
+    required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
+  }) {
+    return getFirebaseCategoriesEmpty();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? adminCategoriesLoading,
+    TResult? Function(List<Categories?> categoriesList)?
+        getAdminCategoriesListSuccess,
+    TResult? Function()? getAdminCategoriesListEmpty,
+    TResult? Function(String errorMessage)? getAdminCategoriesListFailure,
+    TResult? Function()? addNewCategorySuccess,
+    TResult? Function(String errorMessage)? addNewCategoryFailure,
+    TResult? Function()? updateCategorySuccess,
+    TResult? Function(String errorMessage)? updateCategoryFailure,
+    TResult? Function()? deleteCategorySuccess,
+    TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
+  }) {
+    return getFirebaseCategoriesEmpty?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? adminCategoriesLoading,
+    TResult Function(List<Categories?> categoriesList)?
+        getAdminCategoriesListSuccess,
+    TResult Function()? getAdminCategoriesListEmpty,
+    TResult Function(String errorMessage)? getAdminCategoriesListFailure,
+    TResult Function()? addNewCategorySuccess,
+    TResult Function(String errorMessage)? addNewCategoryFailure,
+    TResult Function()? updateCategorySuccess,
+    TResult Function(String errorMessage)? updateCategoryFailure,
+    TResult Function()? deleteCategorySuccess,
+    TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
+    required TResult orElse(),
+  }) {
+    if (getFirebaseCategoriesEmpty != null) {
+      return getFirebaseCategoriesEmpty();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(AdminCategoriesLoading value)
+        adminCategoriesLoading,
+    required TResult Function(GetAdminCategoriesListSuccess value)
+        getAdminCategoriesListSuccess,
+    required TResult Function(GetAdminCategoriesListEmpty value)
+        getAdminCategoriesListEmpty,
+    required TResult Function(GetAdminCategoriesListFailure value)
+        getAdminCategoriesListFailure,
+    required TResult Function(AddNewCategorySuccess value)
+        addNewCategorySuccess,
+    required TResult Function(AddNewCategoryFailure value)
+        addNewCategoryFailure,
+    required TResult Function(UpdateCategorySuccess value)
+        updateCategorySuccess,
+    required TResult Function(UpdateCategoryFailure value)
+        updateCategoryFailure,
+    required TResult Function(DeleteCategorySuccess value)
+        deleteCategorySuccess,
+    required TResult Function(DeleteCategoryFailure value)
+        deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
+  }) {
+    return getFirebaseCategoriesEmpty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(AdminCategoriesLoading value)? adminCategoriesLoading,
+    TResult? Function(GetAdminCategoriesListSuccess value)?
+        getAdminCategoriesListSuccess,
+    TResult? Function(GetAdminCategoriesListEmpty value)?
+        getAdminCategoriesListEmpty,
+    TResult? Function(GetAdminCategoriesListFailure value)?
+        getAdminCategoriesListFailure,
+    TResult? Function(AddNewCategorySuccess value)? addNewCategorySuccess,
+    TResult? Function(AddNewCategoryFailure value)? addNewCategoryFailure,
+    TResult? Function(UpdateCategorySuccess value)? updateCategorySuccess,
+    TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
+    TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
+    TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
+  }) {
+    return getFirebaseCategoriesEmpty?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(AdminCategoriesLoading value)? adminCategoriesLoading,
+    TResult Function(GetAdminCategoriesListSuccess value)?
+        getAdminCategoriesListSuccess,
+    TResult Function(GetAdminCategoriesListEmpty value)?
+        getAdminCategoriesListEmpty,
+    TResult Function(GetAdminCategoriesListFailure value)?
+        getAdminCategoriesListFailure,
+    TResult Function(AddNewCategorySuccess value)? addNewCategorySuccess,
+    TResult Function(AddNewCategoryFailure value)? addNewCategoryFailure,
+    TResult Function(UpdateCategorySuccess value)? updateCategorySuccess,
+    TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
+    TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
+    TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
+    required TResult orElse(),
+  }) {
+    if (getFirebaseCategoriesEmpty != null) {
+      return getFirebaseCategoriesEmpty(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetFirebaseCategoriesEmpty implements AdminCategoriesState {
+  const factory GetFirebaseCategoriesEmpty() = _$GetFirebaseCategoriesEmptyImpl;
+}
+
+/// @nodoc
+abstract class _$$GetFirebaseCategoriesFailureImplCopyWith<$Res> {
+  factory _$$GetFirebaseCategoriesFailureImplCopyWith(
+          _$GetFirebaseCategoriesFailureImpl value,
+          $Res Function(_$GetFirebaseCategoriesFailureImpl) then) =
+      __$$GetFirebaseCategoriesFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String errorMessage});
+}
+
+/// @nodoc
+class __$$GetFirebaseCategoriesFailureImplCopyWithImpl<$Res>
+    extends _$AdminCategoriesStateCopyWithImpl<$Res,
+        _$GetFirebaseCategoriesFailureImpl>
+    implements _$$GetFirebaseCategoriesFailureImplCopyWith<$Res> {
+  __$$GetFirebaseCategoriesFailureImplCopyWithImpl(
+      _$GetFirebaseCategoriesFailureImpl _value,
+      $Res Function(_$GetFirebaseCategoriesFailureImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorMessage = null,
+  }) {
+    return _then(_$GetFirebaseCategoriesFailureImpl(
+      null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetFirebaseCategoriesFailureImpl
+    implements GetFirebaseCategoriesFailure {
+  const _$GetFirebaseCategoriesFailureImpl(this.errorMessage);
+
+  @override
+  final String errorMessage;
+
+  @override
+  String toString() {
+    return 'AdminCategoriesState.getFirebaseCategoriesFailure(errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetFirebaseCategoriesFailureImpl &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorMessage);
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetFirebaseCategoriesFailureImplCopyWith<
+          _$GetFirebaseCategoriesFailureImpl>
+      get copyWith => __$$GetFirebaseCategoriesFailureImplCopyWithImpl<
+          _$GetFirebaseCategoriesFailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() adminCategoriesLoading,
+    required TResult Function(List<Categories?> categoriesList)
+        getAdminCategoriesListSuccess,
+    required TResult Function() getAdminCategoriesListEmpty,
+    required TResult Function(String errorMessage)
+        getAdminCategoriesListFailure,
+    required TResult Function() addNewCategorySuccess,
+    required TResult Function(String errorMessage) addNewCategoryFailure,
+    required TResult Function() updateCategorySuccess,
+    required TResult Function(String errorMessage) updateCategoryFailure,
+    required TResult Function() deleteCategorySuccess,
+    required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
+  }) {
+    return getFirebaseCategoriesFailure(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? adminCategoriesLoading,
+    TResult? Function(List<Categories?> categoriesList)?
+        getAdminCategoriesListSuccess,
+    TResult? Function()? getAdminCategoriesListEmpty,
+    TResult? Function(String errorMessage)? getAdminCategoriesListFailure,
+    TResult? Function()? addNewCategorySuccess,
+    TResult? Function(String errorMessage)? addNewCategoryFailure,
+    TResult? Function()? updateCategorySuccess,
+    TResult? Function(String errorMessage)? updateCategoryFailure,
+    TResult? Function()? deleteCategorySuccess,
+    TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
+  }) {
+    return getFirebaseCategoriesFailure?.call(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? adminCategoriesLoading,
+    TResult Function(List<Categories?> categoriesList)?
+        getAdminCategoriesListSuccess,
+    TResult Function()? getAdminCategoriesListEmpty,
+    TResult Function(String errorMessage)? getAdminCategoriesListFailure,
+    TResult Function()? addNewCategorySuccess,
+    TResult Function(String errorMessage)? addNewCategoryFailure,
+    TResult Function()? updateCategorySuccess,
+    TResult Function(String errorMessage)? updateCategoryFailure,
+    TResult Function()? deleteCategorySuccess,
+    TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
+    required TResult orElse(),
+  }) {
+    if (getFirebaseCategoriesFailure != null) {
+      return getFirebaseCategoriesFailure(errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(AdminCategoriesLoading value)
+        adminCategoriesLoading,
+    required TResult Function(GetAdminCategoriesListSuccess value)
+        getAdminCategoriesListSuccess,
+    required TResult Function(GetAdminCategoriesListEmpty value)
+        getAdminCategoriesListEmpty,
+    required TResult Function(GetAdminCategoriesListFailure value)
+        getAdminCategoriesListFailure,
+    required TResult Function(AddNewCategorySuccess value)
+        addNewCategorySuccess,
+    required TResult Function(AddNewCategoryFailure value)
+        addNewCategoryFailure,
+    required TResult Function(UpdateCategorySuccess value)
+        updateCategorySuccess,
+    required TResult Function(UpdateCategoryFailure value)
+        updateCategoryFailure,
+    required TResult Function(DeleteCategorySuccess value)
+        deleteCategorySuccess,
+    required TResult Function(DeleteCategoryFailure value)
+        deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
+  }) {
+    return getFirebaseCategoriesFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(AdminCategoriesLoading value)? adminCategoriesLoading,
+    TResult? Function(GetAdminCategoriesListSuccess value)?
+        getAdminCategoriesListSuccess,
+    TResult? Function(GetAdminCategoriesListEmpty value)?
+        getAdminCategoriesListEmpty,
+    TResult? Function(GetAdminCategoriesListFailure value)?
+        getAdminCategoriesListFailure,
+    TResult? Function(AddNewCategorySuccess value)? addNewCategorySuccess,
+    TResult? Function(AddNewCategoryFailure value)? addNewCategoryFailure,
+    TResult? Function(UpdateCategorySuccess value)? updateCategorySuccess,
+    TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
+    TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
+    TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
+  }) {
+    return getFirebaseCategoriesFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(AdminCategoriesLoading value)? adminCategoriesLoading,
+    TResult Function(GetAdminCategoriesListSuccess value)?
+        getAdminCategoriesListSuccess,
+    TResult Function(GetAdminCategoriesListEmpty value)?
+        getAdminCategoriesListEmpty,
+    TResult Function(GetAdminCategoriesListFailure value)?
+        getAdminCategoriesListFailure,
+    TResult Function(AddNewCategorySuccess value)? addNewCategorySuccess,
+    TResult Function(AddNewCategoryFailure value)? addNewCategoryFailure,
+    TResult Function(UpdateCategorySuccess value)? updateCategorySuccess,
+    TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
+    TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
+    TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
+    required TResult orElse(),
+  }) {
+    if (getFirebaseCategoriesFailure != null) {
+      return getFirebaseCategoriesFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetFirebaseCategoriesFailure implements AdminCategoriesState {
+  const factory GetFirebaseCategoriesFailure(final String errorMessage) =
+      _$GetFirebaseCategoriesFailureImpl;
+
+  String get errorMessage;
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetFirebaseCategoriesFailureImplCopyWith<
+          _$GetFirebaseCategoriesFailureImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddFirebaseCategorySuccessImplCopyWith<$Res> {
+  factory _$$AddFirebaseCategorySuccessImplCopyWith(
+          _$AddFirebaseCategorySuccessImpl value,
+          $Res Function(_$AddFirebaseCategorySuccessImpl) then) =
+      __$$AddFirebaseCategorySuccessImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AddFirebaseCategorySuccessImplCopyWithImpl<$Res>
+    extends _$AdminCategoriesStateCopyWithImpl<$Res,
+        _$AddFirebaseCategorySuccessImpl>
+    implements _$$AddFirebaseCategorySuccessImplCopyWith<$Res> {
+  __$$AddFirebaseCategorySuccessImplCopyWithImpl(
+      _$AddFirebaseCategorySuccessImpl _value,
+      $Res Function(_$AddFirebaseCategorySuccessImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$AddFirebaseCategorySuccessImpl implements AddFirebaseCategorySuccess {
+  const _$AddFirebaseCategorySuccessImpl();
+
+  @override
+  String toString() {
+    return 'AdminCategoriesState.addFirebaseCategorySuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddFirebaseCategorySuccessImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() adminCategoriesLoading,
+    required TResult Function(List<Categories?> categoriesList)
+        getAdminCategoriesListSuccess,
+    required TResult Function() getAdminCategoriesListEmpty,
+    required TResult Function(String errorMessage)
+        getAdminCategoriesListFailure,
+    required TResult Function() addNewCategorySuccess,
+    required TResult Function(String errorMessage) addNewCategoryFailure,
+    required TResult Function() updateCategorySuccess,
+    required TResult Function(String errorMessage) updateCategoryFailure,
+    required TResult Function() deleteCategorySuccess,
+    required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
+  }) {
+    return addFirebaseCategorySuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? adminCategoriesLoading,
+    TResult? Function(List<Categories?> categoriesList)?
+        getAdminCategoriesListSuccess,
+    TResult? Function()? getAdminCategoriesListEmpty,
+    TResult? Function(String errorMessage)? getAdminCategoriesListFailure,
+    TResult? Function()? addNewCategorySuccess,
+    TResult? Function(String errorMessage)? addNewCategoryFailure,
+    TResult? Function()? updateCategorySuccess,
+    TResult? Function(String errorMessage)? updateCategoryFailure,
+    TResult? Function()? deleteCategorySuccess,
+    TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
+  }) {
+    return addFirebaseCategorySuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? adminCategoriesLoading,
+    TResult Function(List<Categories?> categoriesList)?
+        getAdminCategoriesListSuccess,
+    TResult Function()? getAdminCategoriesListEmpty,
+    TResult Function(String errorMessage)? getAdminCategoriesListFailure,
+    TResult Function()? addNewCategorySuccess,
+    TResult Function(String errorMessage)? addNewCategoryFailure,
+    TResult Function()? updateCategorySuccess,
+    TResult Function(String errorMessage)? updateCategoryFailure,
+    TResult Function()? deleteCategorySuccess,
+    TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
+    required TResult orElse(),
+  }) {
+    if (addFirebaseCategorySuccess != null) {
+      return addFirebaseCategorySuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(AdminCategoriesLoading value)
+        adminCategoriesLoading,
+    required TResult Function(GetAdminCategoriesListSuccess value)
+        getAdminCategoriesListSuccess,
+    required TResult Function(GetAdminCategoriesListEmpty value)
+        getAdminCategoriesListEmpty,
+    required TResult Function(GetAdminCategoriesListFailure value)
+        getAdminCategoriesListFailure,
+    required TResult Function(AddNewCategorySuccess value)
+        addNewCategorySuccess,
+    required TResult Function(AddNewCategoryFailure value)
+        addNewCategoryFailure,
+    required TResult Function(UpdateCategorySuccess value)
+        updateCategorySuccess,
+    required TResult Function(UpdateCategoryFailure value)
+        updateCategoryFailure,
+    required TResult Function(DeleteCategorySuccess value)
+        deleteCategorySuccess,
+    required TResult Function(DeleteCategoryFailure value)
+        deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
+  }) {
+    return addFirebaseCategorySuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(AdminCategoriesLoading value)? adminCategoriesLoading,
+    TResult? Function(GetAdminCategoriesListSuccess value)?
+        getAdminCategoriesListSuccess,
+    TResult? Function(GetAdminCategoriesListEmpty value)?
+        getAdminCategoriesListEmpty,
+    TResult? Function(GetAdminCategoriesListFailure value)?
+        getAdminCategoriesListFailure,
+    TResult? Function(AddNewCategorySuccess value)? addNewCategorySuccess,
+    TResult? Function(AddNewCategoryFailure value)? addNewCategoryFailure,
+    TResult? Function(UpdateCategorySuccess value)? updateCategorySuccess,
+    TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
+    TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
+    TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
+  }) {
+    return addFirebaseCategorySuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(AdminCategoriesLoading value)? adminCategoriesLoading,
+    TResult Function(GetAdminCategoriesListSuccess value)?
+        getAdminCategoriesListSuccess,
+    TResult Function(GetAdminCategoriesListEmpty value)?
+        getAdminCategoriesListEmpty,
+    TResult Function(GetAdminCategoriesListFailure value)?
+        getAdminCategoriesListFailure,
+    TResult Function(AddNewCategorySuccess value)? addNewCategorySuccess,
+    TResult Function(AddNewCategoryFailure value)? addNewCategoryFailure,
+    TResult Function(UpdateCategorySuccess value)? updateCategorySuccess,
+    TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
+    TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
+    TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
+    required TResult orElse(),
+  }) {
+    if (addFirebaseCategorySuccess != null) {
+      return addFirebaseCategorySuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddFirebaseCategorySuccess implements AdminCategoriesState {
+  const factory AddFirebaseCategorySuccess() = _$AddFirebaseCategorySuccessImpl;
+}
+
+/// @nodoc
+abstract class _$$AddFirebaseCategoryFailureImplCopyWith<$Res> {
+  factory _$$AddFirebaseCategoryFailureImplCopyWith(
+          _$AddFirebaseCategoryFailureImpl value,
+          $Res Function(_$AddFirebaseCategoryFailureImpl) then) =
+      __$$AddFirebaseCategoryFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String errorMessage});
+}
+
+/// @nodoc
+class __$$AddFirebaseCategoryFailureImplCopyWithImpl<$Res>
+    extends _$AdminCategoriesStateCopyWithImpl<$Res,
+        _$AddFirebaseCategoryFailureImpl>
+    implements _$$AddFirebaseCategoryFailureImplCopyWith<$Res> {
+  __$$AddFirebaseCategoryFailureImplCopyWithImpl(
+      _$AddFirebaseCategoryFailureImpl _value,
+      $Res Function(_$AddFirebaseCategoryFailureImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorMessage = null,
+  }) {
+    return _then(_$AddFirebaseCategoryFailureImpl(
+      null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddFirebaseCategoryFailureImpl implements AddFirebaseCategoryFailure {
+  const _$AddFirebaseCategoryFailureImpl(this.errorMessage);
+
+  @override
+  final String errorMessage;
+
+  @override
+  String toString() {
+    return 'AdminCategoriesState.addFirebaseCategoryFailure(errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddFirebaseCategoryFailureImpl &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorMessage);
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddFirebaseCategoryFailureImplCopyWith<_$AddFirebaseCategoryFailureImpl>
+      get copyWith => __$$AddFirebaseCategoryFailureImplCopyWithImpl<
+          _$AddFirebaseCategoryFailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() adminCategoriesLoading,
+    required TResult Function(List<Categories?> categoriesList)
+        getAdminCategoriesListSuccess,
+    required TResult Function() getAdminCategoriesListEmpty,
+    required TResult Function(String errorMessage)
+        getAdminCategoriesListFailure,
+    required TResult Function() addNewCategorySuccess,
+    required TResult Function(String errorMessage) addNewCategoryFailure,
+    required TResult Function() updateCategorySuccess,
+    required TResult Function(String errorMessage) updateCategoryFailure,
+    required TResult Function() deleteCategorySuccess,
+    required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
+  }) {
+    return addFirebaseCategoryFailure(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? adminCategoriesLoading,
+    TResult? Function(List<Categories?> categoriesList)?
+        getAdminCategoriesListSuccess,
+    TResult? Function()? getAdminCategoriesListEmpty,
+    TResult? Function(String errorMessage)? getAdminCategoriesListFailure,
+    TResult? Function()? addNewCategorySuccess,
+    TResult? Function(String errorMessage)? addNewCategoryFailure,
+    TResult? Function()? updateCategorySuccess,
+    TResult? Function(String errorMessage)? updateCategoryFailure,
+    TResult? Function()? deleteCategorySuccess,
+    TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
+  }) {
+    return addFirebaseCategoryFailure?.call(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? adminCategoriesLoading,
+    TResult Function(List<Categories?> categoriesList)?
+        getAdminCategoriesListSuccess,
+    TResult Function()? getAdminCategoriesListEmpty,
+    TResult Function(String errorMessage)? getAdminCategoriesListFailure,
+    TResult Function()? addNewCategorySuccess,
+    TResult Function(String errorMessage)? addNewCategoryFailure,
+    TResult Function()? updateCategorySuccess,
+    TResult Function(String errorMessage)? updateCategoryFailure,
+    TResult Function()? deleteCategorySuccess,
+    TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
+    required TResult orElse(),
+  }) {
+    if (addFirebaseCategoryFailure != null) {
+      return addFirebaseCategoryFailure(errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(AdminCategoriesLoading value)
+        adminCategoriesLoading,
+    required TResult Function(GetAdminCategoriesListSuccess value)
+        getAdminCategoriesListSuccess,
+    required TResult Function(GetAdminCategoriesListEmpty value)
+        getAdminCategoriesListEmpty,
+    required TResult Function(GetAdminCategoriesListFailure value)
+        getAdminCategoriesListFailure,
+    required TResult Function(AddNewCategorySuccess value)
+        addNewCategorySuccess,
+    required TResult Function(AddNewCategoryFailure value)
+        addNewCategoryFailure,
+    required TResult Function(UpdateCategorySuccess value)
+        updateCategorySuccess,
+    required TResult Function(UpdateCategoryFailure value)
+        updateCategoryFailure,
+    required TResult Function(DeleteCategorySuccess value)
+        deleteCategorySuccess,
+    required TResult Function(DeleteCategoryFailure value)
+        deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
+  }) {
+    return addFirebaseCategoryFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(AdminCategoriesLoading value)? adminCategoriesLoading,
+    TResult? Function(GetAdminCategoriesListSuccess value)?
+        getAdminCategoriesListSuccess,
+    TResult? Function(GetAdminCategoriesListEmpty value)?
+        getAdminCategoriesListEmpty,
+    TResult? Function(GetAdminCategoriesListFailure value)?
+        getAdminCategoriesListFailure,
+    TResult? Function(AddNewCategorySuccess value)? addNewCategorySuccess,
+    TResult? Function(AddNewCategoryFailure value)? addNewCategoryFailure,
+    TResult? Function(UpdateCategorySuccess value)? updateCategorySuccess,
+    TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
+    TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
+    TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
+  }) {
+    return addFirebaseCategoryFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(AdminCategoriesLoading value)? adminCategoriesLoading,
+    TResult Function(GetAdminCategoriesListSuccess value)?
+        getAdminCategoriesListSuccess,
+    TResult Function(GetAdminCategoriesListEmpty value)?
+        getAdminCategoriesListEmpty,
+    TResult Function(GetAdminCategoriesListFailure value)?
+        getAdminCategoriesListFailure,
+    TResult Function(AddNewCategorySuccess value)? addNewCategorySuccess,
+    TResult Function(AddNewCategoryFailure value)? addNewCategoryFailure,
+    TResult Function(UpdateCategorySuccess value)? updateCategorySuccess,
+    TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
+    TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
+    TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
+    required TResult orElse(),
+  }) {
+    if (addFirebaseCategoryFailure != null) {
+      return addFirebaseCategoryFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddFirebaseCategoryFailure implements AdminCategoriesState {
+  const factory AddFirebaseCategoryFailure(final String errorMessage) =
+      _$AddFirebaseCategoryFailureImpl;
+
+  String get errorMessage;
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AddFirebaseCategoryFailureImplCopyWith<_$AddFirebaseCategoryFailureImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateFirebaseCategorySuccessImplCopyWith<$Res> {
+  factory _$$UpdateFirebaseCategorySuccessImplCopyWith(
+          _$UpdateFirebaseCategorySuccessImpl value,
+          $Res Function(_$UpdateFirebaseCategorySuccessImpl) then) =
+      __$$UpdateFirebaseCategorySuccessImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UpdateFirebaseCategorySuccessImplCopyWithImpl<$Res>
+    extends _$AdminCategoriesStateCopyWithImpl<$Res,
+        _$UpdateFirebaseCategorySuccessImpl>
+    implements _$$UpdateFirebaseCategorySuccessImplCopyWith<$Res> {
+  __$$UpdateFirebaseCategorySuccessImplCopyWithImpl(
+      _$UpdateFirebaseCategorySuccessImpl _value,
+      $Res Function(_$UpdateFirebaseCategorySuccessImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$UpdateFirebaseCategorySuccessImpl
+    implements UpdateFirebaseCategorySuccess {
+  const _$UpdateFirebaseCategorySuccessImpl();
+
+  @override
+  String toString() {
+    return 'AdminCategoriesState.updateFirebaseCategorySuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateFirebaseCategorySuccessImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() adminCategoriesLoading,
+    required TResult Function(List<Categories?> categoriesList)
+        getAdminCategoriesListSuccess,
+    required TResult Function() getAdminCategoriesListEmpty,
+    required TResult Function(String errorMessage)
+        getAdminCategoriesListFailure,
+    required TResult Function() addNewCategorySuccess,
+    required TResult Function(String errorMessage) addNewCategoryFailure,
+    required TResult Function() updateCategorySuccess,
+    required TResult Function(String errorMessage) updateCategoryFailure,
+    required TResult Function() deleteCategorySuccess,
+    required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
+  }) {
+    return updateFirebaseCategorySuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? adminCategoriesLoading,
+    TResult? Function(List<Categories?> categoriesList)?
+        getAdminCategoriesListSuccess,
+    TResult? Function()? getAdminCategoriesListEmpty,
+    TResult? Function(String errorMessage)? getAdminCategoriesListFailure,
+    TResult? Function()? addNewCategorySuccess,
+    TResult? Function(String errorMessage)? addNewCategoryFailure,
+    TResult? Function()? updateCategorySuccess,
+    TResult? Function(String errorMessage)? updateCategoryFailure,
+    TResult? Function()? deleteCategorySuccess,
+    TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
+  }) {
+    return updateFirebaseCategorySuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? adminCategoriesLoading,
+    TResult Function(List<Categories?> categoriesList)?
+        getAdminCategoriesListSuccess,
+    TResult Function()? getAdminCategoriesListEmpty,
+    TResult Function(String errorMessage)? getAdminCategoriesListFailure,
+    TResult Function()? addNewCategorySuccess,
+    TResult Function(String errorMessage)? addNewCategoryFailure,
+    TResult Function()? updateCategorySuccess,
+    TResult Function(String errorMessage)? updateCategoryFailure,
+    TResult Function()? deleteCategorySuccess,
+    TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
+    required TResult orElse(),
+  }) {
+    if (updateFirebaseCategorySuccess != null) {
+      return updateFirebaseCategorySuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(AdminCategoriesLoading value)
+        adminCategoriesLoading,
+    required TResult Function(GetAdminCategoriesListSuccess value)
+        getAdminCategoriesListSuccess,
+    required TResult Function(GetAdminCategoriesListEmpty value)
+        getAdminCategoriesListEmpty,
+    required TResult Function(GetAdminCategoriesListFailure value)
+        getAdminCategoriesListFailure,
+    required TResult Function(AddNewCategorySuccess value)
+        addNewCategorySuccess,
+    required TResult Function(AddNewCategoryFailure value)
+        addNewCategoryFailure,
+    required TResult Function(UpdateCategorySuccess value)
+        updateCategorySuccess,
+    required TResult Function(UpdateCategoryFailure value)
+        updateCategoryFailure,
+    required TResult Function(DeleteCategorySuccess value)
+        deleteCategorySuccess,
+    required TResult Function(DeleteCategoryFailure value)
+        deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
+  }) {
+    return updateFirebaseCategorySuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(AdminCategoriesLoading value)? adminCategoriesLoading,
+    TResult? Function(GetAdminCategoriesListSuccess value)?
+        getAdminCategoriesListSuccess,
+    TResult? Function(GetAdminCategoriesListEmpty value)?
+        getAdminCategoriesListEmpty,
+    TResult? Function(GetAdminCategoriesListFailure value)?
+        getAdminCategoriesListFailure,
+    TResult? Function(AddNewCategorySuccess value)? addNewCategorySuccess,
+    TResult? Function(AddNewCategoryFailure value)? addNewCategoryFailure,
+    TResult? Function(UpdateCategorySuccess value)? updateCategorySuccess,
+    TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
+    TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
+    TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
+  }) {
+    return updateFirebaseCategorySuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(AdminCategoriesLoading value)? adminCategoriesLoading,
+    TResult Function(GetAdminCategoriesListSuccess value)?
+        getAdminCategoriesListSuccess,
+    TResult Function(GetAdminCategoriesListEmpty value)?
+        getAdminCategoriesListEmpty,
+    TResult Function(GetAdminCategoriesListFailure value)?
+        getAdminCategoriesListFailure,
+    TResult Function(AddNewCategorySuccess value)? addNewCategorySuccess,
+    TResult Function(AddNewCategoryFailure value)? addNewCategoryFailure,
+    TResult Function(UpdateCategorySuccess value)? updateCategorySuccess,
+    TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
+    TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
+    TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
+    required TResult orElse(),
+  }) {
+    if (updateFirebaseCategorySuccess != null) {
+      return updateFirebaseCategorySuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateFirebaseCategorySuccess implements AdminCategoriesState {
+  const factory UpdateFirebaseCategorySuccess() =
+      _$UpdateFirebaseCategorySuccessImpl;
+}
+
+/// @nodoc
+abstract class _$$UpdateFirebaseCategoryFailureImplCopyWith<$Res> {
+  factory _$$UpdateFirebaseCategoryFailureImplCopyWith(
+          _$UpdateFirebaseCategoryFailureImpl value,
+          $Res Function(_$UpdateFirebaseCategoryFailureImpl) then) =
+      __$$UpdateFirebaseCategoryFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String errorMessage});
+}
+
+/// @nodoc
+class __$$UpdateFirebaseCategoryFailureImplCopyWithImpl<$Res>
+    extends _$AdminCategoriesStateCopyWithImpl<$Res,
+        _$UpdateFirebaseCategoryFailureImpl>
+    implements _$$UpdateFirebaseCategoryFailureImplCopyWith<$Res> {
+  __$$UpdateFirebaseCategoryFailureImplCopyWithImpl(
+      _$UpdateFirebaseCategoryFailureImpl _value,
+      $Res Function(_$UpdateFirebaseCategoryFailureImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorMessage = null,
+  }) {
+    return _then(_$UpdateFirebaseCategoryFailureImpl(
+      null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateFirebaseCategoryFailureImpl
+    implements UpdateFirebaseCategoryFailure {
+  const _$UpdateFirebaseCategoryFailureImpl(this.errorMessage);
+
+  @override
+  final String errorMessage;
+
+  @override
+  String toString() {
+    return 'AdminCategoriesState.updateFirebaseCategoryFailure(errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateFirebaseCategoryFailureImpl &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorMessage);
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateFirebaseCategoryFailureImplCopyWith<
+          _$UpdateFirebaseCategoryFailureImpl>
+      get copyWith => __$$UpdateFirebaseCategoryFailureImplCopyWithImpl<
+          _$UpdateFirebaseCategoryFailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() adminCategoriesLoading,
+    required TResult Function(List<Categories?> categoriesList)
+        getAdminCategoriesListSuccess,
+    required TResult Function() getAdminCategoriesListEmpty,
+    required TResult Function(String errorMessage)
+        getAdminCategoriesListFailure,
+    required TResult Function() addNewCategorySuccess,
+    required TResult Function(String errorMessage) addNewCategoryFailure,
+    required TResult Function() updateCategorySuccess,
+    required TResult Function(String errorMessage) updateCategoryFailure,
+    required TResult Function() deleteCategorySuccess,
+    required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
+  }) {
+    return updateFirebaseCategoryFailure(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? adminCategoriesLoading,
+    TResult? Function(List<Categories?> categoriesList)?
+        getAdminCategoriesListSuccess,
+    TResult? Function()? getAdminCategoriesListEmpty,
+    TResult? Function(String errorMessage)? getAdminCategoriesListFailure,
+    TResult? Function()? addNewCategorySuccess,
+    TResult? Function(String errorMessage)? addNewCategoryFailure,
+    TResult? Function()? updateCategorySuccess,
+    TResult? Function(String errorMessage)? updateCategoryFailure,
+    TResult? Function()? deleteCategorySuccess,
+    TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
+  }) {
+    return updateFirebaseCategoryFailure?.call(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? adminCategoriesLoading,
+    TResult Function(List<Categories?> categoriesList)?
+        getAdminCategoriesListSuccess,
+    TResult Function()? getAdminCategoriesListEmpty,
+    TResult Function(String errorMessage)? getAdminCategoriesListFailure,
+    TResult Function()? addNewCategorySuccess,
+    TResult Function(String errorMessage)? addNewCategoryFailure,
+    TResult Function()? updateCategorySuccess,
+    TResult Function(String errorMessage)? updateCategoryFailure,
+    TResult Function()? deleteCategorySuccess,
+    TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
+    required TResult orElse(),
+  }) {
+    if (updateFirebaseCategoryFailure != null) {
+      return updateFirebaseCategoryFailure(errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(AdminCategoriesLoading value)
+        adminCategoriesLoading,
+    required TResult Function(GetAdminCategoriesListSuccess value)
+        getAdminCategoriesListSuccess,
+    required TResult Function(GetAdminCategoriesListEmpty value)
+        getAdminCategoriesListEmpty,
+    required TResult Function(GetAdminCategoriesListFailure value)
+        getAdminCategoriesListFailure,
+    required TResult Function(AddNewCategorySuccess value)
+        addNewCategorySuccess,
+    required TResult Function(AddNewCategoryFailure value)
+        addNewCategoryFailure,
+    required TResult Function(UpdateCategorySuccess value)
+        updateCategorySuccess,
+    required TResult Function(UpdateCategoryFailure value)
+        updateCategoryFailure,
+    required TResult Function(DeleteCategorySuccess value)
+        deleteCategorySuccess,
+    required TResult Function(DeleteCategoryFailure value)
+        deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
+  }) {
+    return updateFirebaseCategoryFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(AdminCategoriesLoading value)? adminCategoriesLoading,
+    TResult? Function(GetAdminCategoriesListSuccess value)?
+        getAdminCategoriesListSuccess,
+    TResult? Function(GetAdminCategoriesListEmpty value)?
+        getAdminCategoriesListEmpty,
+    TResult? Function(GetAdminCategoriesListFailure value)?
+        getAdminCategoriesListFailure,
+    TResult? Function(AddNewCategorySuccess value)? addNewCategorySuccess,
+    TResult? Function(AddNewCategoryFailure value)? addNewCategoryFailure,
+    TResult? Function(UpdateCategorySuccess value)? updateCategorySuccess,
+    TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
+    TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
+    TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
+  }) {
+    return updateFirebaseCategoryFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(AdminCategoriesLoading value)? adminCategoriesLoading,
+    TResult Function(GetAdminCategoriesListSuccess value)?
+        getAdminCategoriesListSuccess,
+    TResult Function(GetAdminCategoriesListEmpty value)?
+        getAdminCategoriesListEmpty,
+    TResult Function(GetAdminCategoriesListFailure value)?
+        getAdminCategoriesListFailure,
+    TResult Function(AddNewCategorySuccess value)? addNewCategorySuccess,
+    TResult Function(AddNewCategoryFailure value)? addNewCategoryFailure,
+    TResult Function(UpdateCategorySuccess value)? updateCategorySuccess,
+    TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
+    TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
+    TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
+    required TResult orElse(),
+  }) {
+    if (updateFirebaseCategoryFailure != null) {
+      return updateFirebaseCategoryFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateFirebaseCategoryFailure implements AdminCategoriesState {
+  const factory UpdateFirebaseCategoryFailure(final String errorMessage) =
+      _$UpdateFirebaseCategoryFailureImpl;
+
+  String get errorMessage;
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateFirebaseCategoryFailureImplCopyWith<
+          _$UpdateFirebaseCategoryFailureImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteFirebaseCategorySuccessImplCopyWith<$Res> {
+  factory _$$DeleteFirebaseCategorySuccessImplCopyWith(
+          _$DeleteFirebaseCategorySuccessImpl value,
+          $Res Function(_$DeleteFirebaseCategorySuccessImpl) then) =
+      __$$DeleteFirebaseCategorySuccessImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DeleteFirebaseCategorySuccessImplCopyWithImpl<$Res>
+    extends _$AdminCategoriesStateCopyWithImpl<$Res,
+        _$DeleteFirebaseCategorySuccessImpl>
+    implements _$$DeleteFirebaseCategorySuccessImplCopyWith<$Res> {
+  __$$DeleteFirebaseCategorySuccessImplCopyWithImpl(
+      _$DeleteFirebaseCategorySuccessImpl _value,
+      $Res Function(_$DeleteFirebaseCategorySuccessImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$DeleteFirebaseCategorySuccessImpl
+    implements DeleteFirebaseCategorySuccess {
+  const _$DeleteFirebaseCategorySuccessImpl();
+
+  @override
+  String toString() {
+    return 'AdminCategoriesState.deleteFirebaseCategorySuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteFirebaseCategorySuccessImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() adminCategoriesLoading,
+    required TResult Function(List<Categories?> categoriesList)
+        getAdminCategoriesListSuccess,
+    required TResult Function() getAdminCategoriesListEmpty,
+    required TResult Function(String errorMessage)
+        getAdminCategoriesListFailure,
+    required TResult Function() addNewCategorySuccess,
+    required TResult Function(String errorMessage) addNewCategoryFailure,
+    required TResult Function() updateCategorySuccess,
+    required TResult Function(String errorMessage) updateCategoryFailure,
+    required TResult Function() deleteCategorySuccess,
+    required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
+  }) {
+    return deleteFirebaseCategorySuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? adminCategoriesLoading,
+    TResult? Function(List<Categories?> categoriesList)?
+        getAdminCategoriesListSuccess,
+    TResult? Function()? getAdminCategoriesListEmpty,
+    TResult? Function(String errorMessage)? getAdminCategoriesListFailure,
+    TResult? Function()? addNewCategorySuccess,
+    TResult? Function(String errorMessage)? addNewCategoryFailure,
+    TResult? Function()? updateCategorySuccess,
+    TResult? Function(String errorMessage)? updateCategoryFailure,
+    TResult? Function()? deleteCategorySuccess,
+    TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
+  }) {
+    return deleteFirebaseCategorySuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? adminCategoriesLoading,
+    TResult Function(List<Categories?> categoriesList)?
+        getAdminCategoriesListSuccess,
+    TResult Function()? getAdminCategoriesListEmpty,
+    TResult Function(String errorMessage)? getAdminCategoriesListFailure,
+    TResult Function()? addNewCategorySuccess,
+    TResult Function(String errorMessage)? addNewCategoryFailure,
+    TResult Function()? updateCategorySuccess,
+    TResult Function(String errorMessage)? updateCategoryFailure,
+    TResult Function()? deleteCategorySuccess,
+    TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
+    required TResult orElse(),
+  }) {
+    if (deleteFirebaseCategorySuccess != null) {
+      return deleteFirebaseCategorySuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(AdminCategoriesLoading value)
+        adminCategoriesLoading,
+    required TResult Function(GetAdminCategoriesListSuccess value)
+        getAdminCategoriesListSuccess,
+    required TResult Function(GetAdminCategoriesListEmpty value)
+        getAdminCategoriesListEmpty,
+    required TResult Function(GetAdminCategoriesListFailure value)
+        getAdminCategoriesListFailure,
+    required TResult Function(AddNewCategorySuccess value)
+        addNewCategorySuccess,
+    required TResult Function(AddNewCategoryFailure value)
+        addNewCategoryFailure,
+    required TResult Function(UpdateCategorySuccess value)
+        updateCategorySuccess,
+    required TResult Function(UpdateCategoryFailure value)
+        updateCategoryFailure,
+    required TResult Function(DeleteCategorySuccess value)
+        deleteCategorySuccess,
+    required TResult Function(DeleteCategoryFailure value)
+        deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
+  }) {
+    return deleteFirebaseCategorySuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(AdminCategoriesLoading value)? adminCategoriesLoading,
+    TResult? Function(GetAdminCategoriesListSuccess value)?
+        getAdminCategoriesListSuccess,
+    TResult? Function(GetAdminCategoriesListEmpty value)?
+        getAdminCategoriesListEmpty,
+    TResult? Function(GetAdminCategoriesListFailure value)?
+        getAdminCategoriesListFailure,
+    TResult? Function(AddNewCategorySuccess value)? addNewCategorySuccess,
+    TResult? Function(AddNewCategoryFailure value)? addNewCategoryFailure,
+    TResult? Function(UpdateCategorySuccess value)? updateCategorySuccess,
+    TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
+    TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
+    TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
+  }) {
+    return deleteFirebaseCategorySuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(AdminCategoriesLoading value)? adminCategoriesLoading,
+    TResult Function(GetAdminCategoriesListSuccess value)?
+        getAdminCategoriesListSuccess,
+    TResult Function(GetAdminCategoriesListEmpty value)?
+        getAdminCategoriesListEmpty,
+    TResult Function(GetAdminCategoriesListFailure value)?
+        getAdminCategoriesListFailure,
+    TResult Function(AddNewCategorySuccess value)? addNewCategorySuccess,
+    TResult Function(AddNewCategoryFailure value)? addNewCategoryFailure,
+    TResult Function(UpdateCategorySuccess value)? updateCategorySuccess,
+    TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
+    TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
+    TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
+    required TResult orElse(),
+  }) {
+    if (deleteFirebaseCategorySuccess != null) {
+      return deleteFirebaseCategorySuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteFirebaseCategorySuccess implements AdminCategoriesState {
+  const factory DeleteFirebaseCategorySuccess() =
+      _$DeleteFirebaseCategorySuccessImpl;
+}
+
+/// @nodoc
+abstract class _$$DeleteFirebaseCategoryFailureImplCopyWith<$Res> {
+  factory _$$DeleteFirebaseCategoryFailureImplCopyWith(
+          _$DeleteFirebaseCategoryFailureImpl value,
+          $Res Function(_$DeleteFirebaseCategoryFailureImpl) then) =
+      __$$DeleteFirebaseCategoryFailureImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String errorMessage});
+}
+
+/// @nodoc
+class __$$DeleteFirebaseCategoryFailureImplCopyWithImpl<$Res>
+    extends _$AdminCategoriesStateCopyWithImpl<$Res,
+        _$DeleteFirebaseCategoryFailureImpl>
+    implements _$$DeleteFirebaseCategoryFailureImplCopyWith<$Res> {
+  __$$DeleteFirebaseCategoryFailureImplCopyWithImpl(
+      _$DeleteFirebaseCategoryFailureImpl _value,
+      $Res Function(_$DeleteFirebaseCategoryFailureImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorMessage = null,
+  }) {
+    return _then(_$DeleteFirebaseCategoryFailureImpl(
+      null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteFirebaseCategoryFailureImpl
+    implements DeleteFirebaseCategoryFailure {
+  const _$DeleteFirebaseCategoryFailureImpl(this.errorMessage);
+
+  @override
+  final String errorMessage;
+
+  @override
+  String toString() {
+    return 'AdminCategoriesState.deleteFirebaseCategoryFailure(errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteFirebaseCategoryFailureImpl &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorMessage);
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteFirebaseCategoryFailureImplCopyWith<
+          _$DeleteFirebaseCategoryFailureImpl>
+      get copyWith => __$$DeleteFirebaseCategoryFailureImplCopyWithImpl<
+          _$DeleteFirebaseCategoryFailureImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() adminCategoriesLoading,
+    required TResult Function(List<Categories?> categoriesList)
+        getAdminCategoriesListSuccess,
+    required TResult Function() getAdminCategoriesListEmpty,
+    required TResult Function(String errorMessage)
+        getAdminCategoriesListFailure,
+    required TResult Function() addNewCategorySuccess,
+    required TResult Function(String errorMessage) addNewCategoryFailure,
+    required TResult Function() updateCategorySuccess,
+    required TResult Function(String errorMessage) updateCategoryFailure,
+    required TResult Function() deleteCategorySuccess,
+    required TResult Function(String errorMessage) deleteCategoryFailure,
+    required TResult Function(List<MultilingualCategoryEntity> categoriesList)
+        getFirebaseCategoriesSuccess,
+    required TResult Function() getFirebaseCategoriesEmpty,
+    required TResult Function(String errorMessage) getFirebaseCategoriesFailure,
+    required TResult Function() addFirebaseCategorySuccess,
+    required TResult Function(String errorMessage) addFirebaseCategoryFailure,
+    required TResult Function() updateFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        updateFirebaseCategoryFailure,
+    required TResult Function() deleteFirebaseCategorySuccess,
+    required TResult Function(String errorMessage)
+        deleteFirebaseCategoryFailure,
+  }) {
+    return deleteFirebaseCategoryFailure(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? adminCategoriesLoading,
+    TResult? Function(List<Categories?> categoriesList)?
+        getAdminCategoriesListSuccess,
+    TResult? Function()? getAdminCategoriesListEmpty,
+    TResult? Function(String errorMessage)? getAdminCategoriesListFailure,
+    TResult? Function()? addNewCategorySuccess,
+    TResult? Function(String errorMessage)? addNewCategoryFailure,
+    TResult? Function()? updateCategorySuccess,
+    TResult? Function(String errorMessage)? updateCategoryFailure,
+    TResult? Function()? deleteCategorySuccess,
+    TResult? Function(String errorMessage)? deleteCategoryFailure,
+    TResult? Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function()? getFirebaseCategoriesEmpty,
+    TResult? Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult? Function()? addFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult? Function()? updateFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult? Function()? deleteFirebaseCategorySuccess,
+    TResult? Function(String errorMessage)? deleteFirebaseCategoryFailure,
+  }) {
+    return deleteFirebaseCategoryFailure?.call(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? adminCategoriesLoading,
+    TResult Function(List<Categories?> categoriesList)?
+        getAdminCategoriesListSuccess,
+    TResult Function()? getAdminCategoriesListEmpty,
+    TResult Function(String errorMessage)? getAdminCategoriesListFailure,
+    TResult Function()? addNewCategorySuccess,
+    TResult Function(String errorMessage)? addNewCategoryFailure,
+    TResult Function()? updateCategorySuccess,
+    TResult Function(String errorMessage)? updateCategoryFailure,
+    TResult Function()? deleteCategorySuccess,
+    TResult Function(String errorMessage)? deleteCategoryFailure,
+    TResult Function(List<MultilingualCategoryEntity> categoriesList)?
+        getFirebaseCategoriesSuccess,
+    TResult Function()? getFirebaseCategoriesEmpty,
+    TResult Function(String errorMessage)? getFirebaseCategoriesFailure,
+    TResult Function()? addFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? addFirebaseCategoryFailure,
+    TResult Function()? updateFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? updateFirebaseCategoryFailure,
+    TResult Function()? deleteFirebaseCategorySuccess,
+    TResult Function(String errorMessage)? deleteFirebaseCategoryFailure,
+    required TResult orElse(),
+  }) {
+    if (deleteFirebaseCategoryFailure != null) {
+      return deleteFirebaseCategoryFailure(errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(AdminCategoriesLoading value)
+        adminCategoriesLoading,
+    required TResult Function(GetAdminCategoriesListSuccess value)
+        getAdminCategoriesListSuccess,
+    required TResult Function(GetAdminCategoriesListEmpty value)
+        getAdminCategoriesListEmpty,
+    required TResult Function(GetAdminCategoriesListFailure value)
+        getAdminCategoriesListFailure,
+    required TResult Function(AddNewCategorySuccess value)
+        addNewCategorySuccess,
+    required TResult Function(AddNewCategoryFailure value)
+        addNewCategoryFailure,
+    required TResult Function(UpdateCategorySuccess value)
+        updateCategorySuccess,
+    required TResult Function(UpdateCategoryFailure value)
+        updateCategoryFailure,
+    required TResult Function(DeleteCategorySuccess value)
+        deleteCategorySuccess,
+    required TResult Function(DeleteCategoryFailure value)
+        deleteCategoryFailure,
+    required TResult Function(GetFirebaseCategoriesSuccess value)
+        getFirebaseCategoriesSuccess,
+    required TResult Function(GetFirebaseCategoriesEmpty value)
+        getFirebaseCategoriesEmpty,
+    required TResult Function(GetFirebaseCategoriesFailure value)
+        getFirebaseCategoriesFailure,
+    required TResult Function(AddFirebaseCategorySuccess value)
+        addFirebaseCategorySuccess,
+    required TResult Function(AddFirebaseCategoryFailure value)
+        addFirebaseCategoryFailure,
+    required TResult Function(UpdateFirebaseCategorySuccess value)
+        updateFirebaseCategorySuccess,
+    required TResult Function(UpdateFirebaseCategoryFailure value)
+        updateFirebaseCategoryFailure,
+    required TResult Function(DeleteFirebaseCategorySuccess value)
+        deleteFirebaseCategorySuccess,
+    required TResult Function(DeleteFirebaseCategoryFailure value)
+        deleteFirebaseCategoryFailure,
+  }) {
+    return deleteFirebaseCategoryFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(AdminCategoriesLoading value)? adminCategoriesLoading,
+    TResult? Function(GetAdminCategoriesListSuccess value)?
+        getAdminCategoriesListSuccess,
+    TResult? Function(GetAdminCategoriesListEmpty value)?
+        getAdminCategoriesListEmpty,
+    TResult? Function(GetAdminCategoriesListFailure value)?
+        getAdminCategoriesListFailure,
+    TResult? Function(AddNewCategorySuccess value)? addNewCategorySuccess,
+    TResult? Function(AddNewCategoryFailure value)? addNewCategoryFailure,
+    TResult? Function(UpdateCategorySuccess value)? updateCategorySuccess,
+    TResult? Function(UpdateCategoryFailure value)? updateCategoryFailure,
+    TResult? Function(DeleteCategorySuccess value)? deleteCategorySuccess,
+    TResult? Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult? Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult? Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult? Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult? Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult? Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult? Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult? Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult? Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult? Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
+  }) {
+    return deleteFirebaseCategoryFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(AdminCategoriesLoading value)? adminCategoriesLoading,
+    TResult Function(GetAdminCategoriesListSuccess value)?
+        getAdminCategoriesListSuccess,
+    TResult Function(GetAdminCategoriesListEmpty value)?
+        getAdminCategoriesListEmpty,
+    TResult Function(GetAdminCategoriesListFailure value)?
+        getAdminCategoriesListFailure,
+    TResult Function(AddNewCategorySuccess value)? addNewCategorySuccess,
+    TResult Function(AddNewCategoryFailure value)? addNewCategoryFailure,
+    TResult Function(UpdateCategorySuccess value)? updateCategorySuccess,
+    TResult Function(UpdateCategoryFailure value)? updateCategoryFailure,
+    TResult Function(DeleteCategorySuccess value)? deleteCategorySuccess,
+    TResult Function(DeleteCategoryFailure value)? deleteCategoryFailure,
+    TResult Function(GetFirebaseCategoriesSuccess value)?
+        getFirebaseCategoriesSuccess,
+    TResult Function(GetFirebaseCategoriesEmpty value)?
+        getFirebaseCategoriesEmpty,
+    TResult Function(GetFirebaseCategoriesFailure value)?
+        getFirebaseCategoriesFailure,
+    TResult Function(AddFirebaseCategorySuccess value)?
+        addFirebaseCategorySuccess,
+    TResult Function(AddFirebaseCategoryFailure value)?
+        addFirebaseCategoryFailure,
+    TResult Function(UpdateFirebaseCategorySuccess value)?
+        updateFirebaseCategorySuccess,
+    TResult Function(UpdateFirebaseCategoryFailure value)?
+        updateFirebaseCategoryFailure,
+    TResult Function(DeleteFirebaseCategorySuccess value)?
+        deleteFirebaseCategorySuccess,
+    TResult Function(DeleteFirebaseCategoryFailure value)?
+        deleteFirebaseCategoryFailure,
+    required TResult orElse(),
+  }) {
+    if (deleteFirebaseCategoryFailure != null) {
+      return deleteFirebaseCategoryFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteFirebaseCategoryFailure implements AdminCategoriesState {
+  const factory DeleteFirebaseCategoryFailure(final String errorMessage) =
+      _$DeleteFirebaseCategoryFailureImpl;
+
+  String get errorMessage;
+
+  /// Create a copy of AdminCategoriesState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DeleteFirebaseCategoryFailureImplCopyWith<
+          _$DeleteFirebaseCategoryFailureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -6,12 +6,14 @@ import 'package:shoply/core/app/di/injection.dart';
 import 'package:shoply/core/helpers/extension/mediaQueryValues.dart';
 import 'package:shoply/core/helpers/extension/my_context.dart';
 import 'package:shoply/core/helpers/extension/navigations.dart';
+import 'package:shoply/core/localization/lang_keys.dart';
 import 'package:shoply/core/styles/icons/app_animated_icons.dart';
 import 'package:shoply/core/utils/loading/empty_screen.dart';
 import 'package:shoply/core/utils/widgets/custom_bottom_sheet.dart';
 import 'package:shoply/core/utils/widgets/custom_dialogs.dart';
 import 'package:shoply/core/utils/widgets/custom_swipe_to_action.dart';
 import 'package:shoply/core/utils/widgets/spacing.dart';
+import 'package:shoply/core/Services/local_translator.dart';
 import 'package:shoply/features/admin/categories/presentation/bloc/admin_categories_bloc.dart';
 import 'package:shoply/features/admin/categories/presentation/widget/add_category_item.dart';
 import 'package:shoply/features/admin/categories/presentation/widget/create/create_category.dart';
@@ -33,7 +35,7 @@ class _AddCategoriesBodyState extends State<AddCategoriesBody>
   SwipeActionController? controller;
   AnimationController? animationController;
   double width = 0;
-bool myAnimation = false;
+  bool myAnimation = false;
 
   @override
   void initState() {
@@ -62,138 +64,121 @@ bool myAnimation = false;
             verticalSpacing(8),
             Expanded(
                 child: RefreshIndicator(
-              onRefresh: () async {
-                context
-                    .read<AdminCategoriesBloc>()
-                    .add(const AdminCategoriesEvent.fetchAdminCategories());
-              },
-              color: context.colors.bluePinkLight,
-                    child: BlocBuilder<AdminCategoriesBloc,
-                        AdminCategoriesState>(
+                    onRefresh: () async {
+                      context.read<AdminCategoriesBloc>().add(
+                          const AdminCategoriesEvent.fetchFirebaseCategories());
+                    },
+                    color: context.colors.bluePinkLight,
+                    child:
+                        BlocBuilder<AdminCategoriesBloc, AdminCategoriesState>(
                       builder: (context, state) {
                         return state.maybeWhen(
-                          getAdminCategoriesListEmpty: () => const EmptyScreen(),
-                          getAdminCategoriesListFailure: (errorMessage) {
+                          getFirebaseCategoriesEmpty: () => const EmptyScreen(),
+                          getFirebaseCategoriesFailure: (errorMessage) {
                             return AwesomeSnackbarContent(
-                                title: 'Error',
+                                title: context.translate(LangKeys.errorGeneral),
                                 message: errorMessage,
                                 contentType: ContentType.failure);
                           },
-                          adminCategoriesLoading: () => const AddCategoryLoading(),
-                          getAdminCategoriesListSuccess: (categoriesList) {
+                          adminCategoriesLoading: () =>
+                              const AddCategoryLoading(),
+                          getFirebaseCategoriesSuccess: (categoriesList) {
                             return ListView.builder(
                               shrinkWrap: true,
                               physics: const BouncingScrollPhysics(),
                               itemCount: categoriesList.length,
                               itemBuilder: (context, index) {
-                                return
-                                CustomSwipeToAction(
-                                      index: index,
-                                      rightButtonBackgroundColor:
-                                          Colors.redAccent,
-                                      animatedRightButtonAsset:
-                                          AppAnimatedIcons.trash,
-                                      animatedLiftButtonAsset:
-                                          AppAnimatedIcons.edit,
-                                      leftButtonBackgroundColor:
-                                          Colors.blue,
-                                      onPressRightButton: () async {
-                                        Vibration.vibrate(
-                                            duration: 700,
-                                            pattern: [50, 100, 50, 500]);
-                                        Future.delayed(const Duration(
-                                            milliseconds: 700));
-                                        CustomDialog.twoButtonDialog(
-                                            context: context,
-                                            textBody:
-                                                'Are you sure you want to delete ${categoriesList[index]!.name} ??',
-                                            textButton1: 'Delete',
-                                            textButton2: 'Cancel',
-                                            onPressed: () async {
-                                              _deleteCategory(context,
-                                                      categoryId:
-                                                          categoriesList[
-                                                                  index]!
-                                                              .id!)
-                                                  .whenComplete(
-                                                () {
-                                                  context
-                                                      .read<
-                                                          AdminCategoriesBloc>()
-                                                      .add(const AdminCategoriesEvent
-                                                          .fetchAdminCategories());
-                                                  context.pop();
-                                                },
-                                              );
+                                final category = categoriesList[index];
+                                return CustomSwipeToAction(
+                                  index: index,
+                                  rightButtonBackgroundColor: Colors.redAccent,
+                                  animatedRightButtonAsset:
+                                      AppAnimatedIcons.trash,
+                                  animatedLiftButtonAsset:
+                                      AppAnimatedIcons.edit,
+                                  leftButtonBackgroundColor: Colors.blue,
+                                  onPressRightButton: () async {
+                                    Vibration.vibrate(
+                                        duration: 700,
+                                        pattern: [50, 100, 50, 500]);
+                                    Future.delayed(
+                                        const Duration(milliseconds: 700));
+                                    CustomDialog.twoButtonDialog(
+                                        context: context,
+                                        textBody:
+                                            '${context.translate(LangKeys.deleteCategoryQuestion)} ${LocalTranslator.translate(category.name)}',
+                                        textButton1:
+                                            context.translate(LangKeys.yes),
+                                        textButton2:
+                                            context.translate(LangKeys.cancel),
+                                        onPressed: () async {
+                                          _deleteCategory(context,
+                                                  categoryId: category.id)
+                                              .whenComplete(
+                                            () {
+                                              if (!context.mounted) return;
+                                              context
+                                                  .read<AdminCategoriesBloc>()
+                                                  .add(const AdminCategoriesEvent
+                                                      .fetchFirebaseCategories());
+                                              context.pop();
                                             },
-                                            isLoading: true);
-                                      },
-                                      onPressLeftButton: () async {
-                                        Vibration.vibrate(
-                                            duration: 500,
-                                            pattern: [50, 200, 50, 100]);
-                                        Future.delayed(const Duration(
-                                            milliseconds: 500));
-                                        CustomBottomSheet
-                                            .showModalBottomSheetWidget(
-                                          context: context,
-                                          child: MultiBlocProvider(
-                                            providers: [
-                                              BlocProvider(
-                                                  create: (context) =>
-                                                      sl<FileCubit>()),
-                                              BlocProvider(
-                                                  create: (context) => sl<
-                                                      AdminCategoriesBloc>()),
-                                            ],
-                                            child:
-                                                CreateCategoryBottomSheetWidget(
-                                                    categories:
-                                                        categoriesList[
-                                                            index]!),
-                                          ),
-                                          whenComplete: () {
-                                            context
-                                                .read<AdminCategoriesBloc>()
-                                                .add(const AdminCategoriesEvent
-                                                    .fetchAdminCategories());
-                                          },
-                                        );
-                                      },
-                                      child: AnimatedContainer(
-                                        duration: Duration(
-                                            milliseconds: 400 + (index * 250)),
-                                        curve: Curves.easeIn,
-                                        transform: Matrix4.translationValues(
-                                            myAnimation ? 0 : width,
-                                            0,
-                                            0),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: AddCategoryItem(
-                                            name:
-                                                categoriesList[index]!.name ??
-                                                    '',
-                                            image: categoriesList[index]!
-                                                    .image ??
-                                                '',
-                                            categoryId:
-                                                categoriesList[index]!.id ??
-                                                    '',
-                                          ),
-                                        ),
+                                          );
+                                        },
+                                        isLoading: true);
+                                  },
+                                  onPressLeftButton: () async {
+                                    Vibration.vibrate(
+                                        duration: 500,
+                                        pattern: [50, 200, 50, 100]);
+                                    Future.delayed(
+                                        const Duration(milliseconds: 500));
+                                    CustomBottomSheet
+                                        .showModalBottomSheetWidget(
+                                      context: context,
+                                      child: MultiBlocProvider(
+                                        providers: [
+                                          BlocProvider(
+                                              create: (context) =>
+                                                  sl<FileCubit>()),
+                                          BlocProvider(
+                                              create: (context) =>
+                                                  sl<AdminCategoriesBloc>()),
+                                        ],
+                                        child: CreateCategoryBottomSheetWidget(
+                                            category: category),
                                       ),
+                                      whenComplete: () {
+                                        context.read<AdminCategoriesBloc>().add(
+                                            const AdminCategoriesEvent
+                                                .fetchFirebaseCategories());
+                                      },
                                     );
                                   },
+                                  child: AnimatedContainer(
+                                    duration: Duration(
+                                        milliseconds: 400 + (index * 250)),
+                                    curve: Curves.easeIn,
+                                    transform: Matrix4.translationValues(
+                                        myAnimation ? 0 : width, 0, 0),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: AddCategoryItem(
+                                        name: LocalTranslator.translate(
+                                            category.name),
+                                        image: category.image,
+                                        categoryId: category.id,
+                                      ),
+                                    ),
+                                  ),
                                 );
                               },
-
-
+                            );
+                          },
                           orElse: () => const SizedBox.shrink(),
                         );
                       },
-                    )
-                 )),
+                    ))),
           ],
         ),
       ),
@@ -204,6 +189,6 @@ bool myAnimation = false;
       {required String categoryId}) async {
     context
         .read<AdminCategoriesBloc>()
-        .add(DeleteCategoryEvent(categoryId: categoryId));
+        .add(DeleteFirebaseCategoryEvent(categoryId: categoryId));
   }
 }
